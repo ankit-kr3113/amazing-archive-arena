@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Github, ExternalLink, Star } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import ThemeSwitcher from "@/components/ThemeSwitcher";
 
 const Projects = () => {
   const [filter, setFilter] = useState("All Projects");
@@ -91,6 +92,7 @@ const Projects = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
+      <ThemeSwitcher />
       
       <div className="pt-24 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">

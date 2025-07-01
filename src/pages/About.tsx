@@ -4,6 +4,7 @@ import { Progress } from "@/components/ui/progress";
 import { Download, Mail } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import ThemeSwitcher from "@/components/ThemeSwitcher";
 import heroPortrait from "@/assets/hero-portrait.jpg";
 
 const About = () => {
@@ -18,6 +19,7 @@ const About = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
+      <ThemeSwitcher />
       
       <div className="pt-24 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">

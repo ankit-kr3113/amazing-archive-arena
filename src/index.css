@@ -93,6 +93,35 @@
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
+  /* Theme 6: Light Professional (Inspired by Reference) */
+  [data-theme="light"] {
+    --background: 0 0% 98%;
+    --foreground: 230 15% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 230 15% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 230 15% 15%;
+    --primary: 262 80% 65%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 252 90% 70%;
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 230 15% 15%;
+    --muted: 210 20% 95%;
+    --muted-foreground: 230 25% 45%;
+    --accent: 262 80% 65%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 15% 90%;
+    --input: 220 15% 90%;
+    --ring: 262 80% 65%;
+    --hero-gradient: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --card-gradient: linear-gradient(145deg, hsl(var(--card)), hsl(210 20% 98%));
+    --glow-shadow: 0 0 40px hsl(var(--primary) / 0.15);
+    --subtle-shadow: 0 4px 20px -4px hsl(220 15% 60% / 0.15);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
   /* Theme 4: Neon Pulse */
   [data-theme="neon"] {
     --background: 300 20% 8%;

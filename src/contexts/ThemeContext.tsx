@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 
-type Theme = 'purple' | 'sunset' | 'ocean' | 'neon' | 'emerald';
+type Theme = 'purple' | 'sunset' | 'ocean' | 'neon' | 'emerald' | 'light';
 
 interface ThemeContextType {
   theme: Theme;
@@ -45,6 +45,12 @@ export const themes = [
     name: 'Emerald Glow',
     color: 'hsl(145, 85%, 55%)',
     description: 'Fresh green with nature vibes'
+  },
+  {
+    id: 'light' as Theme,
+    name: 'Light Professional',
+    color: 'hsl(262, 80%, 65%)',
+    description: 'Clean light theme with purple accents'
   }
 ];
 
