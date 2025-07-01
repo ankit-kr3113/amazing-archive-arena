@@ -48,9 +48,9 @@ export const themes = [
   },
   {
     id: 'light' as Theme,
-    name: 'Light Professional',
-    color: 'hsl(262, 80%, 65%)',
-    description: 'Clean light theme with purple accents'
+    name: 'Vibrant Light',
+    color: 'hsl(262, 85%, 58%)',
+    description: 'Colorful light theme with vibrant accents'
   }
 ];
 
