@@ -3,11 +3,13 @@ import { Github, Linkedin, Mail, ArrowRight, Code } from "lucide-react";
 import heroPortrait from "@/assets/hero-portrait.jpg";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import ThemeSwitcher from "@/components/ThemeSwitcher";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
+      <ThemeSwitcher />
       
       {/* Hero Section */}
       <section className="pt-24 pb-20 px-4 sm:px-6 lg:px-8">
