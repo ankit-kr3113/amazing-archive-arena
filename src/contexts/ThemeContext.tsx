@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 
-type Theme = 'purple' | 'cyberpunk' | 'retro' | 'glassmorphism' | 'neon-grid' | 'synthwave';
+type Theme = 'purple' | 'cyberpunk' | 'retro' | 'glassmorphism' | 'neon-grid' | 'synthwave' | 'glass-emerald' | 'glass-rose' | 'glass-amber' | 'glass-violet' | 'glass-cyan';
 
 interface ThemeContextType {
   theme: Theme;
@@ -52,6 +52,36 @@ export const themes = [
     name: 'Synthwave',
     color: 'hsl(340, 100%, 60%)',
     description: 'Retro futurism with gradient mountains'
+  },
+  {
+    id: 'glass-emerald' as Theme,
+    name: 'Glass Emerald',
+    color: 'hsl(160, 100%, 60%)',
+    description: 'Frosted emerald glass with nature vibes'
+  },
+  {
+    id: 'glass-rose' as Theme,
+    name: 'Glass Rose',
+    color: 'hsl(350, 100%, 70%)',
+    description: 'Romantic rose-tinted glass effects'
+  },
+  {
+    id: 'glass-amber' as Theme,
+    name: 'Glass Amber',
+    color: 'hsl(45, 100%, 65%)',
+    description: 'Warm amber glass with golden highlights'
+  },
+  {
+    id: 'glass-violet' as Theme,
+    name: 'Glass Violet',
+    color: 'hsl(270, 100%, 70%)',
+    description: 'Deep violet glass with mystical feel'
+  },
+  {
+    id: 'glass-cyan' as Theme,
+    name: 'Glass Cyan',
+    color: 'hsl(190, 100%, 65%)',
+    description: 'Cool cyan glass with arctic vibes'
   }
 ];
 

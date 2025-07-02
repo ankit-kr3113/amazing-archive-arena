@@ -106,6 +106,156 @@
     --retro-glow: 0 0 30px hsl(320 100% 60% / 0.6), inset 0 0 30px hsl(320 100% 60% / 0.2);
   }
 
+  /* Glass Emerald - Nature Glass */
+  [data-theme="glass-emerald"] {
+    --background: 160 30% 8%;
+    --foreground: 160 50% 98%;
+    --card: 160 30% 15%;
+    --card-foreground: 160 50% 98%;
+    --popover: 160 30% 15%;
+    --popover-foreground: 160 50% 98%;
+    --primary: 160 100% 60%;
+    --primary-foreground: 160 100% 10%;
+    --primary-glow: 140 100% 65%;
+    --secondary: 160 20% 25%;
+    --secondary-foreground: 160 50% 98%;
+    --muted: 160 15% 20%;
+    --muted-foreground: 160 30% 75%;
+    --accent: 120 100% 60%;
+    --accent-foreground: 120 100% 10%;
+    --destructive: 0 100% 65%;
+    --destructive-foreground: 0 100% 100%;
+    --border: 160 30% 30%;
+    --input: 160 20% 22%;
+    --ring: 160 100% 60%;
+    --radius: 1.5rem;
+    
+    --glass-bg: hsla(160, 30%, 15%, 0.7);
+    --glass-border: hsla(160, 100%, 60%, 0.2);
+    --glass-blur: blur(20px);
+    --glass-glow: 0 8px 32px hsla(160, 100%, 60%, 0.15);
+  }
+
+  /* Glass Rose - Romantic Glass */
+  [data-theme="glass-rose"] {
+    --background: 350 30% 8%;
+    --foreground: 350 50% 98%;
+    --card: 350 30% 15%;
+    --card-foreground: 350 50% 98%;
+    --popover: 350 30% 15%;
+    --popover-foreground: 350 50% 98%;
+    --primary: 350 100% 70%;
+    --primary-foreground: 350 100% 10%;
+    --primary-glow: 330 100% 75%;
+    --secondary: 350 20% 25%;
+    --secondary-foreground: 350 50% 98%;
+    --muted: 350 15% 20%;
+    --muted-foreground: 350 30% 75%;
+    --accent: 320 100% 70%;
+    --accent-foreground: 320 100% 10%;
+    --destructive: 0 100% 65%;
+    --destructive-foreground: 0 100% 100%;
+    --border: 350 30% 30%;
+    --input: 350 20% 22%;
+    --ring: 350 100% 70%;
+    --radius: 1.5rem;
+    
+    --glass-bg: hsla(350, 30%, 15%, 0.7);
+    --glass-border: hsla(350, 100%, 70%, 0.2);
+    --glass-blur: blur(20px);
+    --glass-glow: 0 8px 32px hsla(350, 100%, 70%, 0.15);
+  }
+
+  /* Glass Amber - Golden Glass */
+  [data-theme="glass-amber"] {
+    --background: 45 30% 8%;
+    --foreground: 45 50% 98%;
+    --card: 45 30% 15%;
+    --card-foreground: 45 50% 98%;
+    --popover: 45 30% 15%;
+    --popover-foreground: 45 50% 98%;
+    --primary: 45 100% 65%;
+    --primary-foreground: 45 100% 10%;
+    --primary-glow: 60 100% 70%;
+    --secondary: 45 20% 25%;
+    --secondary-foreground: 45 50% 98%;
+    --muted: 45 15% 20%;
+    --muted-foreground: 45 30% 75%;
+    --accent: 30 100% 60%;
+    --accent-foreground: 30 100% 10%;
+    --destructive: 0 100% 65%;
+    --destructive-foreground: 0 100% 100%;
+    --border: 45 30% 30%;
+    --input: 45 20% 22%;
+    --ring: 45 100% 65%;
+    --radius: 1.5rem;
+    
+    --glass-bg: hsla(45, 30%, 15%, 0.7);
+    --glass-border: hsla(45, 100%, 65%, 0.2);
+    --glass-blur: blur(20px);
+    --glass-glow: 0 8px 32px hsla(45, 100%, 65%, 0.15);
+  }
+
+  /* Glass Violet - Mystical Glass */
+  [data-theme="glass-violet"] {
+    --background: 270 30% 8%;
+    --foreground: 270 50% 98%;
+    --card: 270 30% 15%;
+    --card-foreground: 270 50% 98%;
+    --popover: 270 30% 15%;
+    --popover-foreground: 270 50% 98%;
+    --primary: 270 100% 70%;
+    --primary-foreground: 270 100% 10%;
+    --primary-glow: 290 100% 75%;
+    --secondary: 270 20% 25%;
+    --secondary-foreground: 270 50% 98%;
+    --muted: 270 15% 20%;
+    --muted-foreground: 270 30% 75%;
+    --accent: 250 100% 70%;
+    --accent-foreground: 250 100% 10%;
+    --destructive: 0 100% 65%;
+    --destructive-foreground: 0 100% 100%;
+    --border: 270 30% 30%;
+    --input: 270 20% 22%;
+    --ring: 270 100% 70%;
+    --radius: 1.5rem;
+    
+    --glass-bg: hsla(270, 30%, 15%, 0.7);
+    --glass-border: hsla(270, 100%, 70%, 0.2);
+    --glass-blur: blur(20px);
+    --glass-glow: 0 8px 32px hsla(270, 100%, 70%, 0.15);
+  }
+
+  /* Glass Cyan - Arctic Glass */
+  [data-theme="glass-cyan"] {
+    --background: 190 30% 8%;
+    --foreground: 190 50% 98%;
+    --card: 190 30% 15%;
+    --card-foreground: 190 50% 98%;
+    --popover: 190 30% 15%;
+    --popover-foreground: 190 50% 98%;
+    --primary: 190 100% 65%;
+    --primary-foreground: 190 100% 10%;
+    --primary-glow: 200 100% 70%;
+    --secondary: 190 20% 25%;
+    --secondary-foreground: 190 50% 98%;
+    --muted: 190 15% 20%;
+    --muted-foreground: 190 30% 75%;
+    --accent: 170 100% 60%;
+    --accent-foreground: 170 100% 10%;
+    --destructive: 0 100% 65%;
+    --destructive-foreground: 0 100% 100%;
+    --border: 190 30% 30%;
+    --input: 190 20% 22%;
+    --ring: 190 100% 65%;
+    --radius: 1.5rem;
+    
+    --glass-bg: hsla(190, 30%, 15%, 0.7);
+    --glass-border: hsla(190, 100%, 65%, 0.2);
+    --glass-blur: blur(20px);
+    --glass-glow: 0 8px 32px hsla(190, 100%, 65%, 0.15);
+  }
+
   /* Theme 4: Glass Morphism - Frosted Glass */
   [data-theme="glassmorphism"] {
     --background: 220 30% 8%;
@@ -353,6 +503,136 @@
   }
 
   [data-theme="glassmorphism"] .btn-hero:hover {
+    background: hsl(var(--primary) / 0.2);
+    box-shadow: var(--glass-glow);
+  }
+
+  /* Glass Emerald Theme Overrides */
+  [data-theme="glass-emerald"] .portfolio-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: var(--glass-blur);
+    box-shadow: var(--glass-glow);
+  }
+
+  [data-theme="glass-emerald"] .glass {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: var(--glass-blur);
+  }
+
+  [data-theme="glass-emerald"] .btn-hero {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: var(--glass-blur);
+    color: hsl(var(--primary));
+  }
+
+  [data-theme="glass-emerald"] .btn-hero:hover {
+    background: hsl(var(--primary) / 0.2);
+    box-shadow: var(--glass-glow);
+  }
+
+  /* Glass Rose Theme Overrides */
+  [data-theme="glass-rose"] .portfolio-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: var(--glass-blur);
+    box-shadow: var(--glass-glow);
+  }
+
+  [data-theme="glass-rose"] .glass {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: var(--glass-blur);
+  }
+
+  [data-theme="glass-rose"] .btn-hero {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: var(--glass-blur);
+    color: hsl(var(--primary));
+  }
+
+  [data-theme="glass-rose"] .btn-hero:hover {
+    background: hsl(var(--primary) / 0.2);
+    box-shadow: var(--glass-glow);
+  }
+
+  /* Glass Amber Theme Overrides */
+  [data-theme="glass-amber"] .portfolio-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: var(--glass-blur);
+    box-shadow: var(--glass-glow);
+  }
+
+  [data-theme="glass-amber"] .glass {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: var(--glass-blur);
+  }
+
+  [data-theme="glass-amber"] .btn-hero {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: var(--glass-blur);
+    color: hsl(var(--primary));
+  }
+
+  [data-theme="glass-amber"] .btn-hero:hover {
+    background: hsl(var(--primary) / 0.2);
+    box-shadow: var(--glass-glow);
+  }
+
+  /* Glass Violet Theme Overrides */
+  [data-theme="glass-violet"] .portfolio-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: var(--glass-blur);
+    box-shadow: var(--glass-glow);
+  }
+
+  [data-theme="glass-violet"] .glass {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: var(--glass-blur);
+  }
+
+  [data-theme="glass-violet"] .btn-hero {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: var(--glass-blur);
+    color: hsl(var(--primary));
+  }
+
+  [data-theme="glass-violet"] .btn-hero:hover {
+    background: hsl(var(--primary) / 0.2);
+    box-shadow: var(--glass-glow);
+  }
+
+  /* Glass Cyan Theme Overrides */
+  [data-theme="glass-cyan"] .portfolio-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: var(--glass-blur);
+    box-shadow: var(--glass-glow);
+  }
+
+  [data-theme="glass-cyan"] .glass {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: var(--glass-blur);
+  }
+
+  [data-theme="glass-cyan"] .btn-hero {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: var(--glass-blur);
+    color: hsl(var(--primary));
+  }
+
+  [data-theme="glass-cyan"] .btn-hero:hover {
     background: hsl(var(--primary) / 0.2);
     box-shadow: var(--glass-glow);
   }
