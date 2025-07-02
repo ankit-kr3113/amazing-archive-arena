@@ -15,6 +15,7 @@ interface ThemeContextType {
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
+// Revolutionary theme system with unique visual identities
 export const themes = [
   {
     id: 'purple' as Theme,
