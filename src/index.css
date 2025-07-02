@@ -93,32 +93,32 @@
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  /* Theme 6: Light Professional (Inspired by Reference) */
+  /* Theme 6: Vibrant Light */
   [data-theme="light"] {
-    --background: 0 0% 98%;
-    --foreground: 230 15% 15%;
+    --background: 250 100% 98%;
+    --foreground: 230 25% 10%;
     --card: 0 0% 100%;
-    --card-foreground: 230 15% 15%;
+    --card-foreground: 230 25% 10%;
     --popover: 0 0% 100%;
-    --popover-foreground: 230 15% 15%;
-    --primary: 262 80% 65%;
+    --popover-foreground: 230 25% 10%;
+    --primary: 262 90% 60%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 252 90% 70%;
-    --secondary: 210 20% 96%;
-    --secondary-foreground: 230 15% 15%;
-    --muted: 210 20% 95%;
-    --muted-foreground: 230 25% 45%;
-    --accent: 262 80% 65%;
+    --primary-glow: 250 100% 70%;
+    --secondary: 250 100% 95%;
+    --secondary-foreground: 230 25% 10%;
+    --muted: 250 60% 95%;
+    --muted-foreground: 230 30% 40%;
+    --accent: 280 100% 65%;
     --accent-foreground: 0 0% 100%;
-    --destructive: 0 84% 60%;
+    --destructive: 0 90% 55%;
     --destructive-foreground: 0 0% 100%;
-    --border: 220 15% 90%;
-    --input: 220 15% 90%;
-    --ring: 262 80% 65%;
+    --border: 250 80% 85%;
+    --input: 250 60% 92%;
+    --ring: 262 90% 60%;
     --hero-gradient: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
-    --card-gradient: linear-gradient(145deg, hsl(var(--card)), hsl(210 20% 98%));
-    --glow-shadow: 0 0 40px hsl(var(--primary) / 0.15);
-    --subtle-shadow: 0 4px 20px -4px hsl(220 15% 60% / 0.15);
+    --card-gradient: linear-gradient(145deg, hsl(var(--card)), hsl(250 100% 96%));
+    --glow-shadow: 0 0 30px hsl(var(--primary) / 0.25);
+    --subtle-shadow: 0 8px 25px -8px hsl(262 90% 60% / 0.2);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
