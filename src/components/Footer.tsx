@@ -1,11 +1,8 @@
-import { Github, Linkedin, Mail, Twitter, Heart, Code, Download } from "lucide-react";
+import { Github, Linkedin, Mail, Twitter } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useTheme } from "@/contexts/ThemeContext";
-import { Button } from "@/components/ui/button";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  const { theme } = useTheme();
   
   const socialLinks = [
     { icon: Github, href: "https://github.com", label: "GitHub" },
@@ -22,110 +19,92 @@ const Footer = () => {
     { name: "Contact", href: "/contact" },
   ];
 
-  const techStack = [
-    "React", "TypeScript", "Node.js", "Python"
-  ];
-
   return (
-    <footer className="relative mt-20 overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-t from-card to-background/50"></div>
-      
-      {/* Theme-specific background effects */}
-      {theme === 'cyberpunk' && (
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-primary/0 via-primary/50 to-primary/0"></div>
-          <div className="absolute top-0 right-1/3 w-px h-full bg-gradient-to-b from-accent/0 via-accent/30 to-accent/0"></div>
-        </div>
-      )}
-
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          
-          {/* Brand Section */}
-          <div className="space-y-4">
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-primary-glow flex items-center justify-center">
-                <Code className="w-5 h-5 text-primary-foreground" />
-              </div>
-              <div>
-                <h3 className="text-xl font-bold gradient-text">John Doe</h3>
-                <p className="text-sm text-muted-foreground">Full Stack Developer</p>
-              </div>
-            </div>
-            
-            <p className="text-muted-foreground text-sm max-w-sm">
-              Creating digital experiences through clean code and modern web technologies.
+    <footer className="bg-card border-t border-border mt-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* About Section */}
+          <div className="col-span-1 md:col-span-2">
+            <h3 className="text-xl font-bold gradient-text mb-4">John Doe</h3>
+            <p className="text-muted-foreground mb-6 max-w-md">
+              Full Stack Developer specializing in modern web technologies and algorithms, 
+              currently exploring the exciting world of Generative AI.
             </p>
-
-            {/* Tech Stack */}
-            <div className="flex flex-wrap gap-2">
-              {techStack.map((tech) => (
-                <span
-                  key={tech}
-                  className="px-2 py-1 text-xs rounded-md bg-primary/10 text-primary border border-primary/20"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* Navigation */}
-          <div className="space-y-4">
-            <h4 className="text-lg font-semibold">Navigation</h4>
-            <div className="space-y-2">
-              {quickLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  to={link.href}
-                  className="block text-muted-foreground hover:text-primary transition-colors text-sm"
-                >
-                  {link.name}
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          {/* Social & Actions */}
-          <div className="space-y-4">
-            <h4 className="text-lg font-semibold">Connect</h4>
-            
-            {/* Social Links */}
-            <div className="flex space-x-3">
+            <div className="flex space-x-4">
               {socialLinks.map(({ icon: Icon, href, label }) => (
                 <a
                   key={label}
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-lg bg-muted/50 border border-border flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300"
+                  className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
                   aria-label={label}
                 >
-                  <Icon className="w-4 h-4" />
+                  <Icon className="w-5 h-5" />
                 </a>
               ))}
             </div>
+          </div>
 
-            {/* Resume Download */}
-            <Button variant="outline" size="sm" className="btn-outline-hero">
-              <Download className="w-4 h-4 mr-2" />
-              Resume
-            </Button>
+          {/* Contact Info */}
+          <div>
+            <h4 className="text-lg font-semibold mb-4">Contact</h4>
+            <div className="space-y-2 text-muted-foreground">
+              <p>📍 San Francisco, CA</p>
+              <p>📧 john@example.com</p>
+            </div>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h4 className="text-lg font-semibold mb-4">Navigation</h4>
+            <div className="space-y-2">
+              {quickLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  to={link.href}
+                  className="block text-muted-foreground hover:text-primary transition-colors"
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
 
-        {/* Bottom Section */}
-        <div className="mt-12 pt-6 border-t border-border">
-          <div className="flex flex-col sm:flex-row justify-between items-center space-y-2 sm:space-y-0">
-            <p className="text-sm text-muted-foreground">
-              &copy; {currentYear} John Doe. All rights reserved.
-            </p>
-            <p className="text-sm text-muted-foreground flex items-center">
-              Built with <Heart className="w-3 h-3 text-red-500 mx-1" /> using React & TypeScript
-            </p>
+        {/* Stats */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 pt-8 border-t border-border">
+          <div className="text-center">
+            <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-2">
+              <span className="text-2xl">⭐</span>
+            </div>
+            <div className="text-2xl font-bold">15,000+</div>
+            <div className="text-sm text-muted-foreground">Total Visitors</div>
           </div>
+          
+          <div className="text-center">
+            <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-2">
+              <span className="text-2xl">⚡</span>
+            </div>
+            <div className="text-2xl font-bold">Last Updated</div>
+            <div className="text-sm text-muted-foreground">July 2, 2025</div>
+          </div>
+
+          <div className="text-center">
+            <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-2">
+              <span className="text-2xl">💻</span>
+            </div>
+            <div className="text-2xl font-bold">⭐⭐⭐⭐⭐</div>
+            <div className="text-sm text-muted-foreground">Skills Rating</div>
+          </div>
+        </div>
+
+        {/* Copyright */}
+        <div className="mt-8 pt-8 border-t border-border text-center text-muted-foreground">
+          <p>&copy; {currentYear} John Doe. All rights reserved.</p>
+          <p className="mt-2">
+            🚀 Crafted with ❤️ using React & TypeScript
+          </p>
         </div>
       </div>
     </footer>
