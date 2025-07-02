@@ -256,6 +256,38 @@
     --glass-glow: 0 8px 32px hsla(190, 100%, 65%, 0.15);
   }
 
+  /* Purple Glass Dream - Blend of Purple Dream + Glass Morphism */
+  [data-theme="glass-dream"] {
+    --background: 228 15% 8%;
+    --foreground: 210 40% 98%;
+    --card: 228 18% 12%;
+    --card-foreground: 210 40% 98%;
+    --popover: 228 18% 12%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 262 80% 65%;
+    --primary-foreground: 210 40% 98%;
+    --primary-glow: 262 90% 75%;
+    --secondary: 240 8% 20%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 240 6% 16%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 262 80% 65%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 240 8% 20%;
+    --input: 240 8% 20%;
+    --ring: 262 80% 65%;
+    --radius: 1.5rem;
+    
+    /* Glass morphism variables with purple tint */
+    --glass-bg: hsla(228, 18%, 12%, 0.6);
+    --glass-border: hsla(262, 80%, 65%, 0.25);
+    --glass-blur: blur(25px);
+    --glass-glow: 0 8px 32px hsla(262, 80%, 65%, 0.2);
+    --purple-glass-glow: 0 0 40px hsl(262 80% 65% / 0.3), 0 0 80px hsl(262 80% 65% / 0.1);
+  }
+
   /* Theme 4: Glass Morphism - Frosted Glass */
   [data-theme="glassmorphism"] {
     --background: 220 30% 8%;
@@ -404,6 +436,15 @@
       var(--synthwave-grid),
       var(--synthwave-bg);
     background-size: 40px 40px, cover;
+  }
+
+  /* Purple Glass Dream Background */
+  [data-theme="glass-dream"] body {
+    background: 
+      radial-gradient(circle at 20% 30%, hsla(262, 80%, 65%, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, hsla(262, 90%, 75%, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 40% 80%, hsla(262, 80%, 65%, 0.08) 0%, transparent 60%),
+      hsl(var(--background));
   }
 }
 
@@ -635,6 +676,41 @@
   [data-theme="glass-cyan"] .btn-hero:hover {
     background: hsl(var(--primary) / 0.2);
     box-shadow: var(--glass-glow);
+  }
+
+  /* Purple Glass Dream Theme Overrides */
+  [data-theme="glass-dream"] .portfolio-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: var(--glass-blur);
+    box-shadow: var(--purple-glass-glow);
+  }
+
+  [data-theme="glass-dream"] .glass {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: var(--glass-blur);
+  }
+
+  [data-theme="glass-dream"] .btn-hero {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: var(--glass-blur);
+    color: hsl(var(--primary));
+    box-shadow: var(--purple-glass-glow);
+  }
+
+  [data-theme="glass-dream"] .btn-hero:hover {
+    background: hsl(var(--primary) / 0.15);
+    box-shadow: var(--purple-glass-glow);
+    transform: translateY(-2px);
+  }
+
+  [data-theme="glass-dream"] .gradient-text {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-shadow: 0 0 20px hsl(var(--primary) / 0.3);
   }
 
   /* Neon Grid Theme Overrides */

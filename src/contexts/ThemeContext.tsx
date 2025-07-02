@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 
-type Theme = 'purple' | 'cyberpunk' | 'retro' | 'glassmorphism' | 'neon-grid' | 'synthwave' | 'glass-emerald' | 'glass-rose' | 'glass-amber' | 'glass-violet' | 'glass-cyan';
+type Theme = 'purple' | 'cyberpunk' | 'retro' | 'glassmorphism' | 'neon-grid' | 'synthwave' | 'glass-emerald' | 'glass-rose' | 'glass-amber' | 'glass-violet' | 'glass-cyan' | 'glass-dream';
 
 interface ThemeContextType {
   theme: Theme;
@@ -82,6 +82,12 @@ export const themes = [
     name: 'Glass Cyan',
     color: 'hsl(190, 100%, 65%)',
     description: 'Cool cyan glass with arctic vibes'
+  },
+  {
+    id: 'glass-dream' as Theme,
+    name: 'Purple Glass Dream',
+    color: 'hsl(262, 80%, 65%)',
+    description: 'Elegant purple with dreamy glass effects'
   }
 ];
 
