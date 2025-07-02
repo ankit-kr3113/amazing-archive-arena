@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 
-type Theme = 'purple' | 'sunset' | 'ocean' | 'neon' | 'emerald' | 'light' | 'rainbow' | 'cosmic' | 'tropical' | 'aurora' | 'galaxy' | 'volcano';
+type Theme = 'purple' | 'cyberpunk' | 'retro' | 'glassmorphism' | 'neon-grid' | 'synthwave';
 
 interface ThemeContextType {
   theme: Theme;
@@ -20,73 +20,37 @@ export const themes = [
     id: 'purple' as Theme,
     name: 'Purple Dream',
     color: 'hsl(262, 80%, 65%)',
-    description: 'Classic purple with mystical vibes'
+    description: 'Classic elegant portfolio'
   },
   {
-    id: 'sunset' as Theme,
-    name: 'Sunset Blaze',
-    color: 'hsl(25, 95%, 60%)',
-    description: 'Warm orange and red gradients'
+    id: 'cyberpunk' as Theme,
+    name: 'Cyberpunk 2024',
+    color: 'hsl(180, 100%, 50%)',
+    description: 'Futuristic hacker aesthetic with neon grids'
   },
   {
-    id: 'ocean' as Theme,
-    name: 'Ocean Depth',
-    color: 'hsl(180, 95%, 55%)',
-    description: 'Cool cyan and blue tones'
+    id: 'retro' as Theme,
+    name: '80s Retro Wave',
+    color: 'hsl(320, 100%, 60%)',
+    description: 'Vintage 80s with scanlines and VHS effects'
   },
   {
-    id: 'neon' as Theme,
-    name: 'Neon Pulse',
-    color: 'hsl(320, 100%, 70%)',
-    description: 'Vibrant pink and magenta energy'
+    id: 'glassmorphism' as Theme,
+    name: 'Glass Morphism',
+    color: 'hsl(220, 100%, 70%)',
+    description: 'Frosted glass with blur effects'
   },
   {
-    id: 'emerald' as Theme,
-    name: 'Emerald Glow',
-    color: 'hsl(145, 85%, 55%)',
-    description: 'Fresh green with nature vibes'
-  },
-  {
-    id: 'light' as Theme,
-    name: 'Vibrant Light',
-    color: 'hsl(262, 90%, 60%)',
-    description: 'Bright light theme with vibrant accents'
-  },
-  {
-    id: 'rainbow' as Theme,
-    name: 'Rainbow Burst',
+    id: 'neon-grid' as Theme,
+    name: 'Neon Grid',
     color: 'hsl(290, 100%, 70%)',
-    description: 'Multi-color rainbow explosion'
+    description: 'Tron-like grid system with electric colors'
   },
   {
-    id: 'cosmic' as Theme,
-    name: 'Cosmic Galaxy',
-    color: 'hsl(250, 100%, 75%)',
-    description: 'Deep space with cosmic colors'
-  },
-  {
-    id: 'tropical' as Theme,
-    name: 'Tropical Paradise',
-    color: 'hsl(60, 100%, 60%)',
-    description: 'Bright tropical yellows and greens'
-  },
-  {
-    id: 'aurora' as Theme,
-    name: 'Aurora Borealis',
-    color: 'hsl(160, 90%, 65%)',
-    description: 'Northern lights inspired theme'
-  },
-  {
-    id: 'galaxy' as Theme,
-    name: 'Galaxy Storm',
-    color: 'hsl(280, 100%, 65%)',
-    description: 'Purple and blue galaxy with stars'
-  },
-  {
-    id: 'volcano' as Theme,
-    name: 'Volcano Fire',
-    color: 'hsl(10, 100%, 60%)',
-    description: 'Fiery reds and molten oranges'
+    id: 'synthwave' as Theme,
+    name: 'Synthwave',
+    color: 'hsl(340, 100%, 60%)',
+    description: 'Retro futurism with gradient mountains'
   }
 ];
 
