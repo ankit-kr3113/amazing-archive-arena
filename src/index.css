@@ -179,7 +179,6 @@
     --subtle-shadow: 0 10px 30px -10px hsl(0 0% 0% / 0.4);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
-}
 
   /* Theme 7: Rainbow Burst */
   [data-theme="rainbow"] {
