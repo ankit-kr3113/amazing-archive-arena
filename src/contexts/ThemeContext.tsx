@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 
-type Theme = 'purple' | 'sunset' | 'ocean' | 'neon' | 'emerald' | 'light';
+type Theme = 'purple' | 'sunset' | 'ocean' | 'neon' | 'emerald' | 'light' | 'rainbow' | 'cosmic' | 'tropical' | 'aurora' | 'galaxy' | 'volcano';
 
 interface ThemeContextType {
   theme: Theme;
@@ -51,6 +51,42 @@ export const themes = [
     name: 'Vibrant Light',
     color: 'hsl(262, 90%, 60%)',
     description: 'Bright light theme with vibrant accents'
+  },
+  {
+    id: 'rainbow' as Theme,
+    name: 'Rainbow Burst',
+    color: 'hsl(290, 100%, 70%)',
+    description: 'Multi-color rainbow explosion'
+  },
+  {
+    id: 'cosmic' as Theme,
+    name: 'Cosmic Galaxy',
+    color: 'hsl(250, 100%, 75%)',
+    description: 'Deep space with cosmic colors'
+  },
+  {
+    id: 'tropical' as Theme,
+    name: 'Tropical Paradise',
+    color: 'hsl(60, 100%, 60%)',
+    description: 'Bright tropical yellows and greens'
+  },
+  {
+    id: 'aurora' as Theme,
+    name: 'Aurora Borealis',
+    color: 'hsl(160, 90%, 65%)',
+    description: 'Northern lights inspired theme'
+  },
+  {
+    id: 'galaxy' as Theme,
+    name: 'Galaxy Storm',
+    color: 'hsl(280, 100%, 65%)',
+    description: 'Purple and blue galaxy with stars'
+  },
+  {
+    id: 'volcano' as Theme,
+    name: 'Volcano Fire',
+    color: 'hsl(10, 100%, 60%)',
+    description: 'Fiery reds and molten oranges'
   }
 ];
 
