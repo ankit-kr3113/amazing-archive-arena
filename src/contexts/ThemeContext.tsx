@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 
-type Theme = 'purple' | 'sunset' | 'ocean' | 'neon' | 'emerald' | 'light' | 'cyber' | 'tropical' | 'synthwave' | 'electric';
+type Theme = 'purple' | 'sunset' | 'ocean' | 'neon' | 'emerald' | 'light';
 
 interface ThemeContextType {
   theme: Theme;
@@ -48,33 +48,9 @@ export const themes = [
   },
   {
     id: 'light' as Theme,
-    name: 'Vibrant Light',
-    color: 'hsl(262, 85%, 58%)',
-    description: 'Colorful light theme with vibrant accents'
-  },
-  {
-    id: 'cyber' as Theme,
-    name: 'Cyber Neon',
-    color: 'hsl(300, 100%, 70%)',
-    description: 'Electric cyberpunk with neon highlights'
-  },
-  {
-    id: 'tropical' as Theme,
-    name: 'Tropical Sunset',
-    color: 'hsl(15, 100%, 60%)',
-    description: 'Warm tropical vibes with sunset colors'
-  },
-  {
-    id: 'synthwave' as Theme,
-    name: 'Synthwave',
-    color: 'hsl(320, 100%, 65%)',
-    description: 'Retro 80s with electric pink and purple'
-  },
-  {
-    id: 'electric' as Theme,
-    name: 'Electric Lime',
-    color: 'hsl(75, 100%, 55%)',
-    description: 'Bold lime green with electric energy'
+    name: 'Light Professional',
+    color: 'hsl(262, 80%, 65%)',
+    description: 'Clean light theme with purple accents'
   }
 ];
 
