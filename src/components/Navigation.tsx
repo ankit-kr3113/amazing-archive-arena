@@ -29,55 +29,45 @@ const Navigation = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 group">
             <div className="relative">
-              <Avatar className="h-10 w-10 ring-2 ring-primary/20 transition-all duration-300 group-hover:ring-primary/40">
+              <Avatar className="h-8 w-8 ring-2 ring-primary/20 transition-all duration-300 group-hover:ring-primary/40">
                 <AvatarImage src="/placeholder.svg" alt="Profile" />
-                <AvatarFallback className="bg-gradient-to-br from-primary to-primary-glow text-primary-foreground font-bold">
-                  JD
+                <AvatarFallback className="bg-gradient-to-br from-primary to-primary-glow text-primary-foreground font-bold text-sm">
+                  YM
                 </AvatarFallback>
               </Avatar>
-              <div className="absolute -top-1 -right-1 w-4 h-4 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full animate-pulse"></div>
             </div>
-            <div className="flex flex-col">
-              <span className="text-lg font-bold gradient-text">John Doe</span>
-              <span className="text-xs text-muted-foreground flex items-center">
-                <Code2 className="w-3 h-3 mr-1" />
-                Full Stack Developer
-              </span>
-            </div>
+            <span className="text-lg font-bold gradient-text">Yuvraj.</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:block">
-            <div className="flex items-center space-x-1 bg-card/50 rounded-full p-1 border border-border/50">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.href}
-                  className={`relative px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                    isActive(item.href)
-                      ? "text-primary bg-primary/10 shadow-lg shadow-primary/20"
-                      : "text-muted-foreground hover:text-primary hover:bg-primary/5"
-                  }`}
-                >
-                  {item.name}
-                  {isActive(item.href) && (
-                    <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-primary rounded-full"></div>
-                  )}
-                </Link>
-              ))}
-            </div>
+          <div className="hidden lg:flex items-center space-x-8">
+            {navigation.map((item) => (
+              <Link
+                key={item.name}
+                to={item.href}
+                className={`relative px-2 py-1 text-sm font-medium transition-all duration-300 ${
+                  isActive(item.href)
+                    ? "text-primary"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {item.name}
+                {isActive(item.href) && (
+                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary rounded-full"></div>
+                )}
+              </Link>
+            ))}
           </div>
 
-          {/* Resume Button */}
-          <div className="hidden lg:block">
+          {/* Resume Button and Theme Toggle */}
+          <div className="hidden lg:flex items-center space-x-3">
             <Button 
               variant="outline" 
               size="sm" 
-              className="group relative overflow-hidden bg-gradient-to-r from-primary/10 to-primary-glow/10 border-primary/30 hover:border-primary/50 hover:bg-gradient-to-r hover:from-primary/20 hover:to-primary-glow/20 transition-all duration-300"
+              className="group bg-primary/10 border-primary/30 hover:bg-primary/20 text-primary hover:text-primary-foreground transition-all duration-300"
             >
-              <Download className="w-4 h-4 mr-2 transition-transform group-hover:scale-110" />
-              <span className="relative z-10">Resume</span>
-              <Sparkles className="w-3 h-3 ml-2 opacity-60 group-hover:opacity-100 transition-opacity" />
+              <Download className="w-4 h-4 mr-2" />
+              Resume
             </Button>
           </div>
 
