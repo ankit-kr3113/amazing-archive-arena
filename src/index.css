@@ -509,56 +509,71 @@
   --emerald-pulse: 0 0 35px hsl(150, 100%, 50%), 0 0 70px hsl(140, 100%, 60%);
 }
 
-/* Vibrant Professional Dark Theme */
+/* Vibrant Professional Dark Theme - Lovable.dev Portfolio */
 [data-theme="vibrant-dark"] {
-  --background: 210 20% 6%;
-  --foreground: 0 0% 98%;
-  --card: 210 15% 8%;
-  --card-foreground: 0 0% 95%;
-  --popover: 210 20% 5%;
-  --popover-foreground: 0 0% 98%;
-  --primary: 180 100% 60%;
-  --primary-foreground: 210 20% 5%;
-  --secondary: 280 100% 70%;
-  --secondary-foreground: 210 20% 5%;
-  --muted: 210 15% 15%;
-  --muted-foreground: 215 25% 70%;
-  --accent: 320 100% 65%;
-  --accent-foreground: 210 20% 5%;
+  /* Dark foundation: True dark base between #0D0D0D and #1A1A1A */
+  --background: 0 0% 5%;  /* ~#0D0D0D */
+  --foreground: 0 0% 88%; /* ~#E0E0E0 for body text readability */
+  --card: 0 0% 8%;        /* ~#141414 for card backgrounds */
+  --card-foreground: 0 0% 92%; /* Near-white for card text */
+  --popover: 0 0% 8%;
+  --popover-foreground: 0 0% 92%;
+  
+  /* Vibrant accent colors - exact specifications */
+  --primary: 164 82% 51%;      /* Teal #2ED3B7 */
+  --primary-foreground: 0 0% 5%;
+  --secondary: 217 100% 62%;   /* Electric Blue #3A7DFF */
+  --secondary-foreground: 0 0% 5%;
+  --accent: 289 95% 69%;       /* Magenta #D960FC */
+  --accent-foreground: 0 0% 5%;
+  --muted: 0 0% 12%;
+  --muted-foreground: 0 0% 65%;
   --destructive: 0 75% 60%;
   --destructive-foreground: 0 0% 98%;
-  --border: 210 15% 20%;
-  --input: 210 15% 12%;
-  --ring: 180 100% 60%;
+  
+  /* Borders and inputs with subtle contrast */
+  --border: 0 0% 15%;     /* Subtle gray borders */
+  --input: 0 0% 10%;      /* Input backgrounds */
+  --ring: 164 82% 51%;    /* Focus rings use primary teal */
   --radius: 0.75rem;
   
-  /* Professional vibrant accents */
-  --teal-accent: 180 100% 60%;
-  --magenta-accent: 320 100% 65%;
-  --electric-blue: 220 100% 70%;
-  --amber-accent: 45 100% 65%;
+  /* Professional vibrant accent palette */
+  --teal-accent: 164 82% 51%;    /* #2ED3B7 */
+  --electric-blue: 217 100% 62%; /* #3A7DFF */
+  --magenta-accent: 289 95% 69%; /* #D960FC */
+  --amber-accent: 38 95% 56%;    /* #F5A623 */
   --emerald-accent: 150 90% 55%;
   
-  /* Subtle glows for energy */
-  --primary-glow: 0 0 20px hsl(180 100% 60% / 0.3);
-  --accent-glow: 0 0 15px hsl(320 100% 65% / 0.25);
-  --border-glow: 0 0 10px hsl(180 100% 60% / 0.15);
+  /* Subtle energy glows - restrained for professionalism */
+  --primary-glow: 0 0 24px hsl(164 82% 51% / 0.25);
+  --accent-glow: 0 0 20px hsl(289 95% 69% / 0.2);
+  --blue-glow: 0 0 18px hsl(217 100% 62% / 0.22);
+  --amber-glow: 0 0 16px hsl(38 95% 56% / 0.18);
   
-  /* Animated gradient background */
+  /* Ambient background gradients - subtle and tasteful */
   --vibrant-gradient: 
-    radial-gradient(circle at 20% 80%, hsl(180 100% 60% / 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, hsl(320 100% 65% / 0.06) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, hsl(220 100% 70% / 0.04) 0%, transparent 50%);
+    radial-gradient(circle at 25% 75%, hsl(164 82% 51% / 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 75% 25%, hsl(289 95% 69% / 0.04) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, hsl(217 100% 62% / 0.03) 0%, transparent 50%);
+    
+  /* Time-based ambient lighting */
+  --ambient-pulse: 
+    radial-gradient(circle at 30% 70%, hsl(164 82% 51% / 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 70% 30%, hsl(289 95% 69% / 0.06) 0%, transparent 40%);
 }
 
-/* Vibrant Dark Theme Specific Styles */
+/* Vibrant Professional Dark Theme - Component Styles */
 [data-theme="vibrant-dark"] body {
   background: var(--vibrant-gradient), hsl(var(--background));
+  animation: ambient-pulse 8s ease-in-out infinite alternate;
 }
 
+/* Professional buttons with energy */
 [data-theme="vibrant-dark"] .btn-hero {
   background: linear-gradient(135deg, hsl(var(--teal-accent)), hsl(var(--electric-blue)));
   border: 1px solid hsl(var(--teal-accent));
+  color: hsl(var(--background));
+  font-weight: 600;
   box-shadow: var(--primary-glow), 0 4px 20px hsl(var(--background) / 0.5);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -566,29 +581,35 @@
 [data-theme="vibrant-dark"] .btn-hero:hover {
   transform: translateY(-1px);
   box-shadow: var(--primary-glow), 0 8px 30px hsl(var(--background) / 0.6);
+  filter: brightness(1.1);
 }
 
 [data-theme="vibrant-dark"] .btn-outline-hero {
   border: 2px solid hsl(var(--magenta-accent));
-  background: hsl(var(--background) / 0.8);
+  background: hsl(var(--card) / 0.8);
   backdrop-filter: blur(10px);
-  box-shadow: var(--accent-glow);
   color: hsl(var(--magenta-accent));
+  font-weight: 500;
+  box-shadow: var(--accent-glow);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 [data-theme="vibrant-dark"] .btn-outline-hero:hover {
   background: hsl(var(--magenta-accent));
   color: hsl(var(--background));
   transform: translateY(-1px);
+  box-shadow: var(--accent-glow), 0 6px 25px hsl(var(--magenta-accent) / 0.3);
 }
 
+/* Professional cards with subtle energy */
 [data-theme="vibrant-dark"] .portfolio-card {
   background: linear-gradient(135deg, 
     hsl(var(--card)) 0%, 
     hsl(var(--card) / 0.95) 100%);
   border: 1px solid hsl(var(--border));
-  box-shadow: var(--border-glow), 0 4px 20px hsl(var(--background) / 0.3);
+  box-shadow: 0 4px 20px hsl(var(--background) / 0.3);
   backdrop-filter: blur(20px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 [data-theme="vibrant-dark"] .portfolio-card:hover {
@@ -597,25 +618,85 @@
   box-shadow: var(--primary-glow), 0 8px 30px hsl(var(--background) / 0.4);
 }
 
+/* Glass morphism with professional restraint */
 [data-theme="vibrant-dark"] .glass {
   background: hsl(var(--card) / 0.7);
   border: 1px solid hsl(var(--border) / 0.5);
-  backdrop-filter: blur(20px) saturate(1.2);
-  box-shadow: var(--border-glow);
+  backdrop-filter: blur(20px) saturate(1.1);
+  box-shadow: 0 2px 15px hsl(var(--background) / 0.2);
+}
+
+/* Typography enhancements */
+[data-theme="vibrant-dark"] h1,
+[data-theme="vibrant-dark"] h2,
+[data-theme="vibrant-dark"] h3 {
+  color: hsl(var(--foreground));
+  font-weight: 700;
+  letter-spacing: -0.025em;
 }
 
 [data-theme="vibrant-dark"] .gradient-text {
-  background: linear-gradient(135deg, hsl(var(--teal-accent)), hsl(var(--magenta-accent)), hsl(var(--electric-blue)));
+  background: linear-gradient(135deg, 
+    hsl(var(--teal-accent)), 
+    hsl(var(--electric-blue)), 
+    hsl(var(--magenta-accent)));
   background-size: 200% 200%;
-  animation: gradient-shift 4s ease-in-out infinite;
+  animation: gradient-shift 6s ease-in-out infinite;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  font-weight: 700;
 }
 
+/* Navigation enhancements */
+[data-theme="vibrant-dark"] nav {
+  background: hsl(var(--card) / 0.8);
+  backdrop-filter: blur(20px) saturate(1.1);
+  border-bottom: 1px solid hsl(var(--border));
+}
+
+[data-theme="vibrant-dark"] .nav-link {
+  color: hsl(var(--foreground) / 0.8);
+  transition: all 0.2s ease;
+}
+
+[data-theme="vibrant-dark"] .nav-link:hover,
+[data-theme="vibrant-dark"] .nav-link.active {
+  color: hsl(var(--teal-accent));
+  text-shadow: 0 0 8px hsl(var(--teal-accent) / 0.3);
+}
+
+/* Interactive elements */
+[data-theme="vibrant-dark"] .interactive:hover {
+  border-color: hsl(var(--electric-blue));
+  box-shadow: var(--blue-glow);
+}
+
+[data-theme="vibrant-dark"] .highlight {
+  background: hsl(var(--amber-accent) / 0.1);
+  color: hsl(var(--amber-accent));
+  border: 1px solid hsl(var(--amber-accent) / 0.3);
+}
+
+/* Professional animations */
 @keyframes gradient-shift {
   0%, 100% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
+}
+
+@keyframes ambient-pulse {
+  0% { 
+    background: var(--vibrant-gradient), hsl(var(--background));
+  }
+  100% { 
+    background: var(--ambient-pulse), hsl(var(--background));
+  }
+}
+
+/* Subtle glow animation for interactive elements */
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: var(--primary-glow); }
+  50% { box-shadow: var(--primary-glow), var(--accent-glow); }
 }
 
 @layer base {
