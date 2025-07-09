@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 
-type Theme = 'purple' | 'cyberpunk' | 'retro' | 'glassmorphism' | 'neon-grid' | 'synthwave' | 'glass-emerald' | 'glass-rose' | 'glass-amber' | 'glass-violet' | 'glass-cyan' | 'glass-dream' | 'sunset-blaze' | 'ocean-depth' | 'neon-pulse' | 'emerald-glow' | 'vibrant-dark' | 'glassmorphism-pro';
+type Theme = 'purple' | 'cyberpunk' | 'glassmorphism' | 'glass-dream' | 'ocean-depth' | 'vibrant-dark' | 'glassmorphism-pro';
 
 interface ThemeContextType {
   theme: Theme;
@@ -25,15 +25,9 @@ export const themes = [
   },
   {
     id: 'cyberpunk' as Theme,
-    name: 'Cyberpunk 2024',
+    name: 'Cyberpunk',
     color: 'hsl(180, 100%, 50%)',
     description: 'Futuristic hacker aesthetic with neon grids'
-  },
-  {
-    id: 'retro' as Theme,
-    name: '80s Retro Wave',
-    color: 'hsl(320, 100%, 60%)',
-    description: 'Vintage 80s with scanlines and VHS effects'
   },
   {
     id: 'glassmorphism' as Theme,
@@ -42,76 +36,16 @@ export const themes = [
     description: 'Frosted glass with blur effects'
   },
   {
-    id: 'neon-grid' as Theme,
-    name: 'Neon Grid',
-    color: 'hsl(290, 100%, 70%)',
-    description: 'Tron-like grid system with electric colors'
-  },
-  {
-    id: 'synthwave' as Theme,
-    name: 'Synthwave',
-    color: 'hsl(340, 100%, 60%)',
-    description: 'Retro futurism with gradient mountains'
-  },
-  {
-    id: 'glass-emerald' as Theme,
-    name: 'Glass Emerald',
-    color: 'hsl(160, 100%, 60%)',
-    description: 'Frosted emerald glass with nature vibes'
-  },
-  {
-    id: 'glass-rose' as Theme,
-    name: 'Glass Rose',
-    color: 'hsl(350, 100%, 70%)',
-    description: 'Romantic rose-tinted glass effects'
-  },
-  {
-    id: 'glass-amber' as Theme,
-    name: 'Glass Amber',
-    color: 'hsl(45, 100%, 65%)',
-    description: 'Warm amber glass with golden highlights'
-  },
-  {
-    id: 'glass-violet' as Theme,
-    name: 'Glass Violet',
-    color: 'hsl(270, 100%, 70%)',
-    description: 'Deep violet glass with mystical feel'
-  },
-  {
-    id: 'glass-cyan' as Theme,
-    name: 'Glass Cyan',
-    color: 'hsl(190, 100%, 65%)',
-    description: 'Cool cyan glass with arctic vibes'
-  },
-  {
     id: 'glass-dream' as Theme,
     name: 'Purple Glass Dream',
     color: 'hsl(262, 80%, 65%)',
     description: 'Elegant purple with dreamy glass effects'
   },
   {
-    id: 'sunset-blaze' as Theme,
-    name: 'Sunset Blaze',
-    color: 'hsl(15, 100%, 65%)',
-    description: 'Warm orange and red sunset gradients'
-  },
-  {
     id: 'ocean-depth' as Theme,
     name: 'Ocean Depth',
     color: 'hsl(205, 100%, 45%)',
     description: 'Deep blue ocean with aquatic vibes'
-  },
-  {
-    id: 'neon-pulse' as Theme,
-    name: 'Neon Pulse',
-    color: 'hsl(300, 100%, 65%)',
-    description: 'Electric neon with pulsing animations'
-  },
-  {
-    id: 'emerald-glow' as Theme,
-    name: 'Emerald Glow',
-    color: 'hsl(150, 100%, 50%)',
-    description: 'Bright emerald with glowing effects'
   },
   {
     id: 'vibrant-dark' as Theme,
