@@ -680,7 +680,188 @@
   border: 1px solid hsl(var(--info) / 0.3);
 }
 
-/* Professional animations */
+/* Glassmorphism Professional Theme */
+[data-theme="glassmorphism-pro"] {
+  /* Dark/Light Mode Support - Dark Base */
+  --background: 210 25% 8%;          /* Deep gray foundation */
+  --foreground: 210 40% 90%;         /* High-contrast white/off-white */
+  --card: 210 20% 12%;               /* Subtle gray for cards */
+  --card-foreground: 210 40% 92%;    /* Near-white for card text */
+  --popover: 210 20% 12%;
+  --popover-foreground: 210 40% 92%;
+  
+  /* Primary Colors: Deep blue, indigo, purple */
+  --primary: 225 70% 60%;            /* Deep indigo main accent */
+  --primary-foreground: 210 40% 98%;
+  --primary-glow: 240 80% 70%;       /* Violet glow */
+  
+  /* Secondary/Accent Colors: Cyan, teal, pink */
+  --secondary: 210 15% 20%;          /* Soft background */
+  --secondary-foreground: 210 40% 92%;
+  --accent: 180 80% 55%;             /* Cyan/teal for highlights */
+  --accent-foreground: 210 25% 8%;
+  --accent-pink: 320 80% 65%;        /* Pink for interactive elements */
+  
+  /* Success/Status Colors */
+  --success: 120 60% 50%;            /* Soft green for success */
+  --warning: 45 90% 60%;             /* Soft yellow for warnings */
+  --muted: 210 15% 15%;              /* Muted backgrounds */
+  --muted-foreground: 210 20% 65%;   /* Muted gray text */
+  
+  /* Borders & Interactive */
+  --border: 210 20% 18%;             /* Minimal rounded borders */
+  --input: 210 20% 15%;
+  --ring: 225 70% 60%;               /* Focus ring */
+  --destructive: 0 75% 60%;
+  --destructive-foreground: 210 40% 98%;
+  --radius: 0.75rem;                 /* Modern rounded look */
+  
+  /* Glassmorphism Variables */
+  --glass-bg: 210 20% 12% / 0.6;     /* Semi-transparent white/black with blur */
+  --glass-border: 210 30% 25% / 0.3;
+  --glass-blur: blur(20px) saturate(1.3);
+  --glass-shadow: 0 8px 32px 0 hsl(210 25% 8% / 0.4);
+  
+  /* Gradients: Blue to violet, teal to purple */
+  --gradient-primary: linear-gradient(135deg, 
+    hsl(225 70% 60%) 0%, 
+    hsl(260 80% 65%) 50%, 
+    hsl(180 80% 55%) 100%);
+  --gradient-subtle: linear-gradient(180deg, 
+    hsl(var(--background)) 0%, 
+    hsl(210 20% 10%) 100%);
+  
+  /* Shadows: Soft, diffused */
+  --shadow-soft: 0 4px 20px hsl(210 25% 8% / 0.2);
+  --shadow-glow: 0 0 25px hsl(225 70% 60% / 0.4);
+}
+
+/* Glassmorphism Professional - Component Styles */
+[data-theme="glassmorphism-pro"] body {
+  background: var(--gradient-subtle);
+  animation: ambient-glow 12s ease-in-out infinite alternate;
+}
+
+/* Glassmorphism Cards & Overlays */
+[data-theme="glassmorphism-pro"] .portfolio-card,
+[data-theme="glassmorphism-pro"] .glass {
+  background: hsl(var(--glass-bg));
+  border: 1px solid hsl(var(--glass-border));
+  backdrop-filter: var(--glass-blur);
+  box-shadow: var(--glass-shadow);
+  border-radius: var(--radius);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-theme="glassmorphism-pro"] .portfolio-card:hover {
+  border-color: hsl(var(--accent));
+  transform: translateY(-2px);
+  box-shadow: var(--glass-shadow), var(--shadow-glow);
+}
+
+/* Primary Buttons with Gradients */
+[data-theme="glassmorphism-pro"] .btn-hero {
+  background: var(--gradient-primary);
+  border: 1px solid hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  font-weight: 600;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-theme="glassmorphism-pro"] .btn-hero:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-glow), var(--shadow-soft);
+  filter: brightness(1.1);
+}
+
+/* Outline Buttons with Glassmorphism */
+[data-theme="glassmorphism-pro"] .btn-outline-hero {
+  background: hsl(var(--glass-bg));
+  border: 2px solid hsl(var(--accent-pink));
+  backdrop-filter: var(--glass-blur);
+  color: hsl(var(--accent-pink));
+  font-weight: 500;
+  border-radius: var(--radius);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-theme="glassmorphism-pro"] .btn-outline-hero:hover {
+  background: hsl(var(--accent-pink));
+  color: hsl(var(--accent-foreground));
+  transform: translateY(-1px);
+  box-shadow: 0 0 20px hsl(var(--accent-pink) / 0.4);
+}
+
+/* Navigation with Glassmorphism */
+[data-theme="glassmorphism-pro"] nav {
+  background: hsl(var(--glass-bg));
+  backdrop-filter: var(--glass-blur);
+  border-bottom: 1px solid hsl(var(--glass-border));
+  box-shadow: var(--shadow-soft);
+}
+
+[data-theme="glassmorphism-pro"] .nav-link {
+  color: hsl(var(--muted-foreground));
+  transition: all 0.2s ease;
+}
+
+[data-theme="glassmorphism-pro"] .nav-link:hover,
+[data-theme="glassmorphism-pro"] .nav-link.active {
+  color: hsl(var(--accent));
+  text-shadow: 0 0 8px hsl(var(--accent) / 0.3);
+}
+
+/* Typography with High Contrast */
+[data-theme="glassmorphism-pro"] h1,
+[data-theme="glassmorphism-pro"] h2,
+[data-theme="glassmorphism-pro"] h3 {
+  color: hsl(var(--foreground));
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+[data-theme="glassmorphism-pro"] .gradient-text {
+  background: var(--gradient-primary);
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: 700;
+  animation: gradient-shift 3s ease-in-out infinite;
+}
+
+/* Success/Status Indicators */
+[data-theme="glassmorphism-pro"] .success {
+  background: hsl(var(--success) / 0.1);
+  color: hsl(var(--success));
+  border: 1px solid hsl(var(--success) / 0.3);
+  border-radius: var(--radius);
+}
+
+[data-theme="glassmorphism-pro"] .warning {
+  background: hsl(var(--warning) / 0.1);
+  color: hsl(var(--warning));
+  border: 1px solid hsl(var(--warning) / 0.3);
+  border-radius: var(--radius);
+}
+
+/* Interactive Elements with Accessibility */
+[data-theme="glassmorphism-pro"] .interactive {
+  transition: all 0.2s ease;
+}
+
+[data-theme="glassmorphism-pro"] .interactive:hover {
+  border-color: hsl(var(--accent));
+  box-shadow: var(--shadow-glow);
+}
+
+[data-theme="glassmorphism-pro"] .interactive:focus {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
 @keyframes gradient-shift {
   0%, 100% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }

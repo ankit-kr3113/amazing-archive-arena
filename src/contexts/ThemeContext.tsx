@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 
-type Theme = 'purple' | 'cyberpunk' | 'retro' | 'glassmorphism' | 'neon-grid' | 'synthwave' | 'glass-emerald' | 'glass-rose' | 'glass-amber' | 'glass-violet' | 'glass-cyan' | 'glass-dream' | 'sunset-blaze' | 'ocean-depth' | 'neon-pulse' | 'emerald-glow' | 'vibrant-dark';
+type Theme = 'purple' | 'cyberpunk' | 'retro' | 'glassmorphism' | 'neon-grid' | 'synthwave' | 'glass-emerald' | 'glass-rose' | 'glass-amber' | 'glass-violet' | 'glass-cyan' | 'glass-dream' | 'sunset-blaze' | 'ocean-depth' | 'neon-pulse' | 'emerald-glow' | 'vibrant-dark' | 'glassmorphism-pro';
 
 interface ThemeContextType {
   theme: Theme;
@@ -118,6 +118,12 @@ export const themes = [
     name: 'Vibrant Professional',
     color: 'hsl(180, 100%, 60%)',
     description: 'Modern dark theme with energetic accents'
+  },
+  {
+    id: 'glassmorphism-pro' as Theme,
+    name: 'Glassmorphism Professional',
+    color: 'hsl(225, 70%, 65%)',
+    description: 'Glassmorphism with deep blue accents and blur effects'
   }
 ];
 
