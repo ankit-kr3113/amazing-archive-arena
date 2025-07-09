@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 
-type Theme = 'purple' | 'cyberpunk' | 'glassmorphism' | 'glass-dream' | 'ocean-depth' | 'vibrant-dark' | 'glassmorphism-pro';
+type Theme = 'purple' | 'cyberpunk' | 'glassmorphism' | 'glass-dream' | 'ocean-depth';
 
 interface ThemeContextType {
   theme: Theme;
@@ -46,18 +46,6 @@ export const themes = [
     name: 'Ocean Depth',
     color: 'hsl(205, 100%, 45%)',
     description: 'Deep blue ocean with aquatic vibes'
-  },
-  {
-    id: 'vibrant-dark' as Theme,
-    name: 'Vibrant Professional',
-    color: 'hsl(180, 100%, 60%)',
-    description: 'Modern dark theme with energetic accents'
-  },
-  {
-    id: 'glassmorphism-pro' as Theme,
-    name: 'Glassmorphism Professional',
-    color: 'hsl(225, 70%, 65%)',
-    description: 'Glassmorphism with deep blue accents and blur effects'
   }
 ];
 
