@@ -681,7 +681,7 @@
 }
 
   /* Glassmorphism Professional Theme - Portfolio Match */
-  [data-theme="glassmorphism-professional"] {
+  [data-theme="glassmorphism-pro"] {
     /* Primary colors - Deep navy/purple to match portfolio */
     --primary: 250 60% 65%;
     --primary-glow: 260 70% 75%;
