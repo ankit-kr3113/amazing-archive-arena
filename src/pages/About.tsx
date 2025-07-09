@@ -9,11 +9,12 @@ import heroPortrait from "@/assets/hero-portrait.jpg";
 
 const About = () => {
   const skills = [
-    { name: "Web Development", level: 90 },
+    { name: "Web Development", level: 80 },
     { name: "Data Structures", level: 85 },
-    { name: "Algorithms", level: 80 },
-    { name: "Machine Learning", level: 75 },
-    { name: "Problem Solving", level: 95 },
+    { name: "Algorithms", level: 75 },
+    { name: "Frontend Development", level: 85 },
+    { name: "Backend Development", level: 80 },
+    { name: "Database Design", level: 75 },
   ];
 
   return (
@@ -40,12 +41,12 @@ const About = () => {
                 <div className="relative">
                   <img
                     src={heroPortrait}
-                    alt="John Doe"
+                    alt="Yuvraj Mehta"
                     className="w-full h-80 object-cover rounded-lg mb-6"
                   />
                   
                   <div className="absolute top-4 left-4 bg-primary/90 text-primary-foreground px-3 py-1 rounded-full text-sm font-medium">
-                    ⭐ Top 20% - LeetCode Global
+                    ⭐ Top 27.7% - LeetCode Global
                   </div>
                 </div>
 
@@ -54,15 +55,15 @@ const About = () => {
                 </h2>
                 
                 <p className="text-muted-foreground mb-6">
-                  Computer Science student at <span className="text-primary font-semibold">Stanford University</span> passionate about full stack development with a strong
+                  Computer Science student at <span className="text-primary font-semibold">NIT Patna</span> passionate about full stack development with a strong
                   foundation in Data Structures & Algorithms. I approach technical challenges analytically and
-                  continually expand my skills in AI and modern web technologies.
+                  continually expand my skills in GenAI and modern web technologies.
                 </p>
 
                 <p className="text-muted-foreground mb-6">
                   As a <span className="text-primary font-semibold">Robotics Club member</span>, I've organized workshops and led teams building combat and soccer
                   bots. Outside coding, I enjoy competitive programming and sports, having won Bronze in 50m
-                  Hurdles at Stanford Intramurals.
+                  Hurdles at NIT Patna Intramurals.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4">
@@ -107,7 +108,7 @@ const About = () => {
                     </div>
                     <div className="flex items-center space-x-2">
                       <span className="text-yellow-500">⭐</span>
-                      <span className="text-sm">300+ problems solved</span>
+                      <span className="text-sm">333+ problems solved</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <span className="text-yellow-500">⭐</span>
@@ -128,7 +129,7 @@ const About = () => {
                   <div className="text-sm text-muted-foreground">Coding Hours</div>
                 </Card>
                 <Card className="portfolio-card text-center">
-                  <div className="text-3xl font-bold gradient-text">15+</div>
+                  <div className="text-3xl font-bold gradient-text">10+</div>
                   <div className="text-sm text-muted-foreground">Projects Built</div>
                 </Card>
               </div>

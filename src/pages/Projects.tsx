@@ -15,69 +15,47 @@ const Projects = () => {
   const projects = [
     {
       title: "BookHive",
-      description: "Full-stack library management system with user/admin roles, book management, and borrowing features.",
-      image: "/placeholder.svg",
+      description: "BookNest is a full-stack library management system with distinct user and admin roles. It features book and PYQ management, a borrowing system, OTP-verified authentication, and separate dashboards. Built with React, Node.js, Express.js, and MongoDB.",
+      image: "/projectImages/bookhive.png",
       category: "Full Stack",
       featured: true,
-      tags: ["React", "Node.js", "MongoDB", "Express"],
-      demo: "https://example.com",
-      github: "https://github.com",
-      status: "Completed"
+      tags: ["React", "Redux Toolkit", "Node.js", "Express", "MongoDB", "JWT"],
+      demo: "https://bookhive-manager.vercel.app",
+      github: "https://github.com/yuvraj-mehta/Byteverse_NandiNinjas",
+      status: "Live"
     },
     {
       title: "Portfolio Website",
-      description: "Responsive developer portfolio with smooth animations, dynamic navigation, and modern design.",
-      image: "/placeholder.svg",
+      description: "Personal developer portfolio showcasing projects and skills. Designed and built a responsive single-page portfolio with smooth animations and dynamic navigation. Integrated a contact form using EmailJS and added a downloadable resume feature.",
+      image: "/projectImages/portfolio.png",
       category: "Frontend",
       featured: true,
-      tags: ["React", "TypeScript", "Tailwind", "Vite"],
-      demo: "https://example.com",
-      github: "https://github.com",
+      tags: ["React", "Tailwind CSS", "Framer Motion", "Vite"],
+      demo: "https://yuvrajmehta.codes",
+      github: "https://github.com/yuvraj-mehta/My-Portfolio",
       status: "Live"
     },
     {
       title: "EcoGuardian",
-      description: "Environmental community platform for project collaboration, issue reporting, and environmental protection.",
-      image: "/placeholder.svg",
+      description: "An online community platform empowering individuals to collaborate on environmental projects, report cleanliness issues, access educational resources, and drive positive change for a cleaner, greener future. 🌍",
+      image: "/projectImages/ecoGuardian.png",
       category: "Full Stack",
       featured: true,
-      tags: ["HTML5", "CSS3", "JavaScript", "Express"],
-      demo: "https://example.com",
-      github: "https://github.com",
-      status: "Completed"
+      tags: ["HTML", "CSS", "JavaScript", "Node.js", "Express", "MongoDB"],
+      demo: "https://yuvraj-mehta.github.io/EcoGuardian_prototype/",
+      github: "https://github.com/yuvraj-mehta/EcoGuardian_prototype",
+      status: "Live"
     },
     {
-      title: "AI Chat Assistant",
-      description: "Intelligent chatbot with natural language processing and machine learning capabilities.",
-      image: "/placeholder.svg",
-      category: "AI & ML",
-      featured: false,
-      tags: ["Python", "TensorFlow", "NLP", "React"],
-      demo: "https://example.com",
-      github: "https://github.com",
-      status: "In Progress"
-    },
-    {
-      title: "E-Commerce Dashboard",
-      description: "Modern admin dashboard for e-commerce management with analytics and real-time data.",
-      image: "/placeholder.svg",
+      title: "Stickify",
+      description: "This is a simple notes application built with React and Vite. It allows users to create, update, delete, and manage notes with different colors. The application uses Appwrite as the backend service for managing notes.",
+      image: "/projectImages/stickify.png",
       category: "Frontend",
       featured: false,
-      tags: ["Next.js", "TypeScript", "Chart.js", "Tailwind"],
-      demo: "https://example.com",
-      github: "https://github.com",
-      status: "Completed"
-    },
-    {
-      title: "Task Management API",
-      description: "RESTful API for task management with authentication, CRUD operations, and real-time updates.",
-      image: "/placeholder.svg",
-      category: "Full Stack",
-      featured: false,
-      tags: ["Node.js", "Express", "PostgreSQL", "JWT"],
-      demo: "",
-      github: "https://github.com",
-      status: "Completed"
+      tags: ["React", "Vite", "Tailwind CSS", "Appwrite"],
+      demo: "https://stickify-git-master-yuvraj-mehtas-projects.vercel.app/",
+      github: "https://github.com/yuvraj-mehta/Stickify",
+      status: "Live"
     }
   ];
 
@@ -106,7 +84,7 @@ const Projects = () => {
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Explore my latest projects showcasing my skills in full stack development,
-              algorithm implementation, and generative AI applications.
+              problem solving, and modern web technologies.
             </p>
           </div>
 
@@ -168,15 +146,19 @@ const Projects = () => {
                       </div>
 
                       <div className="flex gap-3 pt-2">
-                        <Button size="sm" className="btn-hero flex-1">
-                          <Github className="w-4 h-4 mr-2" />
-                          Code
-                        </Button>
-                        {project.demo && (
-                          <Button size="sm" variant="outline" className="btn-outline-hero flex-1">
-                            <ExternalLink className="w-4 h-4 mr-2" />
-                            Live Demo
+                        <a href={project.github} target="_blank" rel="noopener noreferrer">
+                          <Button size="sm" className="btn-hero flex-1">
+                            <Github className="w-4 h-4 mr-2" />
+                            Code
                           </Button>
+                        </a>
+                        {project.demo && (
+                          <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                            <Button size="sm" variant="outline" className="btn-outline-hero flex-1">
+                              <ExternalLink className="w-4 h-4 mr-2" />
+                              Live Demo
+                            </Button>
+                          </a>
                         )}
                       </div>
                     </div>
@@ -243,15 +225,19 @@ const Projects = () => {
                     </div>
 
                     <div className="flex gap-3 pt-2">
-                      <Button size="sm" className="btn-hero flex-1">
-                        <Github className="w-4 h-4 mr-2" />
-                        Code
-                      </Button>
-                      {project.demo && (
-                        <Button size="sm" variant="outline" className="btn-outline-hero flex-1">
-                          <ExternalLink className="w-4 h-4 mr-2" />
-                          Demo
+                      <a href={project.github} target="_blank" rel="noopener noreferrer">
+                        <Button size="sm" className="btn-hero flex-1">
+                          <Github className="w-4 h-4 mr-2" />
+                          Code
                         </Button>
+                      </a>
+                      {project.demo && (
+                        <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                          <Button size="sm" variant="outline" className="btn-outline-hero flex-1">
+                            <ExternalLink className="w-4 h-4 mr-2" />
+                            Demo
+                          </Button>
+                        </a>
                       )}
                     </div>
                   </div>
@@ -262,10 +248,12 @@ const Projects = () => {
 
           {/* View More Projects */}
           <div className="text-center mt-16">
-            <Button className="btn-hero">
-              <Github className="w-5 h-5 mr-2" />
-              View More Projects on GitHub
-            </Button>
+            <a href="https://github.com/yuvraj-mehta" target="_blank" rel="noopener noreferrer">
+              <Button className="btn-hero">
+                <Github className="w-5 h-5 mr-2" />
+                View More Projects on GitHub
+              </Button>
+            </a>
           </div>
         </div>
       </div>

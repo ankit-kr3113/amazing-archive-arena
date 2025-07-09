@@ -23,16 +23,16 @@ const Index = () => {
                   Full Stack Developer
                 </div>
                 
-                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight">
+                 <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight">
                   Hello, I'm{" "}
-                  <span className="gradient-text">John Doe</span>
+                  <span className="gradient-text">Yuvraj Mehta</span>
                 </h1>
                 
                 <p className="text-xl text-muted-foreground max-w-lg">
-                  Computer Science student at <span className="text-primary font-semibold">Stanford University</span> passionate about building 
-                  full stack applications with a focus on{" "}
+                  B.Tech CS student at <span className="text-primary font-semibold">NIT Patna</span> passionate about building 
+                  <span className="text-primary font-semibold"> full stack applications</span> with a focus on{" "}
                   <span className="text-primary font-semibold">user-friendly interfaces</span>. 
-                  Skilled in MERN Stack.
+                  Skilled in <span className="text-primary font-semibold">MERN Stack</span>.
                 </p>
               </div>
 
@@ -49,9 +49,9 @@ const Index = () => {
               </div>
 
               {/* Social Links */}
-              <div className="flex space-x-4">
+               <div className="flex space-x-4">
                 <a
-                  href="https://github.com"
+                  href="https://github.com/yuvraj-mehta"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 rounded-lg bg-muted/50 border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors"
@@ -59,7 +59,7 @@ const Index = () => {
                   <Github className="w-6 h-6" />
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/yuvraj-mehta-a0274528a/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 rounded-lg bg-muted/50 border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors"
@@ -67,7 +67,7 @@ const Index = () => {
                   <Linkedin className="w-6 h-6" />
                 </a>
                 <a
-                  href="mailto:john@example.com"
+                  href="mailto:yuvraj.mehta532@gmail.com"
                   className="w-12 h-12 rounded-lg bg-muted/50 border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors"
                 >
                   <Mail className="w-6 h-6" />
@@ -85,7 +85,7 @@ const Index = () => {
                 <div className="relative z-10 mx-auto w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl">
                   <img
                     src={heroPortrait}
-                    alt="John Doe"
+                    alt="Yuvraj Mehta"
                     className="w-full h-full object-cover"
                   />
                 </div>

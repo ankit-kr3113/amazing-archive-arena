@@ -17,7 +17,7 @@ const Skills = () => {
 
   const skillsData = {
     "Web Development": {
-      subtitle: "Frontend",
+      subtitle: "Frontend & Backend",
       skills: [
         { name: "React", icon: "⚛️", category: "Frontend" },
         { name: "TypeScript", icon: "🟦", category: "Frontend" },
@@ -27,28 +27,28 @@ const Skills = () => {
         { name: "Tailwind CSS", icon: "🌊", category: "Frontend" },
         { name: "Next.js", icon: "⚫", category: "Frontend" },
         { name: "Redux", icon: "🟣", category: "Frontend" },
-        { name: "Vite", icon: "⚡", category: "Frontend" }
+        { name: "Vite", icon: "⚡", category: "Frontend" },
+        { name: "Node.js", icon: "🟢", category: "Backend" },
+        { name: "Express.js", icon: "🖤", category: "Backend" },
+        { name: "RESTful APIs", icon: "📡", category: "Backend" }
       ]
     },
     "Database": {
-      subtitle: "Backend",
+      subtitle: "Data Management",
       skills: [
-        { name: "Node.js", icon: "🟢", category: "Backend" },
-        { name: "RESTful APIs", icon: "📡", category: "Backend" },
-        { name: "Express.js", icon: "🖤", category: "Backend" },
-        { name: "MongoDB", icon: "🟢", category: "Backend" },
-        { name: "PostgreSQL", icon: "🐘", category: "Backend" },
-        { name: "Redis", icon: "🔴", category: "Backend" }
+        { name: "MongoDB", icon: "🟢", category: "Database" },
+        { name: "SQL", icon: "💾", category: "Database" },
+        { name: "Database Design", icon: "🏗️", category: "Database" }
       ]
     },
     "Languages": {
       subtitle: "Programming",
       skills: [
-        { name: "Python", icon: "🐍", category: "Programming" },
-        { name: "Java", icon: "☕", category: "Programming" },
+        { name: "JavaScript", icon: "🟨", category: "Programming" },
+        { name: "TypeScript", icon: "🟦", category: "Programming" },
         { name: "C++", icon: "⚙️", category: "Programming" },
-        { name: "Go", icon: "🔷", category: "Programming" },
-        { name: "Rust", icon: "🦀", category: "Programming" }
+        { name: "Java", icon: "☕", category: "Programming" },
+        { name: "Python", icon: "🐍", category: "Programming" }
       ]
     },
     "Tools": {
@@ -56,9 +56,7 @@ const Skills = () => {
       skills: [
         { name: "Git", icon: "📚", category: "Tools" },
         { name: "GitHub", icon: "🐙", category: "Tools" },
-        { name: "Docker", icon: "🐳", category: "Tools" },
         { name: "VS Code", icon: "💙", category: "Tools" },
-        { name: "Figma", icon: "🎨", category: "Tools" },
         { name: "Postman", icon: "🧡", category: "Tools" }
       ]
     }

@@ -31,7 +31,7 @@ const Education = () => {
 
   const learningStats = [
     { title: "Online Courses Completed", value: "12+", icon: "📚" },
-    { title: "Coding Challenges Solved", value: "300+", icon: "⚡" },
+    { title: "Coding Challenges Solved", value: "333+", icon: "⚡" },
     { title: "Technical Books Read", value: "8+", icon: "📖" },
     { title: "Tech Communities Joined", value: "5+", icon: "👥" }
   ];
@@ -81,10 +81,10 @@ const Education = () => {
                 </div>
 
                 <div className="mb-4">
-                  <h3 className="text-xl font-bold">Stanford University</h3>
+                  <h3 className="text-xl font-bold">National Institute of Technology, Patna</h3>
                   <p className="text-primary font-semibold">B.Tech in Computer Science and Engineering</p>
                   <p className="text-sm text-muted-foreground flex items-center gap-2 mt-1">
-                    📍 Stanford, California
+                    📍 Patna, Bihar
                   </p>
                 </div>
 
@@ -115,7 +115,7 @@ const Education = () => {
                       Achievements
                     </h4>
                     <ul className="space-y-2">
-                      {["Maintaining CGPA of 7.50/10", "Merit List Recognition", "Technical Workshop Facilitation", "Competitive Programming Participant"].map((achievement, idx) => (
+                      {["Maintaining CGPA of 7.69/10", "Merit List Recognition", "Technical Workshop Facilitation", "Competitive Programming Participant"].map((achievement, idx) => (
                         <li key={idx} className="text-sm text-muted-foreground flex items-center">
                           <span className="text-yellow-500 mr-2">⭐</span>
                           {achievement}
@@ -163,10 +163,10 @@ const Education = () => {
                 </div>
 
                 <div className="mb-4">
-                  <h3 className="text-xl font-bold">Central High School</h3>
+                  <h3 className="text-xl font-bold">Pragya Bharti Public School, Gaya</h3>
                   <p className="text-primary font-semibold">Class XII (CBSE)</p>
                   <p className="text-sm text-muted-foreground flex items-center gap-2 mt-1">
-                    📍 California
+                    📍 Gaya, Bihar
                   </p>
                 </div>
 
@@ -215,10 +215,10 @@ const Education = () => {
                 </div>
 
                 <div className="mb-4">
-                  <h3 className="text-xl font-bold">Central High School</h3>
+                  <h3 className="text-xl font-bold">Pragya Bharti Public School, Gaya</h3>
                   <p className="text-primary font-semibold">Class X (CBSE)</p>
                   <p className="text-sm text-muted-foreground flex items-center gap-2 mt-1">
-                    📍 California
+                    📍 Gaya, Bihar
                   </p>
                 </div>
 
@@ -229,7 +229,7 @@ const Education = () => {
                       Key Courses
                     </h4>
                     <ul className="space-y-2">
-                      {["Science", "Mathematics", "Social Studies", "English"].map((course, idx) => (
+                      {["Science", "Mathematics", "Social Studies", "English", "Hindi"].map((course, idx) => (
                         <li key={idx} className="text-sm text-muted-foreground flex items-center">
                           <span className="text-primary mr-2">•</span>
                           {course}
@@ -244,7 +244,7 @@ const Education = () => {
                       Achievements
                     </h4>
                     <ul className="space-y-2">
-                      {["Scored 90% in CBSE Class 10", "Academic Excellence Award", "Science Exhibition", "Sports Competitions"].map((achievement, idx) => (
+                      {["Scored 90% in CBSE Class 10", "Academic Excellence Award"].map((achievement, idx) => (
                         <li key={idx} className="text-sm text-muted-foreground flex items-center">
                           <span className="text-yellow-500 mr-2">⭐</span>
                           {achievement}

@@ -12,34 +12,34 @@ const Contact = () => {
     {
       name: "GitHub",
       icon: Github,
-      href: "https://github.com",
+      href: "https://github.com/yuvraj-mehta",
       description: "Check out my code"
     },
     {
       name: "LinkedIn", 
       icon: Linkedin,
-      href: "https://linkedin.com",
+      href: "https://www.linkedin.com/in/yuvraj-mehta-a0274528a/",
       description: "Let's connect professionally"
     },
     {
-      name: "Twitter",
-      icon: () => <span className="text-lg">𝕏</span>,
-      href: "https://twitter.com",
-      description: "Follow for tech updates"
+      name: "Instagram",
+      icon: () => <span className="text-lg">📷</span>,
+      href: "https://www.instagram.com/yuvraj.mehta4261/",
+      description: "Follow for updates"
     },
     {
       name: "Email",
       icon: Mail,
-      href: "mailto:john@example.com",
+      href: "mailto:yuvraj.mehta532@gmail.com",
       description: "Send me a message"
     }
   ];
 
   const quickLinks = [
-    { name: "Resume", href: "#", icon: "📄" },
-    { name: "LeetCode", href: "https://leetcode.com", icon: "⚡" },
-    { name: "GeeksforGeeks", href: "https://geeksforgeeks.org", icon: "🟢" },
-    { name: "CodeChef", href: "https://codechef.com", icon: "👨‍🍳" },
+    { name: "Resume", href: "/Yuvraj_Resume_v2_1 (1).pdf", icon: "📄" },
+    { name: "LeetCode", href: "https://leetcode.com/u/mythical-UV/", icon: "⚡" },
+    { name: "GeeksforGeeks", href: "https://www.geeksforgeeks.org/user/yuvrajmevbrx/", icon: "🟢" },
+    { name: "CodeChef", href: "https://www.codechef.com/users/quick_unity_53", icon: "👨‍🍳" },
     { name: "Projects", href: "/projects", icon: "🚀" }
   ];
 
@@ -81,7 +81,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="font-semibold">Email</h4>
-                      <p className="text-muted-foreground text-sm">john@example.com</p>
+                      <p className="text-muted-foreground text-sm">yuvraj.mehta532@gmail.com</p>
                     </div>
                   </div>
 
@@ -91,7 +91,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="font-semibold">Phone</h4>
-                      <p className="text-muted-foreground text-sm">+1-555-123-4567</p>
+                      <p className="text-muted-foreground text-sm">+91-9334083113</p>
                     </div>
                   </div>
 
@@ -101,7 +101,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="font-semibold">Location</h4>
-                      <p className="text-muted-foreground text-sm">San Francisco, CA</p>
+                      <p className="text-muted-foreground text-sm">Gaya, Bihar, India</p>
                     </div>
                   </div>
                 </div>

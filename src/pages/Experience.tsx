@@ -7,12 +7,12 @@ const Experience = () => {
   const experiences = [
     {
       title: "Technical Member",
-      company: "Robotics Club, Stanford University",
-      location: "Stanford, CA",
+      company: "Robotics Club, NIT Patna",
+      location: "NIT Patna",
       period: "December 2023 - Present",
       type: "Technical",
       status: "Currently Active",
-      description: "Organized and facilitated 3+ workshops on designing and building robotic bots. Led a team of 4 to build a combat-ready battle bot, achieving 4th place among 15+ teams at Stanford's tech fest. Directed a team of 3 in designing and developing a soccer bot for the annual tech fest, enhancing hands-on robotics and teamwork skills.",
+      description: "Organized and facilitated 3+ workshops on designing and building robotic bots. Led a team of 4 to build a combat-ready battle bot, achieving 4th place among 15+ teams at NIT Patna's tech fest. Directed a team of 3 in designing and developing a soccer bot for the annual tech fest, enhancing hands-on robotics and teamwork skills.",
       highlights: [
         "4th place in tech fest",
         "3+ workshops organized",
@@ -23,10 +23,10 @@ const Experience = () => {
     {
       title: "Team Leader",
       company: "Hackathons (including Smart India Hackathon)",
-      location: "Stanford & Remote",
+      location: "NIT Patna & Remote",
       period: "2023",
       type: "Leadership",
-      description: "Led teams in 3 major hackathons, including the prestigious Smart India Hackathon. Guided my team to qualify at the internal Stanford hackathon and advance to the national level. Oversaw all phases from ideation to development and presentation, ensuring effective collaboration and timely delivery of innovative solutions.",
+      description: "Led teams in 3 major hackathons, including the prestigious Smart India Hackathon. Guided my team to qualify at the internal NIT Patna hackathon and advance to the national level. Oversaw all phases from ideation to development and presentation, ensuring effective collaboration and timely delivery of innovative solutions.",
       highlights: [
         "National level qualification",
         "3 major hackathons",
@@ -41,10 +41,10 @@ const Experience = () => {
       title: "Winner - Model United Nations",
       category: "competition",
       year: "2023",
-      description: "Represented the Republic of Poland at Stanford's Model United Nations. Earned the Best Delegate award for exceptional debate skills and impactful resolutions."
+      description: "Represented the Republic of Poland at NIT Patna's Model United Nations. Earned the Best Delegate award for exceptional debate skills and impactful resolutions."
     },
     {
-      title: "Technical Member",
+      title: "Technical Member - Robotics Club",
       category: "technical",
       year: "2023 - Present",
       description: "Active member of the Robotics Club, led team building combat and soccer bots, organized workshops."
@@ -56,7 +56,7 @@ const Experience = () => {
       description: "Coordinated between faculty and students, organized department events."
     },
     {
-      title: "Bronze Medal - Stanford Intramurals",
+      title: "Bronze Medal - NIT Patna Intramurals",
       category: "sports",
       year: "2023",
       description: "Won Bronze in 50m Hurdles at the university sports event."

@@ -7,32 +7,32 @@ import Footer from "@/components/Footer";
 
 const Coding = () => {
   const codingStats = [
-    { platform: "LeetCode", solved: "231", rating: "1573", rank: "Top 27.1%", color: "text-orange-500" },
-    { platform: "CodeChef", solved: "19", rating: "1452+", rank: "3 Star", color: "text-brown-500" },
-    { platform: "GeeksforGeeks", solved: "114", rating: "Institute Rank: 1144", streak: "7 day streak", color: "text-green-500" },
-    { platform: "Codeforces", solved: "10", rating: "879+", rank: "Newbie", color: "text-blue-500" }
+    { platform: "LeetCode", solved: "228", rating: "1570", rank: "Top 27.7%", color: "text-orange-500", url: "https://leetcode.com/u/mythical-UV/" },
+    { platform: "CodeChef", solved: "25", rating: "1270", rank: "2★ Coder (Division 3)", color: "text-brown-500", url: "https://www.codechef.com/users/quick_unity_53" },
+    { platform: "GeeksforGeeks", solved: "70", rating: "Rank #1455", streak: "35+ day streak", color: "text-green-500", url: "https://www.geeksforgeeks.org/user/yuvrajmevbrx/" },
+    { platform: "Codeforces", solved: "10", rating: "900", rank: "Newbie", color: "text-blue-500", url: "https://codeforces.com/" }
   ];
 
   const achievements = [
     {
-      title: "LeetCode Weekly Contest",
-      description: "Ranked in top 27.7% globally on LeetCode with 9 contests attended",
+      title: "LeetCode Global Ranking",
+      description: "Ranked in top 27.7% globally on LeetCode with 228+ problems solved",
       icon: "🏆"
     },
     {
-      title: "LeetCode Problem Solver",
-      description: "Solved 228 problems with current streak of 3 days and max streak of 15 days",
-      icon: "⚡"
-    },
-    {
-      title: "CodeChef Starters",
-      description: "Achieved Global Rank 1238 in CodeChef Starters 136 with 6 contests attended",
+      title: "CodeChef Starters 186",
+      description: "Achieved Global Rank 1238 in CodeChef Starters 186",
       icon: "🥉"
     },
     {
       title: "GfG 160 Challenge",
-      description: "Completed 35+ days of GfG 160 challenge with 40+ problems solved",
+      description: "35+ day streak in GfG 160 challenge",
       icon: "🎯"
+    },
+    {
+      title: "Competitive Programming",
+      description: "Participated in 3+ competitive contests on Codeforces",
+      icon: "⚡"
     }
   ];
 
@@ -64,7 +64,7 @@ const Coding = () => {
                   <span className="text-2xl">💻</span>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold gradient-text">374</div>
+                  <div className="text-4xl font-bold gradient-text">333</div>
                   <div className="text-muted-foreground">Total Problems Solved</div>
                   <div className="text-sm text-muted-foreground">Across all competitive programming platforms</div>
                 </div>
@@ -78,9 +78,11 @@ const Coding = () => {
               <Card key={index} className="portfolio-card slide-up">
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="text-xl font-bold">{platform.platform}</h3>
-                  <Button variant="outline" size="sm" className="text-primary border-primary/40">
-                    Visit
-                  </Button>
+                  <a href={platform.url} target="_blank" rel="noopener noreferrer">
+                    <Button variant="outline" size="sm" className="text-primary border-primary/40">
+                      Visit
+                    </Button>
+                  </a>
                 </div>
 
                 <div className="grid grid-cols-2 gap-4 mb-4">
@@ -102,7 +104,7 @@ const Coding = () => {
                   <div className="grid grid-cols-3 gap-2 text-center">
                     <div className="bg-green-500/10 rounded p-2">
                       <div className="font-bold text-green-500">Easy</div>
-                      <div className="text-sm">112</div>
+                      <div className="text-sm">109</div>
                     </div>
                     <div className="bg-yellow-500/10 rounded p-2">
                       <div className="font-bold text-yellow-500">Medium</div>
@@ -119,15 +121,15 @@ const Coding = () => {
                   <div className="grid grid-cols-3 gap-2 text-center">
                     <div className="bg-green-500/10 rounded p-2">
                       <div className="font-bold text-green-500">Easy</div>
-                      <div className="text-sm">33</div>
+                      <div className="text-sm">32</div>
                     </div>
                     <div className="bg-yellow-500/10 rounded p-2">
                       <div className="font-bold text-yellow-500">Medium</div>
-                      <div className="text-sm">82</div>
+                      <div className="text-sm">30</div>
                     </div>
                     <div className="bg-red-500/10 rounded p-2">
                       <div className="font-bold text-red-500">Hard</div>
-                      <div className="text-sm">2</div>
+                      <div className="text-sm">8</div>
                     </div>
                   </div>
                 )}
