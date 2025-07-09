@@ -389,6 +389,126 @@
   }
 }
 
+/* Sunset Blaze Theme */
+[data-theme="sunset-blaze"] {
+  --background: 15 25% 8%;
+  --foreground: 45 100% 95%;
+  --card: 15 30% 12%;
+  --card-foreground: 45 100% 90%;
+  --popover: 15 35% 10%;
+  --popover-foreground: 45 100% 95%;
+  --primary: 15 100% 65%;
+  --primary-foreground: 15 25% 5%;
+  --secondary: 30 100% 60%;
+  --secondary-foreground: 30 25% 5%;
+  --muted: 15 20% 20%;
+  --muted-foreground: 45 80% 70%;
+  --accent: 25 100% 70%;
+  --accent-foreground: 25 25% 5%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 85.7% 97.3%;
+  --border: 15 30% 25%;
+  --input: 15 30% 20%;
+  --ring: 15 100% 65%;
+  --radius: 0.5rem;
+  
+  --sunset-gradient: linear-gradient(
+    135deg,
+    hsl(15, 100%, 65%) 0%,
+    hsl(30, 100%, 60%) 25%,
+    hsl(45, 100%, 55%) 50%,
+    hsl(0, 100%, 55%) 75%,
+    hsl(15, 80%, 45%) 100%
+  );
+}
+
+/* Ocean Depth Theme */
+[data-theme="ocean-depth"] {
+  --background: 205 50% 8%;
+  --foreground: 190 100% 95%;
+  --card: 205 45% 12%;
+  --card-foreground: 190 100% 90%;
+  --popover: 205 50% 10%;
+  --popover-foreground: 190 100% 95%;
+  --primary: 205 100% 45%;
+  --primary-foreground: 205 50% 5%;
+  --secondary: 180 100% 50%;
+  --secondary-foreground: 180 50% 5%;
+  --muted: 205 30% 20%;
+  --muted-foreground: 190 70% 70%;
+  --accent: 190 100% 60%;
+  --accent-foreground: 190 50% 5%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 85.7% 97.3%;
+  --border: 205 40% 25%;
+  --input: 205 40% 20%;
+  --ring: 205 100% 45%;
+  --radius: 0.5rem;
+  
+  --ocean-gradient: linear-gradient(
+    180deg,
+    hsl(205, 100%, 45%) 0%,
+    hsl(220, 100%, 35%) 25%,
+    hsl(210, 100%, 25%) 50%,
+    hsl(200, 100%, 15%) 75%,
+    hsl(205, 80%, 8%) 100%
+  );
+}
+
+/* Neon Pulse Theme */
+[data-theme="neon-pulse"] {
+  --background: 300 30% 8%;
+  --foreground: 300 100% 95%;
+  --card: 300 35% 12%;
+  --card-foreground: 300 100% 90%;
+  --popover: 300 40% 10%;
+  --popover-foreground: 300 100% 95%;
+  --primary: 300 100% 65%;
+  --primary-foreground: 300 30% 5%;
+  --secondary: 280 100% 70%;
+  --secondary-foreground: 280 30% 5%;
+  --muted: 300 25% 20%;
+  --muted-foreground: 300 80% 70%;
+  --accent: 320 100% 75%;
+  --accent-foreground: 320 30% 5%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 85.7% 97.3%;
+  --border: 300 35% 25%;
+  --input: 300 35% 20%;
+  --ring: 300 100% 65%;
+  --radius: 0.5rem;
+  
+  --neon-glow: 0 0 30px hsl(300, 100%, 65%);
+  --neon-pulse: 0 0 40px hsl(300, 100%, 65%), 0 0 80px hsl(320, 100%, 75%);
+}
+
+/* Emerald Glow Theme */
+[data-theme="emerald-glow"] {
+  --background: 150 30% 8%;
+  --foreground: 150 100% 95%;
+  --card: 150 35% 12%;
+  --card-foreground: 150 100% 90%;
+  --popover: 150 40% 10%;
+  --popover-foreground: 150 100% 95%;
+  --primary: 150 100% 50%;
+  --primary-foreground: 150 30% 5%;
+  --secondary: 160 100% 55%;
+  --secondary-foreground: 160 30% 5%;
+  --muted: 150 25% 20%;
+  --muted-foreground: 150 80% 70%;
+  --accent: 140 100% 60%;
+  --accent-foreground: 140 30% 5%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 85.7% 97.3%;
+  --border: 150 35% 25%;
+  --input: 150 35% 20%;
+  --ring: 150 100% 50%;
+  --radius: 0.5rem;
+  
+  --emerald-glow: 0 0 25px hsl(150, 100%, 50%);
+  --emerald-pulse: 0 0 35px hsl(150, 100%, 50%), 0 0 70px hsl(140, 100%, 60%);
+}
+
 @layer base {
   * {
     @apply border-border;

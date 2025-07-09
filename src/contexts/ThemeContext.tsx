@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 
-type Theme = 'purple' | 'cyberpunk' | 'retro' | 'glassmorphism' | 'neon-grid' | 'synthwave' | 'glass-emerald' | 'glass-rose' | 'glass-amber' | 'glass-violet' | 'glass-cyan' | 'glass-dream';
+type Theme = 'purple' | 'cyberpunk' | 'retro' | 'glassmorphism' | 'neon-grid' | 'synthwave' | 'glass-emerald' | 'glass-rose' | 'glass-amber' | 'glass-violet' | 'glass-cyan' | 'glass-dream' | 'sunset-blaze' | 'ocean-depth' | 'neon-pulse' | 'emerald-glow';
 
 interface ThemeContextType {
   theme: Theme;
@@ -88,6 +88,30 @@ export const themes = [
     name: 'Purple Glass Dream',
     color: 'hsl(262, 80%, 65%)',
     description: 'Elegant purple with dreamy glass effects'
+  },
+  {
+    id: 'sunset-blaze' as Theme,
+    name: 'Sunset Blaze',
+    color: 'hsl(15, 100%, 65%)',
+    description: 'Warm orange and red sunset gradients'
+  },
+  {
+    id: 'ocean-depth' as Theme,
+    name: 'Ocean Depth',
+    color: 'hsl(205, 100%, 45%)',
+    description: 'Deep blue ocean with aquatic vibes'
+  },
+  {
+    id: 'neon-pulse' as Theme,
+    name: 'Neon Pulse',
+    color: 'hsl(300, 100%, 65%)',
+    description: 'Electric neon with pulsing animations'
+  },
+  {
+    id: 'emerald-glow' as Theme,
+    name: 'Emerald Glow',
+    color: 'hsl(150, 100%, 50%)',
+    description: 'Bright emerald with glowing effects'
   }
 ];
 
