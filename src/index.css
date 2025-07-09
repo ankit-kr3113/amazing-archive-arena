@@ -533,22 +533,22 @@
   --radius: 0.75rem;
   
   /* Professional vibrant accents */
-  --teal-accent: hsl(180, 100%, 60%);
-  --magenta-accent: hsl(320, 100%, 65%);
-  --electric-blue: hsl(220, 100%, 70%);
-  --amber-accent: hsl(45, 100%, 65%);
-  --emerald-accent: hsl(150, 90%, 55%);
+  --teal-accent: 180 100% 60%;
+  --magenta-accent: 320 100% 65%;
+  --electric-blue: 220 100% 70%;
+  --amber-accent: 45 100% 65%;
+  --emerald-accent: 150 90% 55%;
   
   /* Subtle glows for energy */
-  --primary-glow: 0 0 20px hsl(180, 100%, 60% / 0.3);
-  --accent-glow: 0 0 15px hsl(320, 100%, 65% / 0.25);
-  --border-glow: 0 0 10px hsl(180, 100%, 60% / 0.15);
+  --primary-glow: 0 0 20px hsl(180 100% 60% / 0.3);
+  --accent-glow: 0 0 15px hsl(320 100% 65% / 0.25);
+  --border-glow: 0 0 10px hsl(180 100% 60% / 0.15);
   
   /* Animated gradient background */
   --vibrant-gradient: 
-    radial-gradient(circle at 20% 80%, hsla(180, 100%, 60%, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, hsla(320, 100%, 65%, 0.06) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, hsla(220, 100%, 70%, 0.04) 0%, transparent 50%);
+    radial-gradient(circle at 20% 80%, hsl(180 100% 60% / 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, hsl(320 100% 65% / 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, hsl(220 100% 70% / 0.04) 0%, transparent 50%);
 }
 
 /* Vibrant Dark Theme Specific Styles */
@@ -557,8 +557,8 @@
 }
 
 [data-theme="vibrant-dark"] .btn-hero {
-  background: linear-gradient(135deg, var(--teal-accent), var(--electric-blue));
-  border: 1px solid var(--teal-accent);
+  background: linear-gradient(135deg, hsl(var(--teal-accent)), hsl(var(--electric-blue)));
+  border: 1px solid hsl(var(--teal-accent));
   box-shadow: var(--primary-glow), 0 4px 20px hsl(var(--background) / 0.5);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -569,14 +569,16 @@
 }
 
 [data-theme="vibrant-dark"] .btn-outline-hero {
-  border: 2px solid var(--magenta-accent);
+  border: 2px solid hsl(var(--magenta-accent));
   background: hsl(var(--background) / 0.8);
   backdrop-filter: blur(10px);
   box-shadow: var(--accent-glow);
+  color: hsl(var(--magenta-accent));
 }
 
 [data-theme="vibrant-dark"] .btn-outline-hero:hover {
-  background: var(--magenta-accent);
+  background: hsl(var(--magenta-accent));
+  color: hsl(var(--background));
   transform: translateY(-1px);
 }
 
@@ -590,7 +592,7 @@
 }
 
 [data-theme="vibrant-dark"] .portfolio-card:hover {
-  border-color: var(--teal-accent);
+  border-color: hsl(var(--teal-accent));
   transform: translateY(-2px);
   box-shadow: var(--primary-glow), 0 8px 30px hsl(var(--background) / 0.4);
 }
@@ -603,9 +605,12 @@
 }
 
 [data-theme="vibrant-dark"] .gradient-text {
-  background: linear-gradient(135deg, var(--teal-accent), var(--magenta-accent), var(--electric-blue));
+  background: linear-gradient(135deg, hsl(var(--teal-accent)), hsl(var(--magenta-accent)), hsl(var(--electric-blue)));
   background-size: 200% 200%;
   animation: gradient-shift 4s ease-in-out infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 @keyframes gradient-shift {
