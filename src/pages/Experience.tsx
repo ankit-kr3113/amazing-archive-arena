@@ -3,6 +3,22 @@ import { Badge } from "@/components/ui/badge";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
+import {
+  Briefcase,
+  Trophy,
+  Users,
+  Zap,
+  Award,
+  Medal,
+  Crown,
+  Target,
+  Settings,
+  BookOpen,
+  Cpu,
+  Code2,
+  Presentation,
+  Lightbulb
+} from "lucide-react";
 
 const Experience = () => {
   const experiences = [
@@ -99,8 +115,8 @@ const Experience = () => {
             {/* Professional Experience */}
             <div className="lg:col-span-2 space-y-8">
               <div className="flex items-center mb-6">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mr-4">
-                  <span className="text-xl">💼</span>
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary/20 to-primary-glow/20 flex items-center justify-center mr-4">
+                  <Briefcase className="w-5 h-5 text-primary animate-pulse" />
                 </div>
                 <h2 className="text-2xl font-bold">Professional Experience</h2>
               </div>
@@ -174,8 +190,8 @@ const Experience = () => {
             {/* Enhanced Achievements Sidebar */}
             <div className="space-y-6 sm:space-y-8 mt-8 lg:mt-0">
               <div className="flex items-center mb-4 sm:mb-6">
-                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-primary/10 flex items-center justify-center mr-3 sm:mr-4">
-                  <span className="text-lg sm:text-xl animate-bounce">🏆</span>
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-br from-yellow-500/20 to-orange-500/20 flex items-center justify-center mr-3 sm:mr-4">
+                  <Trophy className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-500 animate-bounce" />
                 </div>
                 <h2 className="text-lg sm:text-xl font-bold">Achievements</h2>
               </div>
@@ -184,13 +200,11 @@ const Experience = () => {
                 {achievements.map((achievement, index) => (
                   <Card key={index} className="portfolio-card slide-up hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-0.5 transition-all duration-300">
                     <div className="flex items-start gap-2 sm:gap-3">
-                      <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1 hover:bg-primary/20 transition-colors duration-200">
-                        <span className="text-xs sm:text-sm animate-pulse">
-                          {achievement.category === "competition" && "🏆"}
-                          {achievement.category === "technical" && "⚡"}
-                          {achievement.category === "leadership" && "👥"}
-                          {achievement.category === "sports" && "🏅"}
-                        </span>
+                      <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-gradient-to-br from-primary/10 to-primary-glow/10 flex items-center justify-center flex-shrink-0 mt-1 hover:bg-primary/20 transition-colors duration-200">
+                        {achievement.category === "competition" && <Trophy className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-500 animate-pulse" />}
+                        {achievement.category === "technical" && <Zap className="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 animate-pulse" />}
+                        {achievement.category === "leadership" && <Users className="w-3 h-3 sm:w-4 sm:h-4 text-purple-500 animate-pulse" />}
+                        {achievement.category === "sports" && <Medal className="w-3 h-3 sm:w-4 sm:h-4 text-orange-500 animate-pulse" />}
                       </div>
 
                       <div className="flex-1 min-w-0">
