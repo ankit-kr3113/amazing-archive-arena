@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Mail, ArrowRight, Code } from "lucide-react";
-import heroPortrait from "@/assets/hero-portrait.jpg";
+import { Github, Linkedin, Mail, ArrowRight, Code, Rocket, Laptop, Star, Trophy, Target, Zap } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
@@ -97,30 +96,42 @@ const Index = () => {
                 <div className="relative z-10 w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-primary/30 shadow-2xl hover:shadow-primary/20 transition-all duration-500 hover:scale-105 group">
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   <img
-                    src={heroPortrait}
+                    src="https://api.dicebear.com/7.x/avataaars/svg?seed=YuvrajMehta&backgroundColor=3b82f6,8b5cf6,06b6d4&clothesColor=1e40af,7c3aed&eyesColor=4338ca&facialHairColor=92400e&hairColor=92400e,1f2937&hatColor=059669,dc2626&skinColor=fbbf24,f59e0b&accessories=eyepatch,prescription01,prescription02&accessoriesColor=262626,5d4037&clothesGraphic=bat,cumbia,diamond,hola,pizza,resist,selena,bear,skull,skullOutline&facialHair=blank,light,luxurious,magnum,medium,walrus&hair=bigHair,bob,bun,curly,curvy,dreads,frida,fro,froAndBand,funky,hat,longButNotTooLong,miaWallace,mohawk,noHair,shaggy,shavedSides,shortCurly,shortFlat,shortRound,shortWaved,sides,straight01,straight02,straightAndStrand&hatAndShirt=blazerAndShirt,blazerAndSweater,collarAndSweater,graphicShirt,hoodie,overall,shirtCrewNeck,shirtScoopNeck,shirtVNeck&mouth=concerned,default,disbelief,eating,grimace,sad,screamOpen,serious,smile,tongue,twinkle,vomit&style=circle&width=400&height=400"
                     alt="Yuvraj Mehta - Full Stack Developer"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 ring-1 ring-primary/20 rounded-full group-hover:ring-primary/40 transition-all duration-300"></div>
                 </div>
 
-                {/* Enhanced Floating Achievement Cards */}
-                <div className="absolute top-4 sm:top-8 -right-4 sm:-right-6 w-20 h-16 sm:w-24 sm:h-20 bg-card/90 backdrop-blur-sm rounded-xl border border-primary/20 p-2 sm:p-3 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 animate-float">
-                  <div className="text-lg sm:text-2xl mb-1 animate-bounce">🚀</div>
-                  <div className="text-[10px] sm:text-xs text-primary font-medium">Building</div>
-                  <div className="text-[9px] sm:text-xs text-muted-foreground">Projects</div>
+                {/* Enhanced Floating Achievement Cards with Better Icons */}
+                <div className="absolute top-4 sm:top-8 -right-4 sm:-right-6 w-20 h-16 sm:w-24 sm:h-20 bg-card/90 backdrop-blur-sm rounded-xl border border-primary/20 p-2 sm:p-3 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 animate-float group">
+                  <div className="flex justify-center mb-1">
+                    <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-lg bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center">
+                      <Rocket className="w-3 h-3 sm:w-4 sm:h-4 text-white group-hover:animate-bounce" />
+                    </div>
+                  </div>
+                  <div className="text-[10px] sm:text-xs text-primary font-medium text-center">Building</div>
+                  <div className="text-[9px] sm:text-xs text-muted-foreground text-center">Projects</div>
                 </div>
 
-                <div className="absolute bottom-4 sm:bottom-8 -left-4 sm:-left-6 w-24 h-18 sm:w-28 sm:h-22 bg-card/90 backdrop-blur-sm rounded-xl border border-primary/20 p-2 sm:p-3 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 animate-float animation-delay-1000">
-                  <div className="text-lg sm:text-2xl mb-1 animate-bounce">💻</div>
-                  <div className="text-[10px] sm:text-xs text-primary font-medium">Coding</div>
-                  <div className="text-[9px] sm:text-xs text-muted-foreground">333+ Problems</div>
+                <div className="absolute bottom-4 sm:bottom-8 -left-4 sm:-left-6 w-24 h-18 sm:w-28 sm:h-22 bg-card/90 backdrop-blur-sm rounded-xl border border-primary/20 p-2 sm:p-3 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 animate-float animation-delay-1000 group">
+                  <div className="flex justify-center mb-1">
+                    <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-lg bg-gradient-to-br from-green-500 to-teal-500 flex items-center justify-center">
+                      <Laptop className="w-3 h-3 sm:w-4 sm:h-4 text-white group-hover:animate-bounce" />
+                    </div>
+                  </div>
+                  <div className="text-[10px] sm:text-xs text-primary font-medium text-center">Coding</div>
+                  <div className="text-[9px] sm:text-xs text-muted-foreground text-center">333+ Problems</div>
                 </div>
 
-                <div className="absolute top-1/2 -right-6 sm:-right-8 w-18 h-18 sm:w-20 sm:h-20 bg-card/90 backdrop-blur-sm rounded-xl border border-primary/20 p-2 sm:p-3 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 animate-float animation-delay-2000">
-                  <div className="text-base sm:text-xl mb-1 animate-pulse">⭐</div>
-                  <div className="text-[10px] sm:text-xs text-primary font-medium">Top 27%</div>
-                  <div className="text-[9px] sm:text-xs text-muted-foreground">LeetCode</div>
+                <div className="absolute top-1/2 -right-6 sm:-right-8 w-18 h-18 sm:w-20 sm:h-20 bg-card/90 backdrop-blur-sm rounded-xl border border-primary/20 p-2 sm:p-3 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 animate-float animation-delay-2000 group">
+                  <div className="flex justify-center mb-1">
+                    <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-lg bg-gradient-to-br from-yellow-500 to-orange-500 flex items-center justify-center">
+                      <Trophy className="w-3 h-3 sm:w-4 sm:h-4 text-white group-hover:animate-bounce" />
+                    </div>
+                  </div>
+                  <div className="text-[10px] sm:text-xs text-primary font-medium text-center">Top 27%</div>
+                  <div className="text-[9px] sm:text-xs text-muted-foreground text-center">LeetCode</div>
                 </div>
               </div>
             </div>
