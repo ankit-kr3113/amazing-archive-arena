@@ -96,7 +96,7 @@ const Index = () => {
                 <div className="relative z-10 w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-primary/30 shadow-2xl hover:shadow-primary/20 transition-all duration-500 hover:scale-105 group">
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   <img
-                    src="https://api.dicebear.com/7.x/avataaars/svg?seed=YuvrajMehta&backgroundColor=3b82f6,8b5cf6,06b6d4&clothesColor=1e40af,7c3aed&eyesColor=4338ca&facialHairColor=92400e&hairColor=92400e,1f2937&hatColor=059669,dc2626&skinColor=fbbf24,f59e0b&accessories=eyepatch,prescription01,prescription02&accessoriesColor=262626,5d4037&clothesGraphic=bat,cumbia,diamond,hola,pizza,resist,selena,bear,skull,skullOutline&facialHair=blank,light,luxurious,magnum,medium,walrus&hair=bigHair,bob,bun,curly,curvy,dreads,frida,fro,froAndBand,funky,hat,longButNotTooLong,miaWallace,mohawk,noHair,shaggy,shavedSides,shortCurly,shortFlat,shortRound,shortWaved,sides,straight01,straight02,straightAndStrand&hatAndShirt=blazerAndShirt,blazerAndSweater,collarAndSweater,graphicShirt,hoodie,overall,shirtCrewNeck,shirtScoopNeck,shirtVNeck&mouth=concerned,default,disbelief,eating,grimace,sad,screamOpen,serious,smile,tongue,twinkle,vomit&style=circle&width=400&height=400"
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=500&fit=crop&crop=face&auto=format&q=80"
                     alt="Yuvraj Mehta - Full Stack Developer"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
