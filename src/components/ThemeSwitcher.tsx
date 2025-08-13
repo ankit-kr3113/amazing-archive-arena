@@ -13,16 +13,16 @@ const ThemeSwitcher = () => {
 
   return (
     <>
-      {/* Theme Toggle Button */}
+      {/* Enhanced Theme Toggle Button */}
       <div className="fixed top-20 right-4 z-50">
         <Button
           onClick={() => setIsOpen(!isOpen)}
           variant="outline"
           size="sm"
-          className="glass border-border/50 hover:bg-primary/10 theme-pulse"
+          className="glass border-border/50 hover:bg-primary/10 theme-pulse group bg-gradient-to-r from-primary/5 to-primary-glow/5 hover:scale-105 transition-all duration-300"
         >
-          <Palette className="w-4 h-4 mr-2" />
-          Themes
+          <div className="w-4 h-4 mr-2 rounded-full bg-gradient-to-r from-primary to-primary-glow group-hover:animate-spin transition-all duration-300"></div>
+          <span>Themes</span>
         </Button>
       </div>
 
