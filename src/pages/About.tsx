@@ -5,7 +5,6 @@ import { Download, Mail } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
-import heroPortrait from "@/assets/hero-portrait.jpg";
 
 const About = () => {
   const skills = [
