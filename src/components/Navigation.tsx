@@ -29,7 +29,7 @@ const Navigation = () => {
           <Link to="/" className="flex items-center space-x-2 sm:space-x-3 group">
             <div className="relative">
               <Avatar className="h-8 w-8 sm:h-9 sm:w-9 ring-2 ring-primary/20 transition-all duration-300 group-hover:ring-primary/50 group-hover:scale-110">
-                <AvatarImage src="https://api.dicebear.com/7.x/avataaars/svg?seed=Yuvraj&backgroundColor=3b82f6&clothesColor=1e40af&eyesColor=4338ca&facialHairColor=92400e&hairColor=92400e&hatColor=059669&skinColor=fbbf24" alt="Yuvraj Mehta" />
+                <AvatarImage src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face&auto=format&q=80" alt="Yuvraj Mehta" />
                 <AvatarFallback className="bg-gradient-to-br from-primary to-primary-glow text-primary-foreground font-bold text-sm">
                   <Code2 className="w-4 h-4" />
                 </AvatarFallback>
