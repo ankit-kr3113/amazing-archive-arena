@@ -72,7 +72,7 @@ const Projects = () => {
       <Navigation />
       <ThemeSwitcher />
       
-      <div className="relative pt-20 sm:pt-28 lg:pt-32 pb-16 sm:pb-20 lg:pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <div className="relative pt-20 sm:pt-24 lg:pt-28 pb-12 sm:pb-16 lg:pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
         {/* Enhanced Background Elements with Workspace Stock Image */}
         <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/8"></div>
         <div className="absolute inset-0 opacity-5">
@@ -87,7 +87,7 @@ const Projects = () => {
         
         <div className="relative max-w-7xl mx-auto">
           {/* Enhanced Header */}
-          <div className="text-center mb-16 sm:mb-20 lg:mb-24 fade-in">
+          <div className="text-center mb-12 sm:mb-16 lg:mb-20 fade-in">
             <div className="inline-flex items-center px-4 py-2.5 rounded-full bg-gradient-to-r from-primary/10 to-primary-glow/10 border border-primary/20 text-primary text-sm font-medium mb-6 shadow-lg backdrop-blur-sm hover:shadow-xl hover:scale-105 transition-all duration-300">
               <span className="animate-bounce mr-2">🚀</span>
               <span>Project Showcase</span>
@@ -129,7 +129,7 @@ const Projects = () => {
                 <h2 className="text-2xl font-bold">Featured Projects</h2>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
                 {featuredProjects.map((project, index) => (
                   <Card key={index} className="portfolio-card group slide-up hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-2 transition-all duration-500">
                     <div className="relative overflow-hidden rounded-xl mb-4">
@@ -210,7 +210,7 @@ const Projects = () => {
               </div>
             )}
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
               {(filter === "All Projects" ? projects : filteredProjects).map((project, index) => (
                 <Card key={index} className="portfolio-card group slide-up hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1 transition-all duration-500">
                   <div className="relative overflow-hidden rounded-lg mb-4">
