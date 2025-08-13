@@ -997,15 +997,21 @@
 @layer components {
   /* Base Components */
   .btn-hero {
-    @apply bg-primary hover:bg-primary-glow text-primary-foreground font-semibold py-3 px-6 rounded-lg transition-all duration-300;
+    @apply bg-primary hover:bg-primary-glow text-primary-foreground font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg active:scale-95;
+    will-change: transform;
+    transform: translateZ(0); /* Enable hardware acceleration */
   }
-  
+
   .btn-outline-hero {
-    @apply border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-semibold py-3 px-6 rounded-lg transition-all duration-300;
+    @apply border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg active:scale-95;
+    will-change: transform;
+    transform: translateZ(0);
   }
 
   .portfolio-card {
-    @apply bg-card border border-border rounded-lg p-6 transition-all duration-300;
+    @apply bg-card border border-border rounded-lg p-4 sm:p-6 transition-all duration-300 backdrop-blur-sm;
+    will-change: transform;
+    transform: translateZ(0);
   }
 
   .glass {
@@ -1013,7 +1019,9 @@
   }
 
   .gradient-text {
-    @apply bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent font-bold;
+    background-size: 200% 200%;
+    animation: gradient-flow 4s ease-in-out infinite;
   }
 
   /* Cyberpunk Theme Overrides */
@@ -1303,9 +1311,6 @@
     animation: slideUp 0.6s ease-out forwards;
   }
 
-  .theme-pulse {
-    animation: themePulse 2s ease-in-out infinite;
-  }
 }
 
 @keyframes fadeIn {
@@ -1330,14 +1335,6 @@
   }
 }
 
-@keyframes themePulse {
-  0%, 100% {
-    box-shadow: 0 0 0 0 hsl(var(--primary) / 0.4);
-  }
-  50% {
-    box-shadow: 0 0 0 10px hsl(var(--primary) / 0);
-  }
-}
 
 @keyframes cyber-scan {
   0% { transform: translateY(-100%); opacity: 0; }
@@ -1346,16 +1343,250 @@
 }
 
 @keyframes neon-pulse {
-  0% { 
-    box-shadow: 
+  0% {
+    box-shadow:
       0 0 5px hsl(var(--primary)),
       0 0 10px hsl(var(--primary)),
       0 0 15px hsl(var(--primary));
   }
-  100% { 
-    box-shadow: 
+  100% {
+    box-shadow:
       0 0 10px hsl(var(--primary)),
       0 0 20px hsl(var(--primary)),
       0 0 30px hsl(var(--primary));
+  }
+}
+
+/* Enhanced Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes wave {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(20deg);
+  }
+  75% {
+    transform: rotate(-20deg);
+  }
+}
+
+@keyframes gradient-flow {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Enhanced Animation Classes */
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-wave {
+  animation: wave 2s ease-in-out infinite;
+}
+
+.animation-delay-300 {
+  animation-delay: 300ms;
+}
+
+.animation-delay-600 {
+  animation-delay: 600ms;
+}
+
+.animation-delay-900 {
+  animation-delay: 900ms;
+}
+
+.animation-delay-1000 {
+  animation-delay: 1000ms;
+}
+
+.animation-delay-1200 {
+  animation-delay: 1200ms;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2000ms;
+}
+
+/* Enhanced Mobile Experience */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Better scroll behavior */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+/* Optimize for touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .hover\:scale-105:hover {
+    transform: none;
+  }
+
+  .hover\:scale-110:hover {
+    transform: none;
+  }
+
+  /* Keep active states for touch */
+  .hover\:scale-105:active {
+    transform: scale(1.02);
+  }
+
+  .hover\:scale-110:active {
+    transform: scale(1.05);
+  }
+}
+
+/* Improved tap highlights */
+* {
+  -webkit-tap-highlight-color: hsla(var(--primary), 0.2);
+}
+
+/* Better performance for animations on mobile */
+@media (max-width: 768px) {
+  .fade-in, .slide-up, .animate-fade-in-up {
+    animation-duration: 0.6s;
+  }
+
+  .animate-float {
+    animation-duration: 4s;
+  }
+
+  body {
+    font-size: 14px;
+  }
+}
+
+/* Better touch targets for mobile */
+@media (max-width: 768px) {
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  input, textarea, select {
+    font-size: 16px; /* Prevent zoom on iOS */
+  }
+}
+
+/* Enhanced visual hierarchy */
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/* Line clamp utilities */
+.line-clamp-1 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary-glow));
+}
+
+/* Better content fitting */
+.page-container {
+  min-height: calc(100vh - 64px);
+  padding-top: 80px;
+}
+
+/* Improved responsive spacing */
+@media (max-width: 640px) {
+  .page-container {
+    padding-top: 70px;
+    min-height: calc(100vh - 60px);
+  }
+}
+
+/* Prevent horizontal overflow */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Better section spacing */
+.section-spacing {
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+}
+
+@media (min-width: 640px) {
+  .section-spacing {
+    padding-top: 4rem;
+    padding-bottom: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-spacing {
+    padding-top: 5rem;
+    padding-bottom: 4rem;
   }
 }
