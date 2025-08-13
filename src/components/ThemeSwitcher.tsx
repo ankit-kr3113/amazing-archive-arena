@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { useTheme } from '@/contexts/ThemeContext';
-import { Palette, X, Sparkles, Wand2 } from 'lucide-react';
+import { Palette, X, Sparkles, Wand2, Monitor, Sun, Moon } from 'lucide-react';
 
 const ThemeSwitcher = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,9 +19,9 @@ const ThemeSwitcher = () => {
           onClick={() => setIsOpen(!isOpen)}
           variant="outline"
           size="sm"
-          className="glass border-border/50 hover:bg-primary/10 theme-pulse group bg-gradient-to-r from-primary/5 to-primary-glow/5 hover:scale-105 transition-all duration-300"
+          className="glass border-border/50 hover:bg-primary/10 group bg-gradient-to-r from-primary/5 to-primary-glow/5 hover:scale-105 transition-all duration-300 shadow-sm"
         >
-          <div className="w-4 h-4 mr-2 rounded-full bg-gradient-to-r from-primary to-primary-glow group-hover:animate-spin transition-all duration-300"></div>
+          <Monitor className="w-4 h-4 mr-2 text-primary group-hover:text-primary-glow transition-colors duration-300" />
           <span>Themes</span>
         </Button>
       </div>
@@ -33,7 +33,7 @@ const ThemeSwitcher = () => {
             <div className="flex items-center justify-between mb-6">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary/20 to-primary-glow/20 flex items-center justify-center">
-                  <Wand2 className="w-5 h-5 text-primary animate-pulse" />
+                  <Palette className="w-5 h-5 text-primary" />
                 </div>
                 <div>
                   <h2 className="text-xl font-bold">Choose Your Vibe</h2>
