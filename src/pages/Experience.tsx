@@ -85,7 +85,7 @@ const Experience = () => {
       <Navigation />
       <ThemeSwitcher />
       
-      <div className="relative pt-20 sm:pt-28 lg:pt-32 pb-16 sm:pb-20 lg:pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <div className="relative pt-20 sm:pt-24 lg:pt-28 pb-12 sm:pb-16 lg:pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
         {/* Enhanced Background Elements with Professional Office Stock Image */}
         <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/8"></div>
         <div className="absolute inset-0 opacity-5">
@@ -100,7 +100,7 @@ const Experience = () => {
         
         <div className="relative max-w-7xl mx-auto">
           {/* Enhanced Header */}
-          <div className="text-center mb-16 sm:mb-20 lg:mb-24 fade-in">
+          <div className="text-center mb-12 sm:mb-16 lg:mb-20 fade-in">
             <div className="inline-flex items-center px-4 py-2.5 rounded-full bg-gradient-to-r from-primary/10 to-primary-glow/10 border border-primary/20 text-primary text-sm font-medium mb-6 shadow-lg backdrop-blur-sm hover:shadow-xl hover:scale-105 transition-all duration-300">
               <span className="animate-bounce mr-2">💼</span>
               <span>Professional Journey</span>
@@ -118,7 +118,7 @@ const Experience = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 max-w-6xl mx-auto">
             {/* Professional Experience */}
             <div className="lg:col-span-2 space-y-8">
               <div className="flex items-center mb-6">
