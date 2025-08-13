@@ -54,7 +54,7 @@ const About = () => {
               <Card className="portfolio-card group hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 hover:-translate-y-1">
                 <div className="relative overflow-hidden rounded-xl">
                   <img
-                    src={heroPortrait}
+                    src="https://api.dicebear.com/7.x/avataaars/svg?seed=YuvrajMehta&backgroundColor=3b82f6,8b5cf6,06b6d4&clothesColor=1e40af,7c3aed&eyesColor=4338ca&facialHairColor=92400e&hairColor=92400e,1f2937&hatColor=059669,dc2626&skinColor=fbbf24,f59e0b&accessories=eyepatch,prescription01,prescription02&accessoriesColor=262626,5d4037&clothesGraphic=bat,cumbia,diamond,hola,pizza,resist,selena,bear,skull,skullOutline&facialHair=blank,light,luxurious,magnum,medium,walrus&hair=bigHair,bob,bun,curly,curvy,dreads,frida,fro,froAndBand,funky,hat,longButNotTooLong,miaWallace,mohawk,noHair,shaggy,shavedSides,shortCurly,shortFlat,shortRound,shortWaved,sides,straight01,straight02,straightAndStrand&hatAndShirt=blazerAndShirt,blazerAndSweater,collarAndSweater,graphicShirt,hoodie,overall,shirtCrewNeck,shirtScoopNeck,shirtVNeck&mouth=concerned,default,disbelief,eating,grimace,sad,screamOpen,serious,smile,tongue,twinkle,vomit&style=circle&width=400&height=400"
                     alt="Yuvraj Mehta - Full Stack Developer"
                     className="w-full h-64 sm:h-72 md:h-80 object-cover rounded-xl mb-6 group-hover:scale-105 transition-transform duration-500"
                   />
