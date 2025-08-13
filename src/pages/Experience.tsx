@@ -69,30 +69,33 @@ const Experience = () => {
       <Navigation />
       <ThemeSwitcher />
       
-      <div className="relative pt-32 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/5"></div>
+      <div className="relative pt-20 sm:pt-28 lg:pt-32 pb-16 sm:pb-20 lg:pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        {/* Enhanced Background Elements */}
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/8"></div>
+        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse opacity-60"></div>
+        <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-primary-glow/5 rounded-full blur-3xl animate-pulse opacity-40 animation-delay-2000"></div>
         
         <div className="relative max-w-7xl mx-auto">
-          {/* Header */}
-          <div className="text-center mb-20 fade-in">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-primary/10 to-primary-glow/10 border border-primary/20 text-primary text-sm font-medium mb-6 shadow-lg backdrop-blur-sm">
-              💼 Professional Journey
+          {/* Enhanced Header */}
+          <div className="text-center mb-16 sm:mb-20 lg:mb-24 fade-in">
+            <div className="inline-flex items-center px-4 py-2.5 rounded-full bg-gradient-to-r from-primary/10 to-primary-glow/10 border border-primary/20 text-primary text-sm font-medium mb-6 shadow-lg backdrop-blur-sm hover:shadow-xl hover:scale-105 transition-all duration-300">
+              <span className="animate-bounce mr-2">💼</span>
+              <span>Professional Journey</span>
               <div className="ml-2 w-2 h-2 bg-primary rounded-full animate-pulse"></div>
             </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
-              Experience & <span className="gradient-text relative">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 tracking-tight leading-tight">
+              Experience & <span className="gradient-text relative inline-block">
                 Achievements
-                <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary to-primary-glow rounded-full opacity-30"></div>
+                <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary to-primary-glow rounded-full opacity-30 animate-pulse"></div>
               </span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed px-4">
               My professional journey showcasing leadership roles, technical contributions, and notable
               achievements in competitive environments.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
             {/* Professional Experience */}
             <div className="lg:col-span-2 space-y-8">
               <div className="flex items-center mb-6">
@@ -102,60 +105,62 @@ const Experience = () => {
                 <h2 className="text-2xl font-bold">Professional Experience</h2>
               </div>
 
-              <div className="space-y-6">
+              <div className="space-y-4 sm:space-y-6">
                 {experiences.map((exp, index) => (
-                  <Card key={index} className="portfolio-card slide-up hover:shadow-xl hover:shadow-primary/10 transition-all duration-300">
-                    <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+                  <Card key={index} className="portfolio-card slide-up hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1 transition-all duration-500">
+                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4">
                       <div className="flex-1">
-                        <div className="flex items-center gap-2 mb-2">
-                          <Badge 
+                        <div className="flex flex-wrap items-center gap-2 mb-2">
+                          <Badge
                             variant={exp.status === "Currently Active" ? "default" : "secondary"}
-                            className={exp.status === "Currently Active" ? "bg-green-500/10 text-green-500 border-green-500/20" : ""}
+                            className={`text-xs ${exp.status === "Currently Active" ? "bg-green-500/10 text-green-500 border-green-500/20 animate-pulse" : ""}`}
                           >
                             {exp.status || exp.type}
                           </Badge>
-                          <Badge variant="outline">{exp.type}</Badge>
+                          <Badge variant="outline" className="text-xs">{exp.type}</Badge>
                         </div>
                         
-                        <h3 className="text-xl font-bold">{exp.title}</h3>
-                        <p className="text-primary font-semibold">{exp.company}</p>
-                        <p className="text-sm text-muted-foreground flex items-center gap-2">
-                          📍 {exp.location}
+                        <h3 className="text-lg sm:text-xl font-bold leading-tight">{exp.title}</h3>
+                        <p className="text-primary font-semibold text-sm sm:text-base">{exp.company}</p>
+                        <p className="text-xs sm:text-sm text-muted-foreground flex items-center gap-2 mt-1">
+                          <span className="animate-pulse">📍</span>
+                          <span>{exp.location}</span>
                         </p>
                       </div>
                       
-                      <div className="mt-2 md:mt-0">
-                        <Badge variant="outline" className="text-primary border-primary/40">
-                          📅 {exp.period}
+                      <div className="mt-2 sm:mt-0">
+                        <Badge variant="outline" className="text-primary border-primary/40 text-xs hover:bg-primary/10 transition-colors duration-200">
+                          <span className="mr-1">📅</span>
+                          <span>{exp.period}</span>
                         </Badge>
                       </div>
                     </div>
 
-                    <p className="text-muted-foreground mb-4">{exp.description}</p>
+                    <p className="text-muted-foreground mb-4 text-sm sm:text-base leading-relaxed">{exp.description}</p>
 
                     <div className="mb-4">
-                      <h4 className="font-semibold mb-2 flex items-center">
-                        <span className="text-yellow-500 mr-2">⭐</span>
-                        Key Highlights
+                      <h4 className="font-semibold mb-3 flex items-center text-sm sm:text-base">
+                        <span className="text-yellow-500 mr-2 animate-pulse">⭐</span>
+                        <span>Key Highlights</span>
                       </h4>
-                      <ul className="space-y-1">
+                      <ul className="space-y-2">
                         {exp.highlights.map((highlight, idx) => (
-                          <li key={idx} className="text-sm text-muted-foreground flex items-center">
-                            <span className="text-yellow-500 mr-2">⭐</span>
-                            {highlight}
+                          <li key={idx} className="text-xs sm:text-sm text-muted-foreground flex items-start p-2 rounded-lg hover:bg-primary/5 transition-colors duration-200">
+                            <span className="text-yellow-500 mr-2 mt-0.5 animate-pulse">⭐</span>
+                            <span>{highlight}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
 
                     <div>
-                      <h4 className="font-semibold mb-2 flex items-center">
-                        <span className="text-2xl mr-2">🛠️</span>
-                        Technologies & Skills
+                      <h4 className="font-semibold mb-3 flex items-center text-sm sm:text-base">
+                        <span className="text-lg sm:text-2xl mr-2 animate-bounce">🛠️</span>
+                        <span>Technologies & Skills</span>
                       </h4>
-                      <div className="flex flex-wrap gap-2">
+                      <div className="flex flex-wrap gap-1.5 sm:gap-2">
                         {exp.skills.map((skill, idx) => (
-                          <Badge key={idx} variant="secondary">
+                          <Badge key={idx} variant="secondary" className="text-xs hover:bg-primary/20 hover:text-primary transition-colors duration-200">
                             {skill}
                           </Badge>
                         ))}
@@ -166,36 +171,36 @@ const Experience = () => {
               </div>
             </div>
 
-            {/* Achievements Sidebar */}
-            <div className="space-y-8">
-              <div className="flex items-center mb-6">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mr-4">
-                  <span className="text-xl">🏆</span>
+            {/* Enhanced Achievements Sidebar */}
+            <div className="space-y-6 sm:space-y-8 mt-8 lg:mt-0">
+              <div className="flex items-center mb-4 sm:mb-6">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-primary/10 flex items-center justify-center mr-3 sm:mr-4">
+                  <span className="text-lg sm:text-xl animate-bounce">🏆</span>
                 </div>
-                <h2 className="text-xl font-bold">Achievements</h2>
+                <h2 className="text-lg sm:text-xl font-bold">Achievements</h2>
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 {achievements.map((achievement, index) => (
-                  <Card key={index} className="portfolio-card slide-up">
-                    <div className="flex items-start gap-3">
-                      <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
-                        <span className="text-sm">
+                  <Card key={index} className="portfolio-card slide-up hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-0.5 transition-all duration-300">
+                    <div className="flex items-start gap-2 sm:gap-3">
+                      <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1 hover:bg-primary/20 transition-colors duration-200">
+                        <span className="text-xs sm:text-sm animate-pulse">
                           {achievement.category === "competition" && "🏆"}
                           {achievement.category === "technical" && "⚡"}
                           {achievement.category === "leadership" && "👥"}
                           {achievement.category === "sports" && "🏅"}
                         </span>
                       </div>
-                      
-                      <div className="flex-1">
-                        <div className="flex items-center justify-between mb-2">
-                          <h3 className="font-semibold text-sm">{achievement.title}</h3>
-                          <Badge variant="outline" className="text-xs">
+
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-start justify-between mb-2 gap-2">
+                          <h3 className="font-semibold text-xs sm:text-sm leading-tight flex-1">{achievement.title}</h3>
+                          <Badge variant="outline" className="text-[10px] sm:text-xs flex-shrink-0 hover:bg-primary/10 transition-colors duration-200">
                             {achievement.year}
                           </Badge>
                         </div>
-                        <p className="text-xs text-muted-foreground">{achievement.description}</p>
+                        <p className="text-[10px] sm:text-xs text-muted-foreground leading-relaxed">{achievement.description}</p>
                       </div>
                     </div>
                   </Card>
