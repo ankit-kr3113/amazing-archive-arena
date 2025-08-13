@@ -96,7 +96,7 @@ const Navigation = () => {
       <div className={`lg:hidden transition-all duration-500 overflow-hidden ${
         isOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
       }`}>
-        <div className="px-4 pt-4 pb-6 space-y-2 bg-card/95 backdrop-blur-xl border-t border-border/30 shadow-lg">
+        <div className="px-4 pt-2 pb-4 space-y-2 bg-card/95 backdrop-blur-xl border-t border-border/30 shadow-lg">
           {navigation.map((item, index) => {
             const Icon = item.icon;
             return (
