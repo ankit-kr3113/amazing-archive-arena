@@ -86,7 +86,7 @@ const Skills = () => {
       <Navigation />
       <ThemeSwitcher />
       
-      <div className="relative pt-20 sm:pt-28 lg:pt-32 pb-16 sm:pb-20 lg:pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <div className="relative pt-20 sm:pt-24 lg:pt-28 pb-12 sm:pb-16 lg:pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
         {/* Enhanced Background Elements with Tech Stock Image */}
         <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/8"></div>
         <div className="absolute inset-0 opacity-5">
@@ -101,7 +101,7 @@ const Skills = () => {
         
         <div className="relative max-w-7xl mx-auto">
           {/* Enhanced Header */}
-          <div className="text-center mb-16 sm:mb-20 lg:mb-24 fade-in">
+          <div className="text-center mb-12 sm:mb-16 lg:mb-20 fade-in">
             <div className="inline-flex items-center px-4 py-2.5 rounded-full bg-gradient-to-r from-primary/10 to-primary-glow/10 border border-primary/20 text-primary text-sm font-medium mb-6 shadow-lg backdrop-blur-sm hover:shadow-xl hover:scale-105 transition-all duration-300">
               <span className="animate-bounce mr-2">🛠️</span>
               <span>Technical Skills</span>
@@ -133,7 +133,7 @@ const Skills = () => {
           </div>
 
           {/* Enhanced Skills Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-4 lg:gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 sm:gap-6 max-w-6xl mx-auto">
             {skillsData[activeTab]?.skills.map((skill, index) => {
               const Icon = skill.icon;
               return (
