@@ -16,7 +16,7 @@ const Projects = () => {
     {
       title: "BookHive",
       description: "BookNest is a full-stack library management system with distinct user and admin roles. It features book and PYQ management, a borrowing system, OTP-verified authentication, and separate dashboards. Built with React, Node.js, Express.js, and MongoDB.",
-      image: "/projectImages/bookhive.png",
+      image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=300&fit=crop&crop=center&auto=format&q=80",
       category: "Full Stack",
       featured: true,
       tags: ["React", "Redux Toolkit", "Node.js", "Express", "MongoDB", "JWT"],
@@ -27,7 +27,7 @@ const Projects = () => {
     {
       title: "Portfolio Website",
       description: "Personal developer portfolio showcasing projects and skills. Designed and built a responsive single-page portfolio with smooth animations and dynamic navigation. Integrated a contact form using EmailJS and added a downloadable resume feature.",
-      image: "/projectImages/portfolio.png",
+      image: "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=400&h=300&fit=crop&crop=center&auto=format&q=80",
       category: "Frontend",
       featured: true,
       tags: ["React", "Tailwind CSS", "Framer Motion", "Vite"],
@@ -38,7 +38,7 @@ const Projects = () => {
     {
       title: "EcoGuardian",
       description: "An online community platform empowering individuals to collaborate on environmental projects, report cleanliness issues, access educational resources, and drive positive change for a cleaner, greener future. 🌍",
-      image: "/projectImages/ecoGuardian.png",
+      image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=400&h=300&fit=crop&crop=center&auto=format&q=80",
       category: "Full Stack",
       featured: true,
       tags: ["HTML", "CSS", "JavaScript", "Node.js", "Express", "MongoDB"],
@@ -49,7 +49,7 @@ const Projects = () => {
     {
       title: "Stickify",
       description: "This is a simple notes application built with React and Vite. It allows users to create, update, delete, and manage notes with different colors. The application uses Appwrite as the backend service for managing notes.",
-      image: "/projectImages/stickify.png",
+      image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=400&h=300&fit=crop&crop=center&auto=format&q=80",
       category: "Frontend",
       featured: false,
       tags: ["React", "Vite", "Tailwind CSS", "Appwrite"],
