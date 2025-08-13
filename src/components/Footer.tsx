@@ -20,24 +20,24 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-card border-t border-border mt-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* About Section */}
-          <div>
-            <h3 className="text-xl font-bold gradient-text mb-4">Yuvraj Mehta</h3>
-            <p className="text-muted-foreground mb-6 max-w-md">
-              Full Stack Developer specializing in modern web technologies and algorithms, 
+    <footer className="bg-card/50 backdrop-blur-sm border-t border-border/50 mt-16 sm:mt-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+          {/* Enhanced About Section */}
+          <div className="sm:col-span-2 lg:col-span-1">
+            <h3 className="text-lg sm:text-xl font-bold gradient-text mb-4">Yuvraj Mehta</h3>
+            <p className="text-muted-foreground mb-4 sm:mb-6 max-w-md text-sm sm:text-base leading-relaxed">
+              Full Stack Developer specializing in modern web technologies and algorithms,
               currently exploring the exciting world of Generative AI.
             </p>
-            <div className="flex space-x-3">
+            <div className="flex space-x-2 sm:space-x-3">
               {socialLinks.map(({ icon: Icon, href, label }) => (
                 <a
                   key={label}
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary hover:bg-primary/20 transition-colors"
+                  className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary hover:bg-primary/20 hover:scale-110 transition-all duration-300"
                   aria-label={label}
                 >
                   <Icon className="w-4 h-4" />
@@ -46,42 +46,42 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Contact Info */}
+          {/* Enhanced Contact Info */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-foreground">Contact</h4>
-            <div className="space-y-3 text-muted-foreground">
-              <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 rounded-full bg-primary"></div>
-                <span>Gaya, Bihar, India</span>
+            <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-foreground">Contact</h4>
+            <div className="space-y-2 sm:space-y-3 text-muted-foreground">
+              <div className="flex items-center space-x-2 hover:text-primary transition-colors duration-200">
+                <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+                <span className="text-sm sm:text-base">Gaya, Bihar, India</span>
               </div>
-              <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 rounded-full bg-primary"></div>
-                <span>yuvraj.mehta532@gmail.com</span>
+              <div className="flex items-center space-x-2 hover:text-primary transition-colors duration-200">
+                <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+                <span className="text-sm sm:text-base break-all">yuvraj.mehta532@gmail.com</span>
               </div>
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Enhanced Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-foreground">Quick Links</h4>
-            <div className="space-y-2">
-              <a href="/Yuvraj_Resume_v2_1 (1).pdf" className="block text-muted-foreground hover:text-primary transition-colors">Resume</a>
-              <a href="https://leetcode.com/u/mythical-UV/" className="block text-muted-foreground hover:text-primary transition-colors">LeetCode</a>
-              <a href="https://www.geeksforgeeks.org/user/yuvrajmevbrx/" className="block text-muted-foreground hover:text-primary transition-colors">GeeksforGeeks</a>
-              <a href="https://www.codechef.com/users/quick_unity_53" className="block text-muted-foreground hover:text-primary transition-colors">CodeChef</a>
-              <Link to="/projects" className="block text-muted-foreground hover:text-primary transition-colors">Projects</Link>
+            <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-foreground">Quick Links</h4>
+            <div className="space-y-1 sm:space-y-2">
+              <a href="/Yuvraj_Resume_v2_1 (1).pdf" className="block text-sm sm:text-base text-muted-foreground hover:text-primary hover:translate-x-1 transition-all duration-200">📄 Resume</a>
+              <a href="https://leetcode.com/u/mythical-UV/" className="block text-sm sm:text-base text-muted-foreground hover:text-primary hover:translate-x-1 transition-all duration-200">🧩 LeetCode</a>
+              <a href="https://www.geeksforgeeks.org/user/yuvrajmevbrx/" className="block text-sm sm:text-base text-muted-foreground hover:text-primary hover:translate-x-1 transition-all duration-200">💻 GeeksforGeeks</a>
+              <a href="https://www.codechef.com/users/quick_unity_53" className="block text-sm sm:text-base text-muted-foreground hover:text-primary hover:translate-x-1 transition-all duration-200">👨‍💻 CodeChef</a>
+              <Link to="/projects" className="block text-sm sm:text-base text-muted-foreground hover:text-primary hover:translate-x-1 transition-all duration-200">🚀 Projects</Link>
             </div>
           </div>
 
-          {/* Navigation */}
+          {/* Enhanced Navigation */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-foreground">Navigation</h4>
-            <div className="space-y-2">
+            <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-foreground">Navigation</h4>
+            <div className="space-y-1 sm:space-y-2">
               {quickLinks.map((link) => (
                 <Link
                   key={link.name}
                   to={link.href}
-                  className="block text-muted-foreground hover:text-primary transition-colors"
+                  className="block text-sm sm:text-base text-muted-foreground hover:text-primary hover:translate-x-1 transition-all duration-200"
                 >
                   {link.name}
                 </Link>
@@ -90,38 +90,41 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 pt-8 border-t border-border">
-          <div className="text-center">
-            <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-2">
-              <span className="text-2xl">⭐</span>
+        {/* Enhanced Stats */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-border/50">
+          <div className="text-center group hover:scale-105 transition-transform duration-300">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-2 group-hover:bg-primary/20 transition-colors duration-300">
+              <span className="text-xl sm:text-2xl animate-pulse">⭐</span>
             </div>
-            <div className="text-2xl font-bold text-foreground">17,090</div>
-            <div className="text-sm text-muted-foreground">TOTAL VISITORS</div>
-          </div>
-          
-          <div className="text-center">
-            <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-2">
-              <span className="text-2xl">⚡</span>
-            </div>
-            <div className="text-2xl font-bold text-foreground">July 2, 2025</div>
-            <div className="text-sm text-muted-foreground">LAST UPDATED</div>
+            <div className="text-xl sm:text-2xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">17,090</div>
+            <div className="text-xs sm:text-sm text-muted-foreground">TOTAL VISITORS</div>
           </div>
 
-          <div className="text-center">
-            <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-2">
-              <span className="text-2xl">💻</span>
+          <div className="text-center group hover:scale-105 transition-transform duration-300">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-2 group-hover:bg-primary/20 transition-colors duration-300">
+              <span className="text-xl sm:text-2xl animate-pulse">⚡</span>
             </div>
-            <div className="text-2xl font-bold text-foreground">⭐⭐⭐⭐⭐</div>
-            <div className="text-sm text-muted-foreground">DSA SKILLS</div>
+            <div className="text-lg sm:text-2xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">Aug 2024</div>
+            <div className="text-xs sm:text-sm text-muted-foreground">LAST UPDATED</div>
+          </div>
+
+          <div className="text-center group hover:scale-105 transition-transform duration-300">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-2 group-hover:bg-primary/20 transition-colors duration-300">
+              <span className="text-xl sm:text-2xl animate-pulse">💻</span>
+            </div>
+            <div className="text-xl sm:text-2xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">⭐⭐⭐⭐⭐</div>
+            <div className="text-xs sm:text-sm text-muted-foreground">DSA SKILLS</div>
           </div>
         </div>
 
-        {/* Copyright */}
-        <div className="mt-8 pt-8 border-t border-border text-center text-muted-foreground">
-          <p>&copy; {currentYear} Yuvraj Mehta. All rights reserved.</p>
-          <p className="mt-2">
-            🚀 Crafted with ❤️ using React & TypeScript
+        {/* Enhanced Copyright */}
+        <div className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-border/50 text-center text-muted-foreground">
+          <p className="text-sm sm:text-base">&copy; {currentYear} Yuvraj Mehta. All rights reserved.</p>
+          <p className="mt-2 text-xs sm:text-sm flex items-center justify-center gap-2">
+            <span className="animate-bounce">🚀</span>
+            <span>Crafted with</span>
+            <span className="text-red-500 animate-pulse">❤️</span>
+            <span>using React & TypeScript</span>
           </p>
         </div>
       </div>
