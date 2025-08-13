@@ -111,34 +111,34 @@ const Index = () => {
                 </div>
 
                 {/* Enhanced Floating Achievement Cards with Better Icons */}
-                <div className="absolute top-4 sm:top-8 -right-4 sm:-right-6 w-20 h-16 sm:w-24 sm:h-20 bg-card/90 backdrop-blur-sm rounded-xl border border-primary/20 p-2 sm:p-3 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 animate-float group">
+                <div className="hidden lg:block absolute top-8 -right-2 w-20 h-16 bg-card/90 backdrop-blur-sm rounded-xl border border-primary/20 p-2 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 animate-float group">
                   <div className="flex justify-center mb-1">
-                    <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-lg bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center">
-                      <Rocket className="w-3 h-3 sm:w-4 sm:h-4 text-white group-hover:animate-bounce" />
+                    <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center">
+                      <Rocket className="w-3 h-3 text-white group-hover:animate-bounce" />
                     </div>
                   </div>
-                  <div className="text-[10px] sm:text-xs text-primary font-medium text-center">Building</div>
-                  <div className="text-[9px] sm:text-xs text-muted-foreground text-center">Projects</div>
+                  <div className="text-[10px] text-primary font-medium text-center">Building</div>
+                  <div className="text-[9px] text-muted-foreground text-center">Projects</div>
                 </div>
 
-                <div className="absolute bottom-4 sm:bottom-8 -left-4 sm:-left-6 w-24 h-18 sm:w-28 sm:h-22 bg-card/90 backdrop-blur-sm rounded-xl border border-primary/20 p-2 sm:p-3 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 animate-float animation-delay-1000 group">
+                <div className="hidden lg:block absolute bottom-8 -left-2 w-24 h-18 bg-card/90 backdrop-blur-sm rounded-xl border border-primary/20 p-2 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 animate-float animation-delay-1000 group">
                   <div className="flex justify-center mb-1">
-                    <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-lg bg-gradient-to-br from-green-500 to-teal-500 flex items-center justify-center">
-                      <Laptop className="w-3 h-3 sm:w-4 sm:h-4 text-white group-hover:animate-bounce" />
+                    <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-green-500 to-teal-500 flex items-center justify-center">
+                      <Laptop className="w-3 h-3 text-white group-hover:animate-bounce" />
                     </div>
                   </div>
-                  <div className="text-[10px] sm:text-xs text-primary font-medium text-center">Coding</div>
-                  <div className="text-[9px] sm:text-xs text-muted-foreground text-center">333+ Problems</div>
+                  <div className="text-[10px] text-primary font-medium text-center">Coding</div>
+                  <div className="text-[9px] text-muted-foreground text-center">333+ Problems</div>
                 </div>
 
-                <div className="absolute top-1/2 -right-6 sm:-right-8 w-18 h-18 sm:w-20 sm:h-20 bg-card/90 backdrop-blur-sm rounded-xl border border-primary/20 p-2 sm:p-3 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 animate-float animation-delay-2000 group">
+                <div className="hidden lg:block absolute top-1/2 -right-4 w-18 h-18 bg-card/90 backdrop-blur-sm rounded-xl border border-primary/20 p-2 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 animate-float animation-delay-2000 group">
                   <div className="flex justify-center mb-1">
-                    <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-lg bg-gradient-to-br from-yellow-500 to-orange-500 flex items-center justify-center">
-                      <Trophy className="w-3 h-3 sm:w-4 sm:h-4 text-white group-hover:animate-bounce" />
+                    <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-yellow-500 to-orange-500 flex items-center justify-center">
+                      <Trophy className="w-3 h-3 text-white group-hover:animate-bounce" />
                     </div>
                   </div>
-                  <div className="text-[10px] sm:text-xs text-primary font-medium text-center">Top 27%</div>
-                  <div className="text-[9px] sm:text-xs text-muted-foreground text-center">LeetCode</div>
+                  <div className="text-[10px] text-primary font-medium text-center">Top 27%</div>
+                  <div className="text-[9px] text-muted-foreground text-center">LeetCode</div>
                 </div>
               </div>
             </div>
