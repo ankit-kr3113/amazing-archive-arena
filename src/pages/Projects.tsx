@@ -72,17 +72,24 @@ const Projects = () => {
       <Navigation />
       <ThemeSwitcher />
       
-      <div className="pt-24 pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+      <div className="relative pt-32 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/5"></div>
+        
+        <div className="relative max-w-7xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-16 fade-in">
-            <div className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-4">
+          <div className="text-center mb-20 fade-in">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-primary/10 to-primary-glow/10 border border-primary/20 text-primary text-sm font-medium mb-6 shadow-lg backdrop-blur-sm">
               🚀 Project Showcase
+              <div className="ml-2 w-2 h-2 bg-primary rounded-full animate-pulse"></div>
             </div>
-            <h1 className="text-4xl sm:text-5xl font-bold mb-4">
-              Recent <span className="gradient-text">Projects</span>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
+              Recent <span className="gradient-text relative">
+                Projects
+                <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary to-primary-glow rounded-full opacity-30"></div>
+              </span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Explore my latest projects showcasing my skills in full stack development,
               problem solving, and modern web technologies.
             </p>
@@ -114,20 +121,21 @@ const Projects = () => {
 
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 {featuredProjects.map((project, index) => (
-                  <Card key={index} className="portfolio-card group slide-up">
-                    <div className="relative overflow-hidden rounded-lg mb-4">
-                      <Badge className="absolute top-3 left-3 z-10 bg-primary text-primary-foreground">
+                  <Card key={index} className="portfolio-card group slide-up hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500">
+                    <div className="relative overflow-hidden rounded-xl mb-4">
+                      <Badge className="absolute top-3 left-3 z-10 bg-gradient-to-r from-primary to-primary-glow text-primary-foreground shadow-lg">
                         ⭐ Featured
                       </Badge>
                       {project.status === "Live" && (
-                        <Badge className="absolute top-3 right-3 z-10 bg-green-500 text-white">
+                        <Badge className="absolute top-3 right-3 z-10 bg-gradient-to-r from-green-500 to-green-600 text-white shadow-lg">
                           🟢 Live
                         </Badge>
                       )}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-[5]"></div>
                       <img
                         src={project.image}
                         alt={project.title}
-                        className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                        className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
                       />
                     </div>
 

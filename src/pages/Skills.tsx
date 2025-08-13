@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import ThemeSwitcher from "@/components/ThemeSwitcher";
 
 const Skills = () => {
   const [activeTab, setActiveTab] = useState("Web Development");
@@ -65,18 +66,26 @@ const Skills = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
+      <ThemeSwitcher />
       
-      <div className="pt-24 pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+      <div className="relative pt-32 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/5"></div>
+        
+        <div className="relative max-w-7xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-16 fade-in">
-            <div className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-4">
+          <div className="text-center mb-20 fade-in">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-primary/10 to-primary-glow/10 border border-primary/20 text-primary text-sm font-medium mb-6 shadow-lg backdrop-blur-sm">
               🛠️ Technical Skills
+              <div className="ml-2 w-2 h-2 bg-primary rounded-full animate-pulse"></div>
             </div>
-            <h1 className="text-4xl sm:text-5xl font-bold mb-4">
-              My <span className="gradient-text">Tech Stack</span>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
+              My <span className="gradient-text relative">
+                Tech Stack
+                <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary to-primary-glow rounded-full opacity-30"></div>
+              </span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               The modern technologies and tools I use to build interactive and scalable web applications
             </p>
           </div>
@@ -96,12 +105,15 @@ const Skills = () => {
           </div>
 
           {/* Skills Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {skillsData[activeTab]?.skills.map((skill, index) => (
-              <Card key={index} className="portfolio-card text-center slide-up">
-                <div className="text-3xl mb-3">{skill.icon}</div>
-                <h3 className="font-semibold text-sm">{skill.name}</h3>
-                <p className="text-xs text-muted-foreground mt-1">{skill.category}</p>
+              <Card key={index} className="portfolio-card text-center slide-up group hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 hover:scale-105">
+                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">{skill.icon}</div>
+                <h3 className="font-semibold text-sm mb-2 group-hover:text-primary transition-colors">{skill.name}</h3>
+                <p className="text-xs text-muted-foreground">{skill.category}</p>
+                
+                {/* Hover effect bar */}
+                <div className="mt-3 h-1 bg-gradient-to-r from-primary to-primary-glow rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </Card>
             ))}
           </div>

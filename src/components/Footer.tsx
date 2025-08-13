@@ -5,10 +5,10 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   const socialLinks = [
-    { icon: Github, href: "https://github.com", label: "GitHub" },
-    { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-    { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
-    { icon: Mail, href: "mailto:john@example.com", label: "Email" },
+    { icon: Github, href: "https://github.com/yuvraj-mehta", label: "GitHub" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/yuvraj-mehta-a0274528a/", label: "LinkedIn" },
+    { icon: Twitter, href: "https://twitter.com/", label: "Twitter" },
+    { icon: Mail, href: "mailto:yuvraj.mehta532@gmail.com", label: "Email" },
   ];
 
   const quickLinks = [
@@ -52,11 +52,11 @@ const Footer = () => {
             <div className="space-y-3 text-muted-foreground">
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 rounded-full bg-primary"></div>
-                <span>New Delhi, India</span>
+                <span>Gaya, Bihar, India</span>
               </div>
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 rounded-full bg-primary"></div>
-                <span>yuvrajmehta2003@gmail.com</span>
+                <span>yuvraj.mehta532@gmail.com</span>
               </div>
             </div>
           </div>
@@ -65,10 +65,10 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4 text-foreground">Quick Links</h4>
             <div className="space-y-2">
-              <Link to="/" className="block text-muted-foreground hover:text-primary transition-colors">Resume</Link>
-              <a href="#" className="block text-muted-foreground hover:text-primary transition-colors">LeetCode</a>
-              <a href="#" className="block text-muted-foreground hover:text-primary transition-colors">GeeksforGeeks</a>
-              <a href="#" className="block text-muted-foreground hover:text-primary transition-colors">CodeChef</a>
+              <a href="/Yuvraj_Resume_v2_1 (1).pdf" className="block text-muted-foreground hover:text-primary transition-colors">Resume</a>
+              <a href="https://leetcode.com/u/mythical-UV/" className="block text-muted-foreground hover:text-primary transition-colors">LeetCode</a>
+              <a href="https://www.geeksforgeeks.org/user/yuvrajmevbrx/" className="block text-muted-foreground hover:text-primary transition-colors">GeeksforGeeks</a>
+              <a href="https://www.codechef.com/users/quick_unity_53" className="block text-muted-foreground hover:text-primary transition-colors">CodeChef</a>
               <Link to="/projects" className="block text-muted-foreground hover:text-primary transition-colors">Projects</Link>
             </div>
           </div>

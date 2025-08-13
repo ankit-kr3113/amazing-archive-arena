@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Github, Linkedin, Mail, Phone, MapPin, Send } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import ThemeSwitcher from "@/components/ThemeSwitcher";
 
 const Contact = () => {
   const socialLinks = [
@@ -46,18 +47,26 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
+      <ThemeSwitcher />
       
-      <div className="pt-24 pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+      <div className="relative pt-32 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/5"></div>
+        
+        <div className="relative max-w-7xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-16 fade-in">
-            <div className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-4">
+          <div className="text-center mb-20 fade-in">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-primary/10 to-primary-glow/10 border border-primary/20 text-primary text-sm font-medium mb-6 shadow-lg backdrop-blur-sm">
               💬 Let's Connect
+              <div className="ml-2 w-2 h-2 bg-primary rounded-full animate-pulse"></div>
             </div>
-            <h1 className="text-4xl sm:text-5xl font-bold mb-4">
-              Get In <span className="gradient-text">Touch</span>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
+              Get In <span className="gradient-text relative">
+                Touch
+                <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary to-primary-glow rounded-full opacity-30"></div>
+              </span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Have a project in mind or want to discuss potential opportunities? I'd love to
               hear from you.
             </p>
@@ -66,7 +75,7 @@ const Contact = () => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Contact Information */}
             <div className="lg:col-span-1 space-y-8">
-              <Card className="portfolio-card slide-up">
+              <Card className="portfolio-card slide-up hover:shadow-xl hover:shadow-primary/10 transition-all duration-300">
                 <div className="flex items-center mb-6">
                   <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mr-4">
                     <Mail className="w-5 h-5 text-primary" />

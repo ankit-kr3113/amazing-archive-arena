@@ -22,32 +22,44 @@ const About = () => {
       <Navigation />
       <ThemeSwitcher />
       
-      <div className="pt-24 pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+      <div className="relative pt-32 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/5"></div>
+        
+        <div className="relative max-w-7xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-16 fade-in">
-            <div className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-4">
+          <div className="text-center mb-20 fade-in">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-primary/10 to-primary-glow/10 border border-primary/20 text-primary text-sm font-medium mb-6 shadow-lg backdrop-blur-sm">
               👋 Get to know me
+              <div className="ml-2 w-2 h-2 bg-primary rounded-full animate-pulse"></div>
             </div>
-            <h1 className="text-4xl sm:text-5xl font-bold mb-4">
-              About <span className="gradient-text">Me</span>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
+              About <span className="gradient-text relative">
+                Me
+                <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary to-primary-glow rounded-full opacity-30"></div>
+              </span>
             </h1>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              Get to know the person behind the code - my journey, skills, and passion for technology
+            </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* Left - Profile & Info */}
             <div className="space-y-8 slide-up">
-              <Card className="portfolio-card">
-                <div className="relative">
+              <Card className="portfolio-card group hover:shadow-2xl transition-all duration-500">
+                <div className="relative overflow-hidden rounded-xl">
                   <img
                     src={heroPortrait}
-                    alt="Yuvraj Mehta"
-                    className="w-full h-80 object-cover rounded-lg mb-6"
+                    alt="Yuvraj Mehta - Full Stack Developer"
+                    className="w-full h-80 object-cover rounded-xl mb-6 group-hover:scale-105 transition-transform duration-500"
                   />
                   
-                  <div className="absolute top-4 left-4 bg-primary/90 text-primary-foreground px-3 py-1 rounded-full text-sm font-medium">
+                  <div className="absolute top-4 left-4 bg-gradient-to-r from-primary to-primary-glow text-primary-foreground px-4 py-2 rounded-full text-sm font-medium shadow-lg backdrop-blur-sm">
                     ⭐ Top 27.7% - LeetCode Global
                   </div>
+                  
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
 
                 <h2 className="text-2xl font-bold mb-4">
