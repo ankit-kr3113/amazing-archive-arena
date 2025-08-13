@@ -2,21 +2,21 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Menu, X, Download, Code2, Sparkles } from "lucide-react";
+import { Menu, X, Download, Code2, Sparkles, User, Briefcase, GraduationCap, Wrench, Code, FolderOpen, Mail, Home } from "lucide-react";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
   const navigation = [
-    { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
-    { name: "Experience", href: "/experience" },
-    { name: "Education", href: "/education" },
-    { name: "Skills", href: "/skills" },
-    { name: "Coding", href: "/coding" },
-    { name: "Projects", href: "/projects" },
-    { name: "Contact", href: "/contact" },
+    { name: "Home", href: "/", icon: Home },
+    { name: "About", href: "/about", icon: User },
+    { name: "Experience", href: "/experience", icon: Briefcase },
+    { name: "Education", href: "/education", icon: GraduationCap },
+    { name: "Skills", href: "/skills", icon: Wrench },
+    { name: "Coding", href: "/coding", icon: Code },
+    { name: "Projects", href: "/projects", icon: FolderOpen },
+    { name: "Contact", href: "/contact", icon: Mail },
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -29,9 +29,9 @@ const Navigation = () => {
           <Link to="/" className="flex items-center space-x-2 sm:space-x-3 group">
             <div className="relative">
               <Avatar className="h-8 w-8 sm:h-9 sm:w-9 ring-2 ring-primary/20 transition-all duration-300 group-hover:ring-primary/50 group-hover:scale-110">
-                <AvatarImage src="/placeholder.svg" alt="Profile" />
+                <AvatarImage src="https://api.dicebear.com/7.x/avataaars/svg?seed=Yuvraj&backgroundColor=3b82f6&clothesColor=1e40af&eyesColor=4338ca&facialHairColor=92400e&hairColor=92400e&hatColor=059669&skinColor=fbbf24" alt="Yuvraj Mehta" />
                 <AvatarFallback className="bg-gradient-to-br from-primary to-primary-glow text-primary-foreground font-bold text-sm">
-                  YM
+                  <Code2 className="w-4 h-4" />
                 </AvatarFallback>
               </Avatar>
               <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full animate-pulse border-2 border-background"></div>
@@ -97,24 +97,27 @@ const Navigation = () => {
         isOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
       }`}>
         <div className="px-4 pt-4 pb-6 space-y-2 bg-card/95 backdrop-blur-xl border-t border-border/30 shadow-lg">
-          {navigation.map((item, index) => (
-            <Link
-              key={item.name}
-              to={item.href}
-              className={`flex items-center px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 hover:scale-[1.02] ${
-                isActive(item.href)
-                  ? "text-primary bg-gradient-to-r from-primary/10 to-primary-glow/10 border border-primary/20 shadow-lg"
-                  : "text-muted-foreground hover:text-primary hover:bg-gradient-to-r hover:from-primary/5 hover:to-primary-glow/5 border border-transparent"
-              }`}
-              onClick={() => setIsOpen(false)}
-              style={{ animationDelay: `${index * 50}ms` }}
-            >
-              <div className={`w-2 h-2 rounded-full mr-3 transition-all duration-300 ${
-                isActive(item.href) ? 'bg-primary scale-100 animate-pulse' : 'bg-muted-foreground/30 scale-75'
-              }`}></div>
-              {item.name}
-            </Link>
-          ))}
+          {navigation.map((item, index) => {
+            const Icon = item.icon;
+            return (
+              <Link
+                key={item.name}
+                to={item.href}
+                className={`flex items-center px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 hover:scale-[1.02] ${
+                  isActive(item.href)
+                    ? "text-primary bg-gradient-to-r from-primary/10 to-primary-glow/10 border border-primary/20 shadow-lg"
+                    : "text-muted-foreground hover:text-primary hover:bg-gradient-to-r hover:from-primary/5 hover:to-primary-glow/5 border border-transparent"
+                }`}
+                onClick={() => setIsOpen(false)}
+                style={{ animationDelay: `${index * 50}ms` }}
+              >
+                <Icon className={`w-4 h-4 mr-3 transition-all duration-300 ${
+                  isActive(item.href) ? 'text-primary animate-pulse' : 'text-muted-foreground/60'
+                }`} />
+                {item.name}
+              </Link>
+            );
+          })}
           <div className="px-4 pt-4 border-t border-border/30 mt-4">
             <Button
               variant="outline"
