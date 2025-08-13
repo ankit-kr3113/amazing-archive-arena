@@ -1562,3 +1562,42 @@ p {
 ::-webkit-scrollbar-thumb:hover {
   background: hsl(var(--primary-glow));
 }
+
+/* Better content fitting */
+.page-container {
+  min-height: calc(100vh - 64px);
+  padding-top: 80px;
+}
+
+/* Improved responsive spacing */
+@media (max-width: 640px) {
+  .page-container {
+    padding-top: 70px;
+    min-height: calc(100vh - 60px);
+  }
+}
+
+/* Prevent horizontal overflow */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Better section spacing */
+.section-spacing {
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+}
+
+@media (min-width: 640px) {
+  .section-spacing {
+    padding-top: 4rem;
+    padding-bottom: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-spacing {
+    padding-top: 5rem;
+    padding-bottom: 4rem;
+  }
+}
