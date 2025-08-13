@@ -101,19 +101,19 @@ const Index = () => {
                 </div>
 
                 {/* Floating Achievement Cards */}
-                <div className="absolute top-8 -right-6 w-24 h-20 bg-card/80 backdrop-blur-sm rounded-xl border border-primary/20 p-3 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 animate-bounce">
+                <div className="absolute top-8 -right-6 w-24 h-20 bg-card/80 backdrop-blur-sm rounded-xl border border-primary/20 p-3 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
                   <div className="text-2xl mb-1">🚀</div>
                   <div className="text-xs text-primary font-medium">Building</div>
                   <div className="text-xs text-muted-foreground">Projects</div>
                 </div>
 
-                <div className="absolute bottom-8 -left-6 w-28 h-22 bg-card/80 backdrop-blur-sm rounded-xl border border-primary/20 p-3 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 animate-bounce" style={{animationDelay: '1s'}}>
+                <div className="absolute bottom-8 -left-6 w-28 h-22 bg-card/80 backdrop-blur-sm rounded-xl border border-primary/20 p-3 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
                   <div className="text-2xl mb-1">💻</div>
                   <div className="text-xs text-primary font-medium">Coding</div>
                   <div className="text-xs text-muted-foreground">333+ Problems</div>
                 </div>
 
-                <div className="absolute top-1/2 -right-8 w-20 h-20 bg-card/80 backdrop-blur-sm rounded-xl border border-primary/20 p-3 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 animate-bounce" style={{animationDelay: '2s'}}>
+                <div className="absolute top-1/2 -right-8 w-20 h-20 bg-card/80 backdrop-blur-sm rounded-xl border border-primary/20 p-3 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
                   <div className="text-xl mb-1">⭐</div>
                   <div className="text-xs text-primary font-medium">Top 27%</div>
                   <div className="text-xs text-muted-foreground">LeetCode</div>
