@@ -232,90 +232,65 @@ const Coding = () => {
                 return (
                   <Card
                     key={index}
-                    className="group relative overflow-hidden bg-gradient-to-br from-card via-card to-card/80 border-0 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-[1.02]"
+                    className="group relative overflow-hidden bg-gradient-to-br from-slate-900/90 to-slate-800/90 border border-slate-700/50 rounded-xl transition-all duration-300 hover:border-slate-600/70 hover:scale-[1.02]"
                   >
-                    {/* Geometric Background Pattern */}
-                    <div className="absolute inset-0 opacity-5">
-                      <div className={`absolute top-0 right-0 w-32 h-32 ${platform.bgColor} rounded-full blur-3xl`}></div>
-                      <div className={`absolute bottom-0 left-0 w-24 h-24 ${platform.bgColor} rounded-full blur-2xl`}></div>
-                    </div>
-
-                    {/* Top Bar with Platform Branding */}
-                    <div className={`h-1 w-full bg-gradient-to-r ${platform.bgColor}`}></div>
-
-                    <div className="relative p-6">
-                      {/* Platform Header */}
-                      <div className="flex items-center justify-between mb-6">
-                        <div className="flex items-center gap-4">
-                          <div className="relative">
-                            <div className={`w-16 h-16 rounded-2xl ${platform.bgColor} flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300`}>
-                              <IconComponent className={`w-8 h-8 ${platform.color}`} />
-                            </div>
-                            {/* Status Indicator */}
-                            <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-green-500 rounded-full border-2 border-card flex items-center justify-center">
-                              <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-                            </div>
+                    <div className="p-6">
+                      {/* Header with platform icon and visit button */}
+                      <div className="flex items-start justify-between mb-4">
+                        <div className="flex items-center gap-3">
+                          <div className={`w-10 h-10 rounded-lg ${platform.bgColor} flex items-center justify-center`}>
+                            <IconComponent className={`w-6 h-6 ${platform.color}`} />
                           </div>
                           <div>
-                            <h3 className="text-2xl font-bold text-foreground mb-1">
+                            <h3 className="text-lg font-semibold text-white mb-0">
                               {platform.platform}
                             </h3>
-                            <div className="flex items-center gap-2 text-muted-foreground">
-                              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                              <span className="text-sm font-medium">Active {platform.lastActive}</span>
-                            </div>
                           </div>
                         </div>
+                        <a href={platform.url} target="_blank" rel="noopener noreferrer">
+                          <Button
+                            size="sm"
+                            variant="outline"
+                            className="text-blue-400 border-blue-400/50 hover:bg-blue-400/10 hover:border-blue-400 text-xs px-3 py-1"
+                          >
+                            Visit
+                          </Button>
+                        </a>
+                      </div>
 
-                        <div>
-                          <a href={platform.url} target="_blank" rel="noopener noreferrer">
-                            <Button
-                              size="sm"
-                              className={`${platform.bgColor} ${platform.color} hover:scale-110 transition-all duration-300 shadow-lg border-0`}
-                            >
-                              <FaExternalLinkAlt className="w-4 h-4" />
-                            </Button>
-                          </a>
+                      {/* Main problem count */}
+                      <div className="mb-4">
+                        <div className="text-3xl font-bold text-white mb-1">
+                          {animatedCounts.platforms[index]}
+                        </div>
+                        <div className="text-sm text-slate-400">
+                          Problems Solved
                         </div>
                       </div>
 
-                      {/* Stats Dashboard */}
-                      <div className="grid grid-cols-2 gap-4 mb-6">
-                        {/* Problems Solved */}
-                        <div className="text-center p-4 rounded-xl bg-primary/5 border border-primary/20">
-                          <div className="text-3xl font-black bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent mb-1">
-                            {animatedCounts.platforms[index]}
-                          </div>
-                          <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-                            Problems Solved
-                          </div>
-                        </div>
-
-                        {/* Rating */}
+                      {/* Rating and rank info */}
+                      <div className="flex items-center gap-4 mb-4 text-sm">
                         {platform.rating && (
-                          <div className={`text-center p-4 rounded-xl bg-gradient-to-br ${platform.bgColor} border border-current/20`}>
-                            <div className={`text-xl font-black ${platform.color} mb-1 flex items-center justify-center gap-1`}>
-                              <MdLeaderboard className="w-5 h-5" />
-                              {platform.rating}
+                          <>
+                            <div className="flex items-center gap-1">
+                              <FaStar className="w-3 h-3 text-yellow-400" />
+                              <span className="text-slate-300">Rating: {platform.rating}</span>
                             </div>
-                            <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-                              {platform.rank}
+                            <div className="flex items-center gap-1">
+                              <FaMedal className="w-3 h-3 text-blue-400" />
+                              <span className="text-slate-300">{platform.rank}</span>
                             </div>
-                          </div>
+                          </>
                         )}
                       </div>
 
-
-                      {/* Streak Badge */}
-                      {platform.streak && (
-                        <div className="flex justify-center mb-4">
-                          <div className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-orange-500/20 to-yellow-500/20 border border-orange-500/30 rounded-full">
-                            <FaFire className="w-4 h-4 text-orange-400 animate-pulse" />
-                            <span className="text-sm font-bold text-orange-300">{platform.streak}</span>
-                          </div>
-                        </div>
-                      )}
-
+                      {/* Bottom description text */}
+                      <div className="text-xs text-slate-400 border-t border-slate-700/50 pt-3">
+                        {platform.platform === "LeetCode" && "Solved 228+ problems across all difficulty levels"}
+                        {platform.platform === "CodeChef" && "★★★ rated coder with 5 contests and best rank 13656"}
+                        {platform.platform === "GeeksforGeeks" && "Solved 112+ problems with 5 day current streak"}
+                        {platform.platform === "Codeforces" && "Newbie with 6 contests and best rank 13605"}
+                      </div>
                     </div>
                   </Card>
                 );
