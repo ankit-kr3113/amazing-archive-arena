@@ -169,6 +169,16 @@ const Index = () => {
             </div>
           </div>
         </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-fade-in-up animation-delay-1400">
+          <div className="flex flex-col items-center space-y-2 group cursor-pointer">
+            <span className="text-xs text-muted-foreground/60 group-hover:text-primary transition-colors duration-300">Scroll to explore</span>
+            <div className="w-6 h-10 border-2 border-primary/30 rounded-full flex justify-center group-hover:border-primary/50 transition-colors duration-300">
+              <div className="w-1 h-3 bg-primary/60 rounded-full mt-2 animate-bounce group-hover:bg-primary transition-colors duration-300"></div>
+            </div>
+          </div>
+        </div>
       </section>
 
       <Footer />
