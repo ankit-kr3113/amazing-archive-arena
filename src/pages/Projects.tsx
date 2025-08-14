@@ -360,13 +360,20 @@ const Projects = () => {
           </div>
 
           {/* Enhanced View More Projects */}
-          <div className="text-center mt-12 sm:mt-16">
+          <div className="text-center mt-16 sm:mt-20">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 rounded-full text-primary text-xs font-medium mb-4">
+              <span>💻</span>
+              <span>Explore More</span>
+            </div>
             <a href="https://github.com/yuvraj-mehta" target="_blank" rel="noopener noreferrer">
-              <Button className="btn-hero hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
-                <Github className="w-4 h-4 sm:w-5 sm:h-5 mr-2 animate-pulse" />
-                <span className="text-sm sm:text-base">View More Projects on GitHub</span>
+              <Button className="bg-gradient-to-r from-primary to-primary-glow hover:from-primary/90 hover:to-primary-glow/90 text-primary-foreground hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-primary/20 px-6 py-3 text-base font-medium">
+                <Github className="w-5 h-5 mr-2 animate-pulse" />
+                <span>View More Projects on GitHub</span>
               </Button>
             </a>
+            <p className="text-sm text-muted-foreground mt-3 max-w-md mx-auto">
+              Discover additional projects and contributions on my GitHub profile
+            </p>
           </div>
         </div>
       </div>
