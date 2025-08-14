@@ -264,13 +264,35 @@ const Coding = () => {
                         </div>
                       </div>
 
-                      {/* Main problem count */}
-                      <div className="mb-4">
-                        <div className="text-3xl font-bold text-white mb-1">
-                          {animatedCounts.platforms[index]}
+                      <div className="flex items-start justify-between mb-4">
+                        {/* Main problem count */}
+                        <div>
+                          <div className="text-3xl font-bold text-white mb-1">
+                            {animatedCounts.platforms[index]}
+                          </div>
+                          <div className="text-sm text-slate-400">
+                            Problems Solved
+                          </div>
                         </div>
-                        <div className="text-sm text-slate-400">
-                          Problems Solved
+
+                        {/* Progress indicator */}
+                        <div className="text-right">
+                          <div className="text-sm text-slate-300 mb-1">
+                            {platform.platform === "LeetCode" && "27.7%"}
+                            {platform.platform === "CodeChef" && "2★"}
+                            {platform.platform === "GeeksforGeeks" && "35+ days"}
+                            {platform.platform === "Codeforces" && "Newbie"}
+                          </div>
+                          <div className="w-16 h-2 bg-slate-700 rounded-full overflow-hidden">
+                            <div
+                              className={`h-full rounded-full ${
+                                platform.platform === "LeetCode" ? "bg-orange-400 w-3/4" :
+                                platform.platform === "CodeChef" ? "bg-amber-400 w-1/2" :
+                                platform.platform === "GeeksforGeeks" ? "bg-green-400 w-4/5" :
+                                "bg-blue-400 w-1/4"
+                              }`}
+                            ></div>
+                          </div>
                         </div>
                       </div>
 
