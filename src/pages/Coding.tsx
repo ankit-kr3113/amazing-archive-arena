@@ -318,24 +318,6 @@ const Coding = () => {
                         </div>
                       )}
 
-                      {/* Expanded Details */}
-                      {isExpanded && (
-                        <div className="border-t border-border/30 pt-4 space-y-4 animate-in slide-in-from-bottom-4 duration-500">
-
-                          {/* Activity Timeline */}
-                          <div>
-                            <h4 className="text-sm font-bold text-foreground mb-2 flex items-center gap-2">
-                              <FaClock className="w-4 h-4 text-primary" />
-                              Latest Update
-                            </h4>
-                            <div className="bg-gradient-to-r from-primary/5 to-primary-glow/5 border border-primary/20 rounded-lg p-3">
-                              <p className="text-sm text-muted-foreground leading-relaxed">
-                                {platform.recentActivity}
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      )}
                     </div>
                   </Card>
                 );
