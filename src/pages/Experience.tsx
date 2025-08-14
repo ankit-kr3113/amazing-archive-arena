@@ -69,28 +69,28 @@ const Experience = () => {
 
   const achievements = [
     {
-      title: "Winner - Model United Nations",
+      title: "Best Delegate - Model United Nations",
       category: "competition",
       year: "2023",
-      description: "Represented the Republic of Poland at NIT Patna's Model United Nations. Earned the Best Delegate award for exceptional debate skills and impactful resolutions."
+      description: "Represented Poland at NIT Patna's MUN, earned Best Delegate award for exceptional debate skills."
     },
     {
-      title: "Technical Member - Robotics Club",
-      category: "technical",
-      year: "2023 - Present",
-      description: "Active member of the Robotics Club, led team building combat and soccer bots, organized workshops."
-    },
-    {
-      title: "Class Representative",
-      category: "leadership",
-      year: "2023 - 2024",
-      description: "Coordinated between faculty and students, organized department events."
-    },
-    {
-      title: "Bronze Medal - NIT Patna Intramurals",
+      title: "Bronze Medal - 50m Hurdles",
       category: "sports",
       year: "2023",
-      description: "Won Bronze in 50m Hurdles at the university sports event."
+      description: "Won Bronze in 50m Hurdles at NIT Patna Intramurals sports competition."
+    },
+    {
+      title: "LeetCode Top 27.7%",
+      category: "technical",
+      year: "2024",
+      description: "Achieved global ranking in top 27.7% with 1570+ rating and 333+ problems solved."
+    },
+    {
+      title: "Tech Fest Participant",
+      category: "competition",
+      year: "2023-2024",
+      description: "Regular participant in technical competitions and robotics challenges at university level."
     }
   ];
 
