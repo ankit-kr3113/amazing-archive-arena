@@ -135,27 +135,6 @@ const Coding = () => {
   // Calculate total dynamically
   const totalProblems = codingStats.reduce((sum, platform) => sum + platform.solved, 0);
 
-  // Skills and algorithm categories
-  const skillsData = [
-    { name: "Dynamic Programming", count: 45, color: "bg-blue-500/20 text-blue-400 border-blue-500/30" },
-    { name: "Arrays & Strings", count: 78, color: "bg-green-500/20 text-green-400 border-green-500/30" },
-    { name: "Binary Trees", count: 32, color: "bg-purple-500/20 text-purple-400 border-purple-500/30" },
-    { name: "Graph Algorithms", count: 28, color: "bg-orange-500/20 text-orange-400 border-orange-500/30" },
-    { name: "Sorting & Searching", count: 42, color: "bg-pink-500/20 text-pink-400 border-pink-500/30" },
-    { name: "Greedy Algorithms", count: 25, color: "bg-cyan-500/20 text-cyan-400 border-cyan-500/30" },
-    { name: "Hash Tables", count: 35, color: "bg-yellow-500/20 text-yellow-400 border-yellow-500/30" },
-    { name: "Two Pointers", count: 29, color: "bg-red-500/20 text-red-400 border-red-500/30" }
-  ];
-
-  // Recent activity timeline
-  const recentActivity = [
-    { date: "Jan 15, 2025", activity: "Solved 3 problems on LeetCode", type: "solve", platform: "LeetCode" },
-    { date: "Jan 14, 2025", activity: "Completed daily challenge on GeeksforGeeks", type: "challenge", platform: "GeeksforGeeks" },
-    { date: "Jan 12, 2025", activity: "Participated in CodeChef Starters 186", type: "contest", platform: "CodeChef" },
-    { date: "Jan 10, 2025", activity: "Achieved 35-day streak on GeeksforGeeks", type: "milestone", platform: "GeeksforGeeks" },
-    { date: "Jan 8, 2025", activity: "Solved first hard problem on LeetCode", type: "milestone", platform: "LeetCode" }
-  ];
-
   // Enhanced achievements with more unique and specific content
   const achievements = [
     {
