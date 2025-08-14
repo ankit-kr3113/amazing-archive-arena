@@ -9,6 +9,44 @@ import ThemeSwitcher from "@/components/ThemeSwitcher";
 
 const Projects = () => {
   const [filter, setFilter] = useState("All Projects");
+  const [animatedCounts, setAnimatedCounts] = useState({
+    totalProjects: 0,
+    technologies: 0,
+    liveProjects: 0
+  });
+
+  // Animated counter hook
+  useEffect(() => {
+    const duration = 2000;
+    const steps = 50;
+    const stepDuration = duration / steps;
+
+    const targetCounts = {
+      totalProjects: 15,
+      technologies: 8,
+      liveProjects: 4
+    };
+
+    let currentStep = 0;
+
+    const timer = setInterval(() => {
+      currentStep++;
+      const progress = currentStep / steps;
+      const easeProgress = 1 - Math.pow(1 - progress, 3);
+
+      setAnimatedCounts({
+        totalProjects: Math.round(targetCounts.totalProjects * easeProgress),
+        technologies: Math.round(targetCounts.technologies * easeProgress),
+        liveProjects: Math.round(targetCounts.liveProjects * easeProgress)
+      });
+
+      if (currentStep >= steps) {
+        clearInterval(timer);
+      }
+    }, stepDuration);
+
+    return () => clearInterval(timer);
+  }, []);
 
   const filters = ["All Projects", "Featured", "Frontend", "AI & ML", "Full Stack"];
 
