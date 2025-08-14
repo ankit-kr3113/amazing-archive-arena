@@ -5,162 +5,202 @@ import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
-import {
-  Code2,
-  Database,
-  Globe,
-  Terminal,
-  Palette,
-  Server,
-  Brain,
-  Wrench,
-  Star
-} from "lucide-react";
 
 const Skills = () => {
-  const [activeCategory, setActiveCategory] = useState("All");
+  const [activeCategory, setActiveCategory] = useState("Web Development");
 
-  const skillCategories = ["All", "Frontend", "Backend", "Languages", "Tools"];
+  const skillCategories = ["Web Development", "Database", "Languages", "Tools"];
 
-  const skillsData = [
-    // Featured/Primary Skills
-    {
-      name: "React",
-      category: "Frontend",
-      level: "Expert",
-      icon: Code2,
-      color: "text-blue-500",
-      featured: true
-    },
-    {
-      name: "JavaScript",
-      category: "Frontend", 
-      level: "Expert",
-      icon: Code2,
-      color: "text-yellow-500",
-      featured: true
-    },
-    {
-      name: "TypeScript",
-      category: "Frontend",
-      level: "Advanced",
-      icon: Code2,
-      color: "text-blue-600",
-      featured: true
-    },
-    {
-      name: "Node.js",
-      category: "Backend",
-      level: "Advanced",
-      icon: Server,
-      color: "text-green-500",
-      featured: true
-    },
-    {
-      name: "MongoDB",
-      category: "Backend",
-      level: "Advanced",
-      icon: Database,
-      color: "text-green-600",
-      featured: true
-    },
-    {
-      name: "Tailwind CSS",
-      category: "Frontend",
-      level: "Advanced",
-      icon: Palette,
-      color: "text-cyan-500",
-      featured: true
-    },
-
-    // Additional Skills
-    {
-      name: "Next.js",
-      category: "Frontend",
-      level: "Intermediate",
-      icon: Globe,
-      color: "text-gray-700",
-      featured: false
-    },
-    {
-      name: "Express.js",
-      category: "Backend",
-      level: "Advanced",
-      icon: Server,
-      color: "text-gray-600",
-      featured: false
-    },
-    {
-      name: "HTML5 & CSS3",
-      category: "Frontend",
-      level: "Expert",
-      icon: Globe,
-      color: "text-orange-500",
-      featured: false
-    },
-    {
-      name: "C++",
-      category: "Languages",
-      level: "Advanced",
-      icon: Brain,
-      color: "text-blue-800",
-      featured: false
-    },
-    {
-      name: "Java",
-      category: "Languages",
-      level: "Intermediate",
-      icon: Brain,
-      color: "text-orange-600",
-      featured: false
-    },
-    {
-      name: "Python",
-      category: "Languages",
-      level: "Intermediate",
-      icon: Brain,
-      color: "text-green-700",
-      featured: false
-    },
-    {
-      name: "Git & GitHub",
-      category: "Tools",
-      level: "Advanced",
-      icon: Wrench,
-      color: "text-orange-500",
-      featured: false
-    },
-    {
-      name: "VS Code",
-      category: "Tools",
-      level: "Expert",
-      icon: Terminal,
-      color: "text-blue-600",
-      featured: false
-    },
-    {
-      name: "RESTful APIs",
-      category: "Backend",
-      level: "Advanced",
-      icon: Globe,
-      color: "text-indigo-500",
-      featured: false
-    }
-  ];
-
-  const getFilteredSkills = () => {
-    if (activeCategory === "All") {
-      return skillsData;
-    }
-    return skillsData.filter(skill => skill.category === activeCategory);
+  const skillsData = {
+    "Web Development": [
+      {
+        name: "React",
+        level: "Frontend",
+        icon: "⚛️",
+        color: "from-blue-500/20 to-cyan-500/20",
+        borderColor: "border-blue-500/30",
+      },
+      {
+        name: "Node.js",
+        level: "Backend",
+        icon: "🟢",
+        color: "from-green-500/20 to-emerald-500/20",
+        borderColor: "border-green-500/30",
+      },
+      {
+        name: "JavaScript",
+        level: "Frontend",
+        icon: "🟨",
+        color: "from-yellow-500/20 to-orange-500/20",
+        borderColor: "border-yellow-500/30",
+      },
+      {
+        name: "TypeScript",
+        level: "Frontend",
+        icon: "🔷",
+        color: "from-blue-600/20 to-indigo-500/20",
+        borderColor: "border-blue-600/30",
+      },
+      {
+        name: "Express.js",
+        level: "Backend",
+        icon: "🚀",
+        color: "from-gray-600/20 to-slate-500/20",
+        borderColor: "border-gray-600/30",
+      },
+      {
+        name: "HTML5",
+        level: "Frontend",
+        icon: "🌐",
+        color: "from-orange-500/20 to-red-500/20",
+        borderColor: "border-orange-500/30",
+      },
+      {
+        name: "CSS3",
+        level: "Frontend",
+        icon: "🎨",
+        color: "from-blue-500/20 to-purple-500/20",
+        borderColor: "border-blue-500/30",
+      },
+      {
+        name: "Tailwind CSS",
+        level: "Frontend",
+        icon: "💨",
+        color: "from-cyan-500/20 to-teal-500/20",
+        borderColor: "border-cyan-500/30",
+      },
+      {
+        name: "Next.js",
+        level: "Frontend",
+        icon: "▲",
+        color: "from-gray-800/20 to-black/20",
+        borderColor: "border-gray-800/30",
+      },
+      {
+        name: "Redux",
+        level: "Frontend",
+        icon: "🔄",
+        color: "from-purple-500/20 to-violet-500/20",
+        borderColor: "border-purple-500/30",
+      },
+      {
+        name: "Vue",
+        level: "Frontend",
+        icon: "💚",
+        color: "from-green-400/20 to-emerald-400/20",
+        borderColor: "border-green-400/30",
+      }
+    ],
+    "Database": [
+      {
+        name: "MongoDB",
+        level: "Database",
+        icon: "🍃",
+        color: "from-green-600/20 to-green-500/20",
+        borderColor: "border-green-600/30",
+      },
+      {
+        name: "SQL",
+        level: "Database",
+        icon: "🗃️",
+        color: "from-blue-600/20 to-indigo-600/20",
+        borderColor: "border-blue-600/30",
+      },
+      {
+        name: "Database Design",
+        level: "Database",
+        icon: "🏗️",
+        color: "from-purple-600/20 to-pink-600/20",
+        borderColor: "border-purple-600/30",
+      }
+    ],
+    "Languages": [
+      {
+        name: "JavaScript",
+        level: "Languages",
+        icon: "🟨",
+        color: "from-yellow-500/20 to-orange-500/20",
+        borderColor: "border-yellow-500/30",
+      },
+      {
+        name: "TypeScript",
+        level: "Languages",
+        icon: "🔷",
+        color: "from-blue-600/20 to-indigo-500/20",
+        borderColor: "border-blue-600/30",
+      },
+      {
+        name: "C++",
+        level: "Languages",
+        icon: "🔵",
+        color: "from-blue-700/20 to-indigo-700/20",
+        borderColor: "border-blue-700/30",
+      },
+      {
+        name: "Java",
+        level: "Languages",
+        icon: "☕",
+        color: "from-orange-600/20 to-red-600/20",
+        borderColor: "border-orange-600/30",
+      },
+      {
+        name: "Python",
+        level: "Languages",
+        icon: "🐍",
+        color: "from-green-600/20 to-blue-600/20",
+        borderColor: "border-green-600/30",
+      }
+    ],
+    "Tools": [
+      {
+        name: "Git & GitHub",
+        level: "Tools",
+        icon: "📂",
+        color: "from-orange-500/20 to-red-500/20",
+        borderColor: "border-orange-500/30",
+      },
+      {
+        name: "VS Code",
+        level: "Tools",
+        icon: "💻",
+        color: "from-blue-600/20 to-cyan-600/20",
+        borderColor: "border-blue-600/30",
+      },
+      {
+        name: "RESTful APIs",
+        level: "Tools",
+        icon: "🔌",
+        color: "from-indigo-500/20 to-purple-500/20",
+        borderColor: "border-indigo-500/30",
+      },
+      {
+        name: "Postman",
+        level: "Tools",
+        icon: "📮",
+        color: "from-orange-600/20 to-red-600/20",
+        borderColor: "border-orange-600/30",
+      }
+    ]
   };
 
-  const getLevelColor = (level) => {
+  const getLevelColor = (level: string) => {
     switch(level) {
-      case "Expert": return "bg-emerald-100 text-emerald-700";
-      case "Advanced": return "bg-blue-100 text-blue-700";
-      case "Intermediate": return "bg-yellow-100 text-yellow-700";
-      default: return "bg-gray-100 text-gray-700";
+      case "Frontend": return "bg-blue-500/10 text-blue-400 border-blue-500/20";
+      case "Backend": return "bg-green-500/10 text-green-400 border-green-500/20";
+      case "Database": return "bg-purple-500/10 text-purple-400 border-purple-500/20";
+      case "Languages": return "bg-orange-500/10 text-orange-400 border-orange-500/20";
+      case "Tools": return "bg-cyan-500/10 text-cyan-400 border-cyan-500/20";
+      default: return "bg-gray-500/10 text-gray-400 border-gray-500/20";
+    }
+  };
+
+  const getCategoryIcon = (category: string) => {
+    switch(category) {
+      case "Web Development": return "🌐";
+      case "Database": return "🗄️";
+      case "Languages": return "💻";
+      case "Tools": return "⚡";
+      default: return "🔧";
     }
   };
 
@@ -170,123 +210,100 @@ const Skills = () => {
       <ThemeSwitcher />
       
       <div className="relative pt-16 pb-8 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/8"></div>
-        <div className="absolute inset-0 opacity-5">
-          <img
-            src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=1920&h=1080&fit=crop&auto=format&q=20"
-            alt=""
-            className="w-full h-full object-cover"
-          />
+        {/* Enhanced Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/5"></div>
+        <div className="absolute top-0 left-0 w-full h-full opacity-30">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary-glow/10 rounded-full blur-3xl animate-pulse animation-delay-2000"></div>
+          <div className="absolute top-3/4 left-1/2 w-64 h-64 bg-secondary/5 rounded-full blur-2xl animate-pulse animation-delay-4000"></div>
         </div>
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse opacity-60"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary-glow/5 rounded-full blur-3xl animate-pulse opacity-40 animation-delay-2000"></div>
         
         <div className="relative max-w-6xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-8 fade-in">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-cyan-500/10 rounded-full text-cyan-600 text-xs font-medium mb-3">
-              <span>⚡</span>
-              <span>Skills</span>
-            </div>
-            <h1 className="text-2xl sm:text-3xl font-bold text-foreground mb-2">
-              Technical Skills
+          <div className="text-center mb-12 fade-in">
+            <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">
+              My <span className="text-primary">Tech Stack</span>
             </h1>
-            <p className="text-sm text-muted-foreground max-w-lg mx-auto">
-              Technologies and tools I use to build great software
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              The modern technologies and tools I use to build interactive and scalable web applications
             </p>
           </div>
 
-          {/* Category Filter */}
-          <div className="flex flex-wrap justify-center gap-2 mb-8">
+          {/* Category Tabs */}
+          <div className="flex flex-wrap justify-center gap-3 mb-12">
             {skillCategories.map((category) => (
               <Button
                 key={category}
                 onClick={() => setActiveCategory(category)}
                 variant={activeCategory === category ? "default" : "outline"}
-                size="sm"
-                className={`${activeCategory === category ? "btn-hero" : "btn-outline-hero"} hover:scale-105 transition-all duration-300`}
+                size="lg"
+                className={`
+                  px-6 py-3 rounded-full transition-all duration-300 hover:scale-105
+                  ${activeCategory === category 
+                    ? "bg-primary text-primary-foreground shadow-lg shadow-primary/25" 
+                    : "border-primary/20 hover:border-primary/40 hover:bg-primary/5"
+                  }
+                `}
               >
+                <span className="mr-2">{getCategoryIcon(category)}</span>
                 {category}
               </Button>
             ))}
           </div>
 
-          {/* Featured Skills (Only show when "All" is selected) */}
-          {activeCategory === "All" && (
-            <div className="mb-12">
-              <div className="flex items-center justify-center mb-6">
-                <Star className="w-5 h-5 text-primary mr-2" />
-                <h2 className="text-lg font-semibold">Core Technologies</h2>
-              </div>
-              
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 mb-8">
-                {skillsData.filter(skill => skill.featured).map((skill, index) => {
-                  const Icon = skill.icon;
-                  return (
-                    <Card key={index} className="portfolio-card group text-center hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 hover:scale-105 cursor-pointer">
-                      <div className="p-4">
-                        <div className={`w-12 h-12 mx-auto mb-3 rounded-lg bg-gradient-to-br from-primary/10 to-primary-glow/10 flex items-center justify-center group-hover:scale-110 transition-all duration-300 ${skill.color}`}>
-                          <Icon className="w-6 h-6" />
-                        </div>
-                        <h3 className="font-semibold text-sm mb-1 group-hover:text-primary transition-colors">{skill.name}</h3>
-                        <Badge className={`${getLevelColor(skill.level)} text-xs border-0`}>
-                          {skill.level}
-                        </Badge>
-                      </div>
-                    </Card>
-                  );
-                })}
-              </div>
-            </div>
-          )}
+          {/* Skills Grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+            {skillsData[activeCategory]?.map((skill, index) => (
+              <Card 
+                key={`${activeCategory}-${index}`} 
+                className={`
+                  group relative overflow-hidden transition-all duration-300 
+                  hover:scale-105 hover:-translate-y-2 cursor-pointer
+                  bg-gradient-to-br ${skill.color} 
+                  border ${skill.borderColor}
+                  hover:shadow-xl hover:shadow-primary/10
+                  backdrop-blur-sm
+                `}
+              >
+                <div className="p-6">
+                  {/* Icon */}
+                  <div className="text-3xl mb-4 transform group-hover:scale-110 transition-transform duration-300">
+                    {skill.icon}
+                  </div>
+                  
+                  {/* Skill Name */}
+                  <h3 className="font-semibold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
+                    {skill.name}
+                  </h3>
+                  
+                  {/* Level Badge */}
+                  <Badge className={`
+                    ${getLevelColor(skill.level)} 
+                    text-xs font-medium px-3 py-1 rounded-full border
+                    transition-all duration-300 group-hover:scale-105
+                  `}>
+                    {skill.level}
+                  </Badge>
+                </div>
 
-          {/* All Skills Grid */}
-          <div>
-            {activeCategory !== "All" && (
-              <div className="flex items-center justify-center mb-6">
-                <span className="text-lg mr-2">
-                  {activeCategory === "Frontend" && "🎨"}
-                  {activeCategory === "Backend" && "⚙️"}
-                  {activeCategory === "Languages" && "💻"}
-                  {activeCategory === "Tools" && "🔧"}
-                </span>
-                <h2 className="text-lg font-semibold">{activeCategory}</h2>
-              </div>
-            )}
-
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-              {getFilteredSkills().map((skill, index) => {
-                const Icon = skill.icon;
-                return (
-                  <Card key={index} className="portfolio-card group text-center hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 hover:scale-105 hover:-translate-y-1 cursor-pointer relative">
-                    <div className="p-4">
-                      {skill.featured && activeCategory === "All" && (
-                        <Badge className="absolute -top-1 -right-1 bg-primary text-primary-foreground text-xs z-10">
-                          <Star className="w-3 h-3" />
-                        </Badge>
-                      )}
-                      
-                      <div className={`w-10 h-10 mx-auto mb-3 rounded-lg bg-gradient-to-br from-primary/10 to-primary-glow/10 flex items-center justify-center group-hover:scale-110 transition-all duration-300 ${skill.color}`}>
-                        <Icon className="w-5 h-5" />
-                      </div>
-                      
-                      <h3 className="font-medium text-sm mb-2 group-hover:text-primary transition-colors leading-tight">{skill.name}</h3>
-                      
-                      <Badge className={`${getLevelColor(skill.level)} text-xs border-0`}>
-                        {skill.level}
-                      </Badge>
-                    </div>
-                  </Card>
-                );
-              })}
-            </div>
+                {/* Hover Effect Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/5 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </Card>
+            ))}
           </div>
 
-          {/* Simple Footer Note */}
-          <div className="text-center mt-12">
-            <p className="text-sm text-muted-foreground">
-              Always learning and exploring new technologies 🚀
+          {/* Project Showcase Teaser */}
+          <div className="mt-16 text-center">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-primary text-sm font-medium mb-6">
+              <span>🚀</span>
+              <span>Project Showcase</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
+              Recent <span className="text-primary">Projects</span>
+            </h2>
+            <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
+              Explore my latest projects showcasing my skills in full stack development, 
+              modern frameworks, and innovative AI technologies.
             </p>
           </div>
         </div>
