@@ -33,7 +33,6 @@ import {
 } from "react-icons/md";
 
 const Coding = () => {
-  const [expandedCard, setExpandedCard] = useState<number | null>(null);
   const [animatedCounts, setAnimatedCounts] = useState({
     total: 0,
     platforms: [0, 0, 0, 0]
