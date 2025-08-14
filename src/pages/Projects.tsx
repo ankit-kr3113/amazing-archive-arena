@@ -131,13 +131,13 @@ const Projects = () => {
               <span>Featured Projects</span>
               <div className="ml-1 w-2 h-2 bg-emerald-600 rounded-full animate-pulse"></div>
             </div>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 animate-fade-in-up">
+            <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-2 animate-fade-in-up">
               Creative <span className="gradient-text relative inline-block">
                 Solutions
                 <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-primary to-primary-glow rounded-full opacity-60"></div>
               </span>
             </h1>
-            <p className="text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed animate-fade-in-up animation-delay-300 mb-6">
+            <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed animate-fade-in-up animation-delay-300 mb-6">
               Building <span className="text-primary font-semibold">full-stack applications</span> with modern technologies and{" "}
               <span className="text-primary font-semibold">user-centered design</span> principles
             </p>
