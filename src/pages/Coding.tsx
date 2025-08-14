@@ -395,7 +395,7 @@ const Coding = () => {
                     <div className={`inline-flex items-center justify-center w-8 h-8 rounded-full ${skill.color.split(' ')[0]} mb-2`}>
                       <span className="text-sm font-bold">{skill.count}</span>
                     </div>
-                    <h3 className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
+                    <h3 className="text-xs sm:text-sm font-semibold text-foreground group-hover:text-primary transition-colors leading-tight">
                       {skill.name}
                     </h3>
                     <p className="text-xs text-muted-foreground">Problems</p>
