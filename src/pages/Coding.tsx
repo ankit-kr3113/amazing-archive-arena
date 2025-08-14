@@ -102,7 +102,7 @@ const Coding = () => {
       platform: "CodeChef",
       solved: 25,
       rating: "1270",
-      rank: "2��� Coder (Division 3)",
+      rank: "2����� Coder (Division 3)",
       color: "text-amber-400",
       bgColor: "from-amber-500/20 to-orange-500/20",
       borderColor: "border-amber-500/30",
@@ -196,25 +196,27 @@ const Coding = () => {
 
           {/* Total Problems Solved Overview - Dynamic Calculation */}
           <div className="mb-12 flex justify-center">
-            <Card className="group bg-gradient-to-br from-primary/10 to-primary-glow/5 border-primary/20 hover:border-primary/40 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-primary/10 w-full max-w-md">
-              <div className="p-6 text-center">
-                <div className="flex items-center justify-center mb-4">
-                  <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
+            <Card className="group bg-gradient-to-br from-primary/10 to-primary-glow/5 border-primary/20 hover:border-primary/40 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-primary/10 w-full max-w-2xl">
+              <div className="px-8 py-6">
+                <div className="flex items-center justify-between">
+                  {/* Left Decorative Icon */}
+                  <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                     <FaCode className="text-xl text-primary" />
                   </div>
-                  <div>
-                    <div className="text-4xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
-                      {animatedCounts.total}+
-                    </div>
-                    <div className="text-base font-semibold text-foreground">Total Problems Solved</div>
-                    <div className="text-sm text-muted-foreground">Across {codingStats.length} platforms</div>
-                  </div>
-                </div>
 
-                {/* Last Updated Info */}
-                <div className="flex items-center justify-center gap-2 text-xs text-muted-foreground">
-                  <FaClock className="w-3 h-3" />
-                  <span>Last updated: January 2025</span>
+                  {/* Center Content */}
+                  <div className="text-center">
+                    <div className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent mb-2">
+                      {animatedCounts.total}
+                    </div>
+                    <div className="text-lg font-semibold text-foreground mb-1">Total Problems Solved</div>
+                    <div className="text-sm text-muted-foreground">Across all competitive programming platforms</div>
+                  </div>
+
+                  {/* Right Decorative Icon */}
+                  <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <FaChartLine className="text-xl text-primary" />
+                  </div>
                 </div>
               </div>
             </Card>
