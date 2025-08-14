@@ -8,23 +8,23 @@
   :root {
     /* Theme 1: Purple Dream (Default - Elegant Minimalism) */
     --background: 228 15% 8%;
-    --foreground: 210 40% 98%;
+    --foreground: 210 40% 95%;
     --card: 228 18% 12%;
-    --card-foreground: 210 40% 98%;
+    --card-foreground: 210 40% 92%;
     --popover: 228 18% 12%;
-    --popover-foreground: 210 40% 98%;
+    --popover-foreground: 210 40% 95%;
     --primary: 262 80% 65%;
     --primary-foreground: 210 40% 98%;
     --primary-glow: 262 90% 75%;
     --secondary: 240 8% 20%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary-foreground: 210 40% 95%;
     --muted: 240 6% 16%;
-    --muted-foreground: 215 20% 65%;
+    --muted-foreground: 215 20% 70%;
     --accent: 262 80% 65%;
     --accent-foreground: 210 40% 98%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
-    --border: 240 8% 20%;
+    --border: 240 8% 22%;
     --input: 240 8% 20%;
     --ring: 262 80% 65%;
     --radius: 0.75rem;
@@ -942,6 +942,10 @@
 
   body {
     @apply bg-background text-foreground transition-colors duration-500;
+    font-feature-settings: "liga" 1, "kern" 1;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   /* Theme-specific body backgrounds */
@@ -1399,6 +1403,39 @@
   }
 }
 
+@keyframes subtle-bounce {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-4px) scale(1.02);
+  }
+}
+
+@keyframes gentle-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.1);
+  }
+  50% {
+    box-shadow: 0 0 30px hsl(var(--primary) / 0.2);
+  }
+}
+
+@keyframes loading-pulse {
+  0% {
+    opacity: 0.6;
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.6;
+    transform: scale(0.95);
+  }
+}
+
 /* Enhanced Animation Classes */
 .animate-fade-in-up {
   animation: fadeInUp 0.8s ease-out forwards;
@@ -1410,6 +1447,32 @@
 
 .animate-wave {
   animation: wave 2s ease-in-out infinite;
+}
+
+.animate-subtle-bounce {
+  animation: subtle-bounce 2s ease-in-out infinite;
+}
+
+.animate-gentle-glow {
+  animation: gentle-glow 3s ease-in-out infinite;
+}
+
+.animate-loading-pulse {
+  animation: loading-pulse 1.5s ease-in-out infinite;
+}
+
+.micro-interaction {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.micro-interaction:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+.micro-interaction:active {
+  transform: translateY(0);
+  transition-duration: 0.1s;
 }
 
 .animation-delay-300 {
