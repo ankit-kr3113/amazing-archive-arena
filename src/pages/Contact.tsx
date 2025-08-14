@@ -54,22 +54,60 @@ const Contact = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/5"></div>
         
         <div className="relative max-w-7xl mx-auto">
-          {/* Header */}
-          <div className="text-center mb-8 fade-in">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-primary/10 to-primary-glow/10 border border-primary/20 text-primary text-sm font-medium mb-6 shadow-lg backdrop-blur-sm">
-              💬 Let's Connect
-              <div className="ml-2 w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+          {/* Redesigned Header */}
+          <div className="text-center mb-12 fade-in">
+            <div className="relative inline-block mb-8">
+              <div className="absolute -inset-2 bg-gradient-to-r from-rose-500/30 via-pink-500/20 to-red-500/30 rounded-2xl blur-xl opacity-75 animate-pulse"></div>
+              <div className="relative flex items-center gap-4 px-8 py-4 bg-gradient-to-r from-rose-500/10 via-pink-500/5 to-red-500/10 rounded-2xl border border-rose-500/20 shadow-2xl backdrop-blur-sm">
+                <div className="relative">
+                  <div className="w-12 h-12 bg-gradient-to-br from-rose-500 to-pink-600 rounded-xl flex items-center justify-center shadow-lg">
+                    <span className="text-white text-lg font-bold animate-bounce">💬</span>
+                  </div>
+                  <div className="absolute -top-1 -right-1 w-4 h-4 bg-green-400 rounded-full animate-pulse"></div>
+                </div>
+                <div className="text-left">
+                  <span className="block text-primary font-bold text-lg tracking-wide">Let's Connect</span>
+                  <span className="block text-muted-foreground text-sm">Ready to build something amazing?</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 border-2 border-rose-400 rounded-full animate-ping"></div>
+                  <div className="w-2 h-2 bg-pink-400 rounded-full animate-pulse"></div>
+                  <div className="w-1 h-1 bg-red-400 rounded-full animate-pulse animation-delay-300"></div>
+                </div>
+              </div>
             </div>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 tracking-tight">
-              Get In <span className="gradient-text relative">
-                Touch
-                <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary to-primary-glow rounded-full opacity-30"></div>
-              </span>
-            </h1>
-            <p className="text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              Have a project in mind or want to discuss potential opportunities? I'd love to
-              hear from you.
-            </p>
+
+            <div className="relative">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-6 tracking-tight">
+                <span className="relative inline-block">
+                  <span className="absolute -inset-1 bg-gradient-to-r from-rose-500/20 to-pink-500/20 blur-xl rounded-lg"></span>
+                  <span className="relative bg-gradient-to-r from-rose-600 via-pink-500 to-red-600 bg-clip-text text-transparent animate-gradient">
+                    Get In
+                  </span>
+                </span>
+                <span className="mx-4 text-muted-foreground/30 font-light">/</span>
+                <span className="gradient-text relative inline-block font-extrabold">
+                  Touch
+                  <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-rose-500 via-pink-500 to-red-500 rounded-full animate-pulse"></div>
+                  <div className="absolute -top-2 -right-2 flex gap-1">
+                    <div className="w-2 h-2 bg-rose-400 rounded-full animate-ping"></div>
+                    <div className="w-2 h-2 bg-pink-400 rounded-full animate-ping animation-delay-300"></div>
+                  </div>
+                </span>
+              </h1>
+
+              <div className="max-w-4xl mx-auto">
+                <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+                  Have a <span className="text-rose-500 font-semibold">project idea</span> or ready to <span className="text-pink-500 font-semibold">collaborate</span>?
+                </p>
+                <p className="text-base text-muted-foreground/80 leading-relaxed">
+                  <span className="inline-flex items-center gap-2">
+                    <span className="w-2 h-2 bg-gradient-to-r from-rose-400 to-pink-400 rounded-full animate-pulse"></span>
+                    <span>Let's create something extraordinary together</span>
+                  </span>
+                </p>
+              </div>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
