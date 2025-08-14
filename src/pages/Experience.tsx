@@ -103,16 +103,16 @@ const Experience = () => {
           <div className="text-center mb-6 fade-in">
             <div className="relative inline-block mb-4">
               <div className="absolute -inset-2 bg-gradient-to-r from-orange-500/30 via-red-500/20 to-purple-500/30 rounded-2xl blur-xl opacity-75 animate-pulse"></div>
-              <div className="relative flex items-center gap-4 px-8 py-4 bg-gradient-to-r from-orange-500/10 via-red-500/5 to-purple-500/10 rounded-2xl border border-orange-500/20 shadow-2xl backdrop-blur-sm">
+              <div className="relative flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-orange-500/10 via-red-500/5 to-purple-500/10 rounded-2xl border border-orange-500/20 shadow-2xl backdrop-blur-sm">
                 <div className="relative">
-                  <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-600 rounded-xl flex items-center justify-center shadow-lg animate-bounce">
-                    <span className="text-white text-lg font-bold">💼</span>
+                  <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-red-600 rounded-xl flex items-center justify-center shadow-lg animate-bounce">
+                    <span className="text-white text-sm font-bold">💼</span>
                   </div>
                   <div className="absolute -top-1 -right-1 w-4 h-4 bg-yellow-400 rounded-full animate-pulse"></div>
                 </div>
                 <div className="text-left">
-                  <span className="block text-primary font-bold text-lg tracking-wide">Professional Journey</span>
-                  <span className="block text-muted-foreground text-sm">Building the future, one project at a time</span>
+                  <span className="block text-primary font-bold text-sm tracking-wide">Professional Journey</span>
+                  <span className="block text-muted-foreground text-xs">Building the future, one project at a time</span>
                 </div>
                 <div className="flex flex-col gap-1">
                   <div className="w-2 h-2 bg-orange-400 rounded-full animate-pulse"></div>
