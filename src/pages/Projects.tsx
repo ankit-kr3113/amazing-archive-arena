@@ -329,10 +329,6 @@ const Projects = () => {
 
           {/* GitHub CTA Section */}
           <div className="text-center mt-20">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full text-primary text-sm font-medium mb-6">
-              <Github className="w-4 h-4" />
-              <span>Explore More</span>
-            </div>
             <div className="mb-4">
               <a href="https://github.com/yuvraj-mehta" target="_blank" rel="noopener noreferrer">
                 <Button className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 text-base font-semibold rounded-full hover:scale-105 transition-all duration-300 shadow-lg">
