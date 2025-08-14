@@ -327,20 +327,22 @@ const Projects = () => {
             </div>
           </div>
 
-          {/* Enhanced View More Projects */}
-          <div className="text-center mt-16 sm:mt-20">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 rounded-full text-primary text-xs font-medium mb-4">
-              <span>💻</span>
+          {/* GitHub CTA Section */}
+          <div className="text-center mt-20">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full text-primary text-sm font-medium mb-6">
+              <Github className="w-4 h-4" />
               <span>Explore More</span>
             </div>
-            <a href="https://github.com/yuvraj-mehta" target="_blank" rel="noopener noreferrer">
-              <Button className="bg-gradient-to-r from-primary to-primary-glow hover:from-primary/90 hover:to-primary-glow/90 text-primary-foreground hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-primary/20 px-6 py-3 text-base font-medium">
-                <Github className="w-5 h-5 mr-2 animate-pulse" />
-                <span>View More Projects on GitHub</span>
-              </Button>
-            </a>
-            <p className="text-sm text-muted-foreground mt-3 max-w-md mx-auto">
-              Discover additional projects and contributions on my GitHub profile
+            <div className="mb-4">
+              <a href="https://github.com/yuvraj-mehta" target="_blank" rel="noopener noreferrer">
+                <Button className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 text-base font-semibold rounded-full hover:scale-105 transition-all duration-300 shadow-lg">
+                  View More Projects on GitHub
+                  <Github className="w-5 h-5 ml-2" />
+                </Button>
+              </a>
+            </div>
+            <p className="text-base text-muted-foreground max-w-lg mx-auto leading-relaxed">
+              Discover additional projects and open-source contributions on my GitHub profile
             </p>
           </div>
         </div>
