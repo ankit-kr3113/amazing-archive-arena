@@ -40,6 +40,7 @@ import {
   TbServer
 } from "react-icons/tb";
 import { MdWeb, MdStorage, MdCode, MdBuild } from "react-icons/md";
+import { VscCode } from "react-icons/vsc";
 
 const Skills = () => {
   const [activeCategory, setActiveCategory] = useState("Web Development");
