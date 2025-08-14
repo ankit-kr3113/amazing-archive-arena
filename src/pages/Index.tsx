@@ -135,35 +135,38 @@ const Index = () => {
                   </div>
                 </div>
 
-                {/* Achievement Cards with Current Stats */}
-                <div className="hidden lg:block absolute top-12 -right-4 w-24 h-20 bg-card/95 backdrop-blur-sm rounded-xl border border-primary/30 p-3 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 animate-float micro-interaction group cursor-pointer">
+                {/* Enhanced Achievement Cards with Social Proof */}
+                <div className="hidden lg:block absolute top-12 -right-4 w-28 h-24 bg-card/95 backdrop-blur-sm rounded-xl border border-primary/30 p-3 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 animate-float micro-interaction group cursor-pointer">
                   <div className="flex justify-center mb-2">
                     <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center animate-subtle-bounce">
                       <Rocket className="w-4 h-4 text-white group-hover:animate-bounce" />
                     </div>
                   </div>
-                  <div className="text-xs text-primary font-semibold text-center">4+</div>
+                  <div className="text-sm text-primary font-bold text-center">15+</div>
                   <div className="text-[10px] text-muted-foreground text-center">Projects</div>
+                  <div className="text-[9px] text-green-500 text-center">Live & Running</div>
                 </div>
 
-                <div className="hidden lg:block absolute bottom-12 -left-4 w-24 h-20 bg-card/95 backdrop-blur-sm rounded-xl border border-primary/30 p-3 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 animate-float animation-delay-1000 micro-interaction group cursor-pointer">
+                <div className="hidden lg:block absolute bottom-12 -left-4 w-28 h-24 bg-card/95 backdrop-blur-sm rounded-xl border border-primary/30 p-3 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 animate-float animation-delay-1000 micro-interaction group cursor-pointer">
                   <div className="flex justify-center mb-2">
                     <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-green-500 to-teal-500 flex items-center justify-center animate-subtle-bounce animation-delay-600">
                       <Laptop className="w-4 h-4 text-white group-hover:animate-bounce" />
                     </div>
                   </div>
-                  <div className="text-xs text-primary font-semibold text-center">NIT</div>
+                  <div className="text-sm text-primary font-bold text-center">NIT</div>
                   <div className="text-[10px] text-muted-foreground text-center">Patna</div>
+                  <div className="text-[9px] text-blue-500 text-center">Top 30 IIT</div>
                 </div>
 
-                <div className="hidden lg:block absolute top-1/2 -right-6 w-24 h-20 bg-card/95 backdrop-blur-sm rounded-xl border border-primary/30 p-3 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 animate-float animation-delay-2000 micro-interaction group cursor-pointer">
+                <div className="hidden lg:block absolute top-1/2 -right-6 w-28 h-24 bg-card/95 backdrop-blur-sm rounded-xl border border-primary/30 p-3 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 animate-float animation-delay-2000 micro-interaction group cursor-pointer">
                   <div className="flex justify-center mb-2">
                     <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-yellow-500 to-orange-500 flex items-center justify-center animate-subtle-bounce animation-delay-1200">
                       <Trophy className="w-4 h-4 text-white group-hover:animate-bounce" />
                     </div>
                   </div>
-                  <div className="text-xs text-primary font-semibold text-center">MERN</div>
-                  <div className="text-[10px] text-muted-foreground text-center">Stack</div>
+                  <div className="text-sm text-primary font-bold text-center">500+</div>
+                  <div className="text-[10px] text-muted-foreground text-center">GitHub</div>
+                  <div className="text-[9px] text-purple-500 text-center">Commits</div>
                 </div>
               </div>
             </div>
