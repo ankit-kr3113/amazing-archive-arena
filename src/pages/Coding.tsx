@@ -296,21 +296,6 @@ const Coding = () => {
                         </div>
                       </div>
 
-                      {/* Rating and rank info */}
-                      <div className="flex items-center gap-4 mb-4 text-sm">
-                        {platform.rating && (
-                          <>
-                            <div className="flex items-center gap-1">
-                              <FaStar className="w-3 h-3 text-yellow-400" />
-                              <span className="text-slate-300">Rating: {platform.rating}</span>
-                            </div>
-                            <div className="flex items-center gap-1">
-                              <FaMedal className="w-3 h-3 text-blue-400" />
-                              <span className="text-slate-300">{platform.rank}</span>
-                            </div>
-                          </>
-                        )}
-                      </div>
 
                       {/* Bottom description text */}
                       <div className="text-xs text-slate-400 border-t border-slate-700/50 pt-3">
