@@ -124,37 +124,17 @@ const Projects = () => {
         <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-primary-glow/5 rounded-full blur-3xl animate-pulse opacity-40 animation-delay-2000"></div>
         
         <div className="relative max-w-7xl mx-auto">
-          {/* Modern Header Section */}
-          <div className="text-center mb-16 fade-in">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 mb-6 bg-primary/10 border border-primary/20 rounded-full text-primary text-sm font-medium shadow-lg backdrop-blur-sm">
-              <Code className="w-4 h-4" />
-              <span>Portfolio Showcase</span>
-            </div>
-
+          {/* Compact Header Section */}
+          <div className="text-center mb-12 fade-in">
             {/* Main Title */}
-            <div className="mb-6">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-foreground mb-2 tracking-tight leading-none">
-                Featured
-              </h1>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-4 tracking-tight leading-none">
-                <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent animate-pulse">
-                  Projects
-                </span>
-              </h1>
-            </div>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-3 tracking-tight">
+              Featured <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">Projects</span>
+            </h1>
 
             {/* Subtitle */}
-            <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-8">
-              Explore my latest work in web development, full-stack applications, and innovative solutions
+            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              Explore my latest work in web development and innovative solutions
             </p>
-
-            {/* Decorative Element */}
-            <div className="flex items-center justify-center gap-2 mb-4">
-              <div className="w-12 h-0.5 bg-gradient-to-r from-transparent to-primary rounded-full"></div>
-              <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
-              <div className="w-12 h-0.5 bg-gradient-to-l from-transparent to-primary rounded-full"></div>
-            </div>
           </div>
 
           {/* Enhanced Project Filters */}
