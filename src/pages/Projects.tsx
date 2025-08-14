@@ -125,11 +125,11 @@ const Projects = () => {
         
         <div className="relative max-w-7xl mx-auto">
           {/* Clean Header Section */}
-          <div className="text-center mb-16 fade-in">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-6 tracking-tight">
+          <div className="text-center mb-12 fade-in">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 tracking-tight">
               My <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">Projects</span>
             </h1>
-            <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               A collection of projects showcasing my journey in software development
             </p>
           </div>
@@ -246,7 +246,7 @@ const Projects = () => {
                   <span className="text-xl">
                     {filter === "Featured" && <Star className="w-6 h-6 text-primary" />}
                     {filter === "Frontend" && "🎨"}
-                    {filter === "AI & ML" && "��"}
+                    {filter === "AI & ML" && "🤖"}
                     {filter === "Full Stack" && "🔗"}
                   </span>
                 </div>
