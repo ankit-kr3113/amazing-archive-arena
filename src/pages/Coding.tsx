@@ -12,12 +12,12 @@ import {
   SiGeeksforgeeks, 
   SiCodeforces 
 } from "react-icons/si";
-import { 
-  FaTrophy, 
-  FaMedal, 
-  FaTarget, 
-  FaBolt, 
-  FaCode, 
+import {
+  FaTrophy,
+  FaMedal,
+  FaBullseye,
+  FaBolt,
+  FaCode,
   FaChartLine,
   FaExternalLinkAlt
 } from "react-icons/fa";
