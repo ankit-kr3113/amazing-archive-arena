@@ -12,18 +12,9 @@ const Index = () => {
       
       {/* Enhanced Hero Section */}
       <section className="relative pt-16 pb-8 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        {/* Enhanced Background Elements with Subtle Stock Image */}
-        <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/8"></div>
-        <div className="absolute inset-0 opacity-5">
-          <img
-            src="https://images.unsplash.com/photo-1526378800651-c32d170fe6f8?w=1920&h=1080&fit=crop&auto=format&q=20"
-            alt=""
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] sm:w-[800px] h-[600px] sm:h-[800px] bg-primary/5 rounded-full blur-3xl opacity-50 animate-pulse"></div>
-        <div className="absolute top-1/4 right-1/4 w-[300px] h-[300px] bg-primary-glow/3 rounded-full blur-2xl opacity-60 animate-pulse animation-delay-1000"></div>
-        <div className="absolute bottom-1/4 left-1/4 w-[400px] h-[400px] bg-primary/3 rounded-full blur-2xl opacity-40 animate-pulse animation-delay-2000"></div>
+        {/* Simplified Background Elements */}
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/5"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/3 rounded-full blur-3xl opacity-30 animate-pulse"></div>
         
         <div className="relative max-w-7xl mx-auto w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center min-h-[70vh]">
