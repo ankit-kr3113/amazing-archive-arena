@@ -170,7 +170,7 @@ const About = () => {
 
                   <div className="pt-4 border-t">
                     <h4 className="font-semibold mb-3 text-sm">What Drives Me</h4>
-                    <div className="grid grid-cols-2 gap-3">
+                    <div className="grid grid-cols-2 gap-3 mb-6">
                       {interests.map((interest, index) => (
                         <div key={index} className="flex items-start gap-2 p-2 rounded-lg hover:bg-primary/5 transition-colors">
                           <span className="text-base">{interest.icon}</span>
@@ -181,24 +181,27 @@ const About = () => {
                         </div>
                       ))}
                     </div>
+
+                    {/* Stats Row - Moved below What Drives Me */}
+                    <div className="pt-4 border-t">
+                      <h4 className="font-semibold mb-3 text-sm">Achievements</h4>
+                      <div className="grid grid-cols-2 gap-3">
+                        {achievements.map((achievement, index) => (
+                          <div key={index} className="text-center p-3 rounded-lg bg-primary/5 hover:bg-primary/10 transition-colors group">
+                            <div className={`text-lg font-bold ${achievement.color} group-hover:scale-110 transition-transform duration-300`}>
+                              {achievement.value}
+                            </div>
+                            <div className="text-xs text-muted-foreground group-hover:text-primary transition-colors duration-200">
+                              {achievement.label}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </div>
               </Card>
             </div>
-          </div>
-
-          {/* Stats Row */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-            {achievements.map((achievement, index) => (
-              <Card key={index} className="portfolio-card text-center group hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 hover:scale-105">
-                <div className={`text-xl sm:text-2xl font-bold ${achievement.color} group-hover:scale-110 transition-transform duration-300`}>
-                  {achievement.value}
-                </div>
-                <div className="text-xs text-muted-foreground group-hover:text-primary transition-colors duration-200">
-                  {achievement.label}
-                </div>
-              </Card>
-            ))}
           </div>
 
         </div>
