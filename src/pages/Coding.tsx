@@ -185,13 +185,23 @@ const Coding = () => {
         <div className="absolute top-3/4 left-1/2 w-64 h-64 bg-secondary/5 rounded-full blur-2xl opacity-15"></div>
         
         <div className="relative max-w-7xl mx-auto">
-          {/* Header Section */}
-          <div className="text-center mb-10">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Competitive <span className="text-primary">Programming</span>
+          {/* Enhanced Header Section */}
+          <div className="text-center mb-10 fade-in">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-primary text-sm font-medium mb-4 shadow-lg backdrop-blur-sm hover:shadow-xl hover:scale-105 transition-all duration-300">
+              <Trophy className="w-4 h-4 animate-pulse" />
+              <span>Competitive Programming</span>
+              <div className="ml-1 w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+            </div>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 animate-fade-in-up">
+              Algorithm <span className="gradient-text relative inline-block">
+                Mastery
+                <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-primary to-primary-glow rounded-full opacity-60"></div>
+              </span>
             </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Algorithm mastery across multiple platforms with consistent problem-solving excellence
+            <p className="text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed animate-fade-in-up animation-delay-300">
+              Solving <span className="text-primary font-semibold">333+ problems</span> across multiple platforms with{" "}
+              <span className="text-primary font-semibold">consistent excellence</span> and{" "}
+              <span className="text-primary font-semibold">competitive performance</span>
             </p>
           </div>
 
