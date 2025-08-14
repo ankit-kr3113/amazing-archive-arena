@@ -9,7 +9,12 @@ import ThemeSwitcher from "@/components/ThemeSwitcher";
 const Skills = () => {
   const [activeCategory, setActiveCategory] = useState("Web Development");
 
-  const skillCategories = ["Web Development", "Database", "Languages", "Tools"];
+  const skillCategories = [
+    { name: "Web Development", icon: "🌐" },
+    { name: "Database", icon: "🗄️" },
+    { name: "Languages", icon: "💻" },
+    { name: "Tools", icon: "⚡" }
+  ];
 
   const skillsData = {
     "Web Development": [
@@ -17,78 +22,67 @@ const Skills = () => {
         name: "React",
         level: "Frontend",
         icon: "⚛️",
-        color: "from-blue-500/20 to-cyan-500/20",
-        borderColor: "border-blue-500/30",
+        color: "text-blue-400"
       },
       {
         name: "Node.js",
         level: "Backend",
         icon: "🟢",
-        color: "from-green-500/20 to-emerald-500/20",
-        borderColor: "border-green-500/30",
+        color: "text-green-400"
       },
       {
         name: "JavaScript",
         level: "Frontend",
         icon: "🟨",
-        color: "from-yellow-500/20 to-orange-500/20",
-        borderColor: "border-yellow-500/30",
+        color: "text-yellow-400"
       },
       {
         name: "TypeScript",
         level: "Frontend",
         icon: "🔷",
-        color: "from-blue-600/20 to-indigo-500/20",
-        borderColor: "border-blue-600/30",
-      },
-      {
-        name: "Express.js",
-        level: "Backend",
-        icon: "🚀",
-        color: "from-gray-600/20 to-slate-500/20",
-        borderColor: "border-gray-600/30",
+        color: "text-blue-500"
       },
       {
         name: "HTML5",
         level: "Frontend",
         icon: "🌐",
-        color: "from-orange-500/20 to-red-500/20",
-        borderColor: "border-orange-500/30",
+        color: "text-orange-400"
       },
       {
         name: "CSS3",
         level: "Frontend",
         icon: "🎨",
-        color: "from-blue-500/20 to-purple-500/20",
-        borderColor: "border-blue-500/30",
+        color: "text-blue-400"
+      },
+      {
+        name: "RESTful APIs",
+        level: "Backend",
+        icon: "🔌",
+        color: "text-cyan-400"
       },
       {
         name: "Tailwind CSS",
         level: "Frontend",
         icon: "💨",
-        color: "from-cyan-500/20 to-teal-500/20",
-        borderColor: "border-cyan-500/30",
+        color: "text-cyan-400"
       },
       {
         name: "Next.js",
         level: "Frontend",
         icon: "▲",
-        color: "from-gray-800/20 to-black/20",
-        borderColor: "border-gray-800/30",
+        color: "text-gray-300"
       },
       {
         name: "Redux",
         level: "Frontend",
         icon: "🔄",
-        color: "from-purple-500/20 to-violet-500/20",
-        borderColor: "border-purple-500/30",
+        color: "text-purple-400"
       },
       {
         name: "Vue",
         level: "Frontend",
         icon: "💚",
-        color: "from-green-400/20 to-emerald-400/20",
-        borderColor: "border-green-400/30",
+        color: "text-green-400"
       }
     ],
     "Database": [
@@ -96,22 +90,19 @@ const Skills = () => {
         name: "MongoDB",
         level: "Database",
         icon: "🍃",
-        color: "from-green-600/20 to-green-500/20",
-        borderColor: "border-green-600/30",
+        color: "text-green-400"
       },
       {
         name: "SQL",
         level: "Database",
         icon: "🗃️",
-        color: "from-blue-600/20 to-indigo-600/20",
-        borderColor: "border-blue-600/30",
+        color: "text-blue-400"
       },
       {
         name: "Database Design",
         level: "Database",
         icon: "🏗️",
-        color: "from-purple-600/20 to-pink-600/20",
-        borderColor: "border-purple-600/30",
+        color: "text-purple-400"
       }
     ],
     "Languages": [
@@ -119,36 +110,31 @@ const Skills = () => {
         name: "JavaScript",
         level: "Languages",
         icon: "🟨",
-        color: "from-yellow-500/20 to-orange-500/20",
-        borderColor: "border-yellow-500/30",
+        color: "text-yellow-400"
       },
       {
         name: "TypeScript",
         level: "Languages",
         icon: "🔷",
-        color: "from-blue-600/20 to-indigo-500/20",
-        borderColor: "border-blue-600/30",
+        color: "text-blue-500"
       },
       {
         name: "C++",
         level: "Languages",
         icon: "🔵",
-        color: "from-blue-700/20 to-indigo-700/20",
-        borderColor: "border-blue-700/30",
+        color: "text-blue-400"
       },
       {
         name: "Java",
         level: "Languages",
         icon: "☕",
-        color: "from-orange-600/20 to-red-600/20",
-        borderColor: "border-orange-600/30",
+        color: "text-orange-400"
       },
       {
         name: "Python",
         level: "Languages",
         icon: "🐍",
-        color: "from-green-600/20 to-blue-600/20",
-        borderColor: "border-green-600/30",
+        color: "text-yellow-400"
       }
     ],
     "Tools": [
@@ -156,51 +142,37 @@ const Skills = () => {
         name: "Git & GitHub",
         level: "Tools",
         icon: "📂",
-        color: "from-orange-500/20 to-red-500/20",
-        borderColor: "border-orange-500/30",
+        color: "text-orange-400"
       },
       {
         name: "VS Code",
         level: "Tools",
         icon: "💻",
-        color: "from-blue-600/20 to-cyan-600/20",
-        borderColor: "border-blue-600/30",
+        color: "text-blue-400"
       },
       {
-        name: "RESTful APIs",
+        name: "Webpack",
         level: "Tools",
-        icon: "🔌",
-        color: "from-indigo-500/20 to-purple-500/20",
-        borderColor: "border-indigo-500/30",
+        icon: "📦",
+        color: "text-blue-400"
       },
       {
-        name: "Postman",
+        name: "Docker",
         level: "Tools",
-        icon: "📮",
-        color: "from-orange-600/20 to-red-600/20",
-        borderColor: "border-orange-600/30",
+        icon: "🐳",
+        color: "text-blue-400"
       }
     ]
   };
 
   const getLevelColor = (level: string) => {
     switch(level) {
-      case "Frontend": return "bg-blue-500/10 text-blue-400 border-blue-500/20";
-      case "Backend": return "bg-green-500/10 text-green-400 border-green-500/20";
-      case "Database": return "bg-purple-500/10 text-purple-400 border-purple-500/20";
-      case "Languages": return "bg-orange-500/10 text-orange-400 border-orange-500/20";
-      case "Tools": return "bg-cyan-500/10 text-cyan-400 border-cyan-500/20";
-      default: return "bg-gray-500/10 text-gray-400 border-gray-500/20";
-    }
-  };
-
-  const getCategoryIcon = (category: string) => {
-    switch(category) {
-      case "Web Development": return "🌐";
-      case "Database": return "🗄️";
-      case "Languages": return "💻";
-      case "Tools": return "⚡";
-      default: return "🔧";
+      case "Frontend": return "bg-blue-500/20 text-blue-300 border border-blue-500/30";
+      case "Backend": return "bg-green-500/20 text-green-300 border border-green-500/30";
+      case "Database": return "bg-purple-500/20 text-purple-300 border border-purple-500/30";
+      case "Languages": return "bg-orange-500/20 text-orange-300 border border-orange-500/30";
+      case "Tools": return "bg-cyan-500/20 text-cyan-300 border border-cyan-500/30";
+      default: return "bg-gray-500/20 text-gray-300 border border-gray-500/30";
     }
   };
 
@@ -209,65 +181,54 @@ const Skills = () => {
       <Navigation />
       <ThemeSwitcher />
       
-      <div className="relative pt-16 pb-8 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        {/* Enhanced Background */}
+      <div className="relative pt-20 pb-16 px-4 sm:px-6 lg:px-8">
+        {/* Background Effects */}
         <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/5"></div>
-        <div className="absolute top-0 left-0 w-full h-full opacity-30">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary-glow/10 rounded-full blur-3xl animate-pulse animation-delay-2000"></div>
-          <div className="absolute top-3/4 left-1/2 w-64 h-64 bg-secondary/5 rounded-full blur-2xl animate-pulse animation-delay-4000"></div>
-        </div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl opacity-30"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary-glow/10 rounded-full blur-3xl opacity-20"></div>
         
-        <div className="relative max-w-6xl mx-auto">
-          {/* Header */}
-          <div className="text-center mb-12 fade-in">
-            <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">
+        <div className="relative max-w-7xl mx-auto">
+          {/* Header Section */}
+          <div className="text-center mb-12">
+            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
               My <span className="text-primary">Tech Stack</span>
             </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               The modern technologies and tools I use to build interactive and scalable web applications
             </p>
           </div>
 
-          {/* Category Tabs */}
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
+          {/* Category Filter Buttons */}
+          <div className="flex flex-wrap justify-center gap-4 mb-12">
             {skillCategories.map((category) => (
               <Button
-                key={category}
-                onClick={() => setActiveCategory(category)}
-                variant={activeCategory === category ? "default" : "outline"}
-                size="lg"
+                key={category.name}
+                onClick={() => setActiveCategory(category.name)}
+                variant={activeCategory === category.name ? "default" : "outline"}
                 className={`
-                  px-6 py-3 rounded-full transition-all duration-300 hover:scale-105
-                  ${activeCategory === category 
-                    ? "bg-primary text-primary-foreground shadow-lg shadow-primary/25" 
-                    : "border-primary/20 hover:border-primary/40 hover:bg-primary/5"
+                  px-6 py-3 rounded-lg text-sm font-medium transition-all duration-300
+                  ${activeCategory === category.name 
+                    ? "bg-primary text-primary-foreground shadow-lg" 
+                    : "border-border hover:border-primary/50 hover:bg-primary/5 text-muted-foreground hover:text-foreground"
                   }
                 `}
               >
-                <span className="mr-2">{getCategoryIcon(category)}</span>
-                {category}
+                <span className="mr-2">{category.icon}</span>
+                {category.name}
               </Button>
             ))}
           </div>
 
           {/* Skills Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
             {skillsData[activeCategory]?.map((skill, index) => (
               <Card 
-                key={`${activeCategory}-${index}`} 
-                className={`
-                  group relative overflow-hidden transition-all duration-300 
-                  hover:scale-105 hover:-translate-y-2 cursor-pointer
-                  bg-gradient-to-br ${skill.color} 
-                  border ${skill.borderColor}
-                  hover:shadow-xl hover:shadow-primary/10
-                  backdrop-blur-sm
-                `}
+                key={`${activeCategory}-${index}`}
+                className="group bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/30 hover:bg-card/80 transition-all duration-300 hover:scale-105 hover:-translate-y-1 cursor-pointer"
               >
-                <div className="p-6">
-                  {/* Icon */}
-                  <div className="text-3xl mb-4 transform group-hover:scale-110 transition-transform duration-300">
+                <div className="p-6 text-center">
+                  {/* Skill Icon */}
+                  <div className={`text-2xl mb-4 ${skill.color} group-hover:scale-110 transition-transform duration-300`}>
                     {skill.icon}
                   </div>
                   
@@ -276,29 +237,26 @@ const Skills = () => {
                     {skill.name}
                   </h3>
                   
-                  {/* Level Badge */}
+                  {/* Skill Level Badge */}
                   <Badge className={`
                     ${getLevelColor(skill.level)} 
-                    text-xs font-medium px-3 py-1 rounded-full border
+                    text-xs font-medium px-3 py-1 rounded-md
                     transition-all duration-300 group-hover:scale-105
                   `}>
                     {skill.level}
                   </Badge>
                 </div>
-
-                {/* Hover Effect Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/5 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </Card>
             ))}
           </div>
 
-          {/* Project Showcase Teaser */}
-          <div className="mt-16 text-center">
+          {/* Project Showcase Section */}
+          <div className="mt-20 text-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-primary text-sm font-medium mb-6">
               <span>🚀</span>
               <span>Project Showcase</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               Recent <span className="text-primary">Projects</span>
             </h2>
             <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
