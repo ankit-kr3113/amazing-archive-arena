@@ -269,16 +269,16 @@ const Projects = () => {
           {/* All Projects Grid */}
           <div>
             {filter !== "All Projects" && (
-              <div className="flex items-center mb-8">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mr-4">
+              <div className="flex items-center gap-3 mb-10">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-primary-glow/10 flex items-center justify-center shadow-lg">
                   <span className="text-xl">
-                    {filter === "Featured" && "⭐"}
+                    {filter === "Featured" && <Star className="w-6 h-6 text-primary" />}
                     {filter === "Frontend" && "🎨"}
                     {filter === "AI & ML" && "🤖"}
                     {filter === "Full Stack" && "🔗"}
                   </span>
                 </div>
-                <h2 className="text-2xl font-bold">{filter}</h2>
+                <h2 className="text-2xl md:text-3xl font-bold text-foreground">{filter}</h2>
               </div>
             )}
 
