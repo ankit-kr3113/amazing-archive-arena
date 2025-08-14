@@ -5,162 +5,202 @@ import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
-import {
-  Code2,
-  Database,
-  Globe,
-  Terminal,
-  Palette,
-  Server,
-  Brain,
-  Wrench,
-  Star
-} from "lucide-react";
+
+// React Icons imports
+import { 
+  FaReact, 
+  FaNodeJs, 
+  FaJs, 
+  FaHtml5, 
+  FaCss3Alt, 
+  FaPython, 
+  FaJava, 
+  FaGitAlt, 
+  FaDocker,
+  FaDatabase
+} from "react-icons/fa";
+import { 
+  SiTypescript, 
+  SiTailwindcss, 
+  SiNextdotjs, 
+  SiRedux, 
+  SiVuedotjs, 
+  SiMongodb, 
+  SiMysql, 
+  SiWebpack,
+  SiExpress
+} from "react-icons/si";
+import { 
+  TbApi, 
+  TbBrandCpp, 
+  TbDatabase,
+  TbTool,
+  TbCode,
+  TbWorld,
+  TbServer
+} from "react-icons/tb";
+import { MdWeb, MdStorage, MdCode, MdBuild } from "react-icons/md";
+import { VscCode } from "react-icons/vsc";
 
 const Skills = () => {
-  const [activeCategory, setActiveCategory] = useState("All");
+  const [activeCategory, setActiveCategory] = useState("Web Development");
 
-  const skillCategories = ["All", "Frontend", "Backend", "Languages", "Tools"];
-
-  const skillsData = [
-    // Featured/Primary Skills
-    {
-      name: "React",
-      category: "Frontend",
-      level: "Expert",
-      icon: Code2,
-      color: "text-blue-500",
-      featured: true
-    },
-    {
-      name: "JavaScript",
-      category: "Frontend", 
-      level: "Expert",
-      icon: Code2,
-      color: "text-yellow-500",
-      featured: true
-    },
-    {
-      name: "TypeScript",
-      category: "Frontend",
-      level: "Advanced",
-      icon: Code2,
-      color: "text-blue-600",
-      featured: true
-    },
-    {
-      name: "Node.js",
-      category: "Backend",
-      level: "Advanced",
-      icon: Server,
-      color: "text-green-500",
-      featured: true
-    },
-    {
-      name: "MongoDB",
-      category: "Backend",
-      level: "Advanced",
-      icon: Database,
-      color: "text-green-600",
-      featured: true
-    },
-    {
-      name: "Tailwind CSS",
-      category: "Frontend",
-      level: "Advanced",
-      icon: Palette,
-      color: "text-cyan-500",
-      featured: true
-    },
-
-    // Additional Skills
-    {
-      name: "Next.js",
-      category: "Frontend",
-      level: "Intermediate",
-      icon: Globe,
-      color: "text-gray-700",
-      featured: false
-    },
-    {
-      name: "Express.js",
-      category: "Backend",
-      level: "Advanced",
-      icon: Server,
-      color: "text-gray-600",
-      featured: false
-    },
-    {
-      name: "HTML5 & CSS3",
-      category: "Frontend",
-      level: "Expert",
-      icon: Globe,
-      color: "text-orange-500",
-      featured: false
-    },
-    {
-      name: "C++",
-      category: "Languages",
-      level: "Advanced",
-      icon: Brain,
-      color: "text-blue-800",
-      featured: false
-    },
-    {
-      name: "Java",
-      category: "Languages",
-      level: "Intermediate",
-      icon: Brain,
-      color: "text-orange-600",
-      featured: false
-    },
-    {
-      name: "Python",
-      category: "Languages",
-      level: "Intermediate",
-      icon: Brain,
-      color: "text-green-700",
-      featured: false
-    },
-    {
-      name: "Git & GitHub",
-      category: "Tools",
-      level: "Advanced",
-      icon: Wrench,
-      color: "text-orange-500",
-      featured: false
-    },
-    {
-      name: "VS Code",
-      category: "Tools",
-      level: "Expert",
-      icon: Terminal,
-      color: "text-blue-600",
-      featured: false
-    },
-    {
-      name: "RESTful APIs",
-      category: "Backend",
-      level: "Advanced",
-      icon: Globe,
-      color: "text-indigo-500",
-      featured: false
-    }
+  const skillCategories = [
+    { name: "Web Development", icon: MdWeb },
+    { name: "Database", icon: MdStorage },
+    { name: "Languages", icon: MdCode },
+    { name: "Tools", icon: MdBuild }
   ];
 
-  const getFilteredSkills = () => {
-    if (activeCategory === "All") {
-      return skillsData;
+  const skillsData = {
+    "Web Development": {
+      Frontend: [
+        {
+          name: "React",
+          icon: FaReact,
+          color: "text-blue-400"
+        },
+        {
+          name: "JavaScript",
+          icon: FaJs,
+          color: "text-yellow-400"
+        },
+        {
+          name: "TypeScript",
+          icon: SiTypescript,
+          color: "text-blue-500"
+        },
+        {
+          name: "HTML5",
+          icon: FaHtml5,
+          color: "text-orange-400"
+        },
+        {
+          name: "CSS3",
+          icon: FaCss3Alt,
+          color: "text-blue-400"
+        },
+        {
+          name: "Tailwind CSS",
+          icon: SiTailwindcss,
+          color: "text-cyan-400"
+        },
+        {
+          name: "Next.js",
+          icon: SiNextdotjs,
+          color: "text-gray-300"
+        },
+        {
+          name: "Redux",
+          icon: SiRedux,
+          color: "text-purple-400"
+        },
+        {
+          name: "Vue",
+          icon: SiVuedotjs,
+          color: "text-green-400"
+        }
+      ],
+      Backend: [
+        {
+          name: "Node.js",
+          icon: FaNodeJs,
+          color: "text-green-400"
+        },
+        {
+          name: "RESTful APIs",
+          icon: TbApi,
+          color: "text-cyan-400"
+        },
+        {
+          name: "Express.js",
+          icon: SiExpress,
+          color: "text-gray-400"
+        }
+      ]
+    },
+    "Database": {
+      Database: [
+        {
+          name: "MongoDB",
+          icon: SiMongodb,
+          color: "text-green-400"
+        },
+        {
+          name: "SQL",
+          icon: SiMysql,
+          color: "text-blue-400"
+        },
+        {
+          name: "Database Design",
+          icon: TbDatabase,
+          color: "text-purple-400"
+        }
+      ]
+    },
+    "Languages": {
+      Languages: [
+        {
+          name: "JavaScript",
+          icon: FaJs,
+          color: "text-yellow-400"
+        },
+        {
+          name: "TypeScript",
+          icon: SiTypescript,
+          color: "text-blue-500"
+        },
+        {
+          name: "C++",
+          icon: TbBrandCpp,
+          color: "text-blue-400"
+        },
+        {
+          name: "Java",
+          icon: FaJava,
+          color: "text-orange-400"
+        },
+        {
+          name: "Python",
+          icon: FaPython,
+          color: "text-yellow-400"
+        }
+      ]
+    },
+    "Tools": {
+      Tools: [
+        {
+          name: "Git & GitHub",
+          icon: FaGitAlt,
+          color: "text-orange-400"
+        },
+        {
+          name: "VS Code",
+          icon: VscCode,
+          color: "text-blue-400"
+        },
+        {
+          name: "Webpack",
+          icon: SiWebpack,
+          color: "text-blue-400"
+        },
+        {
+          name: "Docker",
+          icon: FaDocker,
+          color: "text-blue-400"
+        }
+      ]
     }
-    return skillsData.filter(skill => skill.category === activeCategory);
   };
 
-  const getLevelColor = (level) => {
+  const getLevelColor = (level: string) => {
     switch(level) {
-      case "Expert": return "bg-emerald-100 text-emerald-700";
-      case "Advanced": return "bg-blue-100 text-blue-700";
-      case "Intermediate": return "bg-yellow-100 text-yellow-700";
-      default: return "bg-gray-100 text-gray-700";
+      case "Frontend": return "bg-blue-500/20 text-blue-300 border border-blue-500/30";
+      case "Backend": return "bg-green-500/20 text-green-300 border border-green-500/30";
+      case "Database": return "bg-purple-500/20 text-purple-300 border border-purple-500/30";
+      case "Languages": return "bg-orange-500/20 text-orange-300 border border-orange-500/30";
+      case "Tools": return "bg-cyan-500/20 text-cyan-300 border border-cyan-500/30";
+      default: return "bg-gray-500/20 text-gray-300 border border-gray-500/30";
     }
   };
 
@@ -169,126 +209,94 @@ const Skills = () => {
       <Navigation />
       <ThemeSwitcher />
       
-      <div className="relative pt-16 pb-8 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/8"></div>
-        <div className="absolute inset-0 opacity-5">
-          <img
-            src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=1920&h=1080&fit=crop&auto=format&q=20"
-            alt=""
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse opacity-60"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary-glow/5 rounded-full blur-3xl animate-pulse opacity-40 animation-delay-2000"></div>
+      <div className="relative pt-20 pb-16 px-4 sm:px-6 lg:px-8">
+        {/* Background Effects */}
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/5"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl opacity-30"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary-glow/10 rounded-full blur-3xl opacity-20"></div>
         
-        <div className="relative max-w-6xl mx-auto">
-          {/* Header */}
-          <div className="text-center mb-8 fade-in">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-cyan-500/10 rounded-full text-cyan-600 text-xs font-medium mb-3">
-              <span>⚡</span>
-              <span>Skills</span>
-            </div>
-            <h1 className="text-2xl sm:text-3xl font-bold text-foreground mb-2">
-              Technical Skills
+        <div className="relative max-w-7xl mx-auto">
+          {/* Header Section */}
+          <div className="text-center mb-12">
+            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+              My <span className="text-primary">Tech Stack</span>
             </h1>
-            <p className="text-sm text-muted-foreground max-w-lg mx-auto">
-              Technologies and tools I use to build great software
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              The modern technologies and tools I use to build interactive and scalable web applications
             </p>
           </div>
 
-          {/* Category Filter */}
-          <div className="flex flex-wrap justify-center gap-2 mb-8">
-            {skillCategories.map((category) => (
-              <Button
-                key={category}
-                onClick={() => setActiveCategory(category)}
-                variant={activeCategory === category ? "default" : "outline"}
-                size="sm"
-                className={`${activeCategory === category ? "btn-hero" : "btn-outline-hero"} hover:scale-105 transition-all duration-300`}
-              >
-                {category}
-              </Button>
+          {/* Category Filter Buttons */}
+          <div className="flex flex-wrap justify-center gap-4 mb-12">
+            {skillCategories.map((category) => {
+              const IconComponent = category.icon;
+              return (
+                <Button
+                  key={category.name}
+                  onClick={() => setActiveCategory(category.name)}
+                  variant={activeCategory === category.name ? "default" : "outline"}
+                  className={`
+                    px-6 py-3 rounded-lg text-sm font-medium transition-all duration-300
+                    ${activeCategory === category.name 
+                      ? "bg-primary text-primary-foreground shadow-lg" 
+                      : "border-border hover:border-primary/50 hover:bg-primary/5 text-muted-foreground hover:text-foreground"
+                    }
+                  `}
+                >
+                  <IconComponent className="mr-2 w-4 h-4" />
+                  {category.name}
+                </Button>
+              );
+            })}
+          </div>
+
+          {/* Skills Sections */}
+          <div className="space-y-12">
+            {Object.entries(skillsData[activeCategory] || {}).map(([sectionName, skills]) => (
+              <div key={sectionName}>
+                {/* Section Header */}
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  <h3 className="text-lg font-semibold text-foreground">{sectionName}</h3>
+                </div>
+
+                {/* Skills Grid */}
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+                  {skills.map((skill, index) => {
+                    const IconComponent = skill.icon;
+                    return (
+                      <Card 
+                        key={`${sectionName}-${index}`}
+                        className="group bg-card/40 backdrop-blur-sm border-border/30 hover:border-primary/40 hover:bg-card/60 transition-all duration-300 hover:scale-105 cursor-pointer"
+                      >
+                        <div className="p-4">
+                          {/* Icon and Name Row */}
+                          <div className="flex items-center gap-3 mb-3">
+                            <div className={`${skill.color} group-hover:scale-110 transition-transform duration-300`}>
+                              <IconComponent className="w-6 h-6" />
+                            </div>
+                            <h4 className="font-medium text-foreground text-sm group-hover:text-primary transition-colors duration-300">
+                              {skill.name}
+                            </h4>
+                          </div>
+                          
+                          {/* Level Badge */}
+                          <Badge className={`
+                            ${getLevelColor(sectionName)} 
+                            text-xs font-medium px-2 py-1 rounded-md w-full justify-center
+                            transition-all duration-300 group-hover:scale-105
+                          `}>
+                            {sectionName}
+                          </Badge>
+                        </div>
+                      </Card>
+                    );
+                  })}
+                </div>
+              </div>
             ))}
           </div>
 
-          {/* Featured Skills (Only show when "All" is selected) */}
-          {activeCategory === "All" && (
-            <div className="mb-12">
-              <div className="flex items-center justify-center mb-6">
-                <Star className="w-5 h-5 text-primary mr-2" />
-                <h2 className="text-lg font-semibold">Core Technologies</h2>
-              </div>
-              
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 mb-8">
-                {skillsData.filter(skill => skill.featured).map((skill, index) => {
-                  const Icon = skill.icon;
-                  return (
-                    <Card key={index} className="portfolio-card group text-center hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 hover:scale-105 cursor-pointer">
-                      <div className="p-4">
-                        <div className={`w-12 h-12 mx-auto mb-3 rounded-lg bg-gradient-to-br from-primary/10 to-primary-glow/10 flex items-center justify-center group-hover:scale-110 transition-all duration-300 ${skill.color}`}>
-                          <Icon className="w-6 h-6" />
-                        </div>
-                        <h3 className="font-semibold text-sm mb-1 group-hover:text-primary transition-colors">{skill.name}</h3>
-                        <Badge className={`${getLevelColor(skill.level)} text-xs border-0`}>
-                          {skill.level}
-                        </Badge>
-                      </div>
-                    </Card>
-                  );
-                })}
-              </div>
-            </div>
-          )}
-
-          {/* All Skills Grid */}
-          <div>
-            {activeCategory !== "All" && (
-              <div className="flex items-center justify-center mb-6">
-                <span className="text-lg mr-2">
-                  {activeCategory === "Frontend" && "🎨"}
-                  {activeCategory === "Backend" && "⚙️"}
-                  {activeCategory === "Languages" && "💻"}
-                  {activeCategory === "Tools" && "🔧"}
-                </span>
-                <h2 className="text-lg font-semibold">{activeCategory}</h2>
-              </div>
-            )}
-
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-              {getFilteredSkills().map((skill, index) => {
-                const Icon = skill.icon;
-                return (
-                  <Card key={index} className="portfolio-card group text-center hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 hover:scale-105 hover:-translate-y-1 cursor-pointer relative">
-                    <div className="p-4">
-                      {skill.featured && activeCategory === "All" && (
-                        <Badge className="absolute -top-1 -right-1 bg-primary text-primary-foreground text-xs z-10">
-                          <Star className="w-3 h-3" />
-                        </Badge>
-                      )}
-                      
-                      <div className={`w-10 h-10 mx-auto mb-3 rounded-lg bg-gradient-to-br from-primary/10 to-primary-glow/10 flex items-center justify-center group-hover:scale-110 transition-all duration-300 ${skill.color}`}>
-                        <Icon className="w-5 h-5" />
-                      </div>
-                      
-                      <h3 className="font-medium text-sm mb-2 group-hover:text-primary transition-colors leading-tight">{skill.name}</h3>
-                      
-                      <Badge className={`${getLevelColor(skill.level)} text-xs border-0`}>
-                        {skill.level}
-                      </Badge>
-                    </div>
-                  </Card>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* Simple Footer Note */}
-          <div className="text-center mt-12">
-            <p className="text-sm text-muted-foreground">
-              Always learning and exploring new technologies 🚀
-            </p>
-          </div>
         </div>
       </div>
 
