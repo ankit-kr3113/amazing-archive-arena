@@ -25,6 +25,7 @@ import {
   FaStar,
   FaFire,
 } from "react-icons/fa";
+import { Trophy } from "lucide-react";
 import {
   MdLeaderboard,
   MdTrendingUp
