@@ -1,8 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Progress } from "@/components/ui/progress";
-import { Badge } from "@/components/ui/badge";
-import { Download, Mail, ExternalLink, Github, Linkedin, Trophy, Code, Heart, MapPin, Calendar } from "lucide-react";
+import { Download, Mail, ExternalLink, Github, Linkedin, Trophy, Code, MapPin, Calendar } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
