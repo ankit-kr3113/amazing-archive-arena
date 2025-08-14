@@ -605,7 +605,8 @@ const Skills = () => {
 
                       {/* Background hover effect */}
                       <div className="absolute inset-0 bg-gradient-to-br from-primary/3 via-transparent to-primary-glow/3 opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
-                    </Card>
+                    </div>
+                  </Card>
                   );
               })}
             </div>
