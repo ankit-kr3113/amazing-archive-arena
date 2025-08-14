@@ -85,10 +85,8 @@ const Index = () => {
             {/* Enhanced Right Content - Hero Image */}
             <div className="relative slide-up order-1 lg:order-2">
               <div className="relative flex justify-center">
-                {/* Enhanced Animated Background */}
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-primary-glow/30 to-primary/20 rounded-full blur-3xl animate-pulse"></div>
-                <div className="absolute inset-0 bg-gradient-to-br from-transparent via-primary/8 to-primary-glow/12 rounded-full animate-pulse animation-delay-1000"></div>
-                <div className="absolute inset-0 bg-gradient-to-tl from-primary-glow/10 via-transparent to-primary/10 rounded-full animate-pulse animation-delay-2000"></div>
+                {/* Simplified Animated Background */}
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/15 via-primary-glow/20 to-primary/15 rounded-full blur-2xl animate-pulse"></div>
                 
                 {/* Enhanced Profile Image */}
                 <div className="relative z-10 w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 rounded-full overflow-hidden border-4 border-primary/30 shadow-2xl hover:shadow-primary/20 transition-all duration-500 hover:scale-105 group mx-auto">
