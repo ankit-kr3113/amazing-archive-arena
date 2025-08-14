@@ -21,7 +21,7 @@ const About = () => {
       <Navigation />
       <ThemeSwitcher />
       
-      <div className="relative pt-20 sm:pt-24 lg:pt-28 pb-12 sm:pb-16 lg:pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <div className="relative pt-16 pb-8 px-4 sm:px-6 lg:px-8 overflow-hidden">
         {/* Enhanced Background Elements with Subtle Code Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/8"></div>
         <div className="absolute inset-0 opacity-5">
@@ -36,7 +36,7 @@ const About = () => {
 
         <div className="relative max-w-7xl mx-auto">
           {/* Enhanced Header */}
-          <div className="text-center mb-12 sm:mb-16 lg:mb-20 fade-in">
+          <div className="text-center mb-8 fade-in">
             <div className="inline-flex items-center px-4 py-2.5 rounded-full bg-gradient-to-r from-primary/10 to-primary-glow/10 border border-primary/20 text-primary text-sm font-medium mb-6 shadow-lg backdrop-blur-sm hover:shadow-xl transition-all duration-300 hover:scale-105">
               <div className="flex items-center gap-2">
                 <span className="animate-wave text-base">👋</span>
@@ -44,13 +44,13 @@ const About = () => {
                 <div className="ml-2 w-2 h-2 bg-primary rounded-full animate-pulse"></div>
               </div>
             </div>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 tracking-tight leading-tight">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 tracking-tight leading-tight">
               About <span className="gradient-text relative inline-block">
                 Me
                 <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary to-primary-glow rounded-full opacity-30 animate-pulse"></div>
               </span>
             </h1>
-            <p className="text-lg sm:text-xl lg:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed px-4">
+            <p className="text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed px-4">
               Get to know the person behind the code - my journey, skills, and passion for technology that drives me to create meaningful digital experiences
             </p>
           </div>
