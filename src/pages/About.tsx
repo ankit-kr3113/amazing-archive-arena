@@ -4,6 +4,7 @@ import { Download, Mail, ExternalLink, Github, Linkedin, Trophy, Code, MapPin, C
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
+import { useNavigate } from "react-router-dom";
 
 const About = () => {
   const interests = [
