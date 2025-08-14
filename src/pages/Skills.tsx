@@ -86,7 +86,7 @@ const Skills = () => {
       <Navigation />
       <ThemeSwitcher />
       
-      <div className="relative pt-20 sm:pt-24 lg:pt-28 pb-12 sm:pb-16 lg:pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <div className="relative pt-16 pb-8 px-4 sm:px-6 lg:px-8 overflow-hidden">
         {/* Enhanced Background Elements with Tech Stock Image */}
         <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/8"></div>
         <div className="absolute inset-0 opacity-5">
@@ -101,13 +101,13 @@ const Skills = () => {
         
         <div className="relative max-w-7xl mx-auto">
           {/* Enhanced Header */}
-          <div className="text-center mb-12 sm:mb-16 lg:mb-20 fade-in">
+          <div className="text-center mb-8 fade-in">
             <div className="inline-flex items-center px-4 py-2.5 rounded-full bg-gradient-to-r from-primary/10 to-primary-glow/10 border border-primary/20 text-primary text-sm font-medium mb-6 shadow-lg backdrop-blur-sm hover:shadow-xl hover:scale-105 transition-all duration-300">
               <span className="animate-bounce mr-2">🛠️</span>
               <span>Technical Skills</span>
               <div className="ml-2 w-2 h-2 bg-primary rounded-full animate-pulse"></div>
             </div>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 tracking-tight leading-tight">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 tracking-tight leading-tight">
               My <span className="gradient-text relative inline-block">
                 Tech Stack
                 <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary to-primary-glow rounded-full opacity-30 animate-pulse"></div>
