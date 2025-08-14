@@ -165,27 +165,20 @@ const Projects = () => {
                 <h2 className="text-2xl md:text-3xl font-bold text-foreground">Featured Projects</h2>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 max-w-7xl mx-auto">
                 {featuredProjects.map((project, index) => (
-                  <Card key={index} className="group relative overflow-hidden bg-gradient-to-br from-card via-card to-card/80 border-0 shadow-xl hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500 hover:scale-[1.02] hover:-translate-y-2">
+                  <Card key={index} className="group relative overflow-hidden bg-card/50 backdrop-blur-sm border border-border/50 shadow-lg hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1">
                     {/* Enhanced Background Pattern */}
-                    <div className="absolute inset-0 opacity-5">
-                      <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-emerald-500/20 to-green-500/20 rounded-full blur-3xl"></div>
-                      <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-br from-primary/20 to-primary-glow/20 rounded-full blur-2xl"></div>
-                    </div>
-
-                    {/* Top Bar with Project Branding */}
-                    <div className="h-1 w-full bg-gradient-to-r from-emerald-500/30 to-green-500/30"></div>
 
                     <div className="relative p-6">
                       <div className="relative overflow-hidden rounded-xl mb-6">
-                        <Badge className="absolute top-3 left-3 z-10 bg-gradient-to-r from-primary to-primary-glow text-primary-foreground shadow-lg text-xs hover:scale-105 transition-transform duration-200">
-                          <Star className="w-3 h-3 mr-1 animate-pulse" />
+                        <Badge className="absolute top-3 left-3 z-10 bg-primary text-primary-foreground shadow-md text-xs">
+                          <Star className="w-3 h-3 mr-1" />
                           <span>Featured</span>
                         </Badge>
                         {project.status === "Live" && (
-                          <Badge className="absolute top-3 right-3 z-10 bg-gradient-to-r from-green-500 to-green-600 text-white shadow-lg text-xs hover:scale-105 transition-transform duration-200">
-                            <Globe className="w-3 h-3 mr-1 animate-pulse" />
+                          <Badge className="absolute top-3 right-3 z-10 bg-green-500 text-white shadow-md text-xs">
+                            <Globe className="w-3 h-3 mr-1" />
                             <span>Live</span>
                           </Badge>
                         )}
@@ -193,7 +186,7 @@ const Projects = () => {
                         <img
                           src={project.image}
                           alt={project.title}
-                          className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                          className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                           loading="lazy"
                         />
                       </div>
