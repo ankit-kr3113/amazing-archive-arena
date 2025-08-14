@@ -36,8 +36,8 @@ const About = () => {
 
         <div className="relative max-w-7xl mx-auto">
           {/* Redesigned Header */}
-          <div className="text-center mb-12 fade-in">
-            <div className="relative inline-block mb-8">
+          <div className="text-center mb-6 fade-in">
+            <div className="relative inline-block mb-4">
               <div className="absolute -inset-1 bg-gradient-to-r from-primary/30 via-primary-glow/20 to-primary/30 rounded-full blur-lg opacity-75 animate-pulse"></div>
               <div className="relative flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-primary/15 to-primary-glow/15 rounded-full border border-primary/25 shadow-xl backdrop-blur-sm">
                 <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center animate-bounce">
@@ -53,7 +53,7 @@ const About = () => {
             </div>
 
             <div className="relative">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-6 tracking-tight">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-black mb-3 tracking-tight">
                 <span className="relative inline-block">
                   <span className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-primary-glow/20 blur-xl rounded-lg"></span>
                   <span className="relative bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent animate-gradient">
@@ -69,10 +69,10 @@ const About = () => {
               </h1>
 
               <div className="max-w-3xl mx-auto">
-                <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+                <p className="text-sm text-muted-foreground leading-relaxed mb-2">
                   Dive into the <span className="text-primary font-semibold">journey</span> of a passionate developer who transforms
                 </p>
-                <p className="text-base text-muted-foreground/80 leading-relaxed">
+                <p className="text-xs text-muted-foreground/80 leading-relaxed">
                   <span className="inline-flex items-center gap-2">
                     <span className="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
                     <span>code into meaningful digital experiences</span>
