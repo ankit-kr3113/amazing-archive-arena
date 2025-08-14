@@ -78,6 +78,7 @@ const Coding = () => {
       icon: SiLeetcode,
       url: "https://leetcode.com/u/mythical-UV/",
       lastActive: "2024",
+      joinedDate: "Jan 2023",
       difficulty: { easy: 150, medium: 65, hard: 13 },
       recentActivity: "Solved 'Binary Tree Inorder Traversal' - 2 days ago"
     },
@@ -92,6 +93,7 @@ const Coding = () => {
       icon: SiGeeksforgeeks,
       url: "https://www.geeksforgeeks.org/user/yuvrajmevbrx/",
       lastActive: "2024",
+      joinedDate: "Mar 2023",
       difficulty: { easy: 45, medium: 20, hard: 5 },
       recentActivity: "Completed 'Array Rotation' challenge - 1 day ago"
     },
@@ -106,6 +108,7 @@ const Coding = () => {
       icon: SiCodechef,
       url: "https://www.codechef.com/users/quick_unity_53",
       lastActive: "2024",
+      joinedDate: "Feb 2023",
       difficulty: { easy: 18, medium: 6, hard: 1 },
       recentActivity: "Participated in Starters 186 - 1 week ago"
     },
@@ -120,6 +123,7 @@ const Coding = () => {
       icon: SiCodeforces,
       url: "https://codeforces.com/profile/yuvraj_mythical",
       lastActive: "2024",
+      joinedDate: "Apr 2023",
       difficulty: { easy: 8, medium: 2, hard: 0 },
       recentActivity: "Solved problem A in Div 3 contest - 2 weeks ago"
     }
