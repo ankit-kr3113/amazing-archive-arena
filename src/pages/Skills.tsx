@@ -104,16 +104,16 @@ const Skills = () => {
           <div className="text-center mb-6 fade-in">
             <div className="relative inline-block mb-4">
               <div className="absolute -inset-2 bg-gradient-to-r from-cyan-500/30 via-blue-500/20 to-indigo-500/30 rounded-2xl blur-xl opacity-75 animate-pulse"></div>
-              <div className="relative flex items-center gap-4 px-8 py-4 bg-gradient-to-r from-cyan-500/10 via-blue-500/5 to-indigo-500/10 rounded-2xl border border-cyan-500/20 shadow-2xl backdrop-blur-sm">
+              <div className="relative flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500/10 via-blue-500/5 to-indigo-500/10 rounded-2xl border border-cyan-500/20 shadow-2xl backdrop-blur-sm">
                 <div className="relative">
-                  <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg">
-                    <span className="text-white text-lg font-bold animate-spin-slow">⚙️</span>
+                  <div className="w-8 h-8 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg">
+                    <span className="text-white text-sm font-bold animate-spin-slow">⚙️</span>
                   </div>
                   <div className="absolute -top-1 -right-1 w-4 h-4 bg-green-400 rounded-full animate-pulse"></div>
                 </div>
                 <div className="text-left">
-                  <span className="block text-primary font-bold text-lg tracking-wide">Technical Arsenal</span>
-                  <span className="block text-muted-foreground text-sm">Crafting with cutting-edge technologies</span>
+                  <span className="block text-primary font-bold text-sm tracking-wide">Technical Arsenal</span>
+                  <span className="block text-muted-foreground text-xs">Crafting with cutting-edge technologies</span>
                 </div>
                 <div className="flex gap-2">
                   <div className="w-6 h-1 bg-cyan-400 rounded-full animate-pulse"></div>
