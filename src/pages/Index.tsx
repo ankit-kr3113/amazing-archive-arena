@@ -58,8 +58,57 @@ const Index = () => {
                   <span className="text-primary font-semibold">user-friendly interfaces</span> and scalable solutions.
                 </p>
 
-                <div className="text-sm text-muted-foreground/80 animate-fade-in-up animation-delay-700 mt-3">
-                  Specialized in <span className="text-primary font-medium">MERN Stack</span> • <span className="text-primary font-medium">React</span> • <span className="text-primary font-medium">Node.js</span>
+                {/* Technology Stack with Icons */}
+                <div className="animate-fade-in-up animation-delay-700 mt-6">
+                  <h3 className="text-sm font-semibold text-foreground mb-3 text-center lg:text-left">Tech Stack & Tools</h3>
+                  <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
+                    {/* Frontend */}
+                    <div className="flex items-center space-x-2 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border border-blue-500/20 px-3 py-1.5 rounded-full hover:scale-105 transition-transform duration-300 group">
+                      <div className="w-4 h-4 bg-blue-500 rounded-full flex items-center justify-center">
+                        <span className="text-[8px] text-white font-bold">R</span>
+                      </div>
+                      <span className="text-xs font-medium text-blue-500">React</span>
+                    </div>
+
+                    {/* Backend */}
+                    <div className="flex items-center space-x-2 bg-gradient-to-r from-green-500/10 to-emerald-500/10 border border-green-500/20 px-3 py-1.5 rounded-full hover:scale-105 transition-transform duration-300 group">
+                      <div className="w-4 h-4 bg-green-500 rounded-full flex items-center justify-center">
+                        <span className="text-[8px] text-white font-bold">N</span>
+                      </div>
+                      <span className="text-xs font-medium text-green-500">Node.js</span>
+                    </div>
+
+                    {/* Database */}
+                    <div className="flex items-center space-x-2 bg-gradient-to-r from-yellow-500/10 to-orange-500/10 border border-yellow-500/20 px-3 py-1.5 rounded-full hover:scale-105 transition-transform duration-300 group">
+                      <div className="w-4 h-4 bg-yellow-500 rounded-full flex items-center justify-center">
+                        <span className="text-[8px] text-white font-bold">M</span>
+                      </div>
+                      <span className="text-xs font-medium text-yellow-600">MongoDB</span>
+                    </div>
+
+                    {/* Languages */}
+                    <div className="flex items-center space-x-2 bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/20 px-3 py-1.5 rounded-full hover:scale-105 transition-transform duration-300 group">
+                      <div className="w-4 h-4 bg-purple-500 rounded-full flex items-center justify-center">
+                        <span className="text-[8px] text-white font-bold">TS</span>
+                      </div>
+                      <span className="text-xs font-medium text-purple-500">TypeScript</span>
+                    </div>
+
+                    {/* Tools */}
+                    <div className="flex items-center space-x-2 bg-gradient-to-r from-gray-500/10 to-slate-500/10 border border-gray-500/20 px-3 py-1.5 rounded-full hover:scale-105 transition-transform duration-300 group">
+                      <div className="w-4 h-4 bg-gray-600 rounded-full flex items-center justify-center">
+                        <span className="text-[8px] text-white font-bold">Git</span>
+                      </div>
+                      <span className="text-xs font-medium text-gray-600">Git</span>
+                    </div>
+
+                    <div className="flex items-center space-x-2 bg-gradient-to-r from-indigo-500/10 to-blue-600/10 border border-indigo-500/20 px-3 py-1.5 rounded-full hover:scale-105 transition-transform duration-300 group">
+                      <div className="w-4 h-4 bg-indigo-500 rounded-full flex items-center justify-center">
+                        <span className="text-[8px] text-white font-bold">TW</span>
+                      </div>
+                      <span className="text-xs font-medium text-indigo-500">Tailwind</span>
+                    </div>
+                  </div>
                 </div>
 
                 {/* Key Metrics */}
