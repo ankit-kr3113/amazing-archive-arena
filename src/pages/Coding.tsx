@@ -231,12 +231,10 @@ const Coding = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {codingStats.map((platform, index) => {
                 const IconComponent = platform.icon;
-                const isExpanded = expandedCard === index;
                 return (
                   <Card
                     key={index}
-                    className="group relative overflow-hidden bg-gradient-to-br from-card via-card to-card/80 border-0 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] cursor-pointer"
-                    onClick={() => setExpandedCard(isExpanded ? null : index)}
+                    className="group relative overflow-hidden bg-gradient-to-br from-card via-card to-card/80 border-0 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-[1.02]"
                   >
                     {/* Geometric Background Pattern */}
                     <div className="absolute inset-0 opacity-5">
