@@ -189,7 +189,7 @@ const Skills = () => {
       {
         name: "VS Code",
         level: "Tools",
-        icon: SiVisualstudiocode,
+        icon: VscCode,
         color: "text-blue-400"
       },
       {
