@@ -48,7 +48,7 @@ const Index = () => {
               {/* Enhanced Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up animation-delay-900 mt-8">
                 <Button
-                  className="btn-hero group px-8 py-4 text-lg font-semibold bg-gradient-to-r from-primary to-primary-glow hover:from-primary-glow hover:to-primary shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 border-0 min-h-[56px]"
+                  className="btn-hero group px-8 py-5 text-lg font-semibold bg-gradient-to-r from-primary to-primary-glow hover:from-primary-glow hover:to-primary shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 border-0 min-h-[60px] w-full sm:w-auto"
                   aria-label="Contact Yuvraj Mehta"
                 >
                   <span>Contact Me</span>
@@ -56,7 +56,7 @@ const Index = () => {
                 </Button>
                 <Button
                   variant="outline"
-                  className="btn-outline-hero group px-8 py-4 text-lg font-semibold border-2 border-primary/60 text-primary hover:bg-primary hover:text-primary-foreground shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 min-h-[56px]"
+                  className="btn-outline-hero group px-8 py-5 text-lg font-semibold border-2 border-primary/60 text-primary hover:bg-primary hover:text-primary-foreground shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 min-h-[60px] w-full sm:w-auto"
                   aria-label="View Yuvraj's projects and work"
                 >
                   <span>View Work</span>
@@ -104,7 +104,7 @@ const Index = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/15 via-primary-glow/20 to-primary/15 rounded-full blur-2xl animate-pulse"></div>
                 
                 {/* Enhanced Profile Image */}
-                <div className="relative z-10 w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 rounded-full overflow-hidden border-4 border-primary/30 shadow-2xl hover:shadow-primary/20 transition-all duration-500 hover:scale-105 group mx-auto">
+                <div className="relative z-10 w-72 h-72 sm:w-80 sm:h-80 lg:w-80 lg:h-80 xl:w-96 xl:h-96 rounded-full overflow-hidden border-4 border-primary/30 shadow-2xl hover:shadow-primary/20 transition-all duration-500 hover:scale-105 group mx-auto">
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   <div className="w-full h-full bg-gradient-to-br from-primary/20 via-primary-glow/30 to-primary/20 flex items-center justify-center transition-transform duration-500 group-hover:scale-110">
                     <div className="text-center">
