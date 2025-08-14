@@ -27,7 +27,6 @@ import {
   SiVuedotjs,
   SiMongodb,
   SiMysql,
-  SiVisualstudiocode,
   SiWebpack,
   SiExpress
 } from "react-icons/si";
