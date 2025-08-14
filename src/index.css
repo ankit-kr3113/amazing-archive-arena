@@ -8,23 +8,23 @@
   :root {
     /* Theme 1: Purple Dream (Default - Elegant Minimalism) */
     --background: 228 15% 8%;
-    --foreground: 210 40% 98%;
+    --foreground: 210 40% 95%;
     --card: 228 18% 12%;
-    --card-foreground: 210 40% 98%;
+    --card-foreground: 210 40% 92%;
     --popover: 228 18% 12%;
-    --popover-foreground: 210 40% 98%;
+    --popover-foreground: 210 40% 95%;
     --primary: 262 80% 65%;
     --primary-foreground: 210 40% 98%;
     --primary-glow: 262 90% 75%;
     --secondary: 240 8% 20%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary-foreground: 210 40% 95%;
     --muted: 240 6% 16%;
-    --muted-foreground: 215 20% 65%;
+    --muted-foreground: 215 20% 70%;
     --accent: 262 80% 65%;
     --accent-foreground: 210 40% 98%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
-    --border: 240 8% 20%;
+    --border: 240 8% 22%;
     --input: 240 8% 20%;
     --ring: 262 80% 65%;
     --radius: 0.75rem;
@@ -942,6 +942,10 @@
 
   body {
     @apply bg-background text-foreground transition-colors duration-500;
+    font-feature-settings: "liga" 1, "kern" 1;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   /* Theme-specific body backgrounds */
