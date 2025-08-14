@@ -124,40 +124,30 @@ const Projects = () => {
         <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-primary-glow/5 rounded-full blur-3xl animate-pulse opacity-40 animation-delay-2000"></div>
         
         <div className="relative max-w-7xl mx-auto">
-          {/* Enhanced Header Section */}
-          <div className="text-center mb-12 fade-in">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500/10 rounded-full text-emerald-600 text-sm font-medium mb-4 shadow-lg backdrop-blur-sm hover:shadow-xl hover:scale-105 transition-all duration-300">
-              <Code className="w-4 h-4 animate-pulse" />
-              <span>Featured Projects</span>
-              <div className="ml-1 w-2 h-2 bg-emerald-600 rounded-full animate-pulse"></div>
-            </div>
-            <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-2 animate-fade-in-up">
-              Creative <span className="gradient-text relative inline-block">
-                Solutions
-                <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-primary to-primary-glow rounded-full opacity-60"></div>
-              </span>
+          {/* Clean Header Section */}
+          <div className="text-center mb-16 fade-in">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-6 tracking-tight">
+              My <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">Projects</span>
             </h1>
-            <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed animate-fade-in-up animation-delay-300 mb-6">
-              Building <span className="text-primary font-semibold">full-stack applications</span> with modern technologies and{" "}
-              <span className="text-primary font-semibold">user-centered design</span> principles
+            <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              A collection of projects showcasing my journey in software development
             </p>
 
-            {/* Inline Stats Display */}
-            <div className="flex items-center justify-center gap-6 text-sm animate-fade-in-up animation-delay-600">
-              <div className="flex items-center gap-2 px-3 py-2 bg-emerald-500/5 rounded-lg border border-emerald-500/20">
-                <Code className="w-4 h-4 text-emerald-500" />
-                <span className="text-2xl font-bold bg-gradient-to-r from-emerald-500 to-emerald-600 bg-clip-text text-transparent">
-                  {animatedCounts.totalProjects}+
-                </span>
-                <span className="text-muted-foreground font-medium">Projects</span>
+            {/* Simple Stats Bar */}
+            <div className="flex items-center justify-center gap-8 mt-8 text-sm text-muted-foreground">
+              <div className="flex items-center gap-2">
+                <span className="text-2xl font-bold text-primary">{animatedCounts.totalProjects}+</span>
+                <span>Projects</span>
               </div>
-              <div className="flex items-center gap-2 px-3 py-2 bg-blue-500/5 rounded-lg border border-blue-500/20">
-                <Zap className="w-4 h-4 text-blue-500" />
-                <span className="text-muted-foreground font-medium">{animatedCounts.technologies}+ Technologies</span>
+              <div className="w-1 h-1 bg-muted-foreground/30 rounded-full"></div>
+              <div className="flex items-center gap-2">
+                <span className="text-2xl font-bold text-primary">{animatedCounts.technologies}+</span>
+                <span>Technologies</span>
               </div>
-              <div className="flex items-center gap-2 px-3 py-2 bg-green-500/5 rounded-lg border border-green-500/20">
-                <Globe className="w-4 h-4 text-green-500" />
-                <span className="text-muted-foreground font-medium">{animatedCounts.liveProjects} Live Demos</span>
+              <div className="w-1 h-1 bg-muted-foreground/30 rounded-full"></div>
+              <div className="flex items-center gap-2">
+                <span className="text-2xl font-bold text-primary">{animatedCounts.liveProjects}</span>
+                <span>Live Demos</span>
               </div>
             </div>
           </div>
