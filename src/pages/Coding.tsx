@@ -245,19 +245,19 @@ const Coding = () => {
                     `}
                     onClick={() => setExpandedCard(isExpanded ? null : index)}
                   >
-                    <div className="p-4">
+                    <div className="p-6">
                       {/* Platform Header */}
-                      <div className="flex items-center justify-between mb-4">
-                        <div className="flex items-center gap-2">
+                      <div className="flex items-center justify-between mb-6">
+                        <div className="flex items-center gap-3">
                           <div className={`${platform.color} group-hover:scale-110 transition-transform duration-300`}>
-                            <IconComponent className="w-6 h-6" />
+                            <IconComponent className="w-8 h-8" />
                           </div>
                           <div>
-                            <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors duration-300">
+                            <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
                               {platform.platform}
                             </h3>
-                            <div className="flex items-center gap-1 text-xs text-muted-foreground">
-                              <MdTrendingUp className="w-3 h-3" />
+                            <div className="flex items-center gap-1 text-sm text-muted-foreground">
+                              <MdTrendingUp className="w-4 h-4" />
                               <span>Active {platform.lastActive}</span>
                             </div>
                           </div>
