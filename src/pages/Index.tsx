@@ -27,20 +27,22 @@ const Index = () => {
                   <div className="ml-2 w-2 h-2 bg-primary rounded-full animate-pulse"></div>
                 </div>
                 
-                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight">
-                  <span className="block animate-fade-in-up">Hello, I'm</span>{" "}
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight">
+                  <span className="block text-foreground/90 animate-fade-in-up mb-2">Hello, I'm</span>
                   <span className="gradient-text relative inline-block animate-fade-in-up animation-delay-300">
                     Yuvraj Mehta
-                    <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary to-primary-glow rounded-full opacity-40 animate-pulse"></div>
                   </span>
                 </h1>
-                
-                <p className="text-base text-muted-foreground max-w-2xl lg:max-w-lg leading-relaxed animate-fade-in-up animation-delay-600">
-                  B.Tech CS student at <span className="text-primary font-semibold">NIT Patna</span> passionate about building
+
+                <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl lg:max-w-lg leading-relaxed animate-fade-in-up animation-delay-600 mt-6">
+                  <span className="text-foreground font-medium">B.Tech CS student</span> at <span className="text-primary font-semibold">NIT Patna</span> passionate about building
                   <span className="text-primary font-semibold"> full stack applications</span> with a focus on{" "}
                   <span className="text-primary font-semibold">user-friendly interfaces</span>.
-                  Skilled in <span className="text-primary font-semibold">MERN Stack</span>.
                 </p>
+
+                <div className="text-sm text-muted-foreground/80 animate-fade-in-up animation-delay-700 mt-3">
+                  Specialized in <span className="text-primary font-medium">MERN Stack</span> • <span className="text-primary font-medium">React</span> • <span className="text-primary font-medium">Node.js</span>
+                </div>
               </div>
 
               {/* Enhanced Action Buttons */}
