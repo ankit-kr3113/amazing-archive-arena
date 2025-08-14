@@ -110,7 +110,7 @@ const Projects = () => {
       <Navigation />
       <ThemeSwitcher />
       
-      <div className="relative pt-16 pb-8 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <div className="relative pt-24 pb-8 px-4 sm:px-6 lg:px-8 overflow-hidden">
         {/* Enhanced Background Elements with Workspace Stock Image */}
         <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/8"></div>
         <div className="absolute inset-0 opacity-5">
@@ -124,42 +124,17 @@ const Projects = () => {
         <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-primary-glow/5 rounded-full blur-3xl animate-pulse opacity-40 animation-delay-2000"></div>
         
         <div className="relative max-w-7xl mx-auto">
-          {/* Enhanced Header Section */}
-          <div className="text-center mb-12 fade-in">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500/10 rounded-full text-emerald-600 text-sm font-medium mb-4 shadow-lg backdrop-blur-sm hover:shadow-xl hover:scale-105 transition-all duration-300">
-              <Code className="w-4 h-4 animate-pulse" />
-              <span>Featured Projects</span>
-              <div className="ml-1 w-2 h-2 bg-emerald-600 rounded-full animate-pulse"></div>
-            </div>
-            <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-2 animate-fade-in-up">
-              Creative <span className="gradient-text relative inline-block">
-                Solutions
-                <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-primary to-primary-glow rounded-full opacity-60"></div>
-              </span>
+          {/* Compact Header Section */}
+          <div className="text-center mb-8 fade-in">
+            {/* Main Title */}
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-3 tracking-tight">
+              Featured <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">Projects</span>
             </h1>
-            <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed animate-fade-in-up animation-delay-300 mb-6">
-              Building <span className="text-primary font-semibold">full-stack applications</span> with modern technologies and{" "}
-              <span className="text-primary font-semibold">user-centered design</span> principles
-            </p>
 
-            {/* Inline Stats Display */}
-            <div className="flex items-center justify-center gap-6 text-sm animate-fade-in-up animation-delay-600">
-              <div className="flex items-center gap-2 px-3 py-2 bg-emerald-500/5 rounded-lg border border-emerald-500/20">
-                <Code className="w-4 h-4 text-emerald-500" />
-                <span className="text-2xl font-bold bg-gradient-to-r from-emerald-500 to-emerald-600 bg-clip-text text-transparent">
-                  {animatedCounts.totalProjects}+
-                </span>
-                <span className="text-muted-foreground font-medium">Projects</span>
-              </div>
-              <div className="flex items-center gap-2 px-3 py-2 bg-blue-500/5 rounded-lg border border-blue-500/20">
-                <Zap className="w-4 h-4 text-blue-500" />
-                <span className="text-muted-foreground font-medium">{animatedCounts.technologies}+ Technologies</span>
-              </div>
-              <div className="flex items-center gap-2 px-3 py-2 bg-green-500/5 rounded-lg border border-green-500/20">
-                <Globe className="w-4 h-4 text-green-500" />
-                <span className="text-muted-foreground font-medium">{animatedCounts.liveProjects} Live Demos</span>
-              </div>
-            </div>
+            {/* Subtitle */}
+            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              Explore my latest work in web development and innovative solutions
+            </p>
           </div>
 
           {/* Enhanced Project Filters */}
@@ -190,27 +165,20 @@ const Projects = () => {
                 <h2 className="text-2xl md:text-3xl font-bold text-foreground">Featured Projects</h2>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 max-w-7xl mx-auto">
                 {featuredProjects.map((project, index) => (
-                  <Card key={index} className="group relative overflow-hidden bg-gradient-to-br from-card via-card to-card/80 border-0 shadow-xl hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500 hover:scale-[1.02] hover:-translate-y-2">
+                  <Card key={index} className="group relative overflow-hidden bg-card/50 backdrop-blur-sm border border-border/50 shadow-lg hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1">
                     {/* Enhanced Background Pattern */}
-                    <div className="absolute inset-0 opacity-5">
-                      <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-emerald-500/20 to-green-500/20 rounded-full blur-3xl"></div>
-                      <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-br from-primary/20 to-primary-glow/20 rounded-full blur-2xl"></div>
-                    </div>
-
-                    {/* Top Bar with Project Branding */}
-                    <div className="h-1 w-full bg-gradient-to-r from-emerald-500/30 to-green-500/30"></div>
 
                     <div className="relative p-6">
                       <div className="relative overflow-hidden rounded-xl mb-6">
-                        <Badge className="absolute top-3 left-3 z-10 bg-gradient-to-r from-primary to-primary-glow text-primary-foreground shadow-lg text-xs hover:scale-105 transition-transform duration-200">
-                          <Star className="w-3 h-3 mr-1 animate-pulse" />
+                        <Badge className="absolute top-3 left-3 z-10 bg-primary text-primary-foreground shadow-md text-xs">
+                          <Star className="w-3 h-3 mr-1" />
                           <span>Featured</span>
                         </Badge>
                         {project.status === "Live" && (
-                          <Badge className="absolute top-3 right-3 z-10 bg-gradient-to-r from-green-500 to-green-600 text-white shadow-lg text-xs hover:scale-105 transition-transform duration-200">
-                            <Globe className="w-3 h-3 mr-1 animate-pulse" />
+                          <Badge className="absolute top-3 right-3 z-10 bg-green-500 text-white shadow-md text-xs">
+                            <Globe className="w-3 h-3 mr-1" />
                             <span>Live</span>
                           </Badge>
                         )}
@@ -218,7 +186,7 @@ const Projects = () => {
                         <img
                           src={project.image}
                           alt={project.title}
-                          className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                          className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                           loading="lazy"
                         />
                       </div>
@@ -359,20 +327,18 @@ const Projects = () => {
             </div>
           </div>
 
-          {/* Enhanced View More Projects */}
-          <div className="text-center mt-16 sm:mt-20">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 rounded-full text-primary text-xs font-medium mb-4">
-              <span>💻</span>
-              <span>Explore More</span>
+          {/* GitHub CTA Section */}
+          <div className="text-center mt-20">
+            <div className="mb-4">
+              <a href="https://github.com/yuvraj-mehta" target="_blank" rel="noopener noreferrer">
+                <Button className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 text-base font-semibold rounded-full hover:scale-105 transition-all duration-300 shadow-lg">
+                  View More Projects on GitHub
+                  <Github className="w-5 h-5 ml-2" />
+                </Button>
+              </a>
             </div>
-            <a href="https://github.com/yuvraj-mehta" target="_blank" rel="noopener noreferrer">
-              <Button className="bg-gradient-to-r from-primary to-primary-glow hover:from-primary/90 hover:to-primary-glow/90 text-primary-foreground hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-primary/20 px-6 py-3 text-base font-medium">
-                <Github className="w-5 h-5 mr-2 animate-pulse" />
-                <span>View More Projects on GitHub</span>
-              </Button>
-            </a>
-            <p className="text-sm text-muted-foreground mt-3 max-w-md mx-auto">
-              Discover additional projects and contributions on my GitHub profile
+            <p className="text-base text-muted-foreground max-w-lg mx-auto leading-relaxed">
+              Discover additional projects and open-source contributions on my GitHub profile
             </p>
           </div>
         </div>
