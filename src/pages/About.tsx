@@ -60,9 +60,9 @@ const About = () => {
               <Card className="portfolio-card group hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 hover:-translate-y-1 h-full">
                 <div className="relative overflow-hidden rounded-xl mb-4">
                   <img
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop&crop=face&auto=format&q=80"
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=600&fit=crop&crop=face&auto=format&q=80"
                     alt="Yuvraj Mehta - Full Stack Developer"
-                    className="w-full h-48 sm:h-56 object-cover rounded-xl group-hover:scale-105 transition-transform duration-500"
+                    className="w-full aspect-square object-cover rounded-xl group-hover:scale-105 transition-transform duration-500"
                   />
                   
                   <div className="absolute top-3 left-3 bg-gradient-to-r from-primary to-primary-glow text-primary-foreground px-2 py-1 rounded-full text-xs font-medium shadow-lg backdrop-blur-sm">
