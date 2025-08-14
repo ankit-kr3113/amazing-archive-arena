@@ -207,6 +207,10 @@ const Coding = () => {
 
             {/* Inline Stats Display */}
             <div className="flex items-center justify-center gap-6 text-sm animate-fade-in-up animation-delay-600">
+              <div className="flex items-center gap-2 px-3 py-2 bg-orange-500/5 rounded-lg border border-orange-500/20">
+                <FaStar className="w-4 h-4 text-orange-500" />
+                <span className="text-muted-foreground font-medium">Top 27.7%</span>
+              </div>
               <div className="flex items-center gap-2 px-3 py-2 bg-primary/5 rounded-lg border border-primary/20">
                 <FaCode className="w-4 h-4 text-primary" />
                 <span className="text-2xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
@@ -217,10 +221,6 @@ const Coding = () => {
               <div className="flex items-center gap-2 px-3 py-2 bg-green-500/5 rounded-lg border border-green-500/20">
                 <FaTrophy className="w-4 h-4 text-green-500" />
                 <span className="text-muted-foreground font-medium">4 Platforms</span>
-              </div>
-              <div className="flex items-center gap-2 px-3 py-2 bg-orange-500/5 rounded-lg border border-orange-500/20">
-                <FaStar className="w-4 h-4 text-orange-500" />
-                <span className="text-muted-foreground font-medium">Top 27.7%</span>
               </div>
             </div>
           </div>
