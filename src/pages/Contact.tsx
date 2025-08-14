@@ -153,37 +153,7 @@ const Contact = () => {
                 </div>
               </Card>
 
-              {/* Connect With Me */}
-              <Card className="portfolio-card slide-up">
-                <div className="flex items-center mb-6">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mr-4">
-                    <span className="text-xl">🤝</span>
-                  </div>
-                  <h3 className="text-xl font-bold">Connect With Me</h3>
-                </div>
-
-                <div className="space-y-4">
-                  {socialLinks.map((link, index) => (
-                    <a
-                      key={index}
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center space-x-4 p-3 rounded-lg bg-muted/50 hover:bg-primary/10 transition-colors group"
-                    >
-                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                        <link.icon className="w-5 h-5" />
-                      </div>
-                      <div>
-                        <h4 className="font-semibold">{link.name}</h4>
-                        <p className="text-muted-foreground text-sm">{link.description}</p>
-                      </div>
-                    </a>
-                  ))}
-                </div>
-              </Card>
-
-              {/* Quick Links */}
+              {/* Quick Links & Social Combined */}
               <Card className="portfolio-card slide-up">
                 <div className="flex items-center mb-6">
                   <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mr-4">
@@ -192,7 +162,7 @@ const Contact = () => {
                   <h3 className="text-xl font-bold">Quick Links</h3>
                 </div>
 
-                <div className="space-y-3">
+                <div className="space-y-3 mb-6">
                   {quickLinks.map((link, index) => (
                     <a
                       key={index}
@@ -203,6 +173,34 @@ const Contact = () => {
                     >
                       <span className="text-lg">{link.icon}</span>
                       <span className="group-hover:text-primary transition-colors">{link.name}</span>
+                    </a>
+                  ))}
+                </div>
+
+                <hr className="border-border mb-6" />
+
+                <div className="flex items-center mb-4">
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mr-4">
+                    <span className="text-xl">🤝</span>
+                  </div>
+                  <h3 className="text-lg font-bold">Social Links</h3>
+                </div>
+
+                <div className="space-y-3">
+                  {socialLinks.map((link, index) => (
+                    <a
+                      key={index}
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center space-x-3 p-2 rounded-lg hover:bg-primary/10 transition-colors group text-sm"
+                    >
+                      <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                        <link.icon className="w-4 h-4" />
+                      </div>
+                      <div>
+                        <span className="font-medium group-hover:text-primary transition-colors">{link.name}</span>
+                      </div>
                     </a>
                   ))}
                 </div>
