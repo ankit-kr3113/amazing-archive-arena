@@ -102,7 +102,7 @@ const Coding = () => {
       platform: "CodeChef",
       solved: 25,
       rating: "1270",
-      rank: "2����� Coder (Division 3)",
+      rank: "2��� Coder (Division 3)",
       color: "text-amber-400",
       bgColor: "from-amber-500/20 to-orange-500/20",
       borderColor: "border-amber-500/30",
@@ -185,11 +185,11 @@ const Coding = () => {
         
         <div className="relative max-w-7xl mx-auto">
           {/* Header Section */}
-          <div className="text-center mb-8">
-            <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
+          <div className="text-center mb-10">
+            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
               Competitive <span className="text-primary">Programming</span>
             </h1>
-            <p className="text-base text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Algorithm mastery across multiple platforms with consistent problem-solving excellence
             </p>
           </div>
