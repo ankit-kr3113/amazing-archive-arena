@@ -175,35 +175,35 @@ const Coding = () => {
           </div>
 
           {/* Platform Statistics */}
-          <div className="mb-16">
-            <div className="flex items-center gap-3 mb-8">
-              <FaChartLine className="w-6 h-6 text-primary" />
-              <h2 className="text-2xl md:text-3xl font-bold text-foreground">Platform Statistics</h2>
+          <div className="mb-12">
+            <div className="flex items-center gap-2 mb-6">
+              <FaChartLine className="w-5 h-5 text-primary" />
+              <h2 className="text-xl md:text-2xl font-bold text-foreground">Platform Statistics</h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {codingStats.map((platform, index) => {
                 const IconComponent = platform.icon;
                 return (
-                  <Card 
-                    key={index} 
+                  <Card
+                    key={index}
                     className={`
-                      group bg-gradient-to-br ${platform.bgColor} 
+                      group bg-gradient-to-br ${platform.bgColor}
                       border ${platform.borderColor}
-                      hover:border-primary/40 hover:bg-card/60 
+                      hover:border-primary/40 hover:bg-card/60
                       transition-all duration-300 hover:scale-105 hover:-translate-y-1 cursor-pointer
                       backdrop-blur-sm
                     `}
                   >
-                    <div className="p-6">
+                    <div className="p-4">
                       {/* Platform Header */}
-                      <div className="flex items-center justify-between mb-6">
-                        <div className="flex items-center gap-3">
+                      <div className="flex items-center justify-between mb-4">
+                        <div className="flex items-center gap-2">
                           <div className={`${platform.color} group-hover:scale-110 transition-transform duration-300`}>
-                            <IconComponent className="w-8 h-8" />
+                            <IconComponent className="w-6 h-6" />
                           </div>
                           <div>
-                            <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
+                            <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors duration-300">
                               {platform.platform}
                             </h3>
                             <div className="flex items-center gap-1 text-xs text-muted-foreground">
@@ -213,32 +213,32 @@ const Coding = () => {
                           </div>
                         </div>
                         <a href={platform.url} target="_blank" rel="noopener noreferrer">
-                          <Button 
-                            variant="outline" 
-                            size="sm" 
-                            className="text-primary border-primary/40 hover:bg-primary/10 hover:scale-105 transition-all duration-300"
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            className="text-primary border-primary/40 hover:bg-primary/10 hover:scale-105 transition-all duration-300 h-8"
                           >
-                            <FaExternalLinkAlt className="w-3 h-3 mr-2" />
+                            <FaExternalLinkAlt className="w-3 h-3 mr-1" />
                             Visit
                           </Button>
                         </a>
                       </div>
 
                       {/* Statistics Grid */}
-                      <div className="grid grid-cols-2 gap-4 mb-6">
+                      <div className="grid grid-cols-2 gap-3 mb-3">
                         <div className="text-center">
-                          <div className="text-3xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+                          <div className="text-2xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
                             {platform.solved}
                           </div>
-                          <div className="text-sm text-muted-foreground font-medium">Problems Solved</div>
+                          <div className="text-xs text-muted-foreground font-medium">Problems Solved</div>
                         </div>
                         {platform.rating && (
                           <div className="text-center">
-                            <div className={`text-lg font-bold ${platform.color} flex items-center justify-center gap-1`}>
-                              <MdLeaderboard className="w-4 h-4" />
+                            <div className={`text-base font-bold ${platform.color} flex items-center justify-center gap-1`}>
+                              <MdLeaderboard className="w-3 h-3" />
                               {platform.rating}
                             </div>
-                            <div className="text-sm text-muted-foreground font-medium">{platform.rank}</div>
+                            <div className="text-xs text-muted-foreground font-medium">{platform.rank}</div>
                           </div>
                         )}
                       </div>
@@ -246,7 +246,7 @@ const Coding = () => {
                       {/* Streak Badge */}
                       {platform.streak && (
                         <div className="text-center">
-                          <Badge className="bg-orange-500/20 text-orange-300 border border-orange-500/30 px-3 py-1 rounded-full">
+                          <Badge className="bg-orange-500/20 text-orange-300 border border-orange-500/30 px-2 py-0.5 rounded-full text-xs">
                             <FaBolt className="w-3 h-3 mr-1" />
                             {platform.streak}
                           </Badge>
