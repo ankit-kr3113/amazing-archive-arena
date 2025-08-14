@@ -149,25 +149,25 @@ const Coding = () => {
           </div>
 
           {/* Total Problems Solved Overview - Dynamic Calculation */}
-          <div className="mb-16">
+          <div className="mb-12">
             <Card className="group bg-gradient-to-br from-primary/10 to-primary-glow/5 border-primary/20 hover:border-primary/40 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-primary/10">
-              <div className="p-8 text-center">
-                <div className="flex items-center justify-center mb-6">
-                  <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center mr-6 group-hover:scale-110 transition-transform duration-300">
-                    <FaCode className="text-2xl text-primary" />
+              <div className="p-6 text-center">
+                <div className="flex items-center justify-center mb-4">
+                  <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
+                    <FaCode className="text-xl text-primary" />
                   </div>
                   <div>
-                    <div className="text-5xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+                    <div className="text-4xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
                       {totalProblems}+
                     </div>
-                    <div className="text-lg font-semibold text-foreground">Total Problems Solved</div>
-                    <div className="text-sm text-muted-foreground">Across {codingStats.length} competitive programming platforms</div>
+                    <div className="text-base font-semibold text-foreground">Total Problems Solved</div>
+                    <div className="text-sm text-muted-foreground">Across {codingStats.length} platforms</div>
                   </div>
                 </div>
-                
+
                 {/* Last Updated Info */}
-                <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
-                  <FaClock className="w-4 h-4" />
+                <div className="flex items-center justify-center gap-2 text-xs text-muted-foreground">
+                  <FaClock className="w-3 h-3" />
                   <span>Last updated: January 2025</span>
                 </div>
               </div>
