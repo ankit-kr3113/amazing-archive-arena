@@ -163,13 +163,17 @@ const Projects = () => {
           </div>
 
           {/* Enhanced Project Filters */}
-          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-12">
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-12 sm:mb-16">
             {filters.map((filterName) => (
               <Button
                 key={filterName}
                 onClick={() => setFilter(filterName)}
                 variant={filter === filterName ? "default" : "outline"}
-                className={`${filter === filterName ? "btn-hero" : "btn-outline-hero"} hover:scale-105 transition-all duration-300 text-xs sm:text-sm px-3 py-2 sm:px-4 sm:py-2`}
+                className={`${
+                  filter === filterName
+                    ? "bg-gradient-to-r from-primary to-primary-glow hover:from-primary/90 hover:to-primary-glow/90 text-primary-foreground shadow-lg"
+                    : "border-primary/30 text-muted-foreground hover:border-primary/60 hover:text-primary hover:bg-primary/5"
+                } hover:scale-105 hover:shadow-lg transition-all duration-300 text-sm px-4 py-2.5 rounded-full font-medium backdrop-blur-sm`}
               >
                 {filterName}
               </Button>
