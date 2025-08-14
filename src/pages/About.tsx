@@ -7,6 +7,8 @@ import ThemeSwitcher from "@/components/ThemeSwitcher";
 import { useNavigate } from "react-router-dom";
 
 const About = () => {
+  const navigate = useNavigate();
+
   const interests = [
     { icon: "🤖", name: "Robotics", description: "Building combat & soccer bots" },
     { icon: "🏃‍♂️", name: "Athletics", description: "Bronze in 50m Hurdles" },
@@ -20,6 +22,20 @@ const About = () => {
     { value: "15+", label: "Projects Built", color: "text-blue-500" },
     { value: "Top 27.7%", label: "Global Ranking", color: "text-purple-500" },
   ];
+
+  const handleContactClick = () => {
+    navigate('/contact');
+  };
+
+  const handleResumeDownload = () => {
+    // Create a link element and trigger download
+    const link = document.createElement('a');
+    link.href = '/Yuvraj_Resume_v2_1 (1).pdf';
+    link.download = 'Yuvraj_Mehta_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <div className="min-h-screen bg-background">
