@@ -309,13 +309,13 @@ const Coding = () => {
           </div>
 
           {/* Progress Summary */}
-          <div className="mt-16 text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-primary text-sm font-medium mb-6">
+          <div className="mt-12 text-center">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-primary/10 rounded-full text-primary text-sm font-medium mb-4">
               <MdTrendingUp className="w-4 h-4" />
               <span>Continuous Growth</span>
             </div>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Actively solving problems and participating in contests to improve algorithmic thinking and competitive programming skills. 
+            <p className="text-sm text-muted-foreground max-w-2xl mx-auto">
+              Actively solving problems and participating in contests to improve algorithmic thinking and competitive programming skills.
               Always looking for new challenges and opportunities to grow.
             </p>
           </div>
