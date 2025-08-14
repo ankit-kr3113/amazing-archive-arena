@@ -38,55 +38,102 @@ import {
 } from "react-icons/md";
 
 const Coding = () => {
+  const [expandedCard, setExpandedCard] = useState<number | null>(null);
+  const [animatedCounts, setAnimatedCounts] = useState({
+    total: 0,
+    platforms: [0, 0, 0, 0]
+  });
+
+  // Animated counter hook
+  useEffect(() => {
+    const duration = 2000; // 2 seconds
+    const steps = 50;
+    const stepDuration = duration / steps;
+
+    const targetTotal = 333;
+    const targetPlatforms = [228, 70, 25, 10];
+
+    let currentStep = 0;
+
+    const timer = setInterval(() => {
+      currentStep++;
+      const progress = currentStep / steps;
+      const easeProgress = 1 - Math.pow(1 - progress, 3); // Ease out cubic
+
+      setAnimatedCounts({
+        total: Math.round(targetTotal * easeProgress),
+        platforms: targetPlatforms.map(target => Math.round(target * easeProgress))
+      });
+
+      if (currentStep >= steps) {
+        clearInterval(timer);
+      }
+    }, stepDuration);
+
+    return () => clearInterval(timer);
+  }, []);
+
   // Ordered by activity level and importance
   const codingStats = [
-    { 
-      platform: "LeetCode", 
-      solved: "228", 
-      rating: "1570", 
-      rank: "Top 27.7%", 
+    {
+      platform: "LeetCode",
+      solved: 228,
+      rating: "1570",
+      rank: "Top 27.7%",
       color: "text-orange-400",
       bgColor: "from-orange-500/20 to-yellow-500/20",
       borderColor: "border-orange-500/30",
       icon: SiLeetcode,
       url: "https://leetcode.com/u/mythical-UV/",
-      lastActive: "2024"
+      lastActive: "2024",
+      progress: 68, // out of 100 for visualization
+      difficulty: { easy: 150, medium: 65, hard: 13 },
+      recentActivity: "Solved 'Binary Tree Inorder Traversal' - 2 days ago"
     },
-    { 
-      platform: "GeeksforGeeks", 
-      solved: "70", 
-      rating: "Rank #1455", 
-      streak: "35+ day streak", 
+    {
+      platform: "GeeksforGeeks",
+      solved: 70,
+      rating: "Rank #1455",
+      streak: "35+ day streak",
       color: "text-green-400",
       bgColor: "from-green-500/20 to-emerald-500/20",
       borderColor: "border-green-500/30",
       icon: SiGeeksforgeeks,
       url: "https://www.geeksforgeeks.org/user/yuvrajmevbrx/",
-      lastActive: "2024"
+      lastActive: "2024",
+      progress: 45,
+      difficulty: { easy: 45, medium: 20, hard: 5 },
+      recentActivity: "Completed 'Array Rotation' challenge - 1 day ago"
     },
-    { 
-      platform: "CodeChef", 
-      solved: "25", 
-      rating: "1270", 
-      rank: "2★ Coder (Division 3)", 
+    {
+      platform: "CodeChef",
+      solved: 25,
+      rating: "1270",
+      rank: "2★ Coder (Division 3)",
       color: "text-amber-400",
       bgColor: "from-amber-500/20 to-orange-500/20",
       borderColor: "border-amber-500/30",
       icon: SiCodechef,
       url: "https://www.codechef.com/users/quick_unity_53",
-      lastActive: "2024"
+      lastActive: "2024",
+      progress: 25,
+      difficulty: { easy: 18, medium: 6, hard: 1 },
+      recentActivity: "Participated in Starters 186 - 1 week ago"
     },
-    { 
-      platform: "Codeforces", 
-      solved: "10", 
-      rating: "900", 
-      rank: "Newbie", 
+    {
+      platform: "Codeforces",
+      solved: 10,
+      rating: "900",
+      rank: "Newbie",
       color: "text-blue-400",
       bgColor: "from-blue-500/20 to-cyan-500/20",
       borderColor: "border-blue-500/30",
       icon: SiCodeforces,
       url: "https://codeforces.com/profile/yuvraj_mythical",
-      lastActive: "2024"
+      lastActive: "2024",
+      progress: 15,
+      difficulty: { easy: 8, medium: 2, hard: 0 },
+      recentActivity: "Solved problem A in Div 3 contest - 2 weeks ago"
     }
   ];
 
