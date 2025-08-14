@@ -919,13 +919,43 @@
 }
 
 @keyframes ambient-glow {
-  0% { 
+  0% {
     background: var(--gradient-subtle);
-    filter: brightness(1);
+    filter: brightness(1) saturate(1);
   }
-  100% { 
+  100% {
     background: var(--gradient-subtle);
-    filter: brightness(1.02);
+    filter: brightness(1.03) saturate(1.1);
+  }
+}
+
+/* Apple/Vercel/Stripe Inspired Enhancements */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes scale-in {
+  0% { transform: scale(0.9) translateY(10px); opacity: 0; }
+  100% { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+@keyframes fade-in-scale {
+  0% { transform: scale(0.95); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes text-shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.15), 0 0 40px hsl(var(--primary) / 0.05);
+  }
+  50% {
+    box-shadow: 0 0 30px hsl(var(--primary) / 0.25), 0 0 60px hsl(var(--primary) / 0.1);
   }
 }
 
@@ -1436,9 +1466,9 @@
   }
 }
 
-/* Enhanced Animation Classes */
+/* Enhanced Animation Classes - Apple/Vercel/Stripe Style */
 .animate-fade-in-up {
-  animation: fadeInUp 0.8s ease-out forwards;
+  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 .animate-float {
@@ -1454,25 +1484,109 @@
 }
 
 .animate-gentle-glow {
-  animation: gentle-glow 3s ease-in-out infinite;
+  animation: glow-pulse 4s ease-in-out infinite;
 }
 
 .animate-loading-pulse {
   animation: loading-pulse 1.5s ease-in-out infinite;
 }
 
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-fade-in-scale {
+  animation: fade-in-scale 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-text-shimmer {
+  animation: text-shimmer 3s ease-in-out infinite;
+}
+
 .micro-interaction {
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, filter;
 }
 
 .micro-interaction:hover {
-  transform: translateY(-1px);
-  filter: brightness(1.05);
+  transform: translateY(-2px) scale(1.02);
+  filter: brightness(1.05) saturate(1.1);
 }
 
 .micro-interaction:active {
-  transform: translateY(0);
+  transform: translateY(0) scale(0.98);
   transition-duration: 0.1s;
+}
+
+/* Apple-style Glass Elements */
+.glass-apple {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px) saturate(1.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Vercel-style Gradients */
+.gradient-vercel {
+  background: linear-gradient(
+    135deg,
+    hsl(var(--primary) / 0.8) 0%,
+    hsl(var(--primary-glow) / 0.6) 50%,
+    hsl(var(--accent) / 0.4) 100%
+  );
+}
+
+/* Stripe-style Hover Effects */
+.hover-stripe {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-stripe::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transition: left 0.6s ease;
+}
+
+.hover-stripe:hover::before {
+  left: 100%;
+}
+
+/* Modern Card Styles */
+.card-modern {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px) saturate(1.2);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.08),
+    0 8px 40px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-modern:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 8px 40px rgba(0, 0, 0, 0.12),
+    0 16px 80px rgba(0, 0, 0, 0.06);
+  border-color: rgba(255, 255, 255, 0.15);
 }
 
 .animation-delay-300 {
