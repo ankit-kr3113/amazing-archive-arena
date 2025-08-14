@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
+import { useState } from "react";
 import {
   Briefcase,
   Trophy,
@@ -10,6 +11,8 @@ import {
   Zap,
   Medal,
   Code2,
+  ChevronDown,
+  ChevronUp,
 } from "lucide-react";
 
 const Experience = () => {
