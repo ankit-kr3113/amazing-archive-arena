@@ -43,6 +43,22 @@ const Index = () => {
                 <div className="text-sm text-muted-foreground/80 animate-fade-in-up animation-delay-700 mt-3">
                   Specialized in <span className="text-primary font-medium">MERN Stack</span> • <span className="text-primary font-medium">React</span> • <span className="text-primary font-medium">Node.js</span>
                 </div>
+
+                {/* Key Metrics */}
+                <div className="flex flex-wrap gap-4 justify-center lg:justify-start animate-fade-in-up animation-delay-800 mt-6">
+                  <div className="glass px-4 py-2 rounded-full border border-primary/20">
+                    <span className="text-primary font-semibold">2+</span>
+                    <span className="text-muted-foreground text-sm ml-1">Years Experience</span>
+                  </div>
+                  <div className="glass px-4 py-2 rounded-full border border-primary/20">
+                    <span className="text-primary font-semibold">15+</span>
+                    <span className="text-muted-foreground text-sm ml-1">Projects Built</span>
+                  </div>
+                  <div className="glass px-4 py-2 rounded-full border border-primary/20">
+                    <span className="text-primary font-semibold">500+</span>
+                    <span className="text-muted-foreground text-sm ml-1">GitHub Commits</span>
+                  </div>
+                </div>
               </div>
 
               {/* Enhanced Action Buttons */}
