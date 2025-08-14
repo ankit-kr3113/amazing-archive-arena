@@ -90,16 +90,16 @@ const Projects = () => {
           <div className="text-center mb-6 fade-in">
             <div className="relative inline-block mb-4">
               <div className="absolute -inset-2 bg-gradient-to-r from-emerald-500/30 via-teal-500/20 to-green-500/30 rounded-2xl blur-xl opacity-75 animate-pulse"></div>
-              <div className="relative flex items-center gap-4 px-8 py-4 bg-gradient-to-r from-emerald-500/10 via-teal-500/5 to-green-500/10 rounded-2xl border border-emerald-500/20 shadow-2xl backdrop-blur-sm">
+              <div className="relative flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-emerald-500/10 via-teal-500/5 to-green-500/10 rounded-2xl border border-emerald-500/20 shadow-2xl backdrop-blur-sm">
                 <div className="relative">
-                  <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center shadow-lg">
-                    <span className="text-white text-lg font-bold animate-bounce">🚀</span>
+                  <div className="w-8 h-8 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center shadow-lg">
+                    <span className="text-white text-sm font-bold animate-bounce">🚀</span>
                   </div>
                   <div className="absolute -top-1 -right-1 w-4 h-4 bg-yellow-400 rounded-full animate-pulse"></div>
                 </div>
                 <div className="text-left">
-                  <span className="block text-primary font-bold text-lg tracking-wide">Portfolio Showcase</span>
-                  <span className="block text-muted-foreground text-sm">Innovation meets implementation</span>
+                  <span className="block text-primary font-bold text-sm tracking-wide">Portfolio Showcase</span>
+                  <span className="block text-muted-foreground text-xs">Innovation meets implementation</span>
                 </div>
                 <div className="flex items-center gap-1">
                   <div className="w-3 h-3 bg-emerald-400 rounded-full animate-bounce"></div>
