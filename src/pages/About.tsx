@@ -39,11 +39,11 @@ const About = () => {
           <div className="text-center mb-6 fade-in">
             <div className="relative inline-block mb-4">
               <div className="absolute -inset-1 bg-gradient-to-r from-primary/30 via-primary-glow/20 to-primary/30 rounded-full blur-lg opacity-75 animate-pulse"></div>
-              <div className="relative flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-primary/15 to-primary-glow/15 rounded-full border border-primary/25 shadow-xl backdrop-blur-sm">
-                <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center animate-bounce">
-                  <span className="text-white text-sm font-bold">👋</span>
+              <div className="relative flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-primary/15 to-primary-glow/15 rounded-full border border-primary/25 shadow-xl backdrop-blur-sm">
+                <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center animate-bounce">
+                  <span className="text-white text-xs font-bold">👋</span>
                 </div>
-                <span className="text-primary font-semibold tracking-wide">Discover My Story</span>
+                <span className="text-primary font-semibold tracking-wide text-sm">Discover My Story</span>
                 <div className="flex gap-1">
                   <div className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse"></div>
                   <div className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse animation-delay-300"></div>
