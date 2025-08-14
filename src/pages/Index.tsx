@@ -121,23 +121,39 @@ const Index = () => {
             {/* Enhanced Right Content - Hero Image */}
             <div className="relative slide-up order-1 lg:order-2">
               <div className="relative flex justify-center">
-                {/* Simplified Animated Background */}
+                {/* Enhanced Animated Background with Multiple Layers */}
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/15 via-primary-glow/20 to-primary/15 rounded-full blur-2xl animate-pulse"></div>
-                
-                {/* Enhanced Profile Image */}
-                <div className="relative z-10 w-72 h-72 sm:w-80 sm:h-80 lg:w-80 lg:h-80 xl:w-96 xl:h-96 rounded-full overflow-hidden border-4 border-primary/30 shadow-2xl hover:shadow-primary/20 transition-all duration-500 hover:scale-105 group mx-auto">
+                <div className="absolute inset-0 bg-gradient-to-l from-primary-glow/10 via-transparent to-primary/10 rounded-full blur-xl animate-pulse animation-delay-1000"></div>
+
+                {/* Enhanced Profile Image with Advanced Interactions */}
+                <div className="relative z-10 w-72 h-72 sm:w-80 sm:h-80 lg:w-80 lg:h-80 xl:w-96 xl:h-96 rounded-full overflow-hidden border-4 border-primary/30 shadow-2xl hover:shadow-primary/40 hover:shadow-2xl transition-all duration-500 hover:scale-105 group mx-auto cursor-pointer">
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   <img
                     src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face&auto=format&q=80"
                     alt="Yuvraj Mehta - Full Stack Developer"
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  <div className="absolute inset-0 ring-1 ring-primary/20 rounded-full group-hover:ring-primary/40 transition-all duration-300"></div>
-                  {/* Professional status badge */}
-                  <div className="absolute bottom-4 right-4 bg-gradient-to-r from-green-500 to-emerald-500 text-white text-xs px-3 py-1 rounded-full font-medium shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    Available for hire
+                  {/* Animated ring effect on hover */}
+                  <div className="absolute inset-0 rounded-full border-2 border-primary/0 group-hover:border-primary/60 transition-all duration-500 group-hover:scale-105"></div>
+                  <div className="absolute inset-0 rounded-full border border-primary-glow/0 group-hover:border-primary-glow/40 transition-all duration-700 group-hover:scale-110 animation-delay-200"></div>
+
+                  {/* Gradient overlay on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                  {/* Multiple status badges */}
+                  <div className="absolute bottom-4 right-4 bg-gradient-to-r from-green-500 to-emerald-500 text-white text-xs px-3 py-1 rounded-full font-medium shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-105">
+                    <span className="animate-pulse">●</span> Available for hire
                   </div>
+
+                  {/* Interactive skill badge that appears on hover */}
+                  <div className="absolute top-4 left-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white text-xs px-3 py-1 rounded-full font-medium shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-500 transform group-hover:translate-y-0 translate-y-2">
+                    Full Stack Dev
+                  </div>
+
+                  {/* Floating particles around image on hover */}
+                  <div className="absolute -top-2 -right-2 w-2 h-2 bg-primary rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-ping transition-opacity duration-300"></div>
+                  <div className="absolute -bottom-2 -left-2 w-1.5 h-1.5 bg-primary-glow rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-bounce transition-opacity duration-500"></div>
+                  <div className="absolute top-1/2 -right-3 w-1 h-1 bg-primary rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-opacity duration-700"></div>
                 </div>
 
                 {/* Enhanced Achievement Cards with Interactive Hover Effects */}
