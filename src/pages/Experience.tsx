@@ -16,6 +16,16 @@ import {
 } from "lucide-react";
 
 const Experience = () => {
+  const [expandedCards, setExpandedCards] = useState<number[]>([]);
+
+  const toggleCard = (index: number) => {
+    setExpandedCards(prev =>
+      prev.includes(index)
+        ? prev.filter(i => i !== index)
+        : [...prev, index]
+    );
+  };
+
   const experiences = [
     {
       title: "Technical Member",
