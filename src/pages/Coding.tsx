@@ -1,4 +1,3 @@
-
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -40,14 +39,14 @@ const Coding = () => {
     <div className="min-h-screen bg-background">
       <Navigation />
       
-      <div className="pt-24 pb-20 px-4 sm:px-6 lg:px-8">
+      <div className="pt-16 pb-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-16 fade-in">
+          <div className="text-center mb-8 fade-in">
             <div className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-4">
               🎯 Competitive Programming
             </div>
-            <h1 className="text-4xl sm:text-5xl font-bold mb-4">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
               Coding <span className="gradient-text">Proficiency</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
