@@ -305,14 +305,6 @@ const Coding = () => {
                         </div>
                       </div>
 
-                      {/* Progress Bar */}
-                      <div className="mb-4">
-                        <div className="flex justify-between items-center mb-1">
-                          <span className="text-xs text-muted-foreground">Progress</span>
-                          <span className="text-xs font-medium text-foreground">{platform.progress}%</span>
-                        </div>
-                        <Progress value={platform.progress} className="h-2" />
-                      </div>
 
                       {/* Statistics Grid */}
                       <div className="grid grid-cols-2 gap-3 mb-3">
