@@ -275,23 +275,27 @@ const Coding = () => {
                           </div>
                         </div>
 
-                        {/* Comprehensive stats */}
-                        <div className="text-right">
-                          <div className="text-sm text-slate-300 mb-1 font-medium">
-                            {platform.platform === "LeetCode" && `${platform.rating} • Top 27.7%`}
-                            {platform.platform === "CodeChef" && `${platform.rating} • 2★ Coder`}
-                            {platform.platform === "GeeksforGeeks" && "Rank #1455 • 35+ days"}
-                            {platform.platform === "Codeforces" && `${platform.rating} • Newbie`}
+                        {/* Stats with icons */}
+                        <div className="text-right space-y-2">
+                          <div className="flex items-center justify-end gap-2">
+                            {platform.rating && (
+                              <>
+                                <span className="text-xs text-slate-300">{platform.rating}</span>
+                                <FaStar className="w-3 h-3 text-yellow-400" />
+                              </>
+                            )}
                           </div>
-                          <div className="w-20 h-2 bg-slate-700 rounded-full overflow-hidden">
-                            <div
-                              className={`h-full rounded-full ${
-                                platform.platform === "LeetCode" ? "bg-orange-400 w-3/4" :
-                                platform.platform === "CodeChef" ? "bg-amber-400 w-1/2" :
-                                platform.platform === "GeeksforGeeks" ? "bg-green-400 w-4/5" :
-                                "bg-blue-400 w-1/4"
-                              }`}
-                            ></div>
+                          <div className="flex items-center justify-end gap-2">
+                            <span className="text-xs text-slate-300">
+                              {platform.platform === "LeetCode" && "Top 27.7%"}
+                              {platform.platform === "CodeChef" && "2★ Coder"}
+                              {platform.platform === "GeeksforGeeks" && "35+ days"}
+                              {platform.platform === "Codeforces" && "Newbie"}
+                            </span>
+                            {platform.platform === "LeetCode" && <MdLeaderboard className="w-3 h-3 text-blue-400" />}
+                            {platform.platform === "CodeChef" && <FaMedal className="w-3 h-3 text-amber-400" />}
+                            {platform.platform === "GeeksforGeeks" && <FaFire className="w-3 h-3 text-green-400" />}
+                            {platform.platform === "Codeforces" && <FaBolt className="w-3 h-3 text-blue-400" />}
                           </div>
                         </div>
                       </div>
