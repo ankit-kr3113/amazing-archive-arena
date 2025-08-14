@@ -255,15 +255,21 @@ const Coding = () => {
                             </div>
                           </div>
                         </div>
-                        <a href={platform.url} target="_blank" rel="noopener noreferrer">
-                          <Button
-                            size="sm"
-                            variant="outline"
-                            className="text-blue-400 border-blue-400/50 hover:bg-blue-400/10 hover:border-blue-400 text-xs px-3 py-1"
-                          >
-                            Visit
-                          </Button>
-                        </a>
+                        <div className="flex flex-col items-end gap-2">
+                          <a href={platform.url} target="_blank" rel="noopener noreferrer">
+                            <Button
+                              size="sm"
+                              variant="outline"
+                              className="text-blue-400 border-blue-400/50 hover:bg-blue-400/10 hover:border-blue-400 text-xs px-3 py-1"
+                            >
+                              Visit
+                            </Button>
+                          </a>
+                          <div className="flex items-center gap-1">
+                            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                            <span className="text-xs text-slate-400">Active</span>
+                          </div>
+                        </div>
                       </div>
 
                       <div className="flex items-start justify-between mb-4">
