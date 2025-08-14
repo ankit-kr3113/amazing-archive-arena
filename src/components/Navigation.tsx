@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Menu, X, Download, Code2, Sparkles, User, Briefcase, GraduationCap, Wrench, Code, FolderOpen, Mail, Home } from "lucide-react";
+import { Menu, X, Download, Code2, Sparkles, User, Briefcase, GraduationCap, Wrench, Code, FolderOpen, Mail, Home, Eye } from "lucide-react";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,6 +10,7 @@ const Navigation = () => {
 
   const navigation = [
     { name: "Home", href: "/", icon: Home },
+    { name: "Overview", href: "/overview", icon: Eye },
     { name: "About", href: "/about", icon: User },
     { name: "Experience", href: "/experience", icon: Briefcase },
     { name: "Education", href: "/education", icon: GraduationCap },
