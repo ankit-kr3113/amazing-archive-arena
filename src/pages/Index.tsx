@@ -11,7 +11,7 @@ const Index = () => {
       <ThemeSwitcher />
       
       {/* Enhanced Hero Section */}
-      <section className="relative pt-16 pb-8 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <section className="relative pt-20 pb-16 sm:pt-24 sm:pb-20 lg:pt-28 lg:pb-24 overflow-hidden">
         {/* Simplified Background Elements */}
         <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/5"></div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/3 rounded-full blur-3xl opacity-30 animate-pulse"></div>
@@ -20,7 +20,7 @@ const Index = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[80vh] lg:min-h-[70vh]">
             {/* Enhanced Left Content */}
             <div className="space-y-8 sm:space-y-10 fade-in order-2 lg:order-1 text-center lg:text-left">
-              <div className="space-y-4 sm:space-y-6">
+              <div className="space-y-6 sm:space-y-8">
                 <div className="inline-flex items-center px-4 py-2.5 rounded-full bg-gradient-to-r from-primary/10 to-primary-glow/10 border border-primary/20 text-primary text-sm font-medium shadow-lg backdrop-blur-sm hover:shadow-xl hover:scale-105 transition-all duration-300">
                   <Code className="w-4 h-4 mr-2 animate-pulse" />
                   <span>Full Stack Developer</span>
