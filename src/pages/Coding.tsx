@@ -262,37 +262,36 @@ const Coding = () => {
                             </div>
                           </div>
                         </div>
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-3">
                           <a href={platform.url} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
                             <Button
                               variant="outline"
                               size="sm"
-                              className="text-primary border-primary/40 hover:bg-primary/10 hover:scale-105 transition-all duration-300 h-8"
+                              className="text-primary border-primary/40 hover:bg-primary/10 hover:scale-105 transition-all duration-300"
                             >
-                              <FaExternalLinkAlt className="w-3 h-3 mr-1" />
+                              <FaExternalLinkAlt className="w-4 h-4 mr-2" />
                               Visit
                             </Button>
                           </a>
-                          {isExpanded ? <FaChevronUp className="w-3 h-3 text-muted-foreground" /> : <FaChevronDown className="w-3 h-3 text-muted-foreground" />}
+                          {isExpanded ? <FaChevronUp className="w-4 h-4 text-muted-foreground" /> : <FaChevronDown className="w-4 h-4 text-muted-foreground" />}
                         </div>
                       </div>
 
-
                       {/* Statistics Grid */}
-                      <div className="grid grid-cols-2 gap-3 mb-3">
+                      <div className="grid grid-cols-2 gap-6 mb-6">
                         <div className="text-center">
-                          <div className="text-2xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+                          <div className="text-3xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
                             {animatedCounts.platforms[index]}
                           </div>
-                          <div className="text-xs text-muted-foreground font-medium">Problems Solved</div>
+                          <div className="text-sm text-muted-foreground font-medium">Problems Solved</div>
                         </div>
                         {platform.rating && (
                           <div className="text-center">
-                            <div className={`text-base font-bold ${platform.color} flex items-center justify-center gap-1`}>
-                              <MdLeaderboard className="w-3 h-3" />
+                            <div className={`text-lg font-bold ${platform.color} flex items-center justify-center gap-1`}>
+                              <MdLeaderboard className="w-4 h-4" />
                               {platform.rating}
                             </div>
-                            <div className="text-xs text-muted-foreground font-medium">{platform.rank}</div>
+                            <div className="text-sm text-muted-foreground font-medium">{platform.rank}</div>
                           </div>
                         )}
                       </div>
