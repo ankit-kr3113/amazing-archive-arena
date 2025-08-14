@@ -269,8 +269,8 @@ const Coding = () => {
                           </div>
                         </div>
 
-                        <div className="flex flex-col gap-2">
-                          <a href={platform.url} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
+                        <div>
+                          <a href={platform.url} target="_blank" rel="noopener noreferrer">
                             <Button
                               size="sm"
                               className={`${platform.bgColor} ${platform.color} hover:scale-110 transition-all duration-300 shadow-lg border-0`}
@@ -278,13 +278,6 @@ const Coding = () => {
                               <FaExternalLinkAlt className="w-4 h-4" />
                             </Button>
                           </a>
-                          <Button
-                            variant="ghost"
-                            size="sm"
-                            className="text-muted-foreground hover:text-primary"
-                          >
-                            {isExpanded ? <FaChevronUp className="w-4 h-4" /> : <FaChevronDown className="w-4 h-4" />}
-                          </Button>
                         </div>
                       </div>
 
