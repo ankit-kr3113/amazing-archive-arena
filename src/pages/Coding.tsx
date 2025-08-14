@@ -298,21 +298,21 @@ const Coding = () => {
 
                       {/* Expanded Details */}
                       {isExpanded && (
-                        <div className="mt-4 pt-4 border-t border-primary/20 space-y-3">
+                        <div className="mt-3 pt-3 border-t border-primary/20 space-y-2">
                           {/* Difficulty Breakdown */}
                           <div>
-                            <h4 className="text-sm font-semibold text-foreground mb-2">Difficulty Breakdown</h4>
-                            <div className="grid grid-cols-3 gap-1.5 sm:gap-2 text-center">
-                              <div className="bg-green-500/10 border border-green-500/20 rounded-md py-1">
-                                <div className="text-sm font-bold text-green-400">{platform.difficulty.easy}</div>
+                            <h4 className="text-xs font-semibold text-foreground mb-1">Difficulty Breakdown</h4>
+                            <div className="grid grid-cols-3 gap-1 text-center">
+                              <div className="bg-green-500/10 border border-green-500/20 rounded py-1">
+                                <div className="text-xs font-bold text-green-400">{platform.difficulty.easy}</div>
                                 <div className="text-xs text-muted-foreground">Easy</div>
                               </div>
-                              <div className="bg-yellow-500/10 border border-yellow-500/20 rounded-md py-1">
-                                <div className="text-sm font-bold text-yellow-400">{platform.difficulty.medium}</div>
+                              <div className="bg-yellow-500/10 border border-yellow-500/20 rounded py-1">
+                                <div className="text-xs font-bold text-yellow-400">{platform.difficulty.medium}</div>
                                 <div className="text-xs text-muted-foreground">Medium</div>
                               </div>
-                              <div className="bg-red-500/10 border border-red-500/20 rounded-md py-1">
-                                <div className="text-sm font-bold text-red-400">{platform.difficulty.hard}</div>
+                              <div className="bg-red-500/10 border border-red-500/20 rounded py-1">
+                                <div className="text-xs font-bold text-red-400">{platform.difficulty.hard}</div>
                                 <div className="text-xs text-muted-foreground">Hard</div>
                               </div>
                             </div>
@@ -320,8 +320,8 @@ const Coding = () => {
 
                           {/* Recent Activity */}
                           <div>
-                            <h4 className="text-sm font-semibold text-foreground mb-2">Recent Activity</h4>
-                            <p className="text-xs text-muted-foreground bg-primary/5 p-2 rounded-md">
+                            <h4 className="text-xs font-semibold text-foreground mb-1">Recent Activity</h4>
+                            <p className="text-xs text-muted-foreground bg-primary/5 p-2 rounded">
                               {platform.recentActivity}
                             </p>
                           </div>
