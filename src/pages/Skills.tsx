@@ -6,14 +6,50 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
 
+// React Icons imports
+import { 
+  FaReact, 
+  FaNodeJs, 
+  FaJs, 
+  FaHtml5, 
+  FaCss3Alt, 
+  FaPython, 
+  FaJava, 
+  FaGitAlt, 
+  FaDocker,
+  FaDatabase
+} from "react-icons/fa";
+import { 
+  SiTypescript, 
+  SiTailwindcss, 
+  SiNextdotjs, 
+  SiRedux, 
+  SiVuedotjs, 
+  SiMongodb, 
+  SiMysql, 
+  SiVscode, 
+  SiWebpack,
+  SiExpress
+} from "react-icons/si";
+import { 
+  TbApi, 
+  TbBrandCpp, 
+  TbDatabase,
+  TbTool,
+  TbCode,
+  TbWorld,
+  TbServer
+} from "react-icons/tb";
+import { MdWeb, MdStorage, MdCode, MdBuild } from "react-icons/md";
+
 const Skills = () => {
   const [activeCategory, setActiveCategory] = useState("Web Development");
 
   const skillCategories = [
-    { name: "Web Development", icon: "🌐" },
-    { name: "Database", icon: "🗄️" },
-    { name: "Languages", icon: "💻" },
-    { name: "Tools", icon: "⚡" }
+    { name: "Web Development", icon: MdWeb },
+    { name: "Database", icon: MdStorage },
+    { name: "Languages", icon: MdCode },
+    { name: "Tools", icon: MdBuild }
   ];
 
   const skillsData = {
@@ -21,87 +57,93 @@ const Skills = () => {
       {
         name: "React",
         level: "Frontend",
-        icon: "⚛️",
+        icon: FaReact,
         color: "text-blue-400"
       },
       {
         name: "Node.js",
         level: "Backend",
-        icon: "🟢",
+        icon: FaNodeJs,
         color: "text-green-400"
       },
       {
         name: "JavaScript",
         level: "Frontend",
-        icon: "🟨",
+        icon: FaJs,
         color: "text-yellow-400"
       },
       {
         name: "TypeScript",
         level: "Frontend",
-        icon: "🔷",
+        icon: SiTypescript,
         color: "text-blue-500"
       },
       {
         name: "HTML5",
         level: "Frontend",
-        icon: "🌐",
+        icon: FaHtml5,
         color: "text-orange-400"
       },
       {
         name: "CSS3",
         level: "Frontend",
-        icon: "🎨",
+        icon: FaCss3Alt,
         color: "text-blue-400"
       },
       {
         name: "RESTful APIs",
         level: "Backend",
-        icon: "🔌",
+        icon: TbApi,
         color: "text-cyan-400"
       },
       {
         name: "Tailwind CSS",
         level: "Frontend",
-        icon: "💨",
+        icon: SiTailwindcss,
         color: "text-cyan-400"
       },
       {
         name: "Next.js",
         level: "Frontend",
-        icon: "▲",
+        icon: SiNextdotjs,
         color: "text-gray-300"
       },
       {
         name: "Redux",
         level: "Frontend",
-        icon: "🔄",
+        icon: SiRedux,
         color: "text-purple-400"
       },
       {
         name: "Vue",
         level: "Frontend",
-        icon: "💚",
+        icon: SiVuedotjs,
         color: "text-green-400"
+      },
+      {
+        name: "Express.js",
+        level: "Backend",
+        icon: SiExpress,
+        color: "text-gray-400"
       }
     ],
     "Database": [
       {
         name: "MongoDB",
         level: "Database",
-        icon: "🍃",
+        icon: SiMongodb,
         color: "text-green-400"
       },
       {
         name: "SQL",
         level: "Database",
-        icon: "🗃️",
+        icon: SiMysql,
         color: "text-blue-400"
       },
       {
         name: "Database Design",
         level: "Database",
-        icon: "🏗️",
+        icon: TbDatabase,
         color: "text-purple-400"
       }
     ],
@@ -109,31 +151,31 @@ const Skills = () => {
       {
         name: "JavaScript",
         level: "Languages",
-        icon: "🟨",
+        icon: FaJs,
         color: "text-yellow-400"
       },
       {
         name: "TypeScript",
         level: "Languages",
-        icon: "🔷",
+        icon: SiTypescript,
         color: "text-blue-500"
       },
       {
         name: "C++",
         level: "Languages",
-        icon: "🔵",
+        icon: TbBrandCpp,
         color: "text-blue-400"
       },
       {
         name: "Java",
         level: "Languages",
-        icon: "☕",
+        icon: FaJava,
         color: "text-orange-400"
       },
       {
         name: "Python",
         level: "Languages",
-        icon: "🐍",
+        icon: FaPython,
         color: "text-yellow-400"
       }
     ],
@@ -141,25 +183,25 @@ const Skills = () => {
       {
         name: "Git & GitHub",
         level: "Tools",
-        icon: "📂",
+        icon: FaGitAlt,
         color: "text-orange-400"
       },
       {
         name: "VS Code",
         level: "Tools",
-        icon: "💻",
+        icon: SiVscode,
         color: "text-blue-400"
       },
       {
         name: "Webpack",
         level: "Tools",
-        icon: "📦",
+        icon: SiWebpack,
         color: "text-blue-400"
       },
       {
         name: "Docker",
         level: "Tools",
-        icon: "🐳",
+        icon: FaDocker,
         color: "text-blue-400"
       }
     ]
@@ -200,60 +242,66 @@ const Skills = () => {
 
           {/* Category Filter Buttons */}
           <div className="flex flex-wrap justify-center gap-4 mb-12">
-            {skillCategories.map((category) => (
-              <Button
-                key={category.name}
-                onClick={() => setActiveCategory(category.name)}
-                variant={activeCategory === category.name ? "default" : "outline"}
-                className={`
-                  px-6 py-3 rounded-lg text-sm font-medium transition-all duration-300
-                  ${activeCategory === category.name 
-                    ? "bg-primary text-primary-foreground shadow-lg" 
-                    : "border-border hover:border-primary/50 hover:bg-primary/5 text-muted-foreground hover:text-foreground"
-                  }
-                `}
-              >
-                <span className="mr-2">{category.icon}</span>
-                {category.name}
-              </Button>
-            ))}
+            {skillCategories.map((category) => {
+              const IconComponent = category.icon;
+              return (
+                <Button
+                  key={category.name}
+                  onClick={() => setActiveCategory(category.name)}
+                  variant={activeCategory === category.name ? "default" : "outline"}
+                  className={`
+                    px-6 py-3 rounded-lg text-sm font-medium transition-all duration-300
+                    ${activeCategory === category.name 
+                      ? "bg-primary text-primary-foreground shadow-lg" 
+                      : "border-border hover:border-primary/50 hover:bg-primary/5 text-muted-foreground hover:text-foreground"
+                    }
+                  `}
+                >
+                  <IconComponent className="mr-2 w-4 h-4" />
+                  {category.name}
+                </Button>
+              );
+            })}
           </div>
 
           {/* Skills Grid */}
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
-            {skillsData[activeCategory]?.map((skill, index) => (
-              <Card 
-                key={`${activeCategory}-${index}`}
-                className="group bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/30 hover:bg-card/80 transition-all duration-300 hover:scale-105 hover:-translate-y-1 cursor-pointer"
-              >
-                <div className="p-6 text-center">
-                  {/* Skill Icon */}
-                  <div className={`text-2xl mb-4 ${skill.color} group-hover:scale-110 transition-transform duration-300`}>
-                    {skill.icon}
+            {skillsData[activeCategory]?.map((skill, index) => {
+              const IconComponent = skill.icon;
+              return (
+                <Card 
+                  key={`${activeCategory}-${index}`}
+                  className="group bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/30 hover:bg-card/80 transition-all duration-300 hover:scale-105 hover:-translate-y-1 cursor-pointer"
+                >
+                  <div className="p-6 text-center">
+                    {/* Skill Icon */}
+                    <div className={`mb-4 ${skill.color} group-hover:scale-110 transition-transform duration-300 flex justify-center`}>
+                      <IconComponent className="w-8 h-8" />
+                    </div>
+                    
+                    {/* Skill Name */}
+                    <h3 className="font-semibold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
+                      {skill.name}
+                    </h3>
+                    
+                    {/* Skill Level Badge */}
+                    <Badge className={`
+                      ${getLevelColor(skill.level)} 
+                      text-xs font-medium px-3 py-1 rounded-md
+                      transition-all duration-300 group-hover:scale-105
+                    `}>
+                      {skill.level}
+                    </Badge>
                   </div>
-                  
-                  {/* Skill Name */}
-                  <h3 className="font-semibold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
-                    {skill.name}
-                  </h3>
-                  
-                  {/* Skill Level Badge */}
-                  <Badge className={`
-                    ${getLevelColor(skill.level)} 
-                    text-xs font-medium px-3 py-1 rounded-md
-                    transition-all duration-300 group-hover:scale-105
-                  `}>
-                    {skill.level}
-                  </Badge>
-                </div>
-              </Card>
-            ))}
+                </Card>
+              );
+            })}
           </div>
 
           {/* Project Showcase Section */}
           <div className="mt-20 text-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-primary text-sm font-medium mb-6">
-              <span>🚀</span>
+              <TbCode className="w-4 h-4" />
               <span>Project Showcase</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
