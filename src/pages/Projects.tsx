@@ -1,8 +1,8 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
-import { Github, ExternalLink, Star } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Github, ExternalLink, Star, Code, Zap, Globe } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
