@@ -280,8 +280,8 @@ const Coding = () => {
                           <div className="flex items-center justify-end gap-2">
                             {platform.rating && (
                               <>
-                                <span className="text-xs text-slate-300">{platform.rating}</span>
-                                <FaStar className="w-3 h-3 text-yellow-400" />
+                                <span className="text-xs text-slate-300">Rating: {platform.rating}</span>
+                                <MdTrendingUp className="w-3 h-3 text-yellow-400" />
                               </>
                             )}
                           </div>
