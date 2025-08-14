@@ -132,24 +132,6 @@ const Projects = () => {
             <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               A collection of projects showcasing my journey in software development
             </p>
-
-            {/* Simple Stats Bar */}
-            <div className="flex items-center justify-center gap-8 mt-8 text-sm text-muted-foreground">
-              <div className="flex items-center gap-2">
-                <span className="text-2xl font-bold text-primary">{animatedCounts.totalProjects}+</span>
-                <span>Projects</span>
-              </div>
-              <div className="w-1 h-1 bg-muted-foreground/30 rounded-full"></div>
-              <div className="flex items-center gap-2">
-                <span className="text-2xl font-bold text-primary">{animatedCounts.technologies}+</span>
-                <span>Technologies</span>
-              </div>
-              <div className="w-1 h-1 bg-muted-foreground/30 rounded-full"></div>
-              <div className="flex items-center gap-2">
-                <span className="text-2xl font-bold text-primary">{animatedCounts.liveProjects}</span>
-                <span>Live Demos</span>
-              </div>
-            </div>
           </div>
 
           {/* Enhanced Project Filters */}
@@ -264,7 +246,7 @@ const Projects = () => {
                   <span className="text-xl">
                     {filter === "Featured" && <Star className="w-6 h-6 text-primary" />}
                     {filter === "Frontend" && "🎨"}
-                    {filter === "AI & ML" && "🤖"}
+                    {filter === "AI & ML" && "��"}
                     {filter === "Full Stack" && "🔗"}
                   </span>
                 </div>
