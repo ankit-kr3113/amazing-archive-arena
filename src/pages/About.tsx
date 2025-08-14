@@ -114,11 +114,11 @@ const About = () => {
                   </div>
 
                   <div className="flex gap-2 pt-2">
-                    <Button size="sm" className="flex-1">
+                    <Button size="sm" className="flex-1" onClick={handleContactClick}>
                       <Mail className="w-4 h-4 mr-2" />
                       Contact
                     </Button>
-                    <Button variant="outline" size="sm" className="flex-1">
+                    <Button variant="outline" size="sm" className="flex-1" onClick={handleResumeDownload}>
                       <Download className="w-4 h-4 mr-2" />
                       Resume
                     </Button>
