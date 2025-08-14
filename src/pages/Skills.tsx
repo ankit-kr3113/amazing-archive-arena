@@ -19,15 +19,15 @@ import {
   FaDocker,
   FaDatabase
 } from "react-icons/fa";
-import { 
-  SiTypescript, 
-  SiTailwindcss, 
-  SiNextdotjs, 
-  SiRedux, 
-  SiVuedotjs, 
-  SiMongodb, 
-  SiMysql, 
-  SiVscode, 
+import {
+  SiTypescript,
+  SiTailwindcss,
+  SiNextdotjs,
+  SiRedux,
+  SiVuedotjs,
+  SiMongodb,
+  SiMysql,
+  SiVisualstudiocode,
   SiWebpack,
   SiExpress
 } from "react-icons/si";
