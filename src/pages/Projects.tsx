@@ -192,61 +192,72 @@ const Projects = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
                 {featuredProjects.map((project, index) => (
-                  <Card key={index} className="portfolio-card group slide-up hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-2 transition-all duration-500">
-                    <div className="relative overflow-hidden rounded-xl mb-4">
-                      <Badge className="absolute top-2 sm:top-3 left-2 sm:left-3 z-10 bg-gradient-to-r from-primary to-primary-glow text-primary-foreground shadow-lg text-xs hover:scale-105 transition-transform duration-200">
-                        <span className="animate-pulse mr-1">⭐</span>
-                        <span>Featured</span>
-                      </Badge>
-                      {project.status === "Live" && (
-                        <Badge className="absolute top-2 sm:top-3 right-2 sm:right-3 z-10 bg-gradient-to-r from-green-500 to-green-600 text-white shadow-lg text-xs hover:scale-105 transition-transform duration-200">
-                          <span className="animate-pulse mr-1">🟢</span>
-                          <span>Live</span>
-                        </Badge>
-                      )}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-[5]"></div>
-                      <img
-                        src={project.image}
-                        alt={project.title}
-                        className="w-full h-40 sm:h-48 object-cover group-hover:scale-110 transition-transform duration-500"
-                        loading="lazy"
-                      />
+                  <Card key={index} className="group relative overflow-hidden bg-gradient-to-br from-card via-card to-card/80 border-0 shadow-xl hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500 hover:scale-[1.02] hover:-translate-y-2">
+                    {/* Enhanced Background Pattern */}
+                    <div className="absolute inset-0 opacity-5">
+                      <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-emerald-500/20 to-green-500/20 rounded-full blur-3xl"></div>
+                      <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-br from-primary/20 to-primary-glow/20 rounded-full blur-2xl"></div>
                     </div>
 
-                    <div className="space-y-3 sm:space-y-4">
-                      <div>
-                        <h3 className="text-lg sm:text-xl font-bold mb-2 group-hover:text-primary transition-colors duration-300">{project.title}</h3>
-                        <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed line-clamp-3">{project.description}</p>
-                      </div>
+                    {/* Top Bar with Project Branding */}
+                    <div className="h-1 w-full bg-gradient-to-r from-emerald-500/30 to-green-500/30"></div>
 
-                      <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                        {project.tags.slice(0, 4).map((tag, tagIndex) => (
-                          <Badge key={tagIndex} variant="secondary" className="text-[10px] sm:text-xs hover:bg-primary/20 hover:text-primary transition-colors duration-200">
-                            {tag}
-                          </Badge>
-                        ))}
-                        {project.tags.length > 4 && (
-                          <Badge variant="outline" className="text-[10px] sm:text-xs">
-                            +{project.tags.length - 4}
+                    <div className="relative p-6">
+                      <div className="relative overflow-hidden rounded-xl mb-6">
+                        <Badge className="absolute top-3 left-3 z-10 bg-gradient-to-r from-primary to-primary-glow text-primary-foreground shadow-lg text-xs hover:scale-105 transition-transform duration-200">
+                          <Star className="w-3 h-3 mr-1 animate-pulse" />
+                          <span>Featured</span>
+                        </Badge>
+                        {project.status === "Live" && (
+                          <Badge className="absolute top-3 right-3 z-10 bg-gradient-to-r from-green-500 to-green-600 text-white shadow-lg text-xs hover:scale-105 transition-transform duration-200">
+                            <Globe className="w-3 h-3 mr-1 animate-pulse" />
+                            <span>Live</span>
                           </Badge>
                         )}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-[5]"></div>
+                        <img
+                          src={project.image}
+                          alt={project.title}
+                          className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                          loading="lazy"
+                        />
                       </div>
 
-                      <div className="flex gap-2 sm:gap-3 pt-2">
-                        <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex-1">
-                          <Button size="sm" className="btn-hero w-full hover:scale-105 transition-all duration-300">
-                            <Github className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
-                            <span className="text-xs sm:text-sm">Code</span>
-                          </Button>
-                        </a>
-                        {project.demo && (
-                          <a href={project.demo} target="_blank" rel="noopener noreferrer" className="flex-1">
-                            <Button size="sm" variant="outline" className="btn-outline-hero w-full hover:scale-105 transition-all duration-300">
-                              <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
-                              <span className="text-xs sm:text-sm">Demo</span>
+                      <div className="space-y-4">
+                        <div>
+                          <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors duration-300">{project.title}</h3>
+                          <p className="text-muted-foreground text-sm leading-relaxed line-clamp-3">{project.description}</p>
+                        </div>
+
+                        <div className="flex flex-wrap gap-2">
+                          {project.tags.slice(0, 4).map((tag, tagIndex) => (
+                            <Badge key={tagIndex} variant="secondary" className="text-xs hover:bg-primary/20 hover:text-primary transition-colors duration-200 bg-primary/5 border border-primary/20">
+                              {tag}
+                            </Badge>
+                          ))}
+                          {project.tags.length > 4 && (
+                            <Badge variant="outline" className="text-xs border-primary/30">
+                              +{project.tags.length - 4}
+                            </Badge>
+                          )}
+                        </div>
+
+                        <div className="flex gap-3 pt-2">
+                          <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex-1">
+                            <Button size="sm" className="w-full bg-gradient-to-r from-primary to-primary-glow hover:from-primary/90 hover:to-primary-glow/90 text-primary-foreground shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
+                              <Github className="w-4 h-4 mr-2" />
+                              <span>Code</span>
                             </Button>
                           </a>
-                        )}
+                          {project.demo && (
+                            <a href={project.demo} target="_blank" rel="noopener noreferrer" className="flex-1">
+                              <Button size="sm" variant="outline" className="w-full border-primary/30 text-primary hover:bg-primary/10 hover:border-primary/60 hover:scale-105 transition-all duration-300">
+                                <ExternalLink className="w-4 h-4 mr-2" />
+                                <span>Demo</span>
+                              </Button>
+                            </a>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </Card>
