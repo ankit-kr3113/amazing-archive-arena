@@ -215,41 +215,6 @@ const Coding = () => {
                         )}
                       </div>
 
-                      {/* Difficulty Breakdown for LeetCode */}
-                      {platform.platform === "LeetCode" && (
-                        <div className="grid grid-cols-3 gap-3 mb-4">
-                          <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-3 text-center">
-                            <div className="font-bold text-green-400">Easy</div>
-                            <div className="text-lg font-semibold text-foreground">109</div>
-                          </div>
-                          <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-3 text-center">
-                            <div className="font-bold text-yellow-400">Medium</div>
-                            <div className="text-lg font-semibold text-foreground">115</div>
-                          </div>
-                          <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-3 text-center">
-                            <div className="font-bold text-red-400">Hard</div>
-                            <div className="text-lg font-semibold text-foreground">4</div>
-                          </div>
-                        </div>
-                      )}
-
-                      {/* Difficulty Breakdown for GeeksforGeeks */}
-                      {platform.platform === "GeeksforGeeks" && (
-                        <div className="grid grid-cols-3 gap-3 mb-4">
-                          <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-3 text-center">
-                            <div className="font-bold text-green-400">Easy</div>
-                            <div className="text-lg font-semibold text-foreground">32</div>
-                          </div>
-                          <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-3 text-center">
-                            <div className="font-bold text-yellow-400">Medium</div>
-                            <div className="text-lg font-semibold text-foreground">30</div>
-                          </div>
-                          <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-3 text-center">
-                            <div className="font-bold text-red-400">Hard</div>
-                            <div className="text-lg font-semibold text-foreground">8</div>
-                          </div>
-                        </div>
-                      )}
 
                       {/* Streak Badge */}
                       {platform.streak && (
