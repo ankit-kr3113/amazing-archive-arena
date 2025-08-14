@@ -284,60 +284,74 @@ const Projects = () => {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
               {(filter === "All Projects" ? projects : filteredProjects).map((project, index) => (
-                <Card key={index} className="portfolio-card group slide-up hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1 transition-all duration-500">
-                  <div className="relative overflow-hidden rounded-lg mb-4">
-                    {project.featured && (
-                      <Badge className="absolute top-3 left-3 z-10 bg-primary text-primary-foreground">
-                        ⭐ Featured
-                      </Badge>
-                    )}
-                    <Badge className={`absolute top-3 right-3 z-10 ${
-                      project.status === "Live" ? "bg-green-500" :
-                      project.status === "In Progress" ? "bg-yellow-500" :
-                      "bg-blue-500"
-                    } text-white`}>
-                      {project.status === "Live" && "🟢"}
-                      {project.status === "In Progress" && "🟡"}
-                      {project.status === "Completed" && "🔵"}
-                      {" "}{project.status}
-                    </Badge>
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-40 sm:h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                      loading="lazy"
-                    />
+                <Card key={index} className="group relative overflow-hidden bg-gradient-to-br from-card via-card to-card/90 border border-border/50 shadow-lg hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1 hover:scale-[1.01] transition-all duration-500">
+                  {/* Subtle Background Pattern */}
+                  <div className="absolute inset-0 opacity-3">
+                    <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-primary/10 to-primary-glow/10 rounded-full blur-2xl"></div>
                   </div>
 
-                  <div className="space-y-4">
-                    <div>
-                      <h3 className="text-lg font-bold mb-2">{project.title}</h3>
-                      <p className="text-muted-foreground text-sm">{project.description}</p>
-                    </div>
-
-                    <div className="flex flex-wrap gap-2">
-                      {project.tags.map((tag, tagIndex) => (
-                        <Badge key={tagIndex} variant="secondary" className="text-xs">
-                          {tag}
+                  <div className="relative p-6">
+                    <div className="relative overflow-hidden rounded-lg mb-4">
+                      {project.featured && (
+                        <Badge className="absolute top-3 left-3 z-10 bg-gradient-to-r from-primary to-primary-glow text-primary-foreground shadow-lg text-xs hover:scale-105 transition-transform duration-200">
+                          <Star className="w-3 h-3 mr-1" />
+                          <span>Featured</span>
                         </Badge>
-                      ))}
+                      )}
+                      <Badge className={`absolute top-3 right-3 z-10 shadow-lg text-xs hover:scale-105 transition-transform duration-200 ${
+                        project.status === "Live" ? "bg-gradient-to-r from-green-500 to-green-600" :
+                        project.status === "In Progress" ? "bg-gradient-to-r from-yellow-500 to-yellow-600" :
+                        "bg-gradient-to-r from-blue-500 to-blue-600"
+                      } text-white`}>
+                        {project.status === "Live" && <Globe className="w-3 h-3 mr-1" />}
+                        {project.status === "In Progress" && "🟡"}
+                        {project.status === "Completed" && "🔵"}
+                        <span>{project.status}</span>
+                      </Badge>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-[5]"></div>
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-44 object-cover group-hover:scale-105 transition-transform duration-300"
+                        loading="lazy"
+                      />
                     </div>
 
-                    <div className="flex gap-3 pt-2">
-                      <a href={project.github} target="_blank" rel="noopener noreferrer">
-                        <Button size="sm" className="btn-hero flex-1">
-                          <Github className="w-4 h-4 mr-2" />
-                          Code
-                        </Button>
-                      </a>
-                      {project.demo && (
-                        <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                          <Button size="sm" variant="outline" className="btn-outline-hero flex-1">
-                            <ExternalLink className="w-4 h-4 mr-2" />
-                            Demo
+                    <div className="space-y-4">
+                      <div>
+                        <h3 className="text-lg font-bold mb-2 group-hover:text-primary transition-colors duration-300">{project.title}</h3>
+                        <p className="text-muted-foreground text-sm leading-relaxed line-clamp-3">{project.description}</p>
+                      </div>
+
+                      <div className="flex flex-wrap gap-2">
+                        {project.tags.slice(0, 5).map((tag, tagIndex) => (
+                          <Badge key={tagIndex} variant="secondary" className="text-xs hover:bg-primary/20 hover:text-primary transition-colors duration-200 bg-primary/5 border border-primary/20">
+                            {tag}
+                          </Badge>
+                        ))}
+                        {project.tags.length > 5 && (
+                          <Badge variant="outline" className="text-xs border-primary/30">
+                            +{project.tags.length - 5}
+                          </Badge>
+                        )}
+                      </div>
+
+                      <div className="flex gap-3 pt-2">
+                        <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex-1">
+                          <Button size="sm" className="w-full bg-gradient-to-r from-primary to-primary-glow hover:from-primary/90 hover:to-primary-glow/90 text-primary-foreground shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
+                            <Github className="w-4 h-4 mr-2" />
+                            Code
                           </Button>
                         </a>
-                      )}
+                        {project.demo && (
+                          <a href={project.demo} target="_blank" rel="noopener noreferrer" className="flex-1">
+                            <Button size="sm" variant="outline" className="w-full border-primary/30 text-primary hover:bg-primary/10 hover:border-primary/60 hover:scale-105 transition-all duration-300">
+                              <ExternalLink className="w-4 h-4 mr-2" />
+                              Demo
+                            </Button>
+                          </a>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </Card>
