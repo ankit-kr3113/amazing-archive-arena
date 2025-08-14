@@ -35,51 +35,18 @@ const About = () => {
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary-glow/5 rounded-full blur-3xl animate-pulse opacity-40 animation-delay-2000"></div>
 
         <div className="relative max-w-7xl mx-auto">
-          {/* Redesigned Header */}
-          <div className="text-center mb-6 fade-in">
-            <div className="relative inline-block mb-4">
-              <div className="absolute -inset-1 bg-gradient-to-r from-primary/30 via-primary-glow/20 to-primary/30 rounded-full blur-lg opacity-75 animate-pulse"></div>
-              <div className="relative flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-primary/15 to-primary-glow/15 rounded-full border border-primary/25 shadow-xl backdrop-blur-sm">
-                <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center animate-bounce">
-                  <span className="text-white text-xs font-bold">👋</span>
-                </div>
-                <span className="text-primary font-semibold tracking-wide text-sm">Discover My Story</span>
-                <div className="flex gap-1">
-                  <div className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse"></div>
-                  <div className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse animation-delay-300"></div>
-                  <div className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse animation-delay-600"></div>
-                </div>
-              </div>
+          {/* Minimal Header */}
+          <div className="text-center mb-4 fade-in">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 rounded-full text-primary text-xs font-medium mb-2">
+              <span>👋</span>
+              <span>About</span>
             </div>
-
-            <div className="relative">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl font-black mb-3 tracking-tight">
-                <span className="relative inline-block">
-                  <span className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-primary-glow/20 blur-xl rounded-lg"></span>
-                  <span className="relative bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent animate-gradient">
-                    About
-                  </span>
-                </span>
-                <span className="mx-4 text-muted-foreground/30">/</span>
-                <span className="gradient-text relative inline-block font-extrabold">
-                  Me
-                  <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-transparent via-primary to-transparent rounded-full animate-pulse"></div>
-                  <div className="absolute -top-1 -right-1 w-3 h-3 bg-primary/60 rounded-full animate-ping"></div>
-                </span>
-              </h1>
-
-              <div className="max-w-3xl mx-auto">
-                <p className="text-sm text-muted-foreground leading-relaxed mb-2">
-                  Dive into the <span className="text-primary font-semibold">journey</span> of a passionate developer who transforms
-                </p>
-                <p className="text-xs text-muted-foreground/80 leading-relaxed">
-                  <span className="inline-flex items-center gap-2">
-                    <span className="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
-                    <span>code into meaningful digital experiences</span>
-                  </span>
-                </p>
-              </div>
-            </div>
+            <h1 className="text-xl sm:text-2xl font-bold text-foreground mb-1">
+              About Me
+            </h1>
+            <p className="text-sm text-muted-foreground max-w-md mx-auto">
+              Developer passionate about creating digital experiences
+            </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start max-w-6xl mx-auto">
