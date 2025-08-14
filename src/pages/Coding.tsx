@@ -1,7 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Progress } from "@/components/ui/progress";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
@@ -25,16 +24,12 @@ import {
   FaClock,
   FaStar,
   FaFire,
-  FaCalendarAlt,
-  FaHashtag,
   FaChevronDown,
   FaChevronUp
 } from "react-icons/fa";
 import {
   MdLeaderboard,
-  MdTrendingUp,
-  MdTimeline,
-  MdCompareArrows
+  MdTrendingUp
 } from "react-icons/md";
 
 const Coding = () => {
