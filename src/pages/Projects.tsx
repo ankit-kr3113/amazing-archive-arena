@@ -182,12 +182,12 @@ const Projects = () => {
 
           {/* Featured Projects Section */}
           {filter === "All Projects" && (
-            <div className="mb-16">
-              <div className="flex items-center mb-8">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mr-4">
-                  <Star className="w-5 h-5 text-primary" />
+            <div className="mb-20">
+              <div className="flex items-center gap-3 mb-10">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-primary-glow/10 flex items-center justify-center shadow-lg">
+                  <Star className="w-6 h-6 text-primary" />
                 </div>
-                <h2 className="text-2xl font-bold">Featured Projects</h2>
+                <h2 className="text-2xl md:text-3xl font-bold text-foreground">Featured Projects</h2>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
