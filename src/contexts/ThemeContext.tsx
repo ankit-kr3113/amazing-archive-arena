@@ -1,4 +1,5 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
+import type { ReactNode } from 'react';
 
 type Theme = 'purple' | 'cyberpunk' | 'glassmorphism' | 'glass-dream' | 'ocean-depth';
 
@@ -49,7 +50,7 @@ export const themes = [
   }
 ];
 
-export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const [theme, setTheme] = useState<Theme>('purple');
 
   useEffect(() => {
