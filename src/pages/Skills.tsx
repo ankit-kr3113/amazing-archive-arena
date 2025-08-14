@@ -297,20 +297,6 @@ const Skills = () => {
             ))}
           </div>
 
-          {/* Project Showcase Section */}
-          <div className="mt-20 text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-primary text-sm font-medium mb-6">
-              <TbCode className="w-4 h-4" />
-              <span>Project Showcase</span>
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Recent <span className="text-primary">Projects</span>
-            </h2>
-            <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Explore my latest projects showcasing my skills in full stack development, 
-              modern frameworks, and innovative AI technologies.
-            </p>
-          </div>
         </div>
       </div>
 
