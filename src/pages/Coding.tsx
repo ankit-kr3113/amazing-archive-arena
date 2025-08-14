@@ -94,7 +94,7 @@ const Coding = () => {
     {
       title: "GfG 160 Challenge",
       description: "35+ day streak in GfG 160 challenge",
-      icon: FaTarget,
+      icon: FaBullseye,
       color: "text-green-400",
       bgColor: "from-green-500/20 to-emerald-500/20",
       borderColor: "border-green-500/30"
