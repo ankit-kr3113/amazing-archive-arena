@@ -39,10 +39,23 @@ const Index = () => {
                   </span>
                 </h1>
 
+                {/* Enhanced Tagline */}
+                <div className="animate-fade-in-up animation-delay-500 mt-4">
+                  <h2 className="text-xl sm:text-2xl font-semibold text-primary mb-2">
+                    "Crafting Digital Experiences That Matter"
+                  </h2>
+                  <div className="flex items-center justify-center lg:justify-start space-x-2 text-sm">
+                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                    <span className="text-green-500 font-medium">Available for new opportunities</span>
+                    <span className="text-muted-foreground">•</span>
+                    <span className="text-muted-foreground">Open to remote work</span>
+                  </div>
+                </div>
+
                 <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl lg:max-w-lg leading-relaxed animate-fade-in-up animation-delay-600 mt-6">
                   <span className="text-foreground font-medium">B.Tech CS student</span> at <span className="text-primary font-semibold">NIT Patna</span> passionate about building
                   <span className="text-primary font-semibold"> full stack applications</span> with a focus on{" "}
-                  <span className="text-primary font-semibold">user-friendly interfaces</span>.
+                  <span className="text-primary font-semibold">user-friendly interfaces</span> and scalable solutions.
                 </p>
 
                 <div className="text-sm text-muted-foreground/80 animate-fade-in-up animation-delay-700 mt-3">
