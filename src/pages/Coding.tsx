@@ -331,45 +331,6 @@ const Coding = () => {
                       {/* Expanded Details */}
                       {isExpanded && (
                         <div className="border-t border-border/30 pt-4 space-y-4 animate-in slide-in-from-bottom-4 duration-500">
-                          {/* Difficulty Breakdown Chart */}
-                          <div>
-                            <h4 className="text-sm font-bold text-foreground mb-3 flex items-center gap-2">
-                              <FaChartLine className="w-4 h-4 text-primary" />
-                              Difficulty Analysis
-                            </h4>
-                            <div className="grid grid-cols-3 gap-2">
-                              <div className="text-center p-3 bg-green-500/10 border border-green-500/20 rounded-lg">
-                                <div className="text-lg font-bold text-green-400 mb-1">{platform.difficulty.easy}</div>
-                                <div className="text-xs text-green-300 font-medium">Easy</div>
-                                <div className="mt-1 w-full bg-green-500/20 rounded-full h-1">
-                                  <div
-                                    className="bg-green-500 h-1 rounded-full transition-all duration-1000"
-                                    style={{ width: `${(platform.difficulty.easy / platform.solved) * 100}%` }}
-                                  ></div>
-                                </div>
-                              </div>
-                              <div className="text-center p-3 bg-yellow-500/10 border border-yellow-500/20 rounded-lg">
-                                <div className="text-lg font-bold text-yellow-400 mb-1">{platform.difficulty.medium}</div>
-                                <div className="text-xs text-yellow-300 font-medium">Medium</div>
-                                <div className="mt-1 w-full bg-yellow-500/20 rounded-full h-1">
-                                  <div
-                                    className="bg-yellow-500 h-1 rounded-full transition-all duration-1000"
-                                    style={{ width: `${(platform.difficulty.medium / platform.solved) * 100}%` }}
-                                  ></div>
-                                </div>
-                              </div>
-                              <div className="text-center p-3 bg-red-500/10 border border-red-500/20 rounded-lg">
-                                <div className="text-lg font-bold text-red-400 mb-1">{platform.difficulty.hard}</div>
-                                <div className="text-xs text-red-300 font-medium">Hard</div>
-                                <div className="mt-1 w-full bg-red-500/20 rounded-full h-1">
-                                  <div
-                                    className="bg-red-500 h-1 rounded-full transition-all duration-1000"
-                                    style={{ width: `${(platform.difficulty.hard / platform.solved) * 100}%` }}
-                                  ></div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
 
                           {/* Activity Timeline */}
                           <div>
