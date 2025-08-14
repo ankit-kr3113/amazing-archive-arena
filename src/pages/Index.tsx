@@ -11,7 +11,7 @@ const Index = () => {
       <ThemeSwitcher />
       
       {/* Enhanced Hero Section */}
-      <section className="relative pt-20 sm:pt-24 lg:pt-28 pb-12 sm:pb-16 lg:pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <section className="relative pt-16 pb-8 px-4 sm:px-6 lg:px-8 overflow-hidden">
         {/* Enhanced Background Elements with Subtle Stock Image */}
         <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/8"></div>
         <div className="absolute inset-0 opacity-5">
@@ -26,7 +26,7 @@ const Index = () => {
         <div className="absolute bottom-1/4 left-1/4 w-[400px] h-[400px] bg-primary/3 rounded-full blur-2xl opacity-40 animate-pulse animation-delay-2000"></div>
         
         <div className="relative max-w-7xl mx-auto w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center min-h-[calc(100vh-140px)]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center min-h-[70vh]">
             {/* Enhanced Left Content */}
             <div className="space-y-6 sm:space-y-8 fade-in order-2 lg:order-1 text-center lg:text-left">
               <div className="space-y-4 sm:space-y-6">
@@ -36,7 +36,7 @@ const Index = () => {
                   <div className="ml-2 w-2 h-2 bg-primary rounded-full animate-pulse"></div>
                 </div>
                 
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight tracking-tight">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight">
                   <span className="block animate-fade-in-up">Hello, I'm</span>{" "}
                   <span className="gradient-text relative inline-block animate-fade-in-up animation-delay-300">
                     Yuvraj Mehta
@@ -44,7 +44,7 @@ const Index = () => {
                   </span>
                 </h1>
                 
-                <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl lg:max-w-lg leading-relaxed animate-fade-in-up animation-delay-600">
+                <p className="text-base text-muted-foreground max-w-2xl lg:max-w-lg leading-relaxed animate-fade-in-up animation-delay-600">
                   B.Tech CS student at <span className="text-primary font-semibold">NIT Patna</span> passionate about building
                   <span className="text-primary font-semibold"> full stack applications</span> with a focus on{" "}
                   <span className="text-primary font-semibold">user-friendly interfaces</span>.

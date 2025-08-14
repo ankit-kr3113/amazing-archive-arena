@@ -24,11 +24,11 @@ const Navigation = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 glass border-b border-border/30 backdrop-blur-xl bg-background/70 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 sm:h-16">
+        <div className="flex items-center justify-between h-14">
           {/* Enhanced Logo */}
           <Link to="/" className="flex items-center space-x-2 sm:space-x-3 group">
             <div className="relative">
-              <Avatar className="h-8 w-8 sm:h-9 sm:w-9 ring-2 ring-primary/20 transition-all duration-300 group-hover:ring-primary/50 group-hover:scale-110">
+              <Avatar className="h-7 w-7 ring-2 ring-primary/20 transition-all duration-300 group-hover:ring-primary/50 group-hover:scale-110">
                 <AvatarImage src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face&auto=format&q=80" alt="Yuvraj Mehta" />
                 <AvatarFallback className="bg-gradient-to-br from-primary to-primary-glow text-primary-foreground font-bold text-sm">
                   <Code2 className="w-4 h-4" />
@@ -36,16 +36,16 @@ const Navigation = () => {
               </Avatar>
               <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full animate-pulse border-2 border-background"></div>
             </div>
-            <span className="text-lg sm:text-xl font-bold gradient-text group-hover:scale-105 transition-transform duration-300">Yuvraj.</span>
+            <span className="text-base sm:text-lg font-bold gradient-text group-hover:scale-105 transition-transform duration-300">Yuvraj.</span>
           </Link>
 
           {/* Enhanced Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
+          <div className="hidden lg:flex items-center space-x-4">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
-                className={`relative px-3 py-2 text-sm font-medium transition-all duration-300 rounded-lg hover:bg-primary/5 ${
+                className={`relative px-2 py-1.5 text-sm font-medium transition-all duration-300 rounded-lg hover:bg-primary/5 ${
                   isActive(item.href)
                     ? "text-primary bg-primary/10"
                     : "text-muted-foreground hover:text-foreground"

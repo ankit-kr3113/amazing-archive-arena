@@ -85,7 +85,7 @@ const Experience = () => {
       <Navigation />
       <ThemeSwitcher />
       
-      <div className="relative pt-20 sm:pt-24 lg:pt-28 pb-12 sm:pb-16 lg:pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <div className="relative pt-16 pb-8 px-4 sm:px-6 lg:px-8 overflow-hidden">
         {/* Enhanced Background Elements with Professional Office Stock Image */}
         <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/8"></div>
         <div className="absolute inset-0 opacity-5">
@@ -99,22 +99,17 @@ const Experience = () => {
         <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-primary-glow/5 rounded-full blur-3xl animate-pulse opacity-40 animation-delay-2000"></div>
         
         <div className="relative max-w-7xl mx-auto">
-          {/* Enhanced Header */}
-          <div className="text-center mb-12 sm:mb-16 lg:mb-20 fade-in">
-            <div className="inline-flex items-center px-4 py-2.5 rounded-full bg-gradient-to-r from-primary/10 to-primary-glow/10 border border-primary/20 text-primary text-sm font-medium mb-6 shadow-lg backdrop-blur-sm hover:shadow-xl hover:scale-105 transition-all duration-300">
-              <span className="animate-bounce mr-2">💼</span>
-              <span>Professional Journey</span>
-              <div className="ml-2 w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+          {/* Minimal Header */}
+          <div className="text-center mb-4 fade-in">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-orange-500/10 rounded-full text-orange-600 text-xs font-medium mb-2">
+              <span>💼</span>
+              <span>Experience</span>
             </div>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 tracking-tight leading-tight">
-              Experience & <span className="gradient-text relative inline-block">
-                Achievements
-                <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary to-primary-glow rounded-full opacity-30 animate-pulse"></div>
-              </span>
+            <h1 className="text-xl sm:text-2xl font-bold text-foreground mb-1">
+              Professional Experience
             </h1>
-            <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed px-4">
-              My professional journey showcasing leadership roles, technical contributions, and notable
-              achievements in competitive environments.
+            <p className="text-sm text-muted-foreground max-w-md mx-auto">
+              Leadership roles and technical contributions
             </p>
           </div>
 

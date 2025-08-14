@@ -49,26 +49,22 @@ const Contact = () => {
       <Navigation />
       <ThemeSwitcher />
       
-      <div className="relative pt-32 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <div className="relative pt-16 pb-8 px-4 sm:px-6 lg:px-8 overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/5"></div>
         
         <div className="relative max-w-7xl mx-auto">
-          {/* Header */}
-          <div className="text-center mb-20 fade-in">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-primary/10 to-primary-glow/10 border border-primary/20 text-primary text-sm font-medium mb-6 shadow-lg backdrop-blur-sm">
-              💬 Let's Connect
-              <div className="ml-2 w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+          {/* Minimal Header */}
+          <div className="text-center mb-4 fade-in">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-rose-500/10 rounded-full text-rose-600 text-xs font-medium mb-2">
+              <span>💬</span>
+              <span>Contact</span>
             </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
-              Get In <span className="gradient-text relative">
-                Touch
-                <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary to-primary-glow rounded-full opacity-30"></div>
-              </span>
+            <h1 className="text-xl sm:text-2xl font-bold text-foreground mb-1">
+              Get In Touch
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Have a project in mind or want to discuss potential opportunities? I'd love to
-              hear from you.
+            <p className="text-sm text-muted-foreground max-w-md mx-auto">
+              Let's discuss your next project
             </p>
           </div>
 

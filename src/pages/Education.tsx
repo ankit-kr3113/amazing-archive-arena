@@ -40,19 +40,19 @@ const Education = () => {
     <div className="min-h-screen bg-background">
       <Navigation />
       
-      <div className="pt-24 pb-20 px-4 sm:px-6 lg:px-8">
+      <div className="pt-16 pb-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-16 fade-in">
-            <div className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-4">
-              🎓 Academic Journey
+          <div className="text-center mb-4 fade-in">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-violet-500/10 rounded-full text-violet-600 text-xs font-medium mb-2">
+              <span>🎓</span>
+              <span>Education</span>
             </div>
-            <h1 className="text-4xl sm:text-5xl font-bold mb-4">
-              Educational <span className="gradient-text">Qualifications</span>
+            <h1 className="text-xl sm:text-2xl font-bold text-foreground mb-1">
+              Educational Background
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              My academic foundation and continuous learning journey in computer science,
-              building expertise through formal education and specialized courses.
+            <p className="text-sm text-muted-foreground max-w-md mx-auto">
+              Academic foundation and continuous learning
             </p>
           </div>
 

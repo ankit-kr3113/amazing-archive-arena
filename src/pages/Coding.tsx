@@ -1,4 +1,3 @@
-
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -40,19 +39,19 @@ const Coding = () => {
     <div className="min-h-screen bg-background">
       <Navigation />
       
-      <div className="pt-24 pb-20 px-4 sm:px-6 lg:px-8">
+      <div className="pt-16 pb-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-16 fade-in">
-            <div className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-4">
-              🎯 Competitive Programming
+          <div className="text-center mb-4 fade-in">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-amber-500/10 rounded-full text-amber-600 text-xs font-medium mb-2">
+              <span>⚡</span>
+              <span>Coding</span>
             </div>
-            <h1 className="text-4xl sm:text-5xl font-bold mb-4">
-              Coding <span className="gradient-text">Proficiency</span>
+            <h1 className="text-xl sm:text-2xl font-bold text-foreground mb-1">
+              Competitive Programming
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Algorithmic problem-solving across multiple competitive programming platforms with
-              focus on data structures, algorithms, and optimization
+            <p className="text-sm text-muted-foreground max-w-md mx-auto">
+              Algorithm mastery across multiple platforms
             </p>
           </div>
 
