@@ -24,8 +24,6 @@ import {
   FaClock,
   FaStar,
   FaFire,
-  FaChevronDown,
-  FaChevronUp
 } from "react-icons/fa";
 import {
   MdLeaderboard,
