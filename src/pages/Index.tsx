@@ -12,9 +12,14 @@ const Index = () => {
       
       {/* Enhanced Hero Section */}
       <section className="relative pt-20 pb-16 sm:pt-24 sm:pb-20 lg:pt-28 lg:pb-24 overflow-hidden">
-        {/* Simplified Background Elements */}
+        {/* Enhanced Interactive Background Elements */}
         <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/5"></div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/3 rounded-full blur-3xl opacity-30 animate-pulse"></div>
+        {/* Floating interactive particles */}
+        <div className="absolute top-20 left-20 w-2 h-2 bg-primary/40 rounded-full animate-bounce animation-delay-300"></div>
+        <div className="absolute top-40 right-32 w-1 h-1 bg-primary-glow/60 rounded-full animate-ping animation-delay-700"></div>
+        <div className="absolute bottom-40 left-32 w-3 h-3 bg-primary/30 rounded-full animate-pulse animation-delay-1000"></div>
+        <div className="absolute top-32 right-20 w-1.5 h-1.5 bg-primary-glow/50 rounded-full animate-bounce animation-delay-1500"></div>
         
         <div className="relative max-w-7xl mx-auto w-full px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[80vh] lg:min-h-[70vh]">
