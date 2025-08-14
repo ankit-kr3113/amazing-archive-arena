@@ -26,7 +26,7 @@ const Index = () => {
         <div className="absolute bottom-1/4 left-1/4 w-[400px] h-[400px] bg-primary/3 rounded-full blur-2xl opacity-40 animate-pulse animation-delay-2000"></div>
         
         <div className="relative max-w-7xl mx-auto w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center min-h-[calc(100vh-140px)]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center min-h-[70vh]">
             {/* Enhanced Left Content */}
             <div className="space-y-6 sm:space-y-8 fade-in order-2 lg:order-1 text-center lg:text-left">
               <div className="space-y-4 sm:space-y-6">
