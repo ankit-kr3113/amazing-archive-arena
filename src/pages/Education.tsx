@@ -267,26 +267,6 @@ const Education = () => {
                   ))}
                 </div>
               </div>
-
-              {/* Continuous Learning */}
-              <div>
-                <div className="flex items-center mb-6">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mr-4">
-                    <span className="text-xl">📈</span>
-                  </div>
-                  <h2 className="text-xl font-bold">Continuous Learning</h2>
-                </div>
-
-                <div className="space-y-4">
-                  {learningStats.map((stat, index) => (
-                    <Card key={index} className="portfolio-card text-center slide-up hover:shadow-lg hover:shadow-primary/5 transition-all duration-300">
-                      <div className="text-2xl mb-2">{stat.icon}</div>
-                      <div className="text-2xl font-bold gradient-text">{stat.value}</div>
-                      <div className="text-xs text-muted-foreground">{stat.title}</div>
-                    </Card>
-                  ))}
-                </div>
-              </div>
             </div>
           </div>
         </div>
