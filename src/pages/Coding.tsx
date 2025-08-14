@@ -366,18 +366,18 @@ const Coding = () => {
                       backdrop-blur-sm
                     `}
                   >
-                    <div className="p-4">
-                      <div className="flex items-start gap-3">
-                        <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                          <IconComponent className={`w-5 h-5 ${achievement.color}`} />
+                    <div className="p-6">
+                      <div className="flex items-start gap-4">
+                        <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                          <IconComponent className={`w-6 h-6 ${achievement.color}`} />
                         </div>
                         <div className="flex-1">
-                          <div className="flex items-start justify-between mb-1">
-                            <h3 className="font-bold text-base text-foreground group-hover:text-primary transition-colors duration-300 leading-tight">
+                          <div className="flex items-start justify-between mb-2">
+                            <h3 className="font-bold text-lg text-foreground group-hover:text-primary transition-colors duration-300 leading-tight">
                               {achievement.title}
                             </h3>
                             <Badge className={`
-                              ${achievement.color} bg-transparent border-current text-xs font-medium ml-2 flex-shrink-0
+                              ${achievement.color} bg-transparent border-current text-sm font-medium ml-3 flex-shrink-0
                             `}>
                               {achievement.metric}
                             </Badge>
