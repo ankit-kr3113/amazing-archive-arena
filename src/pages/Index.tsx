@@ -106,15 +106,17 @@ const Index = () => {
                 {/* Enhanced Profile Image */}
                 <div className="relative z-10 w-72 h-72 sm:w-80 sm:h-80 lg:w-80 lg:h-80 xl:w-96 xl:h-96 rounded-full overflow-hidden border-4 border-primary/30 shadow-2xl hover:shadow-primary/20 transition-all duration-500 hover:scale-105 group mx-auto">
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  <div className="w-full h-full bg-gradient-to-br from-primary/20 via-primary-glow/30 to-primary/20 flex items-center justify-center transition-transform duration-500 group-hover:scale-110">
-                    <div className="text-center">
-                      <div className="w-24 h-24 mx-auto mb-4 bg-primary/30 rounded-full flex items-center justify-center">
-                        <span className="text-4xl font-bold text-primary-foreground">YM</span>
-                      </div>
-                      <p className="text-xs text-primary-foreground/80 px-4">Professional Photo Coming Soon</p>
-                    </div>
-                  </div>
+                  <img
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face&auto=format&q=80"
+                    alt="Yuvraj Mehta - Full Stack Developer"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   <div className="absolute inset-0 ring-1 ring-primary/20 rounded-full group-hover:ring-primary/40 transition-all duration-300"></div>
+                  {/* Professional status badge */}
+                  <div className="absolute bottom-4 right-4 bg-gradient-to-r from-green-500 to-emerald-500 text-white text-xs px-3 py-1 rounded-full font-medium shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    Available for hire
+                  </div>
                 </div>
 
                 {/* Achievement Cards with Current Stats */}
