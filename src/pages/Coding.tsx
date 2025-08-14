@@ -25,6 +25,7 @@ import {
   FaStar,
   FaFire,
 } from "react-icons/fa";
+import { Trophy } from "lucide-react";
 import {
   MdLeaderboard,
   MdTrendingUp
@@ -78,6 +79,7 @@ const Coding = () => {
       icon: SiLeetcode,
       url: "https://leetcode.com/u/mythical-UV/",
       lastActive: "2024",
+      joinedDate: "Jan 2023",
       difficulty: { easy: 150, medium: 65, hard: 13 },
       recentActivity: "Solved 'Binary Tree Inorder Traversal' - 2 days ago"
     },
@@ -92,6 +94,7 @@ const Coding = () => {
       icon: SiGeeksforgeeks,
       url: "https://www.geeksforgeeks.org/user/yuvrajmevbrx/",
       lastActive: "2024",
+      joinedDate: "Mar 2023",
       difficulty: { easy: 45, medium: 20, hard: 5 },
       recentActivity: "Completed 'Array Rotation' challenge - 1 day ago"
     },
@@ -106,6 +109,7 @@ const Coding = () => {
       icon: SiCodechef,
       url: "https://www.codechef.com/users/quick_unity_53",
       lastActive: "2024",
+      joinedDate: "Feb 2023",
       difficulty: { easy: 18, medium: 6, hard: 1 },
       recentActivity: "Participated in Starters 186 - 1 week ago"
     },
@@ -120,6 +124,7 @@ const Coding = () => {
       icon: SiCodeforces,
       url: "https://codeforces.com/profile/yuvraj_mythical",
       lastActive: "2024",
+      joinedDate: "Apr 2023",
       difficulty: { easy: 8, medium: 2, hard: 0 },
       recentActivity: "Solved problem A in Div 3 contest - 2 weeks ago"
     }
@@ -181,42 +186,43 @@ const Coding = () => {
         <div className="absolute top-3/4 left-1/2 w-64 h-64 bg-secondary/5 rounded-full blur-2xl opacity-15"></div>
         
         <div className="relative max-w-7xl mx-auto">
-          {/* Header Section */}
-          <div className="text-center mb-10">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Competitive <span className="text-primary">Programming</span>
+          {/* Enhanced Header Section */}
+          <div className="text-center mb-12 fade-in">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-primary text-sm font-medium mb-4 shadow-lg backdrop-blur-sm hover:shadow-xl hover:scale-105 transition-all duration-300">
+              <Trophy className="w-4 h-4 animate-pulse" />
+              <span>Competitive Programming</span>
+              <div className="ml-1 w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+            </div>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 animate-fade-in-up">
+              Algorithm <span className="gradient-text relative inline-block">
+                Mastery
+                <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-primary to-primary-glow rounded-full opacity-60"></div>
+              </span>
             </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Algorithm mastery across multiple platforms with consistent problem-solving excellence
+            <p className="text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed animate-fade-in-up animation-delay-300 mb-6">
+              Solving <span className="text-primary font-semibold">333+ problems</span> across multiple platforms with{" "}
+              <span className="text-primary font-semibold">consistent excellence</span> and{" "}
+              <span className="text-primary font-semibold">competitive performance</span>
             </p>
-          </div>
 
-          {/* Total Problems Solved Overview - Dynamic Calculation */}
-          <div className="mb-12 flex justify-center">
-            <Card className="group bg-gradient-to-br from-primary/10 to-primary-glow/5 border-primary/20 hover:border-primary/40 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-primary/10 w-full max-w-2xl">
-              <div className="px-8 py-6">
-                <div className="flex items-center justify-between">
-                  {/* Left Decorative Icon */}
-                  <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <FaCode className="text-xl text-primary" />
-                  </div>
-
-                  {/* Center Content */}
-                  <div className="text-center">
-                    <div className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent mb-2">
-                      {animatedCounts.total}
-                    </div>
-                    <div className="text-lg font-semibold text-foreground mb-1">Total Problems Solved</div>
-                    <div className="text-sm text-muted-foreground">Across all competitive programming platforms</div>
-                  </div>
-
-                  {/* Right Decorative Icon */}
-                  <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <FaChartLine className="text-xl text-primary" />
-                  </div>
-                </div>
+            {/* Inline Stats Display */}
+            <div className="flex items-center justify-center gap-6 text-sm animate-fade-in-up animation-delay-600">
+              <div className="flex items-center gap-2 px-3 py-2 bg-green-500/5 rounded-lg border border-green-500/20">
+                <FaTrophy className="w-4 h-4 text-green-500" />
+                <span className="text-muted-foreground font-medium">4 Platforms</span>
               </div>
-            </Card>
+              <div className="flex items-center gap-2 px-3 py-2 bg-primary/5 rounded-lg border border-primary/20">
+                <FaCode className="w-4 h-4 text-primary" />
+                <span className="text-2xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+                  {animatedCounts.total}
+                </span>
+                <span className="text-muted-foreground font-medium">Total Solved</span>
+              </div>
+              <div className="flex items-center gap-2 px-3 py-2 bg-orange-500/5 rounded-lg border border-orange-500/20">
+                <FaStar className="w-4 h-4 text-orange-500" />
+                <span className="text-muted-foreground font-medium">LeetCode Top 27.7%</span>
+              </div>
+            </div>
           </div>
 
           {/* Platform Statistics */}
@@ -232,90 +238,86 @@ const Coding = () => {
                 return (
                   <Card
                     key={index}
-                    className="group relative overflow-hidden bg-gradient-to-br from-card via-card to-card/80 border-0 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-[1.02]"
+                    className="group relative overflow-hidden bg-gradient-to-br from-slate-900/90 to-slate-800/90 border border-slate-700/50 rounded-xl transition-all duration-300 hover:border-slate-600/70 hover:scale-[1.02]"
                   >
-                    {/* Geometric Background Pattern */}
-                    <div className="absolute inset-0 opacity-5">
-                      <div className={`absolute top-0 right-0 w-32 h-32 ${platform.bgColor} rounded-full blur-3xl`}></div>
-                      <div className={`absolute bottom-0 left-0 w-24 h-24 ${platform.bgColor} rounded-full blur-2xl`}></div>
-                    </div>
-
-                    {/* Top Bar with Platform Branding */}
-                    <div className={`h-1 w-full bg-gradient-to-r ${platform.bgColor}`}></div>
-
-                    <div className="relative p-6">
-                      {/* Platform Header */}
-                      <div className="flex items-center justify-between mb-6">
-                        <div className="flex items-center gap-4">
-                          <div className="relative">
-                            <div className={`w-16 h-16 rounded-2xl ${platform.bgColor} flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300`}>
-                              <IconComponent className={`w-8 h-8 ${platform.color}`} />
-                            </div>
-                            {/* Status Indicator */}
-                            <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-green-500 rounded-full border-2 border-card flex items-center justify-center">
-                              <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-                            </div>
+                    <div className="p-6">
+                      {/* Header with platform icon and visit button */}
+                      <div className="flex items-start justify-between mb-4">
+                        <div className="flex items-center gap-3">
+                          <div className={`w-10 h-10 rounded-lg ${platform.bgColor} flex items-center justify-center`}>
+                            <IconComponent className={`w-6 h-6 ${platform.color}`} />
                           </div>
                           <div>
-                            <h3 className="text-2xl font-bold text-foreground mb-1">
+                            <h3 className="text-lg font-semibold text-white mb-1">
                               {platform.platform}
                             </h3>
-                            <div className="flex items-center gap-2 text-muted-foreground">
-                              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                              <span className="text-sm font-medium">Active {platform.lastActive}</span>
+                            <div className="flex items-center gap-1 mt-1">
+                              <FaClock className="w-3 h-3 text-slate-500" />
+                              <span className="text-xs text-slate-500">Joined {platform.joinedDate}</span>
                             </div>
                           </div>
                         </div>
-
-                        <div>
+                        <div className="flex flex-col items-end gap-2">
                           <a href={platform.url} target="_blank" rel="noopener noreferrer">
                             <Button
                               size="sm"
-                              className={`${platform.bgColor} ${platform.color} hover:scale-110 transition-all duration-300 shadow-lg border-0`}
+                              variant="outline"
+                              className="text-blue-400 border-blue-400/50 hover:bg-blue-400/10 hover:border-blue-400 text-xs px-3 py-1"
                             >
-                              <FaExternalLinkAlt className="w-4 h-4" />
+                              Visit
                             </Button>
                           </a>
+                          <div className="flex items-center gap-1">
+                            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                            <span className="text-xs text-slate-400">Active</span>
+                          </div>
                         </div>
                       </div>
 
-                      {/* Stats Dashboard */}
-                      <div className="grid grid-cols-2 gap-4 mb-6">
-                        {/* Problems Solved */}
-                        <div className="text-center p-4 rounded-xl bg-primary/5 border border-primary/20">
-                          <div className="text-3xl font-black bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent mb-1">
+                      <div className="flex items-start justify-between mb-4">
+                        {/* Main problem count */}
+                        <div>
+                          <div className="text-3xl font-bold text-white mb-1">
                             {animatedCounts.platforms[index]}
                           </div>
-                          <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+                          <div className="text-sm text-slate-400">
                             Problems Solved
                           </div>
                         </div>
 
-                        {/* Rating */}
-                        {platform.rating && (
-                          <div className={`text-center p-4 rounded-xl bg-gradient-to-br ${platform.bgColor} border border-current/20`}>
-                            <div className={`text-xl font-black ${platform.color} mb-1 flex items-center justify-center gap-1`}>
-                              <MdLeaderboard className="w-5 h-5" />
-                              {platform.rating}
-                            </div>
-                            <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-                              {platform.rank}
-                            </div>
+                        {/* Stats with icons */}
+                        <div className="text-right space-y-2">
+                          <div className="flex items-center justify-end gap-2">
+                            {platform.rating && (
+                              <>
+                                <span className="text-xs text-slate-300">Rating: {platform.rating}</span>
+                                <MdTrendingUp className="w-3 h-3 text-yellow-400" />
+                              </>
+                            )}
                           </div>
-                        )}
+                          <div className="flex items-center justify-end gap-2">
+                            <span className="text-xs text-slate-300">
+                              {platform.platform === "LeetCode" && "Top 27.7%"}
+                              {platform.platform === "CodeChef" && "2★ Coder"}
+                              {platform.platform === "GeeksforGeeks" && "35+ days"}
+                              {platform.platform === "Codeforces" && "Newbie"}
+                            </span>
+                            {platform.platform === "LeetCode" && <MdLeaderboard className="w-3 h-3 text-blue-400" />}
+                            {platform.platform === "CodeChef" && <FaMedal className="w-3 h-3 text-amber-400" />}
+                            {platform.platform === "GeeksforGeeks" && <FaFire className="w-3 h-3 text-green-400" />}
+                            {platform.platform === "Codeforces" && <FaBolt className="w-3 h-3 text-blue-400" />}
+                          </div>
+                        </div>
                       </div>
 
 
-                      {/* Streak Badge */}
-                      {platform.streak && (
-                        <div className="flex justify-center mb-4">
-                          <div className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-orange-500/20 to-yellow-500/20 border border-orange-500/30 rounded-full">
-                            <FaFire className="w-4 h-4 text-orange-400 animate-pulse" />
-                            <span className="text-sm font-bold text-orange-300">{platform.streak}</span>
-                          </div>
-                        </div>
-                      )}
-
+                      {/* Bottom description text */}
+                      <div className="text-xs text-slate-400 border-t border-slate-700/50 pt-3">
+                        {platform.platform === "LeetCode" && "Solved 228+ problems across all difficulty levels"}
+                        {platform.platform === "CodeChef" && "★★★ rated coder with 5 contests and best rank 13656"}
+                        {platform.platform === "GeeksforGeeks" && "Solved 112+ problems with 5 day current streak"}
+                        {platform.platform === "Codeforces" && "Newbie with 6 contests and best rank 13605"}
+                      </div>
                     </div>
                   </Card>
                 );
