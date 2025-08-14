@@ -65,28 +65,34 @@ const Index = () => {
               </div>
 
               {/* Enhanced Social Links */}
-              <div className="flex justify-center lg:justify-start space-x-3 sm:space-x-4 animate-fade-in-up animation-delay-1200">
+              <div className="flex justify-center lg:justify-start space-x-4 animate-fade-in-up animation-delay-1200 mt-6">
                 <a
                   href="https://github.com/yuvraj-mehta"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-card/50 backdrop-blur-sm border border-border/50 flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 hover:border-primary/30 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:-translate-y-1"
+                  aria-label="Visit Yuvraj's GitHub profile"
+                  className="group relative w-14 h-14 rounded-xl bg-card/70 backdrop-blur-sm border border-border/60 flex items-center justify-center text-muted-foreground hover:text-white hover:bg-gray-900 hover:border-gray-700 transition-all duration-300 hover:scale-110 hover:shadow-xl hover:-translate-y-2 focus:outline-none focus:ring-2 focus:ring-primary/50"
                 >
-                  <Github className="w-5 h-5 sm:w-6 sm:h-6 group-hover:scale-110 transition-transform" />
+                  <Github className="w-6 h-6 group-hover:scale-110 transition-transform relative z-10" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </a>
                 <a
                   href="https://www.linkedin.com/in/yuvraj-mehta-a0274528a/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-card/50 backdrop-blur-sm border border-border/50 flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 hover:border-primary/30 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:-translate-y-1"
+                  aria-label="Visit Yuvraj's LinkedIn profile"
+                  className="group relative w-14 h-14 rounded-xl bg-card/70 backdrop-blur-sm border border-border/60 flex items-center justify-center text-muted-foreground hover:text-white hover:bg-blue-600 hover:border-blue-500 transition-all duration-300 hover:scale-110 hover:shadow-xl hover:-translate-y-2 focus:outline-none focus:ring-2 focus:ring-primary/50"
                 >
-                  <Linkedin className="w-5 h-5 sm:w-6 sm:h-6 group-hover:scale-110 transition-transform" />
+                  <Linkedin className="w-6 h-6 group-hover:scale-110 transition-transform relative z-10" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </a>
                 <a
                   href="mailto:yuvraj.mehta532@gmail.com"
-                  className="group w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-card/50 backdrop-blur-sm border border-border/50 flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 hover:border-primary/30 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:-translate-y-1"
+                  aria-label="Send email to Yuvraj"
+                  className="group relative w-14 h-14 rounded-xl bg-card/70 backdrop-blur-sm border border-border/60 flex items-center justify-center text-muted-foreground hover:text-white hover:bg-red-600 hover:border-red-500 transition-all duration-300 hover:scale-110 hover:shadow-xl hover:-translate-y-2 focus:outline-none focus:ring-2 focus:ring-primary/50"
                 >
-                  <Mail className="w-5 h-5 sm:w-6 sm:h-6 group-hover:scale-110 transition-transform" />
+                  <Mail className="w-6 h-6 group-hover:scale-110 transition-transform relative z-10" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-red-600 to-red-700 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </a>
               </div>
             </div>
