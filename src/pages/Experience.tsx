@@ -154,7 +154,7 @@ const Experience = () => {
                         <div className="absolute inset-1 bg-primary/60 rounded-full"></div>
                       </div>
                       
-                      <Card className="portfolio-card slide-up hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 sm:ml-8">
+                      <Card className="portfolio-card slide-up hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 sm:ml-8 cursor-pointer" onClick={() => toggleCard(index)}>
                         <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4">
                           <div className="flex-1">
                             <div className="flex flex-wrap items-center gap-2 mb-2">
@@ -166,7 +166,7 @@ const Experience = () => {
                               </Badge>
                               <Badge variant="outline" className="text-xs">{exp.type}</Badge>
                             </div>
-                            
+
                             <h3 className="text-lg sm:text-xl font-bold leading-tight">{exp.title}</h3>
                             <p className="text-primary font-semibold text-sm sm:text-base">{exp.company}</p>
                             <p className="text-xs sm:text-sm text-muted-foreground flex items-center gap-2 mt-1">
@@ -174,45 +174,64 @@ const Experience = () => {
                               <span>{exp.location}</span>
                             </p>
                           </div>
-                          
-                          <div className="mt-2 sm:mt-0">
+
+                          <div className="mt-2 sm:mt-0 flex items-center gap-2">
                             <Badge variant="outline" className="text-primary border-primary/40 text-xs hover:bg-primary/10 transition-colors duration-200">
                               <span className="mr-1">📅</span>
                               <span>{exp.period}</span>
                             </Badge>
+                            <div className="text-muted-foreground hover:text-primary transition-colors">
+                              {expandedCards.includes(index) ? (
+                                <ChevronUp className="w-4 h-4" />
+                              ) : (
+                                <ChevronDown className="w-4 h-4" />
+                              )}
+                            </div>
                           </div>
                         </div>
 
-                        <p className="text-muted-foreground mb-4 text-sm sm:text-base leading-relaxed">{exp.description}</p>
+                        {/* Compact description when collapsed */}
+                        {!expandedCards.includes(index) && (
+                          <p className="text-muted-foreground text-sm leading-relaxed line-clamp-2">
+                            {exp.description.split('.')[0]}.
+                          </p>
+                        )}
 
-                        <div className="mb-4">
-                          <h4 className="font-semibold mb-3 flex items-center text-sm sm:text-base">
-                            <span className="text-yellow-500 mr-2">⭐</span>
-                            <span>Key Highlights</span>
-                          </h4>
-                          <ul className="space-y-2">
-                            {exp.highlights.map((highlight, idx) => (
-                              <li key={idx} className="text-xs sm:text-sm text-muted-foreground flex items-start p-2 rounded-lg hover:bg-primary/5 transition-colors duration-200">
-                                <span className="text-yellow-500 mr-2 mt-0.5">⭐</span>
-                                <span>{highlight}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
+                        {/* Expanded content */}
+                        {expandedCards.includes(index) && (
+                          <div className="space-y-4 animate-in slide-in-from-top-4 duration-300">
+                            <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">{exp.description}</p>
 
-                        <div>
-                          <h4 className="font-semibold mb-3 flex items-center text-sm sm:text-base">
-                            <span className="text-lg mr-2">🛠️</span>
-                            <span>Technologies & Skills</span>
-                          </h4>
-                          <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                            {exp.skills.map((skill, idx) => (
-                              <Badge key={idx} variant="secondary" className="text-xs hover:bg-primary/20 hover:text-primary transition-colors duration-200">
-                                {skill}
-                              </Badge>
-                            ))}
+                            <div>
+                              <h4 className="font-semibold mb-3 flex items-center text-sm sm:text-base">
+                                <span className="text-yellow-500 mr-2">⭐</span>
+                                <span>Key Highlights</span>
+                              </h4>
+                              <ul className="space-y-2">
+                                {exp.highlights.map((highlight, idx) => (
+                                  <li key={idx} className="text-xs sm:text-sm text-muted-foreground flex items-start p-2 rounded-lg hover:bg-primary/5 transition-colors duration-200">
+                                    <span className="text-yellow-500 mr-2 mt-0.5">⭐</span>
+                                    <span>{highlight}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+
+                            <div>
+                              <h4 className="font-semibold mb-3 flex items-center text-sm sm:text-base">
+                                <span className="text-lg mr-2">🛠️</span>
+                                <span>Technologies & Skills</span>
+                              </h4>
+                              <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                                {exp.skills.map((skill, idx) => (
+                                  <Badge key={idx} variant="secondary" className="text-xs hover:bg-primary/20 hover:text-primary transition-colors duration-200">
+                                    {skill}
+                                  </Badge>
+                                ))}
+                              </div>
+                            </div>
                           </div>
-                        </div>
+                        )}
                       </Card>
                     </div>
                   ))}
