@@ -3,12 +3,53 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Github, Linkedin, Mail, Phone, MapPin, Send } from "lucide-react";
+import { Github, Linkedin, Mail, Phone, MapPin, Send, Instagram, Loader2, CheckCircle, AlertCircle } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import { useState } from "react";
+import { toast } from "sonner";
+
+const contactSchema = z.object({
+  name: z.string().min(2, "Name must be at least 2 characters"),
+  email: z.string().email("Please enter a valid email address"),
+  subject: z.string().min(5, "Subject must be at least 5 characters"),
+  message: z.string().min(10, "Message must be at least 10 characters")
+});
+
+type ContactForm = z.infer<typeof contactSchema>;
 
 const Contact = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  const { register, handleSubmit, formState: { errors }, reset } = useForm<ContactForm>({
+    resolver: zodResolver(contactSchema)
+  });
+
+  const onSubmit = async (data: ContactForm) => {
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      // Simulate form submission - replace with actual email service
+      await new Promise(resolve => setTimeout(resolve, 2000));
+
+      // For now, just show success message
+      console.log('Form data:', data);
+      setSubmitStatus('success');
+      toast.success('Message sent successfully! I\'ll get back to you soon.');
+      reset();
+    } catch (error) {
+      setSubmitStatus('error');
+      toast.error('Failed to send message. Please try again or contact me directly.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   const socialLinks = [
     {
       name: "GitHub",
@@ -24,7 +65,7 @@ const Contact = () => {
     },
     {
       name: "Instagram",
-      icon: () => <span className="text-lg">📷</span>,
+      icon: Instagram,
       href: "https://www.instagram.com/yuvraj.mehta4261/",
       description: "Follow for updates"
     },
@@ -180,7 +221,7 @@ const Contact = () => {
                   </h3>
                 </div>
 
-                <form className="space-y-6">
+                <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <Label htmlFor="name" className="text-sm font-medium">
@@ -188,9 +229,15 @@ const Contact = () => {
                       </Label>
                       <Input
                         id="name"
+                        {...register("name")}
                         placeholder="Your name"
-                        className="bg-muted/50 border-border focus:border-primary"
+                        className={`bg-muted/50 border-border focus:border-primary ${
+                          errors.name ? 'border-destructive focus:border-destructive' : ''
+                        }`}
                       />
+                      {errors.name && (
+                        <p className="text-sm text-destructive mt-1">{errors.name.message}</p>
+                      )}
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="email" className="text-sm font-medium">
@@ -199,9 +246,15 @@ const Contact = () => {
                       <Input
                         id="email"
                         type="email"
+                        {...register("email")}
                         placeholder="your.email@example.com"
-                        className="bg-muted/50 border-border focus:border-primary"
+                        className={`bg-muted/50 border-border focus:border-primary ${
+                          errors.email ? 'border-destructive focus:border-destructive' : ''
+                        }`}
                       />
+                      {errors.email && (
+                        <p className="text-sm text-destructive mt-1">{errors.email.message}</p>
+                      )}
                     </div>
                   </div>
 
@@ -211,9 +264,15 @@ const Contact = () => {
                     </Label>
                     <Input
                       id="subject"
+                      {...register("subject")}
                       placeholder="What is this regarding?"
-                      className="bg-muted/50 border-border focus:border-primary"
+                      className={`bg-muted/50 border-border focus:border-primary ${
+                        errors.subject ? 'border-destructive focus:border-destructive' : ''
+                      }`}
                     />
+                    {errors.subject && (
+                      <p className="text-sm text-destructive mt-1">{errors.subject.message}</p>
+                    )}
                   </div>
 
                   <div className="space-y-2">
@@ -222,16 +281,49 @@ const Contact = () => {
                     </Label>
                     <Textarea
                       id="message"
+                      {...register("message")}
                       placeholder="Your message here..."
                       rows={6}
-                      className="bg-muted/50 border-border focus:border-primary resize-none"
+                      className={`bg-muted/50 border-border focus:border-primary resize-none ${
+                        errors.message ? 'border-destructive focus:border-destructive' : ''
+                      }`}
                     />
+                    {errors.message && (
+                      <p className="text-sm text-destructive mt-1">{errors.message.message}</p>
+                    )}
                   </div>
 
-                  <Button className="btn-hero w-full">
-                    <Send className="w-5 h-5 mr-2" />
-                    Send Message
+                  <Button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="btn-hero w-full"
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="w-5 h-5 mr-2 animate-spin" />
+                        Sending...
+                      </>
+                    ) : (
+                      <>
+                        <Send className="w-5 h-5 mr-2" />
+                        Send Message
+                      </>
+                    )}
                   </Button>
+
+                  {submitStatus === 'success' && (
+                    <div className="flex items-center justify-center text-green-600 text-sm">
+                      <CheckCircle className="w-4 h-4 mr-2" />
+                      Message sent successfully!
+                    </div>
+                  )}
+
+                  {submitStatus === 'error' && (
+                    <div className="flex items-center justify-center text-destructive text-sm">
+                      <AlertCircle className="w-4 h-4 mr-2" />
+                      Failed to send message. Please try again.
+                    </div>
+                  )}
                 </form>
 
                 <div className="mt-6 p-4 bg-muted/50 rounded-lg">
