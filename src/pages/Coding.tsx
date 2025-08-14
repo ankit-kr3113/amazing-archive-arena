@@ -257,9 +257,10 @@ const Coding = () => {
               <h2 className="text-xl md:text-2xl font-bold text-foreground">Platform Statistics</h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
               {codingStats.map((platform, index) => {
                 const IconComponent = platform.icon;
+                const isExpanded = expandedCard === index;
                 return (
                   <Card
                     key={index}
@@ -270,6 +271,7 @@ const Coding = () => {
                       transition-all duration-300 hover:scale-105 hover:-translate-y-1 cursor-pointer
                       backdrop-blur-sm
                     `}
+                    onClick={() => setExpandedCard(isExpanded ? null : index)}
                   >
                     <div className="p-4">
                       {/* Platform Header */}
@@ -288,23 +290,35 @@ const Coding = () => {
                             </div>
                           </div>
                         </div>
-                        <a href={platform.url} target="_blank" rel="noopener noreferrer">
-                          <Button
-                            variant="outline"
-                            size="sm"
-                            className="text-primary border-primary/40 hover:bg-primary/10 hover:scale-105 transition-all duration-300 h-8"
-                          >
-                            <FaExternalLinkAlt className="w-3 h-3 mr-1" />
-                            Visit
-                          </Button>
-                        </a>
+                        <div className="flex items-center gap-2">
+                          <a href={platform.url} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
+                            <Button
+                              variant="outline"
+                              size="sm"
+                              className="text-primary border-primary/40 hover:bg-primary/10 hover:scale-105 transition-all duration-300 h-8"
+                            >
+                              <FaExternalLinkAlt className="w-3 h-3 mr-1" />
+                              Visit
+                            </Button>
+                          </a>
+                          {isExpanded ? <FaChevronUp className="w-3 h-3 text-muted-foreground" /> : <FaChevronDown className="w-3 h-3 text-muted-foreground" />}
+                        </div>
+                      </div>
+
+                      {/* Progress Bar */}
+                      <div className="mb-4">
+                        <div className="flex justify-between items-center mb-1">
+                          <span className="text-xs text-muted-foreground">Progress</span>
+                          <span className="text-xs font-medium text-foreground">{platform.progress}%</span>
+                        </div>
+                        <Progress value={platform.progress} className="h-2" />
                       </div>
 
                       {/* Statistics Grid */}
                       <div className="grid grid-cols-2 gap-3 mb-3">
                         <div className="text-center">
                           <div className="text-2xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
-                            {platform.solved}
+                            {animatedCounts.platforms[index]}
                           </div>
                           <div className="text-xs text-muted-foreground font-medium">Problems Solved</div>
                         </div>
@@ -319,9 +333,41 @@ const Coding = () => {
                         )}
                       </div>
 
+                      {/* Expanded Details */}
+                      {isExpanded && (
+                        <div className="mt-4 pt-4 border-t border-primary/20 space-y-3">
+                          {/* Difficulty Breakdown */}
+                          <div>
+                            <h4 className="text-sm font-semibold text-foreground mb-2">Difficulty Breakdown</h4>
+                            <div className="grid grid-cols-3 gap-2 text-center">
+                              <div className="bg-green-500/10 border border-green-500/20 rounded-md py-1">
+                                <div className="text-sm font-bold text-green-400">{platform.difficulty.easy}</div>
+                                <div className="text-xs text-muted-foreground">Easy</div>
+                              </div>
+                              <div className="bg-yellow-500/10 border border-yellow-500/20 rounded-md py-1">
+                                <div className="text-sm font-bold text-yellow-400">{platform.difficulty.medium}</div>
+                                <div className="text-xs text-muted-foreground">Medium</div>
+                              </div>
+                              <div className="bg-red-500/10 border border-red-500/20 rounded-md py-1">
+                                <div className="text-sm font-bold text-red-400">{platform.difficulty.hard}</div>
+                                <div className="text-xs text-muted-foreground">Hard</div>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Recent Activity */}
+                          <div>
+                            <h4 className="text-sm font-semibold text-foreground mb-2">Recent Activity</h4>
+                            <p className="text-xs text-muted-foreground bg-primary/5 p-2 rounded-md">
+                              {platform.recentActivity}
+                            </p>
+                          </div>
+                        </div>
+                      )}
+
                       {/* Streak Badge */}
                       {platform.streak && (
-                        <div className="text-center">
+                        <div className="text-center mt-3">
                           <Badge className="bg-orange-500/20 text-orange-300 border border-orange-500/30 px-2 py-0.5 rounded-full text-xs">
                             <FaBolt className="w-3 h-3 mr-1" />
                             {platform.streak}
