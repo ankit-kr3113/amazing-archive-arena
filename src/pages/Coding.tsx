@@ -245,53 +245,53 @@ const Coding = () => {
                     `}
                     onClick={() => setExpandedCard(isExpanded ? null : index)}
                   >
-                    <div className="p-6">
+                    <div className="p-4">
                       {/* Platform Header */}
-                      <div className="flex items-center justify-between mb-6">
-                        <div className="flex items-center gap-3">
+                      <div className="flex items-center justify-between mb-4">
+                        <div className="flex items-center gap-2">
                           <div className={`${platform.color} group-hover:scale-110 transition-transform duration-300`}>
-                            <IconComponent className="w-8 h-8" />
+                            <IconComponent className="w-6 h-6" />
                           </div>
                           <div>
-                            <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
+                            <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors duration-300">
                               {platform.platform}
                             </h3>
-                            <div className="flex items-center gap-1 text-sm text-muted-foreground">
-                              <MdTrendingUp className="w-4 h-4" />
+                            <div className="flex items-center gap-1 text-xs text-muted-foreground">
+                              <MdTrendingUp className="w-3 h-3" />
                               <span>Active {platform.lastActive}</span>
                             </div>
                           </div>
                         </div>
-                        <div className="flex items-center gap-3">
+                        <div className="flex items-center gap-2">
                           <a href={platform.url} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
                             <Button
                               variant="outline"
                               size="sm"
-                              className="text-primary border-primary/40 hover:bg-primary/10 hover:scale-105 transition-all duration-300"
+                              className="text-primary border-primary/40 hover:bg-primary/10 hover:scale-105 transition-all duration-300 h-8 text-xs"
                             >
-                              <FaExternalLinkAlt className="w-4 h-4 mr-2" />
+                              <FaExternalLinkAlt className="w-3 h-3 mr-1" />
                               Visit
                             </Button>
                           </a>
-                          {isExpanded ? <FaChevronUp className="w-4 h-4 text-muted-foreground" /> : <FaChevronDown className="w-4 h-4 text-muted-foreground" />}
+                          {isExpanded ? <FaChevronUp className="w-3 h-3 text-muted-foreground" /> : <FaChevronDown className="w-3 h-3 text-muted-foreground" />}
                         </div>
                       </div>
 
                       {/* Statistics Grid */}
-                      <div className="grid grid-cols-2 gap-6 mb-6">
+                      <div className="grid grid-cols-2 gap-4 mb-4">
                         <div className="text-center">
-                          <div className="text-3xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+                          <div className="text-2xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
                             {animatedCounts.platforms[index]}
                           </div>
-                          <div className="text-sm text-muted-foreground font-medium">Problems Solved</div>
+                          <div className="text-xs text-muted-foreground font-medium">Problems Solved</div>
                         </div>
                         {platform.rating && (
                           <div className="text-center">
-                            <div className={`text-lg font-bold ${platform.color} flex items-center justify-center gap-1`}>
-                              <MdLeaderboard className="w-4 h-4" />
+                            <div className={`text-base font-bold ${platform.color} flex items-center justify-center gap-1`}>
+                              <MdLeaderboard className="w-3 h-3" />
                               {platform.rating}
                             </div>
-                            <div className="text-sm text-muted-foreground font-medium">{platform.rank}</div>
+                            <div className="text-xs text-muted-foreground font-medium">{platform.rank}</div>
                           </div>
                         )}
                       </div>
