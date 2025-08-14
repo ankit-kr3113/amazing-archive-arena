@@ -50,7 +50,7 @@ export const themes = [
   }
 ];
 
-export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const [theme, setTheme] = useState<Theme>('purple');
 
   useEffect(() => {
