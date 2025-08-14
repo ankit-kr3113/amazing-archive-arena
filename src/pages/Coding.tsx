@@ -339,7 +339,7 @@ const Coding = () => {
                           {/* Difficulty Breakdown */}
                           <div>
                             <h4 className="text-sm font-semibold text-foreground mb-2">Difficulty Breakdown</h4>
-                            <div className="grid grid-cols-3 gap-2 text-center">
+                            <div className="grid grid-cols-3 gap-1.5 sm:gap-2 text-center">
                               <div className="bg-green-500/10 border border-green-500/20 rounded-md py-1">
                                 <div className="text-sm font-bold text-green-400">{platform.difficulty.easy}</div>
                                 <div className="text-xs text-muted-foreground">Easy</div>
