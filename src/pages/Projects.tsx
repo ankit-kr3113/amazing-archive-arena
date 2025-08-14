@@ -125,7 +125,7 @@ const Projects = () => {
         
         <div className="relative max-w-7xl mx-auto">
           {/* Compact Header Section */}
-          <div className="text-center mb-12 fade-in">
+          <div className="text-center mb-8 fade-in">
             {/* Main Title */}
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-3 tracking-tight">
               Featured <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">Projects</span>
