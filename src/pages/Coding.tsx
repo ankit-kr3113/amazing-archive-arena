@@ -253,6 +253,10 @@ const Coding = () => {
                               <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                               <span className="text-xs text-slate-400">Active</span>
                             </div>
+                            <div className="flex items-center gap-1 mt-1">
+                              <FaClock className="w-3 h-3 text-slate-500" />
+                              <span className="text-xs text-slate-500">Joined {platform.joinedDate}</span>
+                            </div>
                           </div>
                         </div>
                         <a href={platform.url} target="_blank" rel="noopener noreferrer">
