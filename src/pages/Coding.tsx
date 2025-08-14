@@ -317,38 +317,6 @@ const Coding = () => {
                         )}
                       </div>
 
-                      {/* Visual Progress Ring */}
-                      <div className="flex justify-center mb-6">
-                        <div className="relative w-20 h-20">
-                          <svg className="w-20 h-20 transform -rotate-90" viewBox="0 0 80 80">
-                            <circle
-                              cx="40"
-                              cy="40"
-                              r="30"
-                              stroke="currentColor"
-                              strokeWidth="6"
-                              fill="none"
-                              className="text-muted/20"
-                            />
-                            <circle
-                              cx="40"
-                              cy="40"
-                              r="30"
-                              stroke="currentColor"
-                              strokeWidth="6"
-                              fill="none"
-                              strokeLinecap="round"
-                              className={platform.color}
-                              strokeDasharray={`${Math.min((platform.solved / 300) * 188, 188)} 188`}
-                            />
-                          </svg>
-                          <div className="absolute inset-0 flex items-center justify-center">
-                            <span className="text-xs font-bold text-muted-foreground">
-                              {Math.round((platform.solved / 300) * 100)}%
-                            </span>
-                          </div>
-                        </div>
-                      </div>
 
                       {/* Streak Badge */}
                       {platform.streak && (
