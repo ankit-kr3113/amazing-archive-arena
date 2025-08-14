@@ -90,12 +90,6 @@ const Education = () => {
     }
   ];
 
-  const learningStats = [
-    { title: "Online Courses Completed", value: "12+", icon: "📚" },
-    { title: "Coding Challenges Solved", value: "333+", icon: "⚡" },
-    { title: "Technical Books Read", value: "8+", icon: "📖" },
-    { title: "Tech Communities Joined", value: "5+", icon: "👥" }
-  ];
 
   return (
     <div className="min-h-screen bg-background">
