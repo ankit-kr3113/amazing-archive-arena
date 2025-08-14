@@ -234,7 +234,7 @@ const Coding = () => {
                   </div>
                   <div>
                     <div className="text-4xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
-                      {totalProblems}+
+                      {animatedCounts.total}+
                     </div>
                     <div className="text-base font-semibold text-foreground">Total Problems Solved</div>
                     <div className="text-sm text-muted-foreground">Across {codingStats.length} platforms</div>
