@@ -330,7 +330,7 @@ const Coding = () => {
 
                       {/* Streak Badge */}
                       {platform.streak && (
-                        <div className="text-center mt-3">
+                        <div className="text-center mt-2">
                           <Badge className="bg-orange-500/20 text-orange-300 border border-orange-500/30 px-2 py-0.5 rounded-full text-xs">
                             <FaBolt className="w-3 h-3 mr-1" />
                             {platform.streak}
