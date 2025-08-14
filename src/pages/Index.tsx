@@ -21,7 +21,7 @@ const Index = () => {
             {/* Enhanced Left Content */}
             <div className="space-y-8 sm:space-y-10 fade-in order-2 lg:order-1 text-center lg:text-left">
               <div className="space-y-6 sm:space-y-8">
-                <div className="inline-flex items-center px-4 py-2.5 rounded-full bg-gradient-to-r from-primary/10 to-primary-glow/10 border border-primary/20 text-primary text-sm font-medium shadow-lg backdrop-blur-sm hover:shadow-xl hover:scale-105 transition-all duration-300">
+                <div className="inline-flex items-center px-4 py-2.5 rounded-full bg-gradient-to-r from-primary/10 to-primary-glow/10 border border-primary/20 text-primary text-sm font-medium shadow-lg backdrop-blur-sm hover:shadow-xl hover:scale-105 transition-all duration-300 micro-interaction animate-gentle-glow">
                   <Code className="w-4 h-4 mr-2 animate-pulse" />
                   <span>Full Stack Developer</span>
                   <div className="ml-2 w-2 h-2 bg-primary rounded-full animate-pulse"></div>
@@ -118,9 +118,9 @@ const Index = () => {
                 </div>
 
                 {/* Achievement Cards with Current Stats */}
-                <div className="hidden lg:block absolute top-12 -right-4 w-24 h-20 bg-card/95 backdrop-blur-sm rounded-xl border border-primary/30 p-3 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 animate-float group">
+                <div className="hidden lg:block absolute top-12 -right-4 w-24 h-20 bg-card/95 backdrop-blur-sm rounded-xl border border-primary/30 p-3 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 animate-float micro-interaction group cursor-pointer">
                   <div className="flex justify-center mb-2">
-                    <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center">
+                    <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center animate-subtle-bounce">
                       <Rocket className="w-4 h-4 text-white group-hover:animate-bounce" />
                     </div>
                   </div>
@@ -128,9 +128,9 @@ const Index = () => {
                   <div className="text-[10px] text-muted-foreground text-center">Projects</div>
                 </div>
 
-                <div className="hidden lg:block absolute bottom-12 -left-4 w-24 h-20 bg-card/95 backdrop-blur-sm rounded-xl border border-primary/30 p-3 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 animate-float animation-delay-1000 group">
+                <div className="hidden lg:block absolute bottom-12 -left-4 w-24 h-20 bg-card/95 backdrop-blur-sm rounded-xl border border-primary/30 p-3 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 animate-float animation-delay-1000 micro-interaction group cursor-pointer">
                   <div className="flex justify-center mb-2">
-                    <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-green-500 to-teal-500 flex items-center justify-center">
+                    <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-green-500 to-teal-500 flex items-center justify-center animate-subtle-bounce animation-delay-600">
                       <Laptop className="w-4 h-4 text-white group-hover:animate-bounce" />
                     </div>
                   </div>
@@ -138,9 +138,9 @@ const Index = () => {
                   <div className="text-[10px] text-muted-foreground text-center">Patna</div>
                 </div>
 
-                <div className="hidden lg:block absolute top-1/2 -right-6 w-24 h-20 bg-card/95 backdrop-blur-sm rounded-xl border border-primary/30 p-3 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 animate-float animation-delay-2000 group">
+                <div className="hidden lg:block absolute top-1/2 -right-6 w-24 h-20 bg-card/95 backdrop-blur-sm rounded-xl border border-primary/30 p-3 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 animate-float animation-delay-2000 micro-interaction group cursor-pointer">
                   <div className="flex justify-center mb-2">
-                    <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-yellow-500 to-orange-500 flex items-center justify-center">
+                    <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-yellow-500 to-orange-500 flex items-center justify-center animate-subtle-bounce animation-delay-1200">
                       <Trophy className="w-4 h-4 text-white group-hover:animate-bounce" />
                     </div>
                   </div>
