@@ -19,14 +19,14 @@ import {
   FaDocker,
   FaDatabase
 } from "react-icons/fa";
-import {
-  SiTypescript,
-  SiTailwindcss,
-  SiNextdotjs,
-  SiRedux,
-  SiVuedotjs,
-  SiMongodb,
-  SiMysql,
+import { 
+  SiTypescript, 
+  SiTailwindcss, 
+  SiNextdotjs, 
+  SiRedux, 
+  SiVuedotjs, 
+  SiMongodb, 
+  SiMysql, 
   SiWebpack,
   SiExpress
 } from "react-icons/si";
@@ -53,158 +53,144 @@ const Skills = () => {
   ];
 
   const skillsData = {
-    "Web Development": [
-      {
-        name: "React",
-        level: "Frontend",
-        icon: FaReact,
-        color: "text-blue-400"
-      },
-      {
-        name: "Node.js",
-        level: "Backend",
-        icon: FaNodeJs,
-        color: "text-green-400"
-      },
-      {
-        name: "JavaScript",
-        level: "Frontend",
-        icon: FaJs,
-        color: "text-yellow-400"
-      },
-      {
-        name: "TypeScript",
-        level: "Frontend",
-        icon: SiTypescript,
-        color: "text-blue-500"
-      },
-      {
-        name: "HTML5",
-        level: "Frontend",
-        icon: FaHtml5,
-        color: "text-orange-400"
-      },
-      {
-        name: "CSS3",
-        level: "Frontend",
-        icon: FaCss3Alt,
-        color: "text-blue-400"
-      },
-      {
-        name: "RESTful APIs",
-        level: "Backend",
-        icon: TbApi,
-        color: "text-cyan-400"
-      },
-      {
-        name: "Tailwind CSS",
-        level: "Frontend",
-        icon: SiTailwindcss,
-        color: "text-cyan-400"
-      },
-      {
-        name: "Next.js",
-        level: "Frontend",
-        icon: SiNextdotjs,
-        color: "text-gray-300"
-      },
-      {
-        name: "Redux",
-        level: "Frontend",
-        icon: SiRedux,
-        color: "text-purple-400"
-      },
-      {
-        name: "Vue",
-        level: "Frontend",
-        icon: SiVuedotjs,
-        color: "text-green-400"
-      },
-      {
-        name: "Express.js",
-        level: "Backend",
-        icon: SiExpress,
-        color: "text-gray-400"
-      }
-    ],
-    "Database": [
-      {
-        name: "MongoDB",
-        level: "Database",
-        icon: SiMongodb,
-        color: "text-green-400"
-      },
-      {
-        name: "SQL",
-        level: "Database",
-        icon: SiMysql,
-        color: "text-blue-400"
-      },
-      {
-        name: "Database Design",
-        level: "Database",
-        icon: TbDatabase,
-        color: "text-purple-400"
-      }
-    ],
-    "Languages": [
-      {
-        name: "JavaScript",
-        level: "Languages",
-        icon: FaJs,
-        color: "text-yellow-400"
-      },
-      {
-        name: "TypeScript",
-        level: "Languages",
-        icon: SiTypescript,
-        color: "text-blue-500"
-      },
-      {
-        name: "C++",
-        level: "Languages",
-        icon: TbBrandCpp,
-        color: "text-blue-400"
-      },
-      {
-        name: "Java",
-        level: "Languages",
-        icon: FaJava,
-        color: "text-orange-400"
-      },
-      {
-        name: "Python",
-        level: "Languages",
-        icon: FaPython,
-        color: "text-yellow-400"
-      }
-    ],
-    "Tools": [
-      {
-        name: "Git & GitHub",
-        level: "Tools",
-        icon: FaGitAlt,
-        color: "text-orange-400"
-      },
-      {
-        name: "VS Code",
-        level: "Tools",
-        icon: VscCode,
-        color: "text-blue-400"
-      },
-      {
-        name: "Webpack",
-        level: "Tools",
-        icon: SiWebpack,
-        color: "text-blue-400"
-      },
-      {
-        name: "Docker",
-        level: "Tools",
-        icon: FaDocker,
-        color: "text-blue-400"
-      }
-    ]
+    "Web Development": {
+      Frontend: [
+        {
+          name: "React",
+          icon: FaReact,
+          color: "text-blue-400"
+        },
+        {
+          name: "JavaScript",
+          icon: FaJs,
+          color: "text-yellow-400"
+        },
+        {
+          name: "TypeScript",
+          icon: SiTypescript,
+          color: "text-blue-500"
+        },
+        {
+          name: "HTML5",
+          icon: FaHtml5,
+          color: "text-orange-400"
+        },
+        {
+          name: "CSS3",
+          icon: FaCss3Alt,
+          color: "text-blue-400"
+        },
+        {
+          name: "Tailwind CSS",
+          icon: SiTailwindcss,
+          color: "text-cyan-400"
+        },
+        {
+          name: "Next.js",
+          icon: SiNextdotjs,
+          color: "text-gray-300"
+        },
+        {
+          name: "Redux",
+          icon: SiRedux,
+          color: "text-purple-400"
+        },
+        {
+          name: "Vue",
+          icon: SiVuedotjs,
+          color: "text-green-400"
+        }
+      ],
+      Backend: [
+        {
+          name: "Node.js",
+          icon: FaNodeJs,
+          color: "text-green-400"
+        },
+        {
+          name: "RESTful APIs",
+          icon: TbApi,
+          color: "text-cyan-400"
+        },
+        {
+          name: "Express.js",
+          icon: SiExpress,
+          color: "text-gray-400"
+        }
+      ]
+    },
+    "Database": {
+      Database: [
+        {
+          name: "MongoDB",
+          icon: SiMongodb,
+          color: "text-green-400"
+        },
+        {
+          name: "SQL",
+          icon: SiMysql,
+          color: "text-blue-400"
+        },
+        {
+          name: "Database Design",
+          icon: TbDatabase,
+          color: "text-purple-400"
+        }
+      ]
+    },
+    "Languages": {
+      Languages: [
+        {
+          name: "JavaScript",
+          icon: FaJs,
+          color: "text-yellow-400"
+        },
+        {
+          name: "TypeScript",
+          icon: SiTypescript,
+          color: "text-blue-500"
+        },
+        {
+          name: "C++",
+          icon: TbBrandCpp,
+          color: "text-blue-400"
+        },
+        {
+          name: "Java",
+          icon: FaJava,
+          color: "text-orange-400"
+        },
+        {
+          name: "Python",
+          icon: FaPython,
+          color: "text-yellow-400"
+        }
+      ]
+    },
+    "Tools": {
+      Tools: [
+        {
+          name: "Git & GitHub",
+          icon: FaGitAlt,
+          color: "text-orange-400"
+        },
+        {
+          name: "VS Code",
+          icon: VscCode,
+          color: "text-blue-400"
+        },
+        {
+          name: "Webpack",
+          icon: SiWebpack,
+          color: "text-blue-400"
+        },
+        {
+          name: "Docker",
+          icon: FaDocker,
+          color: "text-blue-400"
+        }
+      ]
+    }
   };
 
   const getLevelColor = (level: string) => {
@@ -264,38 +250,51 @@ const Skills = () => {
             })}
           </div>
 
-          {/* Skills Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
-            {skillsData[activeCategory]?.map((skill, index) => {
-              const IconComponent = skill.icon;
-              return (
-                <Card 
-                  key={`${activeCategory}-${index}`}
-                  className="group bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/30 hover:bg-card/80 transition-all duration-300 hover:scale-105 hover:-translate-y-1 cursor-pointer"
-                >
-                  <div className="p-6 text-center">
-                    {/* Skill Icon */}
-                    <div className={`mb-4 ${skill.color} group-hover:scale-110 transition-transform duration-300 flex justify-center`}>
-                      <IconComponent className="w-8 h-8" />
-                    </div>
-                    
-                    {/* Skill Name */}
-                    <h3 className="font-semibold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
-                      {skill.name}
-                    </h3>
-                    
-                    {/* Skill Level Badge */}
-                    <Badge className={`
-                      ${getLevelColor(skill.level)} 
-                      text-xs font-medium px-3 py-1 rounded-md
-                      transition-all duration-300 group-hover:scale-105
-                    `}>
-                      {skill.level}
-                    </Badge>
-                  </div>
-                </Card>
-              );
-            })}
+          {/* Skills Sections */}
+          <div className="space-y-12">
+            {Object.entries(skillsData[activeCategory] || {}).map(([sectionName, skills]) => (
+              <div key={sectionName}>
+                {/* Section Header */}
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  <h3 className="text-lg font-semibold text-foreground">{sectionName}</h3>
+                </div>
+
+                {/* Skills Grid */}
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+                  {skills.map((skill, index) => {
+                    const IconComponent = skill.icon;
+                    return (
+                      <Card 
+                        key={`${sectionName}-${index}`}
+                        className="group bg-card/40 backdrop-blur-sm border-border/30 hover:border-primary/40 hover:bg-card/60 transition-all duration-300 hover:scale-105 cursor-pointer"
+                      >
+                        <div className="p-4">
+                          {/* Icon and Name Row */}
+                          <div className="flex items-center gap-3 mb-3">
+                            <div className={`${skill.color} group-hover:scale-110 transition-transform duration-300`}>
+                              <IconComponent className="w-6 h-6" />
+                            </div>
+                            <h4 className="font-medium text-foreground text-sm group-hover:text-primary transition-colors duration-300">
+                              {skill.name}
+                            </h4>
+                          </div>
+                          
+                          {/* Level Badge */}
+                          <Badge className={`
+                            ${getLevelColor(sectionName)} 
+                            text-xs font-medium px-2 py-1 rounded-md w-full justify-center
+                            transition-all duration-300 group-hover:scale-105
+                          `}>
+                            {sectionName}
+                          </Badge>
+                        </div>
+                      </Card>
+                    );
+                  })}
+                </div>
+              </div>
+            ))}
           </div>
 
           {/* Project Showcase Section */}
