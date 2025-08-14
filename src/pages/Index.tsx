@@ -128,22 +128,55 @@ const Index = () => {
                 </div>
               </div>
 
-              {/* Enhanced Action Buttons */}
+              {/* Enhanced Action Buttons with Better Copy */}
               <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up animation-delay-900 mt-8">
                 <Button
-                  className="btn-hero group px-8 py-5 text-lg font-semibold bg-gradient-to-r from-primary to-primary-glow hover:from-primary-glow hover:to-primary shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 border-0 min-h-[60px] w-full sm:w-auto"
-                  aria-label="Contact Yuvraj Mehta"
+                  className="btn-hero group px-8 py-5 text-lg font-semibold bg-gradient-to-r from-primary to-primary-glow hover:from-primary-glow hover:to-primary shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 border-0 min-h-[60px] w-full sm:w-auto relative overflow-hidden"
+                  aria-label="Start a conversation with Yuvraj"
                 >
-                  <span>Contact Me</span>
-                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                  <span className="relative z-10">Let's Build Something</span>
+                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform relative z-10" />
+                  {/* Animated background */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary-glow to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </Button>
                 <Button
                   variant="outline"
                   className="btn-outline-hero group px-8 py-5 text-lg font-semibold border-2 border-primary/60 text-primary hover:bg-primary hover:text-primary-foreground shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 min-h-[60px] w-full sm:w-auto"
-                  aria-label="View Yuvraj's projects and work"
+                  aria-label="Explore Yuvraj's portfolio and projects"
                 >
-                  <span>View Work</span>
+                  <span>Explore Portfolio</span>
                   <Code className="w-5 h-5 ml-2 group-hover:rotate-12 transition-transform" />
+                </Button>
+              </div>
+
+              {/* Additional Action Options */}
+              <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start animate-fade-in-up animation-delay-1000 mt-4">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="group text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all duration-300"
+                  aria-label="Download Yuvraj's resume"
+                >
+                  <Download className="w-4 h-4 mr-2 group-hover:animate-bounce" />
+                  <span>Download Resume</span>
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="group text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all duration-300"
+                  aria-label="Schedule a call with Yuvraj"
+                >
+                  <Zap className="w-4 h-4 mr-2 group-hover:animate-pulse" />
+                  <span>Schedule a Call</span>
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="group text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all duration-300"
+                  aria-label="View Yuvraj's coding profiles"
+                >
+                  <Code2 className="w-4 h-4 mr-2 group-hover:animate-spin" />
+                  <span>Coding Profiles</span>
                 </Button>
               </div>
 
