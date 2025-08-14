@@ -229,46 +229,54 @@ const Coding = () => {
               <h2 className="text-2xl md:text-3xl font-bold text-foreground">Platform Statistics</h2>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {codingStats.map((platform, index) => {
                 const IconComponent = platform.icon;
                 const isExpanded = expandedCard === index;
                 return (
                   <Card
                     key={index}
-                    className="group relative overflow-hidden border border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10"
+                    className="group relative overflow-hidden bg-gradient-to-br from-card via-card to-card/80 border-0 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] cursor-pointer"
                     onClick={() => setExpandedCard(isExpanded ? null : index)}
                   >
-                    {/* Platform Color Accent */}
-                    <div className={`absolute top-0 left-0 w-1 h-full bg-gradient-to-b ${platform.bgColor}`}></div>
+                    {/* Geometric Background Pattern */}
+                    <div className="absolute inset-0 opacity-5">
+                      <div className={`absolute top-0 right-0 w-32 h-32 ${platform.bgColor} rounded-full blur-3xl`}></div>
+                      <div className={`absolute bottom-0 left-0 w-24 h-24 ${platform.bgColor} rounded-full blur-2xl`}></div>
+                    </div>
 
-                    <div className="p-5">
-                      {/* Header */}
+                    {/* Top Bar with Platform Branding */}
+                    <div className={`h-1 w-full bg-gradient-to-r ${platform.bgColor}`}></div>
+
+                    <div className="relative p-6">
+                      {/* Platform Header */}
                       <div className="flex items-center justify-between mb-6">
-                        <div className="flex items-center gap-3">
+                        <div className="flex items-center gap-4">
                           <div className="relative">
-                            <div className={`w-12 h-12 rounded-xl ${platform.bgColor} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                              <IconComponent className={`w-6 h-6 ${platform.color}`} />
+                            <div className={`w-16 h-16 rounded-2xl ${platform.bgColor} flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300`}>
+                              <IconComponent className={`w-8 h-8 ${platform.color}`} />
                             </div>
-                            <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                            {/* Status Indicator */}
+                            <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-green-500 rounded-full border-2 border-card flex items-center justify-center">
+                              <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+                            </div>
                           </div>
                           <div>
-                            <h3 className="text-xl font-bold text-foreground mb-1">
+                            <h3 className="text-2xl font-bold text-foreground mb-1">
                               {platform.platform}
                             </h3>
-                            <div className="flex items-center gap-1 text-sm text-muted-foreground">
-                              <MdTrendingUp className="w-4 h-4" />
-                              <span>Active {platform.lastActive}</span>
+                            <div className="flex items-center gap-2 text-muted-foreground">
+                              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                              <span className="text-sm font-medium">Active {platform.lastActive}</span>
                             </div>
                           </div>
                         </div>
 
-                        <div className="flex items-center gap-3">
+                        <div className="flex flex-col gap-2">
                           <a href={platform.url} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
                             <Button
-                              variant="ghost"
                               size="sm"
-                              className="text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all duration-300"
+                              className={`${platform.bgColor} ${platform.color} hover:scale-110 transition-all duration-300 shadow-lg border-0`}
                             >
                               <FaExternalLinkAlt className="w-4 h-4" />
                             </Button>
@@ -276,94 +284,133 @@ const Coding = () => {
                           <Button
                             variant="ghost"
                             size="sm"
-                            className="text-muted-foreground hover:text-primary p-1"
+                            className="text-muted-foreground hover:text-primary"
                           >
                             {isExpanded ? <FaChevronUp className="w-4 h-4" /> : <FaChevronDown className="w-4 h-4" />}
                           </Button>
                         </div>
                       </div>
 
-                      {/* Main Stats */}
-                      <div className="mb-6">
-                        <div className="flex items-end justify-between mb-3">
-                          <div>
-                            <div className="text-3xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
-                              {animatedCounts.platforms[index]}
-                            </div>
-                            <div className="text-sm text-muted-foreground font-medium">Problems Solved</div>
+                      {/* Stats Dashboard */}
+                      <div className="grid grid-cols-2 gap-4 mb-6">
+                        {/* Problems Solved */}
+                        <div className="text-center p-4 rounded-xl bg-primary/5 border border-primary/20">
+                          <div className="text-3xl font-black bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent mb-1">
+                            {animatedCounts.platforms[index]}
                           </div>
-                          {platform.rating && (
-                            <div className="text-right">
-                              <div className={`text-lg font-bold ${platform.color} flex items-center gap-1`}>
-                                <MdLeaderboard className="w-4 h-4" />
-                                {platform.rating}
-                              </div>
-                              <div className="text-sm text-muted-foreground">{platform.rank}</div>
-                            </div>
-                          )}
+                          <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+                            Problems Solved
+                          </div>
                         </div>
 
-                        {/* Progress Bar */}
-                        <div className="w-full bg-secondary/30 rounded-full h-2">
-                          <div
-                            className={`h-2 rounded-full bg-gradient-to-r ${platform.bgColor} transition-all duration-1000`}
-                            style={{ width: `${Math.min((platform.solved / 300) * 100, 100)}%` }}
-                          ></div>
+                        {/* Rating */}
+                        {platform.rating && (
+                          <div className={`text-center p-4 rounded-xl bg-gradient-to-br ${platform.bgColor} border border-current/20`}>
+                            <div className={`text-xl font-black ${platform.color} mb-1 flex items-center justify-center gap-1`}>
+                              <MdLeaderboard className="w-5 h-5" />
+                              {platform.rating}
+                            </div>
+                            <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+                              {platform.rank}
+                            </div>
+                          </div>
+                        )}
+                      </div>
+
+                      {/* Visual Progress Ring */}
+                      <div className="flex justify-center mb-6">
+                        <div className="relative w-20 h-20">
+                          <svg className="w-20 h-20 transform -rotate-90" viewBox="0 0 80 80">
+                            <circle
+                              cx="40"
+                              cy="40"
+                              r="30"
+                              stroke="currentColor"
+                              strokeWidth="6"
+                              fill="none"
+                              className="text-muted/20"
+                            />
+                            <circle
+                              cx="40"
+                              cy="40"
+                              r="30"
+                              stroke="currentColor"
+                              strokeWidth="6"
+                              fill="none"
+                              strokeLinecap="round"
+                              className={platform.color}
+                              strokeDasharray={`${Math.min((platform.solved / 300) * 188, 188)} 188`}
+                            />
+                          </svg>
+                          <div className="absolute inset-0 flex items-center justify-center">
+                            <span className="text-xs font-bold text-muted-foreground">
+                              {Math.round((platform.solved / 300) * 100)}%
+                            </span>
+                          </div>
                         </div>
                       </div>
 
                       {/* Streak Badge */}
                       {platform.streak && (
-                        <div className="mb-4">
-                          <Badge className="bg-orange-500/20 text-orange-300 border border-orange-500/30 px-3 py-1 rounded-full">
-                            <FaBolt className="w-4 h-4 mr-2" />
-                            {platform.streak}
-                          </Badge>
+                        <div className="flex justify-center mb-4">
+                          <div className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-orange-500/20 to-yellow-500/20 border border-orange-500/30 rounded-full">
+                            <FaFire className="w-4 h-4 text-orange-400 animate-pulse" />
+                            <span className="text-sm font-bold text-orange-300">{platform.streak}</span>
+                          </div>
                         </div>
                       )}
 
-                      {/* Expanded Content */}
+                      {/* Expanded Details */}
                       {isExpanded && (
-                        <div className="border-t border-border/50 pt-4 space-y-4 animate-in slide-in-from-top-2 duration-300">
-                          {/* Difficulty Distribution */}
+                        <div className="border-t border-border/30 pt-4 space-y-4 animate-in slide-in-from-bottom-4 duration-500">
+                          {/* Difficulty Breakdown Chart */}
                           <div>
-                            <h4 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
-                              <FaBullseye className="w-4 h-4 text-primary" />
-                              Difficulty Distribution
+                            <h4 className="text-sm font-bold text-foreground mb-3 flex items-center gap-2">
+                              <FaChartLine className="w-4 h-4 text-primary" />
+                              Difficulty Analysis
                             </h4>
-                            <div className="space-y-2">
-                              <div className="flex items-center justify-between">
-                                <span className="text-sm text-green-400 flex items-center gap-2">
-                                  <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                                  Easy
-                                </span>
-                                <span className="font-semibold text-green-400">{platform.difficulty.easy}</span>
+                            <div className="grid grid-cols-3 gap-2">
+                              <div className="text-center p-3 bg-green-500/10 border border-green-500/20 rounded-lg">
+                                <div className="text-lg font-bold text-green-400 mb-1">{platform.difficulty.easy}</div>
+                                <div className="text-xs text-green-300 font-medium">Easy</div>
+                                <div className="mt-1 w-full bg-green-500/20 rounded-full h-1">
+                                  <div
+                                    className="bg-green-500 h-1 rounded-full transition-all duration-1000"
+                                    style={{ width: `${(platform.difficulty.easy / platform.solved) * 100}%` }}
+                                  ></div>
+                                </div>
                               </div>
-                              <div className="flex items-center justify-between">
-                                <span className="text-sm text-yellow-400 flex items-center gap-2">
-                                  <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                                  Medium
-                                </span>
-                                <span className="font-semibold text-yellow-400">{platform.difficulty.medium}</span>
+                              <div className="text-center p-3 bg-yellow-500/10 border border-yellow-500/20 rounded-lg">
+                                <div className="text-lg font-bold text-yellow-400 mb-1">{platform.difficulty.medium}</div>
+                                <div className="text-xs text-yellow-300 font-medium">Medium</div>
+                                <div className="mt-1 w-full bg-yellow-500/20 rounded-full h-1">
+                                  <div
+                                    className="bg-yellow-500 h-1 rounded-full transition-all duration-1000"
+                                    style={{ width: `${(platform.difficulty.medium / platform.solved) * 100}%` }}
+                                  ></div>
+                                </div>
                               </div>
-                              <div className="flex items-center justify-between">
-                                <span className="text-sm text-red-400 flex items-center gap-2">
-                                  <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                                  Hard
-                                </span>
-                                <span className="font-semibold text-red-400">{platform.difficulty.hard}</span>
+                              <div className="text-center p-3 bg-red-500/10 border border-red-500/20 rounded-lg">
+                                <div className="text-lg font-bold text-red-400 mb-1">{platform.difficulty.hard}</div>
+                                <div className="text-xs text-red-300 font-medium">Hard</div>
+                                <div className="mt-1 w-full bg-red-500/20 rounded-full h-1">
+                                  <div
+                                    className="bg-red-500 h-1 rounded-full transition-all duration-1000"
+                                    style={{ width: `${(platform.difficulty.hard / platform.solved) * 100}%` }}
+                                  ></div>
+                                </div>
                               </div>
                             </div>
                           </div>
 
-                          {/* Recent Activity */}
+                          {/* Activity Timeline */}
                           <div>
-                            <h4 className="text-sm font-semibold text-foreground mb-2 flex items-center gap-2">
+                            <h4 className="text-sm font-bold text-foreground mb-2 flex items-center gap-2">
                               <FaClock className="w-4 h-4 text-primary" />
-                              Recent Activity
+                              Latest Update
                             </h4>
-                            <div className="bg-primary/5 border border-primary/20 rounded-lg p-3">
-                              <p className="text-sm text-muted-foreground">
+                            <div className="bg-gradient-to-r from-primary/5 to-primary-glow/5 border border-primary/20 rounded-lg p-3">
+                              <p className="text-sm text-muted-foreground leading-relaxed">
                                 {platform.recentActivity}
                               </p>
                             </div>
