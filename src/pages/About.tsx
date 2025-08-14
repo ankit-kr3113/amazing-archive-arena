@@ -212,56 +212,6 @@ const About = () => {
             ))}
           </div>
 
-          {/* Technical Skills */}
-          <Card className="portfolio-card">
-            <div className="flex items-center gap-2 mb-6">
-              <span className="text-xl">⚡</span>
-              <h3 className="text-lg font-bold">Technical Expertise</h3>
-            </div>
-
-            <div className="space-y-4">
-              {technicalSkills.map((skill, index) => (
-                <div key={skill.name} className="space-y-2 group">
-                  <div className="flex justify-between items-center">
-                    <div className="flex items-center gap-2">
-                      <span className="font-medium text-sm group-hover:text-primary transition-colors duration-200">
-                        {skill.name}
-                      </span>
-                      <Badge variant="secondary" className="text-xs px-1.5 py-0.5">
-                        {skill.category}
-                      </Badge>
-                    </div>
-                    <span className="text-primary font-bold text-sm">{skill.level}%</span>
-                  </div>
-                  <Progress value={skill.level} className="h-2 group-hover:h-2.5 transition-all duration-300" />
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-6 pt-6 border-t">
-              <div className="text-center">
-                <p className="text-sm text-muted-foreground mb-4">
-                  Always learning and exploring new technologies. Currently diving deeper into 
-                  <span className="text-primary font-semibold"> AI/ML</span> and 
-                  <span className="text-primary font-semibold"> Cloud Architecture</span>.
-                </p>
-                <div className="flex justify-center gap-2">
-                  <Badge variant="outline" className="text-xs">
-                    <Heart className="w-3 h-3 mr-1" />
-                    Open Source
-                  </Badge>
-                  <Badge variant="outline" className="text-xs">
-                    <Code className="w-3 h-3 mr-1" />
-                    Clean Code
-                  </Badge>
-                  <Badge variant="outline" className="text-xs">
-                    <Trophy className="w-3 h-3 mr-1" />
-                    Problem Solving
-                  </Badge>
-                </div>
-              </div>
-            </div>
-          </Card>
         </div>
       </div>
 
