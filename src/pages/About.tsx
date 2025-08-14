@@ -4,8 +4,11 @@ import { Download, Mail, ExternalLink, Github, Linkedin, Trophy, Code, MapPin, C
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
+import { useNavigate } from "react-router-dom";
 
 const About = () => {
+  const navigate = useNavigate();
+
   const interests = [
     { icon: "🤖", name: "Robotics", description: "Building combat & soccer bots" },
     { icon: "🏃‍♂️", name: "Athletics", description: "Bronze in 50m Hurdles" },
@@ -19,6 +22,20 @@ const About = () => {
     { value: "15+", label: "Projects Built", color: "text-blue-500" },
     { value: "Top 27.7%", label: "Global Ranking", color: "text-purple-500" },
   ];
+
+  const handleContactClick = () => {
+    navigate('/contact');
+  };
+
+  const handleResumeDownload = () => {
+    // Create a link element and trigger download
+    const link = document.createElement('a');
+    link.href = '/Yuvraj_Resume_v2_1 (1).pdf';
+    link.download = 'Yuvraj_Mehta_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -60,9 +77,9 @@ const About = () => {
               <Card className="portfolio-card group hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 hover:-translate-y-1 h-full">
                 <div className="relative overflow-hidden rounded-xl mb-4">
                   <img
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop&crop=face&auto=format&q=80"
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=600&fit=crop&crop=face&auto=format&q=80"
                     alt="Yuvraj Mehta - Full Stack Developer"
-                    className="w-full h-48 sm:h-56 object-cover rounded-xl group-hover:scale-105 transition-transform duration-500"
+                    className="w-full aspect-square object-cover rounded-xl group-hover:scale-105 transition-transform duration-500"
                   />
                   
                   <div className="absolute top-3 left-3 bg-gradient-to-r from-primary to-primary-glow text-primary-foreground px-2 py-1 rounded-full text-xs font-medium shadow-lg backdrop-blur-sm">
@@ -97,11 +114,11 @@ const About = () => {
                   </div>
 
                   <div className="flex gap-2 pt-2">
-                    <Button size="sm" className="flex-1">
+                    <Button size="sm" className="flex-1" onClick={handleContactClick}>
                       <Mail className="w-4 h-4 mr-2" />
                       Contact
                     </Button>
-                    <Button variant="outline" size="sm" className="flex-1">
+                    <Button variant="outline" size="sm" className="flex-1" onClick={handleResumeDownload}>
                       <Download className="w-4 h-4 mr-2" />
                       Resume
                     </Button>
@@ -170,7 +187,7 @@ const About = () => {
 
                   <div className="pt-4 border-t">
                     <h4 className="font-semibold mb-3 text-sm">What Drives Me</h4>
-                    <div className="grid grid-cols-2 gap-3">
+                    <div className="grid grid-cols-2 gap-3 mb-6">
                       {interests.map((interest, index) => (
                         <div key={index} className="flex items-start gap-2 p-2 rounded-lg hover:bg-primary/5 transition-colors">
                           <span className="text-base">{interest.icon}</span>
@@ -181,24 +198,27 @@ const About = () => {
                         </div>
                       ))}
                     </div>
+
+                    {/* Stats Row - Moved below What Drives Me */}
+                    <div className="pt-4 border-t">
+                      <h4 className="font-semibold mb-3 text-sm">Achievements</h4>
+                      <div className="grid grid-cols-2 gap-3">
+                        {achievements.map((achievement, index) => (
+                          <div key={index} className="text-center p-3 rounded-lg bg-primary/5 hover:bg-primary/10 transition-colors group">
+                            <div className={`text-lg font-bold ${achievement.color} group-hover:scale-110 transition-transform duration-300`}>
+                              {achievement.value}
+                            </div>
+                            <div className="text-xs text-muted-foreground group-hover:text-primary transition-colors duration-200">
+                              {achievement.label}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </div>
               </Card>
             </div>
-          </div>
-
-          {/* Stats Row */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-            {achievements.map((achievement, index) => (
-              <Card key={index} className="portfolio-card text-center group hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 hover:scale-105">
-                <div className={`text-xl sm:text-2xl font-bold ${achievement.color} group-hover:scale-110 transition-transform duration-300`}>
-                  {achievement.value}
-                </div>
-                <div className="text-xs text-muted-foreground group-hover:text-primary transition-colors duration-200">
-                  {achievement.label}
-                </div>
-              </Card>
-            ))}
           </div>
 
         </div>
