@@ -43,13 +43,27 @@ const Experience = () => {
       location: "NIT Patna & Remote",
       period: "2023",
       type: "Leadership",
-      description: "Led teams in 3 major hackathons, including the prestigious Smart India Hackathon. Guided my team to qualify at the internal NIT Patna hackathon and advance to the national level. Oversaw all phases from ideation to development and presentation, ensuring effective collaboration and timely delivery of innovative solutions.",
+      description: "Led teams in 3 major hackathons, including the prestigious Smart India Hackathon. Guided my team to qualify at the internal NIT Patna hackathon and advance to the national level. Oversaw all phases from ideation to development and presentation.",
       highlights: [
         "National level qualification",
         "3 major hackathons",
         "End-to-end project management"
       ],
       skills: ["Problem Solving", "Team Management", "Presentation", "Innovation"]
+    },
+    {
+      title: "Class Representative",
+      company: "Computer Science Department, NIT Patna",
+      location: "NIT Patna",
+      period: "2023 - 2024",
+      type: "Leadership",
+      description: "Coordinated between faculty and students, organized department events, and facilitated communication for academic activities. Represented student interests in department meetings and helped resolve academic concerns.",
+      highlights: [
+        "Student-faculty liaison",
+        "Department event coordination",
+        "Academic advocacy"
+      ],
+      skills: ["Communication", "Event Management", "Leadership", "Coordination"]
     }
   ];
 
