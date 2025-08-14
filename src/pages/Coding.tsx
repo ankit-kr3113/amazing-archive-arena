@@ -1,16 +1,18 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Progress } from "@/components/ui/progress";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
+import { useState, useEffect } from "react";
 
 // React Icons imports
-import { 
-  SiLeetcode, 
-  SiCodechef, 
-  SiGeeksforgeeks, 
-  SiCodeforces 
+import {
+  SiLeetcode,
+  SiCodechef,
+  SiGeeksforgeeks,
+  SiCodeforces
 } from "react-icons/si";
 import {
   FaTrophy,
@@ -22,11 +24,17 @@ import {
   FaExternalLinkAlt,
   FaClock,
   FaStar,
-  FaFire
+  FaFire,
+  FaCalendarAlt,
+  FaHashtag,
+  FaChevronDown,
+  FaChevronUp
 } from "react-icons/fa";
-import { 
+import {
   MdLeaderboard,
-  MdTrendingUp
+  MdTrendingUp,
+  MdTimeline,
+  MdCompareArrows
 } from "react-icons/md";
 
 const Coding = () => {
