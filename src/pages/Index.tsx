@@ -135,38 +135,50 @@ const Index = () => {
                   </div>
                 </div>
 
-                {/* Enhanced Achievement Cards with Social Proof */}
-                <div className="hidden lg:block absolute top-12 -right-4 w-28 h-24 bg-card/95 backdrop-blur-sm rounded-xl border border-primary/30 p-3 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 animate-float micro-interaction group cursor-pointer">
+                {/* Enhanced Achievement Cards with Interactive Hover Effects */}
+                <div className="hidden lg:block absolute top-12 -right-4 w-28 h-24 bg-card/95 backdrop-blur-sm rounded-xl border border-primary/30 p-3 shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300 hover:scale-110 hover:-translate-y-2 animate-float micro-interaction group cursor-pointer hover:border-blue-500/50 hover:bg-gradient-to-br hover:from-blue-500/10 hover:to-purple-500/10">
                   <div className="flex justify-center mb-2">
-                    <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center animate-subtle-bounce">
+                    <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center animate-subtle-bounce group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300">
                       <Rocket className="w-4 h-4 text-white group-hover:animate-bounce" />
                     </div>
                   </div>
-                  <div className="text-sm text-primary font-bold text-center">15+</div>
-                  <div className="text-[10px] text-muted-foreground text-center">Projects</div>
-                  <div className="text-[9px] text-green-500 text-center">Live & Running</div>
+                  <div className="text-sm text-primary font-bold text-center group-hover:text-blue-500 transition-colors duration-300">15+</div>
+                  <div className="text-[10px] text-muted-foreground text-center group-hover:text-foreground transition-colors duration-300">Projects</div>
+                  <div className="text-[9px] text-green-500 text-center group-hover:animate-pulse">Live & Running</div>
+                  {/* Tooltip */}
+                  <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-primary text-primary-foreground px-2 py-1 rounded text-[8px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+                    View Projects →
+                  </div>
                 </div>
 
-                <div className="hidden lg:block absolute bottom-12 -left-4 w-28 h-24 bg-card/95 backdrop-blur-sm rounded-xl border border-primary/30 p-3 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 animate-float animation-delay-1000 micro-interaction group cursor-pointer">
+                <div className="hidden lg:block absolute bottom-12 -left-4 w-28 h-24 bg-card/95 backdrop-blur-sm rounded-xl border border-primary/30 p-3 shadow-xl hover:shadow-2xl hover:shadow-green-500/20 transition-all duration-300 hover:scale-110 hover:-translate-y-2 animate-float animation-delay-1000 micro-interaction group cursor-pointer hover:border-green-500/50 hover:bg-gradient-to-br hover:from-green-500/10 hover:to-teal-500/10">
                   <div className="flex justify-center mb-2">
-                    <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-green-500 to-teal-500 flex items-center justify-center animate-subtle-bounce animation-delay-600">
+                    <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-green-500 to-teal-500 flex items-center justify-center animate-subtle-bounce animation-delay-600 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300">
                       <Laptop className="w-4 h-4 text-white group-hover:animate-bounce" />
                     </div>
                   </div>
-                  <div className="text-sm text-primary font-bold text-center">NIT</div>
-                  <div className="text-[10px] text-muted-foreground text-center">Patna</div>
-                  <div className="text-[9px] text-blue-500 text-center">Top 30 IIT</div>
+                  <div className="text-sm text-primary font-bold text-center group-hover:text-green-500 transition-colors duration-300">NIT</div>
+                  <div className="text-[10px] text-muted-foreground text-center group-hover:text-foreground transition-colors duration-300">Patna</div>
+                  <div className="text-[9px] text-blue-500 text-center group-hover:animate-pulse">Top 30 IIT</div>
+                  {/* Tooltip */}
+                  <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-primary text-primary-foreground px-2 py-1 rounded text-[8px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+                    Education Details →
+                  </div>
                 </div>
 
-                <div className="hidden lg:block absolute top-1/2 -right-6 w-28 h-24 bg-card/95 backdrop-blur-sm rounded-xl border border-primary/30 p-3 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 animate-float animation-delay-2000 micro-interaction group cursor-pointer">
+                <div className="hidden lg:block absolute top-1/2 -right-6 w-28 h-24 bg-card/95 backdrop-blur-sm rounded-xl border border-primary/30 p-3 shadow-xl hover:shadow-2xl hover:shadow-yellow-500/20 transition-all duration-300 hover:scale-110 hover:-translate-y-2 animate-float animation-delay-2000 micro-interaction group cursor-pointer hover:border-yellow-500/50 hover:bg-gradient-to-br hover:from-yellow-500/10 hover:to-orange-500/10">
                   <div className="flex justify-center mb-2">
-                    <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-yellow-500 to-orange-500 flex items-center justify-center animate-subtle-bounce animation-delay-1200">
+                    <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-yellow-500 to-orange-500 flex items-center justify-center animate-subtle-bounce animation-delay-1200 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300">
                       <Trophy className="w-4 h-4 text-white group-hover:animate-bounce" />
                     </div>
                   </div>
-                  <div className="text-sm text-primary font-bold text-center">500+</div>
-                  <div className="text-[10px] text-muted-foreground text-center">GitHub</div>
-                  <div className="text-[9px] text-purple-500 text-center">Commits</div>
+                  <div className="text-sm text-primary font-bold text-center group-hover:text-yellow-500 transition-colors duration-300">500+</div>
+                  <div className="text-[10px] text-muted-foreground text-center group-hover:text-foreground transition-colors duration-300">GitHub</div>
+                  <div className="text-[9px] text-purple-500 text-center group-hover:animate-pulse">Commits</div>
+                  {/* Tooltip */}
+                  <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-primary text-primary-foreground px-2 py-1 rounded text-[8px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+                    View GitHub →
+                  </div>
                 </div>
               </div>
             </div>
