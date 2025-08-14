@@ -6,15 +6,6 @@ import Footer from "@/components/Footer";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
 
 const About = () => {
-  const technicalSkills = [
-    { name: "React & Next.js", level: 85, category: "Frontend" },
-    { name: "Node.js & Express", level: 80, category: "Backend" },
-    { name: "TypeScript/JavaScript", level: 88, category: "Languages" },
-    { name: "Data Structures & Algorithms", level: 85, category: "CS Fundamentals" },
-    { name: "MongoDB & PostgreSQL", level: 75, category: "Databases" },
-    { name: "Python & C++", level: 82, category: "Languages" },
-  ];
-
   const interests = [
     { icon: "🤖", name: "Robotics", description: "Building combat & soccer bots" },
     { icon: "🏃‍♂️", name: "Athletics", description: "Bronze in 50m Hurdles" },
