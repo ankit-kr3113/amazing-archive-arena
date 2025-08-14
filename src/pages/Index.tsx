@@ -44,7 +44,7 @@ const Index = () => {
                   </span>
                 </h1>
                 
-                <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl lg:max-w-lg leading-relaxed animate-fade-in-up animation-delay-600">
+                <p className="text-base text-muted-foreground max-w-2xl lg:max-w-lg leading-relaxed animate-fade-in-up animation-delay-600">
                   B.Tech CS student at <span className="text-primary font-semibold">NIT Patna</span> passionate about building
                   <span className="text-primary font-semibold"> full stack applications</span> with a focus on{" "}
                   <span className="text-primary font-semibold">user-friendly interfaces</span>.
