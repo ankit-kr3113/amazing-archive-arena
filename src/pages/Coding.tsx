@@ -275,15 +275,15 @@ const Coding = () => {
                           </div>
                         </div>
 
-                        {/* Progress indicator */}
+                        {/* Comprehensive stats */}
                         <div className="text-right">
-                          <div className="text-sm text-slate-300 mb-1">
-                            {platform.platform === "LeetCode" && "27.7%"}
-                            {platform.platform === "CodeChef" && "2★"}
-                            {platform.platform === "GeeksforGeeks" && "35+ days"}
-                            {platform.platform === "Codeforces" && "Newbie"}
+                          <div className="text-sm text-slate-300 mb-1 font-medium">
+                            {platform.platform === "LeetCode" && `${platform.rating} • Top 27.7%`}
+                            {platform.platform === "CodeChef" && `${platform.rating} • 2★ Coder`}
+                            {platform.platform === "GeeksforGeeks" && "Rank #1455 • 35+ days"}
+                            {platform.platform === "Codeforces" && `${platform.rating} • Newbie`}
                           </div>
-                          <div className="w-16 h-2 bg-slate-700 rounded-full overflow-hidden">
+                          <div className="w-20 h-2 bg-slate-700 rounded-full overflow-hidden">
                             <div
                               className={`h-full rounded-full ${
                                 platform.platform === "LeetCode" ? "bg-orange-400 w-3/4" :
