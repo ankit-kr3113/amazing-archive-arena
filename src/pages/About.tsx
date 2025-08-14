@@ -35,24 +35,51 @@ const About = () => {
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary-glow/5 rounded-full blur-3xl animate-pulse opacity-40 animation-delay-2000"></div>
 
         <div className="relative max-w-7xl mx-auto">
-          {/* Enhanced Header */}
-          <div className="text-center mb-8 fade-in">
-            <div className="inline-flex items-center px-4 py-2.5 rounded-full bg-gradient-to-r from-primary/10 to-primary-glow/10 border border-primary/20 text-primary text-sm font-medium mb-6 shadow-lg backdrop-blur-sm hover:shadow-xl transition-all duration-300 hover:scale-105">
-              <div className="flex items-center gap-2">
-                <span className="animate-wave text-base">👋</span>
-                <span>Get to know me</span>
-                <div className="ml-2 w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+          {/* Redesigned Header */}
+          <div className="text-center mb-12 fade-in">
+            <div className="relative inline-block mb-8">
+              <div className="absolute -inset-1 bg-gradient-to-r from-primary/30 via-primary-glow/20 to-primary/30 rounded-full blur-lg opacity-75 animate-pulse"></div>
+              <div className="relative flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-primary/15 to-primary-glow/15 rounded-full border border-primary/25 shadow-xl backdrop-blur-sm">
+                <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center animate-bounce">
+                  <span className="text-white text-sm font-bold">👋</span>
+                </div>
+                <span className="text-primary font-semibold tracking-wide">Discover My Story</span>
+                <div className="flex gap-1">
+                  <div className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse"></div>
+                  <div className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse animation-delay-300"></div>
+                  <div className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse animation-delay-600"></div>
+                </div>
               </div>
             </div>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 tracking-tight leading-tight">
-              About <span className="gradient-text relative inline-block">
-                Me
-                <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary to-primary-glow rounded-full opacity-30 animate-pulse"></div>
-              </span>
-            </h1>
-            <p className="text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed px-4">
-              Get to know the person behind the code - my journey, skills, and passion for technology that drives me to create meaningful digital experiences
-            </p>
+
+            <div className="relative">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-6 tracking-tight">
+                <span className="relative inline-block">
+                  <span className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-primary-glow/20 blur-xl rounded-lg"></span>
+                  <span className="relative bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent animate-gradient">
+                    About
+                  </span>
+                </span>
+                <span className="mx-4 text-muted-foreground/30">/</span>
+                <span className="gradient-text relative inline-block font-extrabold">
+                  Me
+                  <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-transparent via-primary to-transparent rounded-full animate-pulse"></div>
+                  <div className="absolute -top-1 -right-1 w-3 h-3 bg-primary/60 rounded-full animate-ping"></div>
+                </span>
+              </h1>
+
+              <div className="max-w-3xl mx-auto">
+                <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+                  Dive into the <span className="text-primary font-semibold">journey</span> of a passionate developer who transforms
+                </p>
+                <p className="text-base text-muted-foreground/80 leading-relaxed">
+                  <span className="inline-flex items-center gap-2">
+                    <span className="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+                    <span>code into meaningful digital experiences</span>
+                  </span>
+                </p>
+              </div>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start max-w-6xl mx-auto">
