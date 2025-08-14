@@ -87,8 +87,8 @@ const Projects = () => {
         
         <div className="relative max-w-7xl mx-auto">
           {/* Redesigned Header */}
-          <div className="text-center mb-12 fade-in">
-            <div className="relative inline-block mb-8">
+          <div className="text-center mb-6 fade-in">
+            <div className="relative inline-block mb-4">
               <div className="absolute -inset-2 bg-gradient-to-r from-emerald-500/30 via-teal-500/20 to-green-500/30 rounded-2xl blur-xl opacity-75 animate-pulse"></div>
               <div className="relative flex items-center gap-4 px-8 py-4 bg-gradient-to-r from-emerald-500/10 via-teal-500/5 to-green-500/10 rounded-2xl border border-emerald-500/20 shadow-2xl backdrop-blur-sm">
                 <div className="relative">
@@ -110,7 +110,7 @@ const Projects = () => {
             </div>
 
             <div className="relative">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-6 tracking-tight">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-black mb-3 tracking-tight">
                 <span className="relative inline-block">
                   <span className="absolute -inset-1 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 blur-xl rounded-lg"></span>
                   <span className="relative bg-gradient-to-r from-emerald-600 via-teal-500 to-green-600 bg-clip-text text-transparent animate-gradient">
@@ -129,10 +129,10 @@ const Projects = () => {
               </h1>
 
               <div className="max-w-4xl mx-auto">
-                <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+                <p className="text-sm text-muted-foreground leading-relaxed mb-2">
                   Exploring <span className="text-emerald-500 font-semibold">full-stack solutions</span> and <span className="text-teal-500 font-semibold">innovative ideas</span>
                 </p>
-                <p className="text-base text-muted-foreground/80 leading-relaxed">
+                <p className="text-xs text-muted-foreground/80 leading-relaxed">
                   <span className="inline-flex items-center gap-2">
                     <span className="w-2 h-2 bg-gradient-to-r from-emerald-400 to-teal-400 rounded-full animate-pulse"></span>
                     <span>where creativity meets technical excellence</span>
