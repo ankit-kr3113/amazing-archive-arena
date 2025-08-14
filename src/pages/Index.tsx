@@ -16,10 +16,10 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/5"></div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/3 rounded-full blur-3xl opacity-30 animate-pulse"></div>
         
-        <div className="relative max-w-7xl mx-auto w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center min-h-[70vh]">
+        <div className="relative max-w-7xl mx-auto w-full px-4 sm:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[80vh] lg:min-h-[70vh]">
             {/* Enhanced Left Content */}
-            <div className="space-y-6 sm:space-y-8 fade-in order-2 lg:order-1 text-center lg:text-left">
+            <div className="space-y-8 sm:space-y-10 fade-in order-2 lg:order-1 text-center lg:text-left">
               <div className="space-y-4 sm:space-y-6">
                 <div className="inline-flex items-center px-4 py-2.5 rounded-full bg-gradient-to-r from-primary/10 to-primary-glow/10 border border-primary/20 text-primary text-sm font-medium shadow-lg backdrop-blur-sm hover:shadow-xl hover:scale-105 transition-all duration-300">
                   <Code className="w-4 h-4 mr-2 animate-pulse" />
