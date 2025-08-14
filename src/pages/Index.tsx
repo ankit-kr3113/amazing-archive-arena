@@ -46,12 +46,19 @@ const Index = () => {
               </div>
 
               {/* Enhanced Action Buttons */}
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 animate-fade-in-up animation-delay-900">
-                <Button className="btn-hero group shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
+              <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up animation-delay-900 mt-8">
+                <Button
+                  className="btn-hero group px-8 py-4 text-lg font-semibold bg-gradient-to-r from-primary to-primary-glow hover:from-primary-glow hover:to-primary shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 border-0 min-h-[56px]"
+                  aria-label="Contact Yuvraj Mehta"
+                >
                   <span>Contact Me</span>
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
-                <Button variant="outline" className="btn-outline-hero group shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
+                <Button
+                  variant="outline"
+                  className="btn-outline-hero group px-8 py-4 text-lg font-semibold border-2 border-primary/60 text-primary hover:bg-primary hover:text-primary-foreground shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 min-h-[56px]"
+                  aria-label="View Yuvraj's projects and work"
+                >
                   <span>View Work</span>
                   <Code className="w-5 h-5 ml-2 group-hover:rotate-12 transition-transform" />
                 </Button>
