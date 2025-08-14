@@ -187,7 +187,7 @@ const Coding = () => {
         
         <div className="relative max-w-7xl mx-auto">
           {/* Enhanced Header Section */}
-          <div className="text-center mb-10 fade-in">
+          <div className="text-center mb-12 fade-in">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-primary text-sm font-medium mb-4 shadow-lg backdrop-blur-sm hover:shadow-xl hover:scale-105 transition-all duration-300">
               <Trophy className="w-4 h-4 animate-pulse" />
               <span>Competitive Programming</span>
@@ -199,39 +199,30 @@ const Coding = () => {
                 <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-primary to-primary-glow rounded-full opacity-60"></div>
               </span>
             </h1>
-            <p className="text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed animate-fade-in-up animation-delay-300">
+            <p className="text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed animate-fade-in-up animation-delay-300 mb-6">
               Solving <span className="text-primary font-semibold">333+ problems</span> across multiple platforms with{" "}
               <span className="text-primary font-semibold">consistent excellence</span> and{" "}
               <span className="text-primary font-semibold">competitive performance</span>
             </p>
-          </div>
 
-          {/* Total Problems Solved Overview - Dynamic Calculation */}
-          <div className="mb-12 flex justify-center">
-            <Card className="group bg-gradient-to-br from-primary/10 to-primary-glow/5 border-primary/20 hover:border-primary/40 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-primary/10 w-full max-w-2xl">
-              <div className="px-8 py-6">
-                <div className="flex items-center justify-between">
-                  {/* Left Decorative Icon */}
-                  <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <FaCode className="text-xl text-primary" />
-                  </div>
-
-                  {/* Center Content */}
-                  <div className="text-center">
-                    <div className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent mb-2">
-                      {animatedCounts.total}
-                    </div>
-                    <div className="text-lg font-semibold text-foreground mb-1">Total Problems Solved</div>
-                    <div className="text-sm text-muted-foreground">Across all competitive programming platforms</div>
-                  </div>
-
-                  {/* Right Decorative Icon */}
-                  <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <FaChartLine className="text-xl text-primary" />
-                  </div>
-                </div>
+            {/* Inline Stats Display */}
+            <div className="flex items-center justify-center gap-6 text-sm animate-fade-in-up animation-delay-600">
+              <div className="flex items-center gap-2 px-3 py-2 bg-primary/5 rounded-lg border border-primary/20">
+                <FaCode className="w-4 h-4 text-primary" />
+                <span className="text-2xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+                  {animatedCounts.total}
+                </span>
+                <span className="text-muted-foreground font-medium">Total Solved</span>
               </div>
-            </Card>
+              <div className="flex items-center gap-2 px-3 py-2 bg-green-500/5 rounded-lg border border-green-500/20">
+                <FaTrophy className="w-4 h-4 text-green-500" />
+                <span className="text-muted-foreground font-medium">4 Platforms</span>
+              </div>
+              <div className="flex items-center gap-2 px-3 py-2 bg-orange-500/5 rounded-lg border border-orange-500/20">
+                <FaStar className="w-4 h-4 text-orange-500" />
+                <span className="text-muted-foreground font-medium">Top 27.7%</span>
+              </div>
+            </div>
           </div>
 
           {/* Platform Statistics */}
