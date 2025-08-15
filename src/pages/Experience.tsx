@@ -118,35 +118,35 @@ const Experience = () => {
         <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-primary-glow/5 rounded-full blur-3xl opacity-40"></div>
         
         <div className="relative max-w-7xl mx-auto">
-          {/* Minimal Header */}
-          <div className="text-center mb-4 fade-in">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-orange-500/10 rounded-full text-orange-600 text-xs font-medium mb-2">
+          {/* Enhanced Header */}
+          <div className="text-center mb-16 fade-in">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-orange-500/10 rounded-full text-orange-600 text-sm font-medium mb-6">
               <span>💼</span>
               <span>Experience</span>
             </div>
-            <h1 className="text-xl sm:text-2xl font-bold text-foreground mb-1">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6">
               Professional Experience
             </h1>
-            <p className="text-sm text-muted-foreground max-w-md mx-auto">
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               Leadership roles and technical contributions
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 max-w-6xl mx-auto">
             {/* Professional Experience with Timeline */}
-            <div className="lg:col-span-2 space-y-8">
-              <div className="flex items-center mb-6">
-                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary/20 to-primary-glow/20 flex items-center justify-center mr-4">
-                  <Briefcase className="w-5 h-5 text-primary" />
+            <div className="lg:col-span-2 space-y-10">
+              <div className="flex items-center mb-8">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-primary-glow/20 flex items-center justify-center mr-4">
+                  <Briefcase className="w-6 h-6 text-primary" />
                 </div>
-                <h2 className="text-2xl font-bold">Professional Experience</h2>
+                <h2 className="text-2xl sm:text-3xl font-bold">Professional Experience</h2>
               </div>
 
               <div className="relative">
                 {/* Timeline Line */}
                 <div className="absolute left-4 top-8 bottom-8 w-0.5 bg-gradient-to-b from-primary/60 via-primary/30 to-transparent hidden sm:block"></div>
                 
-                <div className="space-y-6">
+                <div className="space-y-8">
                   {experiences.map((exp, index) => (
                     <div key={index} className="relative">
                       {/* Timeline Dot */}
@@ -240,12 +240,12 @@ const Experience = () => {
             </div>
 
             {/* Enhanced Achievements Sidebar */}
-            <div className="space-y-6 sm:space-y-8 mt-8 lg:mt-0">
-              <div className="flex items-center mb-4 sm:mb-6">
-                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-br from-yellow-500/20 to-orange-500/20 flex items-center justify-center mr-3 sm:mr-4">
-                  <Trophy className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-500" />
+            <div className="space-y-8 sm:space-y-10 mt-12 lg:mt-0">
+              <div className="flex items-center mb-6 sm:mb-8">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-yellow-500/20 to-orange-500/20 flex items-center justify-center mr-4">
+                  <Trophy className="w-5 h-5 sm:w-6 sm:h-6 text-yellow-500" />
                 </div>
-                <h2 className="text-lg sm:text-xl font-bold">Achievements</h2>
+                <h2 className="text-xl sm:text-2xl font-bold">Achievements</h2>
               </div>
 
               <div className="space-y-3 sm:space-y-4">
