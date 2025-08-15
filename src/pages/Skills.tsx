@@ -234,7 +234,7 @@ const Skills = () => {
           </div>
 
           {/* Category Filter Buttons */}
-          <div className="flex flex-wrap justify-center gap-4 mb-16">
+          <div className="flex flex-wrap justify-center gap-4 mb-12">
             {skillCategories.map((category) => {
               const IconComponent = category.icon;
               return (
