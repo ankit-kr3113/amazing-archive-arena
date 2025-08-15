@@ -227,9 +227,9 @@ const Overview = () => {
 
             {/* Hero Content */}
             <div className="space-y-6">
-              <h1 className="text-4xl md:text-6xl font-bold animate-fade-in-up animation-delay-200 leading-tight">
-                <span className="text-muted-foreground text-lg md:text-xl font-medium block mb-2">
-                  👋 Hello, I'm
+              <h1 className="text-5xl md:text-7xl font-bold animate-fade-in-up animation-delay-200 leading-tight">
+                <span className="text-muted-foreground text-xl md:text-2xl font-medium block mb-4">
+                  👋 Hey there, I'm
                 </span>
                 <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent animate-gradient">
                   Yuvraj Mehta
