@@ -330,40 +330,6 @@ const Overview = () => {
             ))}
           </div>
 
-          {/* Quick Actions Panel */}
-          <Card className="p-6 mb-8 bg-gradient-to-r from-primary/5 to-primary-glow/5 border-primary/20">
-            <div className="text-center mb-6">
-              <h3 className="text-lg font-semibold mb-2">Quick Actions</h3>
-              <p className="text-sm text-muted-foreground">Get in touch or explore my work</p>
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {quickActions.map((action, index) => (
-                <Button
-                  key={index}
-                  variant="outline"
-                  className="h-auto p-4 flex flex-col items-center gap-2 hover:scale-105 transition-all duration-300 group"
-                  asChild
-                >
-                  {action.type === 'external' ? (
-                    <a href={action.href} target="_blank" rel="noopener noreferrer">
-                      <action.icon className="w-5 h-5 group-hover:animate-bounce" />
-                      <span className="text-xs font-medium">{action.label}</span>
-                    </a>
-                  ) : action.type === 'download' ? (
-                    <a href={action.href} download>
-                      <action.icon className="w-5 h-5 group-hover:animate-bounce" />
-                      <span className="text-xs font-medium">{action.label}</span>
-                    </a>
-                  ) : (
-                    <Link to={action.href}>
-                      <action.icon className="w-5 h-5 group-hover:animate-bounce" />
-                      <span className="text-xs font-medium">{action.label}</span>
-                    </Link>
-                  )}
-                </Button>
-              ))}
-            </div>
-          </Card>
 
           {/* Current Status Banner */}
           <Card className="p-6 mb-12 bg-gradient-to-r from-primary/10 to-primary-glow/10 border-primary/20 hover:shadow-lg transition-all duration-300">
