@@ -23,11 +23,11 @@ const Index = () => {
         <div className="absolute bottom-1/3 left-1/3 w-3 h-3 bg-primary/40 rounded-full animate-pulse animation-delay-1000 shadow-lg shadow-primary/15"></div>
         <div className="absolute top-3/4 right-1/5 w-1.5 h-1.5 bg-primary-glow/60 rounded-full animate-bounce animation-delay-2000"></div>
         
-        <div className="relative max-w-7xl mx-auto w-full px-6 sm:px-8 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+        <div className="relative max-w-7xl mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 xl:gap-24 items-center">
             
             {/* Enhanced Left Content */}
-            <div className="space-y-8 fade-in order-2 lg:order-1 text-center lg:text-left">
+            <div className="space-y-6 sm:space-y-8 lg:space-y-10 fade-in order-2 lg:order-1 text-center lg:text-left max-w-2xl mx-auto lg:mx-0">
               
               {/* Enhanced Status Badge */}
               <div className="inline-flex items-center px-4 py-2.5 rounded-full bg-gradient-to-r from-primary/15 to-primary-glow/10 border-2 border-primary/25 text-primary text-sm font-semibold shadow-xl backdrop-blur-sm hover:shadow-2xl hover:scale-105 transition-all duration-300 animate-gentle-glow hover:border-primary/40">
@@ -38,8 +38,8 @@ const Index = () => {
               
               {/* Enhanced Typography */}
               <div className="space-y-4">
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight tracking-tight">
-                  <span className="block text-foreground/90 animate-fade-in-up mb-2 font-medium text-xl sm:text-2xl md:text-3xl lg:text-4xl">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold leading-tight tracking-tight">
+                  <span className="block text-foreground/90 animate-fade-in-up mb-2 sm:mb-3 lg:mb-4 font-medium text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
                     Hello, I'm
                   </span>
                   <span className="gradient-text relative inline-block animate-fade-in-up animation-delay-300 bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent drop-shadow-2xl">
@@ -48,18 +48,18 @@ const Index = () => {
                 </h1>
 
                 {/* Enhanced Tagline */}
-                <div className="animate-fade-in-up animation-delay-500 space-y-4">
-                  <h2 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-transparent bg-gradient-to-r from-primary via-primary-glow to-accent bg-clip-text drop-shadow-lg">
+                <div className="animate-fade-in-up animation-delay-500 space-y-3 sm:space-y-4 lg:space-y-5">
+                  <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-transparent bg-gradient-to-r from-primary via-primary-glow to-accent bg-clip-text drop-shadow-lg leading-tight">
                     "Crafting Digital Experiences That Matter"
                   </h2>
                   
                   {/* Enhanced Status Indicators */}
-                  <div className="flex items-center justify-center lg:justify-start gap-4 text-sm">
-                    <div className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-green-500/15 border-2 border-green-500/30 backdrop-blur-sm hover:bg-green-500/20 hover:border-green-500/40 transition-all duration-300 hover:scale-105 shadow-lg shadow-green-500/10">
+                  <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 text-sm">
+                    <div className="flex items-center gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-full bg-green-500/15 border-2 border-green-500/30 backdrop-blur-sm hover:bg-green-500/20 hover:border-green-500/40 transition-all duration-300 hover:scale-105 shadow-lg shadow-green-500/10">
                       <div className="w-2.5 h-2.5 bg-green-500 rounded-full animate-pulse shadow-lg shadow-green-500/50"></div>
                       <span className="text-green-400 font-semibold">Available</span>
                     </div>
-                    <div className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-blue-500/15 border-2 border-blue-500/30 backdrop-blur-sm hover:bg-blue-500/20 hover:border-blue-500/40 transition-all duration-300 hover:scale-105 shadow-lg shadow-blue-500/10">
+                    <div className="flex items-center gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-full bg-blue-500/15 border-2 border-blue-500/30 backdrop-blur-sm hover:bg-blue-500/20 hover:border-blue-500/40 transition-all duration-300 hover:scale-105 shadow-lg shadow-blue-500/10">
                       <div className="w-2.5 h-2.5 bg-blue-500 rounded-full shadow-lg shadow-blue-500/50"></div>
                       <span className="text-blue-400 font-semibold">Remote</span>
                     </div>
@@ -67,7 +67,7 @@ const Index = () => {
                 </div>
 
                 {/* Enhanced Description */}
-                <p className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-2xl leading-relaxed animate-fade-in-up animation-delay-600">
+                <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-muted-foreground max-w-xl lg:max-w-2xl leading-relaxed animate-fade-in-up animation-delay-600">
                   <span className="text-foreground font-semibold">B.Tech CS student</span> at{" "}
                   <span className="text-primary font-bold">NIT Patna</span>{" "}
                   passionate about building{" "}
@@ -77,12 +77,12 @@ const Index = () => {
               </div>
 
               {/* Enhanced Tech Stack */}
-              <div className="animate-fade-in-up animation-delay-700 space-y-4">
-                <h3 className="text-base font-bold text-foreground text-center lg:text-left flex items-center justify-center lg:justify-start gap-2">
+              <div className="animate-fade-in-up animation-delay-700 space-y-3 sm:space-y-4">
+                <h3 className="text-sm sm:text-base font-bold text-foreground text-center lg:text-left flex items-center justify-center lg:justify-start gap-2">
                   <Star className="w-4 h-4 text-primary animate-pulse" />
                   <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">Tech Stack</span>
                 </h3>
-                <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
+                <div className="flex flex-wrap gap-2 sm:gap-3 justify-center lg:justify-start">
                   
                   {/* Enhanced Tech Badges */}
                   <div className="group flex items-center gap-2 bg-gradient-to-r from-blue-500/15 to-cyan-500/10 border-2 border-blue-500/25 px-4 py-2.5 rounded-full hover:scale-110 transition-all duration-300 cursor-pointer hover:shadow-lg hover:shadow-blue-500/20 backdrop-blur-sm">
@@ -130,42 +130,42 @@ const Index = () => {
               </div>
 
               {/* Enhanced Metrics */}
-              <div className="flex flex-wrap gap-4 justify-center lg:justify-start animate-fade-in-up animation-delay-800">
-                <div className="glass px-6 py-4 rounded-2xl border-2 border-primary/25 bg-gradient-to-r from-primary/10 to-primary-glow/8 hover:scale-110 transition-all duration-300 hover:shadow-xl hover:shadow-primary/20 backdrop-blur-sm">
-                  <span className="text-primary font-bold text-lg">2+</span>
-                  <span className="text-muted-foreground text-sm ml-2 font-medium">Years</span>
+              <div className="flex flex-wrap gap-3 sm:gap-4 justify-center lg:justify-start animate-fade-in-up animation-delay-800">
+                <div className="glass px-4 sm:px-6 py-3 sm:py-4 rounded-xl sm:rounded-2xl border-2 border-primary/25 bg-gradient-to-r from-primary/10 to-primary-glow/8 hover:scale-110 transition-all duration-300 hover:shadow-xl hover:shadow-primary/20 backdrop-blur-sm">
+                  <span className="text-primary font-bold text-base sm:text-lg">2+</span>
+                  <span className="text-muted-foreground text-xs sm:text-sm ml-1 sm:ml-2 font-medium">Years</span>
                 </div>
-                <div className="glass px-6 py-4 rounded-2xl border-2 border-primary/25 bg-gradient-to-r from-primary/10 to-primary-glow/8 hover:scale-110 transition-all duration-300 hover:shadow-xl hover:shadow-primary/20 backdrop-blur-sm">
-                  <span className="text-primary font-bold text-lg">15+</span>
-                  <span className="text-muted-foreground text-sm ml-2 font-medium">Projects</span>
+                <div className="glass px-4 sm:px-6 py-3 sm:py-4 rounded-xl sm:rounded-2xl border-2 border-primary/25 bg-gradient-to-r from-primary/10 to-primary-glow/8 hover:scale-110 transition-all duration-300 hover:shadow-xl hover:shadow-primary/20 backdrop-blur-sm">
+                  <span className="text-primary font-bold text-base sm:text-lg">15+</span>
+                  <span className="text-muted-foreground text-xs sm:text-sm ml-1 sm:ml-2 font-medium">Projects</span>
                 </div>
-                <div className="glass px-6 py-4 rounded-2xl border-2 border-primary/25 bg-gradient-to-r from-primary/10 to-primary-glow/8 hover:scale-110 transition-all duration-300 hover:shadow-xl hover:shadow-primary/20 backdrop-blur-sm">
-                  <span className="text-primary font-bold text-lg">500+</span>
-                  <span className="text-muted-foreground text-sm ml-2 font-medium">Commits</span>
+                <div className="glass px-4 sm:px-6 py-3 sm:py-4 rounded-xl sm:rounded-2xl border-2 border-primary/25 bg-gradient-to-r from-primary/10 to-primary-glow/8 hover:scale-110 transition-all duration-300 hover:shadow-xl hover:shadow-primary/20 backdrop-blur-sm">
+                  <span className="text-primary font-bold text-base sm:text-lg">500+</span>
+                  <span className="text-muted-foreground text-xs sm:text-sm ml-1 sm:ml-2 font-medium">Commits</span>
                 </div>
               </div>
 
               {/* Enhanced Action Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up animation-delay-900">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 animate-fade-in-up animation-delay-900">
                 <Button
-                  className="group relative overflow-hidden px-8 py-4 text-lg font-bold bg-gradient-to-r from-primary via-primary-glow to-primary hover:from-primary-glow hover:via-primary hover:to-primary-glow shadow-2xl hover:shadow-3xl hover:shadow-primary/30 transition-all duration-500 border-0 rounded-2xl hover:scale-110 active:scale-95 backdrop-blur-sm"
+                  className="group relative overflow-hidden px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-bold bg-gradient-to-r from-primary via-primary-glow to-primary hover:from-primary-glow hover:via-primary hover:to-primary-glow shadow-2xl hover:shadow-3xl hover:shadow-primary/30 transition-all duration-500 border-0 rounded-xl sm:rounded-2xl hover:scale-110 active:scale-95 backdrop-blur-sm"
                   aria-label="Start a conversation with Yuvraj"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out"></div>
-                  <span className="relative z-10 flex items-center justify-center gap-3">
+                  <span className="relative z-10 flex items-center justify-center gap-2 sm:gap-3">
                     Let's Build Something
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
+                    <ArrowRight className="w-4 sm:w-5 h-4 sm:h-5 group-hover:translate-x-2 transition-transform" />
                   </span>
                 </Button>
 
                 <Button
                   variant="outline"
-                  className="group px-8 py-4 text-lg font-bold border-2 border-primary/60 text-primary hover:bg-primary hover:text-primary-foreground shadow-xl hover:shadow-2xl hover:shadow-primary/25 transition-all duration-500 rounded-2xl hover:scale-110 active:scale-95 backdrop-blur-sm bg-background/60 hover:border-primary"
+                  className="group px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-bold border-2 border-primary/60 text-primary hover:bg-primary hover:text-primary-foreground shadow-xl hover:shadow-2xl hover:shadow-primary/25 transition-all duration-500 rounded-xl sm:rounded-2xl hover:scale-110 active:scale-95 backdrop-blur-sm bg-background/60 hover:border-primary"
                   aria-label="Explore Yuvraj's portfolio and projects"
                 >
-                  <span className="flex items-center justify-center gap-3">
+                  <span className="flex items-center justify-center gap-2 sm:gap-3">
                     Explore Portfolio
-                    <Code className="w-5 h-5 group-hover:rotate-12 transition-transform" />
+                    <Code className="w-4 sm:w-5 h-4 sm:h-5 group-hover:rotate-12 transition-transform" />
                   </span>
                 </Button>
               </div>
@@ -235,14 +235,14 @@ const Index = () => {
             </div>
 
             {/* Enhanced Right Content - Hero Image */}
-            <div className="relative slide-up order-1 lg:order-2">
-              <div className="relative flex justify-center">
+            <div className="relative slide-up order-1 lg:order-2 flex justify-center">
+              <div className="relative flex justify-center max-w-md lg:max-w-lg xl:max-w-xl mx-auto">
                 {/* Enhanced Background Effects */}
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-primary-glow/30 to-primary/20 rounded-full blur-2xl animate-pulse opacity-60"></div>
                 <div className="absolute inset-0 bg-gradient-to-b from-primary-glow/15 to-primary/15 rounded-full blur-xl animate-pulse opacity-40 animation-delay-1000"></div>
                 
                 {/* Enhanced Profile Image */}
-                <div className="relative z-10 w-72 h-72 sm:w-80 sm:h-80 lg:w-72 lg:h-72 xl:w-80 xl:h-80 rounded-full overflow-hidden border-4 border-primary/40 shadow-2xl hover:shadow-primary/50 hover:shadow-2xl transition-all duration-500 hover:scale-110 group mx-auto cursor-pointer backdrop-blur-sm">
+                <div className="relative z-10 w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-72 lg:h-72 xl:w-80 xl:h-80 rounded-full overflow-hidden border-4 border-primary/40 shadow-2xl hover:shadow-primary/50 hover:shadow-2xl transition-all duration-500 hover:scale-110 group mx-auto cursor-pointer backdrop-blur-sm">
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/25 to-primary-glow/15 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   <img
                     src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face&auto=format&q=80"
