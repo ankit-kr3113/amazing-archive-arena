@@ -10,7 +10,8 @@ import {
   Zap,
   Heart,
   Calendar,
-  Edit
+  Edit,
+  FileText
 } from "lucide-react";
 import { FaStar, FaMagic, FaLaptopCode } from "react-icons/fa";
 import { Link } from "react-router-dom";
