@@ -10,67 +10,69 @@ const Index = () => {
       <Navigation />
       <ThemeSwitcher />
       
-      {/* Optimized Hero Section - Fits in 100vh */}
-      <section className="relative pt-20 pb-8 h-screen flex items-center overflow-hidden">
-        {/* Subtle Background Effects */}
-        <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/3"></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-primary/[0.06] via-primary/[0.02] to-transparent rounded-full blur-3xl opacity-30 animate-pulse"></div>
+      {/* Enhanced Hero Section - Modern Visual Appeal */}
+      <section className="relative pt-24 pb-16 min-h-screen flex items-center overflow-hidden">
+        {/* Enhanced Background Effects */}
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-background/95 to-primary/5"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-primary/[0.12] via-primary-glow/[0.06] to-transparent rounded-full blur-3xl opacity-40 animate-pulse"></div>
+        <div className="absolute top-1/4 right-1/4 w-[400px] h-[400px] bg-gradient-radial from-primary-glow/[0.08] to-transparent rounded-full blur-2xl opacity-30 animate-pulse animation-delay-1000"></div>
         
-        {/* Minimal Floating Particles */}
-        <div className="absolute top-1/4 left-1/4 w-1 h-1 bg-primary/40 rounded-full animate-bounce animation-delay-300"></div>
-        <div className="absolute top-1/3 right-1/3 w-0.5 h-0.5 bg-primary-glow/60 rounded-full animate-ping animation-delay-700"></div>
-        <div className="absolute bottom-1/3 left-1/3 w-1.5 h-1.5 bg-primary/30 rounded-full animate-pulse animation-delay-1000"></div>
+        {/* Enhanced Floating Particles */}
+        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-primary/50 rounded-full animate-bounce animation-delay-300 shadow-lg shadow-primary/20"></div>
+        <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-primary-glow/80 rounded-full animate-ping animation-delay-700 shadow-lg shadow-primary-glow/30"></div>
+        <div className="absolute bottom-1/3 left-1/3 w-3 h-3 bg-primary/40 rounded-full animate-pulse animation-delay-1000 shadow-lg shadow-primary/15"></div>
+        <div className="absolute top-3/4 right-1/5 w-1.5 h-1.5 bg-primary-glow/60 rounded-full animate-bounce animation-delay-2000"></div>
         
-        <div className="relative max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center">
+        <div className="relative max-w-7xl mx-auto w-full px-6 sm:px-8 lg:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             
-            {/* Compact Left Content */}
-            <div className="space-y-6 fade-in order-2 lg:order-1 text-center lg:text-left">
+            {/* Enhanced Left Content */}
+            <div className="space-y-8 fade-in order-2 lg:order-1 text-center lg:text-left">
               
-              {/* Compact Status Badge */}
-              <div className="inline-flex items-center px-3 py-1.5 rounded-full bg-gradient-to-r from-primary/10 to-primary-glow/8 border border-primary/20 text-primary text-xs font-medium shadow-md backdrop-blur-sm hover:shadow-lg hover:scale-105 transition-all duration-300 animate-gentle-glow">
-                <Code className="w-3 h-3 mr-1.5 animate-pulse" />
+              {/* Enhanced Status Badge */}
+              <div className="inline-flex items-center px-4 py-2.5 rounded-full bg-gradient-to-r from-primary/15 to-primary-glow/10 border-2 border-primary/25 text-primary text-sm font-semibold shadow-xl backdrop-blur-sm hover:shadow-2xl hover:scale-105 transition-all duration-300 animate-gentle-glow hover:border-primary/40">
+                <Code className="w-4 h-4 mr-2 animate-pulse" />
                 <span>Full Stack Developer</span>
-                <div className="ml-2 w-1.5 h-1.5 bg-primary rounded-full animate-pulse"></div>
+                <div className="ml-3 w-2 h-2 bg-primary rounded-full animate-pulse shadow-lg shadow-primary/50"></div>
               </div>
               
-              {/* Compact Typography */}
-              <div className="space-y-3">
-                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight">
-                  <span className="block text-foreground/85 animate-fade-in-up mb-1 font-medium text-lg sm:text-xl md:text-2xl lg:text-3xl">
+              {/* Enhanced Typography */}
+              <div className="space-y-4">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight tracking-tight">
+                  <span className="block text-foreground/90 animate-fade-in-up mb-2 font-medium text-xl sm:text-2xl md:text-3xl lg:text-4xl">
                     Hello, I'm
                   </span>
-                  <span className="gradient-text relative inline-block animate-fade-in-up animation-delay-300 bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent">
+                  <span className="gradient-text relative inline-block animate-fade-in-up animation-delay-300 bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent drop-shadow-2xl">
                     Yuvraj Mehta
                   </span>
                 </h1>
 
-                {/* Compact Tagline */}
-                <div className="animate-fade-in-up animation-delay-500 space-y-2">
-                  <h2 className="text-lg sm:text-xl lg:text-2xl font-semibold text-primary/90">
+                {/* Enhanced Tagline */}
+                <div className="animate-fade-in-up animation-delay-500 space-y-4">
+                  <h2 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-transparent bg-gradient-to-r from-primary via-primary-glow to-accent bg-clip-text drop-shadow-lg">
                     "Crafting Digital Experiences That Matter"
                   </h2>
                   
-                  {/* Compact Status Indicators */}
-                  <div className="flex items-center justify-center lg:justify-start gap-3 text-xs">
-                    <div className="flex items-center gap-1.5 px-2 py-1 rounded-full bg-green-500/10 border border-green-500/20">
-                      <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></div>
-                      <span className="text-green-500 font-medium">Available</span>
+                  {/* Enhanced Status Indicators */}
+                  <div className="flex items-center justify-center lg:justify-start gap-4 text-sm">
+                    <div className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-green-500/15 border-2 border-green-500/30 backdrop-blur-sm hover:bg-green-500/20 hover:border-green-500/40 transition-all duration-300 hover:scale-105 shadow-lg shadow-green-500/10">
+                      <div className="w-2.5 h-2.5 bg-green-500 rounded-full animate-pulse shadow-lg shadow-green-500/50"></div>
+                      <span className="text-green-400 font-semibold">Available</span>
                     </div>
-                    <div className="flex items-center gap-1.5 px-2 py-1 rounded-full bg-blue-500/10 border border-blue-500/20">
-                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
-                      <span className="text-blue-500 font-medium">Remote</span>
+                    <div className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-blue-500/15 border-2 border-blue-500/30 backdrop-blur-sm hover:bg-blue-500/20 hover:border-blue-500/40 transition-all duration-300 hover:scale-105 shadow-lg shadow-blue-500/10">
+                      <div className="w-2.5 h-2.5 bg-blue-500 rounded-full shadow-lg shadow-blue-500/50"></div>
+                      <span className="text-blue-400 font-semibold">Remote</span>
                     </div>
                   </div>
                 </div>
 
-                {/* Compact Description */}
-                <p className="text-sm sm:text-base text-muted-foreground max-w-lg leading-relaxed animate-fade-in-up animation-delay-600">
-                  <span className="text-foreground font-medium">B.Tech CS student</span> at{" "}
-                  <span className="text-primary font-semibold">NIT Patna</span>{" "}
+                {/* Enhanced Description */}
+                <p className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-2xl leading-relaxed animate-fade-in-up animation-delay-600">
+                  <span className="text-foreground font-semibold">B.Tech CS student</span> at{" "}
+                  <span className="text-primary font-bold">NIT Patna</span>{" "}
                   passionate about building{" "}
-                  <span className="text-primary font-semibold">full stack applications</span> with focus on{" "}
-                  <span className="text-primary font-semibold">user-friendly interfaces</span>.
+                  <span className="text-primary font-bold">full stack applications</span> with focus on{" "}
+                  <span className="text-primary-glow font-bold">user-friendly interfaces</span>.
                 </p>
               </div>
 
