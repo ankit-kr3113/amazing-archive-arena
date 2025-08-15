@@ -240,35 +240,35 @@ const Index = () => {
                   </div>
                 </div>
 
-                {/* Achievement Cards */}
-                <div className="hidden xl:block absolute top-6 -right-6 w-24 h-20 bg-card/95 backdrop-blur-sm rounded-2xl border-2 border-primary/30 p-3 shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300 hover:scale-125 animate-float">
-                  <div className="flex justify-center mb-2">
-                    <div className="w-7 h-7 rounded-xl bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center shadow-lg">
-                      <Rocket className="w-4 h-4 text-white" />
+                {/* Achievement Cards - Enhanced Visibility */}
+                <div className="hidden lg:block absolute top-4 -right-4 w-20 h-16 lg:w-24 lg:h-20 bg-card/98 backdrop-blur-lg rounded-2xl border-2 border-primary/40 p-2 lg:p-3 shadow-2xl hover:shadow-3xl hover:shadow-blue-500/30 transition-all duration-300 hover:scale-125 animate-float z-20">
+                  <div className="flex justify-center mb-1 lg:mb-2">
+                    <div className="w-5 h-5 lg:w-7 lg:h-7 rounded-xl bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center shadow-lg shadow-blue-500/30">
+                      <Rocket className="w-3 h-3 lg:w-4 lg:h-4 text-white" />
                     </div>
                   </div>
-                  <div className="text-sm text-primary font-bold text-center">15+</div>
-                  <div className="text-[10px] text-muted-foreground text-center font-medium">Projects</div>
+                  <div className="text-xs lg:text-sm text-primary font-bold text-center">15+</div>
+                  <div className="text-[8px] lg:text-[10px] text-foreground/80 text-center font-medium">Projects</div>
                 </div>
 
-                <div className="hidden xl:block absolute bottom-6 -left-6 w-24 h-20 bg-card/95 backdrop-blur-sm rounded-2xl border-2 border-primary/30 p-3 shadow-xl hover:shadow-2xl hover:shadow-green-500/20 transition-all duration-300 hover:scale-125 animate-float animation-delay-1000">
-                  <div className="flex justify-center mb-2">
-                    <div className="w-7 h-7 rounded-xl bg-gradient-to-br from-green-500 to-teal-500 flex items-center justify-center shadow-lg">
-                      <Laptop className="w-4 h-4 text-white" />
+                <div className="hidden lg:block absolute bottom-4 -left-4 w-20 h-16 lg:w-24 lg:h-20 bg-card/98 backdrop-blur-lg rounded-2xl border-2 border-primary/40 p-2 lg:p-3 shadow-2xl hover:shadow-3xl hover:shadow-green-500/30 transition-all duration-300 hover:scale-125 animate-float animation-delay-1000 z-20">
+                  <div className="flex justify-center mb-1 lg:mb-2">
+                    <div className="w-5 h-5 lg:w-7 lg:h-7 rounded-xl bg-gradient-to-br from-green-500 to-teal-500 flex items-center justify-center shadow-lg shadow-green-500/30">
+                      <Laptop className="w-3 h-3 lg:w-4 lg:h-4 text-white" />
                     </div>
                   </div>
-                  <div className="text-sm text-primary font-bold text-center">NIT</div>
-                  <div className="text-[10px] text-muted-foreground text-center font-medium">Patna</div>
+                  <div className="text-xs lg:text-sm text-primary font-bold text-center">NIT</div>
+                  <div className="text-[8px] lg:text-[10px] text-foreground/80 text-center font-medium">Patna</div>
                 </div>
 
-                <div className="hidden xl:block absolute top-1/2 -right-8 w-24 h-20 bg-card/95 backdrop-blur-sm rounded-2xl border-2 border-primary/30 p-3 shadow-xl hover:shadow-2xl hover:shadow-yellow-500/20 transition-all duration-300 hover:scale-125 animate-float animation-delay-2000">
-                  <div className="flex justify-center mb-2">
-                    <div className="w-7 h-7 rounded-xl bg-gradient-to-br from-yellow-500 to-orange-500 flex items-center justify-center shadow-lg">
-                      <Trophy className="w-4 h-4 text-white" />
+                <div className="hidden lg:block absolute top-1/2 -translate-y-1/2 -right-6 lg:-right-8 w-20 h-16 lg:w-24 lg:h-20 bg-card/98 backdrop-blur-lg rounded-2xl border-2 border-primary/40 p-2 lg:p-3 shadow-2xl hover:shadow-3xl hover:shadow-yellow-500/30 transition-all duration-300 hover:scale-125 animate-float animation-delay-2000 z-20">
+                  <div className="flex justify-center mb-1 lg:mb-2">
+                    <div className="w-5 h-5 lg:w-7 lg:h-7 rounded-xl bg-gradient-to-br from-yellow-500 to-orange-500 flex items-center justify-center shadow-lg shadow-yellow-500/30">
+                      <Trophy className="w-3 h-3 lg:w-4 lg:h-4 text-white" />
                     </div>
                   </div>
-                  <div className="text-sm text-primary font-bold text-center">500+</div>
-                  <div className="text-[10px] text-muted-foreground text-center font-medium">Commits</div>
+                  <div className="text-xs lg:text-sm text-primary font-bold text-center">500+</div>
+                  <div className="text-[8px] lg:text-[10px] text-foreground/80 text-center font-medium">Commits</div>
                 </div>
               </div>
             </div>
