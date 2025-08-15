@@ -553,49 +553,58 @@ const Overview = () => {
                   </Button>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-4">
-                  {featuredProjects.slice(0, 2).map((project, index) => (
-                    <div key={index} className="group overflow-hidden rounded-lg border border-border/50 hover:border-primary/30 transition-all duration-300">
+                {/* Horizontal scrolling projects */}
+                <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide">
+                  {featuredProjects.map((project, index) => (
+                    <div key={index} className="group flex-shrink-0 w-80 overflow-hidden rounded-lg border border-border/50 hover:border-primary/30 transition-all duration-300 hover:scale-105">
                       <div className="relative overflow-hidden">
                         <img
                           src={project.image}
                           alt={project.title}
-                          className="w-full h-32 object-cover group-hover:scale-110 transition-transform duration-500"
+                          className="w-full h-40 object-cover group-hover:scale-110 transition-transform duration-500"
                           loading="lazy"
                         />
                         {project.isLive && (
-                          <div className="absolute top-2 right-2 bg-green-500 text-white text-xs px-2 py-1 rounded-full flex items-center gap-1">
+                          <div className="absolute top-3 right-3 bg-green-500 text-white text-xs px-2 py-1 rounded-full flex items-center gap-1">
                             <div className="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></div>
                             Live
                           </div>
                         )}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div className="absolute bottom-3 left-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          <div className="flex gap-2">
+                            <Button size="sm" className="text-xs flex-1" asChild>
+                              <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                                <Eye className="w-3 h-3 mr-1" />
+                                Live
+                              </a>
+                            </Button>
+                            <Button size="sm" variant="outline" className="text-xs flex-1 bg-white/90 text-black hover:bg-white" asChild>
+                              <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                                <Github className="w-3 h-3 mr-1" />
+                                Code
+                              </a>
+                            </Button>
+                          </div>
+                        </div>
                       </div>
                       <div className="p-4">
                         <div className="flex items-center justify-between mb-2">
-                          <h4 className="font-semibold text-sm">{project.title}</h4>
+                          <h4 className="font-semibold text-sm group-hover:text-primary transition-colors">{project.title}</h4>
                           <Badge variant="secondary" className="text-xs">{project.category}</Badge>
                         </div>
-                        <p className="text-xs text-muted-foreground mb-3">{project.description}</p>
-                        <div className="flex flex-wrap gap-1 mb-3">
-                          {project.tech.slice(0, 3).map((tech, techIndex) => (
+                        <p className="text-xs text-muted-foreground mb-3 line-clamp-2">{project.description}</p>
+                        <div className="flex flex-wrap gap-1">
+                          {project.tech.slice(0, 4).map((tech, techIndex) => (
                             <Badge key={techIndex} variant="outline" className="text-xs">
                               {tech}
                             </Badge>
                           ))}
-                        </div>
-                        <div className="flex gap-2">
-                          <Button size="sm" className="text-xs flex-1" asChild>
-                            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                              <Eye className="w-3 h-3 mr-1" />
-                              Live
-                            </a>
-                          </Button>
-                          <Button size="sm" variant="outline" className="text-xs flex-1" asChild>
-                            <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                              <Github className="w-3 h-3 mr-1" />
-                              Code
-                            </a>
-                          </Button>
+                          {project.tech.length > 4 && (
+                            <Badge variant="outline" className="text-xs">
+                              +{project.tech.length - 4}
+                            </Badge>
+                          )}
                         </div>
                       </div>
                     </div>
