@@ -76,72 +76,72 @@ const Index = () => {
                 </p>
               </div>
 
-              {/* Compact Tech Stack */}
-              <div className="animate-fade-in-up animation-delay-700 space-y-3">
-                <h3 className="text-sm font-semibold text-foreground/90 text-center lg:text-left flex items-center justify-center lg:justify-start gap-1.5">
-                  <Star className="w-3 h-3 text-primary" />
-                  Tech Stack
+              {/* Enhanced Tech Stack */}
+              <div className="animate-fade-in-up animation-delay-700 space-y-4">
+                <h3 className="text-base font-bold text-foreground text-center lg:text-left flex items-center justify-center lg:justify-start gap-2">
+                  <Star className="w-4 h-4 text-primary animate-pulse" />
+                  <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">Tech Stack</span>
                 </h3>
-                <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
+                <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
                   
-                  {/* Compact Tech Badges */}
-                  <div className="group flex items-center gap-1.5 bg-gradient-to-r from-blue-500/10 to-cyan-500/8 border border-blue-500/20 px-2.5 py-1.5 rounded-full hover:scale-105 transition-all duration-300 cursor-pointer">
-                    <div className="w-3 h-3 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center group-hover:rotate-12 transition-transform duration-300">
-                      <span className="text-[8px] text-white font-bold">R</span>
+                  {/* Enhanced Tech Badges */}
+                  <div className="group flex items-center gap-2 bg-gradient-to-r from-blue-500/15 to-cyan-500/10 border-2 border-blue-500/25 px-4 py-2.5 rounded-full hover:scale-110 transition-all duration-300 cursor-pointer hover:shadow-lg hover:shadow-blue-500/20 backdrop-blur-sm">
+                    <div className="w-4 h-4 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center group-hover:rotate-12 transition-transform duration-300 shadow-lg">
+                      <span className="text-[10px] text-white font-bold">R</span>
                     </div>
-                    <span className="text-xs font-medium text-blue-500">React</span>
+                    <span className="text-sm font-semibold text-blue-400">React</span>
                   </div>
 
-                  <div className="group flex items-center gap-1.5 bg-gradient-to-r from-green-500/10 to-emerald-500/8 border border-green-500/20 px-2.5 py-1.5 rounded-full hover:scale-105 transition-all duration-300 cursor-pointer">
-                    <div className="w-3 h-3 rounded-full bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center group-hover:rotate-12 transition-transform duration-300">
-                      <span className="text-[8px] text-white font-bold">N</span>
+                  <div className="group flex items-center gap-2 bg-gradient-to-r from-green-500/15 to-emerald-500/10 border-2 border-green-500/25 px-4 py-2.5 rounded-full hover:scale-110 transition-all duration-300 cursor-pointer hover:shadow-lg hover:shadow-green-500/20 backdrop-blur-sm">
+                    <div className="w-4 h-4 rounded-full bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center group-hover:rotate-12 transition-transform duration-300 shadow-lg">
+                      <span className="text-[10px] text-white font-bold">N</span>
                     </div>
-                    <span className="text-xs font-medium text-green-500">Node.js</span>
+                    <span className="text-sm font-semibold text-green-400">Node.js</span>
                   </div>
 
-                  <div className="group flex items-center gap-1.5 bg-gradient-to-r from-yellow-500/10 to-orange-500/8 border border-yellow-500/20 px-2.5 py-1.5 rounded-full hover:scale-105 transition-all duration-300 cursor-pointer">
-                    <div className="w-3 h-3 rounded-full bg-gradient-to-br from-yellow-500 to-orange-500 flex items-center justify-center group-hover:rotate-12 transition-transform duration-300">
-                      <span className="text-[8px] text-white font-bold">M</span>
+                  <div className="group flex items-center gap-2 bg-gradient-to-r from-yellow-500/15 to-orange-500/10 border-2 border-yellow-500/25 px-4 py-2.5 rounded-full hover:scale-110 transition-all duration-300 cursor-pointer hover:shadow-lg hover:shadow-yellow-500/20 backdrop-blur-sm">
+                    <div className="w-4 h-4 rounded-full bg-gradient-to-br from-yellow-500 to-orange-500 flex items-center justify-center group-hover:rotate-12 transition-transform duration-300 shadow-lg">
+                      <span className="text-[10px] text-white font-bold">M</span>
                     </div>
-                    <span className="text-xs font-medium text-yellow-600">MongoDB</span>
+                    <span className="text-sm font-semibold text-yellow-400">MongoDB</span>
                   </div>
 
-                  <div className="group flex items-center gap-1.5 bg-gradient-to-r from-purple-500/10 to-pink-500/8 border border-purple-500/20 px-2.5 py-1.5 rounded-full hover:scale-105 transition-all duration-300 cursor-pointer">
-                    <div className="w-3 h-3 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center group-hover:rotate-12 transition-transform duration-300">
-                      <span className="text-[8px] text-white font-bold">TS</span>
+                  <div className="group flex items-center gap-2 bg-gradient-to-r from-purple-500/15 to-pink-500/10 border-2 border-purple-500/25 px-4 py-2.5 rounded-full hover:scale-110 transition-all duration-300 cursor-pointer hover:shadow-lg hover:shadow-purple-500/20 backdrop-blur-sm">
+                    <div className="w-4 h-4 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center group-hover:rotate-12 transition-transform duration-300 shadow-lg">
+                      <span className="text-[10px] text-white font-bold">TS</span>
                     </div>
-                    <span className="text-xs font-medium text-purple-500">TypeScript</span>
+                    <span className="text-sm font-semibold text-purple-400">TypeScript</span>
                   </div>
 
-                  <div className="group flex items-center gap-1.5 bg-gradient-to-r from-gray-500/10 to-slate-500/8 border border-gray-500/20 px-2.5 py-1.5 rounded-full hover:scale-105 transition-all duration-300 cursor-pointer">
-                    <div className="w-3 h-3 rounded-full bg-gradient-to-br from-gray-600 to-slate-600 flex items-center justify-center group-hover:rotate-12 transition-transform duration-300">
-                      <span className="text-[8px] text-white font-bold">Git</span>
+                  <div className="group flex items-center gap-2 bg-gradient-to-r from-gray-500/15 to-slate-500/10 border-2 border-gray-500/25 px-4 py-2.5 rounded-full hover:scale-110 transition-all duration-300 cursor-pointer hover:shadow-lg hover:shadow-gray-500/20 backdrop-blur-sm">
+                    <div className="w-4 h-4 rounded-full bg-gradient-to-br from-gray-500 to-slate-600 flex items-center justify-center group-hover:rotate-12 transition-transform duration-300 shadow-lg">
+                      <span className="text-[9px] text-white font-bold">Git</span>
                     </div>
-                    <span className="text-xs font-medium text-gray-600">Git</span>
+                    <span className="text-sm font-semibold text-gray-400">Git</span>
                   </div>
 
-                  <div className="group flex items-center gap-1.5 bg-gradient-to-r from-indigo-500/10 to-blue-600/8 border border-indigo-500/20 px-2.5 py-1.5 rounded-full hover:scale-105 transition-all duration-300 cursor-pointer">
-                    <div className="w-3 h-3 rounded-full bg-gradient-to-br from-indigo-500 to-blue-600 flex items-center justify-center group-hover:rotate-12 transition-transform duration-300">
-                      <span className="text-[8px] text-white font-bold">TW</span>
+                  <div className="group flex items-center gap-2 bg-gradient-to-r from-indigo-500/15 to-blue-600/10 border-2 border-indigo-500/25 px-4 py-2.5 rounded-full hover:scale-110 transition-all duration-300 cursor-pointer hover:shadow-lg hover:shadow-indigo-500/20 backdrop-blur-sm">
+                    <div className="w-4 h-4 rounded-full bg-gradient-to-br from-indigo-500 to-blue-600 flex items-center justify-center group-hover:rotate-12 transition-transform duration-300 shadow-lg">
+                      <span className="text-[9px] text-white font-bold">TW</span>
                     </div>
-                    <span className="text-xs font-medium text-indigo-500">Tailwind</span>
+                    <span className="text-sm font-semibold text-indigo-400">Tailwind</span>
                   </div>
                 </div>
               </div>
 
-              {/* Compact Metrics */}
-              <div className="flex flex-wrap gap-3 justify-center lg:justify-start animate-fade-in-up animation-delay-800">
-                <div className="glass px-3 py-2 rounded-xl border border-primary/20 bg-gradient-to-r from-primary/6 to-primary-glow/4 hover:scale-105 transition-all duration-300">
-                  <span className="text-primary font-bold text-sm">2+</span>
-                  <span className="text-muted-foreground text-xs ml-1">Years</span>
+              {/* Enhanced Metrics */}
+              <div className="flex flex-wrap gap-4 justify-center lg:justify-start animate-fade-in-up animation-delay-800">
+                <div className="glass px-6 py-4 rounded-2xl border-2 border-primary/25 bg-gradient-to-r from-primary/10 to-primary-glow/8 hover:scale-110 transition-all duration-300 hover:shadow-xl hover:shadow-primary/20 backdrop-blur-sm">
+                  <span className="text-primary font-bold text-lg">2+</span>
+                  <span className="text-muted-foreground text-sm ml-2 font-medium">Years</span>
                 </div>
-                <div className="glass px-3 py-2 rounded-xl border border-primary/20 bg-gradient-to-r from-primary/6 to-primary-glow/4 hover:scale-105 transition-all duration-300">
-                  <span className="text-primary font-bold text-sm">15+</span>
-                  <span className="text-muted-foreground text-xs ml-1">Projects</span>
+                <div className="glass px-6 py-4 rounded-2xl border-2 border-primary/25 bg-gradient-to-r from-primary/10 to-primary-glow/8 hover:scale-110 transition-all duration-300 hover:shadow-xl hover:shadow-primary/20 backdrop-blur-sm">
+                  <span className="text-primary font-bold text-lg">15+</span>
+                  <span className="text-muted-foreground text-sm ml-2 font-medium">Projects</span>
                 </div>
-                <div className="glass px-3 py-2 rounded-xl border border-primary/20 bg-gradient-to-r from-primary/6 to-primary-glow/4 hover:scale-105 transition-all duration-300">
-                  <span className="text-primary font-bold text-sm">500+</span>
-                  <span className="text-muted-foreground text-xs ml-1">Commits</span>
+                <div className="glass px-6 py-4 rounded-2xl border-2 border-primary/25 bg-gradient-to-r from-primary/10 to-primary-glow/8 hover:scale-110 transition-all duration-300 hover:shadow-xl hover:shadow-primary/20 backdrop-blur-sm">
+                  <span className="text-primary font-bold text-lg">500+</span>
+                  <span className="text-muted-foreground text-sm ml-2 font-medium">Commits</span>
                 </div>
               </div>
 
