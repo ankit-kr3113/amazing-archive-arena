@@ -169,7 +169,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 py-6 border-t border-gray-600 border-b border-gray-600">
           <div className="text-center">
             <div className="flex items-center justify-center mb-2">
-              <Star className="w-4 h-4 text-purple-400 mr-2" />
+              <Users className="w-4 h-4 text-purple-400 mr-2" />
               <span className="text-xs text-gray-400 uppercase tracking-wider">Total Visitors</span>
             </div>
             <div className="text-xl font-bold text-white">12,860</div>
