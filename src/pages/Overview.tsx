@@ -66,20 +66,43 @@ const useTypewriter = (text: string, speed: number = 100) => {
 };
 
 const Overview = () => {
+  const [visitorCount, setVisitorCount] = useState(12860);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const sectionRefs = useRef<(HTMLElement | null)[]>([]);
+
+  // Typewriter effect for hero
+  const typewriterText = useTypewriter("Full Stack Developer & Problem Solver", 80);
+
+  // Enhanced stats with real-time feeling
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setVisitorCount(prev => prev + Math.floor(Math.random() * 3));
+    }, 10000); // Update every 10 seconds
+    return () => clearInterval(interval);
+  }, []);
+
   const techStack = [
-    { name: "React", color: "bg-blue-500", icon: "⚛️" },
-    { name: "Node.js", color: "bg-green-500", icon: "🟢" },
-    { name: "TypeScript", color: "bg-blue-600", icon: "📘" },
-    { name: "MongoDB", color: "bg-green-600", icon: "🍃" },
-    { name: "Express", color: "bg-gray-600", icon: "🚀" },
-    { name: "Next.js", color: "bg-black", icon: "▲" }
+    { name: "React", color: "bg-blue-500", icon: "⚛️", level: 90 },
+    { name: "Node.js", color: "bg-green-500", icon: "🟢", level: 85 },
+    { name: "TypeScript", color: "bg-blue-600", icon: "📘", level: 80 },
+    { name: "MongoDB", color: "bg-green-600", icon: "🍃", level: 75 },
+    { name: "Express", color: "bg-gray-600", icon: "🚀", level: 80 },
+    { name: "Next.js", color: "bg-black", icon: "▲", level: 85 }
   ];
 
   const highlights = [
-    { icon: GraduationCap, title: "B.Tech CS", subtitle: "NIT Patna", year: "2025", progress: 75, trend: "+5%" },
-    { icon: Code2, title: "15+ Projects", subtitle: "Full Stack", year: "2+ Years", progress: 85, trend: "+3 this month" },
-    { icon: Trophy, title: "DSA Expert", subtitle: "500+ Problems", year: "LeetCode", progress: 90, trend: "+50 this week" },
-    { icon: Briefcase, title: "Experience", subtitle: "Internships & Projects", year: "Active", progress: 80, trend: "Growing" }
+    { icon: GraduationCap, title: "B.Tech CS", subtitle: "NIT Patna", year: "2025", progress: 75, trend: "+5%", isLive: false },
+    { icon: Code2, title: "15+ Projects", subtitle: "Full Stack", year: "2+ Years", progress: 85, trend: "+3 this month", isLive: true },
+    { icon: Trophy, title: "DSA Expert", subtitle: "500+ Problems", year: "LeetCode", progress: 90, trend: "+50 this week", isLive: true },
+    { icon: Briefcase, title: "Experience", subtitle: "Internships & Projects", year: "Active", progress: 80, trend: "Growing", isLive: false }
+  ];
+
+  // Quick actions data
+  const quickActions = [
+    { icon: Mail, label: "Send Email", href: "mailto:yuvraj.mehta532@gmail.com", type: "external" },
+    { icon: Download, label: "Download Resume", href: "/Yuvraj_Resume_v2_1 (1).pdf", type: "download" },
+    { icon: MessageSquare, label: "Schedule Call", href: "/contact", type: "internal" },
+    { icon: Github, label: "View GitHub", href: "https://github.com/yuvraj-mehta", type: "external" }
   ];
 
   const recentActivities = [
