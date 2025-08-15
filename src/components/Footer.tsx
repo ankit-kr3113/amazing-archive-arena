@@ -3,10 +3,7 @@ import {
   Linkedin,
   Mail,
   Twitter,
-  Star,
-  Users,
   MapPin,
-  FileText,
   Code2,
   Brain,
   Terminal,
@@ -15,6 +12,7 @@ import {
   Calendar,
   Edit
 } from "lucide-react";
+import { FaStar, FaMagic, FaLaptopCode } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
