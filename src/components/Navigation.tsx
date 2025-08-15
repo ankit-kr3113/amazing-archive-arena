@@ -9,8 +9,7 @@ const Navigation = () => {
   const location = useLocation();
 
   const navigation = [
-    { name: "Home", href: "/", icon: Home },
-    { name: "Overview", href: "/overview", icon: Eye },
+    { name: "Overview", href: "/", icon: Eye },
     { name: "About", href: "/about", icon: User },
     { name: "Experience", href: "/experience", icon: Briefcase },
     { name: "Education", href: "/education", icon: GraduationCap },
