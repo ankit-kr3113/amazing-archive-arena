@@ -1,11 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { 
-  Github, 
-  Linkedin, 
-  Mail, 
-  Download, 
+import {
+  Github,
+  Linkedin,
+  Mail,
+  Download,
   ExternalLink,
   Code2,
   Rocket,
@@ -18,7 +18,17 @@ import {
   Terminal,
   Database,
   Globe,
-  Smartphone
+  Smartphone,
+  Clock,
+  TrendingUp,
+  Zap,
+  GitCommit,
+  BookOpen,
+  Award,
+  Target,
+  Activity,
+  CheckCircle,
+  CircleDot
 } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -36,11 +46,60 @@ const Overview = () => {
   ];
 
   const highlights = [
-    { icon: GraduationCap, title: "B.Tech CS", subtitle: "NIT Patna", year: "2025" },
-    { icon: Code2, title: "15+ Projects", subtitle: "Full Stack", year: "2+ Years" },
-    { icon: Trophy, title: "DSA Expert", subtitle: "500+ Problems", year: "LeetCode" },
-    { icon: Briefcase, title: "Experience", subtitle: "Internships & Projects", year: "Active" }
+    { icon: GraduationCap, title: "B.Tech CS", subtitle: "NIT Patna", year: "2025", progress: 75, trend: "+5%" },
+    { icon: Code2, title: "15+ Projects", subtitle: "Full Stack", year: "2+ Years", progress: 85, trend: "+3 this month" },
+    { icon: Trophy, title: "DSA Expert", subtitle: "500+ Problems", year: "LeetCode", progress: 90, trend: "+50 this week" },
+    { icon: Briefcase, title: "Experience", subtitle: "Internships & Projects", year: "Active", progress: 80, trend: "Growing" }
   ];
+
+  const recentActivities = [
+    {
+      icon: GitCommit,
+      title: "Portfolio Enhancement",
+      description: "Updated portfolio with modern design and better UX",
+      time: "2 days ago",
+      type: "project"
+    },
+    {
+      icon: Trophy,
+      title: "LeetCode Milestone",
+      description: "Solved 50+ problems this month, reached 500+ total",
+      time: "1 week ago",
+      type: "achievement"
+    },
+    {
+      icon: BookOpen,
+      title: "Learning Next.js 14",
+      description: "Completed advanced Next.js course with App Router",
+      time: "2 weeks ago",
+      type: "learning"
+    },
+    {
+      icon: Award,
+      title: "Hackathon Participation",
+      description: "Led team in Smart India Hackathon 2024",
+      time: "1 month ago",
+      type: "competition"
+    }
+  ];
+
+  const skillLevels = [
+    { name: "React", level: 90, icon: "⚛️", category: "Frontend" },
+    { name: "Node.js", level: 85, icon: "🟢", category: "Backend" },
+    { name: "TypeScript", level: 80, icon: "📘", category: "Language" },
+    { name: "MongoDB", level: 75, icon: "🍃", category: "Database" },
+    { name: "Next.js", level: 85, icon: "▲", category: "Framework" },
+    { name: "Express", level: 80, icon: "🚀", category: "Backend" }
+  ];
+
+  const currentStatus = {
+    availability: "Open for Opportunities",
+    currentFocus: "Building Full-Stack Projects with Next.js",
+    learning: "Advanced React Patterns & System Design",
+    lookingFor: "Internships & Full-time Opportunities",
+    location: "Patna, Bihar (Open to Remote)",
+    lastUpdated: "Updated 2 days ago"
+  };
 
   const featuredProjects = [
     {
@@ -87,21 +146,51 @@ const Overview = () => {
             </p>
           </div>
 
-          {/* Quick Stats */}
+          {/* Enhanced Quick Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
             {highlights.map((item, index) => (
-              <Card key={index} className="p-4 text-center hover:shadow-lg transition-all duration-300 border-primary/20 hover:border-primary/40">
+              <Card key={index} className="p-4 text-center hover:shadow-lg transition-all duration-300 border-primary/20 hover:border-primary/40 hover:scale-105">
                 <div className="flex justify-center mb-2">
                   <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
                     <item.icon className="w-5 h-5 text-primary" />
                   </div>
                 </div>
                 <div className="font-semibold text-sm text-foreground">{item.title}</div>
-                <div className="text-xs text-muted-foreground">{item.subtitle}</div>
-                <div className="text-xs text-primary font-medium">{item.year}</div>
+                <div className="text-xs text-muted-foreground mb-2">{item.subtitle}</div>
+                <div className="text-xs text-primary font-medium mb-2">{item.year}</div>
+                {/* Progress Bar */}
+                <div className="w-full bg-muted rounded-full h-1.5 mb-1">
+                  <div
+                    className="bg-gradient-to-r from-primary to-primary-glow h-1.5 rounded-full transition-all duration-500"
+                    style={{ width: `${item.progress}%` }}
+                  ></div>
+                </div>
+                <div className="text-xs text-green-500 font-medium flex items-center justify-center gap-1">
+                  <TrendingUp className="w-3 h-3" />
+                  {item.trend}
+                </div>
               </Card>
             ))}
           </div>
+
+          {/* Current Status Banner */}
+          <Card className="p-6 mb-12 bg-gradient-to-r from-primary/10 to-primary-glow/10 border-primary/20">
+            <div className="flex items-center justify-between flex-wrap gap-4">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center">
+                  <CircleDot className="w-5 h-5 text-green-500 animate-pulse" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-foreground">{currentStatus.availability}</h3>
+                  <p className="text-sm text-muted-foreground">{currentStatus.currentFocus}</p>
+                </div>
+              </div>
+              <div className="text-right">
+                <p className="text-sm font-medium text-primary">{currentStatus.lookingFor}</p>
+                <p className="text-xs text-muted-foreground">{currentStatus.lastUpdated}</p>
+              </div>
+            </div>
+          </Card>
         </div>
       </section>
 
@@ -112,6 +201,64 @@ const Overview = () => {
             
             {/* Left Column - About & Skills */}
             <div className="lg:col-span-1 space-y-6">
+
+              {/* Current Status */}
+              <Card className="p-6 border-primary/20">
+                <div className="flex items-center mb-4">
+                  <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center mr-3">
+                    <Target className="w-4 h-4 text-primary" />
+                  </div>
+                  <h3 className="text-lg font-semibold">Current Focus</h3>
+                </div>
+                <div className="space-y-3">
+                  <div className="flex items-center gap-2">
+                    <Zap className="w-4 h-4 text-yellow-500" />
+                    <span className="text-sm font-medium">Learning:</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground pl-6">{currentStatus.learning}</p>
+
+                  <div className="flex items-center gap-2">
+                    <MapPin className="w-4 h-4 text-blue-500" />
+                    <span className="text-sm font-medium">Location:</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground pl-6">{currentStatus.location}</p>
+                </div>
+                <Button asChild size="sm" className="w-full mt-4">
+                  <Link to="/contact">Let's Connect</Link>
+                </Button>
+              </Card>
+
+              {/* Quick Skills Visualization */}
+              <Card className="p-6 border-primary/20">
+                <div className="flex items-center mb-4">
+                  <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center mr-3">
+                    <Activity className="w-4 h-4 text-primary" />
+                  </div>
+                  <h3 className="text-lg font-semibold">Skills Overview</h3>
+                </div>
+                <div className="space-y-3">
+                  {skillLevels.map((skill, index) => (
+                    <div key={index} className="">
+                      <div className="flex items-center justify-between mb-1">
+                        <div className="flex items-center gap-2">
+                          <span className="text-sm">{skill.icon}</span>
+                          <span className="text-sm font-medium">{skill.name}</span>
+                        </div>
+                        <span className="text-xs text-muted-foreground">{skill.level}%</span>
+                      </div>
+                      <div className="w-full bg-muted rounded-full h-1.5">
+                        <div
+                          className="bg-gradient-to-r from-primary to-primary-glow h-1.5 rounded-full transition-all duration-1000"
+                          style={{ width: `${skill.level}%` }}
+                        ></div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <Button asChild variant="outline" size="sm" className="w-full mt-4">
+                  <Link to="/skills">View All Skills</Link>
+                </Button>
+              </Card>
               
               {/* About Summary */}
               <Card className="p-6 border-primary/20">
@@ -189,6 +336,52 @@ const Overview = () => {
 
             {/* Right Column - Projects & Experience */}
             <div className="lg:col-span-2 space-y-6">
+
+              {/* Recent Activity Timeline */}
+              <Card className="p-6 border-primary/20">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center">
+                    <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center mr-3">
+                      <Clock className="w-4 h-4 text-primary" />
+                    </div>
+                    <h3 className="text-lg font-semibold">Recent Activity</h3>
+                  </div>
+                  <Badge variant="outline" className="text-xs">
+                    Last 30 days
+                  </Badge>
+                </div>
+
+                <div className="space-y-4">
+                  {recentActivities.map((activity, index) => (
+                    <div key={index} className="flex items-start gap-3 p-3 rounded-lg hover:bg-primary/5 transition-colors">
+                      <div className={`w-8 h-8 rounded-full flex items-center justify-center ${
+                        activity.type === 'project' ? 'bg-blue-500/10' :
+                        activity.type === 'achievement' ? 'bg-yellow-500/10' :
+                        activity.type === 'learning' ? 'bg-green-500/10' :
+                        'bg-purple-500/10'
+                      }`}>
+                        <activity.icon className={`w-4 h-4 ${
+                          activity.type === 'project' ? 'text-blue-500' :
+                          activity.type === 'achievement' ? 'text-yellow-500' :
+                          activity.type === 'learning' ? 'text-green-500' :
+                          'text-purple-500'
+                        }`} />
+                      </div>
+                      <div className="flex-1">
+                        <div className="flex items-center justify-between">
+                          <h4 className="font-medium text-sm">{activity.title}</h4>
+                          <span className="text-xs text-muted-foreground">{activity.time}</span>
+                        </div>
+                        <p className="text-xs text-muted-foreground mt-1">{activity.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <Button asChild variant="outline" size="sm" className="w-full mt-4">
+                  <Link to="/experience">View Full Timeline</Link>
+                </Button>
+              </Card>
               
               {/* Featured Projects */}
               <Card className="p-6 border-primary/20">

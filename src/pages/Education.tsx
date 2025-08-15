@@ -95,37 +95,40 @@ const Education = () => {
     <div className="min-h-screen bg-background">
       <Navigation />
       
-      <div className="pt-16 pb-8 px-4 sm:px-6 lg:px-8">
+      <div className="pt-28 pb-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          {/* Header */}
-          <div className="text-center mb-4 fade-in">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-violet-500/10 rounded-full text-violet-600 text-xs font-medium mb-2">
-              <span>🎓</span>
-              <span>Education</span>
+          {/* Enhanced Header */}
+          <div className="text-center mb-16 fade-in">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-4">
+              <span className="mr-2">🎓</span>
+              Academic Journey
             </div>
-            <h1 className="text-xl sm:text-2xl font-bold text-foreground mb-1">
-              Educational Background
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+              <span className="text-foreground">Education of</span>{" "}
+              <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+                Yuvraj Mehta
+              </span>
             </h1>
-            <p className="text-sm text-muted-foreground max-w-md mx-auto">
-              Academic foundation and continuous learning
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Full Stack Developer • B.Tech CS Student • NIT Patna • Academic foundation and continuous learning
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Academic Timeline with Expandable Cards */}
-            <div className="lg:col-span-2 space-y-8">
-              <div className="flex items-center mb-6">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mr-4">
-                  <span className="text-xl">🎓</span>
+            <div className="lg:col-span-2 space-y-10">
+              <div className="flex items-center mb-8">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mr-4">
+                  <span className="text-2xl">🎓</span>
                 </div>
-                <h2 className="text-2xl font-bold">Academic Timeline</h2>
+                <h2 className="text-2xl sm:text-3xl font-bold">Academic Timeline</h2>
               </div>
 
               <div className="relative">
                 {/* Timeline Line */}
                 <div className="absolute left-4 top-8 bottom-8 w-0.5 bg-gradient-to-b from-primary/60 via-primary/30 to-transparent hidden sm:block"></div>
                 
-                <div className="space-y-6">
+                <div className="space-y-8">
                   {educationEntries.map((entry, index) => (
                     <div key={entry.id} className="relative">
                       {/* Timeline Dot */}
@@ -234,17 +237,17 @@ const Education = () => {
             </div>
 
             {/* Certifications & Learning Stats */}
-            <div className="space-y-8">
+            <div className="space-y-10">
               {/* Certifications */}
               <div>
-                <div className="flex items-center mb-6">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mr-4">
-                    <span className="text-xl">🏆</span>
+                <div className="flex items-center mb-8">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mr-4">
+                    <span className="text-2xl">🏆</span>
                   </div>
-                  <h2 className="text-xl font-bold">Certifications</h2>
+                  <h2 className="text-xl sm:text-2xl font-bold">Certifications</h2>
                 </div>
 
-                <div className="space-y-4">
+                <div className="space-y-6">
                   {certifications.map((cert, index) => (
                     <Card key={index} className="portfolio-card slide-up hover:shadow-lg hover:shadow-primary/5 transition-all duration-300">
                       <div className="flex items-start gap-3">

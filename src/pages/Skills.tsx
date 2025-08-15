@@ -209,20 +209,27 @@ const Skills = () => {
       <Navigation />
       <ThemeSwitcher />
       
-      <div className="relative pt-20 pb-16 px-4 sm:px-6 lg:px-8">
+      <div className="relative pt-32 pb-16 px-4 sm:px-6 lg:px-8">
         {/* Background Effects */}
         <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/5"></div>
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl opacity-30"></div>
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary-glow/10 rounded-full blur-3xl opacity-20"></div>
         
         <div className="relative max-w-7xl mx-auto">
-          {/* Header Section */}
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              My <span className="text-primary">Tech Stack</span>
+          {/* Enhanced Header Section */}
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-4">
+              <span className="mr-2">🚀</span>
+              Technical Expertise
+            </div>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+              <span className="text-foreground">Skills of</span>{" "}
+              <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+                Yuvraj Mehta
+              </span>
             </h1>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              The modern technologies and tools I use to build interactive and scalable web applications
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Full Stack Developer • B.Tech CS Student • NIT Patna • Modern technologies and tools for scalable applications
             </p>
           </div>
 
@@ -251,13 +258,13 @@ const Skills = () => {
           </div>
 
           {/* Skills Sections */}
-          <div className="space-y-12">
+          <div className="space-y-16">
             {Object.entries(skillsData[activeCategory] || {}).map(([sectionName, skills]) => (
               <div key={sectionName}>
                 {/* Section Header */}
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <h3 className="text-lg font-semibold text-foreground">{sectionName}</h3>
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-3 h-3 bg-primary rounded-full"></div>
+                  <h3 className="text-xl sm:text-2xl font-bold text-foreground">{sectionName}</h3>
                 </div>
 
                 {/* Skills Grid */}

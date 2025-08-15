@@ -90,34 +90,37 @@ const Contact = () => {
       <Navigation />
       <ThemeSwitcher />
       
-      <div className="relative pt-16 pb-8 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <div className="relative pt-28 pb-8 px-4 sm:px-6 lg:px-8 overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/5"></div>
         
         <div className="relative max-w-7xl mx-auto">
-          {/* Minimal Header */}
-          <div className="text-center mb-4 fade-in">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-rose-500/10 rounded-full text-rose-600 text-xs font-medium mb-2">
-              <span>💬</span>
-              <span>Contact</span>
+          {/* Enhanced Header */}
+          <div className="text-center mb-16 fade-in">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-4">
+              <span className="mr-2">💬</span>
+              Let's Connect
             </div>
-            <h1 className="text-xl sm:text-2xl font-bold text-foreground mb-1">
-              Get In Touch
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+              <span className="text-foreground">Get in Touch with</span>{" "}
+              <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+                Yuvraj Mehta
+              </span>
             </h1>
-            <p className="text-sm text-muted-foreground max-w-md mx-auto">
-              Let's discuss your next project
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Full Stack Developer • B.Tech CS Student • NIT Patna • Let's discuss your next project or opportunity
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Contact Information */}
             <div className="lg:col-span-1 space-y-6">
               <Card className="portfolio-card slide-up hover:shadow-xl hover:shadow-primary/10 transition-all duration-300">
-                <div className="flex items-center mb-6">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mr-4">
-                    <Mail className="w-5 h-5 text-primary" />
+                <div className="flex items-center mb-8">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mr-4">
+                    <Mail className="w-6 h-6 text-primary" />
                   </div>
-                  <h3 className="text-xl font-bold">Contact Information</h3>
+                  <h3 className="text-xl sm:text-2xl font-bold">Contact Information</h3>
                 </div>
 
                 <div className="space-y-4">
@@ -155,14 +158,14 @@ const Contact = () => {
 
               {/* Quick Links & Social Combined */}
               <Card className="portfolio-card slide-up">
-                <div className="flex items-center mb-6">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mr-4">
-                    <span className="text-xl">🔗</span>
+                <div className="flex items-center mb-8">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mr-4">
+                    <span className="text-2xl">🔗</span>
                   </div>
-                  <h3 className="text-xl font-bold">Quick Links</h3>
+                  <h3 className="text-xl sm:text-2xl font-bold">Quick Links</h3>
                 </div>
 
-                <div className="space-y-3 mb-6">
+                <div className="space-y-4 mb-8">
                   {quickLinks.map((link, index) => (
                     <a
                       key={index}
@@ -177,16 +180,16 @@ const Contact = () => {
                   ))}
                 </div>
 
-                <hr className="border-border mb-6" />
+                <hr className="border-border mb-8" />
 
-                <div className="flex items-center mb-4">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mr-4">
-                    <span className="text-xl">🤝</span>
+                <div className="flex items-center mb-6">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mr-4">
+                    <span className="text-2xl">🤝</span>
                   </div>
-                  <h3 className="text-lg font-bold">Social Links</h3>
+                  <h3 className="text-lg sm:text-xl font-bold">Social Links</h3>
                 </div>
 
-                <div className="space-y-3">
+                <div className="space-y-4">
                   {socialLinks.map((link, index) => (
                     <a
                       key={index}
@@ -210,11 +213,11 @@ const Contact = () => {
             {/* Contact Form */}
             <div className="lg:col-span-2">
               <Card className="portfolio-card slide-up">
-                <div className="flex items-center mb-6">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mr-4">
-                    <Send className="w-5 h-5 text-primary" />
+                <div className="flex items-center mb-8">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mr-4">
+                    <Send className="w-6 h-6 text-primary" />
                   </div>
-                  <h3 className="text-2xl font-bold">
+                  <h3 className="text-2xl sm:text-3xl font-bold">
                     Send Me a <span className="gradient-text">Message</span>
                   </h3>
                 </div>
