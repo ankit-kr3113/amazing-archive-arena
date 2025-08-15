@@ -558,9 +558,9 @@ const Overview = () => {
                 </div>
 
                 {/* Horizontal scrolling projects */}
-                <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide">
+                <div className="flex gap-3 sm:gap-4 overflow-x-auto pb-4 scrollbar-hide">
                   {featuredProjects.map((project, index) => (
-                    <div key={index} className="group flex-shrink-0 w-80 overflow-hidden rounded-lg border border-border/50 hover:border-primary/30 transition-all duration-300 hover:scale-105">
+                    <div key={index} className="group flex-shrink-0 w-72 sm:w-80 overflow-hidden rounded-lg border border-border/50 hover:border-primary/30 transition-all duration-300 hover:scale-105">
                       <div className="relative overflow-hidden">
                         <img
                           src={project.image}
