@@ -236,7 +236,7 @@ const Overview = () => {
                 </span>
               </h1>
 
-              <div className="text-2xl md:text-3xl font-semibold text-foreground/80 mb-8 h-12 animate-fade-in-up animation-delay-400">
+              <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-foreground/80 mb-6 sm:mb-8 h-8 sm:h-10 md:h-12 animate-fade-in-up animation-delay-400">
                 <span className="border-r-2 border-primary animate-pulse">
                   {typewriterText}
                 </span>
