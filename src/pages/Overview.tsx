@@ -291,40 +291,74 @@ const Overview = () => {
             </div>
           </div>
 
-          {/* Main Stats Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+          {/* Enhanced Stats Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {mainStats.map((item, index) => (
               <Card
                 key={index}
-                className="group p-4 text-center hover:shadow-xl transition-all duration-500 border-primary/20 hover:border-primary/40 hover:scale-105 cursor-pointer animate-fade-in-up"
+                className="group relative overflow-hidden p-6 bg-gradient-to-br from-card via-card/95 to-card/90 border-2 border-primary/10 hover:border-primary/30 transition-all duration-500 hover:scale-105 cursor-pointer animate-fade-in-up"
                 style={{ animationDelay: `${1000 + index * 100}ms` }}
               >
-                <div className="flex justify-center mb-3">
-                  <div className={`relative w-12 h-12 rounded-full ${item.bgColor} flex items-center justify-center group-hover:scale-110 transition-all duration-300`}>
-                    <item.icon className={`w-6 h-6 ${item.color}`} />
-                    {item.isLive && (
-                      <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                    )}
+                {/* Background Gradient */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${
+                  index === 0 ? 'from-blue-500/5 to-blue-600/10' :
+                  index === 1 ? 'from-yellow-500/5 to-yellow-600/10' :
+                  index === 2 ? 'from-green-500/5 to-green-600/10' :
+                  'from-purple-500/5 to-purple-600/10'
+                } opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
+
+                {/* Live Indicator */}
+                {item.isLive && (
+                  <div className="absolute top-3 right-3 flex items-center gap-1">
+                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                    <span className="text-xs text-green-500 font-medium">Live</span>
+                  </div>
+                )}
+
+                {/* Icon */}
+                <div className="relative z-10 mb-4">
+                  <div className={`w-16 h-16 rounded-2xl ${item.bgColor} flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg`}>
+                    <item.icon className={`w-8 h-8 ${item.color}`} />
                   </div>
                 </div>
-                <div className="font-semibold text-foreground group-hover:text-primary transition-colors">{item.title}</div>
-                <div className="text-xs text-muted-foreground mb-2">{item.subtitle}</div>
 
-                {/* Animated Progress Bar */}
-                <div className="w-full bg-muted rounded-full h-2 mb-2 overflow-hidden">
-                  <div
-                    className="bg-gradient-to-r from-primary to-primary-glow h-2 rounded-full transition-all duration-1000 group-hover:animate-pulse"
-                    style={{
-                      width: `${item.progress}%`,
-                      transform: 'translateX(-100%)',
-                      animation: `slideIn 1s ease-out ${1200 + index * 100}ms forwards`
-                    }}
-                  ></div>
-                </div>
+                {/* Content */}
+                <div className="relative z-10">
+                  <h3 className="text-2xl font-bold text-foreground mb-1 group-hover:text-primary transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+                    {item.subtitle}
+                  </p>
 
-                <div className="text-xs text-green-500 font-medium flex items-center justify-center gap-1">
-                  <TrendingUp className="w-3 h-3 group-hover:animate-bounce" />
-                  {item.trend}
+                  {/* Progress Section */}
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs font-medium text-muted-foreground">Progress</span>
+                      <span className="text-xs font-bold text-primary">{item.progress}%</span>
+                    </div>
+                    <div className="w-full bg-muted/50 rounded-full h-2 overflow-hidden">
+                      <div
+                        className={`h-2 rounded-full transition-all duration-1000 bg-gradient-to-r ${
+                          index === 0 ? 'from-blue-500 to-blue-600' :
+                          index === 1 ? 'from-yellow-500 to-yellow-600' :
+                          index === 2 ? 'from-green-500 to-green-600' :
+                          'from-purple-500 to-purple-600'
+                        }`}
+                        style={{
+                          width: `${item.progress}%`,
+                          transform: 'translateX(-100%)',
+                          animation: `slideIn 1.5s ease-out ${1200 + index * 150}ms forwards`
+                        }}
+                      ></div>
+                    </div>
+                  </div>
+
+                  {/* Trend */}
+                  <div className="flex items-center gap-2 mt-3 text-green-500">
+                    <TrendingUp className="w-4 h-4 group-hover:animate-bounce" />
+                    <span className="text-xs font-medium">{item.trend}</span>
+                  </div>
                 </div>
               </Card>
             ))}
