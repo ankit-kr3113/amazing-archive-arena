@@ -433,6 +433,43 @@ const Overview = () => {
                 </Button>
               </Card>
 
+              {/* Quick Actions */}
+              <Card className="p-6 border-primary/20 bg-gradient-to-br from-primary/5 via-primary-glow/3 to-transparent">
+                <div className="flex items-center mb-4">
+                  <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center mr-3">
+                    <Zap className="w-4 h-4 text-primary" />
+                  </div>
+                  <h3 className="text-lg font-semibold">Quick Actions</h3>
+                </div>
+                <div className="grid grid-cols-2 gap-3">
+                  {quickActions.map((action, index) => (
+                    <Button
+                      key={index}
+                      variant="outline"
+                      className="h-auto p-3 flex flex-col items-center gap-2 hover:scale-105 transition-all duration-300 group border-primary/20 hover:border-primary/40 hover:bg-primary/5"
+                      asChild
+                    >
+                      {action.type === 'external' ? (
+                        <a href={action.href} target="_blank" rel="noopener noreferrer">
+                          <action.icon className="w-4 h-4 group-hover:animate-bounce text-primary" />
+                          <span className="text-xs font-medium text-center">{action.label}</span>
+                        </a>
+                      ) : action.type === 'download' ? (
+                        <a href={action.href} download>
+                          <action.icon className="w-4 h-4 group-hover:animate-bounce text-primary" />
+                          <span className="text-xs font-medium text-center">{action.label}</span>
+                        </a>
+                      ) : (
+                        <Link to={action.href}>
+                          <action.icon className="w-4 h-4 group-hover:animate-bounce text-primary" />
+                          <span className="text-xs font-medium text-center">{action.label}</span>
+                        </Link>
+                      )}
+                    </Button>
+                  ))}
+                </div>
+              </Card>
+
               {/* About & Current Focus */}
               <Card className="p-6 border-primary/20">
                 <div className="flex items-center mb-4">
@@ -442,7 +479,7 @@ const Overview = () => {
                   <h3 className="text-lg font-semibold">About & Focus</h3>
                 </div>
                 <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
-                  Final year B.Tech Computer Science student at NIT Patna with 2+ years of development experience. 
+                  Final year B.Tech Computer Science student at NIT Patna with 2+ years of development experience.
                   Specialized in full-stack web development with focus on React, Node.js, and modern JavaScript frameworks.
                 </p>
                 <div className="space-y-2 mb-4">
