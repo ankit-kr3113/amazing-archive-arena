@@ -291,72 +291,64 @@ const Overview = () => {
             </div>
           </div>
 
-          {/* Enhanced Stats Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          {/* Stats Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
             {mainStats.map((item, index) => (
               <Card
                 key={index}
-                className="group relative overflow-hidden p-6 bg-gradient-to-br from-card via-card/95 to-card/90 border-2 border-primary/10 hover:border-primary/30 transition-all duration-500 hover:scale-105 cursor-pointer animate-fade-in-up"
+                className="group p-4 hover:shadow-lg transition-all duration-300 border-primary/20 hover:border-primary/30 hover:scale-105 cursor-pointer animate-fade-in-up"
                 style={{ animationDelay: `${1000 + index * 100}ms` }}
               >
-                {/* Background Gradient */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${
-                  index === 0 ? 'from-blue-500/5 to-blue-600/10' :
-                  index === 1 ? 'from-yellow-500/5 to-yellow-600/10' :
-                  index === 2 ? 'from-green-500/5 to-green-600/10' :
-                  'from-purple-500/5 to-purple-600/10'
-                } opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
-
                 {/* Live Indicator */}
                 {item.isLive && (
-                  <div className="absolute top-3 right-3 flex items-center gap-1">
+                  <div className="absolute top-2 right-2 flex items-center gap-1">
                     <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                     <span className="text-xs text-green-500 font-medium">Live</span>
                   </div>
                 )}
 
                 {/* Icon */}
-                <div className="relative z-10 mb-4">
-                  <div className={`w-16 h-16 rounded-2xl ${item.bgColor} flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg`}>
-                    <item.icon className={`w-8 h-8 ${item.color}`} />
+                <div className="flex justify-center mb-3">
+                  <div className={`w-12 h-12 rounded-lg ${item.bgColor} flex items-center justify-center`}>
+                    <item.icon className={`w-6 h-6 ${item.color}`} />
                   </div>
                 </div>
 
                 {/* Content */}
-                <div className="relative z-10">
-                  <h3 className="text-2xl font-bold text-foreground mb-1 group-hover:text-primary transition-colors">
+                <div className="text-center">
+                  <h3 className="text-lg font-bold text-foreground mb-1">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+                  <p className="text-xs text-muted-foreground mb-3">
                     {item.subtitle}
                   </p>
 
-                  {/* Progress Section */}
-                  <div className="space-y-2">
+                  {/* Progress Bar */}
+                  <div className="space-y-2 mb-3">
                     <div className="flex items-center justify-between">
-                      <span className="text-xs font-medium text-muted-foreground">Progress</span>
-                      <span className="text-xs font-bold text-primary">{item.progress}%</span>
+                      <span className="text-xs text-muted-foreground">Progress</span>
+                      <span className="text-xs font-medium text-primary">{item.progress}%</span>
                     </div>
-                    <div className="w-full bg-muted/50 rounded-full h-2 overflow-hidden">
+                    <div className="w-full bg-muted rounded-full h-2">
                       <div
-                        className={`h-2 rounded-full transition-all duration-1000 bg-gradient-to-r ${
-                          index === 0 ? 'from-blue-500 to-blue-600' :
-                          index === 1 ? 'from-yellow-500 to-yellow-600' :
-                          index === 2 ? 'from-green-500 to-green-600' :
-                          'from-purple-500 to-purple-600'
+                        className={`h-2 rounded-full transition-all duration-1000 ${
+                          index === 0 ? 'bg-blue-500' :
+                          index === 1 ? 'bg-yellow-500' :
+                          index === 2 ? 'bg-green-500' :
+                          'bg-purple-500'
                         }`}
                         style={{
                           width: `${item.progress}%`,
                           transform: 'translateX(-100%)',
-                          animation: `slideIn 1.5s ease-out ${1200 + index * 150}ms forwards`
+                          animation: `slideIn 1s ease-out ${1200 + index * 100}ms forwards`
                         }}
                       ></div>
                     </div>
                   </div>
 
                   {/* Trend */}
-                  <div className="flex items-center gap-2 mt-3 text-green-500">
-                    <TrendingUp className="w-4 h-4 group-hover:animate-bounce" />
+                  <div className="flex items-center justify-center gap-1 text-green-500">
+                    <TrendingUp className="w-3 h-3" />
                     <span className="text-xs font-medium">{item.trend}</span>
                   </div>
                 </div>
