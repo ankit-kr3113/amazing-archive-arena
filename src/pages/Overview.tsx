@@ -238,37 +238,100 @@ const Overview = () => {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-primary/[0.08] via-primary-glow/[0.04] to-transparent rounded-full blur-3xl opacity-40 animate-pulse"></div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            {/* Status Badge with Animation */}
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6 animate-fade-in-up">
-              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse mr-2"></div>
-              <Rocket className="w-4 h-4 mr-2" />
-              Portfolio Overview
-              <Sparkles className="w-4 h-4 ml-2 animate-spin" />
-            </div>
-
-            {/* Enhanced Typography */}
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in-up animation-delay-200">
-              <span className="text-foreground block mb-2">Meet</span>
-              <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent animate-gradient">
-                Yuvraj Mehta
+          <div className="text-center mb-16">
+            {/* Enhanced Status Badge */}
+            <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-primary/15 via-primary-glow/10 to-primary/15 border-2 border-primary/25 text-primary text-sm font-semibold mb-8 animate-fade-in-up shadow-lg backdrop-blur-sm hover:scale-105 transition-all duration-300">
+              <div className="w-2.5 h-2.5 bg-green-500 rounded-full animate-pulse mr-3 shadow-lg shadow-green-500/50"></div>
+              <Sparkles className="w-4 h-4 mr-2 animate-spin" />
+              <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent font-bold">
+                Developer Portfolio
               </span>
-            </h1>
-
-            {/* Typewriter Effect */}
-            <div className="text-xl md:text-2xl text-muted-foreground mb-8 h-8 animate-fade-in-up animation-delay-400">
-              <span className="border-r-2 border-primary animate-pulse">{typewriterText}</span>
+              <Rocket className="w-4 h-4 ml-2 animate-bounce" />
             </div>
 
-            {/* Live Status */}
-            <div className="flex items-center justify-center gap-6 text-sm mb-8 animate-fade-in-up animation-delay-600">
-              <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20">
-                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                <span className="text-green-600 dark:text-green-400 font-medium">Available for opportunities</span>
+            {/* Main Hero Content */}
+            <div className="space-y-6">
+              {/* Pre-title */}
+              <div className="animate-fade-in-up animation-delay-200">
+                <p className="text-lg md:text-xl text-muted-foreground font-medium">
+                  👋 Hello World! I'm
+                </p>
               </div>
-              <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20">
-                <MapPin className="w-3 h-3 text-blue-500" />
-                <span className="text-blue-600 dark:text-blue-400 font-medium">Remote & On-site</span>
+
+              {/* Main Title with Enhanced Visual Appeal */}
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-4 animate-fade-in-up animation-delay-300 leading-tight">
+                <span className="block bg-gradient-to-r from-primary via-primary-glow to-accent bg-clip-text text-transparent animate-gradient drop-shadow-2xl">
+                  Yuvraj
+                </span>
+                <span className="block bg-gradient-to-r from-accent via-primary-glow to-primary bg-clip-text text-transparent animate-gradient drop-shadow-2xl">
+                  Mehta
+                </span>
+              </h1>
+
+              {/* Enhanced Subtitle with Multiple Lines */}
+              <div className="space-y-3 animate-fade-in-up animation-delay-500">
+                <div className="text-2xl md:text-3xl text-muted-foreground mb-2 h-10">
+                  <span className="border-r-2 border-primary animate-pulse font-semibold">
+                    {typewriterText}
+                  </span>
+                </div>
+                <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                  <span className="text-foreground font-bold">B.Tech CS Student</span> at{" "}
+                  <span className="text-primary font-bold">NIT Patna</span> •{" "}
+                  <span className="text-primary-glow font-bold">500+ LeetCode Problems</span> Solved •{" "}
+                  <span className="text-foreground font-bold">15+ Projects</span> Built
+                </p>
+              </div>
+
+              {/* Enhanced Achievement Badges */}
+              <div className="flex flex-wrap items-center justify-center gap-4 mt-8 animate-fade-in-up animation-delay-700">
+                <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-green-500/15 to-emerald-500/10 border-2 border-green-500/30 backdrop-blur-sm hover:scale-105 transition-all duration-300 shadow-lg">
+                  <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse shadow-lg shadow-green-500/50"></div>
+                  <Trophy className="w-4 h-4 text-green-500" />
+                  <span className="text-green-600 dark:text-green-400 font-bold">Available for Hire</span>
+                </div>
+
+                <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/15 to-cyan-500/10 border-2 border-blue-500/30 backdrop-blur-sm hover:scale-105 transition-all duration-300 shadow-lg">
+                  <MapPin className="w-4 h-4 text-blue-500" />
+                  <span className="text-blue-600 dark:text-blue-400 font-bold">Remote Ready</span>
+                </div>
+
+                <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-purple-500/15 to-pink-500/10 border-2 border-purple-500/30 backdrop-blur-sm hover:scale-105 transition-all duration-300 shadow-lg">
+                  <Star className="w-4 h-4 text-purple-500 fill-current" />
+                  <span className="text-purple-600 dark:text-purple-400 font-bold">Top 27.7% LeetCode</span>
+                </div>
+
+                <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-orange-500/15 to-red-500/10 border-2 border-orange-500/30 backdrop-blur-sm hover:scale-105 transition-all duration-300 shadow-lg">
+                  <Zap className="w-4 h-4 text-orange-500" />
+                  <span className="text-orange-600 dark:text-orange-400 font-bold">Full Stack Expert</span>
+                </div>
+              </div>
+
+              {/* Call-to-Action Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10 animate-fade-in-up animation-delay-900">
+                <Button
+                  size="lg"
+                  className="px-8 py-4 text-lg font-bold bg-gradient-to-r from-primary via-primary-glow to-primary hover:from-primary-glow hover:via-primary hover:to-primary-glow shadow-2xl hover:shadow-3xl hover:shadow-primary/30 transition-all duration-500 rounded-xl hover:scale-110 active:scale-95"
+                  asChild
+                >
+                  <Link to="/contact">
+                    <MessageSquare className="w-5 h-5 mr-2" />
+                    Let's Connect
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </Link>
+                </Button>
+
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="px-8 py-4 text-lg font-bold border-2 border-primary/60 text-primary hover:bg-primary hover:text-primary-foreground shadow-xl hover:shadow-2xl hover:shadow-primary/25 transition-all duration-500 rounded-xl hover:scale-110 active:scale-95"
+                  asChild
+                >
+                  <a href="/Yuvraj_Resume_v2_1 (1).pdf" target="_blank" rel="noopener noreferrer">
+                    <Download className="w-5 h-5 mr-2" />
+                    View Resume
+                  </a>
+                </Button>
               </div>
             </div>
           </div>
