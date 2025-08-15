@@ -588,50 +588,79 @@ const Overview = () => {
             {/* Right Column - Projects & Experience */}
             <div className="lg:col-span-2 space-y-6">
 
-              {/* Recent Activity Timeline */}
-              <Card className="p-6 border-primary/20">
-                <div className="flex items-center justify-between mb-4">
+              {/* Enhanced Recent Activity Timeline */}
+              <Card className="p-6 border-primary/20 hover:shadow-lg transition-all duration-300">
+                <div className="flex items-center justify-between mb-6">
                   <div className="flex items-center">
                     <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center mr-3">
-                      <Clock className="w-4 h-4 text-primary" />
+                      <Activity className="w-4 h-4 text-primary animate-pulse" />
                     </div>
-                    <h3 className="text-lg font-semibold">Recent Activity</h3>
+                    <h3 className="text-lg font-semibold">Live Activity</h3>
                   </div>
-                  <Badge variant="outline" className="text-xs">
-                    Last 30 days
-                  </Badge>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                    <Badge variant="outline" className="text-xs">
+                      Real-time
+                    </Badge>
+                  </div>
                 </div>
 
-                <div className="space-y-4">
+                <div className="space-y-3">
                   {recentActivities.map((activity, index) => (
-                    <div key={index} className="flex items-start gap-3 p-3 rounded-lg hover:bg-primary/5 transition-colors">
-                      <div className={`w-8 h-8 rounded-full flex items-center justify-center ${
-                        activity.type === 'project' ? 'bg-blue-500/10' :
-                        activity.type === 'achievement' ? 'bg-yellow-500/10' :
-                        activity.type === 'learning' ? 'bg-green-500/10' :
-                        'bg-purple-500/10'
+                    <div
+                      key={index}
+                      className="group flex items-start gap-3 p-3 rounded-lg hover:bg-primary/5 transition-all duration-300 cursor-pointer hover:scale-[1.02]"
+                    >
+                      <div className={`relative w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${
+                        activity.type === 'project' ? 'bg-blue-500/10 group-hover:bg-blue-500/20' :
+                        activity.type === 'achievement' ? 'bg-yellow-500/10 group-hover:bg-yellow-500/20' :
+                        activity.type === 'learning' ? 'bg-green-500/10 group-hover:bg-green-500/20' :
+                        activity.type === 'deployment' ? 'bg-purple-500/10 group-hover:bg-purple-500/20' :
+                        'bg-gray-500/10 group-hover:bg-gray-500/20'
                       }`}>
-                        <activity.icon className={`w-4 h-4 ${
+                        <activity.icon className={`w-4 h-4 group-hover:scale-110 transition-transform duration-300 ${
                           activity.type === 'project' ? 'text-blue-500' :
                           activity.type === 'achievement' ? 'text-yellow-500' :
                           activity.type === 'learning' ? 'text-green-500' :
-                          'text-purple-500'
+                          activity.type === 'deployment' ? 'text-purple-500' :
+                          'text-gray-500'
                         }`} />
+                        {activity.isLive && (
+                          <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                        )}
                       </div>
-                      <div className="flex-1">
-                        <div className="flex items-center justify-between">
-                          <h4 className="font-medium text-sm">{activity.title}</h4>
-                          <span className="text-xs text-muted-foreground">{activity.time}</span>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center justify-between gap-2">
+                          <h4 className="font-medium text-sm group-hover:text-primary transition-colors truncate">
+                            {activity.title}
+                          </h4>
+                          <div className="flex items-center gap-2 flex-shrink-0">
+                            <Badge variant="secondary" className="text-xs px-2 py-0.5">
+                              {activity.badge}
+                            </Badge>
+                            <span className="text-xs text-muted-foreground">{activity.time}</span>
+                          </div>
                         </div>
-                        <p className="text-xs text-muted-foreground mt-1">{activity.description}</p>
+                        <p className="text-xs text-muted-foreground mt-1 line-clamp-2">{activity.description}</p>
                       </div>
                     </div>
                   ))}
                 </div>
 
-                <Button asChild variant="outline" size="sm" className="w-full mt-4">
-                  <Link to="/experience">View Full Timeline</Link>
-                </Button>
+                <div className="flex gap-2 mt-6">
+                  <Button asChild variant="outline" size="sm" className="flex-1">
+                    <Link to="/experience">
+                      <Clock className="w-3 h-3 mr-2" />
+                      Full Timeline
+                    </Link>
+                  </Button>
+                  <Button asChild size="sm" className="flex-1">
+                    <a href="https://github.com/yuvraj-mehta" target="_blank" rel="noopener noreferrer">
+                      <Github className="w-3 h-3 mr-2" />
+                      GitHub Activity
+                    </a>
+                  </Button>
+                </div>
               </Card>
               
               {/* Featured Projects */}
