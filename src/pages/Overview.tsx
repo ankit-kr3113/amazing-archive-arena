@@ -265,7 +265,7 @@ const Overview = () => {
               </div>
 
               {/* Status Badges */}
-              <div className="flex flex-wrap items-center justify-center gap-3 animate-fade-in-up animation-delay-700">
+              <div className="flex flex-wrap items-center justify-center gap-3 animate-fade-in-up animation-delay-800">
                 <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-500/10 border border-green-500/30 text-sm">
                   <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                   <span className="text-green-600 dark:text-green-400 font-medium">Available</span>
