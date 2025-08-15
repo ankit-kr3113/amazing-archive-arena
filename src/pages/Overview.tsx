@@ -284,7 +284,7 @@ const Overview = () => {
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mt-8 sm:mt-10 animate-fade-in-up animation-delay-1000">
                 <Button
                   size="lg"
-                  className="px-8 py-4 text-lg font-semibold bg-gradient-to-r from-primary to-primary-glow hover:scale-105 hover:shadow-xl transition-all duration-300"
+                  className="px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold bg-gradient-to-r from-primary to-primary-glow hover:scale-105 hover:shadow-xl transition-all duration-300"
                   asChild
                 >
                   <Link to="/projects">
