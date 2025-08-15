@@ -281,27 +281,51 @@ const Overview = () => {
               </div>
 
               {/* CTAs */}
-              <div className="flex flex-col sm:flex-row gap-3 justify-center mt-8 animate-fade-in-up animation-delay-1000">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10 animate-fade-in-up animation-delay-1000">
                 <Button
-                  className="px-6 py-3 font-semibold bg-gradient-to-r from-primary to-primary-glow hover:scale-105 transition-all duration-300"
+                  size="lg"
+                  className="px-8 py-4 text-lg font-semibold bg-gradient-to-r from-primary to-primary-glow hover:scale-105 hover:shadow-xl transition-all duration-300"
                   asChild
                 >
-                  <Link to="/contact">
-                    Let's Connect
-                    <ArrowRight className="w-4 h-4 ml-2" />
+                  <Link to="/projects">
+                    <Rocket className="w-5 h-5 mr-2" />
+                    Explore My Work
                   </Link>
                 </Button>
 
                 <Button
                   variant="outline"
-                  className="px-6 py-3 font-semibold border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground hover:scale-105 transition-all duration-300"
+                  size="lg"
+                  className="px-8 py-4 text-lg font-semibold border-2 border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground hover:scale-105 transition-all duration-300"
                   asChild
                 >
-                  <a href="/Yuvraj_Resume_v2_1 (1).pdf" target="_blank" rel="noopener noreferrer">
-                    <Download className="w-4 h-4 mr-2" />
-                    Resume
-                  </a>
+                  <Link to="/contact">
+                    <MessageSquare className="w-5 h-5 mr-2" />
+                    Let's Connect
+                  </Link>
                 </Button>
+              </div>
+
+              {/* Social Links */}
+              <div className="flex items-center justify-center gap-6 mt-8 animate-fade-in-up animation-delay-1200">
+                <span className="text-sm text-muted-foreground">Connect with me:</span>
+                <div className="flex items-center gap-3">
+                  <Button variant="ghost" size="sm" className="w-10 h-10 p-0 hover:bg-primary/10 hover:scale-110 transition-all" asChild>
+                    <a href="https://github.com/yuvraj-mehta" target="_blank" rel="noopener noreferrer">
+                      <Github className="w-5 h-5" />
+                    </a>
+                  </Button>
+                  <Button variant="ghost" size="sm" className="w-10 h-10 p-0 hover:bg-primary/10 hover:scale-110 transition-all" asChild>
+                    <a href="https://www.linkedin.com/in/yuvraj-mehta-a0274528a/" target="_blank" rel="noopener noreferrer">
+                      <Linkedin className="w-5 h-5" />
+                    </a>
+                  </Button>
+                  <Button variant="ghost" size="sm" className="w-10 h-10 p-0 hover:bg-primary/10 hover:scale-110 transition-all" asChild>
+                    <a href="mailto:yuvraj.mehta532@gmail.com">
+                      <Mail className="w-5 h-5" />
+                    </a>
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
