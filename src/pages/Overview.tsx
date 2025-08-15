@@ -296,42 +296,35 @@ const Overview = () => {
             {mainStats.map((item, index) => (
               <Card
                 key={index}
-                className="group p-4 hover:shadow-lg transition-all duration-300 border-primary/20 hover:border-primary/30 hover:scale-105 cursor-pointer animate-fade-in-up"
+                className="group p-3 hover:shadow-lg transition-all duration-300 border-primary/20 hover:border-primary/30 hover:scale-105 cursor-pointer animate-fade-in-up"
                 style={{ animationDelay: `${1000 + index * 100}ms` }}
               >
                 {/* Live Indicator */}
                 {item.isLive && (
-                  <div className="absolute top-2 right-2 flex items-center gap-1">
-                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                    <span className="text-xs text-green-500 font-medium">Live</span>
-                  </div>
+                  <div className="absolute top-2 right-2 w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                 )}
 
                 {/* Icon */}
-                <div className="flex justify-center mb-3">
-                  <div className={`w-12 h-12 rounded-lg ${item.bgColor} flex items-center justify-center`}>
-                    <item.icon className={`w-6 h-6 ${item.color}`} />
+                <div className="flex justify-center mb-2">
+                  <div className={`w-10 h-10 rounded-lg ${item.bgColor} flex items-center justify-center`}>
+                    <item.icon className={`w-5 h-5 ${item.color}`} />
                   </div>
                 </div>
 
                 {/* Content */}
                 <div className="text-center">
-                  <h3 className="text-lg font-bold text-foreground mb-1">
+                  <h3 className="text-base font-bold text-foreground mb-1">
                     {item.title}
                   </h3>
-                  <p className="text-xs text-muted-foreground mb-3">
+                  <p className="text-xs text-muted-foreground mb-2">
                     {item.subtitle}
                   </p>
 
                   {/* Progress Bar */}
-                  <div className="space-y-2 mb-3">
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs text-muted-foreground">Progress</span>
-                      <span className="text-xs font-medium text-primary">{item.progress}%</span>
-                    </div>
-                    <div className="w-full bg-muted rounded-full h-2">
+                  <div className="mb-2">
+                    <div className="w-full bg-muted rounded-full h-1.5 mb-1">
                       <div
-                        className={`h-2 rounded-full transition-all duration-1000 ${
+                        className={`h-1.5 rounded-full transition-all duration-1000 ${
                           index === 0 ? 'bg-blue-500' :
                           index === 1 ? 'bg-yellow-500' :
                           index === 2 ? 'bg-green-500' :
@@ -344,12 +337,10 @@ const Overview = () => {
                         }}
                       ></div>
                     </div>
-                  </div>
-
-                  {/* Trend */}
-                  <div className="flex items-center justify-center gap-1 text-green-500">
-                    <TrendingUp className="w-3 h-3" />
-                    <span className="text-xs font-medium">{item.trend}</span>
+                    <div className="flex items-center justify-center gap-1 text-green-500">
+                      <TrendingUp className="w-3 h-3" />
+                      <span className="text-xs font-medium">{item.trend}</span>
+                    </div>
                   </div>
                 </div>
               </Card>
