@@ -296,12 +296,11 @@ const Overview = () => {
             {mainStats.map((item, index) => (
               <Card
                 key={index}
-                className="group p-3 hover:shadow-lg transition-all duration-300 border-primary/20 hover:border-primary/30 hover:scale-105 cursor-pointer animate-fade-in-up"
-                style={{ animationDelay: `${1000 + index * 100}ms` }}
+                className="group p-3 hover:shadow-md transition-shadow duration-200 border-primary/20 hover:border-primary/30"
               >
                 {/* Live Indicator */}
                 {item.isLive && (
-                  <div className="absolute top-2 right-2 w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                  <div className="absolute top-2 right-2 w-2 h-2 bg-green-500 rounded-full"></div>
                 )}
 
                 {/* Icon */}
@@ -324,17 +323,13 @@ const Overview = () => {
                   <div className="mb-2">
                     <div className="w-full bg-muted rounded-full h-1.5 mb-1">
                       <div
-                        className={`h-1.5 rounded-full transition-all duration-1000 ${
+                        className={`h-1.5 rounded-full ${
                           index === 0 ? 'bg-blue-500' :
                           index === 1 ? 'bg-yellow-500' :
                           index === 2 ? 'bg-green-500' :
                           'bg-purple-500'
                         }`}
-                        style={{
-                          width: `${item.progress}%`,
-                          transform: 'translateX(-100%)',
-                          animation: `slideIn 1s ease-out ${1200 + index * 100}ms forwards`
-                        }}
+                        style={{ width: `${item.progress}%` }}
                       ></div>
                     </div>
                     <div className="flex items-center justify-center gap-1 text-green-500">
