@@ -219,26 +219,58 @@ const Overview = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      {/* SEO Meta Tags */}
+      <title>Yuvraj Mehta - Full Stack Developer | Portfolio Overview</title>
+      <meta name="description" content="Full Stack Developer & B.Tech CS Student at NIT Patna. Specialized in React, Node.js, and modern web technologies. 500+ LeetCode problems solved." />
+      <meta name="keywords" content="Full Stack Developer, React, Node.js, TypeScript, NIT Patna, LeetCode, Portfolio" />
+      <meta property="og:title" content="Yuvraj Mehta - Full Stack Developer Portfolio" />
+      <meta property="og:description" content="Full Stack Developer specializing in modern web technologies. Check out my projects and skills." />
+      <meta property="og:type" content="website" />
+      <meta name="twitter:card" content="summary_large_image" />
+
       <Navigation />
       <ThemeSwitcher />
-      
-      {/* Header Section */}
-      <section className="pt-24 pb-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-4">
+
+      {/* Enhanced Hero Section */}
+      <section className="relative pt-24 pb-12 overflow-hidden">
+        {/* Animated Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-background/95 to-primary/5"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-primary/[0.08] via-primary-glow/[0.04] to-transparent rounded-full blur-3xl opacity-40 animate-pulse"></div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            {/* Status Badge with Animation */}
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6 animate-fade-in-up">
+              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse mr-2"></div>
               <Rocket className="w-4 h-4 mr-2" />
               Portfolio Overview
+              <Sparkles className="w-4 h-4 ml-2 animate-spin" />
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              <span className="text-foreground">Quick Look at</span>{" "}
-              <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+
+            {/* Enhanced Typography */}
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in-up animation-delay-200">
+              <span className="text-foreground block mb-2">Meet</span>
+              <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent animate-gradient">
                 Yuvraj Mehta
               </span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Full Stack Developer • B.Tech CS Student • NIT Patna • Passionate about creating impactful digital solutions
-            </p>
+
+            {/* Typewriter Effect */}
+            <div className="text-xl md:text-2xl text-muted-foreground mb-8 h-8 animate-fade-in-up animation-delay-400">
+              <span className="border-r-2 border-primary animate-pulse">{typewriterText}</span>
+            </div>
+
+            {/* Live Status */}
+            <div className="flex items-center justify-center gap-6 text-sm mb-8 animate-fade-in-up animation-delay-600">
+              <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20">
+                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                <span className="text-green-600 dark:text-green-400 font-medium">Available for opportunities</span>
+              </div>
+              <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20">
+                <MapPin className="w-3 h-3 text-blue-500" />
+                <span className="text-blue-600 dark:text-blue-400 font-medium">Remote & On-site</span>
+              </div>
+            </div>
           </div>
 
           {/* Enhanced Quick Stats */}
