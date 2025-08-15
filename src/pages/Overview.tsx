@@ -248,20 +248,20 @@ const Overview = () => {
                 through innovative <span className="text-foreground font-semibold">full-stack solutions</span>.
               </p>
 
-              {/* Inline Stats */}
-              <div className="flex flex-wrap items-center justify-center gap-6 md:gap-8 mt-6 animate-fade-in-up animation-delay-700">
-                {mainStats.map((item, index) => (
-                  <div key={index} className="flex items-center gap-2">
-                    <item.icon className={`w-5 h-5 ${item.color}`} />
-                    <div className="text-left">
-                      <div className="text-sm font-bold text-foreground">{item.title}</div>
-                      <div className="text-xs text-muted-foreground">{item.subtitle.split(' • ')[0]}</div>
-                    </div>
-                    {item.isLive && (
-                      <div className="w-1.5 h-1.5 bg-green-500 rounded-full ml-1"></div>
-                    )}
-                  </div>
-                ))}
+              {/* Key Achievement Stats */}
+              <div className="flex flex-wrap justify-center gap-4 mt-8 animate-fade-in-up animation-delay-700">
+                <div className="flex items-center gap-2 px-4 py-3 rounded-lg bg-primary/5 border border-primary/20 backdrop-blur-sm">
+                  <Trophy className="w-5 h-5 text-yellow-500" />
+                  <span className="font-semibold"><span className="text-foreground">500+</span> <span className="text-muted-foreground text-sm">LeetCode Problems</span></span>
+                </div>
+                <div className="flex items-center gap-2 px-4 py-3 rounded-lg bg-primary/5 border border-primary/20 backdrop-blur-sm">
+                  <Code2 className="w-5 h-5 text-blue-500" />
+                  <span className="font-semibold"><span className="text-foreground">15+</span> <span className="text-muted-foreground text-sm">Full-Stack Projects</span></span>
+                </div>
+                <div className="flex items-center gap-2 px-4 py-3 rounded-lg bg-primary/5 border border-primary/20 backdrop-blur-sm">
+                  <Briefcase className="w-5 h-5 text-green-500" />
+                  <span className="font-semibold"><span className="text-foreground">2+</span> <span className="text-muted-foreground text-sm">Years Experience</span></span>
+                </div>
               </div>
 
               {/* Status Badges */}
