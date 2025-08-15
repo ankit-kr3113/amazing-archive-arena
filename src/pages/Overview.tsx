@@ -291,54 +291,35 @@ const Overview = () => {
             </div>
           </div>
 
-          {/* Stats Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+          {/* Stats Grid - Minimalistic */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
             {mainStats.map((item, index) => (
-              <Card
+              <div
                 key={index}
-                className="group p-4 hover:shadow-md transition-shadow duration-200 border-primary/20 hover:border-primary/30"
+                className="text-center space-y-2"
               >
-                {/* Live Indicator */}
-                {item.isLive && (
-                  <div className="absolute top-3 right-3 flex items-center gap-1">
-                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                    <span className="text-xs text-green-500 font-medium">Live</span>
-                  </div>
-                )}
-
                 {/* Icon */}
-                <div className="flex justify-center mb-3">
-                  <div className={`w-12 h-12 rounded-xl ${item.bgColor} flex items-center justify-center`}>
-                    <item.icon className={`w-6 h-6 ${item.color}`} />
-                  </div>
+                <div className="flex justify-center">
+                  <item.icon className={`w-8 h-8 ${item.color}`} />
                 </div>
 
                 {/* Content */}
-                <div className="text-center">
-                  <h3 className="text-lg font-bold text-foreground mb-1">
+                <div>
+                  <h3 className="text-xl font-bold text-foreground">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground mb-3">
+                  <p className="text-sm text-muted-foreground">
                     {item.subtitle}
                   </p>
-
-                  {/* Trend Badge */}
-                  <div className="flex items-center justify-center">
-                    <Badge
-                      variant="secondary"
-                      className={`text-xs px-2 py-1 ${
-                        index === 0 ? 'bg-blue-500/10 text-blue-600 border-blue-200' :
-                        index === 1 ? 'bg-yellow-500/10 text-yellow-600 border-yellow-200' :
-                        index === 2 ? 'bg-green-500/10 text-green-600 border-green-200' :
-                        'bg-purple-500/10 text-purple-600 border-purple-200'
-                      }`}
-                    >
-                      <TrendingUp className="w-3 h-3 mr-1" />
-                      {item.trend}
-                    </Badge>
-                  </div>
                 </div>
-              </Card>
+
+                {/* Live indicator - minimal */}
+                {item.isLive && (
+                  <div className="flex justify-center">
+                    <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                  </div>
+                )}
+              </div>
             ))}
           </div>
 
