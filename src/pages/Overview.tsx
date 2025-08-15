@@ -28,12 +28,42 @@ import {
   Target,
   Activity,
   CheckCircle,
-  CircleDot
+  CircleDot,
+  Eye,
+  Users,
+  ArrowRight,
+  Play,
+  Pause,
+  Phone,
+  MessageSquare,
+  FileText,
+  BarChart3,
+  Sparkles,
+  ChevronRight
 } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
 import { Link } from "react-router-dom";
+import { useState, useEffect, useRef } from "react";
+
+// Typewriter effect hook
+const useTypewriter = (text: string, speed: number = 100) => {
+  const [displayText, setDisplayText] = useState('');
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    if (currentIndex < text.length) {
+      const timeout = setTimeout(() => {
+        setDisplayText(prev => prev + text[currentIndex]);
+        setCurrentIndex(prev => prev + 1);
+      }, speed);
+      return () => clearTimeout(timeout);
+    }
+  }, [currentIndex, text, speed]);
+
+  return displayText;
+};
 
 const Overview = () => {
   const techStack = [
