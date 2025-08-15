@@ -95,7 +95,7 @@ const Education = () => {
     <div className="min-h-screen bg-background">
       <Navigation />
       
-      <div className="pt-16 pb-8 px-4 sm:px-6 lg:px-8">
+      <div className="pt-28 pb-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Enhanced Header */}
           <div className="text-center mb-16 fade-in">

@@ -104,7 +104,7 @@ const Experience = () => {
       <Navigation />
       <ThemeSwitcher />
       
-      <div className="relative pt-16 pb-8 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <div className="relative pt-28 pb-8 px-4 sm:px-6 lg:px-8 overflow-hidden">
         {/* Enhanced Background Elements */}
         <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/8"></div>
         <div className="absolute inset-0 opacity-5">
