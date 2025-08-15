@@ -296,46 +296,46 @@ const Overview = () => {
             {mainStats.map((item, index) => (
               <Card
                 key={index}
-                className="group p-3 hover:shadow-md transition-shadow duration-200 border-primary/20 hover:border-primary/30"
+                className="group p-4 hover:shadow-md transition-shadow duration-200 border-primary/20 hover:border-primary/30"
               >
                 {/* Live Indicator */}
                 {item.isLive && (
-                  <div className="absolute top-2 right-2 w-2 h-2 bg-green-500 rounded-full"></div>
+                  <div className="absolute top-3 right-3 flex items-center gap-1">
+                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                    <span className="text-xs text-green-500 font-medium">Live</span>
+                  </div>
                 )}
 
                 {/* Icon */}
-                <div className="flex justify-center mb-2">
-                  <div className={`w-10 h-10 rounded-lg ${item.bgColor} flex items-center justify-center`}>
-                    <item.icon className={`w-5 h-5 ${item.color}`} />
+                <div className="flex justify-center mb-3">
+                  <div className={`w-12 h-12 rounded-xl ${item.bgColor} flex items-center justify-center`}>
+                    <item.icon className={`w-6 h-6 ${item.color}`} />
                   </div>
                 </div>
 
                 {/* Content */}
                 <div className="text-center">
-                  <h3 className="text-base font-bold text-foreground mb-1">
+                  <h3 className="text-lg font-bold text-foreground mb-1">
                     {item.title}
                   </h3>
-                  <p className="text-xs text-muted-foreground mb-2">
+                  <p className="text-sm text-muted-foreground mb-3">
                     {item.subtitle}
                   </p>
 
-                  {/* Progress Bar */}
-                  <div className="mb-2">
-                    <div className="w-full bg-muted rounded-full h-1.5 mb-1">
-                      <div
-                        className={`h-1.5 rounded-full ${
-                          index === 0 ? 'bg-blue-500' :
-                          index === 1 ? 'bg-yellow-500' :
-                          index === 2 ? 'bg-green-500' :
-                          'bg-purple-500'
-                        }`}
-                        style={{ width: `${item.progress}%` }}
-                      ></div>
-                    </div>
-                    <div className="flex items-center justify-center gap-1 text-green-500">
-                      <TrendingUp className="w-3 h-3" />
-                      <span className="text-xs font-medium">{item.trend}</span>
-                    </div>
+                  {/* Trend Badge */}
+                  <div className="flex items-center justify-center">
+                    <Badge
+                      variant="secondary"
+                      className={`text-xs px-2 py-1 ${
+                        index === 0 ? 'bg-blue-500/10 text-blue-600 border-blue-200' :
+                        index === 1 ? 'bg-yellow-500/10 text-yellow-600 border-yellow-200' :
+                        index === 2 ? 'bg-green-500/10 text-green-600 border-green-200' :
+                        'bg-purple-500/10 text-purple-600 border-purple-200'
+                      }`}
+                    >
+                      <TrendingUp className="w-3 h-3 mr-1" />
+                      {item.trend}
+                    </Badge>
                   </div>
                 </div>
               </Card>
