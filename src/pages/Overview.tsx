@@ -244,10 +244,25 @@ const Overview = () => {
 
               <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto animate-fade-in-up animation-delay-600">
                 <span className="text-foreground font-semibold">B.Tech CS Student</span> at{" "}
-                <span className="text-primary font-semibold">NIT Patna</span> •{" "}
-                <span className="text-primary-glow font-semibold">500+ LeetCode Problems</span> •{" "}
-                <span className="text-foreground font-semibold">15+ Projects</span>
+                <span className="text-primary font-semibold">NIT Patna</span> specializing in{" "}
+                <span className="text-foreground font-semibold">Full-Stack Development</span>
               </p>
+
+              {/* Inline Stats */}
+              <div className="flex flex-wrap items-center justify-center gap-6 md:gap-8 mt-6 animate-fade-in-up animation-delay-700">
+                {mainStats.map((item, index) => (
+                  <div key={index} className="flex items-center gap-2">
+                    <item.icon className={`w-5 h-5 ${item.color}`} />
+                    <div className="text-left">
+                      <div className="text-sm font-bold text-foreground">{item.title}</div>
+                      <div className="text-xs text-muted-foreground">{item.subtitle.split(' • ')[0]}</div>
+                    </div>
+                    {item.isLive && (
+                      <div className="w-1.5 h-1.5 bg-green-500 rounded-full ml-1"></div>
+                    )}
+                  </div>
+                ))}
+              </div>
 
               {/* Status Badges */}
               <div className="flex flex-wrap items-center justify-center gap-3 animate-fade-in-up animation-delay-700">
