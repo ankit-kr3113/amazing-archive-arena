@@ -111,28 +111,70 @@ const Overview = () => {
       title: "Portfolio Enhancement",
       description: "Updated portfolio with modern design and better UX",
       time: "2 days ago",
-      type: "project"
+      type: "project",
+      isLive: true,
+      badge: "Live"
     },
     {
       icon: Trophy,
       title: "LeetCode Milestone",
       description: "Solved 50+ problems this month, reached 500+ total",
       time: "1 week ago",
-      type: "achievement"
+      type: "achievement",
+      isLive: false,
+      badge: "Achievement"
+    },
+    {
+      icon: Rocket,
+      title: "Project Deployment",
+      description: "Deployed E-commerce platform with CI/CD pipeline",
+      time: "3 days ago",
+      type: "deployment",
+      isLive: true,
+      badge: "Deployed"
     },
     {
       icon: BookOpen,
       title: "Learning Next.js 14",
       description: "Completed advanced Next.js course with App Router",
       time: "2 weeks ago",
-      type: "learning"
+      type: "learning",
+      isLive: false,
+      badge: "Completed"
+    }
+  ];
+
+  // Portfolio preview data
+  const portfolioPreview = [
+    {
+      title: "E-Commerce Platform",
+      description: "Full-stack MERN application with payment integration",
+      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=250&fit=crop&auto=format&q=80",
+      tech: ["React", "Node.js", "MongoDB", "Stripe"],
+      category: "Full Stack",
+      isLive: true,
+      liveUrl: "#",
+      githubUrl: "#"
     },
     {
-      icon: Award,
-      title: "Hackathon Participation",
-      description: "Led team in Smart India Hackathon 2024",
-      time: "1 month ago",
-      type: "competition"
+      title: "Task Management App",
+      description: "Real-time collaboration tool with drag-and-drop",
+      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=250&fit=crop&auto=format&q=80",
+      tech: ["Next.js", "TypeScript", "PostgreSQL"],
+      category: "Web App",
+      isLive: true,
+      liveUrl: "#",
+      githubUrl: "#"
+    },
+    {
+      title: "Weather Dashboard",
+      description: "Responsive weather app with location-based forecasts",
+      image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=400&h=250&fit=crop&auto=format&q=80",
+      tech: ["React", "API Integration", "Chart.js"],
+      category: "Frontend",
+      isLive: true,
+      liveUrl: "#",
+      githubUrl: "#"
     }
   ];
 
