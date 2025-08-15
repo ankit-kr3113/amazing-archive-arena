@@ -592,7 +592,7 @@ const Overview = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="p-4">
+                      <div className="p-3 sm:p-4">
                         <div className="flex items-center justify-between mb-2">
                           <h4 className="font-semibold text-sm group-hover:text-primary transition-colors">{project.title}</h4>
                           <Badge variant="secondary" className="text-xs">{project.category}</Badge>
