@@ -145,91 +145,91 @@ const Index = () => {
                 </div>
               </div>
 
-              {/* Compact Action Buttons */}
-              <div className="flex flex-col sm:flex-row gap-3 animate-fade-in-up animation-delay-900">
+              {/* Enhanced Action Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up animation-delay-900">
                 <Button
-                  className="group relative overflow-hidden px-6 py-3 text-base font-semibold bg-gradient-to-r from-primary via-primary-glow to-primary hover:from-primary-glow hover:via-primary hover:to-primary-glow shadow-lg hover:shadow-xl hover:shadow-primary/20 transition-all duration-500 border-0 rounded-xl hover:scale-105 active:scale-95"
+                  className="group relative overflow-hidden px-8 py-4 text-lg font-bold bg-gradient-to-r from-primary via-primary-glow to-primary hover:from-primary-glow hover:via-primary hover:to-primary-glow shadow-2xl hover:shadow-3xl hover:shadow-primary/30 transition-all duration-500 border-0 rounded-2xl hover:scale-110 active:scale-95 backdrop-blur-sm"
                   aria-label="Start a conversation with Yuvraj"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out"></div>
-                  <span className="relative z-10 flex items-center justify-center gap-2">
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out"></div>
+                  <span className="relative z-10 flex items-center justify-center gap-3">
                     Let's Build Something
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
                   </span>
                 </Button>
-                
+
                 <Button
                   variant="outline"
-                  className="group px-6 py-3 text-base font-semibold border-2 border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground shadow-lg hover:shadow-xl hover:shadow-primary/15 transition-all duration-500 rounded-xl hover:scale-105 active:scale-95 backdrop-blur-sm bg-background/50"
+                  className="group px-8 py-4 text-lg font-bold border-2 border-primary/60 text-primary hover:bg-primary hover:text-primary-foreground shadow-xl hover:shadow-2xl hover:shadow-primary/25 transition-all duration-500 rounded-2xl hover:scale-110 active:scale-95 backdrop-blur-sm bg-background/60 hover:border-primary"
                   aria-label="Explore Yuvraj's portfolio and projects"
                 >
-                  <span className="flex items-center justify-center gap-2">
+                  <span className="flex items-center justify-center gap-3">
                     Explore Portfolio
-                    <Code className="w-4 h-4 group-hover:rotate-12 transition-transform" />
+                    <Code className="w-5 h-5 group-hover:rotate-12 transition-transform" />
                   </span>
                 </Button>
               </div>
 
-              {/* Compact Secondary Actions */}
-              <div className="flex flex-wrap gap-2 justify-center lg:justify-start animate-fade-in-up animation-delay-1000">
+              {/* Enhanced Secondary Actions */}
+              <div className="flex flex-wrap gap-3 justify-center lg:justify-start animate-fade-in-up animation-delay-1000">
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="group text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all duration-300 rounded-lg px-3 py-2 text-sm"
+                  className="group text-muted-foreground hover:text-primary hover:bg-primary/15 transition-all duration-300 rounded-xl px-4 py-3 text-sm font-semibold hover:scale-105 backdrop-blur-sm border border-transparent hover:border-primary/20"
                   aria-label="Download Yuvraj's resume"
                 >
-                  <Download className="w-3 h-3 mr-1.5 group-hover:animate-bounce" />
+                  <Download className="w-4 h-4 mr-2 group-hover:animate-bounce" />
                   <span>Resume</span>
                 </Button>
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="group text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all duration-300 rounded-lg px-3 py-2 text-sm"
+                  className="group text-muted-foreground hover:text-primary hover:bg-primary/15 transition-all duration-300 rounded-xl px-4 py-3 text-sm font-semibold hover:scale-105 backdrop-blur-sm border border-transparent hover:border-primary/20"
                   aria-label="Schedule a call with Yuvraj"
                 >
-                  <Zap className="w-3 h-3 mr-1.5 group-hover:animate-pulse" />
+                  <Zap className="w-4 h-4 mr-2 group-hover:animate-pulse" />
                   <span>Schedule Call</span>
                 </Button>
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="group text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all duration-300 rounded-lg px-3 py-2 text-sm"
+                  className="group text-muted-foreground hover:text-primary hover:bg-primary/15 transition-all duration-300 rounded-xl px-4 py-3 text-sm font-semibold hover:scale-105 backdrop-blur-sm border border-transparent hover:border-primary/20"
                   aria-label="View Yuvraj's coding profiles"
                 >
-                  <Code2 className="w-3 h-3 mr-1.5 group-hover:animate-spin" />
+                  <Code2 className="w-4 h-4 mr-2 group-hover:animate-spin" />
                   <span>Coding Profiles</span>
                 </Button>
               </div>
 
-              {/* Compact Social Links */}
-              <div className="flex justify-center lg:justify-start space-x-4 animate-fade-in-up animation-delay-1200">
+              {/* Enhanced Social Links */}
+              <div className="flex justify-center lg:justify-start space-x-6 animate-fade-in-up animation-delay-1200">
                 <a
                   href="https://github.com/yuvraj-mehta"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Visit Yuvraj's GitHub profile"
-                  className="group relative w-10 h-10 rounded-xl bg-gradient-to-br from-card/80 to-card/60 backdrop-blur-sm border border-border/60 flex items-center justify-center text-muted-foreground hover:text-white hover:bg-gray-900 hover:border-gray-700 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-gray-500/20 focus:outline-none focus:ring-2 focus:ring-primary/50"
+                  className="group relative w-12 h-12 rounded-2xl bg-gradient-to-br from-card/90 to-card/70 backdrop-blur-sm border-2 border-border/60 flex items-center justify-center text-muted-foreground hover:text-white hover:bg-gray-900 hover:border-gray-700 transition-all duration-300 hover:scale-125 hover:shadow-xl hover:shadow-gray-500/30 focus:outline-none focus:ring-2 focus:ring-primary/50"
                 >
-                  <Github className="w-5 h-5 group-hover:scale-110 transition-transform relative z-10" />
-                  <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <Github className="w-6 h-6 group-hover:scale-110 transition-transform relative z-10" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </a>
                 <a
                   href="https://www.linkedin.com/in/yuvraj-mehta-a0274528a/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Visit Yuvraj's LinkedIn profile"
-                  className="group relative w-10 h-10 rounded-xl bg-gradient-to-br from-card/80 to-card/60 backdrop-blur-sm border border-border/60 flex items-center justify-center text-muted-foreground hover:text-white hover:bg-blue-600 hover:border-blue-500 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/20 focus:outline-none focus:ring-2 focus:ring-primary/50"
+                  className="group relative w-12 h-12 rounded-2xl bg-gradient-to-br from-card/90 to-card/70 backdrop-blur-sm border-2 border-border/60 flex items-center justify-center text-muted-foreground hover:text-white hover:bg-blue-600 hover:border-blue-500 transition-all duration-300 hover:scale-125 hover:shadow-xl hover:shadow-blue-500/30 focus:outline-none focus:ring-2 focus:ring-primary/50"
                 >
-                  <Linkedin className="w-5 h-5 group-hover:scale-110 transition-transform relative z-10" />
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <Linkedin className="w-6 h-6 group-hover:scale-110 transition-transform relative z-10" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </a>
                 <a
                   href="mailto:yuvraj.mehta532@gmail.com"
                   aria-label="Send email to Yuvraj"
-                  className="group relative w-10 h-10 rounded-xl bg-gradient-to-br from-card/80 to-card/60 backdrop-blur-sm border border-border/60 flex items-center justify-center text-muted-foreground hover:text-white hover:bg-red-600 hover:border-red-500 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-red-500/20 focus:outline-none focus:ring-2 focus:ring-primary/50"
+                  className="group relative w-12 h-12 rounded-2xl bg-gradient-to-br from-card/90 to-card/70 backdrop-blur-sm border-2 border-border/60 flex items-center justify-center text-muted-foreground hover:text-white hover:bg-red-600 hover:border-red-500 transition-all duration-300 hover:scale-125 hover:shadow-xl hover:shadow-red-500/30 focus:outline-none focus:ring-2 focus:ring-primary/50"
                 >
-                  <Mail className="w-5 h-5 group-hover:scale-110 transition-transform relative z-10" />
-                  <div className="absolute inset-0 bg-gradient-to-br from-red-600 to-red-700 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <Mail className="w-6 h-6 group-hover:scale-110 transition-transform relative z-10" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-red-600 to-red-700 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </a>
               </div>
             </div>
