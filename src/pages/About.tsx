@@ -56,16 +56,16 @@ const About = () => {
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary-glow/5 rounded-full blur-3xl animate-pulse opacity-40 animation-delay-2000"></div>
 
         <div className="relative max-w-7xl mx-auto">
-          {/* Minimal Header */}
-          <div className="text-center mb-8 fade-in">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 rounded-full text-primary text-xs font-medium mb-2">
+          {/* Enhanced Header */}
+          <div className="text-center mb-16 fade-in">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-primary text-sm font-medium mb-6">
               <span>👋</span>
               <span>About</span>
             </div>
-            <h1 className="text-xl sm:text-2xl font-bold text-foreground mb-1">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6">
               About Me
             </h1>
-            <p className="text-sm text-muted-foreground max-w-md mx-auto">
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               Developer passionate about creating digital experiences
             </p>
           </div>
