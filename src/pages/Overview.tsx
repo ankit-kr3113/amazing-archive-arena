@@ -362,7 +362,7 @@ const Overview = () => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
             
             {/* Left Column - Skills & About */}
-            <div className="lg:col-span-1 space-y-6">
+            <div className="lg:col-span-1 space-y-4 sm:space-y-6">
               {/* Core Skills */}
               <Card className="p-6 border-primary/20">
                 <div className="flex items-center mb-4">
