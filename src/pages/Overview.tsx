@@ -281,7 +281,7 @@ const Overview = () => {
               </div>
 
               {/* CTAs */}
-              <div className="flex flex-col sm:flex-row gap-3 justify-center mt-8 animate-fade-in-up animation-delay-900">
+              <div className="flex flex-col sm:flex-row gap-3 justify-center mt-8 animate-fade-in-up animation-delay-1000">
                 <Button
                   className="px-6 py-3 font-semibold bg-gradient-to-r from-primary to-primary-glow hover:scale-105 transition-all duration-300"
                   asChild
