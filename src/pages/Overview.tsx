@@ -291,37 +291,6 @@ const Overview = () => {
             </div>
           </div>
 
-          {/* Stats Grid - Minimalistic */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
-            {mainStats.map((item, index) => (
-              <div
-                key={index}
-                className="text-center space-y-2"
-              >
-                {/* Icon */}
-                <div className="flex justify-center">
-                  <item.icon className={`w-8 h-8 ${item.color}`} />
-                </div>
-
-                {/* Content */}
-                <div>
-                  <h3 className="text-xl font-bold text-foreground">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    {item.subtitle}
-                  </p>
-                </div>
-
-                {/* Live indicator - minimal */}
-                {item.isLive && (
-                  <div className="flex justify-center">
-                    <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
 
 
           {/* Current Status Banner */}
