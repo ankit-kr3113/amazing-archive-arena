@@ -249,7 +249,7 @@ const Overview = () => {
               </p>
 
               {/* Key Achievement Stats */}
-              <div className="flex flex-wrap justify-center gap-4 mt-8 animate-fade-in-up animation-delay-700">
+              <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mt-6 sm:mt-8 animate-fade-in-up animation-delay-700">
                 <div className="flex items-center gap-2 px-4 py-3 rounded-lg bg-primary/5 border border-primary/20 backdrop-blur-sm">
                   <Trophy className="w-5 h-5 text-yellow-500" />
                   <span className="font-semibold"><span className="text-foreground">500+</span> <span className="text-muted-foreground text-sm">LeetCode Problems</span></span>
