@@ -120,10 +120,6 @@ const Experience = () => {
         <div className="relative max-w-7xl mx-auto">
           {/* Enhanced Header */}
           <div className="text-center mb-16 fade-in">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-orange-500/10 rounded-full text-orange-600 text-sm font-medium mb-6">
-              <span>💼</span>
-              <span>Experience</span>
-            </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6">
               Professional Experience
             </h1>
