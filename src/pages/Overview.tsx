@@ -475,7 +475,7 @@ const Overview = () => {
             </div>
 
             {/* Right Column - Projects & Activity */}
-            <div className="lg:col-span-2 space-y-6">
+            <div className="lg:col-span-2 space-y-4 sm:space-y-6">
               {/* Recent Activity */}
               <Card className="p-6 border-primary/20">
                 <div className="flex items-center justify-between mb-6">
