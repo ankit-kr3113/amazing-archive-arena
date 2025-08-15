@@ -39,7 +39,7 @@ const Index = () => {
               {/* Enhanced Typography */}
               <div className="space-y-4">
                 <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold leading-tight tracking-tight">
-                  <span className="block text-foreground/90 animate-fade-in-up mb-2 sm:mb-3 lg:mb-4 font-medium text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
+                  <span className="block text-foreground/90 animate-fade-in-up mb-3 sm:mb-4 lg:mb-6 font-medium text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
                     Hello, I'm
                   </span>
                   <span className="gradient-text relative inline-block animate-fade-in-up animation-delay-300 bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent drop-shadow-2xl">
@@ -48,7 +48,7 @@ const Index = () => {
                 </h1>
 
                 {/* Enhanced Tagline */}
-                <div className="animate-fade-in-up animation-delay-500 space-y-3 sm:space-y-4 lg:space-y-5">
+                <div className="animate-fade-in-up animation-delay-500 space-y-4 sm:space-y-5 lg:space-y-6 mt-4 sm:mt-6 lg:mt-8">
                   <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-transparent bg-gradient-to-r from-primary via-primary-glow to-accent bg-clip-text drop-shadow-lg leading-tight">
                     "Crafting Digital Experiences That Matter"
                   </h2>
@@ -67,7 +67,7 @@ const Index = () => {
                 </div>
 
                 {/* Enhanced Description */}
-                <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-muted-foreground max-w-xl lg:max-w-2xl leading-relaxed animate-fade-in-up animation-delay-600">
+                <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-muted-foreground max-w-xl lg:max-w-2xl leading-relaxed animate-fade-in-up animation-delay-600 mt-4 sm:mt-6">
                   <span className="text-foreground font-semibold">B.Tech CS student</span> at{" "}
                   <span className="text-primary font-bold">NIT Patna</span>{" "}
                   passionate about building{" "}
