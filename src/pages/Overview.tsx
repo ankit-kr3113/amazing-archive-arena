@@ -273,27 +273,75 @@ const Overview = () => {
             </div>
           </div>
 
-          {/* Enhanced Quick Stats */}
+          {/* Quick Actions Panel */}
+          <Card className="p-6 mb-12 bg-gradient-to-r from-primary/5 to-primary-glow/5 border-primary/20 animate-fade-in-up animation-delay-800">
+            <div className="text-center mb-6">
+              <h3 className="text-lg font-semibold mb-2">Quick Actions</h3>
+              <p className="text-sm text-muted-foreground">Get in touch or explore my work</p>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {quickActions.map((action, index) => (
+                <Button
+                  key={index}
+                  variant="outline"
+                  className="h-auto p-4 flex flex-col items-center gap-2 hover:scale-105 transition-all duration-300 group"
+                  asChild
+                >
+                  {action.type === 'external' ? (
+                    <a href={action.href} target="_blank" rel="noopener noreferrer">
+                      <action.icon className="w-5 h-5 group-hover:animate-bounce" />
+                      <span className="text-xs font-medium">{action.label}</span>
+                    </a>
+                  ) : action.type === 'download' ? (
+                    <a href={action.href} download>
+                      <action.icon className="w-5 h-5 group-hover:animate-bounce" />
+                      <span className="text-xs font-medium">{action.label}</span>
+                    </a>
+                  ) : (
+                    <Link to={action.href}>
+                      <action.icon className="w-5 h-5 group-hover:animate-bounce" />
+                      <span className="text-xs font-medium">{action.label}</span>
+                    </Link>
+                  )}
+                </Button>
+              ))}
+            </div>
+          </Card>
+
+          {/* Enhanced Quick Stats with Animations */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
             {highlights.map((item, index) => (
-              <Card key={index} className="p-4 text-center hover:shadow-lg transition-all duration-300 border-primary/20 hover:border-primary/40 hover:scale-105">
-                <div className="flex justify-center mb-2">
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                    <item.icon className="w-5 h-5 text-primary" />
+              <Card
+                key={index}
+                className="group p-4 text-center hover:shadow-xl transition-all duration-500 border-primary/20 hover:border-primary/40 hover:scale-105 cursor-pointer animate-fade-in-up"
+                style={{ animationDelay: `${1000 + index * 100}ms` }}
+              >
+                <div className="flex justify-center mb-3">
+                  <div className="relative w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-all duration-300">
+                    <item.icon className="w-6 h-6 text-primary group-hover:scale-110 transition-transform duration-300" />
+                    {item.isLive && (
+                      <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                    )}
                   </div>
                 </div>
-                <div className="font-semibold text-sm text-foreground">{item.title}</div>
+                <div className="font-semibold text-foreground group-hover:text-primary transition-colors">{item.title}</div>
                 <div className="text-xs text-muted-foreground mb-2">{item.subtitle}</div>
-                <div className="text-xs text-primary font-medium mb-2">{item.year}</div>
-                {/* Progress Bar */}
-                <div className="w-full bg-muted rounded-full h-1.5 mb-1">
+                <div className="text-xs text-primary font-medium mb-3">{item.year}</div>
+
+                {/* Animated Progress Bar */}
+                <div className="w-full bg-muted rounded-full h-2 mb-2 overflow-hidden">
                   <div
-                    className="bg-gradient-to-r from-primary to-primary-glow h-1.5 rounded-full transition-all duration-500"
-                    style={{ width: `${item.progress}%` }}
+                    className="bg-gradient-to-r from-primary to-primary-glow h-2 rounded-full transition-all duration-1000 group-hover:animate-pulse"
+                    style={{
+                      width: `${item.progress}%`,
+                      transform: 'translateX(-100%)',
+                      animation: `slideIn 1s ease-out ${1200 + index * 100}ms forwards`
+                    }}
                   ></div>
                 </div>
+
                 <div className="text-xs text-green-500 font-medium flex items-center justify-center gap-1">
-                  <TrendingUp className="w-3 h-3" />
+                  <TrendingUp className="w-3 h-3 group-hover:animate-bounce" />
                   {item.trend}
                 </div>
               </Card>
