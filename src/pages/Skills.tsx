@@ -218,11 +218,18 @@ const Skills = () => {
         <div className="relative max-w-7xl mx-auto">
           {/* Enhanced Header Section */}
           <div className="text-center mb-16">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-8">
-              My <span className="text-primary">Tech Stack</span>
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-4">
+              <span className="mr-2">🚀</span>
+              Technical Expertise
+            </div>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+              <span className="text-foreground">Skills of</span>{" "}
+              <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+                Yuvraj Mehta
+              </span>
             </h1>
-            <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              The modern technologies and tools I use to build interactive and scalable web applications
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Full Stack Developer • B.Tech CS Student • NIT Patna • Modern technologies and tools for scalable applications
             </p>
           </div>
 

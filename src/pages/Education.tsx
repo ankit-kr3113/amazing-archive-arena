@@ -99,11 +99,18 @@ const Education = () => {
         <div className="max-w-7xl mx-auto">
           {/* Enhanced Header */}
           <div className="text-center mb-16 fade-in">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Educational Background
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-4">
+              <span className="mr-2">🎓</span>
+              Academic Journey
+            </div>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+              <span className="text-foreground">Education of</span>{" "}
+              <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+                Yuvraj Mehta
+              </span>
             </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              Academic foundation and continuous learning
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Full Stack Developer • B.Tech CS Student • NIT Patna • Academic foundation and continuous learning
             </p>
           </div>
 

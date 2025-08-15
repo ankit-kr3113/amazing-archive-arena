@@ -120,11 +120,18 @@ const Experience = () => {
         <div className="relative max-w-7xl mx-auto">
           {/* Enhanced Header */}
           <div className="text-center mb-16 fade-in">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Professional Experience
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-4">
+              <Briefcase className="w-4 h-4 mr-2" />
+              Professional Journey
+            </div>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+              <span className="text-foreground">Experience of</span>{" "}
+              <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+                Yuvraj Mehta
+              </span>
             </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              Leadership roles and technical contributions
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Full Stack Developer • B.Tech CS Student • NIT Patna • Leadership roles and technical contributions
             </p>
           </div>
 
