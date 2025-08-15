@@ -234,63 +234,65 @@ const Index = () => {
               </div>
             </div>
 
-            {/* Compact Right Content - Hero Image */}
+            {/* Enhanced Right Content - Hero Image */}
             <div className="relative slide-up order-1 lg:order-2">
               <div className="relative flex justify-center">
-                {/* Compact Background Effects */}
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/15 via-primary-glow/20 to-primary/15 rounded-full blur-xl animate-pulse opacity-50"></div>
+                {/* Enhanced Background Effects */}
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-primary-glow/30 to-primary/20 rounded-full blur-2xl animate-pulse opacity-60"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-primary-glow/15 to-primary/15 rounded-full blur-xl animate-pulse opacity-40 animation-delay-1000"></div>
                 
-                {/* Compact Profile Image */}
-                <div className="relative z-10 w-64 h-64 sm:w-72 sm:h-72 lg:w-64 lg:h-64 xl:w-72 xl:h-72 rounded-full overflow-hidden border-3 border-primary/30 shadow-xl hover:shadow-primary/40 hover:shadow-xl transition-all duration-500 hover:scale-105 group mx-auto cursor-pointer">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                {/* Enhanced Profile Image */}
+                <div className="relative z-10 w-72 h-72 sm:w-80 sm:h-80 lg:w-72 lg:h-72 xl:w-80 xl:h-80 rounded-full overflow-hidden border-4 border-primary/40 shadow-2xl hover:shadow-primary/50 hover:shadow-2xl transition-all duration-500 hover:scale-110 group mx-auto cursor-pointer backdrop-blur-sm">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/25 to-primary-glow/15 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   <img
                     src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face&auto=format&q=80"
                     alt="Yuvraj Mehta - Full Stack Developer"
                     className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-110"
                   />
                   
-                  {/* Compact Ring Effects */}
-                  <div className="absolute inset-0 rounded-full border-2 border-primary/0 group-hover:border-primary/60 transition-all duration-500 group-hover:scale-105"></div>
+                  {/* Enhanced Ring Effects */}
+                  <div className="absolute inset-0 rounded-full border-3 border-primary/0 group-hover:border-primary/70 transition-all duration-500 group-hover:scale-105"></div>
+                  <div className="absolute inset-0 rounded-full border-2 border-primary-glow/0 group-hover:border-primary-glow/50 transition-all duration-700 group-hover:scale-110 animation-delay-200"></div>
                   
-                  {/* Compact Status Badges */}
-                  <div className="absolute bottom-3 right-3 bg-gradient-to-r from-green-500/95 to-emerald-500/95 backdrop-blur-sm text-white text-xs px-2 py-1 rounded-full font-medium shadow-md opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-105 border border-white/20">
+                  {/* Enhanced Status Badges */}
+                  <div className="absolute bottom-4 right-4 bg-gradient-to-r from-green-500/95 to-emerald-500/95 backdrop-blur-sm text-white text-sm px-3 py-2 rounded-full font-semibold shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-110 border-2 border-white/30">
                     <span className="animate-pulse">●</span> Available
                   </div>
 
-                  <div className="absolute top-3 left-3 bg-gradient-to-r from-blue-500/95 to-purple-500/95 backdrop-blur-sm text-white text-xs px-2 py-1 rounded-full font-medium shadow-md opacity-0 group-hover:opacity-100 transition-all duration-500 transform group-hover:translate-y-0 translate-y-2 border border-white/20">
+                  <div className="absolute top-4 left-4 bg-gradient-to-r from-blue-500/95 to-purple-500/95 backdrop-blur-sm text-white text-sm px-3 py-2 rounded-full font-semibold shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-500 transform group-hover:translate-y-0 translate-y-3 border-2 border-white/30">
                     Full Stack Dev
                   </div>
                 </div>
 
-                {/* Compact Achievement Cards */}
-                <div className="hidden xl:block absolute top-4 -right-4 w-20 h-16 bg-card/95 backdrop-blur-sm rounded-xl border border-primary/25 p-2 shadow-lg hover:shadow-xl hover:shadow-blue-500/15 transition-all duration-300 hover:scale-110 animate-float micro-interaction group cursor-pointer">
-                  <div className="flex justify-center mb-1">
-                    <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <Rocket className="w-3 h-3 text-white" />
+                {/* Enhanced Achievement Cards */}
+                <div className="hidden xl:block absolute top-6 -right-6 w-24 h-20 bg-card/95 backdrop-blur-sm rounded-2xl border-2 border-primary/30 p-3 shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300 hover:scale-125 animate-float micro-interaction group cursor-pointer">
+                  <div className="flex justify-center mb-2">
+                    <div className="w-7 h-7 rounded-xl bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                      <Rocket className="w-4 h-4 text-white" />
                     </div>
                   </div>
-                  <div className="text-xs text-primary font-bold text-center">15+</div>
-                  <div className="text-[8px] text-muted-foreground text-center">Projects</div>
+                  <div className="text-sm text-primary font-bold text-center">15+</div>
+                  <div className="text-[10px] text-muted-foreground text-center font-medium">Projects</div>
                 </div>
 
-                <div className="hidden xl:block absolute bottom-4 -left-4 w-20 h-16 bg-card/95 backdrop-blur-sm rounded-xl border border-primary/25 p-2 shadow-lg hover:shadow-xl hover:shadow-green-500/15 transition-all duration-300 hover:scale-110 animate-float animation-delay-1000 micro-interaction group cursor-pointer">
-                  <div className="flex justify-center mb-1">
-                    <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-green-500 to-teal-500 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <Laptop className="w-3 h-3 text-white" />
+                <div className="hidden xl:block absolute bottom-6 -left-6 w-24 h-20 bg-card/95 backdrop-blur-sm rounded-2xl border-2 border-primary/30 p-3 shadow-xl hover:shadow-2xl hover:shadow-green-500/20 transition-all duration-300 hover:scale-125 animate-float animation-delay-1000 micro-interaction group cursor-pointer">
+                  <div className="flex justify-center mb-2">
+                    <div className="w-7 h-7 rounded-xl bg-gradient-to-br from-green-500 to-teal-500 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                      <Laptop className="w-4 h-4 text-white" />
                     </div>
                   </div>
-                  <div className="text-xs text-primary font-bold text-center">NIT</div>
-                  <div className="text-[8px] text-muted-foreground text-center">Patna</div>
+                  <div className="text-sm text-primary font-bold text-center">NIT</div>
+                  <div className="text-[10px] text-muted-foreground text-center font-medium">Patna</div>
                 </div>
 
-                <div className="hidden xl:block absolute top-1/2 -right-6 w-20 h-16 bg-card/95 backdrop-blur-sm rounded-xl border border-primary/25 p-2 shadow-lg hover:shadow-xl hover:shadow-yellow-500/15 transition-all duration-300 hover:scale-110 animate-float animation-delay-2000 micro-interaction group cursor-pointer">
-                  <div className="flex justify-center mb-1">
-                    <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-yellow-500 to-orange-500 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <Trophy className="w-3 h-3 text-white" />
+                <div className="hidden xl:block absolute top-1/2 -right-8 w-24 h-20 bg-card/95 backdrop-blur-sm rounded-2xl border-2 border-primary/30 p-3 shadow-xl hover:shadow-2xl hover:shadow-yellow-500/20 transition-all duration-300 hover:scale-125 animate-float animation-delay-2000 micro-interaction group cursor-pointer">
+                  <div className="flex justify-center mb-2">
+                    <div className="w-7 h-7 rounded-xl bg-gradient-to-br from-yellow-500 to-orange-500 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                      <Trophy className="w-4 h-4 text-white" />
                     </div>
                   </div>
-                  <div className="text-xs text-primary font-bold text-center">500+</div>
-                  <div className="text-[8px] text-muted-foreground text-center">Commits</div>
+                  <div className="text-sm text-primary font-bold text-center">500+</div>
+                  <div className="text-[10px] text-muted-foreground text-center font-medium">Commits</div>
                 </div>
               </div>
             </div>
