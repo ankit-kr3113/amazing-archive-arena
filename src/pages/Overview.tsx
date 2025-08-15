@@ -227,8 +227,8 @@ const Overview = () => {
 
             {/* Hero Content */}
             <div className="space-y-6">
-              <h1 className="text-5xl md:text-7xl font-bold animate-fade-in-up animation-delay-200 leading-tight">
-                <span className="text-muted-foreground text-xl md:text-2xl font-medium block mb-4">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold animate-fade-in-up animation-delay-200 leading-tight">
+                <span className="text-muted-foreground text-base sm:text-lg md:text-xl lg:text-2xl font-medium block mb-2 sm:mb-4">
                   👋 Hey there, I'm
                 </span>
                 <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent animate-gradient">
