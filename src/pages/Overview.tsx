@@ -307,7 +307,7 @@ const Overview = () => {
               </div>
 
               {/* Social Links */}
-              <div className="flex items-center justify-center gap-6 mt-8 animate-fade-in-up animation-delay-1200">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mt-6 sm:mt-8 animate-fade-in-up animation-delay-1200">
                 <span className="text-sm text-muted-foreground">Connect with me:</span>
                 <div className="flex items-center gap-3">
                   <Button variant="ghost" size="sm" className="w-10 h-10 p-0 hover:bg-primary/10 hover:scale-110 transition-all" asChild>
