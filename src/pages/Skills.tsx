@@ -216,18 +216,22 @@ const Skills = () => {
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary-glow/10 rounded-full blur-3xl opacity-20"></div>
         
         <div className="relative max-w-7xl mx-auto">
-          {/* Header Section */}
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+          {/* Enhanced Header Section */}
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-primary text-sm font-medium mb-8">
+              <span>🚀</span>
+              <span>Skills</span>
+            </div>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-8">
               My <span className="text-primary">Tech Stack</span>
             </h1>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               The modern technologies and tools I use to build interactive and scalable web applications
             </p>
           </div>
 
           {/* Category Filter Buttons */}
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
+          <div className="flex flex-wrap justify-center gap-4 mb-16">
             {skillCategories.map((category) => {
               const IconComponent = category.icon;
               return (
@@ -251,13 +255,13 @@ const Skills = () => {
           </div>
 
           {/* Skills Sections */}
-          <div className="space-y-12">
+          <div className="space-y-16">
             {Object.entries(skillsData[activeCategory] || {}).map(([sectionName, skills]) => (
               <div key={sectionName}>
                 {/* Section Header */}
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <h3 className="text-lg font-semibold text-foreground">{sectionName}</h3>
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-3 h-3 bg-primary rounded-full"></div>
+                  <h3 className="text-xl sm:text-2xl font-bold text-foreground">{sectionName}</h3>
                 </div>
 
                 {/* Skills Grid */}
