@@ -242,10 +242,10 @@ const Overview = () => {
                 </span>
               </div>
 
-              <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto animate-fade-in-up animation-delay-600">
-                <span className="text-foreground font-semibold">B.Tech CS Student</span> at{" "}
-                <span className="text-primary font-semibold">NIT Patna</span> specializing in{" "}
-                <span className="text-foreground font-semibold">Full-Stack Development</span>
+              <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed animate-fade-in-up animation-delay-600">
+                A passionate <span className="text-primary font-semibold">Computer Science student</span> at{" "}
+                <span className="text-primary-glow font-semibold">NIT Patna</span>, crafting digital experiences
+                through innovative <span className="text-foreground font-semibold">full-stack solutions</span>.
               </p>
 
               {/* Inline Stats */}
