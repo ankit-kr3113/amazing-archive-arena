@@ -348,21 +348,97 @@ const Overview = () => {
             ))}
           </div>
 
-          {/* Current Status Banner */}
-          <Card className="p-6 mb-12 bg-gradient-to-r from-primary/10 to-primary-glow/10 border-primary/20">
+          {/* Quick Portfolio Preview */}
+          <div className="mb-12">
+            <div className="flex items-center justify-between mb-6">
+              <div>
+                <h2 className="text-2xl font-bold mb-2">Featured Projects</h2>
+                <p className="text-muted-foreground">Recent work and live applications</p>
+              </div>
+              <Button variant="outline" asChild className="group">
+                <Link to="/projects">
+                  View All Projects
+                  <ChevronRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </Button>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {portfolioPreview.map((project, index) => (
+                <Card key={index} className="group overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105">
+                  <div className="relative overflow-hidden">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                      loading="lazy"
+                    />
+                    {project.isLive && (
+                      <div className="absolute top-2 right-2 bg-green-500 text-white text-xs px-2 py-1 rounded-full flex items-center gap-1">
+                        <div className="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></div>
+                        Live
+                      </div>
+                    )}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute bottom-2 left-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="flex gap-2">
+                        <Button size="sm" className="text-xs" asChild>
+                          <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                            <Eye className="w-3 h-3 mr-1" />
+                            Live
+                          </a>
+                        </Button>
+                        <Button size="sm" variant="outline" className="text-xs" asChild>
+                          <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                            <Github className="w-3 h-3 mr-1" />
+                            Code
+                          </a>
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="p-4">
+                    <div className="flex items-center justify-between mb-2">
+                      <h3 className="font-semibold group-hover:text-primary transition-colors">{project.title}</h3>
+                      <Badge variant="secondary" className="text-xs">{project.category}</Badge>
+                    </div>
+                    <p className="text-sm text-muted-foreground mb-3">{project.description}</p>
+                    <div className="flex flex-wrap gap-1">
+                      {project.tech.slice(0, 3).map((tech, techIndex) => (
+                        <Badge key={techIndex} variant="outline" className="text-xs">
+                          {tech}
+                        </Badge>
+                      ))}
+                      {project.tech.length > 3 && (
+                        <Badge variant="outline" className="text-xs">
+                          +{project.tech.length - 3}
+                        </Badge>
+                      )}
+                    </div>
+                  </div>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          {/* Enhanced Current Status Banner */}
+          <Card className="p-6 mb-12 bg-gradient-to-r from-primary/10 to-primary-glow/10 border-primary/20 hover:shadow-lg transition-all duration-300">
             <div className="flex items-center justify-between flex-wrap gap-4">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center">
-                  <CircleDot className="w-5 h-5 text-green-500 animate-pulse" />
+              <div className="flex items-center gap-4">
+                <div className="relative w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center">
+                  <CircleDot className="w-6 h-6 text-green-500 animate-pulse" />
+                  <div className="absolute inset-0 rounded-full border-2 border-green-500/30 animate-ping"></div>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-foreground">{currentStatus.availability}</h3>
-                  <p className="text-sm text-muted-foreground">{currentStatus.currentFocus}</p>
+                  <h3 className="font-semibold text-foreground text-lg">{currentStatus.availability}</h3>
+                  <p className="text-muted-foreground">{currentStatus.currentFocus}</p>
+                  <p className="text-sm text-primary font-medium mt-1">{currentStatus.learning}</p>
                 </div>
               </div>
               <div className="text-right">
-                <p className="text-sm font-medium text-primary">{currentStatus.lookingFor}</p>
-                <p className="text-xs text-muted-foreground">{currentStatus.lastUpdated}</p>
+                <p className="font-medium text-primary mb-1">{currentStatus.lookingFor}</p>
+                <p className="text-sm text-muted-foreground">{currentStatus.location}</p>
+                <p className="text-xs text-muted-foreground mt-1">{currentStatus.lastUpdated}</p>
               </div>
             </div>
           </Card>
