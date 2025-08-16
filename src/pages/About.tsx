@@ -200,7 +200,7 @@ const About = () => {
                     <div className="grid grid-cols-2 gap-3 mb-6">
                       {interests.map((interest, index) => (
                         <div key={index} className="flex items-start gap-2 p-2 rounded-lg hover:bg-primary/5 transition-colors">
-                          <span className="text-base">{interest.icon}</span>
+                          <interest.icon className={`w-4 h-4 ${interest.color} mt-0.5`} />
                           <div>
                             <div className="font-medium text-xs">{interest.name}</div>
                             <div className="text-xs text-muted-foreground">{interest.description}</div>
