@@ -503,8 +503,8 @@ const Overview = () => {
               {/* Current Status */}
               <Card className="p-6 border-primary/30">
                 <div className="flex items-center mb-4">
-                  <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center mr-3">
-                    <Target className="w-4 h-4 text-primary" />
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary/30 to-primary-glow/30 flex items-center justify-center mr-3 shadow-lg">
+                    <Target className="w-5 h-5 text-primary" />
                   </div>
                   <h3 className="text-lg font-semibold text-foreground">Current Focus</h3>
                 </div>
@@ -529,8 +529,8 @@ const Overview = () => {
               {/* Skills Overview */}
               <Card className="p-6 border-primary/30">
                 <div className="flex items-center mb-4">
-                  <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center mr-3">
-                    <Activity className="w-4 h-4 text-primary" />
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500/30 to-blue-500/30 flex items-center justify-center mr-3 shadow-lg">
+                    <Activity className="w-5 h-5 text-cyan-400" />
                   </div>
                   <h3 className="text-lg font-semibold text-foreground">Skills Overview</h3>
                 </div>
