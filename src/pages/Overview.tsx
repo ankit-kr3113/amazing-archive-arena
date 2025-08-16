@@ -281,41 +281,44 @@ const Overview = () => {
                 <span className="text-foreground font-semibold">15+ Projects</span>
               </p>
 
-              {/* Status Badges with better contrast */}
-              <div className="flex flex-wrap items-center justify-center gap-3">
-                <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-500/20 border border-green-500/50 text-sm">
-                  <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                  <span className="text-green-100 dark:text-green-200 font-medium">Available</span>
+              {/* Enhanced Status Badges with vibrant colors */}
+              <div className="flex flex-wrap items-center justify-center gap-4">
+                <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-green-500/30 to-emerald-500/30 border border-green-400/60 text-sm shadow-lg hover:shadow-green-500/20 transition-all duration-300 backdrop-blur-sm">
+                  <div className="w-3 h-3 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full animate-pulse shadow-lg"></div>
+                  <span className="text-green-200 font-semibold">Available</span>
                 </div>
-                <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/20 border border-blue-500/50 text-sm">
-                  <MapPin className="w-3 h-3 text-blue-400" />
-                  <span className="text-blue-100 dark:text-blue-200 font-medium">Remote</span>
+                <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/30 to-cyan-500/30 border border-blue-400/60 text-sm shadow-lg hover:shadow-blue-500/20 transition-all duration-300 backdrop-blur-sm">
+                  <MapPin className="w-4 h-4 text-blue-300" />
+                  <span className="text-blue-200 font-semibold">Remote</span>
                 </div>
-                <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-500/20 border border-purple-500/50 text-sm">
-                  <FaStar className="w-3 h-3 text-purple-400" />
-                  <span className="text-purple-100 dark:text-purple-200 font-medium">Top 27.7%</span>
+                <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-purple-500/30 to-pink-500/30 border border-purple-400/60 text-sm shadow-lg hover:shadow-purple-500/20 transition-all duration-300 backdrop-blur-sm">
+                  <FaStar className="w-4 h-4 text-purple-300" />
+                  <span className="text-purple-200 font-semibold">Top 27.7%</span>
                 </div>
               </div>
 
-              {/* CTAs with optimized animations */}
-              <div className="flex flex-col sm:flex-row gap-3 justify-center mt-8">
+              {/* Enhanced CTAs with vibrant design */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
                 <Button
-                  className="px-6 py-3 font-semibold bg-gradient-to-r from-primary to-primary-glow hover:from-primary-glow hover:to-primary transition-all duration-300 shadow-lg group"
+                  className="px-8 py-4 font-bold bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 hover:from-cyan-500 hover:via-blue-500 hover:to-purple-500 transition-all duration-500 shadow-lg hover:shadow-2xl hover:shadow-purple-500/25 group relative overflow-hidden"
                   asChild
                 >
                   <Link to="/contact">
-                    Let's Connect
-                    <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <span className="relative z-10 flex items-center">
+                      Let's Connect
+                      <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-2" />
+                    </span>
                   </Link>
                 </Button>
 
                 <Button
                   variant="outline"
-                  className="px-6 py-3 font-semibold border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                  className="px-8 py-4 font-bold border-2 border-gradient bg-gradient-to-r from-transparent to-transparent hover:from-purple-500/10 hover:to-cyan-500/10 border-purple-400 hover:border-cyan-400 text-purple-400 hover:text-cyan-300 transition-all duration-500 shadow-lg hover:shadow-xl hover:shadow-purple-500/20 backdrop-blur-sm"
                   asChild
                 >
                   <a href="/Yuvraj_Resume_v2_1 (1).pdf" target="_blank" rel="noopener noreferrer">
-                    <Download className="w-4 h-4 mr-2" />
+                    <Download className="w-5 h-5 mr-2" />
                     Resume
                   </a>
                 </Button>
@@ -398,10 +401,10 @@ const Overview = () => {
                 <h2 className="text-2xl font-bold mb-2 text-foreground">Featured Projects</h2>
                 <p className="text-foreground/70">Recent work and live applications</p>
               </div>
-              <Button variant="outline" asChild className="group border-primary/50">
+              <Button variant="outline" asChild className="group border-2 border-purple-400/50 hover:border-cyan-400 text-purple-400 hover:text-cyan-300 hover:bg-gradient-to-r hover:from-purple-500/10 hover:to-cyan-500/10 transition-all duration-500 shadow-lg hover:shadow-purple-500/20 backdrop-blur-sm">
                 <Link to="/projects">
                   View All Projects
-                  <ChevronRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                  <ChevronRight className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform duration-300" />
                 </Link>
               </Button>
             </div>
@@ -442,17 +445,17 @@ const Overview = () => {
                   <div className="p-4">
                     <div className="flex items-center justify-between mb-2">
                       <h3 className="font-semibold group-hover:text-primary transition-colors text-foreground">{project.title}</h3>
-                      <Badge variant="secondary" className="text-xs">{project.category}</Badge>
+                      <Badge className="text-xs bg-gradient-to-r from-purple-500/20 to-cyan-500/20 border border-purple-400/50 text-purple-300 hover:from-purple-500/30 hover:to-cyan-500/30 transition-all duration-300">{project.category}</Badge>
                     </div>
                     <p className="text-sm text-foreground/70 mb-3">{project.description}</p>
                     <div className="flex flex-wrap gap-1">
                       {project.tech.slice(0, 3).map((tech, techIndex) => (
-                        <Badge key={techIndex} variant="outline" className="text-xs">
+                        <Badge key={techIndex} variant="outline" className="text-xs border-cyan-400/40 text-cyan-300 hover:bg-cyan-400/10 transition-all duration-300">
                           {tech}
                         </Badge>
                       ))}
                       {project.tech.length > 3 && (
-                        <Badge variant="outline" className="text-xs">
+                        <Badge variant="outline" className="text-xs border-purple-400/40 text-purple-300 hover:bg-purple-400/10 transition-all duration-300">
                           +{project.tech.length - 3}
                         </Badge>
                       )}
