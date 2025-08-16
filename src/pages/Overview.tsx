@@ -429,17 +429,16 @@ const Overview = () => {
                     </div>
                   </div>
 
-                  {/* Enhanced typography */}
+                  {/* Compact content */}
                   <div className="relative z-10">
-                    <div className="font-bold text-lg text-foreground group-hover:text-white transition-colors duration-300 mb-1">{item.title}</div>
-                    <div className="text-sm text-foreground/70 group-hover:text-white/80 transition-colors duration-300 mb-2">{item.subtitle}</div>
-                    <div className="text-sm font-semibold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent mb-4">{item.year}</div>
+                    <div className="font-semibold text-base text-foreground group-hover:text-primary transition-colors duration-300 mb-1">{item.title}</div>
+                    <div className="text-xs text-foreground/60 group-hover:text-foreground/80 transition-colors duration-300 mb-2">{item.subtitle}</div>
+                    <div className="text-xs font-medium text-primary mb-3">{item.year}</div>
 
-
-                    {/* Enhanced trend indicator */}
-                    <div className="flex items-center justify-center gap-2 px-3 py-1 rounded-full bg-gradient-to-r from-green-500/20 to-emerald-500/20 border border-green-400/30">
-                      <TrendingUp className="w-4 h-4 text-green-400" />
-                      <span className="text-sm text-green-300 font-medium">{item.trend}</span>
+                    {/* Compact trend indicator */}
+                    <div className="flex items-center justify-center gap-1 px-2 py-1 rounded-full bg-primary/10 border border-primary/20">
+                      <TrendingUp className="w-3 h-3 text-primary" />
+                      <span className="text-xs text-primary font-medium">{item.trend}</span>
                     </div>
                   </div>
                 </Card>
