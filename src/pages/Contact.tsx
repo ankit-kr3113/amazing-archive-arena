@@ -417,20 +417,22 @@ const Contact = () => {
                   <h3 className="text-2xl font-bold">Connect With Me</h3>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {socialMediaLinks.map((link, index) => (
                     <a
                       key={index}
                       href={link.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group flex flex-col items-center p-4 rounded-xl hover:bg-primary/10 transition-all duration-300 hover:scale-105 hover:shadow-lg border border-border/50 hover:border-primary/30 text-center"
+                      className="group flex items-center p-4 rounded-xl hover:bg-primary/10 transition-all duration-300 hover:scale-105 hover:shadow-lg border border-border/50 hover:border-primary/30"
                     >
-                      <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground group-hover:scale-110 transition-all duration-300 mb-3">
+                      <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground group-hover:scale-110 transition-all duration-300 mr-4 flex-shrink-0">
                         <link.icon className="w-6 h-6 group-hover:scale-110 transition-transform duration-300" />
                       </div>
-                      <div className="font-medium group-hover:text-primary transition-colors mb-1">{link.name}</div>
-                      <div className="text-xs text-muted-foreground group-hover:text-primary/70 transition-colors">{link.description}</div>
+                      <div className="flex-1">
+                        <div className="font-medium group-hover:text-primary transition-colors">{link.name}</div>
+                        <div className="text-sm text-muted-foreground group-hover:text-primary/70 transition-colors">{link.description}</div>
+                      </div>
                     </a>
                   ))}
                 </div>
