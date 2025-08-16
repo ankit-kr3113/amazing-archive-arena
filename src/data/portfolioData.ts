@@ -23,7 +23,7 @@ export const personalInfo = {
     robotics: "As a Robotics Club member, I've organized workshops and led teams building combat and soccer bots. I believe in learning by doing and enjoy sharing knowledge with others through mentoring and technical discussions.",
     interests: "When I'm not coding, you can find me solving algorithmic challenges on competitive programming platforms, participating in hackathons, or running track. I won Bronze in 50m Hurdles at NIT Patna Intramurals!"
   },
-  profileImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face&auto=format&q=80",
+  profileImage: "https://images.pexels.com/photos/32326782/pexels-photo-32326782.jpeg",
   resume: "/Yuvraj_Resume_v2_1 (1).pdf",
   status: {
     availability: "Available",
