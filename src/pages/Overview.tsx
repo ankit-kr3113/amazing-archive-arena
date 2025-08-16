@@ -98,12 +98,12 @@ const Overview = () => {
   }, []);
 
   const techStack = [
-    { name: "React", color: "bg-blue-500", icon: "⚛️", level: 90 },
-    { name: "Node.js", color: "bg-green-500", icon: "🟢", level: 85 },
-    { name: "TypeScript", color: "bg-blue-600", icon: "📘", level: 80 },
-    { name: "MongoDB", color: "bg-green-600", icon: "🍃", level: 75 },
-    { name: "Express", color: "bg-gray-600", icon: "🚀", level: 80 },
-    { name: "Next.js", color: "bg-black", icon: "▲", level: 85 }
+    { name: "React", color: "bg-blue-500", icon: FaReact, level: 90 },
+    { name: "Node.js", color: "bg-green-500", icon: FaNodeJs, level: 85 },
+    { name: "TypeScript", color: "bg-blue-600", icon: SiTypescript, level: 80 },
+    { name: "MongoDB", color: "bg-green-600", icon: SiMongodb, level: 75 },
+    { name: "Express", color: "bg-gray-600", icon: SiExpress, level: 80 },
+    { name: "Next.js", color: "bg-black", icon: SiNextdotjs, level: 85 }
   ];
 
   const highlights = [
