@@ -947,12 +947,6 @@ const Overview = () => {
                               <span>2021 - 2025</span>
                               <Badge className="bg-green-500/20 text-green-400 border-green-500/30 text-xs">Final Year</Badge>
                             </div>
-                            <div className="mt-2">
-                              <div className="flex items-center gap-2 text-xs text-foreground/70">
-                                <TrendingUp className="w-3 h-3 text-green-400" />
-                                <span>Focused on Full-Stack Development</span>
-                              </div>
-                            </div>
                           </div>
                         </div>
                       </div>
