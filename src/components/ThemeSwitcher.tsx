@@ -45,7 +45,7 @@ const ThemeSwitcher = () => {
                 variant="ghost"
                 size="sm"
               >
-                <X className="w-4 h-4" />
+                <HiX className="w-4 h-4" />
               </Button>
             </div>
 
