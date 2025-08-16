@@ -965,15 +965,15 @@ const Overview = () => {
                       </div>
                     </div>
 
-                    <div className="mt-6 grid grid-cols-2 gap-3">
-                      <Button asChild variant="outline" size="sm" className="group-hover:scale-105 transition-transform duration-300">
-                        <Link to="/education">
+                    <div className="mt-6 flex gap-3">
+                      <Button asChild variant="outline" size="sm" className="flex-1 group-hover:scale-105 transition-transform duration-300">
+                        <Link to="/education" className="flex items-center justify-center">
                           <FaBook className="w-3 h-3 mr-2" />
                           Academic Details
                         </Link>
                       </Button>
-                      <Button asChild size="sm" className="group-hover:scale-105 transition-transform duration-300">
-                        <a href={personalInfo.resume} target="_blank" rel="noopener noreferrer">
+                      <Button asChild size="sm" className="flex-1 group-hover:scale-105 transition-transform duration-300">
+                        <a href={personalInfo.resume} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
                           <Download className="w-3 h-3 mr-2" />
                           Resume
                         </a>
