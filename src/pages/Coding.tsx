@@ -41,6 +41,12 @@ const Coding = () => {
     platforms: [0, 0, 0, 0]
   });
 
+  const [apiData, setApiData] = useState<AllPlatformStats | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isRefreshing, setIsRefreshing] = useState(false);
+  const [apiError, setApiError] = useState<string | null>(null);
+  const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
+
   // Animated counter hook
   useEffect(() => {
     const duration = 2000; // 2 seconds
