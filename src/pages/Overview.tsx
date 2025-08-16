@@ -292,263 +292,105 @@ const Overview = () => {
       <Navigation />
       <ThemeSwitcher />
 
-      {/* Enhanced Hero Section with sophisticated gradients */}
-      <section className="relative pt-24 pb-12 overflow-hidden">
-        {/* Multi-layered gradient background */}
-        <div className="absolute inset-0">
-          {/* Base gradient */}
-          <div className="absolute inset-0 bg-gradient-to-br from-background via-background/90 to-primary/10"></div>
+      {/* Minimalistic Hero Section */}
+      <section className="relative pt-32 pb-20 overflow-hidden">
+        {/* Subtle background gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-background to-background/95"></div>
 
-          {/* Animated gradient orbs */}
-          <div className="absolute top-20 left-20 w-[400px] h-[400px] bg-gradient-radial from-purple-500/20 via-purple-500/10 to-transparent rounded-full blur-3xl opacity-60 animate-pulse"></div>
-          <div className="absolute bottom-20 right-20 w-[500px] h-[500px] bg-gradient-radial from-cyan-500/15 via-blue-500/10 to-transparent rounded-full blur-3xl opacity-70 animate-pulse" style={{animationDelay: '1s'}}></div>
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-primary/[0.12] via-primary-glow/[0.08] to-transparent rounded-full blur-3xl opacity-60"></div>
-
-          {/* Overlay gradient for depth */}
-          <div className="absolute inset-0 bg-gradient-to-t from-background/50 via-transparent to-background/30"></div>
-        </div>
-
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
-          <div className="text-center mb-12">
-            {/* Status Badge with better contrast */}
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/20 border border-primary/40 text-primary text-sm font-medium mb-6">
-              <div className="w-2 h-2 bg-green-400 rounded-full mr-2"></div>
-              <span className="text-foreground font-semibold">Portfolio Overview</span>
-            </div>
-
-            {/* Hero Content */}
-            <div className="space-y-6">
-              {/* Main Title */}
-              <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-                <span className="text-foreground/80 text-lg md:text-xl font-medium block mb-2">
-                  👋 Hello, I'm
-                </span>
-                <span className="bg-gradient-to-r from-primary via-primary to-primary-glow bg-clip-text text-transparent font-bold">
-                  Yuvraj Mehta
-                </span>
-              </h1>
-
-              {/* Typewriter Subtitle with better contrast */}
-              <div className="text-xl md:text-2xl text-foreground/80 mb-6 h-8">
-                <span className="border-r-2 border-primary font-medium">
-                  {typewriterText}
-                </span>
-              </div>
-
-              {/* Description with improved readability */}
-              <p className="text-base md:text-lg text-foreground/70 max-w-2xl mx-auto">
-                <span className="text-foreground font-semibold">B.Tech CS Student</span> at{" "}
-                <span className="text-primary font-semibold">NIT Patna</span> •{" "}
-                <span className="text-primary font-semibold">500+ LeetCode Problems</span> •{" "}
-                <span className="text-foreground font-semibold">15+ Projects</span>
-              </p>
-
-              {/* Enhanced Status Badges with vibrant colors */}
-              <div className="flex flex-wrap items-center justify-center gap-4">
-                <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-green-500/30 to-emerald-500/30 border border-green-400/60 text-sm shadow-lg hover:shadow-green-500/20 transition-all duration-300 backdrop-blur-sm">
-                  <div className="w-3 h-3 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full animate-pulse shadow-lg"></div>
-                  <span className="text-green-200 font-semibold">Available</span>
-                </div>
-                <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/30 to-cyan-500/30 border border-blue-400/60 text-sm shadow-lg hover:shadow-blue-500/20 transition-all duration-300 backdrop-blur-sm">
-                  <MapPin className="w-4 h-4 text-blue-300" />
-                  <span className="text-blue-200 font-semibold">Remote</span>
-                </div>
-                <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-purple-500/30 to-pink-500/30 border border-purple-400/60 text-sm shadow-lg hover:shadow-purple-500/20 transition-all duration-300 backdrop-blur-sm">
-                  <FaStar className="w-4 h-4 text-purple-300" />
-                  <span className="text-purple-200 font-semibold">Top 27.7%</span>
-                </div>
-              </div>
-
-              {/* Enhanced CTAs with vibrant design */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-                <Button
-                  className="px-8 py-4 font-bold bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 hover:from-cyan-500 hover:via-blue-500 hover:to-purple-500 transition-all duration-500 shadow-lg hover:shadow-2xl hover:shadow-purple-500/25 group relative overflow-hidden"
-                  asChild
-                >
-                  <Link to="/contact">
-                    <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <span className="relative z-10 flex items-center">
-                      Let's Connect
-                      <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-2" />
-                    </span>
-                  </Link>
-                </Button>
-
-                <Button
-                  variant="outline"
-                  className="px-8 py-4 font-bold border-2 border-gradient bg-gradient-to-r from-transparent to-transparent hover:from-purple-500/10 hover:to-cyan-500/10 border-purple-400 hover:border-cyan-400 text-purple-400 hover:text-cyan-300 transition-all duration-500 shadow-lg hover:shadow-xl hover:shadow-purple-500/20 backdrop-blur-sm"
-                  asChild
-                >
-                  <a href="/Yuvraj_Resume_v2_1 (1).pdf" target="_blank" rel="noopener noreferrer">
-                    <Download className="w-5 h-5 mr-2" />
-                    Resume
-                  </a>
-                </Button>
-              </div>
-            </div>
+        <div className="relative max-w-4xl mx-auto px-6 text-center z-10">
+          {/* Simple status indicator */}
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-sm mb-8">
+            <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+            <span className="text-foreground/70">Portfolio Overview</span>
           </div>
 
-          {/* Enhanced Stats Cards with premium design */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mb-12">
-            {highlights.map((item, index) => {
-              // Use consistent purple-to-blue gradient theme for all cards
-              const gradientColors = {
-                0: 'from-primary/15 via-primary-glow/15 to-primary/10 hover:from-primary/25 hover:via-primary-glow/25 hover:to-primary/20',
-                1: 'from-primary-glow/15 via-primary/15 to-accent/10 hover:from-primary-glow/25 hover:via-primary/25 hover:to-accent/20',
-                2: 'from-accent/15 via-primary/15 to-primary-glow/10 hover:from-accent/25 hover:via-primary/25 hover:to-primary-glow/20',
-                3: 'from-primary/15 via-accent/15 to-primary-glow/10 hover:from-primary/25 hover:via-accent/25 hover:to-primary-glow/20'
-              };
-              const iconColors = {
-                0: 'text-primary group-hover:text-primary-glow',
-                1: 'text-primary-glow group-hover:text-primary',
-                2: 'text-accent group-hover:text-primary',
-                3: 'text-primary group-hover:text-accent'
-              };
-              const borderColors = {
-                0: 'border-primary/30 hover:border-primary/50',
-                1: 'border-primary-glow/30 hover:border-primary-glow/50',
-                2: 'border-accent/30 hover:border-accent/50',
-                3: 'border-primary/30 hover:border-primary/50'
-              };
-              return (
-                <Card
-                  key={index}
-                  className={`group relative p-5 bg-gradient-to-br ${gradientColors[index]} border-2 ${borderColors[index]} cursor-pointer transition-all duration-500 hover:shadow-2xl hover:shadow-primary/20 backdrop-blur-md hover:-translate-y-2 hover:scale-[1.02] rounded-2xl overflow-hidden`}
-                >
-                  {/* Enhanced overlay with shimmer effect */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-black/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 -skew-x-12 group-hover:animate-shimmer"></div>
+          {/* Clean typography hierarchy */}
+          <div className="space-y-6">
+            <h1 className="text-5xl md:text-6xl font-bold text-foreground">
+              <span className="text-lg font-normal text-foreground/60 block mb-4">👋 Hello, I'm</span>
+              Yuvraj Mehta
+            </h1>
 
-                  {/* Rectangular layout: Icon on left, text on right */}
-                  <div className="relative z-10 flex items-center gap-4">
-                    {/* Enhanced icon on the left */}
-                    <div className="flex-shrink-0">
-                      <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/25 to-primary-glow/25 flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg group-hover:shadow-xl border border-primary/10">
-                        <item.icon className={`w-8 h-8 ${iconColors[index]} transition-all duration-500 group-hover:scale-110`} />
-                        {item.isLive && (
-                          <div className="absolute -top-1 -right-1 w-4 h-4 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full shadow-lg">
-                            <div className="w-full h-full bg-green-300 rounded-full animate-ping opacity-75"></div>
-                            <div className="absolute inset-0 bg-green-400 rounded-full"></div>
-                          </div>
-                        )}
-                        {/* Icon glow effect */}
-                        <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                      </div>
-                    </div>
+            <p className="text-xl md:text-2xl text-foreground/70 font-light max-w-2xl mx-auto">
+              {typewriterText}
+            </p>
 
-                    {/* Enhanced text content on the right */}
-                    <div className="flex-1 min-w-0 space-y-1">
-                      <div className="font-bold text-lg text-foreground group-hover:text-white transition-all duration-500 tracking-tight leading-tight">{item.title}</div>
-                      <div className="text-sm text-foreground/70 group-hover:text-white/90 transition-all duration-500 font-medium">{item.subtitle}</div>
-                      <div className="text-sm font-semibold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent group-hover:from-white group-hover:to-white/80 transition-all duration-500">{item.year}</div>
+            {/* Simplified info line */}
+            <p className="text-foreground/60 max-w-xl mx-auto">
+              B.Tech CS Student at NIT Patna · 500+ LeetCode Problems · 15+ Projects
+            </p>
 
-                      {/* Enhanced trend indicator */}
-                      <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-gradient-to-r from-primary/15 to-primary-glow/15 border border-primary/30 w-fit group-hover:from-primary/25 group-hover:to-primary-glow/25 group-hover:border-primary/50 transition-all duration-500 shadow-sm group-hover:shadow-md">
-                        <TrendingUp className="w-4 h-4 text-primary group-hover:text-white transition-colors duration-500" />
-                        <span className="text-xs text-primary group-hover:text-white font-semibold transition-colors duration-500">{item.trend}</span>
-                      </div>
-                    </div>
-                  </div>
-                </Card>
-              );
-            })}
-          </div>
-
-          {/* Featured Projects with better contrast */}
-          <div className="mb-12">
-            <div className="flex items-center justify-between mb-6">
-              <div>
-                <h2 className="text-2xl font-bold mb-2 text-foreground">Featured Projects</h2>
-                <p className="text-foreground/70">Recent work and live applications</p>
+            {/* Clean status badges */}
+            <div className="flex flex-wrap items-center justify-center gap-3 mt-8">
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-500/10 border border-green-500/20">
+                <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                <span className="text-sm text-green-300">Available</span>
               </div>
-              <Button variant="outline" asChild className="group border-2 border-purple-400/50 hover:border-cyan-400 text-purple-400 hover:text-cyan-300 hover:bg-gradient-to-r hover:from-purple-500/10 hover:to-cyan-500/10 transition-all duration-500 shadow-lg hover:shadow-purple-500/20 backdrop-blur-sm">
-                <Link to="/projects">
-                  View All Projects
-                  <ChevronRight className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform duration-300" />
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20">
+                <MapPin className="w-3 h-3 text-blue-400" />
+                <span className="text-sm text-blue-300">Remote</span>
+              </div>
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20">
+                <FaStar className="w-3 h-3 text-purple-400" />
+                <span className="text-sm text-purple-300">Top 27.7%</span>
+              </div>
+            </div>
+
+            {/* Simplified CTA buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
+              <Button
+                className="px-6 py-3 bg-primary hover:bg-primary/90 transition-colors"
+                asChild
+              >
+                <Link to="/contact">
+                  Let's Connect
+                  <ArrowRight className="w-4 h-4 ml-2" />
                 </Link>
               </Button>
-            </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {featuredProjects.map((project, index) => (
-                <Card key={index} className="group overflow-hidden border-primary/30 hover:border-primary/60 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/20 backdrop-blur-sm hover:-translate-y-2 bg-gradient-to-br from-card/80 to-card/60">
-                  <div className="relative overflow-hidden">
-                    <ProjectImage
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    {project.isLive && (
-                      <div className="absolute top-2 right-2 bg-green-500 text-white text-xs px-2 py-1 rounded-full flex items-center gap-1">
-                        <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
-                        Live
-                      </div>
-                    )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <div className="absolute bottom-2 left-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <div className="flex gap-2">
-                        <Button size="sm" className="text-xs" asChild>
-                          <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                            <Eye className="w-3 h-3 mr-1" />
-                            Live
-                          </a>
-                        </Button>
-                        <Button size="sm" variant="outline" className="text-xs border-white/30 text-white hover:bg-white hover:text-black" asChild>
-                          <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                            <FaGithub className="w-3 h-3 mr-1" />
-                            Code
-                          </a>
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="p-4">
-                    <div className="flex items-center justify-between mb-2">
-                      <h3 className="font-semibold group-hover:text-primary transition-colors text-foreground">{project.title}</h3>
-                      <Badge className="text-xs bg-gradient-to-r from-purple-500/20 to-cyan-500/20 border border-purple-400/50 text-purple-300 hover:from-purple-500/30 hover:to-cyan-500/30 transition-all duration-300">{project.category}</Badge>
-                    </div>
-                    <p className="text-sm text-foreground/70 mb-3">{project.description}</p>
-                    <div className="flex flex-wrap gap-1">
-                      {project.tech.slice(0, 3).map((tech, techIndex) => (
-                        <Badge key={techIndex} variant="outline" className="text-xs border-cyan-400/40 text-cyan-300 hover:bg-cyan-400/10 transition-all duration-300">
-                          {tech}
-                        </Badge>
-                      ))}
-                      {project.tech.length > 3 && (
-                        <Badge variant="outline" className="text-xs border-purple-400/40 text-purple-300 hover:bg-purple-400/10 transition-all duration-300">
-                          +{project.tech.length - 3}
-                        </Badge>
-                      )}
-                    </div>
-                  </div>
-                </Card>
-              ))}
+              <Button
+                variant="outline"
+                className="px-6 py-3 border-primary/30 hover:border-primary/50 transition-colors"
+                asChild
+              >
+                <a href="/Yuvraj_Resume_v2_1 (1).pdf" target="_blank" rel="noopener noreferrer">
+                  <Download className="w-4 h-4 mr-2" />
+                  Resume
+                </a>
+              </Button>
             </div>
           </div>
+        </div>
 
-          {/* Enhanced Status Banner with vibrant design */}
-          <Card className="relative p-6 mb-12 bg-gradient-to-r from-primary/20 via-primary-glow/15 to-accent/20 border-2 border-primary/40 hover:border-primary/60 hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500 backdrop-blur-sm overflow-hidden">
-            {/* Animated background overlay */}
-            <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-cyan-500/10 opacity-50 animate-pulse"></div>
-            <div className="relative z-10 flex items-center justify-between flex-wrap gap-4">
-              <div className="flex items-center gap-4">
-                <div className="relative w-14 h-14 rounded-2xl bg-gradient-to-br from-green-500/40 to-emerald-500/40 flex items-center justify-center shadow-lg">
-                  <CircleDot className="w-7 h-7 text-green-300" />
-                  <div className="absolute inset-0 bg-green-400/20 rounded-2xl animate-ping"></div>
+        {/* Clean stats cards */}
+        <div className="relative max-w-5xl mx-auto px-6 mt-16">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {highlights.map((item, index) => (
+              <Card
+                key={index}
+                className="group p-4 bg-card/50 border border-border/50 hover:border-primary/30 transition-all duration-300 hover:shadow-lg"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="relative w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                    <item.icon className="w-6 h-6 text-primary" />
+                    {item.isLive && (
+                      <div className="absolute -top-1 -right-1 w-2 h-2 bg-green-400 rounded-full"></div>
+                    )}
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="font-semibold text-sm text-foreground">{item.title}</div>
+                    <div className="text-xs text-foreground/60">{item.subtitle}</div>
+                    <div className="text-xs text-primary font-medium">{item.year}</div>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="font-semibold text-foreground text-lg">{currentStatus.availability}</h3>
-                  <p className="text-foreground/70">{currentStatus.currentFocus}</p>
-                  <p className="text-sm text-primary font-medium mt-1">{currentStatus.learning}</p>
+
+                <div className="mt-3 text-xs text-foreground/60 flex items-center gap-1">
+                  <TrendingUp className="w-3 h-3" />
+                  {item.trend}
                 </div>
-              </div>
-              <div className="text-right">
-                <p className="font-medium text-primary mb-1">{currentStatus.lookingFor}</p>
-                <p className="text-sm text-foreground/70">{currentStatus.location}</p>
-                <p className="text-xs text-foreground/60 mt-1">{currentStatus.lastUpdated}</p>
-              </div>
-            </div>
-          </Card>
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
 
