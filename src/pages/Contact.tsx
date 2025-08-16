@@ -3,7 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Github, Linkedin, Mail, Phone, MapPin, Send, Instagram, Loader2, CheckCircle, AlertCircle } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Github, Linkedin, Mail, Phone, MapPin, Send, Instagram, Loader2, CheckCircle, AlertCircle, Clock, MessageCircle, Star } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
@@ -12,6 +13,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useState } from "react";
 import { toast } from "sonner";
+import { personalInfo, socialLinks, quickLinks } from "@/data/portfolioData";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -50,39 +52,71 @@ const Contact = () => {
       setIsSubmitting(false);
     }
   };
-  const socialLinks = [
+  // Using centralized data
+  const contactMethods = [
+    {
+      icon: Mail,
+      label: "Email",
+      value: personalInfo.email,
+      href: socialLinks.email.url,
+      preferred: true,
+      responseTime: "Within 24 hours"
+    },
+    {
+      icon: Phone,
+      label: "Phone",
+      value: personalInfo.phone,
+      href: `tel:${personalInfo.phone}`,
+      preferred: false,
+      responseTime: "For urgent matters"
+    },
+    {
+      icon: MapPin,
+      label: "Location",
+      value: personalInfo.location,
+      href: null,
+      preferred: false,
+      responseTime: "Available for meetings"
+    },
+    {
+      icon: Linkedin,
+      label: "LinkedIn",
+      value: socialLinks.linkedin.username,
+      href: socialLinks.linkedin.url,
+      preferred: true,
+      responseTime: "Within 12 hours"
+    }
+  ];
+
+  const socialMediaLinks = [
     {
       name: "GitHub",
       icon: Github,
-      href: "https://github.com/yuvraj-mehta",
-      description: "Check out my code"
+      href: socialLinks.github.url,
+      description: "Check out my code",
+      color: "hover:text-gray-400"
     },
     {
-      name: "LinkedIn", 
+      name: "LinkedIn",
       icon: Linkedin,
-      href: "https://www.linkedin.com/in/yuvraj-mehta-a0274528a/",
-      description: "Let's connect professionally"
+      href: socialLinks.linkedin.url,
+      description: "Let's connect professionally",
+      color: "hover:text-blue-400"
     },
     {
       name: "Instagram",
       icon: Instagram,
-      href: "https://www.instagram.com/yuvraj.mehta4261/",
-      description: "Follow for updates"
+      href: socialLinks.instagram.url,
+      description: "Follow for updates",
+      color: "hover:text-pink-400"
     },
     {
       name: "Email",
       icon: Mail,
-      href: "mailto:yuvraj.mehta532@gmail.com",
-      description: "Send me a message"
+      href: socialLinks.email.url,
+      description: "Send me a message",
+      color: "hover:text-red-400"
     }
-  ];
-
-  const quickLinks = [
-    { name: "Resume", href: "/Yuvraj_Resume_v2_1 (1).pdf", icon: "📄" },
-    { name: "LeetCode", href: "https://leetcode.com/u/mythical-UV/", icon: "⚡" },
-    { name: "GeeksforGeeks", href: "https://www.geeksforgeeks.org/user/yuvrajmevbrx/", icon: "🟢" },
-    { name: "CodeChef", href: "https://www.codechef.com/users/quick_unity_53", icon: "👨‍🍳" },
-    { name: "Projects", href: "/projects", icon: "🚀" }
   ];
 
   return (
@@ -104,11 +138,11 @@ const Contact = () => {
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
               <span className="text-foreground">Get in Touch with</span>{" "}
               <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
-                Yuvraj Mehta
+                {personalInfo.name}
               </span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Full Stack Developer • B.Tech CS Student • NIT Patna • Let's discuss your next project or opportunity
+              {personalInfo.tagline} • Let's discuss your next project or opportunity
             </p>
           </div>
 
@@ -123,34 +157,53 @@ const Contact = () => {
                   <h3 className="text-xl sm:text-2xl font-bold">Contact Information</h3>
                 </div>
 
+                {/* Enhanced Contact Methods */}
                 <div className="space-y-4">
-                  <div className="flex items-center space-x-4">
-                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                      <Mail className="w-5 h-5 text-primary" />
+                  {contactMethods.map((method, index) => (
+                    <div key={index} className="group flex items-center space-x-4 p-3 rounded-lg hover:bg-primary/5 transition-all duration-300">
+                      <div className={`w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300 ${
+                        method.preferred ? 'bg-primary/20 group-hover:bg-primary/30' : 'bg-primary/10 group-hover:bg-primary/20'
+                      }`}>
+                        <method.icon className="w-5 h-5 text-primary" />
+                      </div>
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2">
+                          <h4 className="font-semibold group-hover:text-primary transition-colors">{method.label}</h4>
+                          {method.preferred && (
+                            <Badge className="bg-green-500/10 text-green-600 border-green-500/20 text-xs">
+                              <Star className="w-3 h-3 mr-1" />
+                              Preferred
+                            </Badge>
+                          )}
+                        </div>
+                        <p className="text-muted-foreground text-sm">{method.value}</p>
+                        <div className="flex items-center gap-1 text-xs text-muted-foreground mt-1">
+                          <Clock className="w-3 h-3" />
+                          {method.responseTime}
+                        </div>
+                      </div>
+                      {method.href && (
+                        <a
+                          href={method.href}
+                          className="opacity-0 group-hover:opacity-100 transition-all duration-300 text-primary hover:text-primary-glow"
+                        >
+                          <Send className="w-4 h-4" />
+                        </a>
+                      )}
                     </div>
-                    <div>
-                      <h4 className="font-semibold">Email</h4>
-                      <p className="text-muted-foreground text-sm">yuvraj.mehta532@gmail.com</p>
-                    </div>
-                  </div>
+                  ))}
+                </div>
 
-                  <div className="flex items-center space-x-4">
-                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                      <Phone className="w-5 h-5 text-primary" />
+                {/* Quick Stats */}
+                <div className="mt-6 p-4 bg-gradient-to-r from-primary/5 to-primary-glow/5 rounded-xl border border-primary/10">
+                  <div className="grid grid-cols-2 gap-4 text-center">
+                    <div>
+                      <div className="text-lg font-bold text-primary">24h</div>
+                      <div className="text-xs text-muted-foreground">Response Time</div>
                     </div>
                     <div>
-                      <h4 className="font-semibold">Phone</h4>
-                      <p className="text-muted-foreground text-sm">+91-9334083113</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center space-x-4">
-                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                      <MapPin className="w-5 h-5 text-primary" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold">Location</h4>
-                      <p className="text-muted-foreground text-sm">Gaya, Bihar, India</p>
+                      <div className="text-lg font-bold text-primary">{personalInfo.status.availability}</div>
+                      <div className="text-xs text-muted-foreground">Current Status</div>
                     </div>
                   </div>
                 </div>
@@ -165,17 +218,19 @@ const Contact = () => {
                   <h3 className="text-xl sm:text-2xl font-bold">Quick Links</h3>
                 </div>
 
-                <div className="space-y-4 mb-8">
+                <div className="space-y-3 mb-8">
                   {quickLinks.map((link, index) => (
                     <a
                       key={index}
                       href={link.href}
                       target={link.href.startsWith("http") ? "_blank" : "_self"}
                       rel={link.href.startsWith("http") ? "noopener noreferrer" : ""}
-                      className="flex items-center space-x-3 p-2 rounded-lg hover:bg-primary/10 transition-colors group text-sm"
+                      className="group flex items-center space-x-3 p-3 rounded-xl hover:bg-primary/10 transition-all duration-300 hover:scale-105 hover:shadow-lg text-sm"
                     >
-                      <span className="text-lg">{link.icon}</span>
-                      <span className="group-hover:text-primary transition-colors">{link.name}</span>
+                      <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+                        <span className="text-sm group-hover:scale-110 transition-transform">{link.icon}</span>
+                      </div>
+                      <span className="group-hover:text-primary transition-colors font-medium">{link.name}</span>
                     </a>
                   ))}
                 </div>
@@ -189,20 +244,21 @@ const Contact = () => {
                   <h3 className="text-lg sm:text-xl font-bold">Social Links</h3>
                 </div>
 
-                <div className="space-y-4">
-                  {socialLinks.map((link, index) => (
+                <div className="space-y-3">
+                  {socialMediaLinks.map((link, index) => (
                     <a
                       key={index}
                       href={link.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center space-x-3 p-2 rounded-lg hover:bg-primary/10 transition-colors group text-sm"
+                      className="group flex items-center space-x-3 p-3 rounded-xl hover:bg-primary/10 transition-all duration-300 hover:scale-105 hover:shadow-lg text-sm"
                     >
-                      <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                        <link.icon className="w-4 h-4" />
+                      <div className={`w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 group-hover:scale-110`}>
+                        <link.icon className="w-5 h-5" />
                       </div>
-                      <div>
-                        <span className="font-medium group-hover:text-primary transition-colors">{link.name}</span>
+                      <div className="flex-1">
+                        <div className="font-medium group-hover:text-primary transition-colors">{link.name}</div>
+                        <div className="text-xs text-muted-foreground group-hover:text-primary/70 transition-colors">{link.description}</div>
                       </div>
                     </a>
                   ))}
@@ -327,11 +383,21 @@ const Contact = () => {
                   )}
                 </form>
 
-                <div className="mt-6 p-4 bg-muted/50 rounded-lg">
-                  <p className="text-sm text-muted-foreground">
-                    <strong>Note:</strong> I typically respond within 24 hours. For urgent matters, 
-                    feel free to reach out via email or LinkedIn direct message.
-                  </p>
+                <div className="mt-6 p-4 bg-gradient-to-r from-green-500/10 to-blue-500/10 rounded-xl border border-green-500/20">
+                  <div className="flex items-start gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-green-500/20 flex items-center justify-center mt-0.5">
+                      <MessageCircle className="w-4 h-4 text-green-600" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-foreground font-medium mb-1">
+                        Response Guarantee
+                      </p>
+                      <p className="text-sm text-muted-foreground">
+                        I typically respond within <strong>24 hours</strong>. For urgent matters,
+                        reach out via <strong>email</strong> or <strong>LinkedIn</strong> for faster response.
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </Card>
             </div>

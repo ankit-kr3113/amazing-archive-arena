@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, ArrowRight, Code, Rocket, Laptop, Star, Trophy, Download, Zap, Code2 } from "lucide-react";
+import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
@@ -18,10 +19,15 @@ const Index = () => {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-primary/[0.12] via-primary-glow/[0.06] to-transparent rounded-full blur-3xl opacity-40 animate-pulse"></div>
         <div className="absolute top-1/4 right-1/4 w-[400px] h-[400px] bg-gradient-radial from-primary-glow/[0.08] to-transparent rounded-full blur-2xl opacity-30 animate-pulse animation-delay-1000"></div>
 
-        {/* Floating Particles */}
-        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-primary/50 rounded-full animate-bounce animation-delay-300 shadow-lg shadow-primary/20"></div>
+        {/* Enhanced Floating Particles (6-8 particles) */}
+        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-primary/50 rounded-full animate-float animation-delay-300 shadow-lg shadow-primary/20"></div>
         <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-primary-glow/80 rounded-full animate-ping animation-delay-700 shadow-lg shadow-primary-glow/30"></div>
         <div className="absolute bottom-1/3 left-1/3 w-3 h-3 bg-primary/40 rounded-full animate-pulse animation-delay-1000 shadow-lg shadow-primary/15"></div>
+        <div className="absolute top-1/2 left-1/6 w-1.5 h-1.5 bg-accent/60 rounded-full animate-bounce animation-delay-500 shadow-lg shadow-accent/20"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-2.5 h-2.5 bg-primary-glow/30 rounded-full animate-float animation-delay-1200 shadow-lg shadow-primary-glow/15"></div>
+        <div className="absolute top-3/4 left-2/3 w-1 h-1 bg-primary/70 rounded-full animate-ping animation-delay-900 shadow-lg shadow-primary/25"></div>
+        <div className="absolute top-1/6 right-1/6 w-2 h-2 bg-accent/40 rounded-full animate-pulse animation-delay-1500 shadow-lg shadow-accent/20"></div>
+        <div className="absolute bottom-1/6 left-1/2 w-1.5 h-1.5 bg-primary-glow/50 rounded-full animate-bounce animation-delay-800 shadow-lg shadow-primary-glow/30"></div>
 
         <div className="relative max-w-7xl mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 xl:gap-24 items-center">
@@ -36,16 +42,20 @@ const Index = () => {
                 <div className="ml-3 w-2 h-2 bg-primary rounded-full animate-pulse shadow-lg shadow-primary/50"></div>
               </div>
 
-              {/* Typography Section */}
-              <div className="space-y-4">
-                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">
-                  <span className="block text-muted-foreground text-lg sm:text-xl md:text-2xl font-medium mb-2 animate-fade-in-up">
-                    Hello, I'm
+              {/* Enhanced Typography Section */}
+              <div className="space-y-6">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight tracking-tight">
+                  <span className="block text-muted-foreground text-xl sm:text-2xl md:text-3xl font-medium mb-4 animate-fade-in-up">
+                    👋 Hello, I'm
                   </span>
-                  <span className="gradient-text relative inline-block animate-fade-in-up animation-delay-300 bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent drop-shadow-2xl">
+                  <span className="gradient-text relative inline-block animate-fade-in-up animation-delay-300 bg-gradient-to-r from-primary via-primary-glow to-accent bg-clip-text text-transparent drop-shadow-2xl animate-gradient">
                     {personalInfo.name}
                   </span>
                 </h1>
+
+                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-foreground/90 animate-fade-in-up animation-delay-500">
+                  Crafting Digital Experiences That <span className="text-primary font-bold">Matter</span>
+                </h2>
 
                 {/* Description */}
                 <p className="text-base sm:text-lg text-muted-foreground max-w-xl leading-relaxed animate-fade-in-up animation-delay-600">
@@ -103,26 +113,32 @@ const Index = () => {
                 </div>
               </div>
 
-              {/* Action Buttons */}
-              <div className="flex flex-col sm:flex-row gap-3 animate-fade-in-up animation-delay-1000">
+              {/* Enhanced Action Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up animation-delay-1000">
                 <Button
-                  className="group relative overflow-hidden px-6 py-3 text-base font-bold bg-gradient-to-r from-primary via-primary-glow to-primary hover:from-primary-glow hover:via-primary hover:to-primary-glow shadow-2xl hover:shadow-3xl hover:shadow-primary/30 transition-all duration-500 border-0 rounded-xl hover:scale-110 active:scale-95 backdrop-blur-sm"
+                  className="group relative overflow-hidden px-8 py-4 text-lg font-bold bg-gradient-to-r from-primary via-primary-glow to-accent hover:from-accent hover:via-primary-glow hover:to-primary shadow-2xl hover:shadow-3xl hover:shadow-primary/40 transition-all duration-500 border-0 rounded-2xl hover:scale-110 active:scale-95 backdrop-blur-sm transform hover:-translate-y-1"
+                  asChild
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out"></div>
-                  <span className="relative z-10 flex items-center justify-center gap-2">
-                    Contact Me
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
-                  </span>
+                  <a href="/contact">
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out"></div>
+                    <span className="relative z-10 flex items-center justify-center gap-3">
+                      Let's Connect
+                      <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
+                    </span>
+                  </a>
                 </Button>
 
                 <Button
                   variant="outline"
-                  className="group px-6 py-3 text-base font-bold border-2 border-primary/60 text-primary hover:bg-primary hover:text-primary-foreground shadow-xl hover:shadow-2xl hover:shadow-primary/25 transition-all duration-500 rounded-xl hover:scale-110 active:scale-95 backdrop-blur-sm bg-background/60 hover:border-primary"
+                  className="group px-8 py-4 text-lg font-bold border-2 border-primary/60 text-primary hover:bg-gradient-to-r hover:from-primary/10 hover:to-primary-glow/10 hover:text-primary shadow-xl hover:shadow-2xl hover:shadow-primary/30 transition-all duration-500 rounded-2xl hover:scale-110 active:scale-95 backdrop-blur-sm bg-background/60 hover:border-primary transform hover:-translate-y-1"
+                  asChild
                 >
-                  <span className="flex items-center justify-center gap-2">
-                    View Work
-                    <Code className="w-4 h-4 group-hover:rotate-12 transition-transform" />
-                  </span>
+                  <a href="/projects">
+                    <span className="flex items-center justify-center gap-3">
+                      View Portfolio
+                      <Rocket className="w-5 h-5 group-hover:rotate-12 transition-transform" />
+                    </span>
+                  </a>
                 </Button>
               </div>
 

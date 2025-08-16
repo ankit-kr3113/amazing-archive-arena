@@ -54,6 +54,7 @@ import ThemeSwitcher from "@/components/ThemeSwitcher";
 import GitHubActivity from "@/components/GitHubActivity";
 import { Link } from "react-router-dom";
 import { useState, useEffect, useMemo } from "react";
+import { personalInfo, socialLinks, achievements, skills, projects, interests } from "@/data/portfolioData";
 
 // Optimized typewriter effect with reduced re-renders
 const useTypewriter = (text: string, speed: number = 100) => {
@@ -124,21 +125,21 @@ const ProjectImage = ({ src, alt, className }: { src: string; alt: string; class
 
 const Overview = () => {
   // Optimized typewriter with memoization
-  const typewriterText = useTypewriter("Full Stack Developer & Problem Solver", 120);
+  const typewriterText = useTypewriter(personalInfo.title + " & Problem Solver", 120);
 
   // Memoized static data to prevent unnecessary re-renders
   const highlights = useMemo(() => [
-    { icon: FaGraduationCap, title: "B.Tech CS", subtitle: "NIT Patna", year: "2025", progress: 75, trend: "+5%", isLive: false },
-    { icon: FaCode, title: "15+ Projects", subtitle: "Full Stack", year: "2+ Years", progress: 85, trend: "+3 this month", isLive: true },
-    { icon: FaTrophy, title: "DSA Expert", subtitle: "500+ Problems", year: "LeetCode", progress: 90, trend: "+50 this week", isLive: true },
+    { icon: FaGraduationCap, title: "B.Tech CS", subtitle: personalInfo.university, year: "2025", progress: 75, trend: "+5%", isLive: false },
+    { icon: FaCode, title: achievements.stats.totalProjects, subtitle: "Full Stack", year: achievements.stats.yearsExperience, progress: 85, trend: "+3 this month", isLive: true },
+    { icon: FaTrophy, title: "DSA Expert", subtitle: achievements.leetcode.problemsSolved + " Problems", year: "LeetCode", progress: 90, trend: "+50 this week", isLive: true },
     { icon: FaBriefcase, title: "Experience", subtitle: "Internships & Projects", year: "Active", progress: 80, trend: "Growing", isLive: false }
   ], []);
 
   const quickActions = useMemo(() => [
-    { icon: FaEnvelope, label: "Send Email", href: "mailto:yuvraj.mehta532@gmail.com", type: "external" },
-    { icon: Download, label: "Download Resume", href: "/Yuvraj_Resume_v2_1 (1).pdf", type: "download" },
+    { icon: FaEnvelope, label: "Send Email", href: socialLinks.email.url, type: "external" },
+    { icon: Download, label: "Download Resume", href: personalInfo.resume, type: "download" },
     { icon: HiChatBubbleLeftRight, label: "Schedule Call", href: "/contact", type: "internal" },
-    { icon: FaGithub, label: "View GitHub", href: "https://github.com/yuvraj-mehta", type: "external" }
+    { icon: FaGithub, label: "View GitHub", href: socialLinks.github.url, type: "external" }
   ], []);
 
   const recentActivities = useMemo(() => [
@@ -180,38 +181,7 @@ const Overview = () => {
     }
   ], []);
 
-  const featuredProjects = useMemo(() => [
-    {
-      title: "E-Commerce Platform",
-      description: "Full-stack MERN application with payment integration",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=250&fit=crop&auto=format&q=80",
-      tech: ["React", "Node.js", "MongoDB", "Stripe"],
-      category: "Full Stack",
-      isLive: true,
-      liveUrl: "#",
-      githubUrl: "#"
-    },
-    {
-      title: "Task Management App",
-      description: "Real-time collaboration tool with drag-and-drop",
-      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=250&fit=crop&auto=format&q=80",
-      tech: ["Next.js", "TypeScript", "PostgreSQL"],
-      category: "Web App",
-      isLive: true,
-      liveUrl: "#",
-      githubUrl: "#"
-    },
-    {
-      title: "Weather Dashboard",
-      description: "Responsive weather app with location-based forecasts",
-      image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=400&h=250&fit=crop&auto=format&q=80",
-      tech: ["React", "API Integration", "Chart.js"],
-      category: "Frontend",
-      isLive: true,
-      liveUrl: "#",
-      githubUrl: "#"
-    }
-  ], []);
+  const featuredProjects = useMemo(() => projects.filter(project => project.featured).slice(0, 3), []);
 
   const skillLevels = useMemo(() => [
     { name: "React", level: 90, icon: FaReact, category: "Frontend" },
@@ -223,49 +193,49 @@ const Overview = () => {
   ], []);
 
   const currentStatus = useMemo(() => ({
-    availability: "Open for Opportunities",
+    availability: personalInfo.status.availability,
     currentFocus: "Building Full-Stack Projects with Next.js",
     learning: "Advanced React Patterns & System Design",
     lookingFor: "Internships & Full-time Opportunities",
-    location: "Patna, Bihar (Open to Remote)",
+    location: personalInfo.location + " (" + personalInfo.status.workMode + ")",
     lastUpdated: "Updated 2 days ago"
   }), []);
 
   const contactInfo = useMemo(() => ({
-    email: "yuvraj.mehta532@gmail.com",
-    phone: "+91 98765 43210",
-    location: "Patna, Bihar, India",
+    email: personalInfo.email,
+    phone: personalInfo.phone,
+    location: personalInfo.location,
     timezone: "IST (UTC +5:30)",
-    availability: "Available for opportunities",
+    availability: personalInfo.status.availability,
     preferredContact: "Email or LinkedIn",
     responseTime: "Within 24 hours",
     socialLinks: [
       {
         name: "GitHub",
         icon: FaGithub,
-        url: "https://github.com/yuvraj-mehta",
-        username: "@yuvraj-mehta",
+        url: socialLinks.github.url,
+        username: "@" + socialLinks.github.username,
         color: "text-gray-300 hover:text-white"
       },
       {
         name: "LinkedIn",
         icon: FaLinkedin,
-        url: "https://linkedin.com/in/yuvraj-mehta",
-        username: "yuvraj-mehta",
+        url: socialLinks.linkedin.url,
+        username: socialLinks.linkedin.username,
         color: "text-blue-400 hover:text-blue-300"
       },
       {
         name: "Twitter",
         icon: FaTwitter,
-        url: "https://twitter.com/yuvraj_mehta",
-        username: "@yuvraj_mehta",
+        url: socialLinks.twitter.url,
+        username: socialLinks.twitter.username,
         color: "text-sky-400 hover:text-sky-300"
       },
       {
         name: "Email",
         icon: FaEnvelope,
-        url: "mailto:yuvraj.mehta532@gmail.com",
-        username: "yuvraj.mehta532@gmail.com",
+        url: socialLinks.email.url,
+        username: socialLinks.email.address,
         color: "text-red-400 hover:text-red-300"
       }
     ]
@@ -281,10 +251,10 @@ const Overview = () => {
       {/* Content wrapper */}
       <div className="relative z-10">
       {/* SEO Meta Tags */}
-      <title>Yuvraj Mehta - Full Stack Developer | Portfolio Overview</title>
-      <meta name="description" content="Full Stack Developer & B.Tech CS Student at NIT Patna. Specialized in React, Node.js, and modern web technologies. 500+ LeetCode problems solved." />
+      <title>{personalInfo.name} - {personalInfo.title} | Portfolio Overview</title>
+      <meta name="description" content={`${personalInfo.title} & ${personalInfo.course} Student at ${personalInfo.university}. Specialized in React, Node.js, and modern web technologies. ${achievements.leetcode.problemsSolved} LeetCode problems solved.`} />
       <meta name="keywords" content="Full Stack Developer, React, Node.js, TypeScript, NIT Patna, LeetCode, Portfolio" />
-      <meta property="og:title" content="Yuvraj Mehta - Full Stack Developer Portfolio" />
+      <meta property="og:title" content={`${personalInfo.name} - ${personalInfo.title} Portfolio`} />
       <meta property="og:description" content="Full Stack Developer specializing in modern web technologies. Check out my projects and skills." />
       <meta property="og:type" content="website" />
       <meta name="twitter:card" content="summary_large_image" />
@@ -308,7 +278,7 @@ const Overview = () => {
           <div className="space-y-8">
             <h1 className="text-5xl md:text-6xl font-bold text-foreground">
               <span className="text-lg font-normal text-foreground/60 block mb-6">👋 Hello, I'm</span>
-              Yuvraj Mehta
+              {personalInfo.name}
             </h1>
 
             <p className="text-xl md:text-2xl text-foreground/70 font-light max-w-2xl mx-auto mt-6">
@@ -317,22 +287,22 @@ const Overview = () => {
 
             {/* Simplified info line */}
             <p className="text-foreground/60 max-w-xl mx-auto mt-4">
-              B.Tech CS Student at NIT Patna · 500+ LeetCode Problems · 15+ Projects
+              {personalInfo.course} Student at {personalInfo.university} · {achievements.leetcode.problemsSolved} LeetCode Problems · {achievements.stats.totalProjects} Projects
             </p>
 
             {/* Clean status badges */}
             <div className="flex flex-wrap items-center justify-center gap-4 mt-12">
               <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20">
                 <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                <span className="text-sm text-green-300">Available</span>
+                <span className="text-sm text-green-300">{personalInfo.status.availability}</span>
               </div>
               <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20">
                 <MapPin className="w-3 h-3 text-blue-400" />
-                <span className="text-sm text-blue-300">Remote</span>
+                <span className="text-sm text-blue-300">{personalInfo.status.workMode}</span>
               </div>
               <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20">
                 <FaStar className="w-3 h-3 text-purple-400" />
-                <span className="text-sm text-purple-300">Top 27.7%</span>
+                <span className="text-sm text-purple-300">{achievements.leetcode.globalRanking}</span>
               </div>
             </div>
 
@@ -353,7 +323,7 @@ const Overview = () => {
                 className="px-8 py-3 border-primary/30 hover:border-primary/50 transition-colors"
                 asChild
               >
-                <a href="/Yuvraj_Resume_v2_1 (1).pdf" target="_blank" rel="noopener noreferrer">
+                <a href={personalInfo.resume} target="_blank" rel="noopener noreferrer">
                   <Download className="w-4 h-4 mr-2" />
                   Resume
                 </a>
@@ -446,7 +416,7 @@ const Overview = () => {
                   <div className="flex items-center justify-between">
                     <span className="text-sm font-medium text-foreground">LeetCode</span>
                     <Badge className="bg-orange-500/20 text-orange-200 border-orange-500/30">
-                      500+ Solved
+                      {achievements.leetcode.problemsSolved} Solved
                     </Badge>
                   </div>
                   <div className="flex items-center justify-between">
@@ -608,7 +578,7 @@ const Overview = () => {
                     </Link>
                   </Button>
                   <Button asChild size="sm" className="flex-1">
-                    <a href="https://github.com/yuvraj-mehta" target="_blank" rel="noopener noreferrer">
+                    <a href={socialLinks.github.url} target="_blank" rel="noopener noreferrer">
                       <FaGithub className="w-3 h-3 mr-2" />
                       GitHub Activity
                     </a>
@@ -628,12 +598,12 @@ const Overview = () => {
                     <h3 className="text-lg font-semibold text-foreground">About</h3>
                   </div>
                   <p className="text-sm text-foreground/70 mb-4 leading-relaxed">
-                    Final year B.Tech Computer Science student at NIT Patna with 2+ years of development experience.
+                    Final year B.Tech {personalInfo.course} student at {personalInfo.university} with {achievements.stats.yearsExperience} of development experience.
                     Specialized in full-stack web development.
                   </p>
                   <div className="flex items-center gap-2 text-xs text-foreground/60 mb-3">
                     <MapPin className="w-3 h-3" />
-                    <span>New Delhi, India</span>
+                    <span>{personalInfo.location}</span>
                   </div>
                   <div className="flex items-center gap-2 text-xs text-foreground/60 mb-4">
                     <Calendar className="w-3 h-3" />
@@ -654,8 +624,8 @@ const Overview = () => {
                   </div>
                   <div className="space-y-3">
                     <div>
-                      <div className="font-semibold text-sm text-foreground">B.Tech Computer Science</div>
-                      <div className="text-sm text-primary">NIT Patna</div>
+                      <div className="font-semibold text-sm text-foreground">B.Tech {personalInfo.course}</div>
+                      <div className="text-sm text-primary">{personalInfo.university}</div>
                       <div className="text-xs text-foreground/60">2021 - 2025</div>
                     </div>
                     <div>

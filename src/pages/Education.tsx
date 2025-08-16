@@ -5,6 +5,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import { personalInfo } from "@/data/portfolioData";
 
 const Education = () => {
   const [expandedCards, setExpandedCards] = useState<number[]>([]);
@@ -106,11 +107,11 @@ const Education = () => {
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
               <span className="text-foreground">Education of</span>{" "}
               <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
-                Yuvraj Mehta
+                {personalInfo.name}
               </span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Full Stack Developer • B.Tech CS Student • NIT Patna • Academic foundation and continuous learning
+              {personalInfo.tagline} • Academic foundation and continuous learning
             </p>
           </div>
 

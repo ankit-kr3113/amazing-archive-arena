@@ -17,11 +17,12 @@ const About = () => {
     { icon: "🎯", name: "Mentoring", description: "Leading workshops" },
   ];
 
-  const achievements = [
-    { value: "1570+", label: "LeetCode Rating", color: "text-orange-500" },
-    { value: "333+", label: "Problems Solved", color: "text-green-500" },
-    { value: "15+", label: "Projects Built", color: "text-blue-500" },
-    { value: "Top 27.7%", label: "Global Ranking", color: "text-purple-500" },
+  // Using centralized data from portfolioData.ts
+  const achievementStats = [
+    { value: achievements.leetcode.rating, label: "LeetCode Rating", color: "text-orange-500" },
+    { value: achievements.leetcode.problemsSolved, label: "Problems Solved", color: "text-green-500" },
+    { value: achievements.stats.totalProjects, label: "Projects Built", color: "text-blue-500" },
+    { value: achievements.leetcode.globalRanking, label: "Global Ranking", color: "text-purple-500" },
   ];
 
   const handleContactClick = () => {
@@ -31,7 +32,7 @@ const About = () => {
   const handleResumeDownload = () => {
     // Create a link element and trigger download
     const link = document.createElement('a');
-    link.href = '/Yuvraj_Resume_v2_1 (1).pdf';
+    link.href = personalInfo.resume;
     link.download = 'Yuvraj_Mehta_Resume.pdf';
     document.body.appendChild(link);
     link.click();
@@ -70,7 +71,7 @@ const About = () => {
               </span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Full Stack Developer • B.Tech CS Student • NIT Patna • Passionate about creating impactful digital solutions
+              {personalInfo.tagline}
             </p>
           </div>
 
@@ -81,8 +82,8 @@ const About = () => {
               <Card className="portfolio-card group hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 hover:-translate-y-1 h-full">
                 <div className="relative overflow-hidden rounded-xl mb-4">
                   <img
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=600&fit=crop&crop=face&auto=format&q=80"
-                    alt="Yuvraj Mehta - Full Stack Developer"
+                    src={personalInfo.profileImage}
+                    alt={`${personalInfo.name} - ${personalInfo.title}`}
                     className="w-full aspect-square object-cover rounded-xl group-hover:scale-105 transition-transform duration-500"
                   />
                   
@@ -105,7 +106,7 @@ const About = () => {
                   <div className="space-y-2 text-sm">
                     <div className="flex items-center gap-2">
                       <MapPin className="w-4 h-4 text-primary" />
-                      <span>NIT Patna, Bihar</span>
+                      <span>{personalInfo.university}, {personalInfo.location.split(',')[1]}</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <Calendar className="w-4 h-4 text-primary" />
@@ -129,27 +130,27 @@ const About = () => {
                   </div>
 
                   <div className="flex gap-3 pt-2 border-t">
-                    <a 
-                      href="https://github.com/yuvraj-mehta" 
-                      target="_blank" 
+                    <a
+                      href={socialLinks.github.url}
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-1 text-xs text-muted-foreground hover:text-primary transition-colors"
                     >
                       <Github className="w-4 h-4" />
                       GitHub
                     </a>
-                    <a 
-                      href="https://www.linkedin.com/in/yuvraj-mehta-a0274528a/" 
-                      target="_blank" 
+                    <a
+                      href={socialLinks.linkedin.url}
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-1 text-xs text-muted-foreground hover:text-primary transition-colors"
                     >
                       <Linkedin className="w-4 h-4" />
                       LinkedIn
                     </a>
-                    <a 
-                      href="https://leetcode.com/u/mythical-UV/" 
-                      target="_blank" 
+                    <a
+                      href={socialLinks.leetcode.url}
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-1 text-xs text-muted-foreground hover:text-primary transition-colors"
                     >
@@ -172,20 +173,15 @@ const About = () => {
                   
                   <div className="space-y-3 text-sm leading-relaxed">
                     <p className="text-muted-foreground">
-                      I'm a Computer Science student at <span className="text-primary font-semibold">NIT Patna</span> with a passion for building 
-                      full-stack applications that solve real-world problems. My journey in tech started with curiosity about 
-                      how things work and evolved into a deep love for creating digital solutions.
+                      {personalInfo.bio.intro}
                     </p>
 
                     <p className="text-muted-foreground">
-                      As a <span className="text-primary font-semibold">Robotics Club member</span>, I've organized workshops and led teams 
-                      building combat and soccer bots. I believe in learning by doing and enjoy sharing knowledge with others 
-                      through mentoring and technical discussions.
+                      {personalInfo.bio.robotics}
                     </p>
 
                     <p className="text-muted-foreground">
-                      When I'm not coding, you can find me solving algorithmic challenges on competitive programming platforms, 
-                      participating in hackathons, or running track. I won Bronze in 50m Hurdles at NIT Patna Intramurals!
+                      {personalInfo.bio.interests}
                     </p>
                   </div>
 
@@ -207,7 +203,7 @@ const About = () => {
                     <div className="pt-4 border-t">
                       <h4 className="font-semibold mb-3 text-sm">Achievements</h4>
                       <div className="grid grid-cols-2 gap-3">
-                        {achievements.map((achievement, index) => (
+                        {achievementStats.map((achievement, index) => (
                           <div key={index} className="text-center p-3 rounded-lg bg-primary/5 hover:bg-primary/10 transition-colors group">
                             <div className={`text-lg font-bold ${achievement.color} group-hover:scale-110 transition-transform duration-300`}>
                               {achievement.value}
