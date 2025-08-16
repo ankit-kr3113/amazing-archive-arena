@@ -3,7 +3,9 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { useTheme } from '@/contexts/ThemeContext';
-import { Palette, X, Sparkles, Wand2, Monitor, Sun, Moon } from 'lucide-react';
+import { HiX, HiSparkles, HiSun, HiMoon } from 'react-icons/hi';
+import { HiComputerDesktop, HiBolt } from 'react-icons/hi2';
+import { FaPalette } from 'react-icons/fa';
 
 const ThemeSwitcher = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,7 +23,7 @@ const ThemeSwitcher = () => {
           size="sm"
           className="glass border-border/50 hover:bg-primary/10 group bg-gradient-to-r from-primary/5 to-primary-glow/5 hover:scale-105 transition-all duration-300 shadow-sm"
         >
-          <Monitor className="w-4 h-4 mr-2 text-primary group-hover:text-primary-glow transition-colors duration-300" />
+          <HiComputerDesktop className="w-4 h-4 mr-2 text-primary group-hover:text-primary-glow transition-colors duration-300" />
           <span>Themes</span>
         </Button>
       </div>
@@ -33,7 +35,7 @@ const ThemeSwitcher = () => {
             <div className="flex items-center justify-between mb-6">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary/20 to-primary-glow/20 flex items-center justify-center">
-                  <Palette className="w-5 h-5 text-primary" />
+                  <FaPalette className="w-5 h-5 text-primary" />
                 </div>
                 <div>
                   <h2 className="text-xl font-bold">Choose Your Vibe</h2>
@@ -45,7 +47,7 @@ const ThemeSwitcher = () => {
                 variant="ghost"
                 size="sm"
               >
-                <X className="w-4 h-4" />
+                <HiX className="w-4 h-4" />
               </Button>
             </div>
 

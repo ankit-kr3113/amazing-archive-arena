@@ -2,7 +2,22 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Menu, X, Download, Code2, Sparkles, User, Briefcase, GraduationCap, Wrench, Code, FolderOpen, Mail, Home, Eye } from "lucide-react";
+import {
+  HiMenuAlt3,
+  HiX,
+  HiDownload,
+  HiCode,
+  HiSparkles,
+  HiUser,
+  HiBriefcase,
+  HiAcademicCap,
+  HiCog,
+  HiTerminal,
+  HiFolder,
+  HiMail,
+  HiHome,
+  HiEye
+} from "react-icons/hi";
 import { personalInfo } from "@/data/portfolioData";
 
 const Navigation = () => {
@@ -10,14 +25,14 @@ const Navigation = () => {
   const location = useLocation();
 
   const navigation = [
-    { name: "Overview", href: "/", icon: Eye },
-    { name: "About", href: "/about", icon: User },
-    { name: "Experience", href: "/experience", icon: Briefcase },
-    { name: "Education", href: "/education", icon: GraduationCap },
-    { name: "Skills", href: "/skills", icon: Wrench },
-    { name: "Coding", href: "/coding", icon: Code },
-    { name: "Projects", href: "/projects", icon: FolderOpen },
-    { name: "Contact", href: "/contact", icon: Mail },
+    { name: "Overview", href: "/", icon: HiEye },
+    { name: "About", href: "/about", icon: HiUser },
+    { name: "Experience", href: "/experience", icon: HiBriefcase },
+    { name: "Education", href: "/education", icon: HiAcademicCap },
+    { name: "Skills", href: "/skills", icon: HiCog },
+    { name: "Coding", href: "/coding", icon: HiTerminal },
+    { name: "Projects", href: "/projects", icon: HiFolder },
+    { name: "Contact", href: "/contact", icon: HiMail },
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -32,7 +47,7 @@ const Navigation = () => {
               <Avatar className="h-9 w-9 ring-3 ring-primary/25 transition-all duration-300 group-hover:ring-primary/60 group-hover:scale-125 shadow-lg">
                 <AvatarImage src={personalInfo.profileImage} alt={personalInfo.name} />
                 <AvatarFallback className="bg-gradient-to-br from-primary to-primary-glow text-primary-foreground font-bold text-sm shadow-lg">
-                  <Code2 className="w-5 h-5" />
+                  <HiCode className="w-5 h-5" />
                 </AvatarFallback>
               </Avatar>
               <div className="absolute -top-1 -right-1 w-4 h-4 bg-green-500 rounded-full animate-pulse border-2 border-background shadow-lg shadow-green-500/30"></div>
@@ -69,7 +84,7 @@ const Navigation = () => {
               asChild
             >
               <a href={personalInfo.resume} target="_blank" rel="noopener noreferrer">
-                <Download className="w-4 h-4 mr-2 group-hover:animate-bounce" />
+                <HiDownload className="w-4 h-4 mr-2 group-hover:animate-bounce" />
                 <span className="font-semibold">Resume</span>
               </a>
             </Button>
@@ -85,10 +100,10 @@ const Navigation = () => {
             >
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className={`transition-all duration-300 ${isOpen ? 'rotate-180 opacity-0 scale-0' : 'rotate-0 opacity-100 scale-100'}`}>
-                  <Menu className="h-5 w-5" />
+                  <HiMenuAlt3 className="h-5 w-5" />
                 </div>
                 <div className={`absolute transition-all duration-300 ${isOpen ? 'rotate-0 opacity-100 scale-100' : 'rotate-180 opacity-0 scale-0'}`}>
-                  <X className="h-5 w-5" />
+                  <HiX className="h-5 w-5" />
                 </div>
               </div>
             </Button>
@@ -130,9 +145,9 @@ const Navigation = () => {
               asChild
             >
               <a href={personalInfo.resume} target="_blank" rel="noopener noreferrer">
-                <Download className="w-5 h-5 mr-3 group-hover:animate-bounce" />
+                <HiDownload className="w-5 h-5 mr-3 group-hover:animate-bounce" />
                 <span className="font-semibold">Download Resume</span>
-                <Sparkles className="w-4 h-4 ml-3 opacity-60 group-hover:opacity-100 group-hover:animate-spin transition-all duration-300" />
+                <HiSparkles className="w-4 h-4 ml-3 opacity-60 group-hover:opacity-100 group-hover:animate-spin transition-all duration-300" />
               </a>
             </Button>
           </div>

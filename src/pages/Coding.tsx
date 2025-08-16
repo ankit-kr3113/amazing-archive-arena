@@ -5,6 +5,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
 import { useState, useEffect } from "react";
+import { codingPlatformsApi, AllPlatformStats } from "@/services/codingPlatformsApi";
 
 // React Icons imports
 import {
@@ -24,8 +25,10 @@ import {
   FaClock,
   FaStar,
   FaFire,
+  FaSync,
+  FaWifi,
+  FaExclamationTriangle
 } from "react-icons/fa";
-import { Trophy } from "lucide-react";
 import {
   MdLeaderboard,
   MdTrendingUp
@@ -37,14 +40,79 @@ const Coding = () => {
     platforms: [0, 0, 0, 0]
   });
 
+  const [apiData, setApiData] = useState<AllPlatformStats | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isRefreshing, setIsRefreshing] = useState(false);
+  const [apiError, setApiError] = useState<string | null>(null);
+  const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
+
+  // Fallback data (original hardcoded values)
+  const fallbackData = {
+    leetcode: { totalSolved: 228, problemsSolved: { easy: 150, medium: 65, hard: 13 } },
+    codeforces: { problemsSolved: 10, rating: 900, rank: "Newbie" },
+    codechef: { problemsSolved: 25, rating: 1270, stars: 2 },
+    gfg: { problemsSolved: 70, score: 500, rank: 1455 }
+  };
+
+  // Fetch API data
+  const fetchCodingData = async (isRefresh = false) => {
+    if (isRefresh) {
+      setIsRefreshing(true);
+    } else {
+      setIsLoading(true);
+    }
+    setApiError(null);
+
+    try {
+      const data = await codingPlatformsApi.getAllPlatformData();
+      if (data) {
+        setApiData(data);
+        setLastUpdated(new Date());
+        setApiError(null);
+      } else {
+        throw new Error('No data received from API');
+      }
+    } catch (error) {
+      console.error('Failed to fetch coding data:', error);
+      setApiError(error instanceof Error ? error.message : 'Failed to fetch data');
+    } finally {
+      setIsLoading(false);
+      setIsRefreshing(false);
+    }
+  };
+
+  // Initial data fetch
+  useEffect(() => {
+    fetchCodingData();
+  }, []);
+
+  // Get current data (API data with fallback)
+  const getCurrentData = () => {
+    if (apiData) {
+      return {
+        leetcode: apiData.leetcode?.problemsSolved?.total || fallbackData.leetcode.totalSolved,
+        codeforces: apiData.codeforces?.problemsSolved?.total || fallbackData.codeforces.problemsSolved,
+        codechef: apiData.codechef?.problemsSolved?.total || fallbackData.codechef.problemsSolved,
+        gfg: apiData.gfg?.problemsSolved?.total || fallbackData.gfg.problemsSolved
+      };
+    }
+    return {
+      leetcode: fallbackData.leetcode.totalSolved,
+      codeforces: fallbackData.codeforces.problemsSolved,
+      codechef: fallbackData.codechef.problemsSolved,
+      gfg: fallbackData.gfg.problemsSolved
+    };
+  };
+
+  const currentData = getCurrentData();
+  const targetTotal = currentData.leetcode + currentData.codeforces + currentData.codechef + currentData.gfg;
+  const targetPlatforms = [currentData.leetcode, currentData.gfg, currentData.codechef, currentData.codeforces];
+
   // Animated counter hook
   useEffect(() => {
     const duration = 2000; // 2 seconds
     const steps = 50;
     const stepDuration = duration / steps;
-
-    const targetTotal = 333;
-    const targetPlatforms = [228, 70, 25, 10];
 
     let currentStep = 0;
 
@@ -64,15 +132,15 @@ const Coding = () => {
     }, stepDuration);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [targetTotal, ...targetPlatforms]);
 
-  // Ordered by activity level and importance
+  // Generate coding stats with real-time data
   const codingStats = [
     {
       platform: "LeetCode",
-      solved: 228,
-      rating: "1570",
-      rank: "Top 27.7%",
+      solved: apiData?.leetcode?.problemsSolved?.total || 228,
+      rating: apiData?.leetcode?.profile?.rating ? Math.round(apiData.leetcode.profile.rating).toString() : "1570",
+      rank: apiData?.leetcode?.contests?.topPercentage ? `Top ${apiData.leetcode.contests.topPercentage}%` : "Top 27.7%",
       color: "text-orange-400",
       bgColor: "from-orange-500/20 to-yellow-500/20",
       borderColor: "border-orange-500/30",
@@ -80,14 +148,14 @@ const Coding = () => {
       url: "https://leetcode.com/u/mythical-UV/",
       lastActive: "2024",
       joinedDate: "Jan 2023",
-      difficulty: { easy: 150, medium: 65, hard: 13 },
+      difficulty: apiData?.leetcode?.problemsSolved || { easy: 150, medium: 65, hard: 13 },
       recentActivity: "Solved 'Binary Tree Inorder Traversal' - 2 days ago"
     },
     {
       platform: "GeeksforGeeks",
-      solved: 70,
-      rating: "Rank #1455",
-      streak: "35+ day streak",
+      solved: apiData?.gfg?.problemsSolved?.total || 70,
+      rating: apiData?.gfg?.profile?.rank || "Rank #1455",
+      streak: apiData?.gfg?.profile?.currentStreak ? `${apiData.gfg.profile.currentStreak}+ day streak` : "35+ day streak",
       color: "text-green-400",
       bgColor: "from-green-500/20 to-emerald-500/20",
       borderColor: "border-green-500/30",
@@ -95,14 +163,14 @@ const Coding = () => {
       url: "https://www.geeksforgeeks.org/user/yuvrajmevbrx/",
       lastActive: "2024",
       joinedDate: "Mar 2023",
-      difficulty: { easy: 45, medium: 20, hard: 5 },
+      difficulty: apiData?.gfg?.problemsSolved || { easy: 45, medium: 20, hard: 5 },
       recentActivity: "Completed 'Array Rotation' challenge - 1 day ago"
     },
     {
       platform: "CodeChef",
-      solved: 25,
-      rating: "1270",
-      rank: "2��� Coder (Division 3)",
+      solved: apiData?.codechef?.problemsSolved?.total || 25,
+      rating: apiData?.codechef?.profile?.rating?.toString() || "1270",
+      rank: apiData?.codechef?.achievements?.stars ? `${apiData.codechef.achievements.stars} Coder` : "2★ Coder (Division 3)",
       color: "text-amber-400",
       bgColor: "from-amber-500/20 to-orange-500/20",
       borderColor: "border-amber-500/30",
@@ -110,14 +178,14 @@ const Coding = () => {
       url: "https://www.codechef.com/users/quick_unity_53",
       lastActive: "2024",
       joinedDate: "Feb 2023",
-      difficulty: { easy: 18, medium: 6, hard: 1 },
+      difficulty: apiData?.codechef?.problemsSolved || { easy: 18, medium: 6, hard: 1 },
       recentActivity: "Participated in Starters 186 - 1 week ago"
     },
     {
       platform: "Codeforces",
-      solved: 10,
-      rating: "900",
-      rank: "Newbie",
+      solved: apiData?.codeforces?.problemsSolved?.total || 10,
+      rating: apiData?.codeforces?.profile?.rating?.toString() || "900",
+      rank: apiData?.codeforces?.profile?.rank || "Newbie",
       color: "text-blue-400",
       bgColor: "from-blue-500/20 to-cyan-500/20",
       borderColor: "border-blue-500/30",
@@ -125,7 +193,7 @@ const Coding = () => {
       url: "https://codeforces.com/profile/yuvraj_mythical",
       lastActive: "2024",
       joinedDate: "Apr 2023",
-      difficulty: { easy: 8, medium: 2, hard: 0 },
+      difficulty: apiData?.codeforces?.problemsSolved || { easy: 8, medium: 2, hard: 0 },
       recentActivity: "Solved problem A in Div 3 contest - 2 weeks ago"
     }
   ];
@@ -133,38 +201,38 @@ const Coding = () => {
   // Calculate total dynamically
   const totalProblems = codingStats.reduce((sum, platform) => sum + platform.solved, 0);
 
-  // Enhanced achievements with more unique and specific content
+  // Enhanced achievements with real-time API data
   const achievements = [
     {
       title: "LeetCode Consistency Champion",
-      description: "Maintained active problem-solving streak with 228+ problems solved, achieving top 27.7% global ranking",
+      description: `Maintained active problem-solving streak with ${apiData?.leetcode?.problemsSolved?.total || 277}+ problems solved, achieving top ${apiData?.leetcode?.contests?.topPercentage || "17.4"}% global ranking`,
       icon: FaTrophy,
       color: "text-yellow-400",
       bgColor: "from-yellow-500/20 to-orange-500/20",
       borderColor: "border-yellow-500/30",
-      metric: "228 Problems"
+      metric: `${apiData?.leetcode?.problemsSolved?.total || 277} Problems`
     },
     {
       title: "Contest Performer",
-      description: "Achieved Global Rank 1238 in CodeChef Starters 186, demonstrating competitive programming skills",
+      description: `Best rank ${apiData?.leetcode?.contests?.bestRank || 6851} in LeetCode contests with ${apiData?.leetcode?.contests?.attendedCount || 14} contests attended, demonstrating competitive programming skills`,
       icon: FaMedal,
       color: "text-orange-400",
       bgColor: "from-orange-500/20 to-red-500/20",
       borderColor: "border-orange-500/30",
-      metric: "Rank 1238"
+      metric: `Rank ${apiData?.leetcode?.contests?.bestRank || 6851}`
     },
     {
-      title: "Daily Coding Streak Master",
-      description: "Maintained 35+ consecutive days of coding in GfG 160 challenge, showing dedication and consistency",
+      title: "LeetCode Rating Champion",
+      description: `Achieved a competitive rating of ${Math.round(apiData?.leetcode?.profile?.rating || 1649)} on LeetCode with ${apiData?.leetcode?.achievements?.streaks?.totalActiveDays || 149} total active coding days, demonstrating consistent algorithmic excellence`,
       icon: FaFire,
       color: "text-green-400",
       bgColor: "from-green-500/20 to-emerald-500/20",
       borderColor: "border-green-500/30",
-      metric: "35+ Days"
+      metric: `${Math.round(apiData?.leetcode?.profile?.rating || 1649)} Rating`
     },
     {
       title: "Multi-Platform Excellence",
-      description: "Active across 4+ competitive programming platforms with consistent performance and growth",
+      description: `Active across 4+ competitive programming platforms with ${targetTotal}+ total problems solved and consistent performance growth`,
       icon: FaStar,
       color: "text-purple-400",
       bgColor: "from-purple-500/20 to-pink-500/20",
@@ -189,7 +257,7 @@ const Coding = () => {
           {/* Enhanced Header Section */}
           <div className="text-center mb-12 fade-in">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-primary text-sm font-medium mb-4 shadow-lg backdrop-blur-sm hover:shadow-xl hover:scale-105 transition-all duration-300">
-              <Trophy className="w-4 h-4 animate-pulse" />
+              <FaTrophy className="w-4 h-4 animate-pulse" />
               <span>Competitive Programming</span>
               <div className="ml-1 w-2 h-2 bg-primary rounded-full animate-pulse"></div>
             </div>
@@ -200,10 +268,52 @@ const Coding = () => {
               </span>
             </h1>
             <p className="text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed animate-fade-in-up animation-delay-300 mb-6">
-              Solving <span className="text-primary font-semibold">333+ problems</span> across multiple platforms with{" "}
+              Solving <span className="text-primary font-semibold">{targetTotal}+ problems</span> across multiple platforms with{" "}
               <span className="text-primary font-semibold">consistent excellence</span> and{" "}
               <span className="text-primary font-semibold">competitive performance</span>
             </p>
+
+            {/* Data Status and Refresh */}
+            <div className="flex items-center justify-center gap-4 mb-6 animate-fade-in-up animation-delay-400">
+              <div className="flex items-center gap-2 px-3 py-2 bg-card/50 rounded-lg border border-border/50">
+                {isLoading ? (
+                  <>
+                    <FaSync className="w-4 h-4 text-muted-foreground animate-spin" />
+                    <span className="text-sm text-muted-foreground">Loading...</span>
+                  </>
+                ) : apiError ? (
+                  <>
+                    <FaExclamationTriangle className="w-4 h-4 text-orange-500" />
+                    <span className="text-sm text-orange-600">Using offline data</span>
+                  </>
+                ) : (
+                  <>
+                    <FaWifi className="w-4 h-4 text-green-500" />
+                    <span className="text-sm text-green-600">Live data</span>
+                  </>
+                )}
+              </div>
+
+              {lastUpdated && (
+                <div className="text-xs text-muted-foreground">
+                  Updated: {lastUpdated.toLocaleTimeString()}
+                </div>
+              )}
+
+              <Button
+                onClick={() => fetchCodingData(true)}
+                disabled={isRefreshing}
+                size="sm"
+                variant="outline"
+                className="px-3 py-1"
+              >
+                {isRefreshing ? (
+                  <FaSync className="w-3 h-3 animate-spin" />
+                ) : (
+                  <FaSync className="w-3 h-3" />
+                )}
+              </Button>
+            </div>
 
             {/* Inline Stats Display */}
             <div className="flex items-center justify-center gap-6 text-sm animate-fade-in-up animation-delay-600">
@@ -220,7 +330,9 @@ const Coding = () => {
               </div>
               <div className="flex items-center gap-2 px-3 py-2 bg-orange-500/5 rounded-lg border border-orange-500/20">
                 <FaStar className="w-4 h-4 text-orange-500" />
-                <span className="text-muted-foreground font-medium">LeetCode Top 27.7%</span>
+                <span className="text-muted-foreground font-medium">
+                  LeetCode Top {apiData?.leetcode?.contests?.topPercentage || "27.7"}%
+                </span>
               </div>
             </div>
           </div>
@@ -297,10 +409,10 @@ const Coding = () => {
                           </div>
                           <div className="flex items-center justify-end gap-2">
                             <span className="text-xs text-slate-300">
-                              {platform.platform === "LeetCode" && "Top 27.7%"}
-                              {platform.platform === "CodeChef" && "2★ Coder"}
-                              {platform.platform === "GeeksforGeeks" && "35+ days"}
-                              {platform.platform === "Codeforces" && "Newbie"}
+                              {platform.platform === "LeetCode" && platform.rank}
+                              {platform.platform === "CodeChef" && platform.rank}
+                              {platform.platform === "GeeksforGeeks" && platform.streak}
+                              {platform.platform === "Codeforces" && platform.rank}
                             </span>
                             {platform.platform === "LeetCode" && <MdLeaderboard className="w-3 h-3 text-blue-400" />}
                             {platform.platform === "CodeChef" && <FaMedal className="w-3 h-3 text-amber-400" />}
@@ -313,10 +425,10 @@ const Coding = () => {
 
                       {/* Bottom description text */}
                       <div className="text-xs text-slate-400 border-t border-slate-700/50 pt-3">
-                        {platform.platform === "LeetCode" && "Solved 228+ problems across all difficulty levels"}
-                        {platform.platform === "CodeChef" && "★★★ rated coder with 5 contests and best rank 13656"}
-                        {platform.platform === "GeeksforGeeks" && "Solved 112+ problems with 5 day current streak"}
-                        {platform.platform === "Codeforces" && "Newbie with 6 contests and best rank 13605"}
+                        {platform.platform === "LeetCode" && `Solved ${platform.solved}+ problems across all difficulty levels`}
+                        {platform.platform === "CodeChef" && `${platform.rank} with ${apiData?.codechef?.contests?.attendedCount || 9} contests attended`}
+                        {platform.platform === "GeeksforGeeks" && `Solved ${platform.solved}+ problems with ${apiData?.gfg?.profile?.currentStreak || 7} day current streak`}
+                        {platform.platform === "Codeforces" && `${platform.rank} with ${apiData?.codeforces?.contests?.attendedCount || 7} contests attended`}
                       </div>
                     </div>
                   </Card>

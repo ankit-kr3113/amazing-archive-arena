@@ -4,7 +4,19 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
-import { Github, Linkedin, Mail, Phone, MapPin, Send, Instagram, Loader2, CheckCircle, AlertCircle, Clock, MessageCircle, Star } from "lucide-react";
+import {
+  HiMail,
+  HiPhone,
+  HiLocationMarker,
+  HiPaperAirplane,
+  HiRefresh,
+  HiCheckCircle,
+  HiExclamationCircle,
+  HiClock,
+  HiChatAlt,
+  HiStar
+} from "react-icons/hi";
+import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
@@ -55,7 +67,7 @@ const Contact = () => {
   // Using centralized data
   const contactMethods = [
     {
-      icon: Mail,
+      icon: HiMail,
       label: "Email",
       value: personalInfo.email,
       href: socialLinks.email.url,
@@ -63,7 +75,7 @@ const Contact = () => {
       responseTime: "Within 24 hours"
     },
     {
-      icon: Phone,
+      icon: HiPhone,
       label: "Phone",
       value: personalInfo.phone,
       href: `tel:${personalInfo.phone}`,
@@ -71,7 +83,7 @@ const Contact = () => {
       responseTime: "For urgent matters"
     },
     {
-      icon: MapPin,
+      icon: HiLocationMarker,
       label: "Location",
       value: personalInfo.location,
       href: null,
@@ -79,7 +91,7 @@ const Contact = () => {
       responseTime: "Available for meetings"
     },
     {
-      icon: Linkedin,
+      icon: FaLinkedin,
       label: "LinkedIn",
       value: socialLinks.linkedin.username,
       href: socialLinks.linkedin.url,
@@ -91,28 +103,28 @@ const Contact = () => {
   const socialMediaLinks = [
     {
       name: "GitHub",
-      icon: Github,
+      icon: FaGithub,
       href: socialLinks.github.url,
       description: "Check out my code",
       color: "hover:text-gray-400"
     },
     {
       name: "LinkedIn",
-      icon: Linkedin,
+      icon: FaLinkedin,
       href: socialLinks.linkedin.url,
       description: "Let's connect professionally",
       color: "hover:text-blue-400"
     },
     {
       name: "Instagram",
-      icon: Instagram,
+      icon: FaInstagram,
       href: socialLinks.instagram.url,
       description: "Follow for updates",
       color: "hover:text-pink-400"
     },
     {
       name: "Email",
-      icon: Mail,
+      icon: HiMail,
       href: socialLinks.email.url,
       description: "Send me a message",
       color: "hover:text-red-400"
@@ -152,7 +164,7 @@ const Contact = () => {
               <Card className="portfolio-card slide-up hover:shadow-xl hover:shadow-primary/10 transition-all duration-300">
                 <div className="flex items-center mb-8">
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mr-4">
-                    <Mail className="w-6 h-6 text-primary" />
+                    <HiMail className="w-6 h-6 text-primary" />
                   </div>
                   <h3 className="text-xl sm:text-2xl font-bold">Contact Information</h3>
                 </div>
@@ -171,14 +183,14 @@ const Contact = () => {
                           <h4 className="font-semibold group-hover:text-primary transition-colors">{method.label}</h4>
                           {method.preferred && (
                             <Badge className="bg-green-500/10 text-green-600 border-green-500/20 text-xs">
-                              <Star className="w-3 h-3 mr-1" />
+                              <HiStar className="w-3 h-3 mr-1" />
                               Preferred
                             </Badge>
                           )}
                         </div>
                         <p className="text-muted-foreground text-sm">{method.value}</p>
                         <div className="flex items-center gap-1 text-xs text-muted-foreground mt-1">
-                          <Clock className="w-3 h-3" />
+                          <HiClock className="w-3 h-3" />
                           {method.responseTime}
                         </div>
                       </div>
@@ -187,7 +199,7 @@ const Contact = () => {
                           href={method.href}
                           className="opacity-0 group-hover:opacity-100 transition-all duration-300 text-primary hover:text-primary-glow"
                         >
-                          <Send className="w-4 h-4" />
+                          <HiPaperAirplane className="w-4 h-4" />
                         </a>
                       )}
                     </div>
@@ -271,7 +283,7 @@ const Contact = () => {
               <Card className="portfolio-card slide-up">
                 <div className="flex items-center mb-8">
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mr-4">
-                    <Send className="w-6 h-6 text-primary" />
+                    <HiPaperAirplane className="w-6 h-6 text-primary" />
                   </div>
                   <h3 className="text-2xl sm:text-3xl font-bold">
                     Send Me a <span className="gradient-text">Message</span>
@@ -357,12 +369,12 @@ const Contact = () => {
                   >
                     {isSubmitting ? (
                       <>
-                        <Loader2 className="w-5 h-5 mr-2 animate-spin" />
+                        <HiRefresh className="w-5 h-5 mr-2 animate-spin" />
                         Sending...
                       </>
                     ) : (
                       <>
-                        <Send className="w-5 h-5 mr-2" />
+                        <HiPaperAirplane className="w-5 h-5 mr-2" />
                         Send Message
                       </>
                     )}
@@ -370,14 +382,14 @@ const Contact = () => {
 
                   {submitStatus === 'success' && (
                     <div className="flex items-center justify-center text-green-600 text-sm">
-                      <CheckCircle className="w-4 h-4 mr-2" />
+                      <HiCheckCircle className="w-4 h-4 mr-2" />
                       Message sent successfully!
                     </div>
                   )}
 
                   {submitStatus === 'error' && (
                     <div className="flex items-center justify-center text-destructive text-sm">
-                      <AlertCircle className="w-4 h-4 mr-2" />
+                      <HiExclamationCircle className="w-4 h-4 mr-2" />
                       Failed to send message. Please try again.
                     </div>
                   )}
@@ -386,7 +398,7 @@ const Contact = () => {
                 <div className="mt-6 p-4 bg-gradient-to-r from-green-500/10 to-blue-500/10 rounded-xl border border-green-500/20">
                   <div className="flex items-start gap-3">
                     <div className="w-8 h-8 rounded-lg bg-green-500/20 flex items-center justify-center mt-0.5">
-                      <MessageCircle className="w-4 h-4 text-green-600" />
+                      <HiChatAlt className="w-4 h-4 text-green-600" />
                     </div>
                     <div>
                       <p className="text-sm text-foreground font-medium mb-1">

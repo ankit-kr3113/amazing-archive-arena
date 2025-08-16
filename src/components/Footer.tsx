@@ -4,9 +4,6 @@ import {
   Mail,
   Twitter,
   MapPin,
-  Code2,
-  Brain,
-  Terminal,
   Zap,
   Heart,
   Calendar,
@@ -14,6 +11,7 @@ import {
   FileText
 } from "lucide-react";
 import { FaStar, FaMagic, FaLaptopCode } from "react-icons/fa";
+import { SiLeetcode, SiGeeksforgeeks, SiCodechef } from "react-icons/si";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -83,9 +81,98 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Desktop/Tablet: Full Content */}
-        <div className="hidden sm:block">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 lg:gap-8 mb-8 sm:mb-12">
+        {/* Tablet: Simplified Content */}
+        <div className="hidden sm:block md:hidden">
+          <div className="grid grid-cols-2 gap-8 mb-10">
+            {/* Brand Section - Simplified */}
+            <div className="space-y-5">
+              <h3 className="text-xl font-bold text-white">Yuvraj Mehta</h3>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                Full Stack Developer specializing in modern web technologies
+              </p>
+              <div className="flex gap-3">
+                <a
+                  href="https://github.com/yuvraj-mehta"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 rounded-lg bg-[#2a2b5e] hover:bg-gray-700 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-200"
+                >
+                  <Github className="w-4 h-4" />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/yuvraj-mehta-a0274528a/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 rounded-lg bg-[#2a2b5e] hover:bg-blue-600 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-200"
+                >
+                  <Linkedin className="w-4 h-4" />
+                </a>
+                <a
+                  href="mailto:yuvraj.mehta532@gmail.com"
+                  className="w-9 h-9 rounded-lg bg-[#2a2b5e] hover:bg-red-500 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-200"
+                >
+                  <Mail className="w-4 h-4" />
+                </a>
+              </div>
+            </div>
+
+            {/* Essential Links Only */}
+            <div className="space-y-5">
+              <h4 className="text-white font-semibold text-lg">Quick Links</h4>
+              <div className="space-y-4 text-sm">
+                <a
+                  href="/Yuvraj_Resume_v2_1 (1).pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center text-gray-400 hover:text-white transition-colors"
+                >
+                  <FileText className="w-4 h-4 mr-3" />
+                  Resume
+                </a>
+                <Link
+                  to="/projects"
+                  className="flex items-center text-gray-400 hover:text-white transition-colors"
+                >
+                  <Zap className="w-4 h-4 mr-3" />
+                  Projects
+                </Link>
+                <Link to="/about" className="block text-gray-400 hover:text-white transition-colors">
+                  About
+                </Link>
+                <Link to="/contact" className="block text-gray-400 hover:text-white transition-colors">
+                  Contact
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* Simplified Stats for Tablet */}
+          <div className="grid grid-cols-2 gap-8 py-8 border-t border-gray-600 border-b border-gray-600 mb-6">
+            <div className="text-center">
+              <div className="flex items-center justify-center mb-4">
+                <FaStar className="w-5 h-5 text-purple-400 mr-2" />
+                <span className="text-xs text-gray-400 uppercase tracking-wider font-medium">Total Visitors</span>
+              </div>
+              <div className="text-2xl font-bold text-white">15,475</div>
+            </div>
+
+            <div className="text-center">
+              <div className="flex items-center justify-center mb-4">
+                <FaLaptopCode className="w-5 h-5 text-blue-400 mr-2" />
+                <span className="text-xs text-gray-400 uppercase tracking-wider font-medium">DSA Skills</span>
+              </div>
+              <div className="flex items-center justify-center space-x-1">
+                {[1, 2, 3, 4, 5].map((star) => (
+                  <FaStar key={star} className="w-5 h-5 text-yellow-400" />
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Desktop: Full Content */}
+        <div className="hidden md:block">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-8 mb-8 lg:mb-12">
 
             {/* Brand Section */}
             <div>
@@ -169,7 +256,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="flex items-center text-gray-400 hover:text-white transition-colors"
                 >
-                  <Code2 className="w-4 h-4 mr-2" />
+                  <SiLeetcode className="w-4 h-4 mr-2" />
                   LeetCode
                 </a>
                 <a
@@ -178,7 +265,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="flex items-center text-gray-400 hover:text-white transition-colors"
                 >
-                  <Brain className="w-4 h-4 mr-2" />
+                  <SiGeeksforgeeks className="w-4 h-4 mr-2" />
                   GeeksforGeeks
                 </a>
                 <a
@@ -187,7 +274,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="flex items-center text-gray-400 hover:text-white transition-colors"
                 >
-                  <Terminal className="w-4 h-4 mr-2" />
+                  <SiCodechef className="w-4 h-4 mr-2" />
                   CodeChef
                 </a>
                 <Link
@@ -226,32 +313,32 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Stats Section - Hidden on mobile, simplified on tablet */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 py-6 sm:py-8 border-t border-gray-600 border-b border-gray-600">
-            <div className="text-center py-2 sm:py-3">
-              <div className="flex items-center justify-center mb-3 sm:mb-4">
-                <FaStar className="w-4 h-4 sm:w-5 sm:h-5 text-purple-400 mr-2" />
-                <span className="text-xs sm:text-sm text-gray-400 uppercase tracking-wider font-medium">Total Visitors</span>
+          {/* Stats Section - Desktop only */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 py-6 lg:py-8 border-t border-gray-600 border-b border-gray-600">
+            <div className="text-center py-2 lg:py-3">
+              <div className="flex items-center justify-center mb-3 lg:mb-4">
+                <FaStar className="w-4 h-4 lg:w-5 lg:h-5 text-purple-400 mr-2" />
+                <span className="text-xs lg:text-sm text-gray-400 uppercase tracking-wider font-medium">Total Visitors</span>
               </div>
-              <div className="text-xl sm:text-2xl font-bold text-white">15,475</div>
+              <div className="text-xl lg:text-2xl font-bold text-white">15,475</div>
             </div>
 
-            <div className="text-center py-2 sm:py-3">
-              <div className="flex items-center justify-center mb-3 sm:mb-4">
-                <FaMagic className="w-4 h-4 sm:w-5 sm:h-5 text-purple-400 mr-2" />
-                <span className="text-xs sm:text-sm text-gray-400 uppercase tracking-wider font-medium">Last Updated</span>
+            <div className="text-center py-2 lg:py-3">
+              <div className="flex items-center justify-center mb-3 lg:mb-4">
+                <FaMagic className="w-4 h-4 lg:w-5 lg:h-5 text-purple-400 mr-2" />
+                <span className="text-xs lg:text-sm text-gray-400 uppercase tracking-wider font-medium">Last Updated</span>
               </div>
-              <div className="text-lg sm:text-2xl font-bold text-white">August 16, 2025</div>
+              <div className="text-lg lg:text-2xl font-bold text-white">August 16, 2025</div>
             </div>
 
-            <div className="text-center py-2 sm:py-3">
-              <div className="flex items-center justify-center mb-3 sm:mb-4">
-                <FaLaptopCode className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400 mr-2" />
-                <span className="text-xs sm:text-sm text-gray-400 uppercase tracking-wider font-medium">DSA Skills</span>
+            <div className="text-center py-2 lg:py-3">
+              <div className="flex items-center justify-center mb-3 lg:mb-4">
+                <FaLaptopCode className="w-4 h-4 lg:w-5 lg:h-5 text-blue-400 mr-2" />
+                <span className="text-xs lg:text-sm text-gray-400 uppercase tracking-wider font-medium">DSA Skills</span>
               </div>
               <div className="flex items-center justify-center space-x-1">
                 {[1, 2, 3, 4, 5].map((star) => (
-                  <FaStar key={star} className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400" />
+                  <FaStar key={star} className="w-4 h-4 lg:w-5 lg:h-5 text-yellow-400" />
                 ))}
               </div>
             </div>
@@ -277,7 +364,7 @@ const Footer = () => {
         </div>
 
         {/* Copyright Section */}
-        <div className="pt-4 sm:pt-8 text-center">
+        <div className="pt-4 md:pt-8 text-center">
           <p className="text-gray-400 text-sm mb-1">
             © {currentYear} Yuvraj Mehta. All rights reserved.
           </p>

@@ -1,6 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Download, Mail, ExternalLink, Github, Linkedin, Trophy, Code, MapPin, Calendar } from "lucide-react";
+import {
+  HiDownload,
+  HiMail,
+  HiExternalLink,
+  HiCode,
+  HiLocationMarker,
+  HiCalendar
+} from "react-icons/hi";
+import { FaGithub, FaLinkedin, FaTrophy } from "react-icons/fa";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
@@ -89,7 +97,7 @@ const About = () => {
                   
                   <div className="absolute top-3 left-3 bg-gradient-to-r from-primary to-primary-glow text-primary-foreground px-2 py-1 rounded-full text-xs font-medium shadow-lg backdrop-blur-sm">
                     <span className="flex items-center gap-1">
-                      <Trophy className="w-3 h-3" />
+                      <FaTrophy className="w-3 h-3" />
                       <span>Top 27.7%</span>
                     </span>
                   </div>
@@ -105,26 +113,26 @@ const About = () => {
 
                   <div className="space-y-2 text-sm">
                     <div className="flex items-center gap-2">
-                      <MapPin className="w-4 h-4 text-primary" />
+                      <HiLocationMarker className="w-4 h-4 text-primary" />
                       <span>{personalInfo.university}, {personalInfo.location.split(',')[1]}</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <Calendar className="w-4 h-4 text-primary" />
+                      <HiCalendar className="w-4 h-4 text-primary" />
                       <span>Computer Science Student</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <Code className="w-4 h-4 text-primary" />
+                      <HiCode className="w-4 h-4 text-primary" />
                       <span>2+ Years Experience</span>
                     </div>
                   </div>
 
                   <div className="flex gap-2 pt-2">
                     <Button size="sm" className="flex-1" onClick={handleContactClick}>
-                      <Mail className="w-4 h-4 mr-2" />
+                      <HiMail className="w-4 h-4 mr-2" />
                       Contact
                     </Button>
                     <Button variant="outline" size="sm" className="flex-1" onClick={handleResumeDownload}>
-                      <Download className="w-4 h-4 mr-2" />
+                      <HiDownload className="w-4 h-4 mr-2" />
                       Resume
                     </Button>
                   </div>
@@ -136,7 +144,7 @@ const About = () => {
                       rel="noopener noreferrer"
                       className="flex items-center gap-1 text-xs text-muted-foreground hover:text-primary transition-colors"
                     >
-                      <Github className="w-4 h-4" />
+                      <FaGithub className="w-4 h-4" />
                       GitHub
                     </a>
                     <a
@@ -145,7 +153,7 @@ const About = () => {
                       rel="noopener noreferrer"
                       className="flex items-center gap-1 text-xs text-muted-foreground hover:text-primary transition-colors"
                     >
-                      <Linkedin className="w-4 h-4" />
+                      <FaLinkedin className="w-4 h-4" />
                       LinkedIn
                     </a>
                     <a
@@ -154,7 +162,7 @@ const About = () => {
                       rel="noopener noreferrer"
                       className="flex items-center gap-1 text-xs text-muted-foreground hover:text-primary transition-colors"
                     >
-                      <ExternalLink className="w-4 h-4" />
+                      <HiExternalLink className="w-4 h-4" />
                       LeetCode
                     </a>
                   </div>

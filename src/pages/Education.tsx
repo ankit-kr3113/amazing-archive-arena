@@ -4,7 +4,7 @@ import { Progress } from "@/components/ui/progress";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { useState } from "react";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { HiChevronDown, HiChevronUp } from "react-icons/hi";
 import { personalInfo } from "@/data/portfolioData";
 
 const Education = () => {
@@ -151,9 +151,9 @@ const Education = () => {
                             </Badge>
                             <div className="text-muted-foreground hover:text-primary transition-colors">
                               {expandedCards.includes(entry.id) ? (
-                                <ChevronUp className="w-4 h-4" />
+                                <HiChevronUp className="w-4 h-4" />
                               ) : (
-                                <ChevronDown className="w-4 h-4" />
+                                <HiChevronDown className="w-4 h-4" />
                               )}
                             </div>
                           </div>
