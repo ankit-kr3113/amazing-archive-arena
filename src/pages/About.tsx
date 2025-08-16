@@ -119,7 +119,7 @@ const About = () => {
                       <span>{personalInfo.university}, {personalInfo.location.split(',')[1]}</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <Calendar className="w-4 h-4 text-primary" />
+                      <HiCalendar className="w-4 h-4 text-primary" />
                       <span>Computer Science Student</span>
                     </div>
                     <div className="flex items-center gap-2">
