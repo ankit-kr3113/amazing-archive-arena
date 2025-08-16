@@ -21,17 +21,17 @@ const Footer = () => {
 
   return (
     <footer className="bg-[#1a1b3e] text-white mt-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-8 py-8 sm:py-12">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 lg:gap-8 mb-8 sm:mb-12">
 
           {/* Brand Section */}
           <div>
-            <h3 className="text-lg sm:text-xl font-bold text-white mb-3">Yuvraj Mehta</h3>
-            <p className="text-gray-400 text-sm sm:text-base mb-4 leading-relaxed">
+            <h3 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-5">Yuvraj Mehta</h3>
+            <p className="text-gray-400 text-sm sm:text-base mb-5 sm:mb-6 leading-relaxed">
               Full Stack Developer specializing in modern web technologies and algorithms, currently exploring the exciting world of Generative AI.
             </p>
-            <div className="flex space-x-3">
+            <div className="flex flex-wrap gap-3">
               <a
                 href="https://github.com/yuvraj-mehta"
                 target="_blank"
@@ -75,8 +75,8 @@ const Footer = () => {
 
           {/* Contact Section */}
           <div>
-            <h4 className="text-white font-semibold mb-3 text-base sm:text-lg">Contact</h4>
-            <div className="space-y-2 text-sm sm:text-base">
+            <h4 className="text-white font-semibold mb-4 sm:mb-5 text-base sm:text-lg">Contact</h4>
+            <div className="space-y-3 sm:space-y-4 text-sm sm:text-base">
               <div className="flex items-center text-gray-400 hover:text-white transition-colors">
                 <MapPin className="w-4 h-4 mr-2" />
                 <span>New Delhi, India</span>
@@ -90,8 +90,8 @@ const Footer = () => {
 
           {/* Quick Links Section */}
           <div>
-            <h4 className="text-white font-semibold mb-3 text-base sm:text-lg">Quick Links</h4>
-            <div className="space-y-2 text-sm sm:text-base">
+            <h4 className="text-white font-semibold mb-4 sm:mb-5 text-base sm:text-lg">Quick Links</h4>
+            <div className="space-y-3 sm:space-y-4 text-sm sm:text-base">
               <a
                 href="/Yuvraj_Resume_v2_1 (1).pdf"
                 target="_blank"
@@ -140,8 +140,8 @@ const Footer = () => {
 
           {/* Navigation Section */}
           <div>
-            <h4 className="text-white font-semibold mb-3 text-base sm:text-lg">Navigation</h4>
-            <div className="space-y-2 text-sm sm:text-base">
+            <h4 className="text-white font-semibold mb-4 sm:mb-5 text-base sm:text-lg">Navigation</h4>
+            <div className="space-y-3 sm:space-y-4 text-sm sm:text-base">
               <Link to="/" className="block text-gray-400 hover:text-white transition-colors">
                 Home
               </Link>
@@ -165,38 +165,38 @@ const Footer = () => {
         </div>
 
         {/* Stats Section */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 py-6 border-t border-gray-600 border-b border-gray-600">
-          <div className="text-center">
-            <div className="flex items-center justify-center mb-3">
-              <FaStar className="w-4 h-4 text-purple-400 mr-2" />
-              <span className="text-xs text-gray-400 uppercase tracking-wider font-medium">Total Visitors</span>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 py-6 sm:py-8 border-t border-gray-600 border-b border-gray-600">
+          <div className="text-center py-2 sm:py-3">
+            <div className="flex items-center justify-center mb-3 sm:mb-4">
+              <FaStar className="w-4 h-4 sm:w-5 sm:h-5 text-purple-400 mr-2" />
+              <span className="text-xs sm:text-sm text-gray-400 uppercase tracking-wider font-medium">Total Visitors</span>
             </div>
-            <div className="text-2xl font-bold text-white">15,475</div>
+            <div className="text-xl sm:text-2xl font-bold text-white">15,475</div>
           </div>
 
-          <div className="text-center">
-            <div className="flex items-center justify-center mb-3">
-              <FaMagic className="w-4 h-4 text-purple-400 mr-2" />
-              <span className="text-xs text-gray-400 uppercase tracking-wider font-medium">Last Updated</span>
+          <div className="text-center py-2 sm:py-3">
+            <div className="flex items-center justify-center mb-3 sm:mb-4">
+              <FaMagic className="w-4 h-4 sm:w-5 sm:h-5 text-purple-400 mr-2" />
+              <span className="text-xs sm:text-sm text-gray-400 uppercase tracking-wider font-medium">Last Updated</span>
             </div>
-            <div className="text-2xl font-bold text-white">August 16, 2025</div>
+            <div className="text-lg sm:text-2xl font-bold text-white">August 16, 2025</div>
           </div>
 
-          <div className="text-center">
-            <div className="flex items-center justify-center mb-3">
-              <FaLaptopCode className="w-4 h-4 text-blue-400 mr-2" />
-              <span className="text-xs text-gray-400 uppercase tracking-wider font-medium">DSA Skills</span>
+          <div className="text-center py-2 sm:py-3">
+            <div className="flex items-center justify-center mb-3 sm:mb-4">
+              <FaLaptopCode className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400 mr-2" />
+              <span className="text-xs sm:text-sm text-gray-400 uppercase tracking-wider font-medium">DSA Skills</span>
             </div>
             <div className="flex items-center justify-center space-x-1">
               {[1, 2, 3, 4, 5].map((star) => (
-                <FaStar key={star} className="w-5 h-5 text-yellow-400" />
+                <FaStar key={star} className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400" />
               ))}
             </div>
           </div>
         </div>
 
         {/* Copyright Section */}
-        <div className="pt-6 text-center">
+        <div className="pt-6 sm:pt-8 text-center">
           <p className="text-gray-400 text-sm mb-1">
             © {currentYear} Yuvraj Mehta. All rights reserved.
           </p>
