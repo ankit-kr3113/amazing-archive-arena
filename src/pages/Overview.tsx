@@ -887,28 +887,6 @@ const Overview = () => {
                       <p className="text-sm text-foreground/80 leading-relaxed">
                         {personalInfo.bio.intro.split('.')[0]}. Passionate about creating digital solutions that make a difference.
                       </p>
-
-                      <div className="grid grid-cols-2 gap-3">
-                        <div className="flex items-center gap-2 p-2 rounded-lg bg-primary/10 hover:bg-primary/15 transition-colors duration-300">
-                          <div className="w-6 h-6 rounded-lg bg-blue-500/20 flex items-center justify-center">
-                            <FaCode className="w-3 h-3 text-blue-400" />
-                          </div>
-                          <div>
-                            <div className="text-xs font-semibold text-foreground">{achievements.stats.yearsExperience}</div>
-                            <div className="text-xs text-foreground/60">Experience</div>
-                          </div>
-                        </div>
-
-                        <div className="flex items-center gap-2 p-2 rounded-lg bg-primary/10 hover:bg-primary/15 transition-colors duration-300">
-                          <div className="w-6 h-6 rounded-lg bg-yellow-500/20 flex items-center justify-center">
-                            <FaTrophy className="w-3 h-3 text-yellow-400" />
-                          </div>
-                          <div>
-                            <div className="text-xs font-semibold text-foreground">{achievements.stats.totalProjects}</div>
-                            <div className="text-xs text-foreground/60">Projects</div>
-                          </div>
-                        </div>
-                      </div>
                     </div>
 
                     <div className="space-y-2 mb-6">
