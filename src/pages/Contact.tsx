@@ -407,6 +407,34 @@ const Contact = () => {
                   </div>
                 </div>
               </Card>
+
+              {/* Social Links - Horizontal Card */}
+              <Card className="portfolio-card slide-up mt-8 !p-6">
+                <div className="flex items-center mb-6">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mr-4">
+                    <HiUsers className="w-6 h-6 text-primary" />
+                  </div>
+                  <h3 className="text-2xl font-bold">Connect With Me</h3>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                  {socialMediaLinks.map((link, index) => (
+                    <a
+                      key={index}
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group flex flex-col items-center p-4 rounded-xl hover:bg-primary/10 transition-all duration-300 hover:scale-105 hover:shadow-lg border border-border/50 hover:border-primary/30 text-center"
+                    >
+                      <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground group-hover:scale-110 transition-all duration-300 mb-3">
+                        <link.icon className="w-6 h-6 group-hover:scale-110 transition-transform duration-300" />
+                      </div>
+                      <div className="font-medium group-hover:text-primary transition-colors mb-1">{link.name}</div>
+                      <div className="text-xs text-muted-foreground group-hover:text-primary/70 transition-colors">{link.description}</div>
+                    </a>
+                  ))}
+                </div>
+              </Card>
             </div>
           </div>
         </div>
