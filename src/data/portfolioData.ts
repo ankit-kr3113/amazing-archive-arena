@@ -203,11 +203,18 @@ export const skills = {
   }
 };
 
+import {
+  FaRobot,
+  FaRunning,
+  FaPuzzlePiece,
+  FaUsers
+} from "react-icons/fa";
+
 export const interests = [
-  { icon: "🤖", name: "Robotics", description: "Building combat & soccer bots" },
-  { icon: "🏃‍♂️", name: "Athletics", description: "Bronze in 50m Hurdles" },
-  { icon: "🧩", name: "Problem Solving", description: "Competitive programming" },
-  { icon: "🎯", name: "Mentoring", description: "Leading workshops" }
+  { icon: FaRobot, name: "Robotics", description: "Building combat & soccer bots" },
+  { icon: FaRunning, name: "Athletics", description: "Bronze in 50m Hurdles" },
+  { icon: FaPuzzlePiece, name: "Problem Solving", description: "Competitive programming" },
+  { icon: FaUsers, name: "Mentoring", description: "Leading workshops" }
 ];
 
 export const projects = [
