@@ -299,7 +299,7 @@ const Overview = () => {
                   <span className="text-blue-600 dark:text-blue-400 font-medium">Remote</span>
                 </div>
                 <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/30 text-sm">
-                  <Star className="w-3 h-3 text-purple-500 fill-current" />
+                  <FaStar className="w-3 h-3 text-purple-500" />
                   <span className="text-purple-600 dark:text-purple-400 font-medium">Top 27.7%</span>
                 </div>
               </div>
