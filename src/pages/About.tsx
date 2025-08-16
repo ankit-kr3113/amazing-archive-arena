@@ -5,6 +5,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
 import { useNavigate } from "react-router-dom";
+import { personalInfo, socialLinks, achievements, interests } from "@/data/portfolioData";
 
 const About = () => {
   const navigate = useNavigate();
@@ -65,7 +66,7 @@ const About = () => {
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
               <span className="text-foreground">Get to Know</span>{" "}
               <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
-                Yuvraj Mehta
+                {personalInfo.name}
               </span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -97,8 +98,8 @@ const About = () => {
 
                 <div className="space-y-4">
                   <div>
-                    <h2 className="text-lg sm:text-xl font-bold mb-1">Yuvraj Mehta</h2>
-                    <p className="text-sm text-muted-foreground">Full Stack Developer & CS Student</p>
+                    <h2 className="text-lg sm:text-xl font-bold mb-1">{personalInfo.name}</h2>
+                    <p className="text-sm text-muted-foreground">{personalInfo.title} & {personalInfo.course} Student</p>
                   </div>
 
                   <div className="space-y-2 text-sm">
