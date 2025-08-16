@@ -4,7 +4,18 @@ import { Progress } from "@/components/ui/progress";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { useState } from "react";
-import { HiChevronDown, HiChevronUp } from "react-icons/hi";
+import {
+  HiChevronDown,
+  HiChevronUp,
+  HiAcademicCap,
+  HiBookOpen,
+  HiTrophy,
+  HiUsers,
+  HiLocationMarker,
+  HiCalendar,
+  HiSparkles,
+  HiBadgeCheck
+} from "react-icons/hi";
 import { personalInfo } from "@/data/portfolioData";
 
 const Education = () => {
