@@ -210,13 +210,6 @@ export const skills = {
   }
 };
 
-import {
-  FaRobot,
-  FaRunning,
-  FaPuzzlePiece,
-  FaUsers
-} from "react-icons/fa";
-
 export const interests = [
   { icon: FaRobot, name: "Robotics", description: "Building combat & soccer bots" },
   { icon: FaRunning, name: "Athletics", description: "Bronze in 50m Hurdles" },
