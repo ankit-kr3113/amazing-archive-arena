@@ -236,7 +236,7 @@ export const projects = [
   {
     title: "EcoGuardian",
     description: "An online community platform empowering individuals to collaborate on environmental projects, report cleanliness issues, access educational resources, and drive positive change for a cleaner, greener future. 🌍",
-    image: "https://images.unsplash.com/photo-1569163139394-de4e4f43e4e3?w=400&h=300&fit=crop&crop=center&auto=format&q=80",
+    image: "https://cdn.builder.io/api/v1/image/assets%2F3ebd211e245d45d69415da73d6cd5b1d%2F2bfc1f4996d44211823a26035eb54792?format=webp&width=800",
     category: "Full Stack",
     featured: true,
     tags: ["HTML", "CSS", "JavaScript", "Node.js", "Express", "MongoDB"],

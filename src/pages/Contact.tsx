@@ -171,8 +171,8 @@ const Contact = () => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
             {/* Contact Information */}
             <div className="lg:col-span-1 space-y-6">
-              <Card className="portfolio-card slide-up hover:shadow-xl hover:shadow-primary/10 transition-all duration-300">
-                <div className="flex items-center mb-8">
+              <Card className="portfolio-card slide-up hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 !p-4">
+                <div className="flex items-center mb-6">
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mr-4">
                     <HiMail className="w-6 h-6 text-primary" />
                   </div>
@@ -180,13 +180,13 @@ const Contact = () => {
                 </div>
 
                 {/* Enhanced Contact Methods */}
-                <div className="space-y-4">
+                <div className="space-y-3">
                   {contactMethods.map((method, index) => (
-                    <div key={index} className="group flex items-center gap-3 sm:gap-4 p-3 rounded-lg hover:bg-primary/5 transition-all duration-300">
-                      <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300 ${
+                    <div key={index} className="group flex items-center gap-3 p-2 rounded-lg hover:bg-primary/5 transition-all duration-300">
+                      <div className={`w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300 ${
                         method.preferred ? 'bg-primary/20 group-hover:bg-primary/30' : 'bg-primary/10 group-hover:bg-primary/20'
                       }`}>
-                        <method.icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
+                        <method.icon className="w-4 h-4 text-primary" />
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2 flex-wrap">
@@ -217,8 +217,8 @@ const Contact = () => {
                 </div>
 
                 {/* Quick Stats */}
-                <div className="mt-6 p-4 bg-gradient-to-r from-primary/5 to-primary-glow/5 rounded-xl border border-primary/10">
-                  <div className="grid grid-cols-2 gap-4 text-center">
+                <div className="mt-4 p-3 bg-gradient-to-r from-primary/5 to-primary-glow/5 rounded-xl border border-primary/10">
+                  <div className="grid grid-cols-2 gap-3 text-center">
                     <div>
                       <div className="text-lg font-bold text-primary">24h</div>
                       <div className="text-xs text-muted-foreground">Response Time</div>
@@ -232,15 +232,15 @@ const Contact = () => {
               </Card>
 
               {/* Quick Links & Social Combined */}
-              <Card className="portfolio-card slide-up">
-                <div className="flex items-center mb-8">
+              <Card className="portfolio-card slide-up !p-4">
+                <div className="flex items-center mb-6">
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mr-4">
                     <HiLink className="w-6 h-6 text-primary" />
                   </div>
                   <h3 className="text-xl sm:text-2xl font-bold">Quick Links</h3>
                 </div>
 
-                <div className="space-y-3 mb-8">
+                <div className="space-y-2 mb-6">
                   {quickLinks.map((link, index) => {
                     const getIcon = () => {
                       switch(link.name) {
@@ -259,7 +259,7 @@ const Contact = () => {
                         href={link.href}
                         target={link.href.startsWith("http") ? "_blank" : "_self"}
                         rel={link.href.startsWith("http") ? "noopener noreferrer" : ""}
-                        className="group flex items-center space-x-3 p-3 rounded-xl hover:bg-primary/10 transition-all duration-300 hover:scale-105 hover:shadow-lg text-sm"
+                        className="group flex items-center space-x-3 p-2 rounded-xl hover:bg-primary/10 transition-all duration-300 hover:scale-105 hover:shadow-lg text-sm"
                       >
                         <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground group-hover:scale-110 transition-all duration-300">
                           {getIcon()}
@@ -270,34 +270,6 @@ const Contact = () => {
                   })}
                 </div>
 
-                <hr className="border-border mb-8" />
-
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mr-4">
-                    <HiUsers className="w-6 h-6 text-primary" />
-                  </div>
-                  <h3 className="text-lg sm:text-xl font-bold">Social Links</h3>
-                </div>
-
-                <div className="space-y-3">
-                  {socialMediaLinks.map((link, index) => (
-                    <a
-                      key={index}
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group flex items-center space-x-3 p-3 rounded-xl hover:bg-primary/10 transition-all duration-300 hover:scale-105 hover:shadow-lg text-sm border border-border/50 hover:border-primary/30"
-                    >
-                      <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground group-hover:scale-110 transition-all duration-300">
-                        <link.icon className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
-                      </div>
-                      <div className="flex-1">
-                        <div className="font-medium group-hover:text-primary transition-colors">{link.name}</div>
-                        <div className="text-xs text-muted-foreground group-hover:text-primary/70 transition-colors">{link.description}</div>
-                      </div>
-                    </a>
-                  ))}
-                </div>
               </Card>
             </div>
 
@@ -433,6 +405,36 @@ const Contact = () => {
                       </p>
                     </div>
                   </div>
+                </div>
+              </Card>
+
+              {/* Social Links - Horizontal Card */}
+              <Card className="portfolio-card slide-up mt-8 !p-6">
+                <div className="flex items-center mb-6">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mr-4">
+                    <HiUsers className="w-6 h-6 text-primary" />
+                  </div>
+                  <h3 className="text-2xl font-bold">Connect With Me</h3>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {socialMediaLinks.map((link, index) => (
+                    <a
+                      key={index}
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group flex items-center p-4 rounded-xl hover:bg-primary/10 transition-all duration-300 hover:scale-105 hover:shadow-lg border border-border/50 hover:border-primary/30"
+                    >
+                      <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground group-hover:scale-110 transition-all duration-300 mr-4 flex-shrink-0">
+                        <link.icon className="w-6 h-6 group-hover:scale-110 transition-transform duration-300" />
+                      </div>
+                      <div className="flex-1">
+                        <div className="font-medium group-hover:text-primary transition-colors">{link.name}</div>
+                        <div className="text-sm text-muted-foreground group-hover:text-primary/70 transition-colors">{link.description}</div>
+                      </div>
+                    </a>
+                  ))}
                 </div>
               </Card>
             </div>
