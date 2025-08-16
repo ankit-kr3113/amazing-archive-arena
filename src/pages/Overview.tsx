@@ -14,7 +14,9 @@ import {
   CircleDot,
   Eye,
   ArrowRight,
-  ChevronRight
+  ChevronRight,
+  BookOpen,
+  FolderOpen
 } from "lucide-react";
 import {
   FaGithub,
