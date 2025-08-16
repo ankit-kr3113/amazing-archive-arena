@@ -46,7 +46,7 @@ import Footer from "@/components/Footer";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
 import LiveStatus from "@/components/LiveStatus";
 import Certifications from "@/components/Certifications";
-import LearningTimeline from "@/components/LearningTimeline";
+import JourneySummary from "@/components/JourneySummary";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
@@ -749,10 +749,10 @@ const Overview = () => {
         </div>
       </section>
 
-      {/* Learning Timeline Section */}
+      {/* Learning Journey Summary Section */}
       <section className="pb-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <LearningTimeline />
+          <JourneySummary />
         </div>
       </section>
 
