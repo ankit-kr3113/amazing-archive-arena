@@ -202,40 +202,40 @@ const Overview = () => {
   }), []);
 
   const contactInfo = useMemo(() => ({
-    email: "yuvraj.mehta532@gmail.com",
-    phone: "+91 98765 43210",
-    location: "Patna, Bihar, India",
+    email: personalInfo.email,
+    phone: personalInfo.phone,
+    location: personalInfo.location,
     timezone: "IST (UTC +5:30)",
-    availability: "Available for opportunities",
+    availability: personalInfo.status.availability,
     preferredContact: "Email or LinkedIn",
     responseTime: "Within 24 hours",
     socialLinks: [
       {
         name: "GitHub",
         icon: FaGithub,
-        url: "https://github.com/yuvraj-mehta",
-        username: "@yuvraj-mehta",
+        url: socialLinks.github.url,
+        username: "@" + socialLinks.github.username,
         color: "text-gray-300 hover:text-white"
       },
       {
         name: "LinkedIn",
         icon: FaLinkedin,
-        url: "https://linkedin.com/in/yuvraj-mehta",
-        username: "yuvraj-mehta",
+        url: socialLinks.linkedin.url,
+        username: socialLinks.linkedin.username,
         color: "text-blue-400 hover:text-blue-300"
       },
       {
         name: "Twitter",
         icon: FaTwitter,
-        url: "https://twitter.com/yuvraj_mehta",
-        username: "@yuvraj_mehta",
+        url: socialLinks.twitter.url,
+        username: socialLinks.twitter.username,
         color: "text-sky-400 hover:text-sky-300"
       },
       {
         name: "Email",
         icon: FaEnvelope,
-        url: "mailto:yuvraj.mehta532@gmail.com",
-        username: "yuvraj.mehta532@gmail.com",
+        url: socialLinks.email.url,
+        username: socialLinks.email.address,
         color: "text-red-400 hover:text-red-300"
       }
     ]
@@ -278,7 +278,7 @@ const Overview = () => {
           <div className="space-y-8">
             <h1 className="text-5xl md:text-6xl font-bold text-foreground">
               <span className="text-lg font-normal text-foreground/60 block mb-6">👋 Hello, I'm</span>
-              Yuvraj Mehta
+              {personalInfo.name}
             </h1>
 
             <p className="text-xl md:text-2xl text-foreground/70 font-light max-w-2xl mx-auto mt-6">
@@ -287,22 +287,22 @@ const Overview = () => {
 
             {/* Simplified info line */}
             <p className="text-foreground/60 max-w-xl mx-auto mt-4">
-              B.Tech CS Student at NIT Patna · 500+ LeetCode Problems · 15+ Projects
+              {personalInfo.course} Student at {personalInfo.university} · {achievements.leetcode.problemsSolved} LeetCode Problems · {achievements.stats.totalProjects} Projects
             </p>
 
             {/* Clean status badges */}
             <div className="flex flex-wrap items-center justify-center gap-4 mt-12">
               <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20">
                 <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                <span className="text-sm text-green-300">Available</span>
+                <span className="text-sm text-green-300">{personalInfo.status.availability}</span>
               </div>
               <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20">
                 <MapPin className="w-3 h-3 text-blue-400" />
-                <span className="text-sm text-blue-300">Remote</span>
+                <span className="text-sm text-blue-300">{personalInfo.status.workMode}</span>
               </div>
               <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20">
                 <FaStar className="w-3 h-3 text-purple-400" />
-                <span className="text-sm text-purple-300">Top 27.7%</span>
+                <span className="text-sm text-purple-300">{achievements.leetcode.globalRanking}</span>
               </div>
             </div>
 
@@ -323,7 +323,7 @@ const Overview = () => {
                 className="px-8 py-3 border-primary/30 hover:border-primary/50 transition-colors"
                 asChild
               >
-                <a href="/Yuvraj_Resume_v2_1 (1).pdf" target="_blank" rel="noopener noreferrer">
+                <a href={personalInfo.resume} target="_blank" rel="noopener noreferrer">
                   <Download className="w-4 h-4 mr-2" />
                   Resume
                 </a>
