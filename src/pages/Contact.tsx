@@ -4,7 +4,19 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
-import { Github, Linkedin, Mail, Phone, MapPin, Send, Instagram, Loader2, CheckCircle, AlertCircle, Clock, MessageCircle, Star } from "lucide-react";
+import {
+  HiMail,
+  HiPhone,
+  HiLocationMarker,
+  HiPaperAirplane,
+  HiRefresh,
+  HiCheckCircle,
+  HiExclamationCircle,
+  HiClock,
+  HiChatAlt,
+  HiStar
+} from "react-icons/hi";
+import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
