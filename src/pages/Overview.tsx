@@ -346,7 +346,7 @@ const Overview = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {portfolioPreview.map((project, index) => (
+              {featuredProjects.map((project, index) => (
                 <Card key={index} className="group overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105">
                   <div className="relative overflow-hidden">
                     <img
