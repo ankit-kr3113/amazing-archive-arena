@@ -4,7 +4,18 @@ import { Progress } from "@/components/ui/progress";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { useState } from "react";
-import { HiChevronDown, HiChevronUp } from "react-icons/hi";
+import {
+  HiChevronDown,
+  HiChevronUp,
+  HiAcademicCap,
+  HiBookOpen,
+  HiUsers,
+  HiLocationMarker,
+  HiCalendar,
+  HiSparkles,
+  HiBadgeCheck
+} from "react-icons/hi";
+import { FaTrophy, FaGlobe, FaChartBar, FaRobot } from "react-icons/fa";
 import { personalInfo } from "@/data/portfolioData";
 
 const Education = () => {
@@ -73,21 +84,24 @@ const Education = () => {
       issuer: "Udemy",
       year: "2023",
       description: "Comprehensive full-stack web development course covering HTML, CSS, JavaScript, React, and Node.js",
-      badge: "🌐"
+      badge: FaGlobe,
+      color: "text-blue-500"
     },
     {
       title: "Data Structures & Algorithms",
       issuer: "Coursera",
       year: "2023",
       description: "Advanced course on efficient algorithms and complex data structures implementation",
-      badge: "📊"
+      badge: FaChartBar,
+      color: "text-green-500"
     },
     {
       title: "Machine Learning Fundamentals",
       issuer: "FreeCodeCamp",
       year: "2024",
       description: "Introduction to machine learning concepts and practical implementation",
-      badge: "🤖"
+      badge: FaRobot,
+      color: "text-purple-500"
     }
   ];
 
@@ -101,7 +115,7 @@ const Education = () => {
           {/* Enhanced Header */}
           <div className="text-center mb-16 fade-in">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-4">
-              <span className="mr-2">🎓</span>
+              <HiAcademicCap className="w-4 h-4 mr-2" />
               Academic Journey
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
@@ -120,7 +134,7 @@ const Education = () => {
             <div className="lg:col-span-2 space-y-10">
               <div className="flex items-center mb-8">
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mr-4">
-                  <span className="text-2xl">🎓</span>
+                  <HiAcademicCap className="w-6 h-6 text-primary" />
                 </div>
                 <h2 className="text-2xl sm:text-3xl font-bold">Academic Timeline</h2>
               </div>
@@ -146,8 +160,9 @@ const Education = () => {
                             <Badge variant="outline" className="text-xs">{entry.type}</Badge>
                           </div>
                           <div className="flex items-center justify-between sm:justify-end gap-2 flex-shrink-0">
-                            <Badge variant="outline" className="text-primary border-primary/40 text-xs whitespace-nowrap">
-                              📅 {entry.period}
+                            <Badge variant="outline" className="text-primary border-primary/40 text-xs whitespace-nowrap flex items-center gap-1">
+                              <HiCalendar className="w-3 h-3" />
+                              {entry.period}
                             </Badge>
                             <div className="text-muted-foreground hover:text-primary transition-colors">
                               {expandedCards.includes(entry.id) ? (
@@ -163,7 +178,8 @@ const Education = () => {
                           <h3 className="text-lg sm:text-xl font-bold leading-tight">{entry.institution}</h3>
                           <p className="text-primary font-semibold text-sm sm:text-base mt-1">{entry.degree}</p>
                           <p className="text-xs sm:text-sm text-muted-foreground flex items-center gap-2 mt-2">
-                            📍 {entry.location}
+                            <HiLocationMarker className="w-3 h-3" />
+                            {entry.location}
                           </p>
                         </div>
 
@@ -182,7 +198,7 @@ const Education = () => {
                             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
                               <div>
                                 <h4 className="font-semibold mb-3 flex items-center text-sm sm:text-base">
-                                  <span className="text-xl sm:text-2xl mr-2">📚</span>
+                                  <HiBookOpen className="w-5 h-5 text-primary mr-2" />
                                   Key Courses
                                 </h4>
                                 <ul className="space-y-1.5 sm:space-y-2">
@@ -197,13 +213,13 @@ const Education = () => {
 
                               <div>
                                 <h4 className="font-semibold mb-3 flex items-center text-sm sm:text-base">
-                                  <span className="text-xl sm:text-2xl mr-2">🏆</span>
+                                  <FaTrophy className="w-5 h-5 text-yellow-500 mr-2" />
                                   Achievements
                                 </h4>
                                 <ul className="space-y-1.5 sm:space-y-2">
                                   {entry.keyPoints.achievements.map((achievement, idx) => (
                                     <li key={idx} className="text-xs sm:text-sm text-muted-foreground flex items-start">
-                                      <span className="text-yellow-500 mr-2 mt-0.5 flex-shrink-0">⭐</span>
+                                      <HiSparkles className="w-3 h-3 text-yellow-500 mr-2 mt-0.5 flex-shrink-0" />
                                       <span className="break-words">{achievement}</span>
                                     </li>
                                   ))}
@@ -215,7 +231,7 @@ const Education = () => {
                             {entry.keyPoints.activities && (
                               <div className="pt-4 border-t border-border">
                                 <h4 className="font-semibold mb-3 flex items-center text-sm sm:text-base">
-                                  <span className="text-xl sm:text-2xl mr-2">👥</span>
+                                  <HiUsers className="w-5 h-5 text-primary mr-2" />
                                   Activities & Involvement
                                 </h4>
                                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4">
@@ -243,7 +259,7 @@ const Education = () => {
               <div>
                 <div className="flex items-center mb-8">
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mr-4">
-                    <span className="text-2xl">🏆</span>
+                    <HiBadgeCheck className="w-6 h-6 text-primary" />
                   </div>
                   <h2 className="text-xl sm:text-2xl font-bold">Certifications</h2>
                 </div>
@@ -253,7 +269,7 @@ const Education = () => {
                     <Card key={index} className="portfolio-card slide-up hover:shadow-lg hover:shadow-primary/5 transition-all duration-300">
                       <div className="flex items-start gap-3">
                         <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
-                          <span className="text-sm">{cert.badge}</span>
+                          <cert.badge className={`w-4 h-4 ${cert.color}`} />
                         </div>
                         
                         <div className="flex-1">

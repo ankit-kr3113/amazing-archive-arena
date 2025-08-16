@@ -37,6 +37,7 @@ import {
   FaCalendarAlt,
   FaLink
 } from "react-icons/fa";
+import { HiHand } from "react-icons/hi";
 import {
   SiTypescript,
   SiMongodb,
@@ -286,8 +287,8 @@ const Overview = () => {
               {/* Main Heading */}
               <div className="space-y-4 md:space-y-6">
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight tracking-tight">
-                  <span className="block text-muted-foreground text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium mb-3 md:mb-4 animate-fade-in-up">
-                    👋 Hello, I'm
+                  <span className="block text-muted-foreground text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium mb-3 md:mb-4 animate-fade-in-up flex items-center gap-2">
+                    <HiHand className="w-6 h-6 lg:w-8 lg:h-8" /> Hello, I'm
                   </span>
                   <span className="gradient-text relative inline-block animate-fade-in-up animation-delay-300 bg-gradient-to-r from-primary via-primary-glow to-accent bg-clip-text text-transparent drop-shadow-2xl">
                     {personalInfo.name}
@@ -475,23 +476,59 @@ const Overview = () => {
                   </div>
                   <h3 className="text-lg font-semibold text-foreground">Coding Achievements</h3>
                 </div>
+
+                {/* Total Problems Summary */}
+                <div className="mb-4 p-3 rounded-lg bg-gradient-to-r from-primary/10 to-primary-glow/10 border border-primary/20">
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm font-medium text-foreground">Total Solved</span>
+                    <Badge className="bg-primary/20 text-primary border-primary/30 font-bold">
+                      {parseInt(achievements.leetcode.problemsSolved.replace('+', '')) +
+                       parseInt(achievements.codechef.problemsSolved.replace('+', '')) +
+                       parseInt(achievements.codeforces.problemsSolved.replace('+', '')) +
+                       parseInt(achievements.geeksforgeeks.problemsSolved.replace('+', ''))}+ Problems
+                    </Badge>
+                  </div>
+                </div>
+
+                {/* Platform Details */}
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
                     <span className="text-sm font-medium text-foreground">LeetCode</span>
-                    <Badge className="bg-orange-500/20 text-orange-200 border-orange-500/30">
-                      {achievements.leetcode.problemsSolved} Solved
-                    </Badge>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm font-medium text-foreground">GeeksforGeeks</span>
-                    <Badge className="bg-green-500/20 text-green-200 border-green-500/30">
-                      Active
-                    </Badge>
+                    <div className="flex gap-2">
+                      <Badge className="bg-orange-500/20 text-orange-200 border-orange-500/30 text-xs">
+                        {achievements.leetcode.rating}
+                      </Badge>
+                      <Badge className="bg-orange-500/10 text-orange-300 border-orange-500/20 text-xs">
+                        {achievements.leetcode.problemsSolved}
+                      </Badge>
+                    </div>
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-sm font-medium text-foreground">CodeChef</span>
-                    <Badge className="bg-purple-500/20 text-purple-200 border-purple-500/30">
-                      Contests
+                    <div className="flex gap-2">
+                      <Badge className="bg-amber-500/20 text-amber-200 border-amber-500/30 text-xs">
+                        {achievements.codechef.rating}
+                      </Badge>
+                      <Badge className="bg-amber-500/10 text-amber-300 border-amber-500/20 text-xs">
+                        {achievements.codechef.problemsSolved}
+                      </Badge>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm font-medium text-foreground">Codeforces</span>
+                    <div className="flex gap-2">
+                      <Badge className="bg-blue-500/20 text-blue-200 border-blue-500/30 text-xs">
+                        {achievements.codeforces.rating}
+                      </Badge>
+                      <Badge className="bg-blue-500/10 text-blue-300 border-blue-500/20 text-xs">
+                        {achievements.codeforces.problemsSolved}
+                      </Badge>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm font-medium text-foreground">GeeksforGeeks</span>
+                    <Badge className="bg-green-500/20 text-green-200 border-green-500/30 text-xs">
+                      {achievements.geeksforgeeks.problemsSolved}
                     </Badge>
                   </div>
                 </div>

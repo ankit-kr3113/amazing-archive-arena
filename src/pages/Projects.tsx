@@ -4,7 +4,8 @@ import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { HiExternalLink, HiStar, HiCode } from "react-icons/hi";
 import { HiBolt, HiGlobeAlt } from "react-icons/hi2";
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaPalette, FaRobot, FaLink, FaClock } from "react-icons/fa";
+import { HiCheckCircle } from "react-icons/hi";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
@@ -60,8 +61,6 @@ const Projects = () => {
     return project.category === filter;
   });
 
-  const featuredProjects = projects.filter(project => project.featured);
-
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -112,103 +111,21 @@ const Projects = () => {
             ))}
           </div>
 
-          {/* Featured Projects Section */}
-          {filter === "All Projects" && (
-            <div className="mb-20">
-              <div className="flex items-center gap-3 mb-10">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-primary-glow/10 flex items-center justify-center shadow-lg">
-                  <HiStar className="w-6 h-6 text-primary" />
-                </div>
-                <h2 className="text-2xl md:text-3xl font-bold text-foreground">Featured Projects</h2>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 max-w-7xl mx-auto">
-                {featuredProjects.map((project, index) => (
-                  <Card key={index} className="group relative overflow-hidden bg-card/50 backdrop-blur-sm border border-border/50 shadow-lg hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1">
-                    {/* Enhanced Background Pattern */}
-
-                    <div className="relative p-6">
-                      <div className="relative overflow-hidden rounded-xl mb-6">
-                        <Badge className="absolute top-3 left-3 z-10 bg-primary text-primary-foreground shadow-md text-xs">
-                          <HiStar className="w-3 h-3 mr-1" />
-                          <span>Featured</span>
-                        </Badge>
-                        {project.status === "Live" && (
-                          <Badge className="absolute top-3 right-3 z-10 bg-green-500 text-white shadow-md text-xs">
-                            <HiGlobeAlt className="w-3 h-3 mr-1" />
-                            <span>Live</span>
-                          </Badge>
-                        )}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-[5]"></div>
-                        <img
-                          src={project.image}
-                          alt={project.title}
-                          className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                          loading="lazy"
-                        />
-                      </div>
-
-                      <div className="space-y-4">
-                        <div>
-                          <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors duration-300">{project.title}</h3>
-                          <p className="text-muted-foreground text-sm leading-relaxed line-clamp-3">{project.description}</p>
-                        </div>
-
-                        <div className="flex flex-wrap gap-2">
-                          {project.tags.slice(0, 4).map((tag, tagIndex) => (
-                            <Badge key={tagIndex} variant="secondary" className="text-xs hover:bg-primary/20 hover:text-primary transition-colors duration-200 bg-primary/5 border border-primary/20">
-                              {tag}
-                            </Badge>
-                          ))}
-                          {project.tags.length > 4 && (
-                            <Badge variant="outline" className="text-xs border-primary/30">
-                              +{project.tags.length - 4}
-                            </Badge>
-                          )}
-                        </div>
-
-                        <div className="flex gap-3 pt-2">
-                          <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex-1">
-                            <Button size="sm" className="w-full bg-gradient-to-r from-primary to-primary-glow hover:from-primary/90 hover:to-primary-glow/90 text-primary-foreground shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
-                              <FaGithub className="w-4 h-4 mr-2" />
-                              <span>Code</span>
-                            </Button>
-                          </a>
-                          {project.demo && (
-                            <a href={project.demo} target="_blank" rel="noopener noreferrer" className="flex-1">
-                              <Button size="sm" variant="outline" className="w-full border-primary/30 text-primary hover:bg-primary/10 hover:border-primary/60 hover:scale-105 transition-all duration-300">
-                                <HiExternalLink className="w-4 h-4 mr-2" />
-                                <span>Demo</span>
-                              </Button>
-                            </a>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                  </Card>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* All Projects Grid */}
+          {/* Projects Grid */}
           <div>
-            {filter !== "All Projects" && (
-              <div className="flex items-center gap-3 mb-10">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-primary-glow/10 flex items-center justify-center shadow-lg">
-                  <span className="text-xl">
-                    {filter === "Featured" && <HiStar className="w-6 h-6 text-primary" />}
-                    {filter === "Frontend" && "🎨"}
-                    {filter === "AI & ML" && "🤖"}
-                    {filter === "Full Stack" && "🔗"}
-                  </span>
-                </div>
-                <h2 className="text-2xl md:text-3xl font-bold text-foreground">{filter}</h2>
+            <div className="flex items-center gap-3 mb-10">
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-primary-glow/10 flex items-center justify-center shadow-lg">
+                {filter === "All Projects" && <HiCode className="w-6 h-6 text-primary" />}
+                {filter === "Featured" && <HiStar className="w-6 h-6 text-primary" />}
+                {filter === "Frontend" && <FaPalette className="w-6 h-6 text-primary" />}
+                {filter === "AI & ML" && <FaRobot className="w-6 h-6 text-primary" />}
+                {filter === "Full Stack" && <FaLink className="w-6 h-6 text-primary" />}
               </div>
-            )}
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground">{filter}</h2>
+            </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
-              {(filter === "All Projects" ? projects : filteredProjects).map((project, index) => (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto">
+              {filteredProjects.map((project, index) => (
                 <Card key={index} className="group relative overflow-hidden bg-gradient-to-br from-card via-card to-card/90 border border-border/50 shadow-lg hover:shadow-2xl hover:shadow-primary/15 hover:-translate-y-2 hover:scale-[1.02] transition-all duration-500">
                   {/* Enhanced Background Pattern */}
                   <div className="absolute inset-0 opacity-3">
@@ -229,8 +146,8 @@ const Projects = () => {
                         "bg-gradient-to-r from-blue-500 to-blue-600"
                       } text-white`}>
                         {project.status === "Live" && <HiGlobeAlt className="w-3 h-3 mr-1" />}
-                        {project.status === "In Progress" && "🟡"}
-                        {project.status === "Completed" && "🔵"}
+                        {project.status === "In Progress" && <FaClock className="w-3 h-3 mr-1" />}
+                        {project.status === "Completed" && <HiCheckCircle className="w-3 h-3 mr-1" />}
                         <span>{project.status}</span>
                       </Badge>
 

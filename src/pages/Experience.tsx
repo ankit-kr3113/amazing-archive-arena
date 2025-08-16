@@ -14,6 +14,7 @@ import {
   ChevronDown,
   ChevronUp,
 } from "lucide-react";
+import { FaTools } from "react-icons/fa";
 import { personalInfo, experiences, achievements } from "@/data/portfolioData";
 
 const Experience = () => {
@@ -151,7 +152,7 @@ const Experience = () => {
 
                             <div>
                               <h4 className="font-semibold mb-3 flex items-center text-sm sm:text-base">
-                                <span className="text-lg mr-2">🛠️</span>
+                                <FaTools className="w-4 h-4 text-primary mr-2" />
                                 <span>Technologies & Skills</span>
                               </h4>
                               <div className="flex flex-wrap gap-1.5 sm:gap-2">

@@ -16,7 +16,9 @@ import {
   HiChatAlt,
   HiStar
 } from "react-icons/hi";
-import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaInstagram, FaFileAlt, FaRocket } from "react-icons/fa";
+import { SiLeetcode, SiGeeksforgeeks, SiCodechef } from "react-icons/si";
+import { HiLink, HiUsers } from "react-icons/hi";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
@@ -106,28 +108,36 @@ const Contact = () => {
       icon: FaGithub,
       href: socialLinks.github.url,
       description: "Check out my code",
-      color: "hover:text-gray-400"
+      color: "text-gray-400",
+      bgColor: "from-gray-500/20 to-gray-600/20",
+      borderColor: "border-gray-500/30"
     },
     {
       name: "LinkedIn",
       icon: FaLinkedin,
       href: socialLinks.linkedin.url,
       description: "Let's connect professionally",
-      color: "hover:text-blue-400"
+      color: "text-blue-400",
+      bgColor: "from-blue-500/20 to-blue-600/20",
+      borderColor: "border-blue-500/30"
     },
     {
       name: "Instagram",
       icon: FaInstagram,
       href: socialLinks.instagram.url,
       description: "Follow for updates",
-      color: "hover:text-pink-400"
+      color: "text-pink-400",
+      bgColor: "from-pink-500/20 to-purple-500/20",
+      borderColor: "border-pink-500/30"
     },
     {
       name: "Email",
       icon: HiMail,
       href: socialLinks.email.url,
       description: "Send me a message",
-      color: "hover:text-red-400"
+      color: "text-red-400",
+      bgColor: "from-red-500/20 to-orange-500/20",
+      borderColor: "border-red-500/30"
     }
   ];
 
@@ -158,7 +168,7 @@ const Contact = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
             {/* Contact Information */}
             <div className="lg:col-span-1 space-y-6">
               <Card className="portfolio-card slide-up hover:shadow-xl hover:shadow-primary/10 transition-all duration-300">
@@ -166,32 +176,32 @@ const Contact = () => {
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mr-4">
                     <HiMail className="w-6 h-6 text-primary" />
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-bold">Contact Information</h3>
+                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold">Contact Information</h3>
                 </div>
 
                 {/* Enhanced Contact Methods */}
                 <div className="space-y-4">
                   {contactMethods.map((method, index) => (
-                    <div key={index} className="group flex items-center space-x-4 p-3 rounded-lg hover:bg-primary/5 transition-all duration-300">
-                      <div className={`w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300 ${
+                    <div key={index} className="group flex items-center gap-3 sm:gap-4 p-3 rounded-lg hover:bg-primary/5 transition-all duration-300">
+                      <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300 ${
                         method.preferred ? 'bg-primary/20 group-hover:bg-primary/30' : 'bg-primary/10 group-hover:bg-primary/20'
                       }`}>
-                        <method.icon className="w-5 h-5 text-primary" />
+                        <method.icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
                       </div>
-                      <div className="flex-1">
-                        <div className="flex items-center gap-2">
-                          <h4 className="font-semibold group-hover:text-primary transition-colors">{method.label}</h4>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2 flex-wrap">
+                          <h4 className="text-sm sm:text-base font-semibold group-hover:text-primary transition-colors">{method.label}</h4>
                           {method.preferred && (
-                            <Badge className="bg-green-500/10 text-green-600 border-green-500/20 text-xs">
+                            <Badge className="bg-green-500/10 text-green-600 border-green-500/20 text-xs flex-shrink-0">
                               <HiStar className="w-3 h-3 mr-1" />
                               Preferred
                             </Badge>
                           )}
                         </div>
-                        <p className="text-muted-foreground text-sm">{method.value}</p>
+                        <p className="text-muted-foreground text-xs sm:text-sm break-words">{method.value}</p>
                         <div className="flex items-center gap-1 text-xs text-muted-foreground mt-1">
-                          <HiClock className="w-3 h-3" />
-                          {method.responseTime}
+                          <HiClock className="w-3 h-3 flex-shrink-0" />
+                          <span className="break-words">{method.responseTime}</span>
                         </div>
                       </div>
                       {method.href && (
@@ -225,33 +235,46 @@ const Contact = () => {
               <Card className="portfolio-card slide-up">
                 <div className="flex items-center mb-8">
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mr-4">
-                    <span className="text-2xl">🔗</span>
+                    <HiLink className="w-6 h-6 text-primary" />
                   </div>
                   <h3 className="text-xl sm:text-2xl font-bold">Quick Links</h3>
                 </div>
 
                 <div className="space-y-3 mb-8">
-                  {quickLinks.map((link, index) => (
-                    <a
-                      key={index}
-                      href={link.href}
-                      target={link.href.startsWith("http") ? "_blank" : "_self"}
-                      rel={link.href.startsWith("http") ? "noopener noreferrer" : ""}
-                      className="group flex items-center space-x-3 p-3 rounded-xl hover:bg-primary/10 transition-all duration-300 hover:scale-105 hover:shadow-lg text-sm"
-                    >
-                      <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                        <span className="text-sm group-hover:scale-110 transition-transform">{link.icon}</span>
-                      </div>
-                      <span className="group-hover:text-primary transition-colors font-medium">{link.name}</span>
-                    </a>
-                  ))}
+                  {quickLinks.map((link, index) => {
+                    const getIcon = () => {
+                      switch(link.name) {
+                        case "Resume": return <FaFileAlt className="w-4 h-4" />;
+                        case "LeetCode": return <SiLeetcode className="w-4 h-4" />;
+                        case "GeeksforGeeks": return <SiGeeksforgeeks className="w-4 h-4" />;
+                        case "CodeChef": return <SiCodechef className="w-4 h-4" />;
+                        case "Projects": return <FaRocket className="w-4 h-4" />;
+                        default: return <HiLink className="w-4 h-4" />;
+                      }
+                    };
+
+                    return (
+                      <a
+                        key={index}
+                        href={link.href}
+                        target={link.href.startsWith("http") ? "_blank" : "_self"}
+                        rel={link.href.startsWith("http") ? "noopener noreferrer" : ""}
+                        className="group flex items-center space-x-3 p-3 rounded-xl hover:bg-primary/10 transition-all duration-300 hover:scale-105 hover:shadow-lg text-sm"
+                      >
+                        <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground group-hover:scale-110 transition-all duration-300">
+                          {getIcon()}
+                        </div>
+                        <span className="group-hover:text-primary transition-colors font-medium">{link.name}</span>
+                      </a>
+                    );
+                  })}
                 </div>
 
                 <hr className="border-border mb-8" />
 
                 <div className="flex items-center mb-6">
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mr-4">
-                    <span className="text-2xl">🤝</span>
+                    <HiUsers className="w-6 h-6 text-primary" />
                   </div>
                   <h3 className="text-lg sm:text-xl font-bold">Social Links</h3>
                 </div>
@@ -263,10 +286,10 @@ const Contact = () => {
                       href={link.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group flex items-center space-x-3 p-3 rounded-xl hover:bg-primary/10 transition-all duration-300 hover:scale-105 hover:shadow-lg text-sm"
+                      className="group flex items-center space-x-3 p-3 rounded-xl hover:bg-primary/10 transition-all duration-300 hover:scale-105 hover:shadow-lg text-sm border border-border/50 hover:border-primary/30"
                     >
-                      <div className={`w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 group-hover:scale-110`}>
-                        <link.icon className="w-5 h-5" />
+                      <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground group-hover:scale-110 transition-all duration-300">
+                        <link.icon className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
                       </div>
                       <div className="flex-1">
                         <div className="font-medium group-hover:text-primary transition-colors">{link.name}</div>

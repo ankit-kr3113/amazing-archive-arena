@@ -65,6 +65,20 @@ export const achievements = {
     problemsSolved: "333+",
     globalRanking: "Top 27.7%"
   },
+  codechef: {
+    rating: "1270",
+    problemsSolved: "25+",
+    stars: "2★"
+  },
+  codeforces: {
+    rating: "900",
+    problemsSolved: "10+",
+    rank: "Newbie"
+  },
+  geeksforgeeks: {
+    problemsSolved: "70+",
+    rank: "1455"
+  },
   stats: {
     yearsExperience: "2+",
     totalProjects: "15+",

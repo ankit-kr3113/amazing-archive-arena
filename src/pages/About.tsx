@@ -6,9 +6,11 @@ import {
   HiExternalLink,
   HiCode,
   HiLocationMarker,
-  HiCalendar
+  HiCalendar,
+  HiHand,
+  HiSparkles
 } from "react-icons/hi";
-import { FaGithub, FaLinkedin, FaTrophy } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaTrophy, FaRobot, FaRunning, FaPuzzlePiece, FaBullseye } from "react-icons/fa";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
@@ -19,10 +21,10 @@ const About = () => {
   const navigate = useNavigate();
 
   const interests = [
-    { icon: "🤖", name: "Robotics", description: "Building combat & soccer bots" },
-    { icon: "🏃���♂️", name: "Athletics", description: "Bronze in 50m Hurdles" },
-    { icon: "🧩", name: "Problem Solving", description: "Competitive programming" },
-    { icon: "🎯", name: "Mentoring", description: "Leading workshops" },
+    { icon: FaRobot, name: "Robotics", description: "Building combat & soccer bots", color: "text-blue-500" },
+    { icon: FaRunning, name: "Athletics", description: "Bronze in 50m Hurdles", color: "text-green-500" },
+    { icon: FaPuzzlePiece, name: "Problem Solving", description: "Competitive programming", color: "text-purple-500" },
+    { icon: FaBullseye, name: "Mentoring", description: "Leading workshops", color: "text-red-500" },
   ];
 
   // Using centralized data from portfolioData.ts
@@ -69,7 +71,7 @@ const About = () => {
           {/* Enhanced Header */}
           <div className="text-center mb-16 fade-in">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-4">
-              <span className="mr-2">👋</span>
+              <HiHand className="w-4 h-4 mr-2" />
               Personal Background
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
@@ -175,7 +177,7 @@ const About = () => {
               <Card className="portfolio-card h-full">
                 <div className="space-y-4">
                   <div className="flex items-center gap-2 mb-4">
-                    <span className="text-xl">✨</span>
+                    <HiSparkles className="w-5 h-5 text-primary" />
                     <h3 className="text-lg font-bold">My Journey</h3>
                   </div>
                   
@@ -198,7 +200,7 @@ const About = () => {
                     <div className="grid grid-cols-2 gap-3 mb-6">
                       {interests.map((interest, index) => (
                         <div key={index} className="flex items-start gap-2 p-2 rounded-lg hover:bg-primary/5 transition-colors">
-                          <span className="text-base">{interest.icon}</span>
+                          <interest.icon className={`w-4 h-4 ${interest.color} mt-0.5`} />
                           <div>
                             <div className="font-medium text-xs">{interest.name}</div>
                             <div className="text-xs text-muted-foreground">{interest.description}</div>
