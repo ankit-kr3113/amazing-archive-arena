@@ -696,43 +696,6 @@ const Overview = () => {
                 </div>
               </Card>
               
-              {/* Featured Projects */}
-              <Card className="p-6 border-primary/20">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center">
-                    <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center mr-3">
-                      <FaRocket className="w-4 h-4 text-primary" />
-                    </div>
-                    <h3 className="text-lg font-semibold">Featured Projects</h3>
-                  </div>
-                  <Button asChild variant="ghost" size="sm">
-                    <Link to="/projects">
-                      View All <ExternalLink className="w-3 h-3 ml-1" />
-                    </Link>
-                  </Button>
-                </div>
-                
-                <div className="grid gap-4">
-                  {featuredProjects.map((project, index) => (
-                    <div key={index} className="p-4 rounded-lg border border-border/50 hover:border-primary/30 transition-colors">
-                      <div className="flex items-start justify-between mb-2">
-                        <h4 className="font-semibold text-foreground">{project.title}</h4>
-                        <Badge variant="secondary" className="text-xs">
-                          {project.category}
-                        </Badge>
-                      </div>
-                      <p className="text-sm text-muted-foreground mb-3">{project.description}</p>
-                      <div className="flex flex-wrap gap-1">
-                        {project.tech.map((tech, techIndex) => (
-                          <Badge key={techIndex} variant="outline" className="text-xs">
-                            {tech}
-                          </Badge>
-                        ))}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </Card>
 
               {/* Experience & Education */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
