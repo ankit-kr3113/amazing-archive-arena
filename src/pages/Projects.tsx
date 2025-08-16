@@ -228,8 +228,8 @@ const Projects = () => {
                         "bg-gradient-to-r from-blue-500 to-blue-600"
                       } text-white`}>
                         {project.status === "Live" && <HiGlobeAlt className="w-3 h-3 mr-1" />}
-                        {project.status === "In Progress" && "🟡"}
-                        {project.status === "Completed" && "🔵"}
+                        {project.status === "In Progress" && <FaClock className="w-3 h-3 mr-1" />}
+                        {project.status === "Completed" && <HiCheckCircle className="w-3 h-3 mr-1" />}
                         <span>{project.status}</span>
                       </Badge>
 
