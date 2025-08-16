@@ -413,32 +413,35 @@ const Overview = () => {
               return (
                 <Card
                   key={index}
-                  className={`group relative p-4 text-center bg-gradient-to-br ${gradientColors[index]} border ${borderColors[index]} cursor-pointer transition-all duration-300 hover:shadow-xl hover:shadow-primary/15 backdrop-blur-sm hover:-translate-y-1`}
+                  className={`group relative p-4 bg-gradient-to-br ${gradientColors[index]} border ${borderColors[index]} cursor-pointer transition-all duration-300 hover:shadow-xl hover:shadow-primary/15 backdrop-blur-sm hover:-translate-y-1 rounded-xl`}
                 >
                   {/* Subtle overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/3 via-transparent to-black/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/3 via-transparent to-black/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
-                  {/* Compact icon */}
-                  <div className="relative flex justify-center mb-3">
-                    <div className="relative w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-primary-glow/20 flex items-center justify-center group-hover:scale-105 transition-all duration-300 shadow-md">
-                      <item.icon className={`w-6 h-6 ${iconColors[index]} transition-colors duration-300`} />
-                      {item.isLive && (
-                        <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full shadow-md animate-pulse">
-                        </div>
-                      )}
+                  {/* Rectangular layout: Icon on left, text on right */}
+                  <div className="relative z-10 flex items-center gap-4">
+                    {/* Icon on the left */}
+                    <div className="flex-shrink-0">
+                      <div className="relative w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-primary-glow/20 flex items-center justify-center group-hover:scale-105 transition-all duration-300 shadow-md">
+                        <item.icon className={`w-7 h-7 ${iconColors[index]} transition-colors duration-300`} />
+                        {item.isLive && (
+                          <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full shadow-md animate-pulse">
+                          </div>
+                        )}
+                      </div>
                     </div>
-                  </div>
 
-                  {/* Compact content */}
-                  <div className="relative z-10">
-                    <div className="font-semibold text-base text-foreground group-hover:text-primary transition-colors duration-300 mb-1">{item.title}</div>
-                    <div className="text-xs text-foreground/60 group-hover:text-foreground/80 transition-colors duration-300 mb-2">{item.subtitle}</div>
-                    <div className="text-xs font-medium text-primary mb-3">{item.year}</div>
+                    {/* Text content on the right */}
+                    <div className="flex-1 min-w-0">
+                      <div className="font-semibold text-base text-foreground group-hover:text-primary transition-colors duration-300 mb-1">{item.title}</div>
+                      <div className="text-xs text-foreground/60 group-hover:text-foreground/80 transition-colors duration-300 mb-1">{item.subtitle}</div>
+                      <div className="text-xs font-medium text-primary mb-2">{item.year}</div>
 
-                    {/* Compact trend indicator */}
-                    <div className="flex items-center justify-center gap-1 px-2 py-1 rounded-full bg-primary/10 border border-primary/20">
-                      <TrendingUp className="w-3 h-3 text-primary" />
-                      <span className="text-xs text-primary font-medium">{item.trend}</span>
+                      {/* Trend indicator */}
+                      <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-primary/10 border border-primary/20 w-fit">
+                        <TrendingUp className="w-3 h-3 text-primary" />
+                        <span className="text-xs text-primary font-medium">{item.trend}</span>
+                      </div>
                     </div>
                   </div>
                 </Card>
