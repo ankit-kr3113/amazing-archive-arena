@@ -424,10 +424,10 @@ const Coding = () => {
 
                       {/* Bottom description text */}
                       <div className="text-xs text-slate-400 border-t border-slate-700/50 pt-3">
-                        {platform.platform === "LeetCode" && "Solved 228+ problems across all difficulty levels"}
-                        {platform.platform === "CodeChef" && "★★★ rated coder with 5 contests and best rank 13656"}
-                        {platform.platform === "GeeksforGeeks" && "Solved 112+ problems with 5 day current streak"}
-                        {platform.platform === "Codeforces" && "Newbie with 6 contests and best rank 13605"}
+                        {platform.platform === "LeetCode" && `Solved ${platform.solved}+ problems across all difficulty levels`}
+                        {platform.platform === "CodeChef" && `${platform.rank} with ${apiData?.codechef?.contests?.attendedCount || 9} contests attended`}
+                        {platform.platform === "GeeksforGeeks" && `Solved ${platform.solved}+ problems with ${apiData?.gfg?.profile?.currentStreak || 7} day current streak`}
+                        {platform.platform === "Codeforces" && `${platform.rank} with ${apiData?.codeforces?.contests?.attendedCount || 7} contests attended`}
                       </div>
                     </div>
                   </Card>
