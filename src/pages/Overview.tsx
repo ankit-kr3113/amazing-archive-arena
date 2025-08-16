@@ -323,39 +323,72 @@ const Overview = () => {
             </div>
           </div>
 
-          {/* Quick Stats with reduced animations */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-            {highlights.map((item, index) => (
-              <Card
-                key={index}
-                className="group p-4 text-center border-primary/30 hover:border-primary/60 cursor-pointer transition-all duration-300 hover:shadow-lg"
-              >
-                <div className="flex justify-center mb-3">
-                  <div className="relative w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors duration-300">
-                    <item.icon className="w-6 h-6 text-primary" />
-                    {item.isLive && (
-                      <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full"></div>
-                    )}
+          {/* Enhanced Stats Cards with vibrant design */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+            {highlights.map((item, index) => {
+              const gradientColors = {
+                0: 'from-purple-500/20 via-indigo-500/20 to-blue-500/20 hover:from-purple-500/30 hover:via-indigo-500/30 hover:to-blue-500/30',
+                1: 'from-blue-500/20 via-cyan-500/20 to-teal-500/20 hover:from-blue-500/30 hover:via-cyan-500/30 hover:to-teal-500/30',
+                2: 'from-emerald-500/20 via-green-500/20 to-lime-500/20 hover:from-emerald-500/30 hover:via-green-500/30 hover:to-lime-500/30',
+                3: 'from-orange-500/20 via-red-500/20 to-pink-500/20 hover:from-orange-500/30 hover:via-red-500/30 hover:to-pink-500/30'
+              };
+              const iconColors = {
+                0: 'text-purple-400 group-hover:text-purple-300',
+                1: 'text-cyan-400 group-hover:text-cyan-300',
+                2: 'text-emerald-400 group-hover:text-emerald-300',
+                3: 'text-orange-400 group-hover:text-orange-300'
+              };
+              const borderColors = {
+                0: 'border-purple-500/30 hover:border-purple-400/60',
+                1: 'border-cyan-500/30 hover:border-cyan-400/60',
+                2: 'border-emerald-500/30 hover:border-emerald-400/60',
+                3: 'border-orange-500/30 hover:border-orange-400/60'
+              };
+              return (
+                <Card
+                  key={index}
+                  className={`group relative p-6 text-center bg-gradient-to-br ${gradientColors[index]} border-2 ${borderColors[index]} cursor-pointer transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10 backdrop-blur-sm hover:-translate-y-2`}
+                >
+                  {/* Enhanced gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-black/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                  {/* Icon with enhanced styling */}
+                  <div className="relative flex justify-center mb-4">
+                    <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/30 to-primary-glow/30 flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg">
+                      <item.icon className={`w-8 h-8 ${iconColors[index]} transition-colors duration-300`} />
+                      {item.isLive && (
+                        <div className="absolute -top-2 -right-2 w-4 h-4 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full shadow-lg animate-pulse">
+                          <div className="w-full h-full bg-green-300 rounded-full animate-ping opacity-75"></div>
+                        </div>
+                      )}
+                    </div>
                   </div>
-                </div>
-                <div className="font-semibold text-foreground group-hover:text-primary transition-colors">{item.title}</div>
-                <div className="text-xs text-foreground/60 mb-2">{item.subtitle}</div>
-                <div className="text-xs text-primary font-medium mb-3">{item.year}</div>
 
-                {/* Simplified Progress Bar */}
-                <div className="w-full bg-muted/60 rounded-full h-2 mb-2 overflow-hidden">
-                  <div
-                    className="bg-gradient-to-r from-primary to-primary-glow h-2 rounded-full transition-all duration-1000"
-                    style={{ width: `${item.progress}%` }}
-                  ></div>
-                </div>
+                  {/* Enhanced typography */}
+                  <div className="relative z-10">
+                    <div className="font-bold text-lg text-foreground group-hover:text-white transition-colors duration-300 mb-1">{item.title}</div>
+                    <div className="text-sm text-foreground/70 group-hover:text-white/80 transition-colors duration-300 mb-2">{item.subtitle}</div>
+                    <div className="text-sm font-semibold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent mb-4">{item.year}</div>
 
-                <div className="text-xs text-green-400 font-medium flex items-center justify-center gap-1">
-                  <TrendingUp className="w-3 h-3" />
-                  {item.trend}
-                </div>
-              </Card>
-            ))}
+                    {/* Enhanced Progress Bar with glow */}
+                    <div className="w-full bg-black/20 rounded-full h-3 mb-3 overflow-hidden shadow-inner">
+                      <div
+                        className="bg-gradient-to-r from-primary via-primary-glow to-accent h-3 rounded-full transition-all duration-1000 shadow-lg relative"
+                        style={{ width: `${item.progress}%` }}
+                      >
+                        <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent rounded-full"></div>
+                      </div>
+                    </div>
+
+                    {/* Enhanced trend indicator */}
+                    <div className="flex items-center justify-center gap-2 px-3 py-1 rounded-full bg-gradient-to-r from-green-500/20 to-emerald-500/20 border border-green-400/30">
+                      <TrendingUp className="w-4 h-4 text-green-400" />
+                      <span className="text-sm text-green-300 font-medium">{item.trend}</span>
+                    </div>
+                  </div>
+                </Card>
+              );
+            })}
           </div>
 
           {/* Featured Projects with better contrast */}
@@ -375,7 +408,7 @@ const Overview = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {featuredProjects.map((project, index) => (
-                <Card key={index} className="group overflow-hidden border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-lg">
+                <Card key={index} className="group overflow-hidden border-primary/30 hover:border-primary/60 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/20 backdrop-blur-sm hover:-translate-y-2 bg-gradient-to-br from-card/80 to-card/60">
                   <div className="relative overflow-hidden">
                     <ProjectImage
                       src={project.image}
@@ -388,7 +421,7 @@ const Overview = () => {
                         Live
                       </div>
                     )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     <div className="absolute bottom-2 left-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <div className="flex gap-2">
                         <Button size="sm" className="text-xs" asChild>
@@ -430,12 +463,15 @@ const Overview = () => {
             </div>
           </div>
 
-          {/* Current Status Banner with better readability */}
-          <Card className="p-6 mb-12 bg-gradient-to-r from-primary/10 to-primary-glow/10 border-primary/30 hover:shadow-lg transition-all duration-300">
-            <div className="flex items-center justify-between flex-wrap gap-4">
+          {/* Enhanced Status Banner with vibrant design */}
+          <Card className="relative p-6 mb-12 bg-gradient-to-r from-primary/20 via-primary-glow/15 to-accent/20 border-2 border-primary/40 hover:border-primary/60 hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500 backdrop-blur-sm overflow-hidden">
+            {/* Animated background overlay */}
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-cyan-500/10 opacity-50 animate-pulse"></div>
+            <div className="relative z-10 flex items-center justify-between flex-wrap gap-4">
               <div className="flex items-center gap-4">
-                <div className="relative w-12 h-12 rounded-full bg-green-500/30 flex items-center justify-center">
-                  <CircleDot className="w-6 h-6 text-green-400" />
+                <div className="relative w-14 h-14 rounded-2xl bg-gradient-to-br from-green-500/40 to-emerald-500/40 flex items-center justify-center shadow-lg">
+                  <CircleDot className="w-7 h-7 text-green-300" />
+                  <div className="absolute inset-0 bg-green-400/20 rounded-2xl animate-ping"></div>
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground text-lg">{currentStatus.availability}</h3>
