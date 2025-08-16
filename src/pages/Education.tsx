@@ -107,7 +107,7 @@ const Education = () => {
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
               <span className="text-foreground">Education of</span>{" "}
               <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
-                Yuvraj Mehta
+                {personalInfo.name}
               </span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
