@@ -31,23 +31,50 @@ const LiveStatus = ({ className = '' }: LiveStatusProps) => {
   const [leetcodeProgress, setLeetcodeProgress] = useState<LeetCodeProgress | null>(null);
   const [loading, setLoading] = useState(true);
   const [lastUpdated, setLastUpdated] = useState<Date>(new Date());
+  const [error, setError] = useState<string | null>(null);
+  const [retryCount, setRetryCount] = useState(0);
 
   // Fetch data from APIs
   const fetchData = async () => {
     setLoading(true);
+    setError(null);
+
     try {
-      const [githubData, leetcodeData, leetcodeProgressData] = await Promise.all([
-        githubApi.getGitHubStats(),
-        leetcodeApi.getUserStats(),
-        leetcodeApi.getProgress()
-      ]);
-      
+      // Fetch GitHub data first (more reliable)
+      const githubData = await githubApi.getGitHubStats();
       setGithubStats(githubData);
-      setLeetcodeStats(leetcodeData);
-      setLeetcodeProgress(leetcodeProgressData);
+
+      // Then fetch LeetCode data with error handling
+      try {
+        const [leetcodeData, leetcodeProgressData] = await Promise.all([
+          leetcodeApi.getUserStats(),
+          leetcodeApi.getProgress()
+        ]);
+
+        setLeetcodeStats(leetcodeData);
+        setLeetcodeProgress(leetcodeProgressData);
+        setRetryCount(0); // Reset retry count on success
+      } catch (leetcodeError) {
+        console.warn('LeetCode API temporarily unavailable:', leetcodeError);
+        setError('LeetCode data temporarily unavailable. Using cached data.');
+
+        // Still try to get cached or mock data
+        try {
+          const fallbackStats = await leetcodeApi.getUserStats();
+          const fallbackProgress = await leetcodeApi.getProgress();
+          setLeetcodeStats(fallbackStats);
+          setLeetcodeProgress(fallbackProgress);
+        } catch {
+          // If even fallback fails, keep existing data or use null
+          console.warn('Unable to get LeetCode fallback data');
+        }
+      }
+
       setLastUpdated(new Date());
     } catch (error) {
       console.error('Error fetching live data:', error);
+      setError('Unable to fetch some data. Please try again later.');
+      setRetryCount(prev => prev + 1);
     } finally {
       setLoading(false);
     }
@@ -80,7 +107,7 @@ const LiveStatus = ({ className = '' }: LiveStatusProps) => {
       {/* Header with refresh */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+          <div className={`w-3 h-3 rounded-full animate-pulse ${error ? 'bg-yellow-500' : 'bg-green-500'}`}></div>
           <h2 className="text-xl font-bold">Live Activity Dashboard</h2>
         </div>
         <div className="flex items-center gap-2">
@@ -98,6 +125,23 @@ const LiveStatus = ({ className = '' }: LiveStatusProps) => {
           </Button>
         </div>
       </div>
+
+      {/* Error Banner */}
+      {error && (
+        <div className="bg-yellow-100 dark:bg-yellow-900/20 border border-yellow-300 dark:border-yellow-700 rounded-lg p-3 mb-4">
+          <div className="flex items-center gap-2">
+            <div className="w-4 h-4 bg-yellow-500 rounded-full flex items-center justify-center">
+              <span className="text-white text-xs">!</span>
+            </div>
+            <p className="text-sm text-yellow-800 dark:text-yellow-200">{error}</p>
+            {retryCount > 0 && (
+              <Badge variant="outline" className="ml-auto text-xs">
+                Retry {retryCount}
+              </Badge>
+            )}
+          </div>
+        </div>
+      )}
 
       {/* GitHub Stats */}
       {githubStats && (
@@ -192,10 +236,17 @@ const LiveStatus = ({ className = '' }: LiveStatusProps) => {
               </div>
               <div>
                 <h3 className="font-semibold text-lg">LeetCode Progress</h3>
-                <p className="text-sm text-muted-foreground">Problem solving statistics</p>
+                <p className="text-sm text-muted-foreground">
+                  {error && error.includes('LeetCode') ? 'Cached data' : 'Problem solving statistics'}
+                </p>
               </div>
             </div>
             <div className="text-right">
+              {error && error.includes('LeetCode') && (
+                <Badge variant="outline" className="mb-1 text-xs">
+                  Cached
+                </Badge>
+              )}
               {skillLevel && (
                 <Badge className={`${skillLevel.color} mb-1`}>
                   {skillLevel.level}
