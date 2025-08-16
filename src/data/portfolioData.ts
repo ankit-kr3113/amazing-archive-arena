@@ -282,7 +282,7 @@ export const projects = [
     title: "Portfolio",
     name: "Portfolio",
     description: "Modern, animated portfolio to showcase full stack, DSA, and GenAI skills. Features project gallery, coding stats, and interactive UI.",
-    image: "/projectImages/portfolio.png",
+    image: "https://cdn.builder.io/api/v1/image/assets%2F911edf0abfc44540bba885225b62aa26%2F564561b9219a409f8cd1139440589eac?format=webp&width=800",
     category: "Frontend",
     featured: true,
     tags: ["React", "TypeScript", "Vite", "Tailwind CSS", "Framer Motion", "Node.js", "Express"],
