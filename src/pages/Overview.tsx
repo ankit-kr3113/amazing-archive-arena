@@ -18,6 +18,9 @@ import {
 } from "lucide-react";
 import {
   FaGithub,
+  FaLinkedin,
+  FaTwitter,
+  FaInstagram,
   FaReact,
   FaNodeJs,
   FaGraduationCap,
@@ -27,7 +30,11 @@ import {
   FaRocket,
   FaCode,
   FaBook,
-  FaEnvelope
+  FaEnvelope,
+  FaPhone,
+  FaMapMarkerAlt,
+  FaCalendarAlt,
+  FaLink
 } from "react-icons/fa";
 import {
   SiTypescript,
@@ -224,8 +231,55 @@ const Overview = () => {
     lastUpdated: "Updated 2 days ago"
   }), []);
 
+  const contactInfo = useMemo(() => ({
+    email: "yuvraj.mehta532@gmail.com",
+    phone: "+91 98765 43210",
+    location: "Patna, Bihar, India",
+    timezone: "IST (UTC +5:30)",
+    availability: "Available for opportunities",
+    preferredContact: "Email or LinkedIn",
+    responseTime: "Within 24 hours",
+    socialLinks: [
+      {
+        name: "GitHub",
+        icon: FaGithub,
+        url: "https://github.com/yuvraj-mehta",
+        username: "@yuvraj-mehta",
+        color: "text-gray-300 hover:text-white"
+      },
+      {
+        name: "LinkedIn",
+        icon: FaLinkedin,
+        url: "https://linkedin.com/in/yuvraj-mehta",
+        username: "yuvraj-mehta",
+        color: "text-blue-400 hover:text-blue-300"
+      },
+      {
+        name: "Twitter",
+        icon: FaTwitter,
+        url: "https://twitter.com/yuvraj_mehta",
+        username: "@yuvraj_mehta",
+        color: "text-sky-400 hover:text-sky-300"
+      },
+      {
+        name: "Email",
+        icon: FaEnvelope,
+        url: "mailto:yuvraj.mehta532@gmail.com",
+        username: "yuvraj.mehta532@gmail.com",
+        color: "text-red-400 hover:text-red-300"
+      }
+    ]
+  }), []);
+
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gradient-to-br from-background via-background/95 to-primary/5 relative overflow-hidden">
+      {/* Background gradient overlay with animation */}
+      <div className="fixed inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-cyan-500/5 animate-pulse opacity-50 pointer-events-none"></div>
+      <div className="fixed top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-purple-500/10 via-transparent to-transparent pointer-events-none"></div>
+      <div className="fixed bottom-0 right-0 w-full h-full bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-cyan-500/8 via-transparent to-transparent pointer-events-none"></div>
+
+      {/* Content wrapper */}
+      <div className="relative z-10">
       {/* SEO Meta Tags */}
       <title>Yuvraj Mehta - Full Stack Developer | Portfolio Overview</title>
       <meta name="description" content="Full Stack Developer & B.Tech CS Student at NIT Patna. Specialized in React, Node.js, and modern web technologies. 500+ LeetCode problems solved." />
@@ -238,12 +292,20 @@ const Overview = () => {
       <Navigation />
       <ThemeSwitcher />
 
-      {/* Optimized Hero Section */}
+      {/* Enhanced Hero Section with sophisticated gradients */}
       <section className="relative pt-24 pb-12 overflow-hidden">
-        {/* Simplified background - removed particle system for performance */}
+        {/* Multi-layered gradient background */}
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-background via-background/95 to-primary/5"></div>
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-primary/[0.08] via-primary-glow/[0.04] to-transparent rounded-full blur-3xl opacity-50"></div>
+          {/* Base gradient */}
+          <div className="absolute inset-0 bg-gradient-to-br from-background via-background/90 to-primary/10"></div>
+
+          {/* Animated gradient orbs */}
+          <div className="absolute top-20 left-20 w-[400px] h-[400px] bg-gradient-radial from-purple-500/20 via-purple-500/10 to-transparent rounded-full blur-3xl opacity-60 animate-pulse"></div>
+          <div className="absolute bottom-20 right-20 w-[500px] h-[500px] bg-gradient-radial from-cyan-500/15 via-blue-500/10 to-transparent rounded-full blur-3xl opacity-70 animate-pulse" style={{animationDelay: '1s'}}></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-primary/[0.12] via-primary-glow/[0.08] to-transparent rounded-full blur-3xl opacity-60"></div>
+
+          {/* Overlay gradient for depth */}
+          <div className="absolute inset-0 bg-gradient-to-t from-background/50 via-transparent to-background/30"></div>
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
@@ -281,41 +343,44 @@ const Overview = () => {
                 <span className="text-foreground font-semibold">15+ Projects</span>
               </p>
 
-              {/* Status Badges with better contrast */}
-              <div className="flex flex-wrap items-center justify-center gap-3">
-                <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-500/20 border border-green-500/50 text-sm">
-                  <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                  <span className="text-green-100 dark:text-green-200 font-medium">Available</span>
+              {/* Enhanced Status Badges with vibrant colors */}
+              <div className="flex flex-wrap items-center justify-center gap-4">
+                <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-green-500/30 to-emerald-500/30 border border-green-400/60 text-sm shadow-lg hover:shadow-green-500/20 transition-all duration-300 backdrop-blur-sm">
+                  <div className="w-3 h-3 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full animate-pulse shadow-lg"></div>
+                  <span className="text-green-200 font-semibold">Available</span>
                 </div>
-                <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/20 border border-blue-500/50 text-sm">
-                  <MapPin className="w-3 h-3 text-blue-400" />
-                  <span className="text-blue-100 dark:text-blue-200 font-medium">Remote</span>
+                <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/30 to-cyan-500/30 border border-blue-400/60 text-sm shadow-lg hover:shadow-blue-500/20 transition-all duration-300 backdrop-blur-sm">
+                  <MapPin className="w-4 h-4 text-blue-300" />
+                  <span className="text-blue-200 font-semibold">Remote</span>
                 </div>
-                <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-500/20 border border-purple-500/50 text-sm">
-                  <FaStar className="w-3 h-3 text-purple-400" />
-                  <span className="text-purple-100 dark:text-purple-200 font-medium">Top 27.7%</span>
+                <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-purple-500/30 to-pink-500/30 border border-purple-400/60 text-sm shadow-lg hover:shadow-purple-500/20 transition-all duration-300 backdrop-blur-sm">
+                  <FaStar className="w-4 h-4 text-purple-300" />
+                  <span className="text-purple-200 font-semibold">Top 27.7%</span>
                 </div>
               </div>
 
-              {/* CTAs with optimized animations */}
-              <div className="flex flex-col sm:flex-row gap-3 justify-center mt-8">
+              {/* Enhanced CTAs with vibrant design */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
                 <Button
-                  className="px-6 py-3 font-semibold bg-gradient-to-r from-primary to-primary-glow hover:from-primary-glow hover:to-primary transition-all duration-300 shadow-lg group"
+                  className="px-8 py-4 font-bold bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 hover:from-cyan-500 hover:via-blue-500 hover:to-purple-500 transition-all duration-500 shadow-lg hover:shadow-2xl hover:shadow-purple-500/25 group relative overflow-hidden"
                   asChild
                 >
                   <Link to="/contact">
-                    Let's Connect
-                    <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <span className="relative z-10 flex items-center">
+                      Let's Connect
+                      <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-2" />
+                    </span>
                   </Link>
                 </Button>
 
                 <Button
                   variant="outline"
-                  className="px-6 py-3 font-semibold border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                  className="px-8 py-4 font-bold border-2 border-gradient bg-gradient-to-r from-transparent to-transparent hover:from-purple-500/10 hover:to-cyan-500/10 border-purple-400 hover:border-cyan-400 text-purple-400 hover:text-cyan-300 transition-all duration-500 shadow-lg hover:shadow-xl hover:shadow-purple-500/20 backdrop-blur-sm"
                   asChild
                 >
                   <a href="/Yuvraj_Resume_v2_1 (1).pdf" target="_blank" rel="noopener noreferrer">
-                    <Download className="w-4 h-4 mr-2" />
+                    <Download className="w-5 h-5 mr-2" />
                     Resume
                   </a>
                 </Button>
@@ -323,39 +388,70 @@ const Overview = () => {
             </div>
           </div>
 
-          {/* Quick Stats with reduced animations */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-            {highlights.map((item, index) => (
-              <Card
-                key={index}
-                className="group p-4 text-center border-primary/30 hover:border-primary/60 cursor-pointer transition-all duration-300 hover:shadow-lg"
-              >
-                <div className="flex justify-center mb-3">
-                  <div className="relative w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors duration-300">
-                    <item.icon className="w-6 h-6 text-primary" />
-                    {item.isLive && (
-                      <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full"></div>
-                    )}
+          {/* Enhanced Stats Cards with premium design */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mb-12">
+            {highlights.map((item, index) => {
+              // Use consistent purple-to-blue gradient theme for all cards
+              const gradientColors = {
+                0: 'from-primary/15 via-primary-glow/15 to-primary/10 hover:from-primary/25 hover:via-primary-glow/25 hover:to-primary/20',
+                1: 'from-primary-glow/15 via-primary/15 to-accent/10 hover:from-primary-glow/25 hover:via-primary/25 hover:to-accent/20',
+                2: 'from-accent/15 via-primary/15 to-primary-glow/10 hover:from-accent/25 hover:via-primary/25 hover:to-primary-glow/20',
+                3: 'from-primary/15 via-accent/15 to-primary-glow/10 hover:from-primary/25 hover:via-accent/25 hover:to-primary-glow/20'
+              };
+              const iconColors = {
+                0: 'text-primary group-hover:text-primary-glow',
+                1: 'text-primary-glow group-hover:text-primary',
+                2: 'text-accent group-hover:text-primary',
+                3: 'text-primary group-hover:text-accent'
+              };
+              const borderColors = {
+                0: 'border-primary/30 hover:border-primary/50',
+                1: 'border-primary-glow/30 hover:border-primary-glow/50',
+                2: 'border-accent/30 hover:border-accent/50',
+                3: 'border-primary/30 hover:border-primary/50'
+              };
+              return (
+                <Card
+                  key={index}
+                  className={`group relative p-5 bg-gradient-to-br ${gradientColors[index]} border-2 ${borderColors[index]} cursor-pointer transition-all duration-500 hover:shadow-2xl hover:shadow-primary/20 backdrop-blur-md hover:-translate-y-2 hover:scale-[1.02] rounded-2xl overflow-hidden`}
+                >
+                  {/* Enhanced overlay with shimmer effect */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-black/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 -skew-x-12 group-hover:animate-shimmer"></div>
+
+                  {/* Rectangular layout: Icon on left, text on right */}
+                  <div className="relative z-10 flex items-center gap-4">
+                    {/* Enhanced icon on the left */}
+                    <div className="flex-shrink-0">
+                      <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/25 to-primary-glow/25 flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg group-hover:shadow-xl border border-primary/10">
+                        <item.icon className={`w-8 h-8 ${iconColors[index]} transition-all duration-500 group-hover:scale-110`} />
+                        {item.isLive && (
+                          <div className="absolute -top-1 -right-1 w-4 h-4 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full shadow-lg">
+                            <div className="w-full h-full bg-green-300 rounded-full animate-ping opacity-75"></div>
+                            <div className="absolute inset-0 bg-green-400 rounded-full"></div>
+                          </div>
+                        )}
+                        {/* Icon glow effect */}
+                        <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                      </div>
+                    </div>
+
+                    {/* Enhanced text content on the right */}
+                    <div className="flex-1 min-w-0 space-y-1">
+                      <div className="font-bold text-lg text-foreground group-hover:text-white transition-all duration-500 tracking-tight leading-tight">{item.title}</div>
+                      <div className="text-sm text-foreground/70 group-hover:text-white/90 transition-all duration-500 font-medium">{item.subtitle}</div>
+                      <div className="text-sm font-semibold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent group-hover:from-white group-hover:to-white/80 transition-all duration-500">{item.year}</div>
+
+                      {/* Enhanced trend indicator */}
+                      <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-gradient-to-r from-primary/15 to-primary-glow/15 border border-primary/30 w-fit group-hover:from-primary/25 group-hover:to-primary-glow/25 group-hover:border-primary/50 transition-all duration-500 shadow-sm group-hover:shadow-md">
+                        <TrendingUp className="w-4 h-4 text-primary group-hover:text-white transition-colors duration-500" />
+                        <span className="text-xs text-primary group-hover:text-white font-semibold transition-colors duration-500">{item.trend}</span>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div className="font-semibold text-foreground group-hover:text-primary transition-colors">{item.title}</div>
-                <div className="text-xs text-foreground/60 mb-2">{item.subtitle}</div>
-                <div className="text-xs text-primary font-medium mb-3">{item.year}</div>
-
-                {/* Simplified Progress Bar */}
-                <div className="w-full bg-muted/60 rounded-full h-2 mb-2 overflow-hidden">
-                  <div
-                    className="bg-gradient-to-r from-primary to-primary-glow h-2 rounded-full transition-all duration-1000"
-                    style={{ width: `${item.progress}%` }}
-                  ></div>
-                </div>
-
-                <div className="text-xs text-green-400 font-medium flex items-center justify-center gap-1">
-                  <TrendingUp className="w-3 h-3" />
-                  {item.trend}
-                </div>
-              </Card>
-            ))}
+                </Card>
+              );
+            })}
           </div>
 
           {/* Featured Projects with better contrast */}
@@ -365,17 +461,17 @@ const Overview = () => {
                 <h2 className="text-2xl font-bold mb-2 text-foreground">Featured Projects</h2>
                 <p className="text-foreground/70">Recent work and live applications</p>
               </div>
-              <Button variant="outline" asChild className="group border-primary/50">
+              <Button variant="outline" asChild className="group border-2 border-purple-400/50 hover:border-cyan-400 text-purple-400 hover:text-cyan-300 hover:bg-gradient-to-r hover:from-purple-500/10 hover:to-cyan-500/10 transition-all duration-500 shadow-lg hover:shadow-purple-500/20 backdrop-blur-sm">
                 <Link to="/projects">
                   View All Projects
-                  <ChevronRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                  <ChevronRight className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform duration-300" />
                 </Link>
               </Button>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {featuredProjects.map((project, index) => (
-                <Card key={index} className="group overflow-hidden border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-lg">
+                <Card key={index} className="group overflow-hidden border-primary/30 hover:border-primary/60 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/20 backdrop-blur-sm hover:-translate-y-2 bg-gradient-to-br from-card/80 to-card/60">
                   <div className="relative overflow-hidden">
                     <ProjectImage
                       src={project.image}
@@ -388,7 +484,7 @@ const Overview = () => {
                         Live
                       </div>
                     )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     <div className="absolute bottom-2 left-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <div className="flex gap-2">
                         <Button size="sm" className="text-xs" asChild>
@@ -409,17 +505,17 @@ const Overview = () => {
                   <div className="p-4">
                     <div className="flex items-center justify-between mb-2">
                       <h3 className="font-semibold group-hover:text-primary transition-colors text-foreground">{project.title}</h3>
-                      <Badge variant="secondary" className="text-xs">{project.category}</Badge>
+                      <Badge className="text-xs bg-gradient-to-r from-purple-500/20 to-cyan-500/20 border border-purple-400/50 text-purple-300 hover:from-purple-500/30 hover:to-cyan-500/30 transition-all duration-300">{project.category}</Badge>
                     </div>
                     <p className="text-sm text-foreground/70 mb-3">{project.description}</p>
                     <div className="flex flex-wrap gap-1">
                       {project.tech.slice(0, 3).map((tech, techIndex) => (
-                        <Badge key={techIndex} variant="outline" className="text-xs">
+                        <Badge key={techIndex} variant="outline" className="text-xs border-cyan-400/40 text-cyan-300 hover:bg-cyan-400/10 transition-all duration-300">
                           {tech}
                         </Badge>
                       ))}
                       {project.tech.length > 3 && (
-                        <Badge variant="outline" className="text-xs">
+                        <Badge variant="outline" className="text-xs border-purple-400/40 text-purple-300 hover:bg-purple-400/10 transition-all duration-300">
                           +{project.tech.length - 3}
                         </Badge>
                       )}
@@ -430,12 +526,15 @@ const Overview = () => {
             </div>
           </div>
 
-          {/* Current Status Banner with better readability */}
-          <Card className="p-6 mb-12 bg-gradient-to-r from-primary/10 to-primary-glow/10 border-primary/30 hover:shadow-lg transition-all duration-300">
-            <div className="flex items-center justify-between flex-wrap gap-4">
+          {/* Enhanced Status Banner with vibrant design */}
+          <Card className="relative p-6 mb-12 bg-gradient-to-r from-primary/20 via-primary-glow/15 to-accent/20 border-2 border-primary/40 hover:border-primary/60 hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500 backdrop-blur-sm overflow-hidden">
+            {/* Animated background overlay */}
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-cyan-500/10 opacity-50 animate-pulse"></div>
+            <div className="relative z-10 flex items-center justify-between flex-wrap gap-4">
               <div className="flex items-center gap-4">
-                <div className="relative w-12 h-12 rounded-full bg-green-500/30 flex items-center justify-center">
-                  <CircleDot className="w-6 h-6 text-green-400" />
+                <div className="relative w-14 h-14 rounded-2xl bg-gradient-to-br from-green-500/40 to-emerald-500/40 flex items-center justify-center shadow-lg">
+                  <CircleDot className="w-7 h-7 text-green-300" />
+                  <div className="absolute inset-0 bg-green-400/20 rounded-2xl animate-ping"></div>
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground text-lg">{currentStatus.availability}</h3>
@@ -464,8 +563,8 @@ const Overview = () => {
               {/* Current Status */}
               <Card className="p-6 border-primary/30">
                 <div className="flex items-center mb-4">
-                  <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center mr-3">
-                    <Target className="w-4 h-4 text-primary" />
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary/30 to-primary-glow/30 flex items-center justify-center mr-3 shadow-lg">
+                    <Target className="w-5 h-5 text-primary" />
                   </div>
                   <h3 className="text-lg font-semibold text-foreground">Current Focus</h3>
                 </div>
@@ -490,8 +589,8 @@ const Overview = () => {
               {/* Skills Overview */}
               <Card className="p-6 border-primary/30">
                 <div className="flex items-center mb-4">
-                  <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center mr-3">
-                    <Activity className="w-4 h-4 text-primary" />
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500/30 to-blue-500/30 flex items-center justify-center mr-3 shadow-lg">
+                    <Activity className="w-5 h-5 text-cyan-400" />
                   </div>
                   <h3 className="text-lg font-semibold text-foreground">Skills Overview</h3>
                 </div>
@@ -520,10 +619,10 @@ const Overview = () => {
               </Card>
               
               {/* About Summary */}
-              <Card className="p-6 border-primary/30">
+              <Card className="p-6 border-2 border-primary/40 hover:border-primary/60 shadow-xl hover:shadow-2xl hover:shadow-emerald-500/15 transition-all duration-500 backdrop-blur-sm bg-gradient-to-br from-card/90 to-card/70 hover:-translate-y-1">
                 <div className="flex items-center mb-4">
-                  <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center mr-3">
-                    <FaGraduationCap className="w-4 h-4 text-primary" />
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500/30 to-green-500/30 flex items-center justify-center mr-3 shadow-lg">
+                    <FaGraduationCap className="w-5 h-5 text-emerald-400" />
                   </div>
                   <h3 className="text-lg font-semibold text-foreground">About Me</h3>
                 </div>
@@ -544,41 +643,46 @@ const Overview = () => {
                 </Button>
               </Card>
 
-              {/* Quick Actions */}
-              <Card className="p-6 border-primary/30 bg-gradient-to-r from-primary/5 to-primary-glow/5">
-                <div className="flex items-center mb-4">
-                  <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center mr-3">
-                    <Zap className="w-4 h-4 text-primary" />
+
+              {/* Contact Information */}
+              <Card className="p-4 border-2 border-primary/40 hover:border-primary/60 shadow-xl hover:shadow-2xl hover:shadow-blue-500/15 transition-all duration-500 backdrop-blur-sm bg-gradient-to-br from-card/90 to-card/70 hover:-translate-y-1">
+                <div className="flex items-center mb-3">
+                  <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500/30 to-indigo-500/30 flex items-center justify-center mr-2 shadow-lg">
+                    <FaEnvelope className="w-4 h-4 text-blue-400" />
                   </div>
-                  <h3 className="text-lg font-semibold text-foreground">Quick Actions</h3>
+                  <h3 className="text-base font-semibold text-foreground">Contact</h3>
                 </div>
-                <div className="space-y-3">
-                  {quickActions.map((action, index) => (
-                    <Button
+
+                {/* Compact Status */}
+                <div className="flex items-center gap-2 mb-3 p-2 rounded-lg bg-gradient-to-r from-green-500/10 to-emerald-500/10 border border-green-400/30">
+                  <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                  <span className="text-xs font-medium text-green-300">Available • {contactInfo.location}</span>
+                </div>
+
+                {/* Compact Social Links */}
+                <div className="grid grid-cols-2 gap-1 mb-3">
+                  {contactInfo.socialLinks.map((social, index) => (
+                    <a
                       key={index}
-                      variant="outline"
-                      className="w-full justify-start h-auto p-3 transition-all duration-300 group border-primary/30"
-                      asChild
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group flex items-center justify-center gap-1 p-2 rounded-lg bg-primary/10 hover:bg-primary/20 transition-all duration-300"
                     >
-                      {action.type === 'external' ? (
-                        <a href={action.href} target="_blank" rel="noopener noreferrer">
-                          <action.icon className="w-4 h-4 mr-3" />
-                          <span className="text-sm font-medium">{action.label}</span>
-                        </a>
-                      ) : action.type === 'download' ? (
-                        <a href={action.href} download>
-                          <action.icon className="w-4 h-4 mr-3" />
-                          <span className="text-sm font-medium">{action.label}</span>
-                        </a>
-                      ) : (
-                        <Link to={action.href}>
-                          <action.icon className="w-4 h-4 mr-3" />
-                          <span className="text-sm font-medium">{action.label}</span>
-                        </Link>
-                      )}
-                    </Button>
+                      <social.icon className={`w-3 h-3 ${social.color} transition-colors duration-300`} />
+                      <span className="text-xs text-foreground">{social.name}</span>
+                    </a>
                   ))}
                 </div>
+
+                {/* Primary Contact */}
+                <a
+                  href={`mailto:${contactInfo.email}`}
+                  className="flex items-center justify-center gap-2 p-2 rounded-lg bg-gradient-to-r from-primary/15 to-primary-glow/15 hover:from-primary/25 hover:to-primary-glow/25 border border-primary/30 transition-all duration-300 group"
+                >
+                  <FaEnvelope className="w-3 h-3 text-primary" />
+                  <span className="text-xs text-foreground group-hover:text-primary transition-colors duration-300">Send Email</span>
+                </a>
               </Card>
             </div>
 
@@ -730,7 +834,8 @@ const Overview = () => {
         </div>
       </section>
 
-      <Footer />
+        <Footer />
+      </div>
     </div>
   );
 };

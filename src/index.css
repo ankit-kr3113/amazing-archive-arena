@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @import './styles/animations.css';
+@import './styles/enhanced-animations.css';
 
 /* Revolutionary Multi-Theme Portfolio Design System */
 
