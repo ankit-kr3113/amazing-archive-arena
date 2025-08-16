@@ -271,10 +271,10 @@ const Overview = () => {
         <div className="absolute top-1/4 right-1/4 w-[400px] h-[400px] bg-gradient-radial from-primary-glow/[0.06] to-transparent rounded-full blur-2xl opacity-30 animate-pulse animation-delay-1000"></div>
 
         <div className="relative max-w-7xl mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 xl:gap-24 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-20 xl:gap-24 items-center">
 
             {/* Left Content - Hero Text */}
-            <div className="space-y-8 fade-in order-2 lg:order-1 text-center lg:text-left max-w-2xl mx-auto lg:mx-0">
+            <div className="space-y-6 md:space-y-8 fade-in order-2 lg:order-1 text-center lg:text-left max-w-2xl mx-auto lg:mx-0">
 
               {/* Status Badge */}
               <div className="inline-flex items-center px-4 py-2.5 rounded-full bg-gradient-to-r from-primary/15 to-primary-glow/10 border-2 border-primary/25 text-primary text-sm font-semibold shadow-xl backdrop-blur-sm hover:shadow-2xl hover:scale-105 transition-all duration-300">
@@ -284,9 +284,9 @@ const Overview = () => {
               </div>
 
               {/* Main Heading */}
-              <div className="space-y-6">
-                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
-                  <span className="block text-muted-foreground text-xl sm:text-2xl md:text-3xl font-medium mb-4 animate-fade-in-up">
+              <div className="space-y-4 md:space-y-6">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight tracking-tight">
+                  <span className="block text-muted-foreground text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium mb-3 md:mb-4 animate-fade-in-up">
                     👋 Hello, I'm
                   </span>
                   <span className="gradient-text relative inline-block animate-fade-in-up animation-delay-300 bg-gradient-to-r from-primary via-primary-glow to-accent bg-clip-text text-transparent drop-shadow-2xl">
@@ -295,7 +295,7 @@ const Overview = () => {
                 </h1>
 
                 {/* Tagline */}
-                <p className="text-lg sm:text-xl md:text-2xl text-foreground/80 leading-relaxed animate-fade-in-up animation-delay-500">
+                <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-foreground/80 leading-relaxed animate-fade-in-up animation-delay-500">
                   <span className="text-foreground font-semibold">{personalInfo.course} student</span> at{" "}
                   <span className="text-primary font-bold">{personalInfo.university}</span>{" "}
                   passionate about building{" "}
@@ -321,29 +321,29 @@ const Overview = () => {
               </div>
 
               {/* Action Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up animation-delay-800">
+              <div className="flex flex-col sm:flex-row gap-3 md:gap-4 animate-fade-in-up animation-delay-800">
                 <Button
-                  className="group relative overflow-hidden px-8 py-4 text-lg font-bold bg-gradient-to-r from-primary via-primary-glow to-accent hover:from-accent hover:via-primary-glow hover:to-primary shadow-2xl hover:shadow-3xl hover:shadow-primary/40 transition-all duration-500 border-0 rounded-2xl hover:scale-110 active:scale-95 backdrop-blur-sm transform hover:-translate-y-1"
+                  className="group relative overflow-hidden px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-bold bg-gradient-to-r from-primary via-primary-glow to-accent hover:from-accent hover:via-primary-glow hover:to-primary shadow-2xl hover:shadow-3xl hover:shadow-primary/40 transition-all duration-500 border-0 rounded-2xl hover:scale-105 md:hover:scale-110 active:scale-95 backdrop-blur-sm transform hover:-translate-y-1"
                   asChild
                 >
                   <Link to="/contact">
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out"></div>
-                    <span className="relative z-10 flex items-center justify-center gap-3">
+                    <span className="relative z-10 flex items-center justify-center gap-2 md:gap-3">
                       Contact Me
-                      <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
+                      <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-2 transition-transform" />
                     </span>
                   </Link>
                 </Button>
 
                 <Button
                   variant="outline"
-                  className="group px-8 py-4 text-lg font-bold border-2 border-primary/60 text-primary hover:bg-gradient-to-r hover:from-primary/10 hover:to-primary-glow/10 hover:text-primary shadow-xl hover:shadow-2xl hover:shadow-primary/30 transition-all duration-500 rounded-2xl hover:scale-110 active:scale-95 backdrop-blur-sm bg-background/60 hover:border-primary transform hover:-translate-y-1"
+                  className="group px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-bold border-2 border-primary/60 text-primary hover:bg-gradient-to-r hover:from-primary/10 hover:to-primary-glow/10 hover:text-primary shadow-xl hover:shadow-2xl hover:shadow-primary/30 transition-all duration-500 rounded-2xl hover:scale-105 md:hover:scale-110 active:scale-95 backdrop-blur-sm bg-background/60 hover:border-primary transform hover:-translate-y-1"
                   asChild
                 >
                   <Link to="/projects">
-                    <span className="flex items-center justify-center gap-3">
+                    <span className="flex items-center justify-center gap-2 md:gap-3">
                       View Work
-                      <ExternalLink className="w-5 h-5 group-hover:rotate-12 transition-transform" />
+                      <ExternalLink className="w-4 h-4 md:w-5 md:h-5 group-hover:rotate-12 transition-transform" />
                     </span>
                   </Link>
                 </Button>
@@ -380,14 +380,14 @@ const Overview = () => {
             </div>
 
             {/* Right Content - Profile Image */}
-            <div className="relative slide-up order-1 lg:order-2 flex justify-center">
-              <div className="relative flex justify-center max-w-md lg:max-w-lg xl:max-w-xl mx-auto">
+            <div className="relative slide-up order-1 lg:order-2 flex justify-center mb-8 lg:mb-0">
+              <div className="relative flex justify-center w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl mx-auto">
                 {/* Background Effects */}
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-primary-glow/30 to-primary/20 rounded-full blur-2xl animate-pulse opacity-60"></div>
                 <div className="absolute inset-0 bg-gradient-to-b from-primary-glow/15 to-primary/15 rounded-full blur-xl animate-pulse opacity-40 animation-delay-1000"></div>
 
                 {/* Profile Image Container */}
-                <div className="relative z-10 w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-primary/40 shadow-2xl hover:shadow-primary/50 hover:shadow-2xl transition-all duration-500 hover:scale-110 group mx-auto cursor-pointer backdrop-blur-sm">
+                <div className="relative z-10 w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-primary/40 shadow-2xl hover:shadow-primary/50 hover:shadow-2xl transition-all duration-500 hover:scale-110 group mx-auto cursor-pointer backdrop-blur-sm">
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/25 to-primary-glow/15 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   <img
                     src={personalInfo.profileImage}
@@ -401,25 +401,25 @@ const Overview = () => {
                   </div>
                 </div>
 
-                {/* Achievement Float Cards */}
-                <div className="absolute top-4 -right-4 w-24 h-20 bg-card/98 backdrop-blur-lg rounded-2xl border-2 border-primary/40 p-3 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-125 animate-float z-20">
-                  <div className="flex justify-center mb-2">
-                    <div className="w-7 h-7 rounded-xl bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center shadow-lg">
-                      <FaRocket className="w-4 h-4 text-white" />
+                {/* Achievement Float Cards - Hidden on small screens */}
+                <div className="hidden md:block absolute top-4 -right-2 lg:-right-4 w-20 h-16 md:w-24 md:h-20 bg-card/98 backdrop-blur-lg rounded-2xl border-2 border-primary/40 p-2 md:p-3 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-125 animate-float z-20">
+                  <div className="flex justify-center mb-1 md:mb-2">
+                    <div className="w-6 h-6 md:w-7 md:h-7 rounded-xl bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center shadow-lg">
+                      <FaRocket className="w-3 h-3 md:w-4 md:h-4 text-white" />
                     </div>
                   </div>
-                  <div className="text-sm text-primary font-bold text-center">{achievements.stats.totalProjects}</div>
-                  <div className="text-[10px] text-foreground/80 text-center font-medium">Projects</div>
+                  <div className="text-xs md:text-sm text-primary font-bold text-center">{achievements.stats.totalProjects}</div>
+                  <div className="text-[8px] md:text-[10px] text-foreground/80 text-center font-medium">Projects</div>
                 </div>
 
-                <div className="absolute bottom-4 -left-4 w-24 h-20 bg-card/98 backdrop-blur-lg rounded-2xl border-2 border-primary/40 p-3 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-125 animate-float animation-delay-1000 z-20">
-                  <div className="flex justify-center mb-2">
-                    <div className="w-7 h-7 rounded-xl bg-gradient-to-br from-green-500 to-teal-500 flex items-center justify-center shadow-lg">
-                      <FaTrophy className="w-4 h-4 text-white" />
+                <div className="hidden md:block absolute bottom-4 -left-2 lg:-left-4 w-20 h-16 md:w-24 md:h-20 bg-card/98 backdrop-blur-lg rounded-2xl border-2 border-primary/40 p-2 md:p-3 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-125 animate-float animation-delay-1000 z-20">
+                  <div className="flex justify-center mb-1 md:mb-2">
+                    <div className="w-6 h-6 md:w-7 md:h-7 rounded-xl bg-gradient-to-br from-green-500 to-teal-500 flex items-center justify-center shadow-lg">
+                      <FaTrophy className="w-3 h-3 md:w-4 md:h-4 text-white" />
                     </div>
                   </div>
-                  <div className="text-sm text-primary font-bold text-center">{achievements.leetcode.problemsSolved}</div>
-                  <div className="text-[10px] text-foreground/80 text-center font-medium">Problems</div>
+                  <div className="text-xs md:text-sm text-primary font-bold text-center">{achievements.leetcode.problemsSolved}</div>
+                  <div className="text-[8px] md:text-[10px] text-foreground/80 text-center font-medium">Problems</div>
                 </div>
               </div>
             </div>
