@@ -11,7 +11,9 @@ import {
   RefreshCw,
   TrendingUp,
   Star,
-  GitFork
+  GitFork,
+  ChevronDown,
+  ChevronUp
 } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
 import { githubApi, GitHubCommit, GitHubRepository } from '@/services/githubApi';
@@ -27,6 +29,9 @@ const GitHubActivity = ({ className = '' }: GitHubActivityProps) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [showCommits, setShowCommits] = useState(true);
+  const [showRepos, setShowRepos] = useState(false);
 
   const fetchGitHubData = async () => {
     try {
@@ -116,9 +121,9 @@ const GitHubActivity = ({ className = '' }: GitHubActivityProps) => {
   }
 
   return (
-    <div className={`space-y-6 ${className}`}>
-      {/* GitHub Stats Overview */}
-      <Card className="p-6 border-primary/20 bg-gradient-to-r from-primary/5 to-primary-glow/5">
+    <Card className={`border-primary/20 bg-gradient-to-r from-primary/5 to-primary-glow/5 ${className}`}>
+      {/* GitHub Header */}
+      <div className="p-6">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center">
             <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center mr-3">
@@ -136,6 +141,14 @@ const GitHubActivity = ({ className = '' }: GitHubActivityProps) => {
               disabled={loading}
             >
               <RefreshCw className={`w-3 h-3 ${loading ? 'animate-spin' : ''}`} />
+            </Button>
+            <Button 
+              onClick={() => setIsExpanded(!isExpanded)} 
+              size="sm" 
+              variant="ghost"
+              className="p-2"
+            >
+              {isExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
             </Button>
           </div>
         </div>
@@ -156,142 +169,190 @@ const GitHubActivity = ({ className = '' }: GitHubActivityProps) => {
           </div>
         </div>
 
+        {/* Compact Recent Activity Preview */}
+        {!isExpanded && commits.length > 0 && (
+          <div className="space-y-2">
+            <div className="flex items-center justify-between">
+              <span className="text-sm font-medium text-muted-foreground">Latest Activity</span>
+              <Badge variant="outline" className="text-xs">Live</Badge>
+            </div>
+            <div className="flex items-start gap-3 p-3 rounded-lg bg-background/50 hover:bg-background/70 transition-colors">
+              <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center mt-0.5">
+                <GitCommit className="w-3 h-3 text-primary" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <p className="text-sm font-medium truncate">{commits[0].commit.message.split('\n')[0]}</p>
+                <div className="flex items-center gap-2 mt-1">
+                  <Badge variant="secondary" className="text-xs px-2 py-0.5">
+                    {commits[0].repository?.name || 'Repository'}
+                  </Badge>
+                  <span className="text-xs text-muted-foreground">
+                    {formatTimeAgo(commits[0].commit.author.date)}
+                  </span>
+                </div>
+              </div>
+            </div>
+            <Button 
+              onClick={() => setIsExpanded(true)} 
+              variant="outline" 
+              size="sm" 
+              className="w-full text-xs"
+            >
+              View All Activity
+              <ChevronDown className="w-3 h-3 ml-2" />
+            </Button>
+          </div>
+        )}
+
         {lastUpdated && (
-          <div className="text-xs text-muted-foreground text-center">
+          <div className="text-xs text-muted-foreground text-center mt-4">
             Last updated: {lastUpdated.toLocaleTimeString()}
           </div>
         )}
-      </Card>
+      </div>
 
-      {/* Recent Commits */}
-      <Card className="p-6 border-primary/20">
-        <div className="flex items-center justify-between mb-6">
-          <div className="flex items-center">
-            <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center mr-3">
-              <GitCommit className="w-4 h-4 text-primary" />
-            </div>
-            <h3 className="text-lg font-semibold">Recent Commits</h3>
+      {/* Expanded Content */}
+      {isExpanded && (
+        <div className="border-t border-primary/10">
+          {/* Tab Navigation */}
+          <div className="flex gap-1 p-4 bg-background/30">
+            <Button 
+              onClick={() => { setShowCommits(true); setShowRepos(false); }}
+              size="sm" 
+              variant={showCommits ? "default" : "ghost"}
+              className="flex-1"
+            >
+              <GitCommit className="w-3 h-3 mr-2" />
+              Commits ({commits.length})
+            </Button>
+            <Button 
+              onClick={() => { setShowCommits(false); setShowRepos(true); }}
+              size="sm" 
+              variant={showRepos ? "default" : "ghost"}
+              className="flex-1"
+            >
+              <GitBranch className="w-3 h-3 mr-2" />
+              Repositories ({repositories.length})
+            </Button>
           </div>
-          <Badge variant="outline" className="text-xs">
-            Live
-          </Badge>
-        </div>
 
-        <div className="space-y-3">
-          {commits.length > 0 ? (
-            commits.map((commit, index) => (
-              <div
-                key={commit.sha}
-                className="group flex items-start gap-3 p-3 rounded-lg hover:bg-primary/5 transition-all duration-300 cursor-pointer hover:scale-[1.02]"
-                onClick={() => window.open(commit.html_url, '_blank')}
-              >
-                <div className="relative w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center mt-1 group-hover:bg-primary/20 transition-all duration-300">
-                  <GitCommit className="w-4 h-4 text-primary group-hover:scale-110 transition-transform duration-300" />
-                  {getCommitIcon(commit.commit.message)}
-                </div>
-                
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-start justify-between gap-2">
-                    <div className="flex-1">
-                      <h4 className="font-medium text-sm group-hover:text-primary transition-colors truncate">
-                        {commit.commit.message.split('\n')[0]}
-                      </h4>
-                      <div className="flex items-center gap-2 mt-1">
-                        <Badge variant="secondary" className="text-xs px-2 py-0.5">
-                          {commit.repository?.name || 'Repository'}
-                        </Badge>
-                        <span className="text-xs text-muted-foreground">
-                          {formatTimeAgo(commit.commit.author.date)}
-                        </span>
+          {/* Commits Tab */}
+          {showCommits && (
+            <div className="p-4 max-h-96 overflow-y-auto">
+              <div className="space-y-3">
+                {commits.length > 0 ? (
+                  commits.map((commit, index) => (
+                    <div
+                      key={commit.sha}
+                      className="group flex items-start gap-3 p-3 rounded-lg hover:bg-primary/5 transition-all duration-300 cursor-pointer hover:scale-[1.02]"
+                      onClick={() => window.open(commit.html_url, '_blank')}
+                    >
+                      <div className="relative w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center mt-1 group-hover:bg-primary/20 transition-all duration-300">
+                        <GitCommit className="w-4 h-4 text-primary group-hover:scale-110 transition-transform duration-300" />
+                        <div className="absolute -bottom-1 -right-1">
+                          {getCommitIcon(commit.commit.message)}
+                        </div>
+                      </div>
+                      
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-start justify-between gap-2">
+                          <div className="flex-1">
+                            <h4 className="font-medium text-sm group-hover:text-primary transition-colors truncate">
+                              {commit.commit.message.split('\n')[0]}
+                            </h4>
+                            <div className="flex items-center gap-2 mt-1">
+                              <Badge variant="secondary" className="text-xs px-2 py-0.5">
+                                {commit.repository?.name || 'Repository'}
+                              </Badge>
+                              <span className="text-xs text-muted-foreground">
+                                {formatTimeAgo(commit.commit.author.date)}
+                              </span>
+                            </div>
+                          </div>
+                          <ExternalLink className="w-3 h-3 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
+                        </div>
                       </div>
                     </div>
-                    <ExternalLink className="w-3 h-3 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
+                  ))
+                ) : (
+                  <div className="text-center py-6">
+                    <GitBranch className="w-8 h-8 text-muted-foreground mx-auto mb-2" />
+                    <p className="text-sm text-muted-foreground">No recent commits found</p>
                   </div>
-                </div>
+                )}
               </div>
-            ))
-          ) : (
-            <div className="text-center py-6">
-              <GitBranch className="w-8 h-8 text-muted-foreground mx-auto mb-2" />
-              <p className="text-sm text-muted-foreground">No recent commits found</p>
             </div>
           )}
-        </div>
 
-        <div className="flex gap-2 mt-6">
-          <Button asChild variant="outline" size="sm" className="flex-1">
-            <a href="https://github.com/yuvraj-mehta" target="_blank" rel="noopener noreferrer">
-              <FaGithub className="w-3 h-3 mr-2" />
-              View Profile
-            </a>
-          </Button>
-          <Button asChild size="sm" className="flex-1">
-            <a href="https://github.com/yuvraj-mehta?tab=repositories" target="_blank" rel="noopener noreferrer">
-              <TrendingUp className="w-3 h-3 mr-2" />
-              All Repositories
-            </a>
-          </Button>
-        </div>
-      </Card>
-
-      {/* Top Repositories */}
-      {repositories.length > 0 && (
-        <Card className="p-6 border-primary/20">
-          <div className="flex items-center justify-between mb-6">
-            <div className="flex items-center">
-              <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center mr-3">
-                <GitBranch className="w-4 h-4 text-primary" />
+          {/* Repositories Tab */}
+          {showRepos && repositories.length > 0 && (
+            <div className="p-4 max-h-96 overflow-y-auto">
+              <div className="grid grid-cols-1 gap-3">
+                {repositories.map((repo, index) => (
+                  <div
+                    key={repo.full_name}
+                    className="group p-4 rounded-lg border border-border hover:border-primary/30 hover:bg-primary/5 transition-all duration-300 cursor-pointer"
+                    onClick={() => window.open(repo.html_url, '_blank')}
+                  >
+                    <div className="flex items-start justify-between gap-2 mb-2">
+                      <h4 className="font-medium text-sm group-hover:text-primary transition-colors truncate">
+                        {repo.name}
+                      </h4>
+                      <ExternalLink className="w-3 h-3 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
+                    </div>
+                    
+                    {repo.description && (
+                      <p className="text-xs text-muted-foreground mb-3 line-clamp-2">
+                        {repo.description}
+                      </p>
+                    )}
+                    
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        {repo.language && (
+                          <div className="flex items-center gap-1">
+                            <div className="w-2 h-2 bg-primary rounded-full"></div>
+                            <span className="text-xs text-muted-foreground">{repo.language}</span>
+                          </div>
+                        )}
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <div className="flex items-center gap-1">
+                          <Star className="w-3 h-3 text-yellow-500" />
+                          <span className="text-xs text-muted-foreground">{repo.stargazers_count}</span>
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <GitFork className="w-3 h-3 text-blue-500" />
+                          <span className="text-xs text-muted-foreground">{repo.forks_count}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
-              <h3 className="text-lg font-semibold">Top Repositories</h3>
+            </div>
+          )}
+
+          {/* Footer Actions */}
+          <div className="p-4 border-t border-primary/10 bg-background/30">
+            <div className="flex gap-2">
+              <Button asChild variant="outline" size="sm" className="flex-1">
+                <a href="https://github.com/yuvraj-mehta" target="_blank" rel="noopener noreferrer">
+                  <FaGithub className="w-3 h-3 mr-2" />
+                  View Profile
+                </a>
+              </Button>
+              <Button asChild size="sm" className="flex-1">
+                <a href="https://github.com/yuvraj-mehta?tab=repositories" target="_blank" rel="noopener noreferrer">
+                  <TrendingUp className="w-3 h-3 mr-2" />
+                  All Repositories
+                </a>
+              </Button>
             </div>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {repositories.slice(0, 4).map((repo, index) => (
-              <div
-                key={repo.full_name}
-                className="group p-4 rounded-lg border border-border hover:border-primary/30 hover:bg-primary/5 transition-all duration-300 cursor-pointer"
-                onClick={() => window.open(repo.html_url, '_blank')}
-              >
-                <div className="flex items-start justify-between gap-2 mb-2">
-                  <h4 className="font-medium text-sm group-hover:text-primary transition-colors truncate">
-                    {repo.name}
-                  </h4>
-                  <ExternalLink className="w-3 h-3 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
-                </div>
-                
-                {repo.description && (
-                  <p className="text-xs text-muted-foreground mb-3 line-clamp-2">
-                    {repo.description}
-                  </p>
-                )}
-                
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    {repo.language && (
-                      <div className="flex items-center gap-1">
-                        <div className="w-2 h-2 bg-primary rounded-full"></div>
-                        <span className="text-xs text-muted-foreground">{repo.language}</span>
-                      </div>
-                    )}
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="flex items-center gap-1">
-                      <Star className="w-3 h-3 text-yellow-500" />
-                      <span className="text-xs text-muted-foreground">{repo.stargazers_count}</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <GitFork className="w-3 h-3 text-blue-500" />
-                      <span className="text-xs text-muted-foreground">{repo.forks_count}</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </Card>
+        </div>
       )}
-    </div>
+    </Card>
   );
 };
 
