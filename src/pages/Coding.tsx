@@ -29,7 +29,7 @@ import {
   FaWifi,
   FaExclamationTriangle
 } from "react-icons/fa";
-import { Trophy } from "lucide-react";
+import { FaTrophy } from "react-icons/fa";
 import {
   MdLeaderboard,
   MdTrendingUp
