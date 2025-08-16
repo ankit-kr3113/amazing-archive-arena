@@ -71,7 +71,7 @@ const About = () => {
           {/* Enhanced Header */}
           <div className="text-center mb-16 fade-in">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-4">
-              <span className="mr-2">👋</span>
+              <HiHand className="w-4 h-4 mr-2" />
               Personal Background
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
