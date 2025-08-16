@@ -180,9 +180,9 @@ const Contact = () => {
                 </div>
 
                 {/* Enhanced Contact Methods */}
-                <div className="space-y-4">
+                <div className="space-y-3">
                   {contactMethods.map((method, index) => (
-                    <div key={index} className="group flex items-center gap-3 sm:gap-4 p-3 rounded-lg hover:bg-primary/5 transition-all duration-300">
+                    <div key={index} className="group flex items-center gap-3 p-2 rounded-lg hover:bg-primary/5 transition-all duration-300">
                       <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300 ${
                         method.preferred ? 'bg-primary/20 group-hover:bg-primary/30' : 'bg-primary/10 group-hover:bg-primary/20'
                       }`}>
