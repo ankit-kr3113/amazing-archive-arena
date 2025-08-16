@@ -14,6 +14,7 @@ import {
   ChevronDown,
   ChevronUp,
 } from "lucide-react";
+import { personalInfo, experiences, achievements } from "@/data/portfolioData";
 
 const Experience = () => {
   const [expandedCards, setExpandedCards] = useState<number[]>([]);
@@ -26,78 +27,6 @@ const Experience = () => {
     );
   };
 
-  const experiences = [
-    {
-      title: "Technical Member",
-      company: "Robotics Club, NIT Patna",
-      location: "NIT Patna",
-      period: "December 2023 - Present",
-      type: "Technical",
-      status: "Currently Active",
-      description: "Organized and facilitated 3+ workshops on designing and building robotic bots. Led a team of 4 to build a combat-ready battle bot, achieving 4th place among 15+ teams at NIT Patna's tech fest. Directed a team of 3 in designing and developing a soccer bot for the annual tech fest.",
-      highlights: [
-        "4th place in tech fest",
-        "3+ workshops organized",
-        "Team of 4-7 members"
-      ],
-      skills: ["Arduino", "C++", "Mechanical Design", "Team Leadership"]
-    },
-    {
-      title: "Team Leader",
-      company: "Hackathons (including Smart India Hackathon)",
-      location: "NIT Patna & Remote",
-      period: "2023",
-      type: "Leadership",
-      description: "Led teams in 3 major hackathons, including the prestigious Smart India Hackathon. Guided my team to qualify at the internal NIT Patna hackathon and advance to the national level. Oversaw all phases from ideation to development and presentation.",
-      highlights: [
-        "National level qualification",
-        "3 major hackathons",
-        "End-to-end project management"
-      ],
-      skills: ["Problem Solving", "Team Management", "Presentation", "Innovation"]
-    },
-    {
-      title: "Class Representative",
-      company: "Computer Science Department, NIT Patna",
-      location: "NIT Patna",
-      period: "2023 - 2024",
-      type: "Leadership",
-      description: "Coordinated between faculty and students, organized department events, and facilitated communication for academic activities. Represented student interests in department meetings and helped resolve academic concerns.",
-      highlights: [
-        "Student-faculty liaison",
-        "Department event coordination",
-        "Academic advocacy"
-      ],
-      skills: ["Communication", "Event Management", "Leadership", "Coordination"]
-    }
-  ];
-
-  const achievements = [
-    {
-      title: "Best Delegate - Model United Nations",
-      category: "competition",
-      year: "2023",
-      description: "Represented Poland at NIT Patna's MUN, earned Best Delegate award for exceptional debate skills."
-    },
-    {
-      title: "Bronze Medal - 50m Hurdles",
-      category: "sports",
-      year: "2023",
-      description: "Won Bronze in 50m Hurdles at NIT Patna Intramurals sports competition."
-    },
-    {
-      title: "LeetCode Top 27.7%",
-      category: "technical",
-      year: "2024",
-      description: "Achieved global ranking in top 27.7% with 1570+ rating and 333+ problems solved."
-    },
-    {
-      title: "Tech Fest Participant",
-      category: "competition",
-      year: "2023-2024",
-      description: "Regular participant in technical competitions and robotics challenges at university level."
-    }
-  ];
 
   return (
     <div className="min-h-screen bg-background">
@@ -127,11 +56,11 @@ const Experience = () => {
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
               <span className="text-foreground">Experience of</span>{" "}
               <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
-                Yuvraj Mehta
+                {personalInfo.name}
               </span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Full Stack Developer • B.Tech CS Student • NIT Patna • Leadership roles and technical contributions
+              {personalInfo.tagline} • Leadership roles and technical contributions
             </p>
           </div>
 
@@ -252,7 +181,7 @@ const Experience = () => {
               </div>
 
               <div className="space-y-3 sm:space-y-4">
-                {achievements.map((achievement, index) => (
+                {achievements.awards.map((achievement, index) => (
                   <Card key={index} className="portfolio-card slide-up hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-0.5 transition-all duration-300">
                     <div className="flex items-start gap-2 sm:gap-3">
                       <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-gradient-to-br from-primary/10 to-primary-glow/10 flex items-center justify-center flex-shrink-0 mt-1 hover:bg-primary/20 transition-colors duration-200">

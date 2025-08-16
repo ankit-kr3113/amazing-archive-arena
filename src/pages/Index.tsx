@@ -3,6 +3,7 @@ import { Github, Linkedin, Mail, ArrowRight, Code, Rocket, Laptop, Star, Trophy,
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
+import { personalInfo, socialLinks, achievements, techStack } from "@/data/portfolioData";
 
 const Index = () => {
   return (
@@ -42,14 +43,14 @@ const Index = () => {
                     Hello, I'm
                   </span>
                   <span className="gradient-text relative inline-block animate-fade-in-up animation-delay-300 bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent drop-shadow-2xl">
-                    Yuvraj Mehta
+                    {personalInfo.name}
                   </span>
                 </h1>
 
                 {/* Description */}
                 <p className="text-base sm:text-lg text-muted-foreground max-w-xl leading-relaxed animate-fade-in-up animation-delay-600">
-                  <span className="text-foreground font-semibold">B.Tech CS student</span> at{" "}
-                  <span className="text-primary font-bold">NIT Patna</span>{" "}
+                  <span className="text-foreground font-semibold">{personalInfo.course} student</span> at{" "}
+                  <span className="text-primary font-bold">{personalInfo.university}</span>{" "}
                   passionate about building{" "}
                   <span className="text-primary font-bold">full stack applications</span> with focus on{" "}
                   <span className="text-primary-glow font-bold">user-friendly interfaces</span>.
@@ -59,11 +60,11 @@ const Index = () => {
                 <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 text-sm animate-fade-in-up animation-delay-700">
                   <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/15 border-2 border-green-500/30 backdrop-blur-sm hover:bg-green-500/20 hover:border-green-500/40 transition-all duration-300 hover:scale-105 shadow-lg shadow-green-500/10">
                     <div className="w-2.5 h-2.5 bg-green-500 rounded-full animate-pulse shadow-lg shadow-green-500/50"></div>
-                    <span className="text-green-400 font-semibold">Available</span>
+                    <span className="text-green-400 font-semibold">{personalInfo.status.availability}</span>
                   </div>
                   <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/15 border-2 border-blue-500/30 backdrop-blur-sm hover:bg-blue-500/20 hover:border-blue-500/40 transition-all duration-300 hover:scale-105 shadow-lg shadow-blue-500/10">
                     <div className="w-2.5 h-2.5 bg-blue-500 rounded-full shadow-lg shadow-blue-500/50"></div>
-                    <span className="text-blue-400 font-semibold">Remote</span>
+                    <span className="text-blue-400 font-semibold">{personalInfo.status.workMode}</span>
                   </div>
                 </div>
               </div>
@@ -75,57 +76,29 @@ const Index = () => {
                   <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">Skilled in</span>
                 </h3>
                 <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
-
-                  {/* Tech Badges */}
-                  <div className="group flex items-center gap-2 bg-gradient-to-r from-blue-500/15 to-cyan-500/10 border-2 border-blue-500/25 px-3 py-2 rounded-full hover:scale-110 transition-all duration-300 cursor-pointer hover:shadow-lg hover:shadow-blue-500/20 backdrop-blur-sm">
-                    <div className="w-3 h-3 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center group-hover:rotate-12 transition-transform duration-300 shadow-lg">
-                      <span className="text-[8px] text-white font-bold">R</span>
+                  {techStack.map((tech, index) => (
+                    <div key={index} className={`group flex items-center gap-2 bg-gradient-to-r ${tech.color}/15 border-2 ${tech.color.split(' ')[1]}/25 px-3 py-2 rounded-full hover:scale-110 transition-all duration-300 cursor-pointer hover:shadow-lg hover:shadow-${tech.color.split(' ')[1]}/20 backdrop-blur-sm`}>
+                      <div className={`w-3 h-3 rounded-full bg-gradient-to-br ${tech.color} flex items-center justify-center group-hover:rotate-12 transition-transform duration-300 shadow-lg`}>
+                        <span className="text-[8px] text-white font-bold">{tech.icon}</span>
+                      </div>
+                      <span className={`text-xs font-semibold ${tech.textColor}`}>{tech.name}</span>
                     </div>
-                    <span className="text-xs font-semibold text-blue-400">React</span>
-                  </div>
-
-                  <div className="group flex items-center gap-2 bg-gradient-to-r from-green-500/15 to-emerald-500/10 border-2 border-green-500/25 px-3 py-2 rounded-full hover:scale-110 transition-all duration-300 cursor-pointer hover:shadow-lg hover:shadow-green-500/20 backdrop-blur-sm">
-                    <div className="w-3 h-3 rounded-full bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center group-hover:rotate-12 transition-transform duration-300 shadow-lg">
-                      <span className="text-[8px] text-white font-bold">N</span>
-                    </div>
-                    <span className="text-xs font-semibold text-green-400">Node.js</span>
-                  </div>
-
-                  <div className="group flex items-center gap-2 bg-gradient-to-r from-yellow-500/15 to-orange-500/10 border-2 border-yellow-500/25 px-3 py-2 rounded-full hover:scale-110 transition-all duration-300 cursor-pointer hover:shadow-lg hover:shadow-yellow-500/20 backdrop-blur-sm">
-                    <div className="w-3 h-3 rounded-full bg-gradient-to-br from-yellow-500 to-orange-500 flex items-center justify-center group-hover:rotate-12 transition-transform duration-300 shadow-lg">
-                      <span className="text-[8px] text-white font-bold">M</span>
-                    </div>
-                    <span className="text-xs font-semibold text-yellow-400">MongoDB</span>
-                  </div>
-
-                  <div className="group flex items-center gap-2 bg-gradient-to-r from-purple-500/15 to-pink-500/10 border-2 border-purple-500/25 px-3 py-2 rounded-full hover:scale-110 transition-all duration-300 cursor-pointer hover:shadow-lg hover:shadow-purple-500/20 backdrop-blur-sm">
-                    <div className="w-3 h-3 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center group-hover:rotate-12 transition-transform duration-300 shadow-lg">
-                      <span className="text-[7px] text-white font-bold">TS</span>
-                    </div>
-                    <span className="text-xs font-semibold text-purple-400">TypeScript</span>
-                  </div>
-
-                  <div className="group flex items-center gap-2 bg-gradient-to-r from-indigo-500/15 to-blue-600/10 border-2 border-indigo-500/25 px-3 py-2 rounded-full hover:scale-110 transition-all duration-300 cursor-pointer hover:shadow-lg hover:shadow-indigo-500/20 backdrop-blur-sm">
-                    <div className="w-3 h-3 rounded-full bg-gradient-to-br from-indigo-500 to-blue-600 flex items-center justify-center group-hover:rotate-12 transition-transform duration-300 shadow-lg">
-                      <span className="text-[7px] text-white font-bold">TW</span>
-                    </div>
-                    <span className="text-xs font-semibold text-indigo-400">Tailwind</span>
-                  </div>
+                  ))}
                 </div>
               </div>
 
               {/* Metrics Section */}
               <div className="flex flex-wrap gap-3 justify-center lg:justify-start animate-fade-in-up animation-delay-900">
                 <div className="glass px-4 py-3 rounded-xl border-2 border-primary/25 bg-gradient-to-r from-primary/10 to-primary-glow/8 hover:scale-110 transition-all duration-300 hover:shadow-xl hover:shadow-primary/20 backdrop-blur-sm">
-                  <span className="text-primary font-bold text-base">2+</span>
+                  <span className="text-primary font-bold text-base">{achievements.stats.yearsExperience}</span>
                   <span className="text-muted-foreground text-xs ml-1 font-medium">Years</span>
                 </div>
                 <div className="glass px-4 py-3 rounded-xl border-2 border-primary/25 bg-gradient-to-r from-primary/10 to-primary-glow/8 hover:scale-110 transition-all duration-300 hover:shadow-xl hover:shadow-primary/20 backdrop-blur-sm">
-                  <span className="text-primary font-bold text-base">15+</span>
+                  <span className="text-primary font-bold text-base">{achievements.stats.totalProjects}</span>
                   <span className="text-muted-foreground text-xs ml-1 font-medium">Projects</span>
                 </div>
                 <div className="glass px-4 py-3 rounded-xl border-2 border-primary/25 bg-gradient-to-r from-primary/10 to-primary-glow/8 hover:scale-110 transition-all duration-300 hover:shadow-xl hover:shadow-primary/20 backdrop-blur-sm">
-                  <span className="text-primary font-bold text-base">500+</span>
+                  <span className="text-primary font-bold text-base">{achievements.stats.commits}</span>
                   <span className="text-muted-foreground text-xs ml-1 font-medium">Commits</span>
                 </div>
               </div>
@@ -184,7 +157,7 @@ const Index = () => {
               {/* Social Links */}
               <div className="flex justify-center lg:justify-start space-x-4 animate-fade-in-up animation-delay-1200">
                 <a
-                  href="https://github.com/yuvraj-mehta"
+                  href={socialLinks.github.url}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group relative w-12 h-12 rounded-2xl bg-gradient-to-br from-card/90 to-card/70 backdrop-blur-sm border-2 border-border/60 flex items-center justify-center text-muted-foreground hover:text-white hover:bg-gray-900 hover:border-gray-700 transition-all duration-300 hover:scale-125 hover:shadow-xl hover:shadow-gray-500/30"
@@ -193,7 +166,7 @@ const Index = () => {
                   <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/yuvraj-mehta-a0274528a/"
+                  href={socialLinks.linkedin.url}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group relative w-12 h-12 rounded-2xl bg-gradient-to-br from-card/90 to-card/70 backdrop-blur-sm border-2 border-border/60 flex items-center justify-center text-muted-foreground hover:text-white hover:bg-blue-600 hover:border-blue-500 transition-all duration-300 hover:scale-125 hover:shadow-xl hover:shadow-blue-500/30"
@@ -202,7 +175,7 @@ const Index = () => {
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </a>
                 <a
-                  href="mailto:yuvraj.mehta532@gmail.com"
+                  href={socialLinks.email.url}
                   className="group relative w-12 h-12 rounded-2xl bg-gradient-to-br from-card/90 to-card/70 backdrop-blur-sm border-2 border-border/60 flex items-center justify-center text-muted-foreground hover:text-white hover:bg-red-600 hover:border-red-500 transition-all duration-300 hover:scale-125 hover:shadow-xl hover:shadow-red-500/30"
                 >
                   <Mail className="w-5 h-5 group-hover:scale-110 transition-transform relative z-10" />
@@ -222,8 +195,8 @@ const Index = () => {
                 <div className="relative z-10 w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-72 lg:h-72 xl:w-80 xl:h-80 rounded-full overflow-hidden border-4 border-primary/40 shadow-2xl hover:shadow-primary/50 hover:shadow-2xl transition-all duration-500 hover:scale-110 group mx-auto cursor-pointer backdrop-blur-sm">
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/25 to-primary-glow/15 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   <img
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face&auto=format&q=80"
-                    alt="Yuvraj Mehta - Full Stack Developer"
+                    src={personalInfo.profileImage}
+                    alt={`${personalInfo.name} - ${personalInfo.title}`}
                     className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-110"
                   />
 
@@ -247,7 +220,7 @@ const Index = () => {
                       <Rocket className="w-3 h-3 lg:w-4 lg:h-4 text-white" />
                     </div>
                   </div>
-                  <div className="text-xs lg:text-sm text-primary font-bold text-center">15+</div>
+                  <div className="text-xs lg:text-sm text-primary font-bold text-center">{achievements.stats.totalProjects}</div>
                   <div className="text-[8px] lg:text-[10px] text-foreground/80 text-center font-medium">Projects</div>
                 </div>
 
@@ -257,8 +230,8 @@ const Index = () => {
                       <Laptop className="w-3 h-3 lg:w-4 lg:h-4 text-white" />
                     </div>
                   </div>
-                  <div className="text-xs lg:text-sm text-primary font-bold text-center">NIT</div>
-                  <div className="text-[8px] lg:text-[10px] text-foreground/80 text-center font-medium">Patna</div>
+                  <div className="text-xs lg:text-sm text-primary font-bold text-center">{personalInfo.university.split(' ')[0]}</div>
+                  <div className="text-[8px] lg:text-[10px] text-foreground/80 text-center font-medium">{personalInfo.university.split(' ')[1]}</div>
                 </div>
 
                 <div className="hidden lg:block absolute top-1/2 -translate-y-1/2 -right-6 lg:-right-8 w-20 h-16 lg:w-24 lg:h-20 bg-card/98 backdrop-blur-lg rounded-2xl border-2 border-primary/40 p-2 lg:p-3 shadow-2xl hover:shadow-3xl hover:shadow-yellow-500/30 transition-all duration-300 hover:scale-125 animate-float animation-delay-2000 z-20">
@@ -267,7 +240,7 @@ const Index = () => {
                       <Trophy className="w-3 h-3 lg:w-4 lg:h-4 text-white" />
                     </div>
                   </div>
-                  <div className="text-xs lg:text-sm text-primary font-bold text-center">500+</div>
+                  <div className="text-xs lg:text-sm text-primary font-bold text-center">{achievements.stats.commits}</div>
                   <div className="text-[8px] lg:text-[10px] text-foreground/80 text-center font-medium">Commits</div>
                 </div>
               </div>

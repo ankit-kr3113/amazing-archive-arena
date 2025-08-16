@@ -5,6 +5,7 @@ import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
+import { personalInfo, skills } from "@/data/portfolioData";
 
 // React Icons imports
 import { 
@@ -52,146 +53,33 @@ const Skills = () => {
     { name: "Tools", icon: MdBuild }
   ];
 
-  const skillsData = {
-    "Web Development": {
-      Frontend: [
-        {
-          name: "React",
-          icon: FaReact,
-          color: "text-blue-400"
-        },
-        {
-          name: "JavaScript",
-          icon: FaJs,
-          color: "text-yellow-400"
-        },
-        {
-          name: "TypeScript",
-          icon: SiTypescript,
-          color: "text-blue-500"
-        },
-        {
-          name: "HTML5",
-          icon: FaHtml5,
-          color: "text-orange-400"
-        },
-        {
-          name: "CSS3",
-          icon: FaCss3Alt,
-          color: "text-blue-400"
-        },
-        {
-          name: "Tailwind CSS",
-          icon: SiTailwindcss,
-          color: "text-cyan-400"
-        },
-        {
-          name: "Next.js",
-          icon: SiNextdotjs,
-          color: "text-gray-300"
-        },
-        {
-          name: "Redux",
-          icon: SiRedux,
-          color: "text-purple-400"
-        },
-        {
-          name: "Vue",
-          icon: SiVuedotjs,
-          color: "text-green-400"
-        }
-      ],
-      Backend: [
-        {
-          name: "Node.js",
-          icon: FaNodeJs,
-          color: "text-green-400"
-        },
-        {
-          name: "RESTful APIs",
-          icon: TbApi,
-          color: "text-cyan-400"
-        },
-        {
-          name: "Express.js",
-          icon: SiExpress,
-          color: "text-gray-400"
-        }
-      ]
-    },
-    "Database": {
-      Database: [
-        {
-          name: "MongoDB",
-          icon: SiMongodb,
-          color: "text-green-400"
-        },
-        {
-          name: "SQL",
-          icon: SiMysql,
-          color: "text-blue-400"
-        },
-        {
-          name: "Database Design",
-          icon: TbDatabase,
-          color: "text-purple-400"
-        }
-      ]
-    },
-    "Languages": {
-      Languages: [
-        {
-          name: "JavaScript",
-          icon: FaJs,
-          color: "text-yellow-400"
-        },
-        {
-          name: "TypeScript",
-          icon: SiTypescript,
-          color: "text-blue-500"
-        },
-        {
-          name: "C++",
-          icon: TbBrandCpp,
-          color: "text-blue-400"
-        },
-        {
-          name: "Java",
-          icon: FaJava,
-          color: "text-orange-400"
-        },
-        {
-          name: "Python",
-          icon: FaPython,
-          color: "text-yellow-400"
-        }
-      ]
-    },
-    "Tools": {
-      Tools: [
-        {
-          name: "Git & GitHub",
-          icon: FaGitAlt,
-          color: "text-orange-400"
-        },
-        {
-          name: "VS Code",
-          icon: VscCode,
-          color: "text-blue-400"
-        },
-        {
-          name: "Webpack",
-          icon: SiWebpack,
-          color: "text-blue-400"
-        },
-        {
-          name: "Docker",
-          icon: FaDocker,
-          color: "text-blue-400"
-        }
-      ]
-    }
+  // Add icon mapping to skills data
+  const iconMap = {
+    "React": FaReact,
+    "JavaScript": FaJs,
+    "TypeScript": SiTypescript,
+    "HTML5": FaHtml5,
+    "CSS3": FaCss3Alt,
+    "Tailwind CSS": SiTailwindcss,
+    "Next.js": SiNextdotjs,
+    "Redux": SiRedux,
+    "Vue": SiVuedotjs,
+    "Node.js": FaNodeJs,
+    "RESTful APIs": TbApi,
+    "Express.js": SiExpress,
+    "MongoDB": SiMongodb,
+    "SQL": SiMysql,
+    "Database Design": TbDatabase,
+    "C++": TbBrandCpp,
+    "Java": FaJava,
+    "Python": FaPython,
+    "Git & GitHub": FaGitAlt,
+    "VS Code": VscCode,
+    "Webpack": SiWebpack,
+    "Docker": FaDocker
   };
+
+  const skillsData = skills;
 
   const getLevelColor = (level: string) => {
     switch(level) {
@@ -225,11 +113,11 @@ const Skills = () => {
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
               <span className="text-foreground">Skills of</span>{" "}
               <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
-                Yuvraj Mehta
+                {personalInfo.name}
               </span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Full Stack Developer • B.Tech CS Student • NIT Patna • Modern technologies and tools for scalable applications
+              {personalInfo.tagline} • Modern technologies and tools for scalable applications
             </p>
           </div>
 
@@ -270,9 +158,9 @@ const Skills = () => {
                 {/* Skills Grid */}
                 <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
                   {skills.map((skill, index) => {
-                    const IconComponent = skill.icon;
+                    const IconComponent = iconMap[skill.name] || TbCode;
                     return (
-                      <Card 
+                      <Card
                         key={`${sectionName}-${index}`}
                         className="group bg-card/40 backdrop-blur-sm border-border/30 hover:border-primary/40 hover:bg-card/60 transition-all duration-300 hover:scale-105 cursor-pointer"
                       >
@@ -286,14 +174,14 @@ const Skills = () => {
                               {skill.name}
                             </h4>
                           </div>
-                          
+
                           {/* Level Badge */}
                           <Badge className={`
-                            ${getLevelColor(sectionName)} 
+                            ${getLevelColor(sectionName)}
                             text-xs font-medium px-2 py-1 rounded-md w-full justify-center
                             transition-all duration-300 group-hover:scale-105
                           `}>
-                            {sectionName}
+                            {skill.level || sectionName}
                           </Badge>
                         </div>
                       </Card>

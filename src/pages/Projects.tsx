@@ -6,6 +6,7 @@ import { Github, ExternalLink, Star, Code, Zap, Globe } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
+import { personalInfo, socialLinks, projects, achievements } from "@/data/portfolioData";
 
 const Projects = () => {
   const [filter, setFilter] = useState("All Projects");
@@ -22,9 +23,9 @@ const Projects = () => {
     const stepDuration = duration / steps;
 
     const targetCounts = {
-      totalProjects: 15,
+      totalProjects: parseInt(achievements.stats.totalProjects.replace('+', '')),
       technologies: 8,
-      liveProjects: 4
+      liveProjects: projects.filter(p => p.status === 'Live').length
     };
 
     let currentStep = 0;
@@ -50,52 +51,6 @@ const Projects = () => {
 
   const filters = ["All Projects", "Featured", "Frontend", "AI & ML", "Full Stack"];
 
-  const projects = [
-    {
-      title: "BookHive",
-      description: "BookNest is a full-stack library management system with distinct user and admin roles. It features book and PYQ management, a borrowing system, OTP-verified authentication, and separate dashboards. Built with React, Node.js, Express.js, and MongoDB.",
-      image: "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=400&h=300&fit=crop&crop=center&auto=format&q=80",
-      category: "Full Stack",
-      featured: true,
-      tags: ["React", "Redux Toolkit", "Node.js", "Express", "MongoDB", "JWT"],
-      demo: "https://bookhive-manager.vercel.app",
-      github: "https://github.com/yuvraj-mehta/Byteverse_NandiNinjas",
-      status: "Live"
-    },
-    {
-      title: "Portfolio Website",
-      description: "Personal developer portfolio showcasing projects and skills. Designed and built a responsive single-page portfolio with smooth animations and dynamic navigation. Integrated a contact form using EmailJS and added a downloadable resume feature.",
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=300&fit=crop&crop=center&auto=format&q=80",
-      category: "Frontend",
-      featured: true,
-      tags: ["React", "Tailwind CSS", "Framer Motion", "Vite"],
-      demo: "https://yuvrajmehta.codes",
-      github: "https://github.com/yuvraj-mehta/My-Portfolio",
-      status: "Live"
-    },
-    {
-      title: "EcoGuardian",
-      description: "An online community platform empowering individuals to collaborate on environmental projects, report cleanliness issues, access educational resources, and drive positive change for a cleaner, greener future. 🌍",
-      image: "https://images.unsplash.com/photo-1569163139394-de4e4f43e4e3?w=400&h=300&fit=crop&crop=center&auto=format&q=80",
-      category: "Full Stack",
-      featured: true,
-      tags: ["HTML", "CSS", "JavaScript", "Node.js", "Express", "MongoDB"],
-      demo: "https://yuvraj-mehta.github.io/EcoGuardian_prototype/",
-      github: "https://github.com/yuvraj-mehta/EcoGuardian_prototype",
-      status: "Live"
-    },
-    {
-      title: "Stickify",
-      description: "This is a simple notes application built with React and Vite. It allows users to create, update, delete, and manage notes with different colors. The application uses Appwrite as the backend service for managing notes.",
-      image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=400&h=300&fit=crop&crop=center&auto=format&q=80",
-      category: "Frontend",
-      featured: false,
-      tags: ["React", "Vite", "Tailwind CSS", "Appwrite"],
-      demo: "https://stickify-git-master-yuvraj-mehtas-projects.vercel.app/",
-      github: "https://github.com/yuvraj-mehta/Stickify",
-      status: "Live"
-    }
-  ];
 
   const filteredProjects = projects.filter(project => {
     if (filter === "All Projects") return true;
@@ -330,7 +285,7 @@ const Projects = () => {
           {/* GitHub CTA Section */}
           <div className="text-center mt-20">
             <div className="mb-4">
-              <a href="https://github.com/yuvraj-mehta" target="_blank" rel="noopener noreferrer">
+              <a href={socialLinks.github.url} target="_blank" rel="noopener noreferrer">
                 <Button className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 text-base font-semibold rounded-full hover:scale-105 transition-all duration-300 shadow-lg">
                   View More Projects on GitHub
                   <Github className="w-5 h-5 ml-2" />
