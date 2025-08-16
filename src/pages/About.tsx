@@ -5,12 +5,11 @@ import {
   HiMail,
   HiExternalLink,
   HiOutlineGlobeAlt,
-  HiTrophy,
   HiCode,
   HiLocationMarker,
   HiCalendar
 } from "react-icons/hi";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaTrophy } from "react-icons/fa";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
