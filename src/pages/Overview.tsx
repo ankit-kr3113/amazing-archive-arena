@@ -689,7 +689,7 @@ const Overview = () => {
                   </Button>
                   <Button asChild size="sm" className="flex-1">
                     <a href="https://github.com/yuvraj-mehta" target="_blank" rel="noopener noreferrer">
-                      <Github className="w-3 h-3 mr-2" />
+                      <FaGithub className="w-3 h-3 mr-2" />
                       GitHub Activity
                     </a>
                   </Button>
