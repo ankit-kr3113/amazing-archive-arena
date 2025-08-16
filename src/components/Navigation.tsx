@@ -16,6 +16,7 @@ const Navigation = () => {
     { name: "Skills", href: "/skills", icon: Wrench },
     { name: "Coding", href: "/coding", icon: Code },
     { name: "Projects", href: "/projects", icon: FolderOpen },
+    { name: "Journey", href: "/journey", icon: BookOpen },
     { name: "Contact", href: "/contact", icon: Mail },
   ];
 
