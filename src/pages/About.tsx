@@ -71,7 +71,7 @@ const About = () => {
               </span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Full Stack Developer • B.Tech CS Student • NIT Patna • Passionate about creating impactful digital solutions
+              {personalInfo.tagline}
             </p>
           </div>
 
