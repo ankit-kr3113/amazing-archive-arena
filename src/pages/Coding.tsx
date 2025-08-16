@@ -135,12 +135,12 @@ const Coding = () => {
     return () => clearInterval(timer);
   }, [targetTotal, ...targetPlatforms]);
 
-  // Ordered by activity level and importance
+  // Generate coding stats with real-time data
   const codingStats = [
     {
       platform: "LeetCode",
-      solved: 228,
-      rating: "1570",
+      solved: apiData?.leetcode.totalSolved || 228,
+      rating: apiData?.leetcode.ranking ? `Rank #${apiData.leetcode.ranking}` : "1570",
       rank: "Top 27.7%",
       color: "text-orange-400",
       bgColor: "from-orange-500/20 to-yellow-500/20",
@@ -149,14 +149,14 @@ const Coding = () => {
       url: "https://leetcode.com/u/mythical-UV/",
       lastActive: "2024",
       joinedDate: "Jan 2023",
-      difficulty: { easy: 150, medium: 65, hard: 13 },
+      difficulty: apiData?.leetcode.problemsSolved || { easy: 150, medium: 65, hard: 13 },
       recentActivity: "Solved 'Binary Tree Inorder Traversal' - 2 days ago"
     },
     {
       platform: "GeeksforGeeks",
-      solved: 70,
-      rating: "Rank #1455",
-      streak: "35+ day streak",
+      solved: apiData?.gfg.problemsSolved || 70,
+      rating: apiData?.gfg.rank ? `Rank #${apiData.gfg.rank}` : "Rank #1455",
+      streak: apiData?.gfg.weeklyStreak ? `${apiData.gfg.weeklyStreak}+ day streak` : "35+ day streak",
       color: "text-green-400",
       bgColor: "from-green-500/20 to-emerald-500/20",
       borderColor: "border-green-500/30",
@@ -169,7 +169,7 @@ const Coding = () => {
     },
     {
       platform: "CodeChef",
-      solved: 25,
+      solved: apiData?.codechef.problemsSolved || 25,
       rating: "1270",
       rank: "2��� Coder (Division 3)",
       color: "text-amber-400",
@@ -184,9 +184,9 @@ const Coding = () => {
     },
     {
       platform: "Codeforces",
-      solved: 10,
-      rating: "900",
-      rank: "Newbie",
+      solved: apiData?.codeforces.problemsSolved || 10,
+      rating: apiData?.codeforces.rating?.toString() || "900",
+      rank: apiData?.codeforces.rank || "Newbie",
       color: "text-blue-400",
       bgColor: "from-blue-500/20 to-cyan-500/20",
       borderColor: "border-blue-500/30",
