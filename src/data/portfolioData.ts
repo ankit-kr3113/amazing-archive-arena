@@ -242,7 +242,7 @@ export const projects = [
     title: "EcoGuardian",
     name: "EcoGuardian",
     description: "A gamified platform to track, reduce, and compete on carbon footprint, with educational resources and community challenges.",
-    image: "/projectImages/ecoGuardian.png",
+    image: "https://cdn.builder.io/api/v1/image/assets%2F911edf0abfc44540bba885225b62aa26%2F2fbbcced95b94a128c0a7b5e14c085a0?format=webp&width=800",
     category: "Full Stack",
     featured: true,
     tags: ["Next.js", "TypeScript", "Firebase", "Framer Motion", "Tailwind CSS"],
