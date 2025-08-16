@@ -14,6 +14,7 @@ import Coding from "./pages/Coding";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 import Journey from "./pages/Journey";
+import CertificationsPage from "./pages/Certifications";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
