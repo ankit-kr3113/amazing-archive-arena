@@ -170,8 +170,8 @@ const Coding = () => {
     {
       platform: "CodeChef",
       solved: apiData?.codechef.problemsSolved || 25,
-      rating: "1270",
-      rank: "2��� Coder (Division 3)",
+      rating: apiData?.codechef.rating?.toString() || "1270",
+      rank: apiData?.codechef.stars ? `${apiData.codechef.stars}★ Coder` : "2★ Coder (Division 3)",
       color: "text-amber-400",
       bgColor: "from-amber-500/20 to-orange-500/20",
       borderColor: "border-amber-500/30",
