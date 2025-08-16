@@ -742,17 +742,81 @@ const Overview = () => {
         </div>
       </section>
 
-      {/* Certifications Section */}
+      {/* Bottom Section - Journey & Quick Info */}
       <section className="pb-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Certifications />
-        </div>
-      </section>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
 
-      {/* Learning Journey Summary Section */}
-      <section className="pb-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <JourneySummary />
+            {/* Learning Journey Summary - Takes 2 columns */}
+            <div className="lg:col-span-2">
+              <JourneySummary />
+            </div>
+
+            {/* Quick Info Sidebar */}
+            <div className="space-y-6">
+
+              {/* Compact Certifications */}
+              <Card className="p-6 border-primary/20">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center">
+                    <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center mr-3">
+                      <FaTrophy className="w-4 h-4 text-primary" />
+                    </div>
+                    <h3 className="text-lg font-semibold">Certifications</h3>
+                  </div>
+                </div>
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between p-3 rounded-lg bg-muted/50 hover:bg-muted transition-colors">
+                    <div>
+                      <div className="font-medium text-sm">Python Bootcamp</div>
+                      <div className="text-xs text-muted-foreground">Udemy • 2023</div>
+                    </div>
+                    <Badge className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 text-xs">
+                      Verified
+                    </Badge>
+                  </div>
+                  <div className="flex items-center justify-between p-3 rounded-lg bg-muted/50 hover:bg-muted transition-colors">
+                    <div>
+                      <div className="font-medium text-sm">Web Dev Bootcamp</div>
+                      <div className="text-xs text-muted-foreground">Udemy • 2023</div>
+                    </div>
+                    <Badge className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 text-xs">
+                      Verified
+                    </Badge>
+                  </div>
+                </div>
+                <Button asChild variant="outline" size="sm" className="w-full mt-4">
+                  <Link to="/certifications">View All Certifications</Link>
+                </Button>
+              </Card>
+
+              {/* Quick Links */}
+              <Card className="p-6 border-primary/20">
+                <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
+                <div className="space-y-3">
+                  <Button asChild variant="outline" size="sm" className="w-full justify-start">
+                    <Link to="/journey">
+                      <BookOpen className="w-4 h-4 mr-2" />
+                      Full Learning Journey
+                    </Link>
+                  </Button>
+                  <Button asChild variant="outline" size="sm" className="w-full justify-start">
+                    <Link to="/projects">
+                      <FolderOpen className="w-4 h-4 mr-2" />
+                      All Projects
+                    </Link>
+                  </Button>
+                  <Button asChild variant="outline" size="sm" className="w-full justify-start">
+                    <a href="/Yuvraj_Resume_v2_1 (1).pdf" target="_blank" rel="noopener noreferrer">
+                      <Download className="w-4 h-4 mr-2" />
+                      Download Resume
+                    </a>
+                  </Button>
+                </div>
+              </Card>
+
+            </div>
+          </div>
         </div>
       </section>
 
