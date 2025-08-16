@@ -130,27 +130,27 @@ const About = () => {
                   </div>
 
                   <div className="flex gap-3 pt-2 border-t">
-                    <a 
-                      href="https://github.com/yuvraj-mehta" 
-                      target="_blank" 
+                    <a
+                      href={socialLinks.github.url}
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-1 text-xs text-muted-foreground hover:text-primary transition-colors"
                     >
                       <Github className="w-4 h-4" />
                       GitHub
                     </a>
-                    <a 
-                      href="https://www.linkedin.com/in/yuvraj-mehta-a0274528a/" 
-                      target="_blank" 
+                    <a
+                      href={socialLinks.linkedin.url}
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-1 text-xs text-muted-foreground hover:text-primary transition-colors"
                     >
                       <Linkedin className="w-4 h-4" />
                       LinkedIn
                     </a>
-                    <a 
-                      href="https://leetcode.com/u/mythical-UV/" 
-                      target="_blank" 
+                    <a
+                      href={socialLinks.leetcode.url}
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-1 text-xs text-muted-foreground hover:text-primary transition-colors"
                     >
