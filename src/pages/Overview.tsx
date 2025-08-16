@@ -2,45 +2,61 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
-  Github,
-  Linkedin,
-  Mail,
   Download,
   ExternalLink,
-  Code2,
-  Rocket,
-  GraduationCap,
-  Trophy,
-  Star,
   MapPin,
   Calendar,
-  Briefcase,
-  Terminal,
-  Database,
-  Globe,
-  Smartphone,
   Clock,
   TrendingUp,
   Zap,
-  GitCommit,
-  BookOpen,
-  Award,
   Target,
   Activity,
-  CheckCircle,
   CircleDot,
   Eye,
-  Users,
   ArrowRight,
-  Play,
-  Pause,
-  Phone,
-  MessageSquare,
-  FileText,
-  BarChart3,
-  Sparkles,
   ChevronRight
 } from "lucide-react";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaReact,
+  FaNodeJs,
+  FaDatabase,
+  FaGraduationCap,
+  FaTrophy,
+  FaStar,
+  FaBriefcase,
+  FaTerminal,
+  FaGlobe,
+  FaMobile,
+  FaPlay,
+  FaPause,
+  FaPhone,
+  FaAward,
+  FaUsers,
+  FaFileAlt,
+  FaChartBar,
+  FaRocket,
+  FaCode,
+  FaBook,
+  FaEnvelope
+} from "react-icons/fa";
+import {
+  SiTypescript,
+  SiMongodb,
+  SiExpress,
+  SiNextdotjs,
+  SiJavascript,
+  SiGit,
+  SiPostgresql
+} from "react-icons/si";
+import {
+  HiSparkles,
+  HiChatBubbleLeftRight
+} from "react-icons/hi2";
+import {
+  BiGitCommit
+} from "react-icons/bi";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
