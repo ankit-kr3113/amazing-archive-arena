@@ -208,7 +208,7 @@ const About = () => {
                     <div className="pt-4 border-t">
                       <h4 className="font-semibold mb-3 text-sm">Achievements</h4>
                       <div className="grid grid-cols-2 gap-3">
-                        {achievements.map((achievement, index) => (
+                        {achievementStats.map((achievement, index) => (
                           <div key={index} className="text-center p-3 rounded-lg bg-primary/5 hover:bg-primary/10 transition-colors group">
                             <div className={`text-lg font-bold ${achievement.color} group-hover:scale-110 transition-transform duration-300`}>
                               {achievement.value}
