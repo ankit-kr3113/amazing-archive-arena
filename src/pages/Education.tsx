@@ -96,7 +96,7 @@ const Education = () => {
     <div className="min-h-screen bg-background">
       <Navigation />
       
-      <div className="pt-28 pb-8 px-4 sm:px-6 lg:px-8">
+      <div className="pt-28 pb-8 px-4 sm:px-6 md:px-8 lg:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Enhanced Header */}
           <div className="text-center mb-16 fade-in">
@@ -115,7 +115,7 @@ const Education = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
             {/* Academic Timeline with Expandable Cards */}
             <div className="lg:col-span-2 space-y-10">
               <div className="flex items-center mb-8">
@@ -137,16 +137,16 @@ const Education = () => {
                         <div className="absolute inset-1 bg-primary/60 rounded-full"></div>
                       </div>
                       
-                      <Card className="portfolio-card slide-up hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 sm:ml-8 cursor-pointer" onClick={() => toggleCard(entry.id)}>
-                        <div className="flex items-start justify-between mb-4">
-                          <div className="flex items-center gap-3">
-                            <Badge className={entry.status === "Currently Pursuing" ? "bg-green-500/10 text-green-500 border-green-500/20" : "bg-secondary text-secondary-foreground"}>
+                      <Card className="portfolio-card slide-up hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 sm:ml-8 cursor-pointer p-4 md:p-6" onClick={() => toggleCard(entry.id)}>
+                        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 sm:gap-4 mb-4">
+                          <div className="flex flex-wrap items-center gap-2">
+                            <Badge className={entry.status === "Currently Pursuing" ? "bg-green-500/10 text-green-500 border-green-500/20 text-xs" : "bg-secondary text-secondary-foreground text-xs"}>
                               {entry.status || entry.type}
                             </Badge>
-                            <Badge variant="outline">{entry.type}</Badge>
+                            <Badge variant="outline" className="text-xs">{entry.type}</Badge>
                           </div>
-                          <div className="flex items-center gap-2">
-                            <Badge variant="outline" className="text-primary border-primary/40 text-xs">
+                          <div className="flex items-center justify-between sm:justify-end gap-2 flex-shrink-0">
+                            <Badge variant="outline" className="text-primary border-primary/40 text-xs whitespace-nowrap">
                               📅 {entry.period}
                             </Badge>
                             <div className="text-muted-foreground hover:text-primary transition-colors">
@@ -160,51 +160,51 @@ const Education = () => {
                         </div>
 
                         <div className="mb-4">
-                          <h3 className="text-xl font-bold">{entry.institution}</h3>
-                          <p className="text-primary font-semibold">{entry.degree}</p>
-                          <p className="text-sm text-muted-foreground flex items-center gap-2 mt-1">
+                          <h3 className="text-lg sm:text-xl font-bold leading-tight">{entry.institution}</h3>
+                          <p className="text-primary font-semibold text-sm sm:text-base mt-1">{entry.degree}</p>
+                          <p className="text-xs sm:text-sm text-muted-foreground flex items-center gap-2 mt-2">
                             📍 {entry.location}
                           </p>
                         </div>
 
                         {/* Compact description when collapsed */}
                         {!expandedCards.includes(entry.id) && (
-                          <p className="text-muted-foreground text-sm leading-relaxed">
+                          <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed">
                             {entry.description.split('.')[0]}.
                           </p>
                         )}
 
                         {/* Expanded content */}
                         {expandedCards.includes(entry.id) && (
-                          <div className="space-y-6 animate-in slide-in-from-top-4 duration-300">
-                            <p className="text-muted-foreground">{entry.description}</p>
+                          <div className="space-y-4 sm:space-y-6 animate-in slide-in-from-top-4 duration-300">
+                            <p className="text-muted-foreground text-sm sm:text-base">{entry.description}</p>
 
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
                               <div>
-                                <h4 className="font-semibold mb-3 flex items-center">
-                                  <span className="text-2xl mr-2">📚</span>
+                                <h4 className="font-semibold mb-3 flex items-center text-sm sm:text-base">
+                                  <span className="text-xl sm:text-2xl mr-2">📚</span>
                                   Key Courses
                                 </h4>
-                                <ul className="space-y-2">
+                                <ul className="space-y-1.5 sm:space-y-2">
                                   {entry.keyPoints.courses.map((course, idx) => (
-                                    <li key={idx} className="text-sm text-muted-foreground flex items-center">
-                                      <span className="text-primary mr-2">•</span>
-                                      {course}
+                                    <li key={idx} className="text-xs sm:text-sm text-muted-foreground flex items-start">
+                                      <span className="text-primary mr-2 mt-0.5 flex-shrink-0">•</span>
+                                      <span className="break-words">{course}</span>
                                     </li>
                                   ))}
                                 </ul>
                               </div>
 
                               <div>
-                                <h4 className="font-semibold mb-3 flex items-center">
-                                  <span className="text-2xl mr-2">🏆</span>
+                                <h4 className="font-semibold mb-3 flex items-center text-sm sm:text-base">
+                                  <span className="text-xl sm:text-2xl mr-2">🏆</span>
                                   Achievements
                                 </h4>
-                                <ul className="space-y-2">
+                                <ul className="space-y-1.5 sm:space-y-2">
                                   {entry.keyPoints.achievements.map((achievement, idx) => (
-                                    <li key={idx} className="text-sm text-muted-foreground flex items-center">
-                                      <span className="text-yellow-500 mr-2">⭐</span>
-                                      {achievement}
+                                    <li key={idx} className="text-xs sm:text-sm text-muted-foreground flex items-start">
+                                      <span className="text-yellow-500 mr-2 mt-0.5 flex-shrink-0">⭐</span>
+                                      <span className="break-words">{achievement}</span>
                                     </li>
                                   ))}
                                 </ul>
@@ -214,15 +214,15 @@ const Education = () => {
                             {/* Activities section only for current education */}
                             {entry.keyPoints.activities && (
                               <div className="pt-4 border-t border-border">
-                                <h4 className="font-semibold mb-3 flex items-center">
-                                  <span className="text-2xl mr-2">👥</span>
+                                <h4 className="font-semibold mb-3 flex items-center text-sm sm:text-base">
+                                  <span className="text-xl sm:text-2xl mr-2">👥</span>
                                   Activities & Involvement
                                 </h4>
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4">
                                   {entry.keyPoints.activities.map((activity, idx) => (
-                                    <div key={idx} className="text-sm">
-                                      <span className="font-medium">{activity.role}</span>
-                                      <p className="text-muted-foreground">{activity.detail}</p>
+                                    <div key={idx} className="text-xs sm:text-sm">
+                                      <span className="font-medium break-words">{activity.role}</span>
+                                      <p className="text-muted-foreground mt-1 break-words">{activity.detail}</p>
                                     </div>
                                   ))}
                                 </div>
