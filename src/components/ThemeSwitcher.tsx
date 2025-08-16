@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { useTheme } from '@/contexts/ThemeContext';
-import { Palette, X, Sparkles, Wand2, Monitor, Sun, Moon } from 'lucide-react';
+import { HiColorSwatch, HiX, HiSparkles, HiLightningBolt, HiDesktopComputer, HiSun, HiMoon } from 'react-icons/hi';
 
 const ThemeSwitcher = () => {
   const [isOpen, setIsOpen] = useState(false);
