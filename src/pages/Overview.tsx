@@ -287,8 +287,8 @@ const Overview = () => {
               {/* Main Heading */}
               <div className="space-y-4 md:space-y-6">
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight tracking-tight">
-                  <span className="block text-muted-foreground text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium mb-3 md:mb-4 animate-fade-in-up">
-                    👋 Hello, I'm
+                  <span className="block text-muted-foreground text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium mb-3 md:mb-4 animate-fade-in-up flex items-center gap-2">
+                    <HiHand className="w-6 h-6 lg:w-8 lg:h-8" /> Hello, I'm
                   </span>
                   <span className="gradient-text relative inline-block animate-fade-in-up animation-delay-300 bg-gradient-to-r from-primary via-primary-glow to-accent bg-clip-text text-transparent drop-shadow-2xl">
                     {personalInfo.name}
