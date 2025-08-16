@@ -85,11 +85,11 @@ const Footer = () => {
 
         {/* Tablet: Simplified Content */}
         <div className="hidden sm:block md:hidden">
-          <div className="grid grid-cols-2 gap-8 mb-8">
+          <div className="grid grid-cols-2 gap-8 mb-10">
             {/* Brand Section - Simplified */}
-            <div>
-              <h3 className="text-xl font-bold text-white mb-4">Yuvraj Mehta</h3>
-              <p className="text-gray-400 text-sm mb-5 leading-relaxed">
+            <div className="space-y-5">
+              <h3 className="text-xl font-bold text-white">Yuvraj Mehta</h3>
+              <p className="text-gray-400 text-sm leading-relaxed">
                 Full Stack Developer specializing in modern web technologies
               </p>
               <div className="flex gap-3">
@@ -97,7 +97,7 @@ const Footer = () => {
                   href="https://github.com/yuvraj-mehta"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-8 h-8 rounded-lg bg-[#2a2b5e] hover:bg-gray-700 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-200"
+                  className="w-9 h-9 rounded-lg bg-[#2a2b5e] hover:bg-gray-700 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-200"
                 >
                   <Github className="w-4 h-4" />
                 </a>
@@ -105,13 +105,13 @@ const Footer = () => {
                   href="https://www.linkedin.com/in/yuvraj-mehta-a0274528a/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-8 h-8 rounded-lg bg-[#2a2b5e] hover:bg-blue-600 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-200"
+                  className="w-9 h-9 rounded-lg bg-[#2a2b5e] hover:bg-blue-600 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-200"
                 >
                   <Linkedin className="w-4 h-4" />
                 </a>
                 <a
                   href="mailto:yuvraj.mehta532@gmail.com"
-                  className="w-8 h-8 rounded-lg bg-[#2a2b5e] hover:bg-red-500 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-200"
+                  className="w-9 h-9 rounded-lg bg-[#2a2b5e] hover:bg-red-500 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-200"
                 >
                   <Mail className="w-4 h-4" />
                 </a>
@@ -119,23 +119,23 @@ const Footer = () => {
             </div>
 
             {/* Essential Links Only */}
-            <div>
-              <h4 className="text-white font-semibold mb-4 text-lg">Quick Links</h4>
-              <div className="space-y-3 text-sm">
+            <div className="space-y-5">
+              <h4 className="text-white font-semibold text-lg">Quick Links</h4>
+              <div className="space-y-4 text-sm">
                 <a
                   href="/Yuvraj_Resume_v2_1 (1).pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center text-gray-400 hover:text-white transition-colors"
                 >
-                  <FileText className="w-4 h-4 mr-2" />
+                  <FileText className="w-4 h-4 mr-3" />
                   Resume
                 </a>
                 <Link
                   to="/projects"
                   className="flex items-center text-gray-400 hover:text-white transition-colors"
                 >
-                  <Zap className="w-4 h-4 mr-2" />
+                  <Zap className="w-4 h-4 mr-3" />
                   Projects
                 </Link>
                 <Link to="/about" className="block text-gray-400 hover:text-white transition-colors">
@@ -149,23 +149,23 @@ const Footer = () => {
           </div>
 
           {/* Simplified Stats for Tablet */}
-          <div className="grid grid-cols-2 gap-6 py-6 border-t border-gray-600 border-b border-gray-600">
-            <div className="text-center py-3">
-              <div className="flex items-center justify-center mb-3">
-                <FaStar className="w-4 h-4 text-purple-400 mr-2" />
+          <div className="grid grid-cols-2 gap-8 py-8 border-t border-gray-600 border-b border-gray-600 mb-6">
+            <div className="text-center">
+              <div className="flex items-center justify-center mb-4">
+                <FaStar className="w-5 h-5 text-purple-400 mr-2" />
                 <span className="text-xs text-gray-400 uppercase tracking-wider font-medium">Total Visitors</span>
               </div>
-              <div className="text-xl font-bold text-white">15,475</div>
+              <div className="text-2xl font-bold text-white">15,475</div>
             </div>
 
-            <div className="text-center py-3">
-              <div className="flex items-center justify-center mb-3">
-                <FaLaptopCode className="w-4 h-4 text-blue-400 mr-2" />
+            <div className="text-center">
+              <div className="flex items-center justify-center mb-4">
+                <FaLaptopCode className="w-5 h-5 text-blue-400 mr-2" />
                 <span className="text-xs text-gray-400 uppercase tracking-wider font-medium">DSA Skills</span>
               </div>
               <div className="flex items-center justify-center space-x-1">
                 {[1, 2, 3, 4, 5].map((star) => (
-                  <FaStar key={star} className="w-4 h-4 text-yellow-400" />
+                  <FaStar key={star} className="w-5 h-5 text-yellow-400" />
                 ))}
               </div>
             </div>
