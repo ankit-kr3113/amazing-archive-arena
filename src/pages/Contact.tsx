@@ -270,9 +270,9 @@ const Contact = () => {
                   })}
                 </div>
 
-                <hr className="border-border mb-8" />
+                <hr className="border-border mb-6" />
 
-                <div className="flex items-center mb-6">
+                <div className="flex items-center mb-4">
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mr-4">
                     <HiUsers className="w-6 h-6 text-primary" />
                   </div>
