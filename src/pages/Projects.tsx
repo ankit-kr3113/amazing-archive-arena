@@ -61,8 +61,6 @@ const Projects = () => {
     return project.category === filter;
   });
 
-  const featuredProjects = projects.filter(project => project.featured);
-
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
