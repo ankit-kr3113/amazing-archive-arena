@@ -701,7 +701,7 @@ const Overview = () => {
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center">
                     <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center mr-3">
-                      <Rocket className="w-4 h-4 text-primary" />
+                      <FaRocket className="w-4 h-4 text-primary" />
                     </div>
                     <h3 className="text-lg font-semibold">Featured Projects</h3>
                   </div>
