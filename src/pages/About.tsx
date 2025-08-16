@@ -173,20 +173,15 @@ const About = () => {
                   
                   <div className="space-y-3 text-sm leading-relaxed">
                     <p className="text-muted-foreground">
-                      I'm a Computer Science student at <span className="text-primary font-semibold">NIT Patna</span> with a passion for building 
-                      full-stack applications that solve real-world problems. My journey in tech started with curiosity about 
-                      how things work and evolved into a deep love for creating digital solutions.
+                      {personalInfo.bio.intro}
                     </p>
 
                     <p className="text-muted-foreground">
-                      As a <span className="text-primary font-semibold">Robotics Club member</span>, I've organized workshops and led teams 
-                      building combat and soccer bots. I believe in learning by doing and enjoy sharing knowledge with others 
-                      through mentoring and technical discussions.
+                      {personalInfo.bio.robotics}
                     </p>
 
                     <p className="text-muted-foreground">
-                      When I'm not coding, you can find me solving algorithmic challenges on competitive programming platforms, 
-                      participating in hackathons, or running track. I won Bronze in 50m Hurdles at NIT Patna Intramurals!
+                      {personalInfo.bio.interests}
                     </p>
                   </div>
 
