@@ -29,7 +29,6 @@ import {
   FaWifi,
   FaExclamationTriangle
 } from "react-icons/fa";
-import { FaTrophy } from "react-icons/fa";
 import {
   MdLeaderboard,
   MdTrendingUp
