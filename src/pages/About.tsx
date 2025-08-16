@@ -4,7 +4,6 @@ import {
   HiDownload,
   HiMail,
   HiExternalLink,
-  HiOutlineGlobeAlt,
   HiCode,
   HiLocationMarker,
   HiCalendar
