@@ -241,20 +241,33 @@ const Contact = () => {
                 </div>
 
                 <div className="space-y-3 mb-8">
-                  {quickLinks.map((link, index) => (
-                    <a
-                      key={index}
-                      href={link.href}
-                      target={link.href.startsWith("http") ? "_blank" : "_self"}
-                      rel={link.href.startsWith("http") ? "noopener noreferrer" : ""}
-                      className="group flex items-center space-x-3 p-3 rounded-xl hover:bg-primary/10 transition-all duration-300 hover:scale-105 hover:shadow-lg text-sm"
-                    >
-                      <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                        <span className="text-sm group-hover:scale-110 transition-transform">{link.icon}</span>
-                      </div>
-                      <span className="group-hover:text-primary transition-colors font-medium">{link.name}</span>
-                    </a>
-                  ))}
+                  {quickLinks.map((link, index) => {
+                    const getIcon = () => {
+                      switch(link.name) {
+                        case "Resume": return <FaFileAlt className="w-4 h-4" />;
+                        case "LeetCode": return <SiLeetcode className="w-4 h-4" />;
+                        case "GeeksforGeeks": return <SiGeeksforgeeks className="w-4 h-4" />;
+                        case "CodeChef": return <SiCodechef className="w-4 h-4" />;
+                        case "Projects": return <FaRocket className="w-4 h-4" />;
+                        default: return <HiLink className="w-4 h-4" />;
+                      }
+                    };
+
+                    return (
+                      <a
+                        key={index}
+                        href={link.href}
+                        target={link.href.startsWith("http") ? "_blank" : "_self"}
+                        rel={link.href.startsWith("http") ? "noopener noreferrer" : ""}
+                        className="group flex items-center space-x-3 p-3 rounded-xl hover:bg-primary/10 transition-all duration-300 hover:scale-105 hover:shadow-lg text-sm"
+                      >
+                        <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground group-hover:scale-110 transition-all duration-300">
+                          {getIcon()}
+                        </div>
+                        <span className="group-hover:text-primary transition-colors font-medium">{link.name}</span>
+                      </a>
+                    );
+                  })}
                 </div>
 
                 <hr className="border-border mb-8" />
