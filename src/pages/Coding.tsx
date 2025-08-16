@@ -331,7 +331,9 @@ const Coding = () => {
               </div>
               <div className="flex items-center gap-2 px-3 py-2 bg-orange-500/5 rounded-lg border border-orange-500/20">
                 <FaStar className="w-4 h-4 text-orange-500" />
-                <span className="text-muted-foreground font-medium">LeetCode Top 27.7%</span>
+                <span className="text-muted-foreground font-medium">
+                  LeetCode Top {apiData?.leetcode?.contests?.topPercentage || "27.7"}%
+                </span>
               </div>
             </div>
           </div>
