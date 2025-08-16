@@ -120,6 +120,7 @@ class GitHubApiService {
     await this.throttleRequest();
 
     try {
+      console.log(`Attempting GitHub API request: ${url.replace(this.baseUrl, '')}`);
       const response = await fetch(url);
 
       if (response.status === 403) {
@@ -127,33 +128,42 @@ class GitHubApiService {
         const rateLimitRemaining = response.headers.get('X-RateLimit-Remaining');
         const rateLimitReset = response.headers.get('X-RateLimit-Reset');
 
-        if (rateLimitRemaining === '0') {
-          const resetTime = rateLimitReset ? parseInt(rateLimitReset) * 1000 : Date.now() + 60000;
-          const waitTime = Math.min(resetTime - Date.now(), 60000); // Max 1 minute wait
+        console.warn(`GitHub API 403 response. Rate limit remaining: ${rateLimitRemaining || 'unknown'}`);
 
-          if (retries > 0 && waitTime > 0) {
-            console.warn(`GitHub rate limit exceeded. Waiting ${Math.round(waitTime/1000)}s... (${retries} retries left)`);
+        if (rateLimitRemaining === '0' && retries > 0) {
+          const resetTime = rateLimitReset ? parseInt(rateLimitReset) * 1000 : Date.now() + 60000;
+          const waitTime = Math.min(resetTime - Date.now(), 30000); // Max 30 seconds wait instead of 60
+
+          if (waitTime > 0) {
+            console.warn(`GitHub rate limit hit. Waiting ${Math.round(waitTime/1000)}s before retry...`);
             await this.delay(waitTime);
             return this.fetchWithRetry(url, retries - 1);
           }
         }
 
-        throw new Error(`GitHub API access forbidden (rate limit or authentication required)`);
+        // Don't throw error for 403 - let the calling method handle fallback
+        console.warn('GitHub API access forbidden - will use fallback data');
+        throw new Error(`GitHub API temporarily unavailable (rate limited)`);
       }
 
       if (!response.ok) {
+        console.warn(`GitHub API HTTP error: ${response.status} ${response.statusText}`);
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
+      console.log(`GitHub API request successful: ${response.status}`);
       return response;
     } catch (error) {
-      if (retries > 0 && error instanceof TypeError) {
+      if (retries > 0 && (error instanceof TypeError || error.message.includes('fetch'))) {
         // Network error, retry with exponential backoff
-        const delay = this.BASE_DELAY * Math.pow(2, this.MAX_RETRIES - retries);
-        console.warn(`GitHub API network error. Retrying in ${delay}ms... (${retries} retries left)`);
+        const delay = Math.min(this.BASE_DELAY * Math.pow(2, this.MAX_RETRIES - retries), 10000); // Max 10 second delay
+        console.warn(`GitHub API network error. Retrying in ${delay}ms... (${retries} retries left): ${error.message}`);
         await this.delay(delay);
         return this.fetchWithRetry(url, retries - 1);
       }
+
+      // Log the final error but don't crash the app
+      console.warn(`GitHub API request failed after retries: ${error.message}`);
       throw error;
     }
   }
