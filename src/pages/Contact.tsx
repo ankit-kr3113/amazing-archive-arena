@@ -183,10 +183,10 @@ const Contact = () => {
                 <div className="space-y-3">
                   {contactMethods.map((method, index) => (
                     <div key={index} className="group flex items-center gap-3 p-2 rounded-lg hover:bg-primary/5 transition-all duration-300">
-                      <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300 ${
+                      <div className={`w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300 ${
                         method.preferred ? 'bg-primary/20 group-hover:bg-primary/30' : 'bg-primary/10 group-hover:bg-primary/20'
                       }`}>
-                        <method.icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
+                        <method.icon className="w-4 h-4 text-primary" />
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2 flex-wrap">
