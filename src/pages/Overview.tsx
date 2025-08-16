@@ -563,7 +563,7 @@ const Overview = () => {
               <Card className="p-6 border-primary/20">
                 <div className="flex items-center mb-4">
                   <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center mr-3">
-                    <Code2 className="w-4 h-4 text-primary" />
+                    <FaCode className="w-4 h-4 text-primary" />
                   </div>
                   <h3 className="text-lg font-semibold">Tech Stack</h3>
                 </div>
