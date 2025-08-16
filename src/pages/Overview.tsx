@@ -719,13 +719,13 @@ const Overview = () => {
                     {featuredProjects.map((project, index) => (
                       <CarouselItem key={index}>
                         <div className="group p-4 rounded-lg border border-border/50 hover:border-primary/30 hover:bg-primary/5 transition-all duration-300 cursor-pointer">
-                          <div className="relative w-full h-32 bg-muted/60 rounded-lg overflow-hidden mb-4">
+                          <div className="relative w-full h-40 bg-muted/60 rounded-lg overflow-hidden mb-4 shadow-lg">
                             <ProjectImage
                               src={project.image}
                               alt={project.title}
-                              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                              className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                             <div className="absolute top-2 right-2 flex items-center gap-2">
                               <Badge variant="secondary" className="text-xs">
                                 {project.category}
