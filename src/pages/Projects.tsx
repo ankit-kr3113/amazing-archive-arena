@@ -294,7 +294,7 @@ const Projects = () => {
                           asChild
                         >
                           <a href={project.github} target="_blank" rel="noopener noreferrer">
-                            <Github className="w-4 h-4 mr-2" />
+                            <FaGithub className="w-4 h-4 mr-2" />
                             Source
                           </a>
                         </Button>
