@@ -394,47 +394,21 @@ const Overview = () => {
         </div>
       </section>
 
-      {/* Main Content Grid */}
+      {/* Main Content Grid - Reorganized for Portfolio Overview */}
       <section className="pb-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            
-            {/* Left Column - About & Skills */}
+
+            {/* Left Column - Core Skills & Capabilities */}
             <div className="lg:col-span-1 space-y-6">
 
-              {/* Current Status */}
-              <Card className="p-6 border-primary/30">
-                <div className="flex items-center mb-4">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary/30 to-primary-glow/30 flex items-center justify-center mr-3 shadow-lg">
-                    <Target className="w-5 h-5 text-primary" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-foreground">Current Focus</h3>
-                </div>
-                <div className="space-y-3">
-                  <div className="flex items-center gap-2">
-                    <Zap className="w-4 h-4 text-yellow-500" />
-                    <span className="text-sm font-medium text-foreground">Learning:</span>
-                  </div>
-                  <p className="text-sm text-foreground/70 pl-6">{currentStatus.learning}</p>
-
-                  <div className="flex items-center gap-2">
-                    <MapPin className="w-4 h-4 text-blue-500" />
-                    <span className="text-sm font-medium text-foreground">Location:</span>
-                  </div>
-                  <p className="text-sm text-foreground/70 pl-6">{currentStatus.location}</p>
-                </div>
-                <Button asChild size="sm" className="w-full mt-4">
-                  <Link to="/contact">Let's Connect</Link>
-                </Button>
-              </Card>
-
-              {/* Skills Overview */}
+              {/* Skills Overview - Most Important for Portfolio */}
               <Card className="p-6 border-primary/30">
                 <div className="flex items-center mb-4">
                   <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500/30 to-blue-500/30 flex items-center justify-center mr-3 shadow-lg">
                     <Activity className="w-5 h-5 text-cyan-400" />
                   </div>
-                  <h3 className="text-lg font-semibold text-foreground">Skills Overview</h3>
+                  <h3 className="text-lg font-semibold text-foreground">Technical Skills</h3>
                 </div>
                 <div className="space-y-3">
                   {skillLevels.map((skill, index) => (
@@ -459,32 +433,65 @@ const Overview = () => {
                   <Link to="/skills">View All Skills</Link>
                 </Button>
               </Card>
-              
-              {/* About Summary */}
-              <Card className="p-6 border-2 border-primary/40 hover:border-primary/60 shadow-xl hover:shadow-2xl hover:shadow-emerald-500/15 transition-all duration-500 backdrop-blur-sm bg-gradient-to-br from-card/90 to-card/70 hover:-translate-y-1">
+
+              {/* Coding Achievements - Key Portfolio Highlight */}
+              <Card className="p-6 border-primary/30 hover:shadow-lg transition-all duration-300">
                 <div className="flex items-center mb-4">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500/30 to-green-500/30 flex items-center justify-center mr-3 shadow-lg">
-                    <FaGraduationCap className="w-5 h-5 text-emerald-400" />
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-yellow-500/30 to-orange-500/30 flex items-center justify-center mr-3 shadow-lg">
+                    <FaTrophy className="w-5 h-5 text-yellow-400" />
                   </div>
-                  <h3 className="text-lg font-semibold text-foreground">About Me</h3>
+                  <h3 className="text-lg font-semibold text-foreground">Coding Achievements</h3>
                 </div>
-                <p className="text-sm text-foreground/70 mb-4 leading-relaxed">
-                  Final year B.Tech Computer Science student at NIT Patna with 2+ years of development experience. 
-                  Specialized in full-stack web development with focus on React, Node.js, and modern JavaScript frameworks.
-                </p>
-                <div className="flex items-center gap-2 text-xs text-foreground/60 mb-3">
-                  <MapPin className="w-3 h-3" />
-                  <span>New Delhi, India</span>
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm font-medium text-foreground">LeetCode</span>
+                    <Badge className="bg-orange-500/20 text-orange-200 border-orange-500/30">
+                      500+ Solved
+                    </Badge>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm font-medium text-foreground">GeeksforGeeks</span>
+                    <Badge className="bg-green-500/20 text-green-200 border-green-500/30">
+                      Active
+                    </Badge>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm font-medium text-foreground">CodeChef</span>
+                    <Badge className="bg-purple-500/20 text-purple-200 border-purple-500/30">
+                      Contests
+                    </Badge>
+                  </div>
                 </div>
-                <div className="flex items-center gap-2 text-xs text-foreground/60 mb-4">
-                  <Calendar className="w-3 h-3" />
-                  <span>Graduating 2025</span>
-                </div>
-                <Button asChild size="sm" className="w-full">
-                  <Link to="/about">View Full Profile</Link>
+                <Button asChild variant="outline" size="sm" className="w-full mt-4">
+                  <Link to="/coding">View Profiles & Stats</Link>
                 </Button>
               </Card>
 
+              {/* Current Focus & Availability */}
+              <Card className="p-6 border-primary/30">
+                <div className="flex items-center mb-4">
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary/30 to-primary-glow/30 flex items-center justify-center mr-3 shadow-lg">
+                    <Target className="w-5 h-5 text-primary" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-foreground">Current Status</h3>
+                </div>
+                <div className="space-y-3">
+                  <div className="flex items-center gap-2">
+                    <Zap className="w-4 h-4 text-yellow-500" />
+                    <span className="text-sm font-medium text-foreground">Learning:</span>
+                  </div>
+                  <p className="text-sm text-foreground/70 pl-6">{currentStatus.learning}</p>
+
+                  <div className="flex items-center gap-2">
+                    <MapPin className="w-4 h-4 text-blue-500" />
+                    <span className="text-sm font-medium text-foreground">Location:</span>
+                  </div>
+                  <p className="text-sm text-foreground/70 pl-6">{currentStatus.location}</p>
+                </div>
+                <Button asChild size="sm" className="w-full mt-4">
+                  <Link to="/contact">Let's Connect</Link>
+                </Button>
+              </Card>
 
               {/* Contact Information */}
               <Card className="p-4 border-2 border-primary/40 hover:border-primary/60 shadow-xl hover:shadow-2xl hover:shadow-blue-500/15 transition-all duration-500 backdrop-blur-sm bg-gradient-to-br from-card/90 to-card/70 hover:-translate-y-1">
@@ -528,20 +535,20 @@ const Overview = () => {
               </Card>
             </div>
 
-            {/* Right Column - GitHub Activity & Experience */}
+            {/* Right Column - Projects & Activity */}
             <div className="lg:col-span-2 space-y-6">
 
-              {/* GitHub Activity */}
+              {/* GitHub Activity - Shows active development */}
               <GitHubActivity />
 
-              {/* Recent Activity Timeline */}
+              {/* Recent Activity Timeline - Recent work showcase */}
               <Card className="p-6 border-primary/30 hover:shadow-lg transition-all duration-300">
                 <div className="flex items-center justify-between mb-6">
                   <div className="flex items-center">
                     <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center mr-3">
                       <Activity className="w-4 h-4 text-primary" />
                     </div>
-                    <h3 className="text-lg font-semibold text-foreground">Live Activity</h3>
+                    <h3 className="text-lg font-semibold text-foreground">Recent Activity</h3>
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-green-400 rounded-full"></div>
@@ -608,10 +615,35 @@ const Overview = () => {
                   </Button>
                 </div>
               </Card>
-              
-              {/* Experience & Education */}
+
+              {/* Education & Background Info */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                
+
+                {/* About Summary */}
+                <Card className="p-6 border-2 border-primary/40 hover:border-primary/60 shadow-xl hover:shadow-2xl hover:shadow-emerald-500/15 transition-all duration-500 backdrop-blur-sm bg-gradient-to-br from-card/90 to-card/70 hover:-translate-y-1">
+                  <div className="flex items-center mb-4">
+                    <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-500/30 to-green-500/30 flex items-center justify-center mr-3 shadow-lg">
+                      <FaGraduationCap className="w-4 h-4 text-emerald-400" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-foreground">About</h3>
+                  </div>
+                  <p className="text-sm text-foreground/70 mb-4 leading-relaxed">
+                    Final year B.Tech Computer Science student at NIT Patna with 2+ years of development experience.
+                    Specialized in full-stack web development.
+                  </p>
+                  <div className="flex items-center gap-2 text-xs text-foreground/60 mb-3">
+                    <MapPin className="w-3 h-3" />
+                    <span>New Delhi, India</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-xs text-foreground/60 mb-4">
+                    <Calendar className="w-3 h-3" />
+                    <span>Graduating 2025</span>
+                  </div>
+                  <Button asChild size="sm" className="w-full">
+                    <Link to="/about">View Full Profile</Link>
+                  </Button>
+                </Card>
+
                 {/* Education */}
                 <Card className="p-6 border-primary/30 hover:shadow-lg transition-all duration-300">
                   <div className="flex items-center mb-4">
@@ -634,39 +666,6 @@ const Overview = () => {
                   </div>
                   <Button asChild variant="outline" size="sm" className="w-full mt-4">
                     <Link to="/education">Full Academic Details</Link>
-                  </Button>
-                </Card>
-
-                {/* Coding Achievements */}
-                <Card className="p-6 border-primary/30 hover:shadow-lg transition-all duration-300">
-                  <div className="flex items-center mb-4">
-                    <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center mr-3">
-                      <FaTrophy className="w-4 h-4 text-primary" />
-                    </div>
-                    <h3 className="text-lg font-semibold text-foreground">Coding</h3>
-                  </div>
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm font-medium text-foreground">LeetCode</span>
-                      <Badge className="bg-orange-500/20 text-orange-200 border-orange-500/30">
-                        500+ Solved
-                      </Badge>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm font-medium text-foreground">GeeksforGeeks</span>
-                      <Badge className="bg-green-500/20 text-green-200 border-green-500/30">
-                        Active
-                      </Badge>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm font-medium text-foreground">CodeChef</span>
-                      <Badge className="bg-purple-500/20 text-purple-200 border-purple-500/30">
-                        Contests
-                      </Badge>
-                    </div>
-                  </div>
-                  <Button asChild variant="outline" size="sm" className="w-full mt-4">
-                    <Link to="/coding">View Profiles & Stats</Link>
                   </Button>
                 </Card>
               </div>
