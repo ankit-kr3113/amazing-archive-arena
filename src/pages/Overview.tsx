@@ -495,10 +495,12 @@ const Overview = () => {
                   <div className="flex items-center justify-between">
                     <span className="text-sm font-medium text-foreground">LeetCode</span>
                     <div className="flex gap-2">
-                      <Badge className="bg-orange-500/20 text-orange-200 border-orange-500/30 text-xs">
+                      <Badge className="bg-orange-500/20 text-orange-200 border-orange-500/30 text-xs flex items-center gap-1">
+                        <FaStar className="w-2.5 h-2.5" />
                         {achievements.leetcode.rating}
                       </Badge>
-                      <Badge className="bg-orange-500/10 text-orange-300 border-orange-500/20 text-xs">
+                      <Badge className="bg-orange-500/10 text-orange-300 border-orange-500/20 text-xs flex items-center gap-1">
+                        <Target className="w-2.5 h-2.5" />
                         {achievements.leetcode.problemsSolved}
                       </Badge>
                     </div>
@@ -506,10 +508,12 @@ const Overview = () => {
                   <div className="flex items-center justify-between">
                     <span className="text-sm font-medium text-foreground">CodeChef</span>
                     <div className="flex gap-2">
-                      <Badge className="bg-amber-500/20 text-amber-200 border-amber-500/30 text-xs">
+                      <Badge className="bg-amber-500/20 text-amber-200 border-amber-500/30 text-xs flex items-center gap-1">
+                        <FaStar className="w-2.5 h-2.5" />
                         {achievements.codechef.rating}
                       </Badge>
-                      <Badge className="bg-amber-500/10 text-amber-300 border-amber-500/20 text-xs">
+                      <Badge className="bg-amber-500/10 text-amber-300 border-amber-500/20 text-xs flex items-center gap-1">
+                        <Target className="w-2.5 h-2.5" />
                         {achievements.codechef.problemsSolved}
                       </Badge>
                     </div>
@@ -517,17 +521,20 @@ const Overview = () => {
                   <div className="flex items-center justify-between">
                     <span className="text-sm font-medium text-foreground">Codeforces</span>
                     <div className="flex gap-2">
-                      <Badge className="bg-blue-500/20 text-blue-200 border-blue-500/30 text-xs">
+                      <Badge className="bg-blue-500/20 text-blue-200 border-blue-500/30 text-xs flex items-center gap-1">
+                        <FaStar className="w-2.5 h-2.5" />
                         {achievements.codeforces.rating}
                       </Badge>
-                      <Badge className="bg-blue-500/10 text-blue-300 border-blue-500/20 text-xs">
+                      <Badge className="bg-blue-500/10 text-blue-300 border-blue-500/20 text-xs flex items-center gap-1">
+                        <Target className="w-2.5 h-2.5" />
                         {achievements.codeforces.problemsSolved}
                       </Badge>
                     </div>
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-sm font-medium text-foreground">GeeksforGeeks</span>
-                    <Badge className="bg-green-500/20 text-green-200 border-green-500/30 text-xs">
+                    <Badge className="bg-green-500/20 text-green-200 border-green-500/30 text-xs flex items-center gap-1">
+                      <Target className="w-2.5 h-2.5" />
                       {achievements.geeksforgeeks.problemsSolved}
                     </Badge>
                   </div>
