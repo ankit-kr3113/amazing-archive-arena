@@ -115,10 +115,10 @@ const Overview = () => {
 
   // Quick actions data
   const quickActions = [
-    { icon: Mail, label: "Send Email", href: "mailto:yuvraj.mehta532@gmail.com", type: "external" },
+    { icon: FaEnvelope, label: "Send Email", href: "mailto:yuvraj.mehta532@gmail.com", type: "external" },
     { icon: Download, label: "Download Resume", href: "/Yuvraj_Resume_v2_1 (1).pdf", type: "download" },
-    { icon: MessageSquare, label: "Schedule Call", href: "/contact", type: "internal" },
-    { icon: Github, label: "View GitHub", href: "https://github.com/yuvraj-mehta", type: "external" }
+    { icon: HiChatBubbleLeftRight, label: "Schedule Call", href: "/contact", type: "internal" },
+    { icon: FaGithub, label: "View GitHub", href: "https://github.com/yuvraj-mehta", type: "external" }
   ];
 
   const recentActivities = [
