@@ -820,53 +820,147 @@ const Overview = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
                 {/* About Summary */}
-                <Card className="p-6 border-2 border-primary/40 hover:border-primary/60 shadow-xl hover:shadow-2xl hover:shadow-emerald-500/15 transition-all duration-500 backdrop-blur-sm bg-gradient-to-br from-card/90 to-card/70 hover:-translate-y-1">
-                  <div className="flex items-center mb-4">
-                    <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-500/30 to-green-500/30 flex items-center justify-center mr-3 shadow-lg">
-                      <FaGraduationCap className="w-4 h-4 text-emerald-400" />
+                <Card className="p-6 border-2 border-primary/40 hover:border-primary/60 shadow-xl hover:shadow-2xl hover:shadow-emerald-500/15 transition-all duration-500 backdrop-blur-sm bg-gradient-to-br from-card/90 to-card/70 hover:-translate-y-1 relative overflow-hidden group">
+                  {/* Background decoration */}
+                  <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-emerald-500/10 to-green-500/5 rounded-full -translate-y-10 translate-x-10 group-hover:scale-150 transition-transform duration-700"></div>
+                  <div className="absolute bottom-0 left-0 w-16 h-16 bg-gradient-to-tr from-primary/10 to-primary-glow/5 rounded-full translate-y-8 -translate-x-8 group-hover:scale-125 transition-transform duration-700"></div>
+
+                  <div className="relative z-10">
+                    <div className="flex items-center mb-6">
+                      <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500/30 to-green-500/30 flex items-center justify-center mr-3 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                        <FaGraduationCap className="w-5 h-5 text-emerald-400" />
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-bold text-foreground">About Me</h3>
+                        <p className="text-xs text-emerald-400 font-medium">Developer & Problem Solver</p>
+                      </div>
                     </div>
-                    <h3 className="text-lg font-semibold text-foreground">About</h3>
+
+                    <div className="space-y-4 mb-6">
+                      <p className="text-sm text-foreground/80 leading-relaxed">
+                        {personalInfo.bio.intro.split('.')[0]}. Passionate about creating digital solutions that make a difference.
+                      </p>
+
+                      <div className="grid grid-cols-2 gap-3">
+                        <div className="flex items-center gap-2 p-2 rounded-lg bg-primary/10 hover:bg-primary/15 transition-colors duration-300">
+                          <div className="w-6 h-6 rounded-lg bg-blue-500/20 flex items-center justify-center">
+                            <FaCode className="w-3 h-3 text-blue-400" />
+                          </div>
+                          <div>
+                            <div className="text-xs font-semibold text-foreground">{achievements.stats.yearsExperience}</div>
+                            <div className="text-xs text-foreground/60">Experience</div>
+                          </div>
+                        </div>
+
+                        <div className="flex items-center gap-2 p-2 rounded-lg bg-primary/10 hover:bg-primary/15 transition-colors duration-300">
+                          <div className="w-6 h-6 rounded-lg bg-yellow-500/20 flex items-center justify-center">
+                            <FaTrophy className="w-3 h-3 text-yellow-400" />
+                          </div>
+                          <div>
+                            <div className="text-xs font-semibold text-foreground">{achievements.stats.totalProjects}</div>
+                            <div className="text-xs text-foreground/60">Projects</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="space-y-2 mb-6">
+                      <div className="flex items-center gap-2 text-xs text-foreground/70">
+                        <MapPin className="w-3 h-3 text-emerald-400" />
+                        <span>{personalInfo.location}</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-xs text-foreground/70">
+                        <Calendar className="w-3 h-3 text-emerald-400" />
+                        <span>Graduating 2025 • Final Year</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-xs text-foreground/70">
+                        <CircleDot className="w-3 h-3 text-green-400" />
+                        <span className="text-green-400 font-medium">{personalInfo.status.availability} for opportunities</span>
+                      </div>
+                    </div>
+
+                    <Button asChild size="sm" className="w-full group-hover:scale-105 transition-transform duration-300">
+                      <Link to="/about">
+                        <Eye className="w-3 h-3 mr-2" />
+                        View Full Profile
+                      </Link>
+                    </Button>
                   </div>
-                  <p className="text-sm text-foreground/70 mb-4 leading-relaxed">
-                    Final year B.Tech {personalInfo.course} student at {personalInfo.university} with {achievements.stats.yearsExperience} of development experience.
-                    Specialized in full-stack web development.
-                  </p>
-                  <div className="flex items-center gap-2 text-xs text-foreground/60 mb-3">
-                    <MapPin className="w-3 h-3" />
-                    <span>{personalInfo.location}</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-xs text-foreground/60 mb-4">
-                    <Calendar className="w-3 h-3" />
-                    <span>Graduating 2025</span>
-                  </div>
-                  <Button asChild size="sm" className="w-full">
-                    <Link to="/about">View Full Profile</Link>
-                  </Button>
                 </Card>
 
                 {/* Education */}
-                <Card className="p-6 border-primary/30 hover:shadow-lg transition-all duration-300">
-                  <div className="flex items-center mb-4">
-                    <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center mr-3">
-                      <FaGraduationCap className="w-4 h-4 text-primary" />
+                <Card className="p-6 border-2 border-primary/30 hover:border-primary/50 hover:shadow-xl hover:shadow-blue-500/15 transition-all duration-500 backdrop-blur-sm bg-gradient-to-br from-card/95 to-card/80 hover:-translate-y-1 relative overflow-hidden group">
+                  {/* Background decoration */}
+                  <div className="absolute top-0 left-0 w-24 h-24 bg-gradient-to-br from-blue-500/10 to-purple-500/5 rounded-full -translate-y-12 -translate-x-12 group-hover:scale-150 transition-transform duration-700"></div>
+                  <div className="absolute bottom-0 right-0 w-20 h-20 bg-gradient-to-tl from-primary/10 to-accent/5 rounded-full translate-y-10 translate-x-10 group-hover:scale-125 transition-transform duration-700"></div>
+
+                  <div className="relative z-10">
+                    <div className="flex items-center mb-6">
+                      <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500/30 to-purple-500/30 flex items-center justify-center mr-3 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                        <FaGraduationCap className="w-5 h-5 text-blue-400" />
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-bold text-foreground">Education</h3>
+                        <p className="text-xs text-blue-400 font-medium">Academic Journey</p>
+                      </div>
                     </div>
-                    <h3 className="text-lg font-semibold text-foreground">Education</h3>
+
+                    <div className="space-y-4">
+                      {/* Current Education */}
+                      <div className="group/item p-4 rounded-xl bg-gradient-to-r from-primary/10 to-primary-glow/10 border border-primary/20 hover:border-primary/40 transition-all duration-300 relative">
+                        <div className="absolute top-2 right-2">
+                          <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                        </div>
+                        <div className="flex items-start gap-3">
+                          <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center mt-1 group-hover/item:scale-110 transition-transform duration-300">
+                            <FaBook className="w-4 h-4 text-primary" />
+                          </div>
+                          <div className="flex-1">
+                            <div className="font-bold text-sm text-foreground mb-1">B.Tech {personalInfo.course}</div>
+                            <div className="text-sm text-primary font-semibold mb-1">{personalInfo.university}</div>
+                            <div className="flex items-center gap-3 text-xs text-foreground/60">
+                              <span>2021 - 2025</span>
+                              <Badge className="bg-green-500/20 text-green-400 border-green-500/30 text-xs">Final Year</Badge>
+                            </div>
+                            <div className="mt-2">
+                              <div className="flex items-center gap-2 text-xs text-foreground/70">
+                                <TrendingUp className="w-3 h-3 text-green-400" />
+                                <span>Focused on Full-Stack Development</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Previous Education */}
+                      <div className="p-3 rounded-lg bg-muted/20 border border-border/50">
+                        <div className="flex items-center gap-3">
+                          <div className="w-6 h-6 rounded-lg bg-muted/40 flex items-center justify-center">
+                            <FaGraduationCap className="w-3 h-3 text-foreground/60" />
+                          </div>
+                          <div className="flex-1">
+                            <div className="font-semibold text-sm text-foreground">Class 12th • Science Stream</div>
+                            <div className="text-xs text-foreground/60">2021 • Foundation in Science & Mathematics</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="mt-6 flex gap-2">
+                      <Button asChild variant="outline" size="sm" className="flex-1 group-hover:scale-105 transition-transform duration-300">
+                        <Link to="/education">
+                          <FaBook className="w-3 h-3 mr-2" />
+                          Academic Details
+                        </Link>
+                      </Button>
+                      <Button asChild size="sm" className="flex-1 group-hover:scale-105 transition-transform duration-300">
+                        <a href={personalInfo.resume} target="_blank" rel="noopener noreferrer">
+                          <Download className="w-3 h-3 mr-2" />
+                          Resume
+                        </a>
+                      </Button>
+                    </div>
                   </div>
-                  <div className="space-y-3">
-                    <div>
-                      <div className="font-semibold text-sm text-foreground">B.Tech {personalInfo.course}</div>
-                      <div className="text-sm text-primary">{personalInfo.university}</div>
-                      <div className="text-xs text-foreground/60">2021 - 2025</div>
-                    </div>
-                    <div>
-                      <div className="font-semibold text-sm text-foreground">Class 12th</div>
-                      <div className="text-sm text-foreground/70">Science Stream</div>
-                      <div className="text-xs text-foreground/60">2021</div>
-                    </div>
-                  </div>
-                  <Button asChild variant="outline" size="sm" className="w-full mt-4">
-                    <Link to="/education">Full Academic Details</Link>
-                  </Button>
                 </Card>
               </div>
 
