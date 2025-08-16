@@ -274,20 +274,31 @@ const Overview = () => {
             <span className="text-foreground/70">Portfolio Overview</span>
           </div>
 
-          {/* Clean typography hierarchy */}
+          {/* Enhanced typography hierarchy */}
           <div className="space-y-8">
             <h1 className="text-5xl md:text-6xl font-bold text-foreground">
-              <span className="text-lg font-normal text-foreground/60 block mb-6">👋 Hello, I'm</span>
-              {personalInfo.name}
+              <span className="text-lg font-normal text-foreground/60 block mb-6">👋 Portfolio Overview</span>
+              <span className="gradient-text relative inline-block bg-gradient-to-r from-primary via-primary-glow to-accent bg-clip-text text-transparent">
+                {personalInfo.name}
+              </span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-foreground/70 font-light max-w-2xl mx-auto mt-6">
+            <h2 className="text-xl md:text-3xl font-semibold text-foreground/90">
+              Building Digital Solutions That <span className="text-primary font-bold">Drive Impact</span>
+            </h2>
+
+            <p className="text-lg md:text-xl text-foreground/70 font-light max-w-2xl mx-auto mt-6">
               {typewriterText}
             </p>
 
-            {/* Simplified info line */}
+            {/* Enhanced info line */}
             <p className="text-foreground/60 max-w-xl mx-auto mt-4">
-              {personalInfo.course} Student at {personalInfo.university} · {achievements.leetcode.problemsSolved} LeetCode Problems · {achievements.stats.totalProjects} Projects
+              <span className="text-foreground font-semibold">{personalInfo.course} student</span> at{" "}
+              <span className="text-primary font-bold">{personalInfo.university}</span>{" "}
+              passionate about{" "}
+              <span className="text-primary font-bold">full stack development</span> with{" "}
+              <span className="text-primary-glow font-bold">{achievements.leetcode.problemsSolved} problems solved</span> and{" "}
+              <span className="text-primary font-bold">{achievements.stats.totalProjects} projects built</span>
             </p>
 
             {/* Clean status badges */}
