@@ -259,7 +259,7 @@ const Contact = () => {
                         href={link.href}
                         target={link.href.startsWith("http") ? "_blank" : "_self"}
                         rel={link.href.startsWith("http") ? "noopener noreferrer" : ""}
-                        className="group flex items-center space-x-3 p-3 rounded-xl hover:bg-primary/10 transition-all duration-300 hover:scale-105 hover:shadow-lg text-sm"
+                        className="group flex items-center space-x-3 p-2 rounded-xl hover:bg-primary/10 transition-all duration-300 hover:scale-105 hover:shadow-lg text-sm"
                       >
                         <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground group-hover:scale-110 transition-all duration-300">
                           {getIcon()}
