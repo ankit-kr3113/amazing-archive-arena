@@ -81,6 +81,52 @@ const useTypewriter = (text: string, speed: number = 100) => {
   return displayText;
 };
 
+// Image component with loading and error states
+const ProjectImage = ({ src, alt, className }: { src: string; alt: string; className?: string }) => {
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
+
+  const handleLoad = () => {
+    setLoading(false);
+  };
+
+  const handleError = () => {
+    setLoading(false);
+    setError(true);
+  };
+
+  if (error) {
+    return (
+      <div className={`${className} bg-muted flex items-center justify-center`}>
+        <div className="text-center p-4">
+          <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-2">
+            <FaCode className="w-6 h-6 text-muted-foreground" />
+          </div>
+          <p className="text-xs text-muted-foreground">Project Preview</p>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="relative">
+      {loading && (
+        <div className={`${className} bg-muted animate-pulse flex items-center justify-center absolute inset-0 z-10`}>
+          <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin"></div>
+        </div>
+      )}
+      <img
+        src={src}
+        alt={alt}
+        className={className}
+        onLoad={handleLoad}
+        onError={handleError}
+        loading="lazy"
+      />
+    </div>
+  );
+};
+
 const Overview = () => {
   // Typewriter effect for hero
   const typewriterText = useTypewriter("Full Stack Developer & Problem Solver", 80);
