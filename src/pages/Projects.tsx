@@ -12,7 +12,7 @@ import ThemeSwitcher from "@/components/ThemeSwitcher";
 import { personalInfo, socialLinks, projects, achievements } from "@/data/portfolioData";
 
 const Projects = () => {
-  const [filter, setFilter] = useState("All Projects");
+  const [filter, setFilter] = useState("Featured");
   const [animatedCounts, setAnimatedCounts] = useState({
     totalProjects: 0,
     technologies: 0,
