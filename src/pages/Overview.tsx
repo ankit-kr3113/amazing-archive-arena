@@ -395,11 +395,10 @@ const Overview = () => {
               {featuredProjects.map((project, index) => (
                 <Card key={index} className="group overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105">
                   <div className="relative overflow-hidden">
-                    <img
+                    <ProjectImage
                       src={project.image}
                       alt={project.title}
                       className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
-                      loading="lazy"
                     />
                     {project.isLive && (
                       <div className="absolute top-2 right-2 bg-green-500 text-white text-xs px-2 py-1 rounded-full flex items-center gap-1">
