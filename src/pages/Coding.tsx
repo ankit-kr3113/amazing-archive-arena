@@ -47,14 +47,73 @@ const Coding = () => {
   const [apiError, setApiError] = useState<string | null>(null);
   const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
 
+  // Fallback data (original hardcoded values)
+  const fallbackData = {
+    leetcode: { totalSolved: 228, problemsSolved: { easy: 150, medium: 65, hard: 13 } },
+    codeforces: { problemsSolved: 10, rating: 900, rank: "Newbie" },
+    codechef: { problemsSolved: 25, rating: 1270, stars: 2 },
+    gfg: { problemsSolved: 70, score: 500, rank: 1455 }
+  };
+
+  // Fetch API data
+  const fetchCodingData = async (isRefresh = false) => {
+    if (isRefresh) {
+      setIsRefreshing(true);
+    } else {
+      setIsLoading(true);
+    }
+    setApiError(null);
+
+    try {
+      const data = await codingPlatformsApi.getAllPlatformData();
+      if (data) {
+        setApiData(data);
+        setLastUpdated(new Date());
+        setApiError(null);
+      } else {
+        throw new Error('No data received from API');
+      }
+    } catch (error) {
+      console.error('Failed to fetch coding data:', error);
+      setApiError(error instanceof Error ? error.message : 'Failed to fetch data');
+    } finally {
+      setIsLoading(false);
+      setIsRefreshing(false);
+    }
+  };
+
+  // Initial data fetch
+  useEffect(() => {
+    fetchCodingData();
+  }, []);
+
+  // Get current data (API data with fallback)
+  const getCurrentData = () => {
+    if (apiData) {
+      return {
+        leetcode: apiData.leetcode.totalSolved || fallbackData.leetcode.totalSolved,
+        codeforces: apiData.codeforces.problemsSolved || fallbackData.codeforces.problemsSolved,
+        codechef: apiData.codechef.problemsSolved || fallbackData.codechef.problemsSolved,
+        gfg: apiData.gfg.problemsSolved || fallbackData.gfg.problemsSolved
+      };
+    }
+    return {
+      leetcode: fallbackData.leetcode.totalSolved,
+      codeforces: fallbackData.codeforces.problemsSolved,
+      codechef: fallbackData.codechef.problemsSolved,
+      gfg: fallbackData.gfg.problemsSolved
+    };
+  };
+
+  const currentData = getCurrentData();
+  const targetTotal = currentData.leetcode + currentData.codeforces + currentData.codechef + currentData.gfg;
+  const targetPlatforms = [currentData.leetcode, currentData.gfg, currentData.codechef, currentData.codeforces];
+
   // Animated counter hook
   useEffect(() => {
     const duration = 2000; // 2 seconds
     const steps = 50;
     const stepDuration = duration / steps;
-
-    const targetTotal = 333;
-    const targetPlatforms = [228, 70, 25, 10];
 
     let currentStep = 0;
 
@@ -74,7 +133,7 @@ const Coding = () => {
     }, stepDuration);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [targetTotal, ...targetPlatforms]);
 
   // Ordered by activity level and importance
   const codingStats = [
