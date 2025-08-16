@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Menu, X, Download, Code2, Sparkles, User, Briefcase, GraduationCap, Wrench, Code, FolderOpen, Mail, Home, Eye } from "lucide-react";
+import { personalInfo } from "@/data/portfolioData";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,14 +30,14 @@ const Navigation = () => {
           <Link to="/" className="flex items-center space-x-3 sm:space-x-4 group">
             <div className="relative">
               <Avatar className="h-9 w-9 ring-3 ring-primary/25 transition-all duration-300 group-hover:ring-primary/60 group-hover:scale-125 shadow-lg">
-                <AvatarImage src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face&auto=format&q=80" alt="Yuvraj Mehta" />
+                <AvatarImage src={personalInfo.profileImage} alt={personalInfo.name} />
                 <AvatarFallback className="bg-gradient-to-br from-primary to-primary-glow text-primary-foreground font-bold text-sm shadow-lg">
                   <Code2 className="w-5 h-5" />
                 </AvatarFallback>
               </Avatar>
               <div className="absolute -top-1 -right-1 w-4 h-4 bg-green-500 rounded-full animate-pulse border-2 border-background shadow-lg shadow-green-500/30"></div>
             </div>
-            <span className="text-lg sm:text-xl font-bold gradient-text group-hover:scale-110 transition-transform duration-300 drop-shadow-lg">Yuvraj.</span>
+            <span className="text-lg sm:text-xl font-bold gradient-text group-hover:scale-110 transition-transform duration-300 drop-shadow-lg">{personalInfo.name.split(' ')[0]}.</span>
           </Link>
 
           {/* Enhanced Desktop Navigation */}
@@ -65,9 +66,12 @@ const Navigation = () => {
               variant="outline"
               size="sm"
               className="group bg-gradient-to-r from-primary/15 to-primary-glow/12 border-2 border-primary/40 hover:from-primary/25 hover:to-primary-glow/20 text-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 hover:shadow-xl shadow-lg backdrop-blur-sm"
+              asChild
             >
-              <Download className="w-4 h-4 mr-2 group-hover:animate-bounce" />
-              <span className="font-semibold">Resume</span>
+              <a href={personalInfo.resume} target="_blank" rel="noopener noreferrer">
+                <Download className="w-4 h-4 mr-2 group-hover:animate-bounce" />
+                <span className="font-semibold">Resume</span>
+              </a>
             </Button>
           </div>
 
@@ -123,10 +127,13 @@ const Navigation = () => {
               variant="outline"
               size="sm"
               className="w-full group bg-gradient-to-r from-primary/15 to-primary-glow/12 border-2 border-primary/40 hover:from-primary/25 hover:to-primary-glow/20 hover:border-primary/60 hover:scale-105 transition-all duration-300 py-4 rounded-2xl shadow-lg backdrop-blur-sm"
+              asChild
             >
-              <Download className="w-5 h-5 mr-3 group-hover:animate-bounce" />
-              <span className="font-semibold">Download Resume</span>
-              <Sparkles className="w-4 h-4 ml-3 opacity-60 group-hover:opacity-100 group-hover:animate-spin transition-all duration-300" />
+              <a href={personalInfo.resume} target="_blank" rel="noopener noreferrer">
+                <Download className="w-5 h-5 mr-3 group-hover:animate-bounce" />
+                <span className="font-semibold">Download Resume</span>
+                <Sparkles className="w-4 h-4 ml-3 opacity-60 group-hover:opacity-100 group-hover:animate-spin transition-all duration-300" />
+              </a>
             </Button>
           </div>
         </div>
