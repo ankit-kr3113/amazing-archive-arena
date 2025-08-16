@@ -257,7 +257,7 @@ const Coding = () => {
           {/* Enhanced Header Section */}
           <div className="text-center mb-12 fade-in">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-primary text-sm font-medium mb-4 shadow-lg backdrop-blur-sm hover:shadow-xl hover:scale-105 transition-all duration-300">
-              <Trophy className="w-4 h-4 animate-pulse" />
+              <FaTrophy className="w-4 h-4 animate-pulse" />
               <span>Competitive Programming</span>
               <div className="ml-1 w-2 h-2 bg-primary rounded-full animate-pulse"></div>
             </div>
