@@ -130,7 +130,7 @@ const About = () => {
 
                   <div className="flex gap-2 pt-2">
                     <Button size="sm" className="flex-1" onClick={handleContactClick}>
-                      <Mail className="w-4 h-4 mr-2" />
+                      <HiMail className="w-4 h-4 mr-2" />
                       Contact
                     </Button>
                     <Button variant="outline" size="sm" className="flex-1" onClick={handleResumeDownload}>
