@@ -268,7 +268,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="flex items-center text-gray-400 hover:text-white transition-colors"
                 >
-                  <Brain className="w-4 h-4 mr-2" />
+                  <SiGeeksforgeeks className="w-4 h-4 mr-2" />
                   GeeksforGeeks
                 </a>
                 <a
