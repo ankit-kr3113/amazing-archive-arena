@@ -100,10 +100,10 @@ const Navigation = () => {
             >
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className={`transition-all duration-300 ${isOpen ? 'rotate-180 opacity-0 scale-0' : 'rotate-0 opacity-100 scale-100'}`}>
-                  <Menu className="h-5 w-5" />
+                  <HiMenuAlt3 className="h-5 w-5" />
                 </div>
                 <div className={`absolute transition-all duration-300 ${isOpen ? 'rotate-0 opacity-100 scale-100' : 'rotate-180 opacity-0 scale-0'}`}>
-                  <X className="h-5 w-5" />
+                  <HiX className="h-5 w-5" />
                 </div>
               </div>
             </Button>
