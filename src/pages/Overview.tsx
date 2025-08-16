@@ -379,9 +379,9 @@ const Overview = () => {
               </div>
             </div>
 
-            {/* Right Content - Profile Image */}
-            <div className="relative slide-up order-1 lg:order-2 flex justify-center mb-8 lg:mb-0">
-              <div className="relative flex justify-center w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl mx-auto">
+            {/* Right Content - Profile Image - Hidden on Mobile/Tablet */}
+            <div className="hidden lg:block relative slide-up order-1 lg:order-2">
+              <div className="relative flex justify-center w-full max-w-lg xl:max-w-xl mx-auto">
                 {/* Background Effects */}
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-primary-glow/30 to-primary/20 rounded-full blur-2xl animate-pulse opacity-60"></div>
                 <div className="absolute inset-0 bg-gradient-to-b from-primary-glow/15 to-primary/15 rounded-full blur-xl animate-pulse opacity-40 animation-delay-1000"></div>
