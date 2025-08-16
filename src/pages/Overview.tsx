@@ -107,10 +107,10 @@ const Overview = () => {
   ];
 
   const highlights = [
-    { icon: GraduationCap, title: "B.Tech CS", subtitle: "NIT Patna", year: "2025", progress: 75, trend: "+5%", isLive: false },
-    { icon: Code2, title: "15+ Projects", subtitle: "Full Stack", year: "2+ Years", progress: 85, trend: "+3 this month", isLive: true },
-    { icon: Trophy, title: "DSA Expert", subtitle: "500+ Problems", year: "LeetCode", progress: 90, trend: "+50 this week", isLive: true },
-    { icon: Briefcase, title: "Experience", subtitle: "Internships & Projects", year: "Active", progress: 80, trend: "Growing", isLive: false }
+    { icon: FaGraduationCap, title: "B.Tech CS", subtitle: "NIT Patna", year: "2025", progress: 75, trend: "+5%", isLive: false },
+    { icon: FaCode, title: "15+ Projects", subtitle: "Full Stack", year: "2+ Years", progress: 85, trend: "+3 this month", isLive: true },
+    { icon: FaTrophy, title: "DSA Expert", subtitle: "500+ Problems", year: "LeetCode", progress: 90, trend: "+50 this week", isLive: true },
+    { icon: FaBriefcase, title: "Experience", subtitle: "Internships & Projects", year: "Active", progress: 80, trend: "Growing", isLive: false }
   ];
 
   // Quick actions data
