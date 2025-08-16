@@ -111,7 +111,7 @@ const Education = () => {
               </span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Full Stack Developer • B.Tech CS Student • NIT Patna • Academic foundation and continuous learning
+              {personalInfo.tagline} • Academic foundation and continuous learning
             </p>
           </div>
 
