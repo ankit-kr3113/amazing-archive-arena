@@ -195,12 +195,12 @@ const Overview = () => {
   ];
 
   const skillLevels = [
-    { name: "React", level: 90, icon: "��️", category: "Frontend" },
-    { name: "Node.js", level: 85, icon: "🟢", category: "Backend" },
-    { name: "TypeScript", level: 80, icon: "📘", category: "Language" },
-    { name: "MongoDB", level: 75, icon: "🍃", category: "Database" },
-    { name: "Next.js", level: 85, icon: "▲", category: "Framework" },
-    { name: "Express", level: 80, icon: "🚀", category: "Backend" }
+    { name: "React", level: 90, icon: FaReact, category: "Frontend" },
+    { name: "Node.js", level: 85, icon: FaNodeJs, category: "Backend" },
+    { name: "TypeScript", level: 80, icon: SiTypescript, category: "Language" },
+    { name: "MongoDB", level: 75, icon: SiMongodb, category: "Database" },
+    { name: "Next.js", level: 85, icon: SiNextdotjs, category: "Framework" },
+    { name: "Express", level: 80, icon: SiExpress, category: "Backend" }
   ];
 
   const currentStatus = {
