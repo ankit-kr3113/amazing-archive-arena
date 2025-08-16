@@ -106,28 +106,36 @@ const Contact = () => {
       icon: FaGithub,
       href: socialLinks.github.url,
       description: "Check out my code",
-      color: "hover:text-gray-400"
+      color: "text-gray-400",
+      bgColor: "from-gray-500/20 to-gray-600/20",
+      borderColor: "border-gray-500/30"
     },
     {
       name: "LinkedIn",
       icon: FaLinkedin,
       href: socialLinks.linkedin.url,
       description: "Let's connect professionally",
-      color: "hover:text-blue-400"
+      color: "text-blue-400",
+      bgColor: "from-blue-500/20 to-blue-600/20",
+      borderColor: "border-blue-500/30"
     },
     {
       name: "Instagram",
       icon: FaInstagram,
       href: socialLinks.instagram.url,
       description: "Follow for updates",
-      color: "hover:text-pink-400"
+      color: "text-pink-400",
+      bgColor: "from-pink-500/20 to-purple-500/20",
+      borderColor: "border-pink-500/30"
     },
     {
       name: "Email",
       icon: HiMail,
       href: socialLinks.email.url,
       description: "Send me a message",
-      color: "hover:text-red-400"
+      color: "text-red-400",
+      bgColor: "from-red-500/20 to-orange-500/20",
+      borderColor: "border-red-500/30"
     }
   ];
 
