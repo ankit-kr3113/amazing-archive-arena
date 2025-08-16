@@ -54,6 +54,7 @@ import ThemeSwitcher from "@/components/ThemeSwitcher";
 import GitHubActivity from "@/components/GitHubActivity";
 import { Link } from "react-router-dom";
 import { useState, useEffect, useMemo } from "react";
+import { personalInfo, socialLinks, achievements, skills, projects, interests } from "@/data/portfolioData";
 
 // Optimized typewriter effect with reduced re-renders
 const useTypewriter = (text: string, speed: number = 100) => {
@@ -124,21 +125,21 @@ const ProjectImage = ({ src, alt, className }: { src: string; alt: string; class
 
 const Overview = () => {
   // Optimized typewriter with memoization
-  const typewriterText = useTypewriter("Full Stack Developer & Problem Solver", 120);
+  const typewriterText = useTypewriter(personalInfo.title + " & Problem Solver", 120);
 
   // Memoized static data to prevent unnecessary re-renders
   const highlights = useMemo(() => [
-    { icon: FaGraduationCap, title: "B.Tech CS", subtitle: "NIT Patna", year: "2025", progress: 75, trend: "+5%", isLive: false },
-    { icon: FaCode, title: "15+ Projects", subtitle: "Full Stack", year: "2+ Years", progress: 85, trend: "+3 this month", isLive: true },
-    { icon: FaTrophy, title: "DSA Expert", subtitle: "500+ Problems", year: "LeetCode", progress: 90, trend: "+50 this week", isLive: true },
+    { icon: FaGraduationCap, title: "B.Tech CS", subtitle: personalInfo.university, year: "2025", progress: 75, trend: "+5%", isLive: false },
+    { icon: FaCode, title: achievements.stats.totalProjects, subtitle: "Full Stack", year: achievements.stats.yearsExperience, progress: 85, trend: "+3 this month", isLive: true },
+    { icon: FaTrophy, title: "DSA Expert", subtitle: achievements.leetcode.problemsSolved + " Problems", year: "LeetCode", progress: 90, trend: "+50 this week", isLive: true },
     { icon: FaBriefcase, title: "Experience", subtitle: "Internships & Projects", year: "Active", progress: 80, trend: "Growing", isLive: false }
   ], []);
 
   const quickActions = useMemo(() => [
-    { icon: FaEnvelope, label: "Send Email", href: "mailto:yuvraj.mehta532@gmail.com", type: "external" },
-    { icon: Download, label: "Download Resume", href: "/Yuvraj_Resume_v2_1 (1).pdf", type: "download" },
+    { icon: FaEnvelope, label: "Send Email", href: socialLinks.email.url, type: "external" },
+    { icon: Download, label: "Download Resume", href: personalInfo.resume, type: "download" },
     { icon: HiChatBubbleLeftRight, label: "Schedule Call", href: "/contact", type: "internal" },
-    { icon: FaGithub, label: "View GitHub", href: "https://github.com/yuvraj-mehta", type: "external" }
+    { icon: FaGithub, label: "View GitHub", href: socialLinks.github.url, type: "external" }
   ], []);
 
   const recentActivities = useMemo(() => [
@@ -180,38 +181,7 @@ const Overview = () => {
     }
   ], []);
 
-  const featuredProjects = useMemo(() => [
-    {
-      title: "E-Commerce Platform",
-      description: "Full-stack MERN application with payment integration",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=250&fit=crop&auto=format&q=80",
-      tech: ["React", "Node.js", "MongoDB", "Stripe"],
-      category: "Full Stack",
-      isLive: true,
-      liveUrl: "#",
-      githubUrl: "#"
-    },
-    {
-      title: "Task Management App",
-      description: "Real-time collaboration tool with drag-and-drop",
-      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=250&fit=crop&auto=format&q=80",
-      tech: ["Next.js", "TypeScript", "PostgreSQL"],
-      category: "Web App",
-      isLive: true,
-      liveUrl: "#",
-      githubUrl: "#"
-    },
-    {
-      title: "Weather Dashboard",
-      description: "Responsive weather app with location-based forecasts",
-      image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=400&h=250&fit=crop&auto=format&q=80",
-      tech: ["React", "API Integration", "Chart.js"],
-      category: "Frontend",
-      isLive: true,
-      liveUrl: "#",
-      githubUrl: "#"
-    }
-  ], []);
+  const featuredProjects = useMemo(() => projects.filter(project => project.featured).slice(0, 3), []);
 
   const skillLevels = useMemo(() => [
     { name: "React", level: 90, icon: FaReact, category: "Frontend" },
@@ -223,11 +193,11 @@ const Overview = () => {
   ], []);
 
   const currentStatus = useMemo(() => ({
-    availability: "Open for Opportunities",
+    availability: personalInfo.status.availability,
     currentFocus: "Building Full-Stack Projects with Next.js",
     learning: "Advanced React Patterns & System Design",
     lookingFor: "Internships & Full-time Opportunities",
-    location: "Patna, Bihar (Open to Remote)",
+    location: personalInfo.location + " (" + personalInfo.status.workMode + ")",
     lastUpdated: "Updated 2 days ago"
   }), []);
 
