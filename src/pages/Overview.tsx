@@ -621,6 +621,53 @@ const Overview = () => {
                   <span className="text-xs text-foreground group-hover:text-primary transition-colors duration-300">Send Email</span>
                 </a>
               </Card>
+
+              {/* Interests & Hobbies */}
+              <Card className="p-6 border-2 border-primary/30 hover:border-primary/50 hover:shadow-xl hover:shadow-purple-500/15 transition-all duration-500 backdrop-blur-sm bg-gradient-to-br from-card/95 to-card/80 hover:-translate-y-1 relative overflow-hidden group">
+                {/* Background decoration */}
+                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-purple-500/10 to-pink-500/5 rounded-full -translate-y-10 translate-x-10 group-hover:scale-150 transition-transform duration-700"></div>
+                <div className="absolute bottom-0 left-0 w-16 h-16 bg-gradient-to-tr from-primary/10 to-primary-glow/5 rounded-full translate-y-8 -translate-x-8 group-hover:scale-125 transition-transform duration-700"></div>
+
+                <div className="relative z-10">
+                  <div className="flex items-center mb-4">
+                    <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-purple-500/30 to-pink-500/30 flex items-center justify-center mr-3 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                      <FaStar className="w-4 h-4 text-purple-400" />
+                    </div>
+                    <h3 className="text-base font-semibold text-foreground">Interests & Hobbies</h3>
+                  </div>
+
+                  <div className="space-y-3">
+                    {interests.map((interest, index) => {
+                      const IconComponent = interest.icon;
+                      return (
+                        <div key={index} className="group/item flex items-center gap-3 p-2 rounded-lg bg-primary/10 hover:bg-primary/15 transition-all duration-300 cursor-pointer">
+                          <div className="text-purple-400 group-hover/item:scale-125 transition-transform duration-300">
+                            <IconComponent className="w-4 h-4" />
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <div className="font-semibold text-sm text-foreground group-hover/item:text-primary transition-colors duration-300">
+                              {interest.name}
+                            </div>
+                            <p className="text-xs text-foreground/70 line-clamp-1">
+                              {interest.description}
+                            </p>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+
+                  <div className="mt-4 p-3 rounded-lg bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-400/30">
+                    <div className="flex items-center gap-2 text-xs text-purple-400 mb-1">
+                      <FaTrophy className="w-3 h-3" />
+                      <span className="font-medium">Recent Achievement</span>
+                    </div>
+                    <p className="text-xs text-foreground/80">
+                      Bronze medal in 50m Hurdles at NIT Patna Intramurals
+                    </p>
+                  </div>
+                </div>
+              </Card>
             </div>
 
             {/* Right Column - Projects & Activity */}
@@ -817,7 +864,7 @@ const Overview = () => {
               </Card>
 
               {/* Education & Background Info */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
 
                 {/* About Summary */}
                 <Card className="p-6 border-2 border-primary/40 hover:border-primary/60 shadow-xl hover:shadow-2xl hover:shadow-emerald-500/15 transition-all duration-500 backdrop-blur-sm bg-gradient-to-br from-card/90 to-card/70 hover:-translate-y-1 relative overflow-hidden group">
@@ -840,28 +887,6 @@ const Overview = () => {
                       <p className="text-sm text-foreground/80 leading-relaxed">
                         {personalInfo.bio.intro.split('.')[0]}. Passionate about creating digital solutions that make a difference.
                       </p>
-
-                      <div className="grid grid-cols-2 gap-3">
-                        <div className="flex items-center gap-2 p-2 rounded-lg bg-primary/10 hover:bg-primary/15 transition-colors duration-300">
-                          <div className="w-6 h-6 rounded-lg bg-blue-500/20 flex items-center justify-center">
-                            <FaCode className="w-3 h-3 text-blue-400" />
-                          </div>
-                          <div>
-                            <div className="text-xs font-semibold text-foreground">{achievements.stats.yearsExperience}</div>
-                            <div className="text-xs text-foreground/60">Experience</div>
-                          </div>
-                        </div>
-
-                        <div className="flex items-center gap-2 p-2 rounded-lg bg-primary/10 hover:bg-primary/15 transition-colors duration-300">
-                          <div className="w-6 h-6 rounded-lg bg-yellow-500/20 flex items-center justify-center">
-                            <FaTrophy className="w-3 h-3 text-yellow-400" />
-                          </div>
-                          <div>
-                            <div className="text-xs font-semibold text-foreground">{achievements.stats.totalProjects}</div>
-                            <div className="text-xs text-foreground/60">Projects</div>
-                          </div>
-                        </div>
-                      </div>
                     </div>
 
                     <div className="space-y-2 mb-6">
@@ -922,12 +947,6 @@ const Overview = () => {
                               <span>2021 - 2025</span>
                               <Badge className="bg-green-500/20 text-green-400 border-green-500/30 text-xs">Final Year</Badge>
                             </div>
-                            <div className="mt-2">
-                              <div className="flex items-center gap-2 text-xs text-foreground/70">
-                                <TrendingUp className="w-3 h-3 text-green-400" />
-                                <span>Focused on Full-Stack Development</span>
-                              </div>
-                            </div>
                           </div>
                         </div>
                       </div>
@@ -946,15 +965,15 @@ const Overview = () => {
                       </div>
                     </div>
 
-                    <div className="mt-6 flex gap-2">
+                    <div className="mt-6 flex gap-3">
                       <Button asChild variant="outline" size="sm" className="flex-1 group-hover:scale-105 transition-transform duration-300">
-                        <Link to="/education">
+                        <Link to="/education" className="flex items-center justify-center">
                           <FaBook className="w-3 h-3 mr-2" />
                           Academic Details
                         </Link>
                       </Button>
                       <Button asChild size="sm" className="flex-1 group-hover:scale-105 transition-transform duration-300">
-                        <a href={personalInfo.resume} target="_blank" rel="noopener noreferrer">
+                        <a href={personalInfo.resume} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
                           <Download className="w-3 h-3 mr-2" />
                           Resume
                         </a>
