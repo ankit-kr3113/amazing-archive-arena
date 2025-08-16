@@ -16,7 +16,9 @@ import {
   HiChatAlt,
   HiStar
 } from "react-icons/hi";
-import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaInstagram, FaFileAlt, FaRocket } from "react-icons/fa";
+import { SiLeetcode, SiGeeksforgeeks, SiCodechef } from "react-icons/si";
+import { HiLink, HiUsers } from "react-icons/hi";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
