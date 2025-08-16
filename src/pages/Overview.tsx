@@ -693,6 +693,109 @@ const Overview = () => {
                 </div>
               </Card>
 
+              {/* Featured Projects - Key Portfolio Showcase */}
+              <Card className="p-6 border-primary/30 hover:shadow-lg transition-all duration-300">
+                <div className="flex items-center justify-between mb-6">
+                  <div className="flex items-center">
+                    <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center mr-3">
+                      <FaRocket className="w-4 h-4 text-primary" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-foreground">Featured Projects</h3>
+                  </div>
+                  <Badge variant="outline" className="text-xs">
+                    {featuredProjects.length} Live
+                  </Badge>
+                </div>
+
+                <div className="space-y-4">
+                  {featuredProjects.map((project, index) => (
+                    <div
+                      key={index}
+                      className="group flex items-start gap-4 p-4 rounded-lg border border-border/50 hover:border-primary/30 hover:bg-primary/5 transition-all duration-300 cursor-pointer"
+                    >
+                      <div className="relative w-16 h-12 bg-muted/60 rounded-lg overflow-hidden flex-shrink-0">
+                        <ProjectImage
+                          src={project.image}
+                          alt={project.title}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center justify-between gap-2 mb-2">
+                          <h4 className="font-semibold text-sm group-hover:text-primary transition-colors truncate text-foreground">
+                            {project.title}
+                          </h4>
+                          <div className="flex items-center gap-1 flex-shrink-0">
+                            <Badge variant="secondary" className="text-xs px-2 py-0.5">
+                              {project.category}
+                            </Badge>
+                            {project.status === 'Live' && (
+                              <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                            )}
+                          </div>
+                        </div>
+                        <p className="text-xs text-foreground/60 line-clamp-2 mb-2">{project.description}</p>
+                        <div className="flex items-center gap-2">
+                          <div className="flex items-center gap-1">
+                            {project.tags.slice(0, 3).map((tag, tagIndex) => (
+                              <span
+                                key={tagIndex}
+                                className="text-xs bg-primary/10 text-primary px-2 py-0.5 rounded-full"
+                              >
+                                {tag}
+                              </span>
+                            ))}
+                            {project.tags.length > 3 && (
+                              <span className="text-xs text-foreground/60">+{project.tags.length - 3}</span>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        {project.demo && (
+                          <a
+                            href={project.demo}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-primary hover:text-primary-glow transition-colors"
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            <ExternalLink className="w-4 h-4" />
+                          </a>
+                        )}
+                        {project.github && (
+                          <a
+                            href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-foreground/60 hover:text-foreground transition-colors"
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            <FaCode className="w-4 h-4" />
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="flex gap-2 mt-6">
+                  <Button asChild variant="outline" size="sm" className="flex-1">
+                    <Link to="/projects">
+                      <Eye className="w-3 h-3 mr-2" />
+                      View All Projects
+                    </Link>
+                  </Button>
+                  <Button asChild size="sm" className="flex-1">
+                    <a href={socialLinks.github.url} target="_blank" rel="noopener noreferrer">
+                      <FaGithub className="w-3 h-3 mr-2" />
+                      GitHub Profile
+                    </a>
+                  </Button>
+                </div>
+              </Card>
+
               {/* Education & Background Info */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
