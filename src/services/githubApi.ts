@@ -168,30 +168,31 @@ class GitHubApiService {
       return cached;
     }
 
+    // Always return mock data first to ensure we have fallback
+    const mockData: GitHubUser = {
+      login: this.username,
+      name: 'Yuvraj Mehta',
+      bio: 'Full Stack Developer & CS Student at NIT Patna',
+      public_repos: 15,
+      followers: 25,
+      following: 30,
+      created_at: '2021-01-01T00:00:00Z',
+      updated_at: new Date().toISOString(),
+      avatar_url: `https://github.com/${this.username}.png`,
+      location: 'Patna, Bihar',
+      company: null,
+      blog: ''
+    };
+
     try {
       const response = await this.fetchWithRetry(`${this.baseUrl}/users/${this.username}`);
       const data = await response.json();
 
       this.setCachedData(cacheKey, data);
+      console.log('Successfully fetched fresh GitHub profile data');
       return data;
     } catch (error) {
-      console.error('Error fetching GitHub user profile:', error);
-
-      // Return mock data if API fails
-      const mockData: GitHubUser = {
-        login: this.username,
-        name: 'Yuvraj Mehta',
-        bio: 'Full Stack Developer & CS Student at NIT Patna',
-        public_repos: 15,
-        followers: 25,
-        following: 30,
-        created_at: '2021-01-01T00:00:00Z',
-        updated_at: new Date().toISOString(),
-        avatar_url: `https://github.com/${this.username}.png`,
-        location: 'Patna, Bihar',
-        company: null,
-        blog: ''
-      };
+      console.warn('GitHub API unavailable, using mock profile data:', error.message);
 
       // Cache mock data for shorter duration during API issues
       this.cache.set(cacheKey, { data: mockData, timestamp: Date.now() });
@@ -209,59 +210,86 @@ class GitHubApiService {
       return cached;
     }
 
+    // Always have mock repositories ready as fallback
+    const mockRepos: GitHubRepo[] = [
+      {
+        id: 1,
+        name: 'portfolio-website',
+        full_name: `${this.username}/portfolio-website`,
+        description: 'Personal portfolio website built with React and TypeScript',
+        stargazers_count: 8,
+        forks_count: 2,
+        language: 'TypeScript',
+        updated_at: new Date().toISOString(),
+        html_url: `https://github.com/${this.username}/portfolio-website`,
+        topics: ['react', 'typescript', 'portfolio'],
+        private: false
+      },
+      {
+        id: 2,
+        name: 'mern-ecommerce',
+        full_name: `${this.username}/mern-ecommerce`,
+        description: 'Full-stack e-commerce application using MERN stack',
+        stargazers_count: 12,
+        forks_count: 4,
+        language: 'JavaScript',
+        updated_at: new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString(),
+        html_url: `https://github.com/${this.username}/mern-ecommerce`,
+        topics: ['react', 'nodejs', 'mongodb', 'ecommerce'],
+        private: false
+      },
+      {
+        id: 3,
+        name: 'task-manager-app',
+        full_name: `${this.username}/task-manager-app`,
+        description: 'Real-time task management application with drag and drop',
+        stargazers_count: 6,
+        forks_count: 1,
+        language: 'JavaScript',
+        updated_at: new Date(Date.now() - 48 * 60 * 60 * 1000).toISOString(),
+        html_url: `https://github.com/${this.username}/task-manager-app`,
+        topics: ['react', 'realtime', 'task-management'],
+        private: false
+      },
+      {
+        id: 4,
+        name: 'weather-dashboard',
+        full_name: `${this.username}/weather-dashboard`,
+        description: 'Weather application with location-based forecasts',
+        stargazers_count: 4,
+        forks_count: 1,
+        language: 'React',
+        updated_at: new Date(Date.now() - 72 * 60 * 60 * 1000).toISOString(),
+        html_url: `https://github.com/${this.username}/weather-dashboard`,
+        topics: ['react', 'weather', 'api'],
+        private: false
+      },
+      {
+        id: 5,
+        name: 'leetcode-solutions',
+        full_name: `${this.username}/leetcode-solutions`,
+        description: 'Collection of LeetCode problem solutions in multiple languages',
+        stargazers_count: 15,
+        forks_count: 3,
+        language: 'Python',
+        updated_at: new Date(Date.now() - 96 * 60 * 60 * 1000).toISOString(),
+        html_url: `https://github.com/${this.username}/leetcode-solutions`,
+        topics: ['algorithms', 'leetcode', 'python', 'javascript'],
+        private: false
+      }
+    ];
+
     try {
       const response = await this.fetchWithRetry(
-        `${this.baseUrl}/users/${this.username}/repos?sort=updated&per_page=30` // Reduced from 100 to 30
+        `${this.baseUrl}/users/${this.username}/repos?sort=updated&per_page=30`
       );
       const data = await response.json();
 
       this.setCachedData(cacheKey, data);
+      console.log('Successfully fetched fresh GitHub repositories data');
       return data;
     } catch (error) {
-      console.error('Error fetching GitHub repositories:', error);
-
-      // Return mock repositories if API fails
-      const mockRepos: GitHubRepo[] = [
-        {
-          id: 1,
-          name: 'portfolio-website',
-          full_name: `${this.username}/portfolio-website`,
-          description: 'Personal portfolio website built with React and TypeScript',
-          stargazers_count: 8,
-          forks_count: 2,
-          language: 'TypeScript',
-          updated_at: new Date().toISOString(),
-          html_url: `https://github.com/${this.username}/portfolio-website`,
-          topics: ['react', 'typescript', 'portfolio'],
-          private: false
-        },
-        {
-          id: 2,
-          name: 'mern-ecommerce',
-          full_name: `${this.username}/mern-ecommerce`,
-          description: 'Full-stack e-commerce application using MERN stack',
-          stargazers_count: 12,
-          forks_count: 4,
-          language: 'JavaScript',
-          updated_at: new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString(),
-          html_url: `https://github.com/${this.username}/mern-ecommerce`,
-          topics: ['react', 'nodejs', 'mongodb', 'ecommerce'],
-          private: false
-        },
-        {
-          id: 3,
-          name: 'task-manager-app',
-          full_name: `${this.username}/task-manager-app`,
-          description: 'Real-time task management application with drag and drop',
-          stargazers_count: 6,
-          forks_count: 1,
-          language: 'JavaScript',
-          updated_at: new Date(Date.now() - 48 * 60 * 60 * 1000).toISOString(),
-          html_url: `https://github.com/${this.username}/task-manager-app`,
-          topics: ['react', 'realtime', 'task-management'],
-          private: false
-        }
-      ];
+      console.warn('GitHub API unavailable, using mock repositories data:', error.message);
 
       // Cache mock data for shorter duration during API issues
       this.cache.set(cacheKey, { data: mockRepos, timestamp: Date.now() });
@@ -335,48 +363,81 @@ class GitHubApiService {
       return cached;
     }
 
+    // Always have mock activity ready as fallback
+    const mockActivity: GitHubActivity[] = [
+      {
+        id: '1',
+        type: 'PushEvent',
+        actor: {
+          login: this.username,
+          avatar_url: `https://github.com/${this.username}.png`
+        },
+        repo: {
+          name: `${this.username}/portfolio-website`
+        },
+        payload: {
+          commits: [{ message: 'Update portfolio with enhanced live features' }]
+        },
+        created_at: new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString() // 2 hours ago
+      },
+      {
+        id: '2',
+        type: 'PushEvent',
+        actor: {
+          login: this.username,
+          avatar_url: `https://github.com/${this.username}.png`
+        },
+        repo: {
+          name: `${this.username}/mern-ecommerce`
+        },
+        payload: {
+          commits: [{ message: 'Fix responsive design issues' }]
+        },
+        created_at: new Date(Date.now() - 8 * 60 * 60 * 1000).toISOString() // 8 hours ago
+      },
+      {
+        id: '3',
+        type: 'CreateEvent',
+        actor: {
+          login: this.username,
+          avatar_url: `https://github.com/${this.username}.png`
+        },
+        repo: {
+          name: `${this.username}/leetcode-solutions`
+        },
+        payload: {
+          ref_type: 'branch',
+          ref: 'feature/dynamic-programming'
+        },
+        created_at: new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString() // 1 day ago
+      },
+      {
+        id: '4',
+        type: 'IssuesEvent',
+        actor: {
+          login: this.username,
+          avatar_url: `https://github.com/${this.username}.png`
+        },
+        repo: {
+          name: `${this.username}/task-manager-app`
+        },
+        payload: {
+          action: 'closed',
+          issue: { title: 'Add real-time notifications' }
+        },
+        created_at: new Date(Date.now() - 48 * 60 * 60 * 1000).toISOString() // 2 days ago
+      }
+    ];
+
     try {
-      const response = await this.fetchWithRetry(`${this.baseUrl}/users/${this.username}/events/public?per_page=10`); // Reduced from 30 to 10
+      const response = await this.fetchWithRetry(`${this.baseUrl}/users/${this.username}/events/public?per_page=10`);
       const data = await response.json();
 
       this.setCachedData(cacheKey, data);
+      console.log('Successfully fetched fresh GitHub activity data');
       return data;
     } catch (error) {
-      console.error('Error fetching GitHub activity:', error);
-
-      // Return mock activity if API fails
-      const mockActivity: GitHubActivity[] = [
-        {
-          id: '1',
-          type: 'PushEvent',
-          actor: {
-            login: this.username,
-            avatar_url: `https://github.com/${this.username}.png`
-          },
-          repo: {
-            name: `${this.username}/portfolio-website`
-          },
-          payload: {
-            commits: [{ message: 'Update portfolio with new projects' }]
-          },
-          created_at: new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString() // 2 hours ago
-        },
-        {
-          id: '2',
-          type: 'CreateEvent',
-          actor: {
-            login: this.username,
-            avatar_url: `https://github.com/${this.username}.png`
-          },
-          repo: {
-            name: `${this.username}/new-project`
-          },
-          payload: {
-            ref_type: 'repository'
-          },
-          created_at: new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString() // 1 day ago
-        }
-      ];
+      console.warn('GitHub API unavailable, using mock activity data:', error.message);
 
       // Cache mock data for shorter duration during API issues
       this.cache.set(cacheKey, { data: mockActivity, timestamp: Date.now() });
