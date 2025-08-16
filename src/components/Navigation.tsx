@@ -84,7 +84,7 @@ const Navigation = () => {
               asChild
             >
               <a href={personalInfo.resume} target="_blank" rel="noopener noreferrer">
-                <Download className="w-4 h-4 mr-2 group-hover:animate-bounce" />
+                <HiDownload className="w-4 h-4 mr-2 group-hover:animate-bounce" />
                 <span className="font-semibold">Resume</span>
               </a>
             </Button>
