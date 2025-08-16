@@ -175,7 +175,8 @@ const Education = () => {
                           <h3 className="text-lg sm:text-xl font-bold leading-tight">{entry.institution}</h3>
                           <p className="text-primary font-semibold text-sm sm:text-base mt-1">{entry.degree}</p>
                           <p className="text-xs sm:text-sm text-muted-foreground flex items-center gap-2 mt-2">
-                            📍 {entry.location}
+                            <HiLocationMarker className="w-3 h-3" />
+                            {entry.location}
                           </p>
                         </div>
 
