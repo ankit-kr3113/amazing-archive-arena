@@ -40,9 +40,26 @@ const LiveStatus = ({ className = '' }: LiveStatusProps) => {
     setError(null);
 
     try {
-      // Fetch GitHub data first (more reliable)
-      const githubData = await githubApi.getGitHubStats();
-      setGithubStats(githubData);
+      // Fetch GitHub data first with error handling
+      try {
+        const githubData = await githubApi.getGitHubStats();
+        setGithubStats(githubData);
+      } catch (githubError) {
+        console.warn('GitHub API temporarily unavailable:', githubError);
+        if (error) {
+          setError('Both GitHub and LeetCode APIs temporarily unavailable. Using cached data.');
+        } else {
+          setError('GitHub data temporarily unavailable. Using cached data.');
+        }
+
+        // Still try to get cached or mock data
+        try {
+          const fallbackStats = await githubApi.getGitHubStats();
+          setGithubStats(fallbackStats);
+        } catch {
+          console.warn('Unable to get GitHub fallback data');
+        }
+      }
 
       // Then fetch LeetCode data with error handling
       try {
