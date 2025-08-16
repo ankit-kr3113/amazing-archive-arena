@@ -965,14 +965,14 @@ const Overview = () => {
                       </div>
                     </div>
 
-                    <div className="mt-6 flex flex-col sm:flex-row gap-3">
-                      <Button asChild variant="outline" size="sm" className="flex-1 group-hover:scale-105 transition-transform duration-300 justify-center">
+                    <div className="mt-6 grid grid-cols-2 gap-3">
+                      <Button asChild variant="outline" size="sm" className="group-hover:scale-105 transition-transform duration-300">
                         <Link to="/education">
                           <FaBook className="w-3 h-3 mr-2" />
                           Academic Details
                         </Link>
                       </Button>
-                      <Button asChild size="sm" className="flex-1 group-hover:scale-105 transition-transform duration-300 justify-center">
+                      <Button asChild size="sm" className="group-hover:scale-105 transition-transform duration-300">
                         <a href={personalInfo.resume} target="_blank" rel="noopener noreferrer">
                           <Download className="w-3 h-3 mr-2" />
                           Resume
