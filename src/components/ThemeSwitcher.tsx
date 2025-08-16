@@ -3,7 +3,8 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { useTheme } from '@/contexts/ThemeContext';
-import { HiColorSwatch, HiX, HiSparkles, HiLightningBolt, HiDesktopComputer, HiSun, HiMoon } from 'react-icons/hi';
+import { HiX, HiSparkles, HiSun, HiMoon } from 'react-icons/hi';
+import { HiComputerDesktop, HiBolt, HiSwatchBook } from 'react-icons/hi2';
 
 const ThemeSwitcher = () => {
   const [isOpen, setIsOpen] = useState(false);
