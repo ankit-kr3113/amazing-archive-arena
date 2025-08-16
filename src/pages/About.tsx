@@ -115,7 +115,7 @@ const About = () => {
 
                   <div className="space-y-2 text-sm">
                     <div className="flex items-center gap-2">
-                      <MapPin className="w-4 h-4 text-primary" />
+                      <HiLocationMarker className="w-4 h-4 text-primary" />
                       <span>{personalInfo.university}, {personalInfo.location.split(',')[1]}</span>
                     </div>
                     <div className="flex items-center gap-2">
