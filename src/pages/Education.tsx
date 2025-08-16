@@ -131,7 +131,7 @@ const Education = () => {
             <div className="lg:col-span-2 space-y-10">
               <div className="flex items-center mb-8">
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mr-4">
-                  <span className="text-2xl">🎓</span>
+                  <HiAcademicCap className="w-6 h-6 text-primary" />
                 </div>
                 <h2 className="text-2xl sm:text-3xl font-bold">Academic Timeline</h2>
               </div>
