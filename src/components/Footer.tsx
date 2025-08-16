@@ -277,7 +277,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="flex items-center text-gray-400 hover:text-white transition-colors"
                 >
-                  <Terminal className="w-4 h-4 mr-2" />
+                  <SiCodechef className="w-4 h-4 mr-2" />
                   CodeChef
                 </a>
                 <Link
