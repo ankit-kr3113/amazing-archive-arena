@@ -240,7 +240,7 @@ const Contact = () => {
                   <h3 className="text-xl sm:text-2xl font-bold">Quick Links</h3>
                 </div>
 
-                <div className="space-y-3 mb-8">
+                <div className="space-y-2 mb-6">
                   {quickLinks.map((link, index) => {
                     const getIcon = () => {
                       switch(link.name) {
