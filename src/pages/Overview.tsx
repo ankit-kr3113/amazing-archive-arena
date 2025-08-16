@@ -637,21 +637,24 @@ const Overview = () => {
                   </div>
 
                   <div className="space-y-3">
-                    {interests.map((interest, index) => (
-                      <div key={index} className="group/item flex items-center gap-3 p-2 rounded-lg bg-primary/10 hover:bg-primary/15 transition-all duration-300 cursor-pointer">
-                        <div className="text-lg group-hover/item:scale-125 transition-transform duration-300">
-                          {interest.icon}
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <div className="font-semibold text-sm text-foreground group-hover/item:text-primary transition-colors duration-300">
-                            {interest.name}
+                    {interests.map((interest, index) => {
+                      const IconComponent = interest.icon;
+                      return (
+                        <div key={index} className="group/item flex items-center gap-3 p-2 rounded-lg bg-primary/10 hover:bg-primary/15 transition-all duration-300 cursor-pointer">
+                          <div className="text-purple-400 group-hover/item:scale-125 transition-transform duration-300">
+                            <IconComponent className="w-4 h-4" />
                           </div>
-                          <p className="text-xs text-foreground/70 line-clamp-1">
-                            {interest.description}
-                          </p>
+                          <div className="flex-1 min-w-0">
+                            <div className="font-semibold text-sm text-foreground group-hover/item:text-primary transition-colors duration-300">
+                              {interest.name}
+                            </div>
+                            <p className="text-xs text-foreground/70 line-clamp-1">
+                              {interest.description}
+                            </p>
+                          </div>
                         </div>
-                      </div>
-                    ))}
+                      );
+                    })}
                   </div>
 
                   <div className="mt-4 p-3 rounded-lg bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-400/30">
