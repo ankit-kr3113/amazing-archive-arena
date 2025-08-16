@@ -217,8 +217,8 @@ const Contact = () => {
                 </div>
 
                 {/* Quick Stats */}
-                <div className="mt-6 p-4 bg-gradient-to-r from-primary/5 to-primary-glow/5 rounded-xl border border-primary/10">
-                  <div className="grid grid-cols-2 gap-4 text-center">
+                <div className="mt-4 p-3 bg-gradient-to-r from-primary/5 to-primary-glow/5 rounded-xl border border-primary/10">
+                  <div className="grid grid-cols-2 gap-3 text-center">
                     <div>
                       <div className="text-lg font-bold text-primary">24h</div>
                       <div className="text-xs text-muted-foreground">Response Time</div>
