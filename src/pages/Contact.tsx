@@ -271,14 +271,14 @@ const Contact = () => {
                       href={link.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group flex items-center space-x-3 p-3 rounded-xl hover:bg-primary/10 transition-all duration-300 hover:scale-105 hover:shadow-lg text-sm"
+                      className={`group flex items-center space-x-3 p-3 rounded-xl bg-gradient-to-r ${link.bgColor} border ${link.borderColor} hover:border-primary/40 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/10 text-sm`}
                     >
-                      <div className={`w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 group-hover:scale-110`}>
-                        <link.icon className="w-5 h-5" />
+                      <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${link.bgColor} flex items-center justify-center group-hover:scale-110 transition-all duration-300`}>
+                        <link.icon className={`w-5 h-5 ${link.color} group-hover:scale-110 transition-transform duration-300`} />
                       </div>
                       <div className="flex-1">
-                        <div className="font-medium group-hover:text-primary transition-colors">{link.name}</div>
-                        <div className="text-xs text-muted-foreground group-hover:text-primary/70 transition-colors">{link.description}</div>
+                        <div className={`font-medium transition-colors group-hover:${link.color}`}>{link.name}</div>
+                        <div className="text-xs text-muted-foreground group-hover:text-muted-foreground/80 transition-colors">{link.description}</div>
                       </div>
                     </a>
                   ))}
