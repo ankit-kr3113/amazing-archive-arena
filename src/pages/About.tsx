@@ -146,7 +146,7 @@ const About = () => {
                       rel="noopener noreferrer"
                       className="flex items-center gap-1 text-xs text-muted-foreground hover:text-primary transition-colors"
                     >
-                      <Github className="w-4 h-4" />
+                      <FaGithub className="w-4 h-4" />
                       GitHub
                     </a>
                     <a
