@@ -44,6 +44,9 @@ import {
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
+import LiveStatus from "@/components/LiveStatus";
+import Certifications from "@/components/Certifications";
+import LearningTimeline from "@/components/LearningTimeline";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
@@ -456,6 +459,13 @@ const Overview = () => {
         </div>
       </section>
 
+      {/* Live Status Dashboard */}
+      <section className="pb-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <LiveStatus className="mb-8" />
+        </div>
+      </section>
+
       {/* Main Content Grid */}
       <section className="pb-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -729,6 +739,20 @@ const Overview = () => {
 
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Certifications Section */}
+      <section className="pb-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Certifications />
+        </div>
+      </section>
+
+      {/* Learning Timeline Section */}
+      <section className="pb-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <LearningTimeline />
         </div>
       </section>
 
