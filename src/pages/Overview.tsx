@@ -269,21 +269,21 @@ const Overview = () => {
 
         <div className="relative max-w-4xl mx-auto px-6 text-center z-10">
           {/* Simple status indicator */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-sm mb-10">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-sm mb-8">
             <div className="w-2 h-2 bg-green-400 rounded-full"></div>
             <span className="text-foreground/70">Portfolio Overview</span>
           </div>
 
           {/* Enhanced typography hierarchy */}
-          <div className="space-y-8">
+          <div className="space-y-6">
             <h1 className="text-5xl md:text-6xl font-bold text-foreground">
-              <span className="text-lg font-normal text-foreground/60 block mb-6">👋 Portfolio Overview</span>
+              <span className="text-lg font-normal text-foreground/60 block mb-4">👋 Hello, I'm</span>
               <span className="gradient-text relative inline-block bg-gradient-to-r from-primary via-primary-glow to-accent bg-clip-text text-transparent">
                 {personalInfo.name}
               </span>
             </h1>
 
-            <h2 className="text-xl md:text-3xl font-semibold text-foreground/90">
+            <h2 className="text-xl md:text-3xl font-semibold text-foreground/90 mt-4">
               Building Digital Solutions That <span className="text-primary font-bold">Drive Impact</span>
             </h2>
 
@@ -292,7 +292,7 @@ const Overview = () => {
             </p>
 
             {/* Enhanced info line */}
-            <p className="text-foreground/60 max-w-xl mx-auto mt-4">
+            <p className="text-foreground/60 max-w-xl mx-auto mt-6">
               <span className="text-foreground font-semibold">{personalInfo.course} student</span> at{" "}
               <span className="text-primary font-bold">{personalInfo.university}</span>{" "}
               passionate about{" "}
