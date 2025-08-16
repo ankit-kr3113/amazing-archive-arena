@@ -4,7 +4,7 @@ import { Progress } from "@/components/ui/progress";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { useState } from "react";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { HiChevronDown, HiChevronUp } from "react-icons/hi";
 import { personalInfo } from "@/data/portfolioData";
 
 const Education = () => {
