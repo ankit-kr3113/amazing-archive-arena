@@ -134,7 +134,7 @@ const About = () => {
                       Contact
                     </Button>
                     <Button variant="outline" size="sm" className="flex-1" onClick={handleResumeDownload}>
-                      <Download className="w-4 h-4 mr-2" />
+                      <HiDownload className="w-4 h-4 mr-2" />
                       Resume
                     </Button>
                   </div>
