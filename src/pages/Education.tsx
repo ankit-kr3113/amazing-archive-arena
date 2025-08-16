@@ -15,7 +15,7 @@ import {
   HiSparkles,
   HiBadgeCheck
 } from "react-icons/hi";
-import { FaTrophy } from "react-icons/fa";
+import { FaTrophy, FaGlobe, FaChartBar, FaRobot } from "react-icons/fa";
 import { personalInfo } from "@/data/portfolioData";
 
 const Education = () => {
