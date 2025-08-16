@@ -188,20 +188,20 @@ const Contact = () => {
                       }`}>
                         <method.icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
                       </div>
-                      <div className="flex-1">
-                        <div className="flex items-center gap-2">
-                          <h4 className="font-semibold group-hover:text-primary transition-colors">{method.label}</h4>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2 flex-wrap">
+                          <h4 className="text-sm sm:text-base font-semibold group-hover:text-primary transition-colors">{method.label}</h4>
                           {method.preferred && (
-                            <Badge className="bg-green-500/10 text-green-600 border-green-500/20 text-xs">
+                            <Badge className="bg-green-500/10 text-green-600 border-green-500/20 text-xs flex-shrink-0">
                               <HiStar className="w-3 h-3 mr-1" />
                               Preferred
                             </Badge>
                           )}
                         </div>
-                        <p className="text-muted-foreground text-sm">{method.value}</p>
+                        <p className="text-muted-foreground text-xs sm:text-sm break-words">{method.value}</p>
                         <div className="flex items-center gap-1 text-xs text-muted-foreground mt-1">
-                          <HiClock className="w-3 h-3" />
-                          {method.responseTime}
+                          <HiClock className="w-3 h-3 flex-shrink-0" />
+                          <span className="break-words">{method.responseTime}</span>
                         </div>
                       </div>
                       {method.href && (
