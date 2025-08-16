@@ -672,6 +672,86 @@ const Overview = () => {
                   ))}
                 </div>
               </Card>
+
+              {/* Contact Information */}
+              <Card className="p-6 border-2 border-primary/40 hover:border-primary/60 shadow-xl hover:shadow-2xl hover:shadow-blue-500/15 transition-all duration-500 backdrop-blur-sm bg-gradient-to-br from-card/90 to-card/70 hover:-translate-y-1">
+                <div className="flex items-center mb-4">
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500/30 to-indigo-500/30 flex items-center justify-center mr-3 shadow-lg">
+                    <FaEnvelope className="w-5 h-5 text-blue-400" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-foreground">Contact Information</h3>
+                </div>
+
+                {/* Availability Status */}
+                <div className="mb-4 p-3 rounded-lg bg-gradient-to-r from-green-500/10 to-emerald-500/10 border border-green-400/30">
+                  <div className="flex items-center gap-2 mb-1">
+                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                    <span className="text-sm font-semibold text-green-300">{contactInfo.availability}</span>
+                  </div>
+                  <p className="text-xs text-green-200/80">{contactInfo.responseTime}</p>
+                </div>
+
+                {/* Location & Timezone */}
+                <div className="space-y-3 mb-4">
+                  <div className="flex items-center gap-3">
+                    <FaMapMarkerAlt className="w-4 h-4 text-red-400" />
+                    <div>
+                      <p className="text-sm font-medium text-foreground">{contactInfo.location}</p>
+                      <p className="text-xs text-foreground/60">{contactInfo.timezone}</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <FaCalendarAlt className="w-4 h-4 text-purple-400" />
+                    <div>
+                      <p className="text-sm font-medium text-foreground">Preferred Contact</p>
+                      <p className="text-xs text-foreground/60">{contactInfo.preferredContact}</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Social Links */}
+                <div className="space-y-3">
+                  <h4 className="text-sm font-semibold text-foreground mb-2">Connect with me</h4>
+                  <div className="grid grid-cols-2 gap-2">
+                    {contactInfo.socialLinks.map((social, index) => (
+                      <a
+                        key={index}
+                        href={social.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group flex items-center gap-2 p-2 rounded-lg bg-gradient-to-r from-card/50 to-card/30 hover:from-primary/10 hover:to-accent/10 border border-border/50 hover:border-primary/40 transition-all duration-300 hover:-translate-y-0.5"
+                      >
+                        <social.icon className={`w-4 h-4 ${social.color} transition-colors duration-300`} />
+                        <div className="min-w-0 flex-1">
+                          <p className="text-xs font-medium text-foreground truncate">{social.name}</p>
+                          <p className="text-xs text-foreground/60 truncate">{social.username}</p>
+                        </div>
+                        <ExternalLink className="w-3 h-3 text-foreground/40 group-hover:text-primary transition-colors duration-300" />
+                      </a>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Direct Contact */}
+                <div className="mt-4 pt-4 border-t border-border/50">
+                  <div className="space-y-2">
+                    <a
+                      href={`mailto:${contactInfo.email}`}
+                      className="flex items-center gap-2 p-2 rounded-lg bg-gradient-to-r from-red-500/10 to-pink-500/10 hover:from-red-500/20 hover:to-pink-500/20 border border-red-400/30 transition-all duration-300 group"
+                    >
+                      <FaEnvelope className="w-4 h-4 text-red-400" />
+                      <span className="text-sm text-foreground group-hover:text-red-300 transition-colors duration-300">{contactInfo.email}</span>
+                    </a>
+                    <a
+                      href={`tel:${contactInfo.phone}`}
+                      className="flex items-center gap-2 p-2 rounded-lg bg-gradient-to-r from-green-500/10 to-teal-500/10 hover:from-green-500/20 hover:to-teal-500/20 border border-green-400/30 transition-all duration-300 group"
+                    >
+                      <FaPhone className="w-4 h-4 text-green-400" />
+                      <span className="text-sm text-foreground group-hover:text-green-300 transition-colors duration-300">{contactInfo.phone}</span>
+                    </a>
+                  </div>
+                </div>
+              </Card>
             </div>
 
             {/* Right Column - GitHub Activity & Experience */}
