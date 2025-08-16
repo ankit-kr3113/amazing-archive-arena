@@ -207,8 +207,8 @@ const Projects = () => {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
               {(filter === "All Projects" ? projects : filteredProjects).map((project, index) => (
-                <Card key={index} className="group relative overflow-hidden bg-gradient-to-br from-card via-card to-card/90 border border-border/50 shadow-lg hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1 hover:scale-[1.01] transition-all duration-500">
-                  {/* Subtle Background Pattern */}
+                <Card key={index} className="group relative overflow-hidden bg-gradient-to-br from-card via-card to-card/90 border border-border/50 shadow-lg hover:shadow-2xl hover:shadow-primary/15 hover:-translate-y-2 hover:scale-[1.02] transition-all duration-500">
+                  {/* Enhanced Background Pattern */}
                   <div className="absolute inset-0 opacity-3">
                     <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-primary/10 to-primary-glow/10 rounded-full blur-2xl"></div>
                   </div>
@@ -216,12 +216,12 @@ const Projects = () => {
                   <div className="relative p-6">
                     <div className="relative overflow-hidden rounded-lg mb-4">
                       {project.featured && (
-                        <Badge className="absolute top-3 left-3 z-10 bg-gradient-to-r from-primary to-primary-glow text-primary-foreground shadow-lg text-xs hover:scale-105 transition-transform duration-200">
+                        <Badge className="absolute top-3 left-3 z-20 bg-gradient-to-r from-primary to-primary-glow text-primary-foreground shadow-lg text-xs hover:scale-105 transition-transform duration-200">
                           <Star className="w-3 h-3 mr-1" />
                           <span>Featured</span>
                         </Badge>
                       )}
-                      <Badge className={`absolute top-3 right-3 z-10 shadow-lg text-xs hover:scale-105 transition-transform duration-200 ${
+                      <Badge className={`absolute top-3 right-3 z-20 shadow-lg text-xs hover:scale-105 transition-transform duration-200 ${
                         project.status === "Live" ? "bg-gradient-to-r from-green-500 to-green-600" :
                         project.status === "In Progress" ? "bg-gradient-to-r from-yellow-500 to-yellow-600" :
                         "bg-gradient-to-r from-blue-500 to-blue-600"
@@ -231,11 +231,38 @@ const Projects = () => {
                         {project.status === "Completed" && "🔵"}
                         <span>{project.status}</span>
                       </Badge>
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-[5]"></div>
+
+                      {/* Interactive Hover Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 z-10 flex items-center justify-center gap-3">
+                        {project.demo && (
+                          <Button
+                            size="sm"
+                            className="bg-primary/90 hover:bg-primary text-white shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 backdrop-blur-sm"
+                            asChild
+                          >
+                            <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                              <ExternalLink className="w-4 h-4 mr-1" />
+                              Demo
+                            </a>
+                          </Button>
+                        )}
+                        <Button
+                          size="sm"
+                          variant="outline"
+                          className="bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20 shadow-lg transform hover:scale-105 transition-all duration-200"
+                          asChild
+                        >
+                          <a href={project.github} target="_blank" rel="noopener noreferrer">
+                            <Github className="w-4 h-4 mr-1" />
+                            Code
+                          </a>
+                        </Button>
+                      </div>
+
                       <img
                         src={project.image}
                         alt={project.title}
-                        className="w-full h-44 object-cover group-hover:scale-105 transition-transform duration-300"
+                        className="w-full h-44 object-cover group-hover:scale-110 transition-transform duration-500"
                         loading="lazy"
                       />
                     </div>
