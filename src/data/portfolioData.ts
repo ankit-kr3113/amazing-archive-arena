@@ -1,6 +1,13 @@
 // Centralized Portfolio Data Configuration
 // This file contains all portfolio data to eliminate duplication and enable easy updates
 
+import {
+  FaRobot,
+  FaRunning,
+  FaPuzzlePiece,
+  FaUsers
+} from "react-icons/fa";
+
 export const personalInfo = {
   name: "Yuvraj Mehta",
   title: "Full Stack Developer",
