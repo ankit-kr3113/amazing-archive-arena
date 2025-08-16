@@ -139,9 +139,9 @@ const Coding = () => {
   const codingStats = [
     {
       platform: "LeetCode",
-      solved: apiData?.leetcode.totalSolved || 228,
-      rating: apiData?.leetcode.ranking ? `Rank #${apiData.leetcode.ranking}` : "1570",
-      rank: "Top 27.7%",
+      solved: apiData?.leetcode?.problemsSolved?.total || 228,
+      rating: apiData?.leetcode?.profile?.rating ? Math.round(apiData.leetcode.profile.rating).toString() : "1570",
+      rank: apiData?.leetcode?.contests?.topPercentage ? `Top ${apiData.leetcode.contests.topPercentage}%` : "Top 27.7%",
       color: "text-orange-400",
       bgColor: "from-orange-500/20 to-yellow-500/20",
       borderColor: "border-orange-500/30",
@@ -149,14 +149,14 @@ const Coding = () => {
       url: "https://leetcode.com/u/mythical-UV/",
       lastActive: "2024",
       joinedDate: "Jan 2023",
-      difficulty: apiData?.leetcode.problemsSolved || { easy: 150, medium: 65, hard: 13 },
+      difficulty: apiData?.leetcode?.problemsSolved || { easy: 150, medium: 65, hard: 13 },
       recentActivity: "Solved 'Binary Tree Inorder Traversal' - 2 days ago"
     },
     {
       platform: "GeeksforGeeks",
-      solved: apiData?.gfg.problemsSolved || 70,
-      rating: apiData?.gfg.rank ? `Rank #${apiData.gfg.rank}` : "Rank #1455",
-      streak: apiData?.gfg.weeklyStreak ? `${apiData.gfg.weeklyStreak}+ day streak` : "35+ day streak",
+      solved: apiData?.gfg?.problemsSolved?.total || 70,
+      rating: apiData?.gfg?.profile?.rank || "Rank #1455",
+      streak: apiData?.gfg?.profile?.currentStreak ? `${apiData.gfg.profile.currentStreak}+ day streak` : "35+ day streak",
       color: "text-green-400",
       bgColor: "from-green-500/20 to-emerald-500/20",
       borderColor: "border-green-500/30",
@@ -164,14 +164,14 @@ const Coding = () => {
       url: "https://www.geeksforgeeks.org/user/yuvrajmevbrx/",
       lastActive: "2024",
       joinedDate: "Mar 2023",
-      difficulty: { easy: 45, medium: 20, hard: 5 },
+      difficulty: apiData?.gfg?.problemsSolved || { easy: 45, medium: 20, hard: 5 },
       recentActivity: "Completed 'Array Rotation' challenge - 1 day ago"
     },
     {
       platform: "CodeChef",
-      solved: apiData?.codechef.problemsSolved || 25,
-      rating: apiData?.codechef.rating?.toString() || "1270",
-      rank: apiData?.codechef.stars ? `${apiData.codechef.stars}★ Coder` : "2★ Coder (Division 3)",
+      solved: apiData?.codechef?.problemsSolved?.total || 25,
+      rating: apiData?.codechef?.profile?.rating?.toString() || "1270",
+      rank: apiData?.codechef?.achievements?.stars ? `${apiData.codechef.achievements.stars} Coder` : "2★ Coder (Division 3)",
       color: "text-amber-400",
       bgColor: "from-amber-500/20 to-orange-500/20",
       borderColor: "border-amber-500/30",
@@ -179,14 +179,14 @@ const Coding = () => {
       url: "https://www.codechef.com/users/quick_unity_53",
       lastActive: "2024",
       joinedDate: "Feb 2023",
-      difficulty: { easy: 18, medium: 6, hard: 1 },
+      difficulty: apiData?.codechef?.problemsSolved || { easy: 18, medium: 6, hard: 1 },
       recentActivity: "Participated in Starters 186 - 1 week ago"
     },
     {
       platform: "Codeforces",
-      solved: apiData?.codeforces.problemsSolved || 10,
-      rating: apiData?.codeforces.rating?.toString() || "900",
-      rank: apiData?.codeforces.rank || "Newbie",
+      solved: apiData?.codeforces?.problemsSolved?.total || 10,
+      rating: apiData?.codeforces?.profile?.rating?.toString() || "900",
+      rank: apiData?.codeforces?.profile?.rank || "Newbie",
       color: "text-blue-400",
       bgColor: "from-blue-500/20 to-cyan-500/20",
       borderColor: "border-blue-500/30",
@@ -194,7 +194,7 @@ const Coding = () => {
       url: "https://codeforces.com/profile/yuvraj_mythical",
       lastActive: "2024",
       joinedDate: "Apr 2023",
-      difficulty: { easy: 8, medium: 2, hard: 0 },
+      difficulty: apiData?.codeforces?.problemsSolved || { easy: 8, medium: 2, hard: 0 },
       recentActivity: "Solved problem A in Div 3 contest - 2 weeks ago"
     }
   ];
