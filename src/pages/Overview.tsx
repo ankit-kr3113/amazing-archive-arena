@@ -18,24 +18,12 @@ import {
 } from "lucide-react";
 import {
   FaGithub,
-  FaLinkedin,
   FaReact,
   FaNodeJs,
-  FaDatabase,
   FaGraduationCap,
   FaTrophy,
   FaStar,
   FaBriefcase,
-  FaTerminal,
-  FaGlobe,
-  FaMobile,
-  FaPlay,
-  FaPause,
-  FaPhone,
-  FaAward,
-  FaUsers,
-  FaFileAlt,
-  FaChartBar,
   FaRocket,
   FaCode,
   FaBook,
@@ -45,13 +33,9 @@ import {
   SiTypescript,
   SiMongodb,
   SiExpress,
-  SiNextdotjs,
-  SiJavascript,
-  SiGit,
-  SiPostgresql
+  SiNextdotjs
 } from "react-icons/si";
 import {
-  HiSparkles,
   HiChatBubbleLeftRight
 } from "react-icons/hi2";
 import {
