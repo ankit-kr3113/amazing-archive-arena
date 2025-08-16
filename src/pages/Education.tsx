@@ -157,8 +157,9 @@ const Education = () => {
                             <Badge variant="outline" className="text-xs">{entry.type}</Badge>
                           </div>
                           <div className="flex items-center justify-between sm:justify-end gap-2 flex-shrink-0">
-                            <Badge variant="outline" className="text-primary border-primary/40 text-xs whitespace-nowrap">
-                              📅 {entry.period}
+                            <Badge variant="outline" className="text-primary border-primary/40 text-xs whitespace-nowrap flex items-center gap-1">
+                              <HiCalendar className="w-3 h-3" />
+                              {entry.period}
                             </Badge>
                             <div className="text-muted-foreground hover:text-primary transition-colors">
                               {expandedCards.includes(entry.id) ? (
