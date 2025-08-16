@@ -22,7 +22,7 @@ const ThemeSwitcher = () => {
           size="sm"
           className="glass border-border/50 hover:bg-primary/10 group bg-gradient-to-r from-primary/5 to-primary-glow/5 hover:scale-105 transition-all duration-300 shadow-sm"
         >
-          <HiDesktopComputer className="w-4 h-4 mr-2 text-primary group-hover:text-primary-glow transition-colors duration-300" />
+          <HiComputerDesktop className="w-4 h-4 mr-2 text-primary group-hover:text-primary-glow transition-colors duration-300" />
           <span>Themes</span>
         </Button>
       </div>
