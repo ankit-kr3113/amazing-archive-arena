@@ -171,8 +171,8 @@ const Contact = () => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
             {/* Contact Information */}
             <div className="lg:col-span-1 space-y-6">
-              <Card className="portfolio-card slide-up hover:shadow-xl hover:shadow-primary/10 transition-all duration-300">
-                <div className="flex items-center mb-8">
+              <Card className="portfolio-card slide-up hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 !p-4">
+                <div className="flex items-center mb-6">
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mr-4">
                     <HiMail className="w-6 h-6 text-primary" />
                   </div>
