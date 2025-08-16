@@ -366,7 +366,7 @@ const Footer = () => {
         </div>
 
         {/* Copyright Section */}
-        <div className="pt-4 sm:pt-8 text-center">
+        <div className="pt-4 md:pt-8 text-center">
           <p className="text-gray-400 text-sm mb-1">
             © {currentYear} Yuvraj Mehta. All rights reserved.
           </p>
