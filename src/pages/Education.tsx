@@ -210,7 +210,7 @@ const Education = () => {
 
                               <div>
                                 <h4 className="font-semibold mb-3 flex items-center text-sm sm:text-base">
-                                  <span className="text-xl sm:text-2xl mr-2">🏆</span>
+                                  <HiTrophy className="w-5 h-5 text-yellow-500 mr-2" />
                                   Achievements
                                 </h4>
                                 <ul className="space-y-1.5 sm:space-y-2">
