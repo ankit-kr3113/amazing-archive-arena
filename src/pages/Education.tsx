@@ -195,7 +195,7 @@ const Education = () => {
                             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
                               <div>
                                 <h4 className="font-semibold mb-3 flex items-center text-sm sm:text-base">
-                                  <span className="text-xl sm:text-2xl mr-2">📚</span>
+                                  <HiBookOpen className="w-5 h-5 text-primary mr-2" />
                                   Key Courses
                                 </h4>
                                 <ul className="space-y-1.5 sm:space-y-2">
