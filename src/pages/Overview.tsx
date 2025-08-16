@@ -698,29 +698,6 @@ const Overview = () => {
                 </Card>
               </div>
 
-              {/* Quick Actions */}
-              <Card className="p-6 border-primary/20 bg-gradient-to-r from-primary/5 to-primary-glow/5">
-                <div className="text-center">
-                  <h3 className="text-lg font-semibold mb-2">Ready to Collaborate?</h3>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Let's discuss your next project or explore opportunities together
-                  </p>
-                  <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                    <Button asChild>
-                      <a href="/Yuvraj_Resume_v2_1 (1).pdf" target="_blank" rel="noopener noreferrer">
-                        <Download className="w-4 h-4 mr-2" />
-                        Download Resume
-                      </a>
-                    </Button>
-                    <Button asChild variant="outline">
-                      <a href="mailto:yuvrajmehta2003@gmail.com">
-                        <FaEnvelope className="w-4 h-4 mr-2" />
-                        Send Email
-                      </a>
-                    </Button>
-                  </div>
-                </div>
-              </Card>
             </div>
           </div>
         </div>
