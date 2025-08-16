@@ -262,115 +262,166 @@ const Overview = () => {
       <Navigation />
       <ThemeSwitcher />
 
-      {/* Minimalistic Hero Section */}
-      <section className="relative pt-24 pb-16 overflow-hidden">
-        {/* Subtle background gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-background to-background/95"></div>
+      {/* Hero Section - Inspired by Previous Portfolio */}
+      <section className="relative pt-20 pb-16 min-h-screen flex items-center overflow-hidden">
+        {/* Enhanced Background Effects */}
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-background/95 to-primary/5"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-primary/[0.08] via-primary-glow/[0.04] to-transparent rounded-full blur-3xl opacity-40 animate-pulse"></div>
+        <div className="absolute top-1/4 right-1/4 w-[400px] h-[400px] bg-gradient-radial from-primary-glow/[0.06] to-transparent rounded-full blur-2xl opacity-30 animate-pulse animation-delay-1000"></div>
 
-        <div className="relative max-w-4xl mx-auto px-6 text-center z-10">
-          {/* Simple status indicator */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-sm mb-8">
-            <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-            <span className="text-foreground/70">Portfolio Overview</span>
-          </div>
+        <div className="relative max-w-7xl mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 xl:gap-24 items-center">
 
-          {/* Enhanced typography hierarchy */}
-          <div className="space-y-6">
-            <h1 className="text-5xl md:text-6xl font-bold text-foreground">
-              <span className="text-lg font-normal text-foreground/60 block mb-4">👋 Hello, I'm</span>
-              <span className="gradient-text relative inline-block bg-gradient-to-r from-primary via-primary-glow to-accent bg-clip-text text-transparent">
-                {personalInfo.name}
-              </span>
-            </h1>
+            {/* Left Content - Hero Text */}
+            <div className="space-y-8 fade-in order-2 lg:order-1 text-center lg:text-left max-w-2xl mx-auto lg:mx-0">
 
-            <h2 className="text-xl md:text-3xl font-semibold text-foreground/90 mt-4">
-              Building Digital Solutions That <span className="text-primary font-bold">Drive Impact</span>
-            </h2>
-
-            <p className="text-lg md:text-xl text-foreground/70 font-light max-w-2xl mx-auto mt-6">
-              {typewriterText}
-            </p>
-
-            {/* Enhanced info line */}
-            <p className="text-foreground/60 max-w-xl mx-auto mt-6">
-              <span className="text-foreground font-semibold">{personalInfo.course} student</span> at{" "}
-              <span className="text-primary font-bold">{personalInfo.university}</span>{" "}
-              passionate about{" "}
-              <span className="text-primary font-bold">full stack development</span> with{" "}
-              <span className="text-primary-glow font-bold">{achievements.leetcode.problemsSolved} problems solved</span> and{" "}
-              <span className="text-primary font-bold">{achievements.stats.totalProjects} projects built</span>
-            </p>
-
-            {/* Clean status badges */}
-            <div className="flex flex-wrap items-center justify-center gap-4 mt-12">
-              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20">
-                <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                <span className="text-sm text-green-300">{personalInfo.status.availability}</span>
+              {/* Status Badge */}
+              <div className="inline-flex items-center px-4 py-2.5 rounded-full bg-gradient-to-r from-primary/15 to-primary-glow/10 border-2 border-primary/25 text-primary text-sm font-semibold shadow-xl backdrop-blur-sm hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                <Code className="w-4 h-4 mr-2 animate-pulse" />
+                <span>Full Stack Developer</span>
+                <div className="ml-3 w-2 h-2 bg-primary rounded-full animate-pulse shadow-lg shadow-primary/50"></div>
               </div>
-              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20">
-                <MapPin className="w-3 h-3 text-blue-400" />
-                <span className="text-sm text-blue-300">{personalInfo.status.workMode}</span>
-              </div>
-              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20">
-                <FaStar className="w-3 h-3 text-purple-400" />
-                <span className="text-sm text-purple-300">{achievements.leetcode.globalRanking}</span>
-              </div>
-            </div>
 
-            {/* Simplified CTA buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12">
-              <Button
-                className="px-8 py-3 bg-primary hover:bg-primary/90 transition-colors"
-                asChild
-              >
-                <Link to="/contact">
-                  Let's Connect
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Link>
-              </Button>
+              {/* Main Heading */}
+              <div className="space-y-6">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
+                  <span className="block text-muted-foreground text-xl sm:text-2xl md:text-3xl font-medium mb-4 animate-fade-in-up">
+                    👋 Hello, I'm
+                  </span>
+                  <span className="gradient-text relative inline-block animate-fade-in-up animation-delay-300 bg-gradient-to-r from-primary via-primary-glow to-accent bg-clip-text text-transparent drop-shadow-2xl">
+                    {personalInfo.name}
+                  </span>
+                </h1>
 
-              <Button
-                variant="outline"
-                className="px-8 py-3 border-primary/30 hover:border-primary/50 transition-colors"
-                asChild
-              >
-                <a href={personalInfo.resume} target="_blank" rel="noopener noreferrer">
-                  <Download className="w-4 h-4 mr-2" />
-                  Resume
+                {/* Tagline */}
+                <p className="text-lg sm:text-xl md:text-2xl text-foreground/80 leading-relaxed animate-fade-in-up animation-delay-500">
+                  <span className="text-foreground font-semibold">{personalInfo.course} student</span> at{" "}
+                  <span className="text-primary font-bold">{personalInfo.university}</span>{" "}
+                  passionate about building{" "}
+                  <span className="text-primary font-bold">full stack applications</span> with focus on{" "}
+                  <span className="text-primary-glow font-bold">user-friendly interfaces</span>.
+                </p>
+
+                {/* Key Skills/Tech */}
+                <div className="animate-fade-in-up animation-delay-600">
+                  <p className="text-sm font-bold text-foreground/70 mb-3 flex items-center justify-center lg:justify-start gap-2">
+                    <FaStar className="w-4 h-4 text-primary animate-pulse" />
+                    <span>Skilled in</span>
+                  </p>
+                  <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
+                    {["React", "Node.js", "TypeScript", "MongoDB", "Next.js"].map((tech, index) => (
+                      <div key={index} className="flex items-center gap-2 bg-primary/10 border border-primary/20 px-3 py-2 rounded-full hover:scale-110 transition-all duration-300 cursor-pointer hover:shadow-lg backdrop-blur-sm">
+                        <div className="w-2 h-2 rounded-full bg-primary"></div>
+                        <span className="text-xs font-semibold text-foreground">{tech}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up animation-delay-800">
+                <Button
+                  className="group relative overflow-hidden px-8 py-4 text-lg font-bold bg-gradient-to-r from-primary via-primary-glow to-accent hover:from-accent hover:via-primary-glow hover:to-primary shadow-2xl hover:shadow-3xl hover:shadow-primary/40 transition-all duration-500 border-0 rounded-2xl hover:scale-110 active:scale-95 backdrop-blur-sm transform hover:-translate-y-1"
+                  asChild
+                >
+                  <Link to="/contact">
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out"></div>
+                    <span className="relative z-10 flex items-center justify-center gap-3">
+                      Contact Me
+                      <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
+                    </span>
+                  </Link>
+                </Button>
+
+                <Button
+                  variant="outline"
+                  className="group px-8 py-4 text-lg font-bold border-2 border-primary/60 text-primary hover:bg-gradient-to-r hover:from-primary/10 hover:to-primary-glow/10 hover:text-primary shadow-xl hover:shadow-2xl hover:shadow-primary/30 transition-all duration-500 rounded-2xl hover:scale-110 active:scale-95 backdrop-blur-sm bg-background/60 hover:border-primary transform hover:-translate-y-1"
+                  asChild
+                >
+                  <Link to="/projects">
+                    <span className="flex items-center justify-center gap-3">
+                      View Work
+                      <ExternalLink className="w-5 h-5 group-hover:rotate-12 transition-transform" />
+                    </span>
+                  </Link>
+                </Button>
+              </div>
+
+              {/* Social Links */}
+              <div className="flex justify-center lg:justify-start space-x-4 animate-fade-in-up animation-delay-1000">
+                <a
+                  href={socialLinks.github.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative w-12 h-12 rounded-2xl bg-gradient-to-br from-card/90 to-card/70 backdrop-blur-sm border-2 border-border/60 flex items-center justify-center text-muted-foreground hover:text-white hover:bg-gray-900 hover:border-gray-700 transition-all duration-300 hover:scale-125 hover:shadow-xl hover:shadow-gray-500/30"
+                >
+                  <FaGithub className="w-5 h-5 group-hover:scale-110 transition-transform relative z-10" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </a>
-              </Button>
+                <a
+                  href={socialLinks.linkedin.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative w-12 h-12 rounded-2xl bg-gradient-to-br from-card/90 to-card/70 backdrop-blur-sm border-2 border-border/60 flex items-center justify-center text-muted-foreground hover:text-white hover:bg-blue-600 hover:border-blue-500 transition-all duration-300 hover:scale-125 hover:shadow-xl hover:shadow-blue-500/30"
+                >
+                  <FaLinkedin className="w-5 h-5 group-hover:scale-110 transition-transform relative z-10" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </a>
+                <a
+                  href={socialLinks.email.url}
+                  className="group relative w-12 h-12 rounded-2xl bg-gradient-to-br from-card/90 to-card/70 backdrop-blur-sm border-2 border-border/60 flex items-center justify-center text-muted-foreground hover:text-white hover:bg-red-600 hover:border-red-500 transition-all duration-300 hover:scale-125 hover:shadow-xl hover:shadow-red-500/30"
+                >
+                  <FaEnvelope className="w-5 h-5 group-hover:scale-110 transition-transform relative z-10" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-red-600 to-red-700 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </a>
+              </div>
             </div>
-          </div>
-        </div>
 
-        {/* Clean stats cards */}
-        <div className="relative max-w-6xl mx-auto px-6 mt-20">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {highlights.map((item, index) => (
-              <Card
-                key={index}
-                className="group p-5 bg-card/50 border border-border/50 hover:border-primary/30 transition-all duration-300 hover:shadow-lg"
-              >
-                <div className="flex items-center gap-4">
-                  <div className="relative w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center">
-                    <item.icon className="w-7 h-7 text-primary" />
-                    {item.isLive && (
-                      <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full"></div>
-                    )}
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <div className="font-semibold text-base text-foreground">{item.title}</div>
-                    <div className="text-sm text-foreground/60">{item.subtitle}</div>
-                    <div className="text-sm text-primary font-medium">{item.year}</div>
+            {/* Right Content - Profile Image */}
+            <div className="relative slide-up order-1 lg:order-2 flex justify-center">
+              <div className="relative flex justify-center max-w-md lg:max-w-lg xl:max-w-xl mx-auto">
+                {/* Background Effects */}
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-primary-glow/30 to-primary/20 rounded-full blur-2xl animate-pulse opacity-60"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-primary-glow/15 to-primary/15 rounded-full blur-xl animate-pulse opacity-40 animation-delay-1000"></div>
+
+                {/* Profile Image Container */}
+                <div className="relative z-10 w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-primary/40 shadow-2xl hover:shadow-primary/50 hover:shadow-2xl transition-all duration-500 hover:scale-110 group mx-auto cursor-pointer backdrop-blur-sm">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/25 to-primary-glow/15 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <img
+                    src={personalInfo.profileImage}
+                    alt={`${personalInfo.name} - ${personalInfo.title}`}
+                    className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-110"
+                  />
+
+                  {/* Status Badge */}
+                  <div className="absolute bottom-4 right-4 bg-gradient-to-r from-green-500/95 to-emerald-500/95 backdrop-blur-sm text-white text-sm px-3 py-2 rounded-full font-semibold shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-110 border-2 border-white/30">
+                    <span className="animate-pulse">●</span> Available
                   </div>
                 </div>
 
-                <div className="mt-4 text-sm text-foreground/60 flex items-center gap-2">
-                  <TrendingUp className="w-4 h-4" />
-                  {item.trend}
+                {/* Achievement Float Cards */}
+                <div className="absolute top-4 -right-4 w-24 h-20 bg-card/98 backdrop-blur-lg rounded-2xl border-2 border-primary/40 p-3 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-125 animate-float z-20">
+                  <div className="flex justify-center mb-2">
+                    <div className="w-7 h-7 rounded-xl bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center shadow-lg">
+                      <FaRocket className="w-4 h-4 text-white" />
+                    </div>
+                  </div>
+                  <div className="text-sm text-primary font-bold text-center">{achievements.stats.totalProjects}</div>
+                  <div className="text-[10px] text-foreground/80 text-center font-medium">Projects</div>
                 </div>
-              </Card>
-            ))}
+
+                <div className="absolute bottom-4 -left-4 w-24 h-20 bg-card/98 backdrop-blur-lg rounded-2xl border-2 border-primary/40 p-3 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-125 animate-float animation-delay-1000 z-20">
+                  <div className="flex justify-center mb-2">
+                    <div className="w-7 h-7 rounded-xl bg-gradient-to-br from-green-500 to-teal-500 flex items-center justify-center shadow-lg">
+                      <FaTrophy className="w-4 h-4 text-white" />
+                    </div>
+                  </div>
+                  <div className="text-sm text-primary font-bold text-center">{achievements.leetcode.problemsSolved}</div>
+                  <div className="text-[10px] text-foreground/80 text-center font-medium">Problems</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
