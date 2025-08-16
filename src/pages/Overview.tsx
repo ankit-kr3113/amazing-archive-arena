@@ -391,23 +391,24 @@ const Overview = () => {
           {/* Enhanced Stats Cards with vibrant design */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
             {highlights.map((item, index) => {
+              // Use consistent purple-to-blue gradient theme for all cards
               const gradientColors = {
-                0: 'from-purple-500/20 via-indigo-500/20 to-blue-500/20 hover:from-purple-500/30 hover:via-indigo-500/30 hover:to-blue-500/30',
-                1: 'from-blue-500/20 via-cyan-500/20 to-teal-500/20 hover:from-blue-500/30 hover:via-cyan-500/30 hover:to-teal-500/30',
-                2: 'from-emerald-500/20 via-green-500/20 to-lime-500/20 hover:from-emerald-500/30 hover:via-green-500/30 hover:to-lime-500/30',
-                3: 'from-orange-500/20 via-red-500/20 to-pink-500/20 hover:from-orange-500/30 hover:via-red-500/30 hover:to-pink-500/30'
+                0: 'from-primary/15 via-primary-glow/15 to-primary/10 hover:from-primary/25 hover:via-primary-glow/25 hover:to-primary/20',
+                1: 'from-primary-glow/15 via-primary/15 to-accent/10 hover:from-primary-glow/25 hover:via-primary/25 hover:to-accent/20',
+                2: 'from-accent/15 via-primary/15 to-primary-glow/10 hover:from-accent/25 hover:via-primary/25 hover:to-primary-glow/20',
+                3: 'from-primary/15 via-accent/15 to-primary-glow/10 hover:from-primary/25 hover:via-accent/25 hover:to-primary-glow/20'
               };
               const iconColors = {
-                0: 'text-purple-400 group-hover:text-purple-300',
-                1: 'text-cyan-400 group-hover:text-cyan-300',
-                2: 'text-emerald-400 group-hover:text-emerald-300',
-                3: 'text-orange-400 group-hover:text-orange-300'
+                0: 'text-primary group-hover:text-primary-glow',
+                1: 'text-primary-glow group-hover:text-primary',
+                2: 'text-accent group-hover:text-primary',
+                3: 'text-primary group-hover:text-accent'
               };
               const borderColors = {
-                0: 'border-purple-500/30 hover:border-purple-400/60',
-                1: 'border-cyan-500/30 hover:border-cyan-400/60',
-                2: 'border-emerald-500/30 hover:border-emerald-400/60',
-                3: 'border-orange-500/30 hover:border-orange-400/60'
+                0: 'border-primary/30 hover:border-primary/50',
+                1: 'border-primary-glow/30 hover:border-primary-glow/50',
+                2: 'border-accent/30 hover:border-accent/50',
+                3: 'border-primary/30 hover:border-primary/50'
               };
               return (
                 <Card
