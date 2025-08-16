@@ -1,6 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Download, Mail, ExternalLink, Github, Linkedin, Trophy, Code, MapPin, Calendar } from "lucide-react";
+import {
+  HiDownload,
+  HiMail,
+  HiExternalLink,
+  HiOutlineGlobeAlt,
+  HiTrophy,
+  HiCode,
+  HiLocationMarker,
+  HiCalendar
+} from "react-icons/hi";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
