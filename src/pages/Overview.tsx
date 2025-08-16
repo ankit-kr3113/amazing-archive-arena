@@ -225,7 +225,14 @@ const Overview = () => {
   }), []);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gradient-to-br from-background via-background/95 to-primary/5 relative overflow-hidden">
+      {/* Background gradient overlay with animation */}
+      <div className="fixed inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-cyan-500/5 animate-pulse opacity-50 pointer-events-none"></div>
+      <div className="fixed top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-purple-500/10 via-transparent to-transparent pointer-events-none"></div>
+      <div className="fixed bottom-0 right-0 w-full h-full bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-cyan-500/8 via-transparent to-transparent pointer-events-none"></div>
+
+      {/* Content wrapper */}
+      <div className="relative z-10">
       {/* SEO Meta Tags */}
       <title>Yuvraj Mehta - Full Stack Developer | Portfolio Overview</title>
       <meta name="description" content="Full Stack Developer & B.Tech CS Student at NIT Patna. Specialized in React, Node.js, and modern web technologies. 500+ LeetCode problems solved." />
@@ -238,12 +245,20 @@ const Overview = () => {
       <Navigation />
       <ThemeSwitcher />
 
-      {/* Optimized Hero Section */}
+      {/* Enhanced Hero Section with sophisticated gradients */}
       <section className="relative pt-24 pb-12 overflow-hidden">
-        {/* Simplified background - removed particle system for performance */}
+        {/* Multi-layered gradient background */}
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-background via-background/95 to-primary/5"></div>
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-primary/[0.08] via-primary-glow/[0.04] to-transparent rounded-full blur-3xl opacity-50"></div>
+          {/* Base gradient */}
+          <div className="absolute inset-0 bg-gradient-to-br from-background via-background/90 to-primary/10"></div>
+
+          {/* Animated gradient orbs */}
+          <div className="absolute top-20 left-20 w-[400px] h-[400px] bg-gradient-radial from-purple-500/20 via-purple-500/10 to-transparent rounded-full blur-3xl opacity-60 animate-pulse"></div>
+          <div className="absolute bottom-20 right-20 w-[500px] h-[500px] bg-gradient-radial from-cyan-500/15 via-blue-500/10 to-transparent rounded-full blur-3xl opacity-70 animate-pulse" style={{animationDelay: '1s'}}></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-primary/[0.12] via-primary-glow/[0.08] to-transparent rounded-full blur-3xl opacity-60"></div>
+
+          {/* Overlay gradient for depth */}
+          <div className="absolute inset-0 bg-gradient-to-t from-background/50 via-transparent to-background/30"></div>
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
@@ -769,7 +784,8 @@ const Overview = () => {
         </div>
       </section>
 
-      <Footer />
+        <Footer />
+      </div>
     </div>
   );
 };
