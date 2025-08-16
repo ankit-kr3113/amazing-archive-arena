@@ -638,42 +638,6 @@ const Overview = () => {
                 </Button>
               </Card>
 
-              {/* Quick Actions */}
-              <Card className="p-6 border-2 border-primary/40 hover:border-primary/60 bg-gradient-to-br from-primary/10 via-primary-glow/10 to-accent/10 shadow-xl hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 backdrop-blur-sm hover:-translate-y-1">
-                <div className="flex items-center mb-4">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500/30 to-pink-500/30 flex items-center justify-center mr-3 shadow-lg">
-                    <Zap className="w-5 h-5 text-purple-400" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-foreground">Quick Actions</h3>
-                </div>
-                <div className="space-y-3">
-                  {quickActions.map((action, index) => (
-                    <Button
-                      key={index}
-                      variant="outline"
-                      className="w-full justify-start h-auto p-3 transition-all duration-300 group border-primary/30"
-                      asChild
-                    >
-                      {action.type === 'external' ? (
-                        <a href={action.href} target="_blank" rel="noopener noreferrer">
-                          <action.icon className="w-4 h-4 mr-3" />
-                          <span className="text-sm font-medium">{action.label}</span>
-                        </a>
-                      ) : action.type === 'download' ? (
-                        <a href={action.href} download>
-                          <action.icon className="w-4 h-4 mr-3" />
-                          <span className="text-sm font-medium">{action.label}</span>
-                        </a>
-                      ) : (
-                        <Link to={action.href}>
-                          <action.icon className="w-4 h-4 mr-3" />
-                          <span className="text-sm font-medium">{action.label}</span>
-                        </Link>
-                      )}
-                    </Button>
-                  ))}
-                </div>
-              </Card>
 
               {/* Contact Information */}
               <Card className="p-4 border-2 border-primary/40 hover:border-primary/60 shadow-xl hover:shadow-2xl hover:shadow-blue-500/15 transition-all duration-500 backdrop-blur-sm bg-gradient-to-br from-card/90 to-card/70 hover:-translate-y-1">
