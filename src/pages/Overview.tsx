@@ -962,6 +962,62 @@ const Overview = () => {
                     </div>
                   </div>
                 </Card>
+
+                {/* Interests & Hobbies */}
+                <Card className="p-6 border-2 border-primary/30 hover:border-primary/50 hover:shadow-xl hover:shadow-purple-500/15 transition-all duration-500 backdrop-blur-sm bg-gradient-to-br from-card/95 to-card/80 hover:-translate-y-1 relative overflow-hidden group">
+                  {/* Background decoration */}
+                  <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-purple-500/10 to-pink-500/5 rounded-full -translate-y-10 translate-x-10 group-hover:scale-150 transition-transform duration-700"></div>
+                  <div className="absolute bottom-0 left-0 w-16 h-16 bg-gradient-to-tr from-primary/10 to-primary-glow/5 rounded-full translate-y-8 -translate-x-8 group-hover:scale-125 transition-transform duration-700"></div>
+
+                  <div className="relative z-10">
+                    <div className="flex items-center mb-6">
+                      <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500/30 to-pink-500/30 flex items-center justify-center mr-3 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                        <FaStar className="w-5 h-5 text-purple-400" />
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-bold text-foreground">Interests & Hobbies</h3>
+                        <p className="text-xs text-purple-400 font-medium">Beyond Coding</p>
+                      </div>
+                    </div>
+
+                    <div className="space-y-3">
+                      {interests.map((interest, index) => (
+                        <div key={index} className="group/item p-3 rounded-lg bg-primary/10 hover:bg-primary/15 transition-all duration-300 cursor-pointer">
+                          <div className="flex items-start gap-3">
+                            <div className="text-lg group-hover/item:scale-125 transition-transform duration-300">
+                              {interest.icon}
+                            </div>
+                            <div className="flex-1">
+                              <div className="font-semibold text-sm text-foreground group-hover/item:text-primary transition-colors duration-300">
+                                {interest.name}
+                              </div>
+                              <p className="text-xs text-foreground/70 mt-1">
+                                {interest.description}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="mt-6 p-3 rounded-lg bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-400/30">
+                      <div className="flex items-center gap-2 text-xs text-purple-400">
+                        <FaTrophy className="w-3 h-3" />
+                        <span className="font-medium">Recent Achievement:</span>
+                      </div>
+                      <p className="text-xs text-foreground/80 mt-1">
+                        Bronze medal in 50m Hurdles at NIT Patna Intramurals
+                      </p>
+                    </div>
+
+                    <Button asChild variant="outline" size="sm" className="w-full mt-4 group-hover:scale-105 transition-transform duration-300">
+                      <Link to="/about">
+                        <Eye className="w-3 h-3 mr-2" />
+                        Learn More
+                      </Link>
+                    </Button>
+                  </div>
+                </Card>
               </div>
 
             </div>
