@@ -315,8 +315,8 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Stats Section - Hidden on mobile, simplified on tablet */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 py-6 sm:py-8 border-t border-gray-600 border-b border-gray-600">
+          {/* Stats Section - Desktop only */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 py-6 lg:py-8 border-t border-gray-600 border-b border-gray-600">
             <div className="text-center py-2 sm:py-3">
               <div className="flex items-center justify-center mb-3 sm:mb-4">
                 <FaStar className="w-4 h-4 sm:w-5 sm:h-5 text-purple-400 mr-2" />
