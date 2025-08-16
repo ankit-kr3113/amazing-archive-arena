@@ -231,6 +231,46 @@ const Overview = () => {
     lastUpdated: "Updated 2 days ago"
   }), []);
 
+  const contactInfo = useMemo(() => ({
+    email: "yuvraj.mehta532@gmail.com",
+    phone: "+91 98765 43210",
+    location: "Patna, Bihar, India",
+    timezone: "IST (UTC +5:30)",
+    availability: "Available for opportunities",
+    preferredContact: "Email or LinkedIn",
+    responseTime: "Within 24 hours",
+    socialLinks: [
+      {
+        name: "GitHub",
+        icon: FaGithub,
+        url: "https://github.com/yuvraj-mehta",
+        username: "@yuvraj-mehta",
+        color: "text-gray-300 hover:text-white"
+      },
+      {
+        name: "LinkedIn",
+        icon: FaLinkedin,
+        url: "https://linkedin.com/in/yuvraj-mehta",
+        username: "yuvraj-mehta",
+        color: "text-blue-400 hover:text-blue-300"
+      },
+      {
+        name: "Twitter",
+        icon: FaTwitter,
+        url: "https://twitter.com/yuvraj_mehta",
+        username: "@yuvraj_mehta",
+        color: "text-sky-400 hover:text-sky-300"
+      },
+      {
+        name: "Email",
+        icon: FaEnvelope,
+        url: "mailto:yuvraj.mehta532@gmail.com",
+        username: "yuvraj.mehta532@gmail.com",
+        color: "text-red-400 hover:text-red-300"
+      }
+    ]
+  }), []);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background/95 to-primary/5 relative overflow-hidden">
       {/* Background gradient overlay with animation */}
