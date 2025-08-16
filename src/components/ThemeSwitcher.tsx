@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { useTheme } from '@/contexts/ThemeContext';
 import { HiX, HiSparkles, HiSun, HiMoon } from 'react-icons/hi';
 import { HiComputerDesktop, HiBolt } from 'react-icons/hi2';
+import { FaPalette } from 'react-icons/fa';
 
 const ThemeSwitcher = () => {
   const [isOpen, setIsOpen] = useState(false);
