@@ -33,13 +33,11 @@ import {
   FaBook,
   FaEnvelope,
   FaPhone,
-} from "react-icons/fa";
-import { HiHand } from "react-icons/hi";
-import {
   FaMapMarkerAlt,
   FaCalendarAlt,
   FaLink
 } from "react-icons/fa";
+import { HiHand } from "react-icons/hi";
 import {
   SiTypescript,
   SiMongodb,
