@@ -25,6 +25,9 @@ import {
   FaClock,
   FaStar,
   FaFire,
+  FaSync,
+  FaWifi,
+  FaExclamationTriangle
 } from "react-icons/fa";
 import { Trophy } from "lucide-react";
 import {
