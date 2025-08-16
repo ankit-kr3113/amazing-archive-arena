@@ -559,26 +559,6 @@ const Overview = () => {
                 </Button>
               </Card>
 
-              {/* Tech Stack */}
-              <Card className="p-6 border-primary/20">
-                <div className="flex items-center mb-4">
-                  <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center mr-3">
-                    <FaCode className="w-4 h-4 text-primary" />
-                  </div>
-                  <h3 className="text-lg font-semibold">Tech Stack</h3>
-                </div>
-                <div className="grid grid-cols-2 gap-2 mb-4">
-                  {techStack.map((tech, index) => (
-                    <div key={index} className="flex items-center gap-2 p-2 rounded-lg hover:bg-primary/5 transition-colors">
-                      <tech.icon className="w-4 h-4 text-primary" />
-                      <span className="text-sm font-medium">{tech.name}</span>
-                    </div>
-                  ))}
-                </div>
-                <Button asChild variant="outline" size="sm" className="w-full">
-                  <Link to="/skills">All Skills & Tools</Link>
-                </Button>
-              </Card>
 
               {/* Quick Actions */}
               <Card className="p-6 border-primary/20 bg-gradient-to-r from-primary/5 to-primary-glow/5">
