@@ -14,7 +14,8 @@ import {
   CircleDot,
   Eye,
   ArrowRight,
-  ChevronRight
+  ChevronRight,
+  Code
 } from "lucide-react";
 import {
   FaGithub,
