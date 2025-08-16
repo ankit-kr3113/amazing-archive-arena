@@ -270,34 +270,6 @@ const Contact = () => {
                   })}
                 </div>
 
-                <hr className="border-border mb-6" />
-
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mr-4">
-                    <HiUsers className="w-6 h-6 text-primary" />
-                  </div>
-                  <h3 className="text-lg sm:text-xl font-bold">Social Links</h3>
-                </div>
-
-                <div className="space-y-2">
-                  {socialMediaLinks.map((link, index) => (
-                    <a
-                      key={index}
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group flex items-center space-x-3 p-2 rounded-xl hover:bg-primary/10 transition-all duration-300 hover:scale-105 hover:shadow-lg text-sm border border-border/50 hover:border-primary/30"
-                    >
-                      <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground group-hover:scale-110 transition-all duration-300">
-                        <link.icon className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
-                      </div>
-                      <div className="flex-1">
-                        <div className="font-medium group-hover:text-primary transition-colors">{link.name}</div>
-                        <div className="text-xs text-muted-foreground group-hover:text-primary/70 transition-colors">{link.description}</div>
-                      </div>
-                    </a>
-                  ))}
-                </div>
               </Card>
             </div>
 
