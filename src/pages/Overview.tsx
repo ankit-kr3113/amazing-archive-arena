@@ -812,7 +812,7 @@ const Overview = () => {
                     </Button>
                     <Button asChild variant="outline">
                       <a href="mailto:yuvrajmehta2003@gmail.com">
-                        <Mail className="w-4 h-4 mr-2" />
+                        <FaEnvelope className="w-4 h-4 mr-2" />
                         Send Email
                       </a>
                     </Button>
