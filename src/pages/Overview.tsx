@@ -415,16 +415,15 @@ const Overview = () => {
                   key={index}
                   className={`group relative p-4 text-center bg-gradient-to-br ${gradientColors[index]} border ${borderColors[index]} cursor-pointer transition-all duration-300 hover:shadow-xl hover:shadow-primary/15 backdrop-blur-sm hover:-translate-y-1`}
                 >
-                  {/* Enhanced gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-black/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  {/* Subtle overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/3 via-transparent to-black/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
-                  {/* Icon with enhanced styling */}
-                  <div className="relative flex justify-center mb-4">
-                    <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/30 to-primary-glow/30 flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg">
-                      <item.icon className={`w-8 h-8 ${iconColors[index]} transition-colors duration-300`} />
+                  {/* Compact icon */}
+                  <div className="relative flex justify-center mb-3">
+                    <div className="relative w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-primary-glow/20 flex items-center justify-center group-hover:scale-105 transition-all duration-300 shadow-md">
+                      <item.icon className={`w-6 h-6 ${iconColors[index]} transition-colors duration-300`} />
                       {item.isLive && (
-                        <div className="absolute -top-2 -right-2 w-4 h-4 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full shadow-lg animate-pulse">
-                          <div className="w-full h-full bg-green-300 rounded-full animate-ping opacity-75"></div>
+                        <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full shadow-md animate-pulse">
                         </div>
                       )}
                     </div>
