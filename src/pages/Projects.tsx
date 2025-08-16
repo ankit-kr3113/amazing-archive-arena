@@ -115,19 +115,18 @@ const Projects = () => {
 
           {/* Projects Grid */}
           <div>
-            {filter !== "All Projects" && (
-              <div className="flex items-center gap-3 mb-10">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-primary-glow/10 flex items-center justify-center shadow-lg">
-                  {filter === "Featured" && <HiStar className="w-6 h-6 text-primary" />}
-                  {filter === "Frontend" && <FaPalette className="w-6 h-6 text-primary" />}
-                  {filter === "AI & ML" && <FaRobot className="w-6 h-6 text-primary" />}
-                  {filter === "Full Stack" && <FaLink className="w-6 h-6 text-primary" />}
-                </div>
-                <h2 className="text-2xl md:text-3xl font-bold text-foreground">{filter}</h2>
+            <div className="flex items-center gap-3 mb-10">
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-primary-glow/10 flex items-center justify-center shadow-lg">
+                {filter === "All Projects" && <HiCode className="w-6 h-6 text-primary" />}
+                {filter === "Featured" && <HiStar className="w-6 h-6 text-primary" />}
+                {filter === "Frontend" && <FaPalette className="w-6 h-6 text-primary" />}
+                {filter === "AI & ML" && <FaRobot className="w-6 h-6 text-primary" />}
+                {filter === "Full Stack" && <FaLink className="w-6 h-6 text-primary" />}
               </div>
-            )}
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground">{filter}</h2>
+            </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto">
               {(filter === "All Projects" ? projects : filteredProjects).map((project, index) => (
                 <Card key={index} className="group relative overflow-hidden bg-gradient-to-br from-card via-card to-card/90 border border-border/50 shadow-lg hover:shadow-2xl hover:shadow-primary/15 hover:-translate-y-2 hover:scale-[1.02] transition-all duration-500">
                   {/* Enhanced Background Pattern */}
