@@ -47,7 +47,7 @@ const Navigation = () => {
               <Avatar className="h-9 w-9 ring-3 ring-primary/25 transition-all duration-300 group-hover:ring-primary/60 group-hover:scale-125 shadow-lg">
                 <AvatarImage src={personalInfo.profileImage} alt={personalInfo.name} />
                 <AvatarFallback className="bg-gradient-to-br from-primary to-primary-glow text-primary-foreground font-bold text-sm shadow-lg">
-                  <Code2 className="w-5 h-5" />
+                  <HiCode className="w-5 h-5" />
                 </AvatarFallback>
               </Avatar>
               <div className="absolute -top-1 -right-1 w-4 h-4 bg-green-500 rounded-full animate-pulse border-2 border-background shadow-lg shadow-green-500/30"></div>
