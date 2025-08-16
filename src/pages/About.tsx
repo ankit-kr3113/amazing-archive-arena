@@ -32,7 +32,7 @@ const About = () => {
   const handleResumeDownload = () => {
     // Create a link element and trigger download
     const link = document.createElement('a');
-    link.href = '/Yuvraj_Resume_v2_1 (1).pdf';
+    link.href = personalInfo.resume;
     link.download = 'Yuvraj_Mehta_Resume.pdf';
     document.body.appendChild(link);
     link.click();
