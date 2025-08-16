@@ -416,7 +416,7 @@ const Overview = () => {
                   <div className="flex items-center justify-between">
                     <span className="text-sm font-medium text-foreground">LeetCode</span>
                     <Badge className="bg-orange-500/20 text-orange-200 border-orange-500/30">
-                      500+ Solved
+                      {achievements.leetcode.problemsSolved} Solved
                     </Badge>
                   </div>
                   <div className="flex items-center justify-between">
@@ -578,7 +578,7 @@ const Overview = () => {
                     </Link>
                   </Button>
                   <Button asChild size="sm" className="flex-1">
-                    <a href="https://github.com/yuvraj-mehta" target="_blank" rel="noopener noreferrer">
+                    <a href={socialLinks.github.url} target="_blank" rel="noopener noreferrer">
                       <FaGithub className="w-3 h-3 mr-2" />
                       GitHub Activity
                     </a>
@@ -598,12 +598,12 @@ const Overview = () => {
                     <h3 className="text-lg font-semibold text-foreground">About</h3>
                   </div>
                   <p className="text-sm text-foreground/70 mb-4 leading-relaxed">
-                    Final year B.Tech Computer Science student at NIT Patna with 2+ years of development experience.
+                    Final year B.Tech {personalInfo.course} student at {personalInfo.university} with {achievements.stats.yearsExperience} of development experience.
                     Specialized in full-stack web development.
                   </p>
                   <div className="flex items-center gap-2 text-xs text-foreground/60 mb-3">
                     <MapPin className="w-3 h-3" />
-                    <span>New Delhi, India</span>
+                    <span>{personalInfo.location}</span>
                   </div>
                   <div className="flex items-center gap-2 text-xs text-foreground/60 mb-4">
                     <Calendar className="w-3 h-3" />
@@ -624,8 +624,8 @@ const Overview = () => {
                   </div>
                   <div className="space-y-3">
                     <div>
-                      <div className="font-semibold text-sm text-foreground">B.Tech Computer Science</div>
-                      <div className="text-sm text-primary">NIT Patna</div>
+                      <div className="font-semibold text-sm text-foreground">B.Tech {personalInfo.course}</div>
+                      <div className="text-sm text-primary">{personalInfo.university}</div>
                       <div className="text-xs text-foreground/60">2021 - 2025</div>
                     </div>
                     <div>
