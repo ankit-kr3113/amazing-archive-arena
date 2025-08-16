@@ -202,38 +202,38 @@ const Coding = () => {
   // Calculate total dynamically
   const totalProblems = codingStats.reduce((sum, platform) => sum + platform.solved, 0);
 
-  // Enhanced achievements with more unique and specific content
+  // Enhanced achievements with real-time API data
   const achievements = [
     {
       title: "LeetCode Consistency Champion",
-      description: "Maintained active problem-solving streak with 228+ problems solved, achieving top 27.7% global ranking",
+      description: `Maintained active problem-solving streak with ${apiData?.leetcode?.problemsSolved?.total || 277}+ problems solved, achieving top ${apiData?.leetcode?.contests?.topPercentage || "17.4"}% global ranking`,
       icon: FaTrophy,
       color: "text-yellow-400",
       bgColor: "from-yellow-500/20 to-orange-500/20",
       borderColor: "border-yellow-500/30",
-      metric: "228 Problems"
+      metric: `${apiData?.leetcode?.problemsSolved?.total || 277} Problems`
     },
     {
       title: "Contest Performer",
-      description: "Achieved Global Rank 1238 in CodeChef Starters 186, demonstrating competitive programming skills",
+      description: `Best rank ${apiData?.leetcode?.contests?.bestRank || 6851} in LeetCode contests with ${apiData?.leetcode?.contests?.attendedCount || 14} contests attended, demonstrating competitive programming skills`,
       icon: FaMedal,
       color: "text-orange-400",
       bgColor: "from-orange-500/20 to-red-500/20",
       borderColor: "border-orange-500/30",
-      metric: "Rank 1238"
+      metric: `Rank ${apiData?.leetcode?.contests?.bestRank || 6851}`
     },
     {
       title: "Daily Coding Streak Master",
-      description: "Maintained 35+ consecutive days of coding in GfG 160 challenge, showing dedication and consistency",
+      description: `Maintained ${apiData?.gfg?.profile?.currentStreak || 7}+ consecutive days of coding streak, showing dedication and consistency with max streak of ${apiData?.gfg?.profile?.maxStreak || 1475} days`,
       icon: FaFire,
       color: "text-green-400",
       bgColor: "from-green-500/20 to-emerald-500/20",
       borderColor: "border-green-500/30",
-      metric: "35+ Days"
+      metric: `${apiData?.gfg?.profile?.currentStreak || 7}+ Days`
     },
     {
       title: "Multi-Platform Excellence",
-      description: "Active across 4+ competitive programming platforms with consistent performance and growth",
+      description: `Active across 4+ competitive programming platforms with ${targetTotal}+ total problems solved and consistent performance growth`,
       icon: FaStar,
       color: "text-purple-400",
       bgColor: "from-purple-500/20 to-pink-500/20",
