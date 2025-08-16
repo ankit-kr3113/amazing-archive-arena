@@ -232,8 +232,8 @@ const Contact = () => {
               </Card>
 
               {/* Quick Links & Social Combined */}
-              <Card className="portfolio-card slide-up">
-                <div className="flex items-center mb-8">
+              <Card className="portfolio-card slide-up !p-4">
+                <div className="flex items-center mb-6">
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mr-4">
                     <HiLink className="w-6 h-6 text-primary" />
                   </div>
