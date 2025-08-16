@@ -123,7 +123,7 @@ const About = () => {
                       <span>Computer Science Student</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <Code className="w-4 h-4 text-primary" />
+                      <HiCode className="w-4 h-4 text-primary" />
                       <span>2+ Years Experience</span>
                     </div>
                   </div>
