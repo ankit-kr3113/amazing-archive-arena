@@ -6,9 +6,11 @@ import {
   HiExternalLink,
   HiCode,
   HiLocationMarker,
-  HiCalendar
+  HiCalendar,
+  HiHand,
+  HiSparkles
 } from "react-icons/hi";
-import { FaGithub, FaLinkedin, FaTrophy } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaTrophy, FaRobot, FaRunning, FaPuzzlePiece, FaBullseye } from "react-icons/fa";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
