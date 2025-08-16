@@ -84,21 +84,24 @@ const Education = () => {
       issuer: "Udemy",
       year: "2023",
       description: "Comprehensive full-stack web development course covering HTML, CSS, JavaScript, React, and Node.js",
-      badge: "🌐"
+      badge: FaGlobe,
+      color: "text-blue-500"
     },
     {
       title: "Data Structures & Algorithms",
       issuer: "Coursera",
       year: "2023",
       description: "Advanced course on efficient algorithms and complex data structures implementation",
-      badge: "📊"
+      badge: FaChartBar,
+      color: "text-green-500"
     },
     {
       title: "Machine Learning Fundamentals",
       issuer: "FreeCodeCamp",
       year: "2024",
       description: "Introduction to machine learning concepts and practical implementation",
-      badge: "🤖"
+      badge: FaRobot,
+      color: "text-purple-500"
     }
   ];
 
