@@ -118,7 +118,10 @@ const ProjectImage = ({ src, alt, className }: { src: string; alt: string; class
     <div className="relative">
       {loading && (
         <div className={`${className} bg-muted/60 flex items-center justify-center absolute inset-0 z-10 border border-border/30`}>
-          <div className="w-8 h-8 border-2 border-primary/70 border-t-transparent rounded-full animate-spin"></div>
+          <div className="flex flex-col items-center gap-2">
+            <div className="w-8 h-8 border-2 border-primary/70 border-t-transparent rounded-full animate-spin"></div>
+            <p className="text-xs text-foreground/60">Loading preview...</p>
+          </div>
         </div>
       )}
       <img
