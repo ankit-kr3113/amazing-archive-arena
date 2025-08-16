@@ -116,7 +116,7 @@ const Projects = () => {
             <div className="mb-20">
               <div className="flex items-center gap-3 mb-10">
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-primary-glow/10 flex items-center justify-center shadow-lg">
-                  <Star className="w-6 h-6 text-primary" />
+                  <HiStar className="w-6 h-6 text-primary" />
                 </div>
                 <h2 className="text-2xl md:text-3xl font-bold text-foreground">Featured Projects</h2>
               </div>
@@ -129,12 +129,12 @@ const Projects = () => {
                     <div className="relative p-6">
                       <div className="relative overflow-hidden rounded-xl mb-6">
                         <Badge className="absolute top-3 left-3 z-10 bg-primary text-primary-foreground shadow-md text-xs">
-                          <Star className="w-3 h-3 mr-1" />
+                          <HiStar className="w-3 h-3 mr-1" />
                           <span>Featured</span>
                         </Badge>
                         {project.status === "Live" && (
                           <Badge className="absolute top-3 right-3 z-10 bg-green-500 text-white shadow-md text-xs">
-                            <Globe className="w-3 h-3 mr-1" />
+                            <HiGlobeAlt className="w-3 h-3 mr-1" />
                             <span>Live</span>
                           </Badge>
                         )}
@@ -169,14 +169,14 @@ const Projects = () => {
                         <div className="flex gap-3 pt-2">
                           <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex-1">
                             <Button size="sm" className="w-full bg-gradient-to-r from-primary to-primary-glow hover:from-primary/90 hover:to-primary-glow/90 text-primary-foreground shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
-                              <Github className="w-4 h-4 mr-2" />
+                              <FaGithub className="w-4 h-4 mr-2" />
                               <span>Code</span>
                             </Button>
                           </a>
                           {project.demo && (
                             <a href={project.demo} target="_blank" rel="noopener noreferrer" className="flex-1">
                               <Button size="sm" variant="outline" className="w-full border-primary/30 text-primary hover:bg-primary/10 hover:border-primary/60 hover:scale-105 transition-all duration-300">
-                                <ExternalLink className="w-4 h-4 mr-2" />
+                                <HiExternalLink className="w-4 h-4 mr-2" />
                                 <span>Demo</span>
                               </Button>
                             </a>
@@ -196,7 +196,7 @@ const Projects = () => {
               <div className="flex items-center gap-3 mb-10">
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-primary-glow/10 flex items-center justify-center shadow-lg">
                   <span className="text-xl">
-                    {filter === "Featured" && <Star className="w-6 h-6 text-primary" />}
+                    {filter === "Featured" && <HiStar className="w-6 h-6 text-primary" />}
                     {filter === "Frontend" && "🎨"}
                     {filter === "AI & ML" && "🤖"}
                     {filter === "Full Stack" && "🔗"}
@@ -218,7 +218,7 @@ const Projects = () => {
                     <div className="relative overflow-hidden rounded-lg mb-4">
                       {project.featured && (
                         <Badge className="absolute top-3 left-3 z-20 bg-gradient-to-r from-primary to-primary-glow text-primary-foreground shadow-lg text-xs hover:scale-105 transition-transform duration-200">
-                          <Star className="w-3 h-3 mr-1" />
+                          <HiStar className="w-3 h-3 mr-1" />
                           <span>Featured</span>
                         </Badge>
                       )}
@@ -227,7 +227,7 @@ const Projects = () => {
                         project.status === "In Progress" ? "bg-gradient-to-r from-yellow-500 to-yellow-600" :
                         "bg-gradient-to-r from-blue-500 to-blue-600"
                       } text-white`}>
-                        {project.status === "Live" && <Globe className="w-3 h-3 mr-1" />}
+                        {project.status === "Live" && <HiGlobeAlt className="w-3 h-3 mr-1" />}
                         {project.status === "In Progress" && "🟡"}
                         {project.status === "Completed" && "🔵"}
                         <span>{project.status}</span>
@@ -242,7 +242,7 @@ const Projects = () => {
                             asChild
                           >
                             <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                              <ExternalLink className="w-4 h-4 mr-1" />
+                              <HiExternalLink className="w-4 h-4 mr-1" />
                               Demo
                             </a>
                           </Button>
@@ -254,7 +254,7 @@ const Projects = () => {
                           asChild
                         >
                           <a href={project.github} target="_blank" rel="noopener noreferrer">
-                            <Github className="w-4 h-4 mr-1" />
+                            <FaGithub className="w-4 h-4 mr-1" />
                             Code
                           </a>
                         </Button>
