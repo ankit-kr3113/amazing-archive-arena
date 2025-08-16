@@ -91,10 +91,10 @@ const Coding = () => {
   const getCurrentData = () => {
     if (apiData) {
       return {
-        leetcode: apiData.leetcode.totalSolved || fallbackData.leetcode.totalSolved,
-        codeforces: apiData.codeforces.problemsSolved || fallbackData.codeforces.problemsSolved,
-        codechef: apiData.codechef.problemsSolved || fallbackData.codechef.problemsSolved,
-        gfg: apiData.gfg.problemsSolved || fallbackData.gfg.problemsSolved
+        leetcode: apiData.leetcode?.problemsSolved?.total || fallbackData.leetcode.totalSolved,
+        codeforces: apiData.codeforces?.problemsSolved?.total || fallbackData.codeforces.problemsSolved,
+        codechef: apiData.codechef?.problemsSolved?.total || fallbackData.codechef.problemsSolved,
+        gfg: apiData.gfg?.problemsSolved?.total || fallbackData.gfg.problemsSolved
       };
     }
     return {
