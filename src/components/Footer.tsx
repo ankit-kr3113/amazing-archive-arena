@@ -14,6 +14,7 @@ import {
   FileText
 } from "lucide-react";
 import { FaStar, FaMagic, FaLaptopCode } from "react-icons/fa";
+import { SiLeetcode, SiGeeksforgeeks, SiCodechef } from "react-icons/si";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
