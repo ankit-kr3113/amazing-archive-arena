@@ -14,6 +14,7 @@ import {
   ChevronDown,
   ChevronUp,
 } from "lucide-react";
+import { FaTools } from "react-icons/fa";
 import { personalInfo, experiences, achievements } from "@/data/portfolioData";
 
 const Experience = () => {
