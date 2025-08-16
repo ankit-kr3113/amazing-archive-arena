@@ -102,12 +102,13 @@ const ProjectImage = ({ src, alt, className }: { src: string; alt: string; class
 
   if (error) {
     return (
-      <div className={`${className} bg-muted/80 flex items-center justify-center border border-border/50`}>
+      <div className={`${className} bg-gradient-to-br from-primary/10 to-primary-glow/5 flex items-center justify-center border border-primary/20`}>
         <div className="text-center p-4">
           <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-2">
-            <FaCode className="w-6 h-6 text-foreground/70" />
+            <FaCode className="w-6 h-6 text-primary" />
           </div>
-          <p className="text-xs text-foreground/60">Project Preview</p>
+          <p className="text-sm font-medium text-primary">Project Preview</p>
+          <p className="text-xs text-foreground/60 mt-1">Click to view live demo</p>
         </div>
       </div>
     );
