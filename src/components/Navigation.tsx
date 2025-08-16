@@ -25,14 +25,14 @@ const Navigation = () => {
   const location = useLocation();
 
   const navigation = [
-    { name: "Overview", href: "/", icon: Eye },
-    { name: "About", href: "/about", icon: User },
-    { name: "Experience", href: "/experience", icon: Briefcase },
-    { name: "Education", href: "/education", icon: GraduationCap },
-    { name: "Skills", href: "/skills", icon: Wrench },
-    { name: "Coding", href: "/coding", icon: Code },
-    { name: "Projects", href: "/projects", icon: FolderOpen },
-    { name: "Contact", href: "/contact", icon: Mail },
+    { name: "Overview", href: "/", icon: HiEye },
+    { name: "About", href: "/about", icon: HiUser },
+    { name: "Experience", href: "/experience", icon: HiBriefcase },
+    { name: "Education", href: "/education", icon: HiAcademicCap },
+    { name: "Skills", href: "/skills", icon: HiCog },
+    { name: "Coding", href: "/coding", icon: HiTerminal },
+    { name: "Projects", href: "/projects", icon: HiFolder },
+    { name: "Contact", href: "/contact", icon: HiMail },
   ];
 
   const isActive = (path: string) => location.pathname === path;
