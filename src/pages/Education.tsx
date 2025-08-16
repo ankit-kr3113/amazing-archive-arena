@@ -5,6 +5,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import { personalInfo } from "@/data/portfolioData";
 
 const Education = () => {
   const [expandedCards, setExpandedCards] = useState<number[]>([]);
