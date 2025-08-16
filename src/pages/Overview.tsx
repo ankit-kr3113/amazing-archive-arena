@@ -570,7 +570,7 @@ const Overview = () => {
                 <div className="grid grid-cols-2 gap-2 mb-4">
                   {techStack.map((tech, index) => (
                     <div key={index} className="flex items-center gap-2 p-2 rounded-lg hover:bg-primary/5 transition-colors">
-                      <span className="text-sm">{tech.icon}</span>
+                      <tech.icon className="w-4 h-4 text-primary" />
                       <span className="text-sm font-medium">{tech.name}</span>
                     </div>
                   ))}
