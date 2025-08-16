@@ -274,7 +274,7 @@ const Contact = () => {
 
                 <div className="flex items-center mb-6">
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mr-4">
-                    <span className="text-2xl">🤝</span>
+                    <HiUsers className="w-6 h-6 text-primary" />
                   </div>
                   <h3 className="text-lg sm:text-xl font-bold">Social Links</h3>
                 </div>
