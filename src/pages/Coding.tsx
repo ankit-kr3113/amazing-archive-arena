@@ -223,13 +223,13 @@ const Coding = () => {
       metric: `Rank ${apiData?.leetcode?.contests?.bestRank || 6851}`
     },
     {
-      title: "Daily Coding Streak Master",
-      description: `Maintained ${apiData?.gfg?.profile?.currentStreak || 7}+ consecutive days of coding streak, showing dedication and consistency with max streak of ${apiData?.gfg?.profile?.maxStreak || 1475} days`,
+      title: "LeetCode Rating Champion",
+      description: `Achieved a competitive rating of ${Math.round(apiData?.leetcode?.profile?.rating || 1649)} on LeetCode with ${apiData?.leetcode?.achievements?.streaks?.totalActiveDays || 149} total active coding days, demonstrating consistent algorithmic excellence`,
       icon: FaFire,
       color: "text-green-400",
       bgColor: "from-green-500/20 to-emerald-500/20",
       borderColor: "border-green-500/30",
-      metric: `${apiData?.gfg?.profile?.currentStreak || 7}+ Days`
+      metric: `${Math.round(apiData?.leetcode?.profile?.rating || 1649)} Rating`
     },
     {
       title: "Multi-Platform Excellence",
