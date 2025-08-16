@@ -123,7 +123,7 @@ const Overview = () => {
 
   const recentActivities = [
     {
-      icon: GitCommit,
+      icon: BiGitCommit,
       title: "Portfolio Enhancement",
       description: "Updated portfolio with modern design and better UX",
       time: "2 days ago",
@@ -132,7 +132,7 @@ const Overview = () => {
       badge: "Live"
     },
     {
-      icon: Trophy,
+      icon: FaTrophy,
       title: "LeetCode Milestone",
       description: "Solved 50+ problems this month, reached 500+ total",
       time: "1 week ago",
@@ -141,7 +141,7 @@ const Overview = () => {
       badge: "Achievement"
     },
     {
-      icon: Rocket,
+      icon: FaRocket,
       title: "Project Deployment",
       description: "Deployed E-commerce platform with CI/CD pipeline",
       time: "3 days ago",
@@ -150,7 +150,7 @@ const Overview = () => {
       badge: "Deployed"
     },
     {
-      icon: BookOpen,
+      icon: FaBook,
       title: "Learning Next.js 14",
       description: "Completed advanced Next.js course with App Router",
       time: "2 weeks ago",
