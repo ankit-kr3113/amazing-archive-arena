@@ -2,7 +2,22 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Menu, X, Download, Code2, Sparkles, User, Briefcase, GraduationCap, Wrench, Code, FolderOpen, Mail, Home, Eye } from "lucide-react";
+import {
+  HiMenuAlt3,
+  HiX,
+  HiDownload,
+  HiCode,
+  HiSparkles,
+  HiUser,
+  HiBriefcase,
+  HiAcademicCap,
+  HiCog,
+  HiTerminal,
+  HiFolder,
+  HiMail,
+  HiHome,
+  HiEye
+} from "react-icons/hi";
 import { personalInfo } from "@/data/portfolioData";
 
 const Navigation = () => {
