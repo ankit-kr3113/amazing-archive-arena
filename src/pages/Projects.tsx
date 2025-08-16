@@ -127,7 +127,7 @@ const Projects = () => {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto">
-              {(filter === "All Projects" ? projects : filteredProjects).map((project, index) => (
+              {filteredProjects.map((project, index) => (
                 <Card key={index} className="group relative overflow-hidden bg-gradient-to-br from-card via-card to-card/90 border border-border/50 shadow-lg hover:shadow-2xl hover:shadow-primary/15 hover:-translate-y-2 hover:scale-[1.02] transition-all duration-500">
                   {/* Enhanced Background Pattern */}
                   <div className="absolute inset-0 opacity-3">
