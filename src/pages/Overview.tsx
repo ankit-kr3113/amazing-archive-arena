@@ -515,7 +515,7 @@ const Overview = () => {
                     <div key={index} className="">
                       <div className="flex items-center justify-between mb-1">
                         <div className="flex items-center gap-2">
-                          <span className="text-sm">{skill.icon}</span>
+                          <skill.icon className="w-4 h-4 text-primary" />
                           <span className="text-sm font-medium">{skill.name}</span>
                         </div>
                         <span className="text-xs text-muted-foreground">{skill.level}%</span>
