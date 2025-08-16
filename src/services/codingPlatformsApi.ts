@@ -1,61 +1,154 @@
 const API_BASE_URL = 'http://localhost:9000/api/v1';
 
 export interface LeetCodeStats {
-  username: string;
-  totalSolved: number;
-  ranking: number;
-  languages?: string[];
+  handle: string;
+  profile: {
+    name?: string;
+    rating: number;
+    maxRating?: number;
+    rank?: string;
+    globalRanking: number;
+    avatar?: string;
+    country?: string;
+    organization?: string;
+    reputation?: number;
+    starRating: number;
+  };
   problemsSolved: {
+    total: number;
     easy: number;
     medium: number;
     hard: number;
   };
-  submissionStats?: {
-    totalSubmissions: number;
-    acceptanceRate: number;
+  contests: {
+    rating: number;
+    attendedCount: number;
+    globalRanking: number;
+    bestRank: number;
+    topPercentage: string;
   };
-  badges?: any[];
-  recentSubmissions?: any[];
+  achievements: {
+    stars: string;
+    streaks: {
+      currentStreak: number;
+      maxStreak: number;
+      totalActiveDays: number;
+    };
+  };
+  lastUpdated: string;
 }
 
 export interface CodeForcesStats {
   handle: string;
-  rating: number;
-  rank: string;
-  maxRating: number;
-  maxRank: string;
-  contribution: number;
-  friendOfCount?: number;
-  lastOnlineTimeSeconds?: number;
-  registrationTimeSeconds?: number;
-  problemsSolved: number;
-  contestsParticipated: number;
-  submissions?: any[];
+  profile: {
+    name: string;
+    rating: number;
+    maxRating: number;
+    rank: string;
+    globalRanking?: number;
+    avatar: string;
+    country: string;
+    organization: string;
+    contribution: number;
+  };
+  problemsSolved: {
+    total: number;
+    easy: number;
+    medium: number;
+    hard: number;
+    unrated: number;
+  };
+  contests: {
+    rating: number;
+    attendedCount: number;
+    globalRanking?: number;
+    bestRank: number;
+    topPercentage?: string;
+  };
+  achievements: {
+    stars?: string;
+    badges: string;
+    streaks?: any;
+  };
+  lastUpdated: string;
 }
 
 export interface CodeChefStats {
-  username: string;
-  rating: number;
-  stars: number;
-  highestRating: number;
-  globalRank: number;
-  countryRank: number;
-  problemsSolved: number;
-  contests?: any[];
-  badges?: any[];
+  handle: string;
+  profile: {
+    name?: string;
+    rating: number;
+    maxRating: number;
+    rank?: string;
+    globalRanking: number;
+    avatar?: string;
+    country?: string;
+    organization?: string;
+  };
+  problemsSolved: {
+    total: number;
+    easy: number;
+    medium: number;
+    hard: number;
+    basic: number;
+  };
+  contests: {
+    rating: number;
+    attendedCount: number;
+    globalRanking: number;
+    bestRank?: number;
+    topPercentage?: string;
+  };
+  achievements: {
+    stars: string;
+    badges?: string;
+    streaks?: any;
+  };
+  lastUpdated: string;
 }
 
 export interface GFGStats {
-  username: string;
-  institution?: string;
-  score: number;
-  rank: number;
-  problemsSolved: number;
-  codingScore: number;
-  monthlyCoding?: number;
-  weeklyStreak?: number;
-  totalSubmissions?: number;
-  badges?: any[];
+  handle: string;
+  profile: {
+    name: string;
+    rating: number;
+    maxRating: number;
+    rank: string;
+    globalRanking?: number;
+    avatar?: string;
+    country?: string;
+    organization: string;
+    codingScore: number;
+    contestRating: number;
+    instituteRank: string;
+    totalProblems: number;
+    currentStreak: number;
+    maxStreak: number;
+    yearlySubmissions: number;
+  };
+  problemsSolved: {
+    total: number;
+    easy: number;
+    medium: number;
+    hard: number;
+    basic: number;
+  };
+  contests: {
+    rating: number;
+    attendedCount?: number;
+    globalRanking?: number;
+    bestRank?: number;
+    topPercentage?: string;
+  };
+  achievements: {
+    stars?: string;
+    badges: string;
+    streaks: {
+      current: number;
+      max: number;
+    };
+  };
+  lastUpdated: string;
 }
 
 export interface AllPlatformStats {
