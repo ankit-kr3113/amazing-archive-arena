@@ -735,6 +735,11 @@ const Overview = () => {
                               className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                            <div className="absolute top-2 left-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                              <div className="bg-primary/90 text-primary-foreground px-2 py-1 rounded-full text-xs font-medium">
+                                Click to view
+                              </div>
+                            </div>
                             <div className="absolute top-2 right-2 flex items-center gap-2">
                               <Badge variant="secondary" className="text-xs">
                                 {project.category}
