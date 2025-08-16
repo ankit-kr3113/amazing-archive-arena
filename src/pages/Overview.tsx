@@ -2,50 +2,50 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
-  Github,
-  Linkedin,
-  Mail,
   Download,
   ExternalLink,
-  Code2,
-  Rocket,
-  GraduationCap,
-  Trophy,
-  Star,
   MapPin,
   Calendar,
-  Briefcase,
-  Terminal,
-  Database,
-  Globe,
-  Smartphone,
   Clock,
   TrendingUp,
   Zap,
-  GitCommit,
-  BookOpen,
-  Award,
   Target,
   Activity,
-  CheckCircle,
   CircleDot,
   Eye,
-  Users,
   ArrowRight,
-  Play,
-  Pause,
-  Phone,
-  MessageSquare,
-  FileText,
-  BarChart3,
-  Sparkles,
   ChevronRight
 } from "lucide-react";
+import {
+  FaGithub,
+  FaReact,
+  FaNodeJs,
+  FaGraduationCap,
+  FaTrophy,
+  FaStar,
+  FaBriefcase,
+  FaRocket,
+  FaCode,
+  FaBook,
+  FaEnvelope
+} from "react-icons/fa";
+import {
+  SiTypescript,
+  SiMongodb,
+  SiExpress,
+  SiNextdotjs
+} from "react-icons/si";
+import {
+  HiChatBubbleLeftRight
+} from "react-icons/hi2";
+import {
+  BiGitCommit
+} from "react-icons/bi";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
 import { Link } from "react-router-dom";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 
 // Typewriter effect hook
 const useTypewriter = (text: string, speed: number = 100) => {
@@ -65,49 +65,75 @@ const useTypewriter = (text: string, speed: number = 100) => {
   return displayText;
 };
 
-const Overview = () => {
-  const [visitorCount, setVisitorCount] = useState(12860);
-  const [isAnimating, setIsAnimating] = useState(false);
-  const sectionRefs = useRef<(HTMLElement | null)[]>([]);
+// Image component with loading and error states
+const ProjectImage = ({ src, alt, className }: { src: string; alt: string; className?: string }) => {
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
+  const handleLoad = () => {
+    setLoading(false);
+  };
+
+  const handleError = () => {
+    setLoading(false);
+    setError(true);
+  };
+
+  if (error) {
+    return (
+      <div className={`${className} bg-muted flex items-center justify-center`}>
+        <div className="text-center p-4">
+          <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-2">
+            <FaCode className="w-6 h-6 text-muted-foreground" />
+          </div>
+          <p className="text-xs text-muted-foreground">Project Preview</p>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="relative">
+      {loading && (
+        <div className={`${className} bg-muted animate-pulse flex items-center justify-center absolute inset-0 z-10`}>
+          <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin"></div>
+        </div>
+      )}
+      <img
+        src={src}
+        alt={alt}
+        className={className}
+        onLoad={handleLoad}
+        onError={handleError}
+        loading="lazy"
+      />
+    </div>
+  );
+};
+
+const Overview = () => {
   // Typewriter effect for hero
   const typewriterText = useTypewriter("Full Stack Developer & Problem Solver", 80);
 
-  // Enhanced stats with real-time feeling
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setVisitorCount(prev => prev + Math.floor(Math.random() * 3));
-    }, 10000); // Update every 10 seconds
-    return () => clearInterval(interval);
-  }, []);
-
-  const techStack = [
-    { name: "React", color: "bg-blue-500", icon: "⚛️", level: 90 },
-    { name: "Node.js", color: "bg-green-500", icon: "🟢", level: 85 },
-    { name: "TypeScript", color: "bg-blue-600", icon: "📘", level: 80 },
-    { name: "MongoDB", color: "bg-green-600", icon: "🍃", level: 75 },
-    { name: "Express", color: "bg-gray-600", icon: "🚀", level: 80 },
-    { name: "Next.js", color: "bg-black", icon: "▲", level: 85 }
-  ];
-
+  // Consolidated data - no duplicates
   const highlights = [
-    { icon: GraduationCap, title: "B.Tech CS", subtitle: "NIT Patna", year: "2025", progress: 75, trend: "+5%", isLive: false },
-    { icon: Code2, title: "15+ Projects", subtitle: "Full Stack", year: "2+ Years", progress: 85, trend: "+3 this month", isLive: true },
-    { icon: Trophy, title: "DSA Expert", subtitle: "500+ Problems", year: "LeetCode", progress: 90, trend: "+50 this week", isLive: true },
-    { icon: Briefcase, title: "Experience", subtitle: "Internships & Projects", year: "Active", progress: 80, trend: "Growing", isLive: false }
+    { icon: FaGraduationCap, title: "B.Tech CS", subtitle: "NIT Patna", year: "2025", progress: 75, trend: "+5%", isLive: false },
+    { icon: FaCode, title: "15+ Projects", subtitle: "Full Stack", year: "2+ Years", progress: 85, trend: "+3 this month", isLive: true },
+    { icon: FaTrophy, title: "DSA Expert", subtitle: "500+ Problems", year: "LeetCode", progress: 90, trend: "+50 this week", isLive: true },
+    { icon: FaBriefcase, title: "Experience", subtitle: "Internships & Projects", year: "Active", progress: 80, trend: "Growing", isLive: false }
   ];
 
   // Quick actions data
   const quickActions = [
-    { icon: Mail, label: "Send Email", href: "mailto:yuvraj.mehta532@gmail.com", type: "external" },
+    { icon: FaEnvelope, label: "Send Email", href: "mailto:yuvraj.mehta532@gmail.com", type: "external" },
     { icon: Download, label: "Download Resume", href: "/Yuvraj_Resume_v2_1 (1).pdf", type: "download" },
-    { icon: MessageSquare, label: "Schedule Call", href: "/contact", type: "internal" },
-    { icon: Github, label: "View GitHub", href: "https://github.com/yuvraj-mehta", type: "external" }
+    { icon: HiChatBubbleLeftRight, label: "Schedule Call", href: "/contact", type: "internal" },
+    { icon: FaGithub, label: "View GitHub", href: "https://github.com/yuvraj-mehta", type: "external" }
   ];
 
   const recentActivities = [
     {
-      icon: GitCommit,
+      icon: BiGitCommit,
       title: "Portfolio Enhancement",
       description: "Updated portfolio with modern design and better UX",
       time: "2 days ago",
@@ -116,7 +142,7 @@ const Overview = () => {
       badge: "Live"
     },
     {
-      icon: Trophy,
+      icon: FaTrophy,
       title: "LeetCode Milestone",
       description: "Solved 50+ problems this month, reached 500+ total",
       time: "1 week ago",
@@ -125,7 +151,7 @@ const Overview = () => {
       badge: "Achievement"
     },
     {
-      icon: Rocket,
+      icon: FaRocket,
       title: "Project Deployment",
       description: "Deployed E-commerce platform with CI/CD pipeline",
       time: "3 days ago",
@@ -134,7 +160,7 @@ const Overview = () => {
       badge: "Deployed"
     },
     {
-      icon: BookOpen,
+      icon: FaBook,
       title: "Learning Next.js 14",
       description: "Completed advanced Next.js course with App Router",
       time: "2 weeks ago",
@@ -144,8 +170,8 @@ const Overview = () => {
     }
   ];
 
-  // Portfolio preview data
-  const portfolioPreview = [
+  // Single source of truth for projects and skills
+  const featuredProjects = [
     {
       title: "E-Commerce Platform",
       description: "Full-stack MERN application with payment integration",
@@ -179,12 +205,12 @@ const Overview = () => {
   ];
 
   const skillLevels = [
-    { name: "React", level: 90, icon: "��️", category: "Frontend" },
-    { name: "Node.js", level: 85, icon: "🟢", category: "Backend" },
-    { name: "TypeScript", level: 80, icon: "📘", category: "Language" },
-    { name: "MongoDB", level: 75, icon: "🍃", category: "Database" },
-    { name: "Next.js", level: 85, icon: "▲", category: "Framework" },
-    { name: "Express", level: 80, icon: "🚀", category: "Backend" }
+    { name: "React", level: 90, icon: FaReact, category: "Frontend" },
+    { name: "Node.js", level: 85, icon: FaNodeJs, category: "Backend" },
+    { name: "TypeScript", level: 80, icon: SiTypescript, category: "Language" },
+    { name: "MongoDB", level: 75, icon: SiMongodb, category: "Database" },
+    { name: "Next.js", level: 85, icon: SiNextdotjs, category: "Framework" },
+    { name: "Express", level: 80, icon: SiExpress, category: "Backend" }
   ];
 
   const currentStatus = {
@@ -195,27 +221,6 @@ const Overview = () => {
     location: "Patna, Bihar (Open to Remote)",
     lastUpdated: "Updated 2 days ago"
   };
-
-  const featuredProjects = [
-    {
-      title: "E-Commerce Platform",
-      description: "Full-stack MERN application with payment integration",
-      tech: ["React", "Node.js", "MongoDB", "Stripe"],
-      category: "Full Stack"
-    },
-    {
-      title: "Task Management App",
-      description: "Real-time collaboration tool with drag-and-drop",
-      tech: ["Next.js", "TypeScript", "PostgreSQL"],
-      category: "Web App"
-    },
-    {
-      title: "Weather Dashboard",
-      description: "Responsive weather app with location-based forecasts",
-      tech: ["React", "API Integration", "Chart.js"],
-      category: "Frontend"
-    }
-  ];
 
   return (
     <div className="min-h-screen bg-background">
@@ -283,7 +288,7 @@ const Overview = () => {
                   <span className="text-blue-600 dark:text-blue-400 font-medium">Remote</span>
                 </div>
                 <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/30 text-sm">
-                  <Star className="w-3 h-3 text-purple-500 fill-current" />
+                  <FaStar className="w-3 h-3 text-purple-500" />
                   <span className="text-purple-600 dark:text-purple-400 font-medium">Top 27.7%</span>
                 </div>
               </div>
@@ -314,40 +319,6 @@ const Overview = () => {
             </div>
           </div>
 
-          {/* Quick Actions Panel */}
-          <Card className="p-6 mb-12 bg-gradient-to-r from-primary/5 to-primary-glow/5 border-primary/20 animate-fade-in-up animation-delay-800">
-            <div className="text-center mb-6">
-              <h3 className="text-lg font-semibold mb-2">Quick Actions</h3>
-              <p className="text-sm text-muted-foreground">Get in touch or explore my work</p>
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {quickActions.map((action, index) => (
-                <Button
-                  key={index}
-                  variant="outline"
-                  className="h-auto p-4 flex flex-col items-center gap-2 hover:scale-105 transition-all duration-300 group"
-                  asChild
-                >
-                  {action.type === 'external' ? (
-                    <a href={action.href} target="_blank" rel="noopener noreferrer">
-                      <action.icon className="w-5 h-5 group-hover:animate-bounce" />
-                      <span className="text-xs font-medium">{action.label}</span>
-                    </a>
-                  ) : action.type === 'download' ? (
-                    <a href={action.href} download>
-                      <action.icon className="w-5 h-5 group-hover:animate-bounce" />
-                      <span className="text-xs font-medium">{action.label}</span>
-                    </a>
-                  ) : (
-                    <Link to={action.href}>
-                      <action.icon className="w-5 h-5 group-hover:animate-bounce" />
-                      <span className="text-xs font-medium">{action.label}</span>
-                    </Link>
-                  )}
-                </Button>
-              ))}
-            </div>
-          </Card>
 
           {/* Enhanced Quick Stats with Animations */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
@@ -405,14 +376,13 @@ const Overview = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {portfolioPreview.map((project, index) => (
+              {featuredProjects.map((project, index) => (
                 <Card key={index} className="group overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105">
                   <div className="relative overflow-hidden">
-                    <img
+                    <ProjectImage
                       src={project.image}
                       alt={project.title}
                       className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
-                      loading="lazy"
                     />
                     {project.isLive && (
                       <div className="absolute top-2 right-2 bg-green-500 text-white text-xs px-2 py-1 rounded-full flex items-center gap-1">
@@ -431,7 +401,7 @@ const Overview = () => {
                         </Button>
                         <Button size="sm" variant="outline" className="text-xs" asChild>
                           <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                            <Github className="w-3 h-3 mr-1" />
+                            <FaGithub className="w-3 h-3 mr-1" />
                             Code
                           </a>
                         </Button>
@@ -533,7 +503,7 @@ const Overview = () => {
                     <div key={index} className="">
                       <div className="flex items-center justify-between mb-1">
                         <div className="flex items-center gap-2">
-                          <span className="text-sm">{skill.icon}</span>
+                          <skill.icon className="w-4 h-4 text-primary" />
                           <span className="text-sm font-medium">{skill.name}</span>
                         </div>
                         <span className="text-xs text-muted-foreground">{skill.level}%</span>
@@ -556,7 +526,7 @@ const Overview = () => {
               <Card className="p-6 border-primary/20">
                 <div className="flex items-center mb-4">
                   <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center mr-3">
-                    <GraduationCap className="w-4 h-4 text-primary" />
+                    <FaGraduationCap className="w-4 h-4 text-primary" />
                   </div>
                   <h3 className="text-lg font-semibold">About Me</h3>
                 </div>
@@ -577,52 +547,42 @@ const Overview = () => {
                 </Button>
               </Card>
 
-              {/* Tech Stack */}
-              <Card className="p-6 border-primary/20">
+
+              {/* Quick Actions */}
+              <Card className="p-6 border-primary/20 bg-gradient-to-r from-primary/5 to-primary-glow/5">
                 <div className="flex items-center mb-4">
                   <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center mr-3">
-                    <Code2 className="w-4 h-4 text-primary" />
+                    <Zap className="w-4 h-4 text-primary" />
                   </div>
-                  <h3 className="text-lg font-semibold">Tech Stack</h3>
+                  <h3 className="text-lg font-semibold">Quick Actions</h3>
                 </div>
-                <div className="grid grid-cols-2 gap-2 mb-4">
-                  {techStack.map((tech, index) => (
-                    <div key={index} className="flex items-center gap-2 p-2 rounded-lg hover:bg-primary/5 transition-colors">
-                      <span className="text-sm">{tech.icon}</span>
-                      <span className="text-sm font-medium">{tech.name}</span>
-                    </div>
+                <div className="space-y-3">
+                  {quickActions.map((action, index) => (
+                    <Button
+                      key={index}
+                      variant="outline"
+                      className="w-full justify-start h-auto p-3 hover:scale-105 transition-all duration-300 group"
+                      asChild
+                    >
+                      {action.type === 'external' ? (
+                        <a href={action.href} target="_blank" rel="noopener noreferrer">
+                          <action.icon className="w-4 h-4 mr-3 group-hover:animate-bounce" />
+                          <span className="text-sm font-medium">{action.label}</span>
+                        </a>
+                      ) : action.type === 'download' ? (
+                        <a href={action.href} download>
+                          <action.icon className="w-4 h-4 mr-3 group-hover:animate-bounce" />
+                          <span className="text-sm font-medium">{action.label}</span>
+                        </a>
+                      ) : (
+                        <Link to={action.href}>
+                          <action.icon className="w-4 h-4 mr-3 group-hover:animate-bounce" />
+                          <span className="text-sm font-medium">{action.label}</span>
+                        </Link>
+                      )}
+                    </Button>
                   ))}
                 </div>
-                <Button asChild variant="outline" size="sm" className="w-full">
-                  <Link to="/skills">All Skills & Tools</Link>
-                </Button>
-              </Card>
-
-              {/* Quick Contact */}
-              <Card className="p-6 border-primary/20">
-                <div className="flex items-center mb-4">
-                  <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center mr-3">
-                    <Mail className="w-4 h-4 text-primary" />
-                  </div>
-                  <h3 className="text-lg font-semibold">Connect</h3>
-                </div>
-                <div className="flex gap-2 mb-4">
-                  <Button asChild size="sm" variant="outline" className="flex-1">
-                    <a href="https://github.com/yuvraj-mehta" target="_blank" rel="noopener noreferrer">
-                      <Github className="w-3 h-3 mr-1" />
-                      GitHub
-                    </a>
-                  </Button>
-                  <Button asChild size="sm" variant="outline" className="flex-1">
-                    <a href="https://www.linkedin.com/in/yuvraj-mehta-a0274528a/" target="_blank" rel="noopener noreferrer">
-                      <Linkedin className="w-3 h-3 mr-1" />
-                      LinkedIn
-                    </a>
-                  </Button>
-                </div>
-                <Button asChild size="sm" className="w-full">
-                  <Link to="/contact">Get In Touch</Link>
-                </Button>
               </Card>
             </div>
 
@@ -697,50 +657,13 @@ const Overview = () => {
                   </Button>
                   <Button asChild size="sm" className="flex-1">
                     <a href="https://github.com/yuvraj-mehta" target="_blank" rel="noopener noreferrer">
-                      <Github className="w-3 h-3 mr-2" />
+                      <FaGithub className="w-3 h-3 mr-2" />
                       GitHub Activity
                     </a>
                   </Button>
                 </div>
               </Card>
               
-              {/* Featured Projects */}
-              <Card className="p-6 border-primary/20">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center">
-                    <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center mr-3">
-                      <Rocket className="w-4 h-4 text-primary" />
-                    </div>
-                    <h3 className="text-lg font-semibold">Featured Projects</h3>
-                  </div>
-                  <Button asChild variant="ghost" size="sm">
-                    <Link to="/projects">
-                      View All <ExternalLink className="w-3 h-3 ml-1" />
-                    </Link>
-                  </Button>
-                </div>
-                
-                <div className="grid gap-4">
-                  {featuredProjects.map((project, index) => (
-                    <div key={index} className="p-4 rounded-lg border border-border/50 hover:border-primary/30 transition-colors">
-                      <div className="flex items-start justify-between mb-2">
-                        <h4 className="font-semibold text-foreground">{project.title}</h4>
-                        <Badge variant="secondary" className="text-xs">
-                          {project.category}
-                        </Badge>
-                      </div>
-                      <p className="text-sm text-muted-foreground mb-3">{project.description}</p>
-                      <div className="flex flex-wrap gap-1">
-                        {project.tech.map((tech, techIndex) => (
-                          <Badge key={techIndex} variant="outline" className="text-xs">
-                            {tech}
-                          </Badge>
-                        ))}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </Card>
 
               {/* Experience & Education */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -749,7 +672,7 @@ const Overview = () => {
                 <Card className="p-6 border-primary/20">
                   <div className="flex items-center mb-4">
                     <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center mr-3">
-                      <GraduationCap className="w-4 h-4 text-primary" />
+                      <FaGraduationCap className="w-4 h-4 text-primary" />
                     </div>
                     <h3 className="text-lg font-semibold">Education</h3>
                   </div>
@@ -774,7 +697,7 @@ const Overview = () => {
                 <Card className="p-6 border-primary/20">
                   <div className="flex items-center mb-4">
                     <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center mr-3">
-                      <Trophy className="w-4 h-4 text-primary" />
+                      <FaTrophy className="w-4 h-4 text-primary" />
                     </div>
                     <h3 className="text-lg font-semibold">Coding</h3>
                   </div>
@@ -804,29 +727,6 @@ const Overview = () => {
                 </Card>
               </div>
 
-              {/* Quick Actions */}
-              <Card className="p-6 border-primary/20 bg-gradient-to-r from-primary/5 to-primary-glow/5">
-                <div className="text-center">
-                  <h3 className="text-lg font-semibold mb-2">Ready to Collaborate?</h3>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Let's discuss your next project or explore opportunities together
-                  </p>
-                  <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                    <Button asChild>
-                      <a href="/Yuvraj_Resume_v2_1 (1).pdf" target="_blank" rel="noopener noreferrer">
-                        <Download className="w-4 h-4 mr-2" />
-                        Download Resume
-                      </a>
-                    </Button>
-                    <Button asChild variant="outline">
-                      <a href="mailto:yuvrajmehta2003@gmail.com">
-                        <Mail className="w-4 h-4 mr-2" />
-                        Send Email
-                      </a>
-                    </Button>
-                  </div>
-                </div>
-              </Card>
             </div>
           </div>
         </div>
