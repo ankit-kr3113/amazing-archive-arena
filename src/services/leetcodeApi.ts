@@ -99,19 +99,32 @@ class LeetCodeApiService {
     this.cache.set(key, { data, timestamp: Date.now() });
   }
 
-  // Helper method for API requests with retry logic
-  private async fetchWithRetry(url: string, retries = this.MAX_RETRIES): Promise<Response> {
+  // Helper method for API requests with retry logic and fallback endpoints
+  private async fetchWithRetry(endpoint: string, retries = this.MAX_RETRIES): Promise<Response> {
+    const currentApi = this.apiEndpoints[this.currentEndpointIndex];
+    const url = `${currentApi}/${endpoint}`;
+
     try {
       const response = await fetch(url);
 
       if (response.status === 429) {
+        console.warn(`Rate limited on ${currentApi}`);
+
+        // Try next endpoint if available
+        if (this.currentEndpointIndex < this.apiEndpoints.length - 1) {
+          this.currentEndpointIndex++;
+          console.warn(`Switching to backup endpoint: ${this.apiEndpoints[this.currentEndpointIndex]}`);
+          return this.fetchWithRetry(endpoint, retries);
+        }
+
+        // If no more endpoints, wait and retry with current endpoint
         if (retries > 0) {
           const delay = this.BASE_DELAY * Math.pow(2, this.MAX_RETRIES - retries);
-          console.warn(`Rate limited. Retrying in ${delay}ms... (${retries} retries left)`);
+          console.warn(`All endpoints rate limited. Waiting ${delay}ms... (${retries} retries left)`);
           await this.delay(delay);
-          return this.fetchWithRetry(url, retries - 1);
+          return this.fetchWithRetry(endpoint, retries - 1);
         } else {
-          throw new Error('Rate limit exceeded after all retries');
+          throw new Error('Rate limit exceeded on all endpoints');
         }
       }
 
@@ -121,12 +134,20 @@ class LeetCodeApiService {
 
       return response;
     } catch (error) {
-      if (retries > 0 && error instanceof TypeError) {
-        // Network error, retry
-        const delay = this.BASE_DELAY * Math.pow(2, this.MAX_RETRIES - retries);
-        console.warn(`Network error. Retrying in ${delay}ms... (${retries} retries left)`);
-        await this.delay(delay);
-        return this.fetchWithRetry(url, retries - 1);
+      if (retries > 0 && (error instanceof TypeError || error.message.includes('fetch'))) {
+        // Network error, try next endpoint or retry
+        if (this.currentEndpointIndex < this.apiEndpoints.length - 1) {
+          this.currentEndpointIndex++;
+          console.warn(`Network error on ${currentApi}. Trying backup endpoint: ${this.apiEndpoints[this.currentEndpointIndex]}`);
+          return this.fetchWithRetry(endpoint, retries);
+        } else {
+          // Reset to first endpoint and retry after delay
+          this.currentEndpointIndex = 0;
+          const delay = this.BASE_DELAY;
+          console.warn(`Network error. Retrying in ${delay}ms... (${retries} retries left)`);
+          await this.delay(delay);
+          return this.fetchWithRetry(endpoint, retries - 1);
+        }
       }
       throw error;
     }
@@ -303,7 +324,7 @@ class LeetCodeApiService {
         {
           id: '1',
           displayName: 'Annual Badge 2024',
-          icon: '🏆',
+          icon: '���',
           creationDate: '2024-01-01',
           category: 'Annual'
         },
