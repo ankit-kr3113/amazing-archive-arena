@@ -18,6 +18,9 @@ import {
 } from "lucide-react";
 import {
   FaGithub,
+  FaLinkedin,
+  FaTwitter,
+  FaInstagram,
   FaReact,
   FaNodeJs,
   FaGraduationCap,
@@ -27,7 +30,11 @@ import {
   FaRocket,
   FaCode,
   FaBook,
-  FaEnvelope
+  FaEnvelope,
+  FaPhone,
+  FaMapMarkerAlt,
+  FaCalendarAlt,
+  FaLink
 } from "react-icons/fa";
 import {
   SiTypescript,
