@@ -5,6 +5,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
 import { useState, useEffect } from "react";
+import { codingPlatformsApi, AllPlatformStats } from "@/services/codingPlatformsApi";
 
 // React Icons imports
 import {
