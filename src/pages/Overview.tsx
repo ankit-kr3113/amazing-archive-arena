@@ -82,30 +82,10 @@ const useTypewriter = (text: string, speed: number = 100) => {
 };
 
 const Overview = () => {
-  const [visitorCount, setVisitorCount] = useState(12860);
-  const [isAnimating, setIsAnimating] = useState(false);
-  const sectionRefs = useRef<(HTMLElement | null)[]>([]);
-
   // Typewriter effect for hero
   const typewriterText = useTypewriter("Full Stack Developer & Problem Solver", 80);
 
-  // Enhanced stats with real-time feeling
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setVisitorCount(prev => prev + Math.floor(Math.random() * 3));
-    }, 10000); // Update every 10 seconds
-    return () => clearInterval(interval);
-  }, []);
-
-  const techStack = [
-    { name: "React", color: "bg-blue-500", icon: FaReact, level: 90 },
-    { name: "Node.js", color: "bg-green-500", icon: FaNodeJs, level: 85 },
-    { name: "TypeScript", color: "bg-blue-600", icon: SiTypescript, level: 80 },
-    { name: "MongoDB", color: "bg-green-600", icon: SiMongodb, level: 75 },
-    { name: "Express", color: "bg-gray-600", icon: SiExpress, level: 80 },
-    { name: "Next.js", color: "bg-black", icon: SiNextdotjs, level: 85 }
-  ];
-
+  // Consolidated data - no duplicates
   const highlights = [
     { icon: FaGraduationCap, title: "B.Tech CS", subtitle: "NIT Patna", year: "2025", progress: 75, trend: "+5%", isLive: false },
     { icon: FaCode, title: "15+ Projects", subtitle: "Full Stack", year: "2+ Years", progress: 85, trend: "+3 this month", isLive: true },
@@ -160,8 +140,8 @@ const Overview = () => {
     }
   ];
 
-  // Portfolio preview data
-  const portfolioPreview = [
+  // Single source of truth for projects and skills
+  const featuredProjects = [
     {
       title: "E-Commerce Platform",
       description: "Full-stack MERN application with payment integration",
@@ -211,27 +191,6 @@ const Overview = () => {
     location: "Patna, Bihar (Open to Remote)",
     lastUpdated: "Updated 2 days ago"
   };
-
-  const featuredProjects = [
-    {
-      title: "E-Commerce Platform",
-      description: "Full-stack MERN application with payment integration",
-      tech: ["React", "Node.js", "MongoDB", "Stripe"],
-      category: "Full Stack"
-    },
-    {
-      title: "Task Management App",
-      description: "Real-time collaboration tool with drag-and-drop",
-      tech: ["Next.js", "TypeScript", "PostgreSQL"],
-      category: "Web App"
-    },
-    {
-      title: "Weather Dashboard",
-      description: "Responsive weather app with location-based forecasts",
-      tech: ["React", "API Integration", "Chart.js"],
-      category: "Frontend"
-    }
-  ];
 
   return (
     <div className="min-h-screen bg-background">
