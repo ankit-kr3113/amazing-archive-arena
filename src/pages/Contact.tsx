@@ -168,7 +168,7 @@ const Contact = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
             {/* Contact Information */}
             <div className="lg:col-span-1 space-y-6">
               <Card className="portfolio-card slide-up hover:shadow-xl hover:shadow-primary/10 transition-all duration-300">
