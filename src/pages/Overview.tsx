@@ -413,7 +413,7 @@ const Overview = () => {
               return (
                 <Card
                   key={index}
-                  className={`group relative p-6 text-center bg-gradient-to-br ${gradientColors[index]} border-2 ${borderColors[index]} cursor-pointer transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10 backdrop-blur-sm hover:-translate-y-2`}
+                  className={`group relative p-4 text-center bg-gradient-to-br ${gradientColors[index]} border ${borderColors[index]} cursor-pointer transition-all duration-300 hover:shadow-xl hover:shadow-primary/15 backdrop-blur-sm hover:-translate-y-1`}
                 >
                   {/* Enhanced gradient overlay */}
                   <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-black/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
