@@ -476,23 +476,59 @@ const Overview = () => {
                   </div>
                   <h3 className="text-lg font-semibold text-foreground">Coding Achievements</h3>
                 </div>
+
+                {/* Total Problems Summary */}
+                <div className="mb-4 p-3 rounded-lg bg-gradient-to-r from-primary/10 to-primary-glow/10 border border-primary/20">
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm font-medium text-foreground">Total Solved</span>
+                    <Badge className="bg-primary/20 text-primary border-primary/30 font-bold">
+                      {parseInt(achievements.leetcode.problemsSolved.replace('+', '')) +
+                       parseInt(achievements.codechef.problemsSolved.replace('+', '')) +
+                       parseInt(achievements.codeforces.problemsSolved.replace('+', '')) +
+                       parseInt(achievements.geeksforgeeks.problemsSolved.replace('+', ''))}+ Problems
+                    </Badge>
+                  </div>
+                </div>
+
+                {/* Platform Details */}
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
                     <span className="text-sm font-medium text-foreground">LeetCode</span>
-                    <Badge className="bg-orange-500/20 text-orange-200 border-orange-500/30">
-                      {achievements.leetcode.problemsSolved} Solved
-                    </Badge>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm font-medium text-foreground">GeeksforGeeks</span>
-                    <Badge className="bg-green-500/20 text-green-200 border-green-500/30">
-                      Active
-                    </Badge>
+                    <div className="flex gap-2">
+                      <Badge className="bg-orange-500/20 text-orange-200 border-orange-500/30 text-xs">
+                        {achievements.leetcode.rating}
+                      </Badge>
+                      <Badge className="bg-orange-500/10 text-orange-300 border-orange-500/20 text-xs">
+                        {achievements.leetcode.problemsSolved}
+                      </Badge>
+                    </div>
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-sm font-medium text-foreground">CodeChef</span>
-                    <Badge className="bg-purple-500/20 text-purple-200 border-purple-500/30">
-                      Contests
+                    <div className="flex gap-2">
+                      <Badge className="bg-amber-500/20 text-amber-200 border-amber-500/30 text-xs">
+                        {achievements.codechef.rating}
+                      </Badge>
+                      <Badge className="bg-amber-500/10 text-amber-300 border-amber-500/20 text-xs">
+                        {achievements.codechef.problemsSolved}
+                      </Badge>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm font-medium text-foreground">Codeforces</span>
+                    <div className="flex gap-2">
+                      <Badge className="bg-blue-500/20 text-blue-200 border-blue-500/30 text-xs">
+                        {achievements.codeforces.rating}
+                      </Badge>
+                      <Badge className="bg-blue-500/10 text-blue-300 border-blue-500/20 text-xs">
+                        {achievements.codeforces.problemsSolved}
+                      </Badge>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm font-medium text-foreground">GeeksforGeeks</span>
+                    <Badge className="bg-green-500/20 text-green-200 border-green-500/30 text-xs">
+                      {achievements.geeksforgeeks.problemsSolved}
                     </Badge>
                   </div>
                 </div>
