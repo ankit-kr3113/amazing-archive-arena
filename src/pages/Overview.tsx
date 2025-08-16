@@ -559,10 +559,10 @@ const Overview = () => {
               </Card>
               
               {/* About Summary */}
-              <Card className="p-6 border-primary/30">
+              <Card className="p-6 border-2 border-primary/40 hover:border-primary/60 shadow-xl hover:shadow-2xl hover:shadow-emerald-500/15 transition-all duration-500 backdrop-blur-sm bg-gradient-to-br from-card/90 to-card/70 hover:-translate-y-1">
                 <div className="flex items-center mb-4">
-                  <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center mr-3">
-                    <FaGraduationCap className="w-4 h-4 text-primary" />
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500/30 to-green-500/30 flex items-center justify-center mr-3 shadow-lg">
+                    <FaGraduationCap className="w-5 h-5 text-emerald-400" />
                   </div>
                   <h3 className="text-lg font-semibold text-foreground">About Me</h3>
                 </div>
@@ -584,10 +584,10 @@ const Overview = () => {
               </Card>
 
               {/* Quick Actions */}
-              <Card className="p-6 border-primary/30 bg-gradient-to-r from-primary/5 to-primary-glow/5">
+              <Card className="p-6 border-2 border-primary/40 hover:border-primary/60 bg-gradient-to-br from-primary/10 via-primary-glow/10 to-accent/10 shadow-xl hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 backdrop-blur-sm hover:-translate-y-1">
                 <div className="flex items-center mb-4">
-                  <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center mr-3">
-                    <Zap className="w-4 h-4 text-primary" />
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500/30 to-pink-500/30 flex items-center justify-center mr-3 shadow-lg">
+                    <Zap className="w-5 h-5 text-purple-400" />
                   </div>
                   <h3 className="text-lg font-semibold text-foreground">Quick Actions</h3>
                 </div>
