@@ -328,7 +328,7 @@ const Projects = () => {
               <a href={socialLinks.github.url} target="_blank" rel="noopener noreferrer">
                 <Button className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 text-base font-semibold rounded-full hover:scale-105 transition-all duration-300 shadow-lg">
                   View More Projects on GitHub
-                  <Github className="w-5 h-5 ml-2" />
+                  <FaGithub className="w-5 h-5 ml-2" />
                 </Button>
               </a>
             </div>
