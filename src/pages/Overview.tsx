@@ -388,8 +388,8 @@ const Overview = () => {
             </div>
           </div>
 
-          {/* Enhanced Stats Cards with vibrant design */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+          {/* Compact Stats Cards with cohesive design */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
             {highlights.map((item, index) => {
               // Use consistent purple-to-blue gradient theme for all cards
               const gradientColors = {
