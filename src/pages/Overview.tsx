@@ -293,53 +293,53 @@ const Overview = () => {
       <ThemeSwitcher />
 
       {/* Minimalistic Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
+      <section className="relative pt-24 pb-16 overflow-hidden">
         {/* Subtle background gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-background to-background/95"></div>
 
         <div className="relative max-w-4xl mx-auto px-6 text-center z-10">
           {/* Simple status indicator */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-sm mb-8">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-sm mb-10">
             <div className="w-2 h-2 bg-green-400 rounded-full"></div>
             <span className="text-foreground/70">Portfolio Overview</span>
           </div>
 
           {/* Clean typography hierarchy */}
-          <div className="space-y-6">
+          <div className="space-y-8">
             <h1 className="text-5xl md:text-6xl font-bold text-foreground">
-              <span className="text-lg font-normal text-foreground/60 block mb-4">👋 Hello, I'm</span>
+              <span className="text-lg font-normal text-foreground/60 block mb-6">👋 Hello, I'm</span>
               Yuvraj Mehta
             </h1>
 
-            <p className="text-xl md:text-2xl text-foreground/70 font-light max-w-2xl mx-auto">
+            <p className="text-xl md:text-2xl text-foreground/70 font-light max-w-2xl mx-auto mt-6">
               {typewriterText}
             </p>
 
             {/* Simplified info line */}
-            <p className="text-foreground/60 max-w-xl mx-auto">
+            <p className="text-foreground/60 max-w-xl mx-auto mt-4">
               B.Tech CS Student at NIT Patna · 500+ LeetCode Problems · 15+ Projects
             </p>
 
             {/* Clean status badges */}
-            <div className="flex flex-wrap items-center justify-center gap-3 mt-8">
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-500/10 border border-green-500/20">
+            <div className="flex flex-wrap items-center justify-center gap-4 mt-12">
+              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20">
                 <div className="w-2 h-2 bg-green-400 rounded-full"></div>
                 <span className="text-sm text-green-300">Available</span>
               </div>
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20">
+              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20">
                 <MapPin className="w-3 h-3 text-blue-400" />
                 <span className="text-sm text-blue-300">Remote</span>
               </div>
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20">
+              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20">
                 <FaStar className="w-3 h-3 text-purple-400" />
                 <span className="text-sm text-purple-300">Top 27.7%</span>
               </div>
             </div>
 
             {/* Simplified CTA buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12">
               <Button
-                className="px-6 py-3 bg-primary hover:bg-primary/90 transition-colors"
+                className="px-8 py-3 bg-primary hover:bg-primary/90 transition-colors"
                 asChild
               >
                 <Link to="/contact">
@@ -350,7 +350,7 @@ const Overview = () => {
 
               <Button
                 variant="outline"
-                className="px-6 py-3 border-primary/30 hover:border-primary/50 transition-colors"
+                className="px-8 py-3 border-primary/30 hover:border-primary/50 transition-colors"
                 asChild
               >
                 <a href="/Yuvraj_Resume_v2_1 (1).pdf" target="_blank" rel="noopener noreferrer">
@@ -363,29 +363,29 @@ const Overview = () => {
         </div>
 
         {/* Clean stats cards */}
-        <div className="relative max-w-5xl mx-auto px-6 mt-16">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="relative max-w-6xl mx-auto px-6 mt-20">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {highlights.map((item, index) => (
               <Card
                 key={index}
-                className="group p-4 bg-card/50 border border-border/50 hover:border-primary/30 transition-all duration-300 hover:shadow-lg"
+                className="group p-5 bg-card/50 border border-border/50 hover:border-primary/30 transition-all duration-300 hover:shadow-lg"
               >
-                <div className="flex items-center gap-3">
-                  <div className="relative w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                    <item.icon className="w-6 h-6 text-primary" />
+                <div className="flex items-center gap-4">
+                  <div className="relative w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center">
+                    <item.icon className="w-7 h-7 text-primary" />
                     {item.isLive && (
-                      <div className="absolute -top-1 -right-1 w-2 h-2 bg-green-400 rounded-full"></div>
+                      <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full"></div>
                     )}
                   </div>
                   <div className="flex-1 min-w-0">
-                    <div className="font-semibold text-sm text-foreground">{item.title}</div>
-                    <div className="text-xs text-foreground/60">{item.subtitle}</div>
-                    <div className="text-xs text-primary font-medium">{item.year}</div>
+                    <div className="font-semibold text-base text-foreground">{item.title}</div>
+                    <div className="text-sm text-foreground/60">{item.subtitle}</div>
+                    <div className="text-sm text-primary font-medium">{item.year}</div>
                   </div>
                 </div>
 
-                <div className="mt-3 text-xs text-foreground/60 flex items-center gap-1">
-                  <TrendingUp className="w-3 h-3" />
+                <div className="mt-4 text-sm text-foreground/60 flex items-center gap-2">
+                  <TrendingUp className="w-4 h-4" />
                   {item.trend}
                 </div>
               </Card>
