@@ -21,10 +21,10 @@ const About = () => {
   const navigate = useNavigate();
 
   const interests = [
-    { icon: "🤖", name: "Robotics", description: "Building combat & soccer bots" },
-    { icon: "🏃���♂️", name: "Athletics", description: "Bronze in 50m Hurdles" },
-    { icon: "🧩", name: "Problem Solving", description: "Competitive programming" },
-    { icon: "🎯", name: "Mentoring", description: "Leading workshops" },
+    { icon: FaRobot, name: "Robotics", description: "Building combat & soccer bots", color: "text-blue-500" },
+    { icon: FaRunning, name: "Athletics", description: "Bronze in 50m Hurdles", color: "text-green-500" },
+    { icon: FaPuzzlePiece, name: "Problem Solving", description: "Competitive programming", color: "text-purple-500" },
+    { icon: FaBullseye, name: "Mentoring", description: "Leading workshops", color: "text-red-500" },
   ];
 
   // Using centralized data from portfolioData.ts
