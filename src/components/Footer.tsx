@@ -317,30 +317,30 @@ const Footer = () => {
 
           {/* Stats Section - Desktop only */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 py-6 lg:py-8 border-t border-gray-600 border-b border-gray-600">
-            <div className="text-center py-2 sm:py-3">
-              <div className="flex items-center justify-center mb-3 sm:mb-4">
-                <FaStar className="w-4 h-4 sm:w-5 sm:h-5 text-purple-400 mr-2" />
-                <span className="text-xs sm:text-sm text-gray-400 uppercase tracking-wider font-medium">Total Visitors</span>
+            <div className="text-center py-2 lg:py-3">
+              <div className="flex items-center justify-center mb-3 lg:mb-4">
+                <FaStar className="w-4 h-4 lg:w-5 lg:h-5 text-purple-400 mr-2" />
+                <span className="text-xs lg:text-sm text-gray-400 uppercase tracking-wider font-medium">Total Visitors</span>
               </div>
-              <div className="text-xl sm:text-2xl font-bold text-white">15,475</div>
+              <div className="text-xl lg:text-2xl font-bold text-white">15,475</div>
             </div>
 
-            <div className="text-center py-2 sm:py-3">
-              <div className="flex items-center justify-center mb-3 sm:mb-4">
-                <FaMagic className="w-4 h-4 sm:w-5 sm:h-5 text-purple-400 mr-2" />
-                <span className="text-xs sm:text-sm text-gray-400 uppercase tracking-wider font-medium">Last Updated</span>
+            <div className="text-center py-2 lg:py-3">
+              <div className="flex items-center justify-center mb-3 lg:mb-4">
+                <FaMagic className="w-4 h-4 lg:w-5 lg:h-5 text-purple-400 mr-2" />
+                <span className="text-xs lg:text-sm text-gray-400 uppercase tracking-wider font-medium">Last Updated</span>
               </div>
-              <div className="text-lg sm:text-2xl font-bold text-white">August 16, 2025</div>
+              <div className="text-lg lg:text-2xl font-bold text-white">August 16, 2025</div>
             </div>
 
-            <div className="text-center py-2 sm:py-3">
-              <div className="flex items-center justify-center mb-3 sm:mb-4">
-                <FaLaptopCode className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400 mr-2" />
-                <span className="text-xs sm:text-sm text-gray-400 uppercase tracking-wider font-medium">DSA Skills</span>
+            <div className="text-center py-2 lg:py-3">
+              <div className="flex items-center justify-center mb-3 lg:mb-4">
+                <FaLaptopCode className="w-4 h-4 lg:w-5 lg:h-5 text-blue-400 mr-2" />
+                <span className="text-xs lg:text-sm text-gray-400 uppercase tracking-wider font-medium">DSA Skills</span>
               </div>
               <div className="flex items-center justify-center space-x-1">
                 {[1, 2, 3, 4, 5].map((star) => (
-                  <FaStar key={star} className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400" />
+                  <FaStar key={star} className="w-4 h-4 lg:w-5 lg:h-5 text-yellow-400" />
                 ))}
               </div>
             </div>
