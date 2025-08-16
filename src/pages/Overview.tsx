@@ -413,7 +413,7 @@ const Overview = () => {
                         </Button>
                         <Button size="sm" variant="outline" className="text-xs" asChild>
                           <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                            <Github className="w-3 h-3 mr-1" />
+                            <FaGithub className="w-3 h-3 mr-1" />
                             Code
                           </a>
                         </Button>
