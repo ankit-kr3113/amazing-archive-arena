@@ -564,31 +564,41 @@ const Overview = () => {
                 </Button>
               </Card>
 
-              {/* Quick Contact */}
-              <Card className="p-6 border-primary/20">
+              {/* Quick Actions */}
+              <Card className="p-6 border-primary/20 bg-gradient-to-r from-primary/5 to-primary-glow/5">
                 <div className="flex items-center mb-4">
                   <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center mr-3">
-                    <Mail className="w-4 h-4 text-primary" />
+                    <Zap className="w-4 h-4 text-primary" />
                   </div>
-                  <h3 className="text-lg font-semibold">Connect</h3>
+                  <h3 className="text-lg font-semibold">Quick Actions</h3>
                 </div>
-                <div className="flex gap-2 mb-4">
-                  <Button asChild size="sm" variant="outline" className="flex-1">
-                    <a href="https://github.com/yuvraj-mehta" target="_blank" rel="noopener noreferrer">
-                      <Github className="w-3 h-3 mr-1" />
-                      GitHub
-                    </a>
-                  </Button>
-                  <Button asChild size="sm" variant="outline" className="flex-1">
-                    <a href="https://www.linkedin.com/in/yuvraj-mehta-a0274528a/" target="_blank" rel="noopener noreferrer">
-                      <Linkedin className="w-3 h-3 mr-1" />
-                      LinkedIn
-                    </a>
-                  </Button>
+                <div className="space-y-3">
+                  {quickActions.map((action, index) => (
+                    <Button
+                      key={index}
+                      variant="outline"
+                      className="w-full justify-start h-auto p-3 hover:scale-105 transition-all duration-300 group"
+                      asChild
+                    >
+                      {action.type === 'external' ? (
+                        <a href={action.href} target="_blank" rel="noopener noreferrer">
+                          <action.icon className="w-4 h-4 mr-3 group-hover:animate-bounce" />
+                          <span className="text-sm font-medium">{action.label}</span>
+                        </a>
+                      ) : action.type === 'download' ? (
+                        <a href={action.href} download>
+                          <action.icon className="w-4 h-4 mr-3 group-hover:animate-bounce" />
+                          <span className="text-sm font-medium">{action.label}</span>
+                        </a>
+                      ) : (
+                        <Link to={action.href}>
+                          <action.icon className="w-4 h-4 mr-3 group-hover:animate-bounce" />
+                          <span className="text-sm font-medium">{action.label}</span>
+                        </Link>
+                      )}
+                    </Button>
+                  ))}
                 </div>
-                <Button asChild size="sm" className="w-full">
-                  <Link to="/contact">Get In Touch</Link>
-                </Button>
               </Card>
             </div>
 
