@@ -228,7 +228,7 @@ const Education = () => {
                             {entry.keyPoints.activities && (
                               <div className="pt-4 border-t border-border">
                                 <h4 className="font-semibold mb-3 flex items-center text-sm sm:text-base">
-                                  <span className="text-xl sm:text-2xl mr-2">👥</span>
+                                  <HiUsers className="w-5 h-5 text-primary mr-2" />
                                   Activities & Involvement
                                 </h4>
                                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4">
