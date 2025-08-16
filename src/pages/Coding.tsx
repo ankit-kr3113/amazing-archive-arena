@@ -410,10 +410,10 @@ const Coding = () => {
                           </div>
                           <div className="flex items-center justify-end gap-2">
                             <span className="text-xs text-slate-300">
-                              {platform.platform === "LeetCode" && "Top 27.7%"}
-                              {platform.platform === "CodeChef" && "2★ Coder"}
-                              {platform.platform === "GeeksforGeeks" && "35+ days"}
-                              {platform.platform === "Codeforces" && "Newbie"}
+                              {platform.platform === "LeetCode" && platform.rank}
+                              {platform.platform === "CodeChef" && platform.rank}
+                              {platform.platform === "GeeksforGeeks" && platform.streak}
+                              {platform.platform === "Codeforces" && platform.rank}
                             </span>
                             {platform.platform === "LeetCode" && <MdLeaderboard className="w-3 h-3 text-blue-400" />}
                             {platform.platform === "CodeChef" && <FaMedal className="w-3 h-3 text-amber-400" />}
