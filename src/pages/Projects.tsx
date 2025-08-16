@@ -269,40 +269,52 @@ const Projects = () => {
 
                     <div className="space-y-4">
                       <div>
-                        <h3 className="text-lg font-bold mb-2 group-hover:text-primary transition-colors duration-300">{project.title}</h3>
-                        <p className="text-muted-foreground text-sm leading-relaxed line-clamp-3">{project.description}</p>
+                        <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors duration-300">{project.title}</h3>
+                        <p className="text-muted-foreground leading-relaxed line-clamp-3 group-hover:line-clamp-none transition-all duration-300">{project.description}</p>
                       </div>
 
                       <div className="flex flex-wrap gap-2">
-                        {project.tags.slice(0, 5).map((tag, tagIndex) => (
-                          <Badge key={tagIndex} variant="secondary" className="text-xs hover:bg-primary/20 hover:text-primary transition-colors duration-200 bg-primary/5 border border-primary/20">
+                        {project.tags.slice(0, 6).map((tag, tagIndex) => (
+                          <Badge key={tagIndex} variant="secondary" className="text-xs hover:bg-primary/20 hover:text-primary transition-all duration-200 bg-primary/5 border border-primary/20 hover:scale-105">
                             {tag}
                           </Badge>
                         ))}
-                        {project.tags.length > 5 && (
-                          <Badge variant="outline" className="text-xs border-primary/30">
-                            +{project.tags.length - 5}
+                        {project.tags.length > 6 && (
+                          <Badge variant="outline" className="text-xs border-primary/30 hover:border-primary/50 transition-colors">
+                            +{project.tags.length - 6}
                           </Badge>
                         )}
                       </div>
 
                       <div className="flex gap-3 pt-2">
-                        <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex-1">
-                          <Button size="sm" className="w-full bg-gradient-to-r from-primary to-primary-glow hover:from-primary/90 hover:to-primary-glow/90 text-primary-foreground shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
+                        <Button
+                          size="sm"
+                          className="flex-1 bg-gradient-to-r from-primary to-primary-glow hover:from-primary/90 hover:to-primary-glow/90 text-primary-foreground shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+                          asChild
+                        >
+                          <a href={project.github} target="_blank" rel="noopener noreferrer">
                             <Github className="w-4 h-4 mr-2" />
-                            Code
-                          </Button>
-                        </a>
-                        {project.demo && (
-                          <a href={project.demo} target="_blank" rel="noopener noreferrer" className="flex-1">
-                            <Button size="sm" variant="outline" className="w-full border-primary/30 text-primary hover:bg-primary/10 hover:border-primary/60 hover:scale-105 transition-all duration-300">
-                              <ExternalLink className="w-4 h-4 mr-2" />
-                              Demo
-                            </Button>
+                            Source
                           </a>
+                        </Button>
+                        {project.demo && (
+                          <Button
+                            size="sm"
+                            variant="outline"
+                            className="flex-1 border-primary/30 text-primary hover:bg-primary/10 hover:border-primary/60 hover:scale-105 transition-all duration-300"
+                            asChild
+                          >
+                            <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                              <ExternalLink className="w-4 h-4 mr-2" />
+                              Live Demo
+                            </a>
+                          </Button>
                         )}
                       </div>
                     </div>
+
+                    {/* Glow Effect */}
+                    <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-primary/0 via-primary/5 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
                   </div>
                 </Card>
               ))}
