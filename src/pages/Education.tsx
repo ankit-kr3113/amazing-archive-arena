@@ -151,9 +151,9 @@ const Education = () => {
                             </Badge>
                             <div className="text-muted-foreground hover:text-primary transition-colors">
                               {expandedCards.includes(entry.id) ? (
-                                <ChevronUp className="w-4 h-4" />
+                                <HiChevronUp className="w-4 h-4" />
                               ) : (
-                                <ChevronDown className="w-4 h-4" />
+                                <HiChevronDown className="w-4 h-4" />
                               )}
                             </div>
                           </div>
