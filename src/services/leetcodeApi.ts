@@ -74,12 +74,16 @@ class LeetCodeApiService {
   private username = LEETCODE_USERNAME;
 
   // Note: LeetCode doesn't have an official public API
-  // Using a community API endpoint that might have rate limits
-  private apiBase = 'https://leetcode-api-faisalshohag.vercel.app';
+  // Using community API endpoints with fallback options
+  private apiEndpoints = [
+    'https://leetcode-api-faisalshohag.vercel.app',
+    'https://alfa-leetcode-api.onrender.com' // Backup endpoint
+  ];
+  private currentEndpointIndex = 0;
   private cache = new Map<string, { data: any; timestamp: number }>();
   private readonly CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
-  private readonly MAX_RETRIES = 3;
-  private readonly BASE_DELAY = 1000; // 1 second
+  private readonly MAX_RETRIES = 2; // Reduced retries to avoid long waits
+  private readonly BASE_DELAY = 2000; // 2 seconds base delay
 
   // Helper method to check cache
   private getCachedData<T>(key: string): T | null {
