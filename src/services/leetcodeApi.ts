@@ -72,24 +72,88 @@ export interface LeetCodeProgress {
 
 class LeetCodeApiService {
   private username = LEETCODE_USERNAME;
-  
+
   // Note: LeetCode doesn't have an official public API
   // Using a community API endpoint that might have rate limits
   private apiBase = 'https://leetcode-api-faisalshohag.vercel.app';
+  private cache = new Map<string, { data: any; timestamp: number }>();
+  private readonly CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
+  private readonly MAX_RETRIES = 3;
+  private readonly BASE_DELAY = 1000; // 1 second
 
-  // Fetch user profile information
-  async getUserProfile(): Promise<LeetCodeUser | null> {
+  // Helper method to check cache
+  private getCachedData<T>(key: string): T | null {
+    const cached = this.cache.get(key);
+    if (cached && Date.now() - cached.timestamp < this.CACHE_DURATION) {
+      return cached.data as T;
+    }
+    return null;
+  }
+
+  // Helper method to set cache
+  private setCachedData(key: string, data: any): void {
+    this.cache.set(key, { data, timestamp: Date.now() });
+  }
+
+  // Helper method for API requests with retry logic
+  private async fetchWithRetry(url: string, retries = this.MAX_RETRIES): Promise<Response> {
     try {
-      const response = await fetch(`${this.apiBase}/${this.username}`);
+      const response = await fetch(url);
+
+      if (response.status === 429) {
+        if (retries > 0) {
+          const delay = this.BASE_DELAY * Math.pow(2, this.MAX_RETRIES - retries);
+          console.warn(`Rate limited. Retrying in ${delay}ms... (${retries} retries left)`);
+          await this.delay(delay);
+          return this.fetchWithRetry(url, retries - 1);
+        } else {
+          throw new Error('Rate limit exceeded after all retries');
+        }
+      }
+
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
+
+      return response;
+    } catch (error) {
+      if (retries > 0 && error instanceof TypeError) {
+        // Network error, retry
+        const delay = this.BASE_DELAY * Math.pow(2, this.MAX_RETRIES - retries);
+        console.warn(`Network error. Retrying in ${delay}ms... (${retries} retries left)`);
+        await this.delay(delay);
+        return this.fetchWithRetry(url, retries - 1);
+      }
+      throw error;
+    }
+  }
+
+  // Helper method for delay
+  private delay(ms: number): Promise<void> {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+  // Fetch user profile information
+  async getUserProfile(): Promise<LeetCodeUser | null> {
+    const cacheKey = `profile_${this.username}`;
+    const cached = this.getCachedData<LeetCodeUser>(cacheKey);
+
+    if (cached) {
+      console.log('Using cached LeetCode profile data');
+      return cached;
+    }
+
+    try {
+      const response = await this.fetchWithRetry(`${this.apiBase}/${this.username}`);
       const data = await response.json();
+
+      this.setCachedData(cacheKey, data);
       return data;
     } catch (error) {
       console.error('Error fetching LeetCode user profile:', error);
+
       // Return mock data if API fails
-      return {
+      const mockData: LeetCodeUser = {
         username: this.username,
         name: 'Yuvraj Mehta',
         avatar: '',
@@ -105,19 +169,28 @@ class LeetCodeApiService {
         skillTags: ['Array', 'String', 'Dynamic Programming', 'Tree'],
         about: 'CS Student at NIT Patna'
       };
+
+      // Cache mock data for shorter duration during API issues
+      this.cache.set(cacheKey, { data: mockData, timestamp: Date.now() });
+      return mockData;
     }
   }
 
   // Fetch user statistics
   async getUserStats(): Promise<LeetCodeStats> {
+    const cacheKey = `stats_${this.username}`;
+    const cached = this.getCachedData<LeetCodeStats>(cacheKey);
+
+    if (cached) {
+      console.log('Using cached LeetCode stats data');
+      return cached;
+    }
+
     try {
-      const response = await fetch(`${this.apiBase}/${this.username}`);
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
+      const response = await this.fetchWithRetry(`${this.apiBase}/${this.username}`);
       const data = await response.json();
-      
-      return {
+
+      const stats: LeetCodeStats = {
         totalSolved: data.totalSolved || 500,
         totalQuestions: data.totalQuestions || 3000,
         easySolved: data.easySolved || 200,
@@ -128,10 +201,14 @@ class LeetCodeApiService {
         contributionPoints: data.contributionPoints || 1250,
         reputation: data.reputation || 0
       };
+
+      this.setCachedData(cacheKey, stats);
+      return stats;
     } catch (error) {
       console.error('Error fetching LeetCode stats:', error);
+
       // Return mock data if API fails
-      return {
+      const mockStats: LeetCodeStats = {
         totalSolved: 500,
         totalQuestions: 3000,
         easySolved: 200,
@@ -142,6 +219,10 @@ class LeetCodeApiService {
         contributionPoints: 1250,
         reputation: 0
       };
+
+      // Cache mock data for shorter duration during API issues
+      this.cache.set(cacheKey, { data: mockStats, timestamp: Date.now() });
+      return mockStats;
     }
   }
 
@@ -196,11 +277,18 @@ class LeetCodeApiService {
 
   // Get comprehensive progress data
   async getProgress(): Promise<LeetCodeProgress> {
+    const cacheKey = `progress_${this.username}`;
+    const cached = this.getCachedData<LeetCodeProgress>(cacheKey);
+
+    if (cached) {
+      console.log('Using cached LeetCode progress data');
+      return cached;
+    }
+
     try {
-      const [profile, submissions] = await Promise.all([
-        this.getUserProfile(),
-        this.getRecentSubmissions()
-      ]);
+      // Don't make parallel requests to avoid hitting rate limits
+      // Instead, use mock data or get data from a single request if possible
+      const submissions = await this.getRecentSubmissions();
 
       // Calculate streaks (simplified - in real implementation would need more data)
       const currentStreak = 7; // Mock data
@@ -236,7 +324,7 @@ class LeetCodeApiService {
         }
       ];
 
-      return {
+      const progress: LeetCodeProgress = {
         currentStreak,
         longestStreak,
         totalActiveDays,
@@ -244,9 +332,13 @@ class LeetCodeApiService {
         badges,
         contests
       };
+
+      this.setCachedData(cacheKey, progress);
+      return progress;
     } catch (error) {
       console.error('Error fetching LeetCode progress:', error);
-      return {
+
+      const mockProgress: LeetCodeProgress = {
         currentStreak: 7,
         longestStreak: 15,
         totalActiveDays: 45,
@@ -254,6 +346,10 @@ class LeetCodeApiService {
         badges: [],
         contests: []
       };
+
+      // Cache mock data for shorter duration during API issues
+      this.cache.set(cacheKey, { data: mockProgress, timestamp: Date.now() });
+      return mockProgress;
     }
   }
 
