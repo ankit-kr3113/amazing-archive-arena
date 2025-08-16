@@ -21,14 +21,14 @@ const Footer = () => {
 
   return (
     <footer className="bg-[#1a1b3e] text-white mt-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
 
           {/* Brand Section */}
           <div>
-            <h3 className="text-lg font-bold text-white mb-3">Yuvraj Mehta</h3>
-            <p className="text-gray-400 text-sm mb-4 leading-relaxed">
+            <h3 className="text-lg sm:text-xl font-bold text-white mb-3">Yuvraj Mehta</h3>
+            <p className="text-gray-400 text-sm sm:text-base mb-4 leading-relaxed">
               Full Stack Developer specializing in modern web technologies and algorithms, currently exploring the exciting world of Generative AI.
             </p>
             <div className="flex space-x-3">
@@ -75,8 +75,8 @@ const Footer = () => {
 
           {/* Contact Section */}
           <div>
-            <h4 className="text-white font-semibold mb-3">Contact</h4>
-            <div className="space-y-2 text-sm">
+            <h4 className="text-white font-semibold mb-3 text-base sm:text-lg">Contact</h4>
+            <div className="space-y-2 text-sm sm:text-base">
               <div className="flex items-center text-gray-400 hover:text-white transition-colors">
                 <MapPin className="w-4 h-4 mr-2" />
                 <span>New Delhi, India</span>
@@ -90,8 +90,8 @@ const Footer = () => {
 
           {/* Quick Links Section */}
           <div>
-            <h4 className="text-white font-semibold mb-3">Quick Links</h4>
-            <div className="space-y-2 text-sm">
+            <h4 className="text-white font-semibold mb-3 text-base sm:text-lg">Quick Links</h4>
+            <div className="space-y-2 text-sm sm:text-base">
               <a
                 href="/Yuvraj_Resume_v2_1 (1).pdf"
                 target="_blank"
@@ -140,8 +140,8 @@ const Footer = () => {
 
           {/* Navigation Section */}
           <div>
-            <h4 className="text-white font-semibold mb-3">Navigation</h4>
-            <div className="space-y-2 text-sm">
+            <h4 className="text-white font-semibold mb-3 text-base sm:text-lg">Navigation</h4>
+            <div className="space-y-2 text-sm sm:text-base">
               <Link to="/" className="block text-gray-400 hover:text-white transition-colors">
                 Home
               </Link>
@@ -165,7 +165,7 @@ const Footer = () => {
         </div>
 
         {/* Stats Section */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 py-6 border-t border-gray-600 border-b border-gray-600">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 py-6 border-t border-gray-600 border-b border-gray-600">
           <div className="text-center">
             <div className="flex items-center justify-center mb-3">
               <FaStar className="w-4 h-4 text-purple-400 mr-2" />
