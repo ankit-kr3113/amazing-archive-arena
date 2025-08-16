@@ -169,7 +169,7 @@ class LeetCodeApiService {
     }
 
     try {
-      const response = await this.fetchWithRetry(`${this.apiBase}/${this.username}`);
+      const response = await this.fetchWithRetry(this.username);
       const data = await response.json();
 
       this.setCachedData(cacheKey, data);
@@ -212,7 +212,7 @@ class LeetCodeApiService {
     }
 
     try {
-      const response = await this.fetchWithRetry(`${this.apiBase}/${this.username}`);
+      const response = await this.fetchWithRetry(this.username);
       const data = await response.json();
 
       const stats: LeetCodeStats = {
@@ -324,7 +324,7 @@ class LeetCodeApiService {
         {
           id: '1',
           displayName: 'Annual Badge 2024',
-          icon: '���',
+          icon: '🏆',
           creationDate: '2024-01-01',
           category: 'Annual'
         },
