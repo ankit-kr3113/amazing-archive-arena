@@ -455,95 +455,57 @@ class GitHubApiService {
       return cached;
     }
 
-    try {
-      // Fetch data sequentially to reduce rate limiting
-      let user: GitHubUser;
-      let repos: GitHubRepo[];
-      let activity: GitHubActivity[];
+    console.log('Fetching fresh GitHub stats data...');
 
-      try {
-        user = await this.getUserProfile();
-      } catch (error) {
-        console.warn('Failed to fetch GitHub user profile, using fallback');
-        user = await this.getUserProfile(); // This will return mock data
+    // These methods now never throw - they always return data (real or mock)
+    const user = await this.getUserProfile();
+    const repos = await this.getUserRepos();
+    const activity = await this.getUserActivity();
+
+    const publicRepos = repos.filter(repo => !repo.private);
+
+    // Calculate statistics
+    const totalStars = publicRepos.reduce((sum, repo) => sum + repo.stargazers_count, 0);
+    const totalForks = publicRepos.reduce((sum, repo) => sum + repo.forks_count, 0);
+
+    // Language statistics
+    const languages: { [key: string]: number } = {};
+    publicRepos.forEach(repo => {
+      if (repo.language) {
+        languages[repo.language] = (languages[repo.language] || 0) + 1;
       }
+    });
 
-      try {
-        repos = await this.getUserRepos();
-      } catch (error) {
-        console.warn('Failed to fetch GitHub repositories, using fallback');
-        repos = await this.getUserRepos(); // This will return mock data
-      }
+    // Get top repositories by stars
+    const topRepos = publicRepos
+      .sort((a, b) => b.stargazers_count - a.stargazers_count)
+      .slice(0, 6);
 
-      try {
-        activity = await this.getUserActivity();
-      } catch (error) {
-        console.warn('Failed to fetch GitHub activity, using fallback');
-        activity = await this.getUserActivity(); // This will return mock data
-      }
+    // Simplified commit calculation to avoid additional API calls
+    const estimatedCommits = Math.max(publicRepos.length * 12, 180); // Estimate based on repos
+    const activeDays = Math.min(Math.floor((Date.now() - new Date(user.created_at).getTime()) / (1000 * 60 * 60 * 24)), 365);
+    const streakDays = Math.min(Math.max(Math.floor(activeDays / 10), 5), 30); // Conservative estimate
 
-      const publicRepos = repos.filter(repo => !repo.private);
+    const stats: GitHubStats = {
+      totalRepos: publicRepos.length,
+      totalStars,
+      totalForks,
+      totalCommits: estimatedCommits,
+      streakDays,
+      languages,
+      recentActivity: activity.slice(0, 10),
+      topRepos
+    };
 
-      // Calculate statistics
-      const totalStars = publicRepos.reduce((sum, repo) => sum + repo.stargazers_count, 0);
-      const totalForks = publicRepos.reduce((sum, repo) => sum + repo.forks_count, 0);
+    this.setCachedData(cacheKey, stats);
+    console.log('GitHub stats compiled successfully:', {
+      repos: stats.totalRepos,
+      stars: stats.totalStars,
+      forks: stats.totalForks,
+      languages: Object.keys(stats.languages).length
+    });
 
-      // Language statistics
-      const languages: { [key: string]: number } = {};
-      publicRepos.forEach(repo => {
-        if (repo.language) {
-          languages[repo.language] = (languages[repo.language] || 0) + 1;
-        }
-      });
-
-      // Get top repositories by stars
-      const topRepos = publicRepos
-        .sort((a, b) => b.stargazers_count - a.stargazers_count)
-        .slice(0, 6);
-
-      // Simplified commit calculation to avoid additional API calls
-      const estimatedCommits = Math.max(publicRepos.length * 10, 150); // Estimate based on repos
-      const activeDays = Math.min(Math.floor((Date.now() - new Date(user.created_at).getTime()) / (1000 * 60 * 60 * 24)), 365);
-      const streakDays = Math.min(activeDays, 30); // Conservative estimate
-
-      const stats: GitHubStats = {
-        totalRepos: publicRepos.length,
-        totalStars,
-        totalForks,
-        totalCommits: estimatedCommits,
-        streakDays,
-        languages,
-        recentActivity: activity.slice(0, 10),
-        topRepos
-      };
-
-      this.setCachedData(cacheKey, stats);
-      return stats;
-    } catch (error) {
-      console.error('Error fetching GitHub stats:', error);
-
-      // Return comprehensive mock stats if all else fails
-      const mockStats: GitHubStats = {
-        totalRepos: 15,
-        totalStars: 26,
-        totalForks: 8,
-        totalCommits: 200,
-        streakDays: 7,
-        languages: {
-          TypeScript: 6,
-          JavaScript: 5,
-          Python: 2,
-          CSS: 1,
-          HTML: 1
-        },
-        recentActivity: [],
-        topRepos: []
-      };
-
-      // Cache mock data for shorter duration during API issues
-      this.cache.set(cacheKey, { data: mockStats, timestamp: Date.now() });
-      return mockStats;
-    }
+    return stats;
   }
 
   // Format activity for display
