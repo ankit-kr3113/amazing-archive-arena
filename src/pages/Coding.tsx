@@ -269,10 +269,52 @@ const Coding = () => {
               </span>
             </h1>
             <p className="text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed animate-fade-in-up animation-delay-300 mb-6">
-              Solving <span className="text-primary font-semibold">333+ problems</span> across multiple platforms with{" "}
+              Solving <span className="text-primary font-semibold">{targetTotal}+ problems</span> across multiple platforms with{" "}
               <span className="text-primary font-semibold">consistent excellence</span> and{" "}
               <span className="text-primary font-semibold">competitive performance</span>
             </p>
+
+            {/* Data Status and Refresh */}
+            <div className="flex items-center justify-center gap-4 mb-6 animate-fade-in-up animation-delay-400">
+              <div className="flex items-center gap-2 px-3 py-2 bg-card/50 rounded-lg border border-border/50">
+                {isLoading ? (
+                  <>
+                    <FaSync className="w-4 h-4 text-muted-foreground animate-spin" />
+                    <span className="text-sm text-muted-foreground">Loading...</span>
+                  </>
+                ) : apiError ? (
+                  <>
+                    <FaExclamationTriangle className="w-4 h-4 text-orange-500" />
+                    <span className="text-sm text-orange-600">Using offline data</span>
+                  </>
+                ) : (
+                  <>
+                    <FaWifi className="w-4 h-4 text-green-500" />
+                    <span className="text-sm text-green-600">Live data</span>
+                  </>
+                )}
+              </div>
+
+              {lastUpdated && (
+                <div className="text-xs text-muted-foreground">
+                  Updated: {lastUpdated.toLocaleTimeString()}
+                </div>
+              )}
+
+              <Button
+                onClick={() => fetchCodingData(true)}
+                disabled={isRefreshing}
+                size="sm"
+                variant="outline"
+                className="px-3 py-1"
+              >
+                {isRefreshing ? (
+                  <FaSync className="w-3 h-3 animate-spin" />
+                ) : (
+                  <FaSync className="w-3 h-3" />
+                )}
+              </Button>
+            </div>
 
             {/* Inline Stats Display */}
             <div className="flex items-center justify-center gap-6 text-sm animate-fade-in-up animation-delay-600">
