@@ -388,15 +388,6 @@ const Overview = () => {
                     <div className="text-sm text-foreground/70 group-hover:text-white/80 transition-colors duration-300 mb-2">{item.subtitle}</div>
                     <div className="text-sm font-semibold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent mb-4">{item.year}</div>
 
-                    {/* Enhanced Progress Bar with glow */}
-                    <div className="w-full bg-black/20 rounded-full h-3 mb-3 overflow-hidden shadow-inner">
-                      <div
-                        className="bg-gradient-to-r from-primary via-primary-glow to-accent h-3 rounded-full transition-all duration-1000 shadow-lg relative"
-                        style={{ width: `${item.progress}%` }}
-                      >
-                        <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent rounded-full"></div>
-                      </div>
-                    </div>
 
                     {/* Enhanced trend indicator */}
                     <div className="flex items-center justify-center gap-2 px-3 py-1 rounded-full bg-gradient-to-r from-green-500/20 to-emerald-500/20 border border-green-400/30">
