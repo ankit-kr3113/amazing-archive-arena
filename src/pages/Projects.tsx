@@ -306,7 +306,7 @@ const Projects = () => {
                             asChild
                           >
                             <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                              <ExternalLink className="w-4 h-4 mr-2" />
+                              <HiExternalLink className="w-4 h-4 mr-2" />
                               Live Demo
                             </a>
                           </Button>
