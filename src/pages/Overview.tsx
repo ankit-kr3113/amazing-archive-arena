@@ -722,7 +722,12 @@ const Overview = () => {
                   <CarouselContent>
                     {featuredProjects.map((project, index) => (
                       <CarouselItem key={index}>
-                        <div className="group p-4 rounded-lg border border-border/50 hover:border-primary/30 hover:bg-primary/5 transition-all duration-300 cursor-pointer">
+                        <a
+                          href={project.demo || project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="block group p-4 rounded-lg border border-border/50 hover:border-primary/30 hover:bg-primary/5 transition-all duration-300 cursor-pointer hover:shadow-lg"
+                        >
                           <div className="relative w-full h-40 bg-muted/60 rounded-lg overflow-hidden mb-4 shadow-lg">
                             <ProjectImage
                               src={project.image}
@@ -782,7 +787,7 @@ const Overview = () => {
                               )}
                             </div>
                           </div>
-                        </div>
+                        </a>
                       </CarouselItem>
                     ))}
                   </CarouselContent>
