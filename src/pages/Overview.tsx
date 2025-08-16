@@ -388,8 +388,8 @@ const Overview = () => {
             </div>
           </div>
 
-          {/* Compact Stats Cards with cohesive design */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+          {/* Enhanced Stats Cards with premium design */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mb-12">
             {highlights.map((item, index) => {
               // Use consistent purple-to-blue gradient theme for all cards
               const gradientColors = {
@@ -413,34 +413,39 @@ const Overview = () => {
               return (
                 <Card
                   key={index}
-                  className={`group relative p-4 bg-gradient-to-br ${gradientColors[index]} border ${borderColors[index]} cursor-pointer transition-all duration-300 hover:shadow-xl hover:shadow-primary/15 backdrop-blur-sm hover:-translate-y-1 rounded-xl`}
+                  className={`group relative p-5 bg-gradient-to-br ${gradientColors[index]} border-2 ${borderColors[index]} cursor-pointer transition-all duration-500 hover:shadow-2xl hover:shadow-primary/20 backdrop-blur-md hover:-translate-y-2 hover:scale-[1.02] rounded-2xl overflow-hidden`}
                 >
-                  {/* Subtle overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/3 via-transparent to-black/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  {/* Enhanced overlay with shimmer effect */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-black/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 -skew-x-12 group-hover:animate-shimmer"></div>
 
                   {/* Rectangular layout: Icon on left, text on right */}
                   <div className="relative z-10 flex items-center gap-4">
-                    {/* Icon on the left */}
+                    {/* Enhanced icon on the left */}
                     <div className="flex-shrink-0">
-                      <div className="relative w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-primary-glow/20 flex items-center justify-center group-hover:scale-105 transition-all duration-300 shadow-md">
-                        <item.icon className={`w-7 h-7 ${iconColors[index]} transition-colors duration-300`} />
+                      <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/25 to-primary-glow/25 flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg group-hover:shadow-xl border border-primary/10">
+                        <item.icon className={`w-8 h-8 ${iconColors[index]} transition-all duration-500 group-hover:scale-110`} />
                         {item.isLive && (
-                          <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full shadow-md animate-pulse">
+                          <div className="absolute -top-1 -right-1 w-4 h-4 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full shadow-lg">
+                            <div className="w-full h-full bg-green-300 rounded-full animate-ping opacity-75"></div>
+                            <div className="absolute inset-0 bg-green-400 rounded-full"></div>
                           </div>
                         )}
+                        {/* Icon glow effect */}
+                        <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                       </div>
                     </div>
 
-                    {/* Text content on the right */}
-                    <div className="flex-1 min-w-0">
-                      <div className="font-semibold text-base text-foreground group-hover:text-primary transition-colors duration-300 mb-1">{item.title}</div>
-                      <div className="text-xs text-foreground/60 group-hover:text-foreground/80 transition-colors duration-300 mb-1">{item.subtitle}</div>
-                      <div className="text-xs font-medium text-primary mb-2">{item.year}</div>
+                    {/* Enhanced text content on the right */}
+                    <div className="flex-1 min-w-0 space-y-1">
+                      <div className="font-bold text-lg text-foreground group-hover:text-white transition-all duration-500 tracking-tight leading-tight">{item.title}</div>
+                      <div className="text-sm text-foreground/70 group-hover:text-white/90 transition-all duration-500 font-medium">{item.subtitle}</div>
+                      <div className="text-sm font-semibold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent group-hover:from-white group-hover:to-white/80 transition-all duration-500">{item.year}</div>
 
-                      {/* Trend indicator */}
-                      <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-primary/10 border border-primary/20 w-fit">
-                        <TrendingUp className="w-3 h-3 text-primary" />
-                        <span className="text-xs text-primary font-medium">{item.trend}</span>
+                      {/* Enhanced trend indicator */}
+                      <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-gradient-to-r from-primary/15 to-primary-glow/15 border border-primary/30 w-fit group-hover:from-primary/25 group-hover:to-primary-glow/25 group-hover:border-primary/50 transition-all duration-500 shadow-sm group-hover:shadow-md">
+                        <TrendingUp className="w-4 h-4 text-primary group-hover:text-white transition-colors duration-500" />
+                        <span className="text-xs text-primary group-hover:text-white font-semibold transition-colors duration-500">{item.trend}</span>
                       </div>
                     </div>
                   </div>
