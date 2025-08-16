@@ -44,8 +44,11 @@ import {
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
+import ParticleBackground from "@/components/ParticleBackground";
+import GitHubActivity from "@/components/GitHubActivity";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import "@/styles/animations.css";
 
 // Typewriter effect hook
 const useTypewriter = (text: string, speed: number = 100) => {
@@ -238,11 +241,15 @@ const Overview = () => {
 
       {/* Enhanced Hero Section */}
       <section className="relative pt-24 pb-12 overflow-hidden">
-        {/* Animated Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-background via-background/95 to-primary/5"></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-primary/[0.08] via-primary-glow/[0.04] to-transparent rounded-full blur-3xl opacity-40 animate-pulse"></div>
+        {/* Particle Background */}
+        <ParticleBackground className="opacity-30" />
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Animated Background Layers */}
+        <div className="absolute inset-0 gradient-bg-animated opacity-10"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-primary/[0.15] via-primary-glow/[0.08] to-transparent rounded-full blur-3xl animate-float opacity-60"></div>
+        <div className="absolute top-1/4 right-1/4 w-[400px] h-[400px] bg-gradient-radial from-primary-glow/[0.1] to-transparent rounded-full blur-2xl animate-float-delayed opacity-40"></div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
           <div className="text-center mb-12">
             {/* Simplified Status Badge */}
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6 animate-fade-in-up">
@@ -257,7 +264,7 @@ const Overview = () => {
                 <span className="text-muted-foreground text-lg md:text-xl font-medium block mb-2">
                   👋 Hello, I'm
                 </span>
-                <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent animate-gradient">
+                <span className="text-gradient-animated animate-text-glow">
                   Yuvraj Mehta
                 </span>
               </h1>
@@ -293,21 +300,21 @@ const Overview = () => {
                 </div>
               </div>
 
-              {/* Compact CTAs */}
+              {/* Enhanced CTAs with animations */}
               <div className="flex flex-col sm:flex-row gap-3 justify-center mt-8 animate-fade-in-up animation-delay-900">
                 <Button
-                  className="px-6 py-3 font-semibold bg-gradient-to-r from-primary to-primary-glow hover:scale-105 transition-all duration-300"
+                  className="px-6 py-3 font-semibold gradient-bg-primary hover:scale-105 hover-glow transition-all duration-300 shadow-lg"
                   asChild
                 >
                   <Link to="/contact">
                     Let's Connect
-                    <ArrowRight className="w-4 h-4 ml-2" />
+                    <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </Button>
 
                 <Button
                   variant="outline"
-                  className="px-6 py-3 font-semibold border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground hover:scale-105 transition-all duration-300"
+                  className="px-6 py-3 font-semibold border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground hover:scale-105 transition-all duration-300 hover-float"
                   asChild
                 >
                   <a href="/Yuvraj_Resume_v2_1 (1).pdf" target="_blank" rel="noopener noreferrer">
@@ -325,7 +332,7 @@ const Overview = () => {
             {highlights.map((item, index) => (
               <Card
                 key={index}
-                className="group p-4 text-center hover:shadow-xl transition-all duration-500 border-primary/20 hover:border-primary/40 hover:scale-105 cursor-pointer animate-fade-in-up"
+                className="group p-4 text-center interactive-card border-primary/20 hover:border-primary/40 cursor-pointer animate-fade-in-up hover-glow"
                 style={{ animationDelay: `${1000 + index * 100}ms` }}
               >
                 <div className="flex justify-center mb-3">
@@ -377,7 +384,7 @@ const Overview = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {featuredProjects.map((project, index) => (
-                <Card key={index} className="group overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105">
+                <Card key={index} className="group overflow-hidden interactive-card hover-glow animate-scale-in" style={{ animationDelay: `${index * 100}ms` }}>                  <div className="relative z-10">
                   <div className="relative overflow-hidden">
                     <ProjectImage
                       src={project.image}
@@ -408,6 +415,7 @@ const Overview = () => {
                       </div>
                     </div>
                   </div>
+                  </div>
                   <div className="p-4">
                     <div className="flex items-center justify-between mb-2">
                       <h3 className="font-semibold group-hover:text-primary transition-colors">{project.title}</h3>
@@ -433,7 +441,7 @@ const Overview = () => {
           </div>
 
           {/* Enhanced Current Status Banner */}
-          <Card className="p-6 mb-12 bg-gradient-to-r from-primary/10 to-primary-glow/10 border-primary/20 hover:shadow-lg transition-all duration-300">
+          <Card className="p-6 mb-12 gradient-bg-animated opacity-90 border-primary/20 hover:shadow-xl transition-all duration-300 animate-glow-pulse hover-float">            <div className="relative z-10">
             <div className="flex items-center justify-between flex-wrap gap-4">
               <div className="flex items-center gap-4">
                 <div className="relative w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center">
@@ -451,6 +459,7 @@ const Overview = () => {
                 <p className="text-sm text-muted-foreground">{currentStatus.location}</p>
                 <p className="text-xs text-muted-foreground mt-1">{currentStatus.lastUpdated}</p>
               </div>
+            </div>
             </div>
           </Card>
         </div>
@@ -586,11 +595,14 @@ const Overview = () => {
               </Card>
             </div>
 
-            {/* Right Column - Projects & Experience */}
+            {/* Right Column - GitHub Activity & Experience */}
             <div className="lg:col-span-2 space-y-6">
 
+              {/* Dynamic GitHub Activity */}
+              <GitHubActivity />
+
               {/* Enhanced Recent Activity Timeline */}
-              <Card className="p-6 border-primary/20 hover:shadow-lg transition-all duration-300">
+              <Card className="p-6 border-primary/20 interactive-card hover-glow">
                 <div className="flex items-center justify-between mb-6">
                   <div className="flex items-center">
                     <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center mr-3">
@@ -610,7 +622,7 @@ const Overview = () => {
                   {recentActivities.map((activity, index) => (
                     <div
                       key={index}
-                      className="group flex items-start gap-3 p-3 rounded-lg hover:bg-primary/5 transition-all duration-300 cursor-pointer hover:scale-[1.02]"
+                      className="group flex items-start gap-3 p-3 rounded-lg hover:bg-primary/5 transition-all duration-300 cursor-pointer hover:scale-[1.02] hover-float"
                     >
                       <div className={`relative w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${
                         activity.type === 'project' ? 'bg-blue-500/10 group-hover:bg-blue-500/20' :
@@ -669,7 +681,7 @@ const Overview = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 
                 {/* Education */}
-                <Card className="p-6 border-primary/20">
+                <Card className="p-6 border-primary/20 interactive-card hover-glow">
                   <div className="flex items-center mb-4">
                     <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center mr-3">
                       <FaGraduationCap className="w-4 h-4 text-primary" />
@@ -694,7 +706,7 @@ const Overview = () => {
                 </Card>
 
                 {/* Coding Achievements */}
-                <Card className="p-6 border-primary/20">
+                <Card className="p-6 border-primary/20 interactive-card hover-glow">
                   <div className="flex items-center mb-4">
                     <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center mr-3">
                       <FaTrophy className="w-4 h-4 text-primary" />
