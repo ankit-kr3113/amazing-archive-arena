@@ -155,8 +155,8 @@ const Coding = () => {
   const codingStats = [
     {
       platform: "LeetCode",
-      solved: apiData?.leetcode?.problemsSolved?.total || 277,
-      rating: apiData?.leetcode?.profile?.rating ? Math.round(apiData.leetcode.profile.rating).toString() : "1649",
+      solved: apiData?.leetcode?.problemsSolved?.total || fallbackData.leetcode.totalSolved,
+      rating: apiData?.leetcode?.profile?.rating ? Math.round(apiData.leetcode.profile.rating).toString() : fallbackData.leetcode.rating.toString(),
       rank: apiData?.leetcode?.contests?.topPercentage ? `Top ${apiData.leetcode.contests.topPercentage}%` : "Top 17.36%",
       color: "text-orange-400",
       bgColor: "from-orange-500/20 to-yellow-500/20",
