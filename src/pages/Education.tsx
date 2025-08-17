@@ -45,8 +45,8 @@ const Education = () => {
         activities: [
           { role: "Class Representative", detail: "CSE Department" },
           { role: "Competitive Programming Participant", detail: "Multiple Contests" },
-          { role: "Science Club Member", detail: "Science Exhibitions" },
-          { role: "Mathematics Olympiad Participant", detail: "Sports Competitions" }
+          { role: "Robotics Club Member", detail: "Building Combat & Soccer Bots" },
+          { role: "MUN 2023", detail: "Best Delegate Award" }
         ]
       }
     },
