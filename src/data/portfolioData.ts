@@ -73,27 +73,32 @@ export const socialLinks = {
 
 export const achievements = {
   leetcode: {
-    rating: "1570+",
-    problemsSolved: "333+",
-    globalRanking: "Top 27.7%"
+    rating: "1649",
+    maxRating: "1649",
+    problemsSolved: "277",
+    globalRanking: "125365",
+    percentile: "Top 25%"
   },
   codechef: {
-    rating: "1270",
-    problemsSolved: "25+",
-    stars: "2★"
+    rating: "1451",
+    maxRating: "1456",
+    problemsSolved: "25",
+    stars: "2★",
+    division: "Div 3"
   },
   codeforces: {
-    rating: "900",
-    problemsSolved: "10+",
+    rating: "1030",
+    maxRating: "1085",
+    problemsSolved: "27",
     rank: "Newbie"
   },
   geeksforgeeks: {
-    problemsSolved: "70+",
-    rank: "1455"
+    problemsSolved: "130",
+    rank: "1058"
   },
   stats: {
     yearsExperience: "2+",
-    totalProjects: "15+",
+    totalProjects: "4",
     commits: "500+"
   },
   awards: [
