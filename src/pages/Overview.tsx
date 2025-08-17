@@ -896,7 +896,7 @@ const Overview = () => {
                       </div>
                       <div className="flex items-center gap-2 text-xs text-foreground/70">
                         <Calendar className="w-3 h-3 text-emerald-400" />
-                        <span>Graduating 2025 • Final Year • CGPA: 7.68/10</span>
+                        <span>Graduating 2027 • Current Year • CGPA: 7.68/10</span>
                       </div>
                       <div className="flex items-center gap-2 text-xs text-foreground/70">
                         <CircleDot className="w-3 h-3 text-green-400" />
