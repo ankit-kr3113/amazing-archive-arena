@@ -55,22 +55,22 @@ const Navigation = () => {
             <span className="text-lg sm:text-xl font-bold gradient-text group-hover:scale-110 transition-transform duration-300 drop-shadow-lg">{personalInfo.name.split(' ')[0]}.</span>
           </Link>
 
-          {/* Enhanced Desktop Navigation - Sliding Pill Design */}
-          <div className="hidden lg:flex items-center bg-muted/30 rounded-full p-1 backdrop-blur-sm border border-border/50">
+          {/* Minimal Clean Desktop Navigation */}
+          <div className="hidden lg:flex items-center space-x-8">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
-                className={`relative px-4 py-2.5 text-sm font-semibold transition-all duration-300 rounded-full z-10 ${
+                className={`relative text-sm font-medium transition-colors duration-200 ${
                   isActive(item.href)
-                    ? "text-primary-foreground"
-                    : "text-muted-foreground hover:text-foreground hover:bg-white/5"
+                    ? "text-foreground"
+                    : "text-muted-foreground hover:text-foreground"
                 }`}
               >
                 {item.name}
-                {/* Sliding pill background */}
+                {/* Simple underline for active state */}
                 {isActive(item.href) && (
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary-glow to-primary rounded-full shadow-lg shadow-primary/25 -z-10 animate-in slide-in-from-left-2 duration-300"></div>
+                  <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-foreground"></div>
                 )}
               </Link>
             ))}
