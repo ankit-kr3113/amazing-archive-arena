@@ -262,7 +262,7 @@ export const projects = [
     title: "Stickify",
     name: "Stickify",
     description: "A full-stack sticker marketplace with custom design tools, order management, and secure payments.",
-    image: "https://cdn.builder.io/api/v1/image/assets%2F911edf0abfc44540bba885225b62aa26%2F66d04f4d2b8f4683a586836a1645fcd0?format=webp&width=800",
+    image: "https://cdn.builder.io/api/v1/image/assets%2F911edf0abfc44540bba885225b62aa26%2F66d04f4d2b8f4683a586836a1645fcd0?format=webp&width=2880&height=1560",
     category: "Full Stack",
     featured: true,
     tags: ["React", "Redux", "Node.js", "Express", "MongoDB", "Stripe API", "Tailwind CSS"],
