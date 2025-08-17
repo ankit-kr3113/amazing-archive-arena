@@ -13,13 +13,14 @@ export const personalInfo = {
   title: "Full Stack Developer",
   subtitle: "B.Tech CS Student • NIT Patna",
   tagline: "Full Stack Developer • B.Tech CS Student • NIT Patna • Passionate about creating impactful digital solutions",
-  email: "yuvrajmehta.dev@gmail.com",
+  email: "yuvraj.mehta532@gmail.com",
   phone: "+91-9334083113",
-  location: "India",
+  location: "Gaya, Bihar, India",
   university: "NIT Patna",
   course: "Computer Science",
   bio: {
-    intro: "I'm a Computer Science student at NIT Patna with a passion for building full-stack applications that solve real-world problems. My journey in tech started with curiosity about how things work and evolved into a deep love for creating digital solutions.",
+    intro: "B.Tech CS student at NIT Patna passionate about building full stack applications with a focus on user-friendly interfaces. Skilled in MERN Stack.",
+    full: "Computer Science student at NIT Patna passionate about full stack development with a strong foundation in Data Structures & Algorithms. I approach technical challenges analytically and continually expand my skills in GenAI and modern web technologies. As a Robotics Club member, I've organized workshops and led teams building combat and soccer bots. Outside coding, I enjoy competitive programming and sports, having won Bronze in 50m Hurdles at NIT Patna Intramurals.",
     robotics: "As a Robotics Club member, I've organized workshops and led teams building combat and soccer bots. I believe in learning by doing and enjoy sharing knowledge with others through mentoring and technical discussions.",
     interests: "When I'm not coding, you can find me solving algorithmic challenges on competitive programming platforms, participating in hackathons, or running track. I won Bronze in 50m Hurdles at NIT Patna Intramurals!"
   },
