@@ -16,6 +16,8 @@ export const personalInfo = {
   email: "yuvraj.mehta532@gmail.com",
   phone: "+91-9334083113",
   location: "Gaya, Bihar, India",
+  currentLocation: "New Delhi, India",
+  timezone: "IST (UTC +5:30)",
   university: "NIT Patna",
   course: "Computer Science",
   bio: {
@@ -388,10 +390,16 @@ export const projects = [
 
 export const siteMetadata = {
   title: "Yuvraj Mehta - Full Stack Developer",
+  titleTemplate: "%s | Yuvraj Mehta Portfolio",
   description: "Full Stack Developer • B.Tech CS Student • NIT Patna • Passionate about creating impactful digital solutions",
   ogImage: "https://lovable.dev/opengraph-image-p98pqg.png",
   keywords: ["Full Stack Developer", "React", "Node.js", "TypeScript", "Web Development", "NIT Patna"],
-  author: "Yuvraj Mehta"
+  author: "Yuvraj Mehta",
+  siteUrl: "https://yuvrajmehta.codes",
+  image: "/public/yuvraj.png",
+  twitterUsername: "@yuvraj_mehta02",
+  lang: "en",
+  locale: "en_US"
 };
 
 export const quickLinks = [
@@ -411,7 +419,10 @@ export const techStack = [
 ];
 
 export const footerStats = {
-  totalVisitors: "12,860",
-  lastUpdated: "August 15, 2025",
-  dsaRating: 5
+  totalVisitors: "15,475",
+  lastUpdated: "August 16, 2025",
+  dsaRating: 5,
+  totalProblems: "500+",
+  totalProjects: "15+",
+  yearsExperience: "2+"
 };
