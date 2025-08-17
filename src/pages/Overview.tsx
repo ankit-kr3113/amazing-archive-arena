@@ -775,7 +775,7 @@ const Overview = () => {
                           rel="noopener noreferrer"
                           className="block group p-4 rounded-lg border border-border/50 hover:border-primary/30 hover:bg-primary/5 transition-all duration-300 cursor-pointer hover:shadow-lg"
                         >
-                          <div className="relative w-full h-40 bg-muted/60 rounded-lg overflow-hidden mb-4 shadow-lg">
+                          <div className="relative w-full h-[400px] bg-muted/60 rounded-lg overflow-hidden mb-4 shadow-lg" style={{ aspectRatio: '2880/1560' }}>
                             <ProjectImage
                               src={project.image}
                               alt={project.title}
