@@ -116,31 +116,22 @@ const Navigation = () => {
       <div className={`lg:hidden transition-all duration-500 overflow-hidden ${
         isOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
       }`}>
-        <div className="px-6 pt-4 pb-6 space-y-3 bg-card/95 backdrop-blur-2xl border-t-2 border-primary/20 shadow-2xl">
+        <div className="px-6 pt-4 pb-6 space-y-1 bg-card border-t border-border">
           {navigation.map((item, index) => {
             const Icon = item.icon;
             return (
               <Link
                 key={item.name}
                 to={item.href}
-                className={`relative flex items-center px-5 py-4 rounded-2xl text-base font-semibold transition-all duration-300 hover:scale-105 group overflow-hidden ${
+                className={`flex items-center px-4 py-3 text-base font-medium transition-colors duration-200 ${
                   isActive(item.href)
-                    ? "text-white"
-                    : "text-muted-foreground hover:text-primary hover:bg-primary/5"
+                    ? "text-foreground bg-muted"
+                    : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
                 }`}
                 onClick={() => setIsOpen(false)}
-                style={{ animationDelay: `${index * 50}ms` }}
               >
-                <Icon className={`w-5 h-5 mr-4 transition-all duration-300 z-10 ${
-                  isActive(item.href) ? 'text-white' : 'text-muted-foreground/60'
-                }`} />
-                <span className="z-10 relative">{item.name}</span>
-                {/* Animated pill background for mobile */}
-                {isActive(item.href) && (
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary-glow to-primary rounded-2xl shadow-lg animate-in slide-in-from-left-4 duration-500"></div>
-                )}
-                {/* Subtle hover effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-primary-glow/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <Icon className="w-5 h-5 mr-3" />
+                {item.name}
               </Link>
             );
           })}
