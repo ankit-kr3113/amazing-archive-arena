@@ -138,9 +138,13 @@ const Navigation = () => {
                 style={{ animationDelay: `${index * 50}ms` }}
               >
                 <Icon className={`w-5 h-5 mr-4 transition-all duration-300 ${
-                  isActive(item.href) ? 'text-primary animate-pulse' : 'text-muted-foreground/60'
+                  isActive(item.href) ? 'text-primary' : 'text-muted-foreground/60'
                 }`} />
                 {item.name}
+                {/* Left border indicator for mobile */}
+                <div className={`absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-primary to-primary-glow rounded-r-full transition-all duration-300 ${
+                  isActive(item.href) ? "opacity-100 scale-y-100" : "opacity-0 scale-y-0"
+                }`}></div>
               </Link>
             );
           })}
