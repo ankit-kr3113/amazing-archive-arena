@@ -205,7 +205,7 @@ const Coding = () => {
   const achievements = [
     {
       title: "LeetCode Consistency Champion",
-      description: `Maintained active problem-solving streak with ${apiData?.leetcode?.problemsSolved?.total || 277}+ problems solved, achieving top ${apiData?.leetcode?.contests?.topPercentage || "17.4"}% global ranking`,
+      description: `Maintained active problem-solving streak with ${apiData?.leetcode?.problemsSolved?.total || 277}+ problems solved, achieving top ${apiData?.leetcode?.contests?.topPercentage || "17.36"}% global ranking`,
       icon: FaTrophy,
       color: "text-yellow-400",
       bgColor: "from-yellow-500/20 to-orange-500/20",
