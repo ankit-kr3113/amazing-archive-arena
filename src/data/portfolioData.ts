@@ -426,3 +426,54 @@ export const footerStats = {
   totalProjects: "15+",
   yearsExperience: "2+"
 };
+
+export const aboutPageData = {
+  interests: [
+    { icon: "FaRobot", name: "Robotics", description: "Building combat & soccer bots", color: "text-blue-500" },
+    { icon: "FaRunning", name: "Athletics", description: "Bronze in 50m Hurdles", color: "text-green-500" },
+    { icon: "FaPuzzlePiece", name: "Problem Solving", description: "Competitive programming", color: "text-purple-500" },
+    { icon: "FaBullseye", name: "Mentoring", description: "Leading workshops", color: "text-red-500" }
+  ],
+  achievementStats: [
+    { value: achievements.leetcode.rating, label: "LeetCode Rating", color: "text-orange-500" },
+    { value: achievements.stats.totalProblemsSolved, label: "Problems Solved", color: "text-green-500" },
+    { value: achievements.stats.totalProjects, label: "Projects Built", color: "text-blue-500" },
+    { value: achievements.leetcode.percentile, label: "LeetCode Percentile", color: "text-purple-500" }
+  ]
+};
+
+export const footerData = {
+  brand: {
+    name: personalInfo.name,
+    title: personalInfo.title,
+    description: "Full Stack Developer specializing in modern web technologies and algorithms, currently exploring the exciting world of Generative AI."
+  },
+  contact: {
+    location: personalInfo.currentLocation,
+    email: personalInfo.email,
+    emailDisplay: "yuvrajmehta2003@..."
+  },
+  sections: {
+    quickLinks: [
+      { name: "Resume", href: personalInfo.resume, icon: "FileText", external: true },
+      { name: "LeetCode", href: socialLinks.leetcode.url, icon: "SiLeetcode", external: true },
+      { name: "GeeksforGeeks", href: socialLinks.geeksforgeeks.url, icon: "SiGeeksforgeeks", external: true },
+      { name: "CodeChef", href: socialLinks.codechef.url, icon: "SiCodechef", external: true },
+      { name: "Projects", href: "/projects", icon: "Zap", external: false }
+    ],
+    navigation: [
+      { name: "Home", href: "/" },
+      { name: "About", href: "/about" },
+      { name: "Skills", href: "/skills" },
+      { name: "Projects", href: "/projects" },
+      { name: "Experience", href: "/experience" },
+      { name: "Contact", href: "/contact" }
+    ]
+  },
+  stats: footerStats,
+  copyright: {
+    year: new Date().getFullYear(),
+    owner: personalInfo.name,
+    tech: "React & TypeScript"
+  }
+};
