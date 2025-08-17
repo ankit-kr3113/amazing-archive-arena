@@ -237,81 +237,82 @@ export const projects = [
   {
     title: "BookHive",
     name: "BookHive",
-    description: "A collaborative book reading and review platform with real-time chat, personalized recommendations, and social features.",
+    description: "BookNest is a full-stack library management system with distinct user and admin roles. It features book and PYQ management, a borrowing system, OTP-verified authentication, and separate dashboards. Built with React, Node.js, Express.js, and MongoDB.",
     image: "https://cdn.builder.io/api/v1/image/assets%2F911edf0abfc44540bba885225b62aa26%2F6aff8a4cc2a44603904ec06dfbd17734?format=webp&width=2880&height=1560",
     category: "Full Stack",
     featured: true,
-    tags: ["React", "Node.js", "Express", "MongoDB", "Socket.io", "Tailwind CSS"],
-    techStack: ["React", "Node.js", "Express", "MongoDB", "Socket.io", "Tailwind CSS"],
-    demo: "https://bookhive.live",
-    live: "https://bookhive.live",
-    github: "https://github.com/yuvraj-mehta/bookhive",
+    tags: ["React", "Redux Toolkit", "Node.js", "Express", "MongoDB", "JWT"],
+    techStack: ["React", "Redux Toolkit", "Node.js", "Express", "MongoDB", "JWT"],
+    demo: "https://bookhive-manager.vercel.app",
+    live: "https://bookhive-manager.vercel.app",
+    github: "https://github.com/yuvraj-mehta/Byteverse_NandiNinjas",
     status: "Live",
     features: [
-      "Real-time group chat for book clubs",
-      "Personalized book recommendations",
-      "User reviews and ratings",
-      "Social sharing and friend system"
+      "Full-stack library management system",
+      "User and admin role management",
+      "Book and PYQ management",
+      "OTP-verified authentication",
+      "Separate user and admin dashboards"
+    ]
+  },
+  {
+    title: "Portfolio Website",
+    name: "Portfolio Website",
+    description: "Personal developer portfolio showcasing projects and skills. Designed and built a responsive single-page portfolio with smooth animations and dynamic navigation. Integrated a contact form using EmailJS and added a downloadable resume feature.",
+    image: "https://cdn.builder.io/api/v1/image/assets%2F911edf0abfc44540bba885225b62aa26%2F564561b9219a409f8cd1139440589eac?format=webp&width=2880&height=1560",
+    category: "Frontend",
+    featured: true,
+    tags: ["React", "Tailwind CSS", "Framer Motion", "Vite"],
+    techStack: ["React", "Tailwind CSS", "Framer Motion", "Vite"],
+    demo: "https://yuvrajmehta.codes",
+    live: "https://yuvrajmehta.codes",
+    github: "https://github.com/yuvraj-mehta/My-Portfolio",
+    status: "Live",
+    features: [
+      "Responsive single-page portfolio",
+      "Smooth animations and dynamic navigation",
+      "Integrated contact form with EmailJS",
+      "Downloadable resume feature"
     ]
   },
   {
     title: "EcoGuardian",
     name: "EcoGuardian",
-    description: "A gamified platform to track, reduce, and compete on carbon footprint, with educational resources and community challenges.",
+    description: "An online community platform empowering individuals to collaborate on environmental projects, report cleanliness issues, access educational resources, and drive positive change for a cleaner, greener future. 🌍",
     image: "https://cdn.builder.io/api/v1/image/assets%2F911edf0abfc44540bba885225b62aa26%2F2fbbcced95b94a128c0a7b5e14c085a0?format=webp&width=2880&height=1560",
     category: "Full Stack",
     featured: true,
-    tags: ["Next.js", "TypeScript", "Firebase", "Framer Motion", "Tailwind CSS"],
-    techStack: ["Next.js", "TypeScript", "Firebase", "Framer Motion", "Tailwind CSS"],
-    demo: "https://ecoguardian.app",
-    live: "https://ecoguardian.app",
-    github: "https://github.com/yuvraj-mehta/ecoguardian",
+    tags: ["HTML", "CSS", "JavaScript", "Node.js", "Express", "MongoDB"],
+    techStack: ["HTML", "CSS", "JavaScript", "Node.js", "Express", "MongoDB"],
+    demo: "https://yuvraj-mehta.github.io/EcoGuardian_prototype/",
+    live: "https://yuvraj-mehta.github.io/EcoGuardian_prototype/",
+    github: "https://github.com/yuvraj-mehta/EcoGuardian_prototype",
     status: "Live",
     features: [
-      "Carbon footprint calculator",
-      "Gamified challenges and leaderboards",
-      "Educational content on sustainability",
-      "Progress tracking dashboard"
+      "Environmental community platform",
+      "Project collaboration features",
+      "Cleanliness issue reporting",
+      "Educational resources access"
     ]
   },
   {
     title: "Stickify",
     name: "Stickify",
-    description: "A full-stack sticker marketplace with custom design tools, order management, and secure payments.",
+    description: "This is a simple notes application built with React and Vite. It allows users to create, update, delete, and manage notes with different colors. The application uses Appwrite as the backend service for managing notes.",
     image: "https://cdn.builder.io/api/v1/image/assets%2F911edf0abfc44540bba885225b62aa26%2F66d04f4d2b8f4683a586836a1645fcd0?format=webp&width=2880&height=1560",
-    category: "Full Stack",
-    featured: true,
-    tags: ["React", "Redux", "Node.js", "Express", "MongoDB", "Stripe API", "Tailwind CSS"],
-    techStack: ["React", "Redux", "Node.js", "Express", "MongoDB", "Stripe API", "Tailwind CSS"],
-    demo: "https://stickify.shop",
-    live: "https://stickify.shop",
-    github: "https://github.com/yuvraj-mehta/stickify",
-    status: "Live",
-    features: [
-      "Custom sticker design editor",
-      "Order and inventory management",
-      "Secure Stripe payments",
-      "User reviews and wishlists"
-    ]
-  },
-  {
-    title: "Portfolio",
-    name: "Portfolio",
-    description: "Modern, animated portfolio to showcase full stack, DSA, and GenAI skills. Features project gallery, coding stats, and interactive UI.",
-    image: "https://cdn.builder.io/api/v1/image/assets%2F911edf0abfc44540bba885225b62aa26%2F564561b9219a409f8cd1139440589eac?format=webp&width=2880&height=1560",
     category: "Frontend",
     featured: false,
-    tags: ["React", "TypeScript", "Vite", "Tailwind CSS", "Framer Motion", "Node.js", "Express"],
-    techStack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Framer Motion", "Node.js", "Express"],
-    demo: "https://yuvrajmehta.dev",
-    live: "https://yuvrajmehta.dev",
-    github: "https://github.com/yuvraj-mehta/portfolio",
+    tags: ["React", "Vite", "Tailwind CSS", "Appwrite"],
+    techStack: ["React", "Vite", "Tailwind CSS", "Appwrite"],
+    demo: "https://stickify-git-master-yuvraj-mehtas-projects.vercel.app/",
+    live: "https://stickify-git-master-yuvraj-mehtas-projects.vercel.app/",
+    github: "https://github.com/yuvraj-mehta/Stickify",
     status: "Live",
     features: [
-      "Animated hero and section transitions",
-      "Coding stats integration (LeetCode, Codeforces, etc.)",
-      "Responsive, accessible, and SEO-optimized",
-      "Dark/light mode with theme persistence"
+      "Simple notes application",
+      "Create, update, delete notes",
+      "Color-coded note organization",
+      "Appwrite backend integration"
     ]
   }
 ];
