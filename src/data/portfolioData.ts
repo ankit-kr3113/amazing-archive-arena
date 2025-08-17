@@ -313,8 +313,8 @@ export const siteMetadata = {
 };
 
 export const quickLinks = [
-  { name: "Resume", href: "/Yuvraj_Resume_v2_1 (1).pdf", icon: "📄", external: true },
-  { name: "LeetCode", href: "https://leetcode.com/u/mythical-UV/", icon: "⚡", external: true },
+  { name: "Resume", href: "/public/Yuvraj_Resume_v2_1 (1).pdf", icon: "📄", external: true },
+  { name: "LeetCode", href: "https://leetcode.com/mythical-UV/", icon: "⚡", external: true },
   { name: "GeeksforGeeks", href: "https://www.geeksforgeeks.org/user/yuvrajmevbrx/", icon: "🟢", external: true },
   { name: "CodeChef", href: "https://www.codechef.com/users/quick_unity_53", icon: "👨‍🍳", external: true },
   { name: "Projects", href: "/projects", icon: "🚀", external: false }
