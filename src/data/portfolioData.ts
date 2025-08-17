@@ -222,7 +222,7 @@ export const projects = [
     title: "BookHive",
     name: "BookHive",
     description: "A collaborative book reading and review platform with real-time chat, personalized recommendations, and social features.",
-    image: "https://cdn.builder.io/api/v1/image/assets%2F911edf0abfc44540bba885225b62aa26%2F6aff8a4cc2a44603904ec06dfbd17734?format=webp&width=800",
+    image: "https://cdn.builder.io/api/v1/image/assets%2F911edf0abfc44540bba885225b62aa26%2F6aff8a4cc2a44603904ec06dfbd17734?format=webp&width=2880&height=1560",
     category: "Full Stack",
     featured: true,
     tags: ["React", "Node.js", "Express", "MongoDB", "Socket.io", "Tailwind CSS"],
