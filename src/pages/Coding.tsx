@@ -153,8 +153,8 @@ const Coding = () => {
     },
     {
       platform: "GeeksforGeeks",
-      solved: apiData?.gfg?.problemsSolved?.total || 70,
-      rating: apiData?.gfg?.profile?.rank || "Rank #1455",
+      solved: apiData?.gfg?.problemsSolved?.total || 130,
+      rating: apiData?.gfg?.profile?.rank || "Rank #1058",
       streak: apiData?.gfg?.profile?.currentStreak ? `${apiData.gfg.profile.currentStreak}+ day streak` : "35+ day streak",
       color: "text-green-400",
       bgColor: "from-green-500/20 to-emerald-500/20",
