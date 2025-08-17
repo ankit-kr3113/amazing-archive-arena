@@ -183,8 +183,8 @@ const Coding = () => {
     },
     {
       platform: "Codeforces",
-      solved: apiData?.codeforces?.problemsSolved?.total || 10,
-      rating: apiData?.codeforces?.profile?.rating?.toString() || "900",
+      solved: apiData?.codeforces?.problemsSolved?.total || 27,
+      rating: apiData?.codeforces?.profile?.rating?.toString() || "1030",
       rank: apiData?.codeforces?.profile?.rank || "Newbie",
       color: "text-blue-400",
       bgColor: "from-blue-500/20 to-cyan-500/20",
