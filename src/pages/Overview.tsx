@@ -944,7 +944,7 @@ const Overview = () => {
                             <div className="font-bold text-sm text-foreground mb-1">B.Tech {personalInfo.course}</div>
                             <div className="text-sm text-primary font-semibold mb-1">{personalInfo.university}</div>
                             <div className="flex items-center gap-3 text-xs text-foreground/60">
-                              <span>2021 - 2025</span>
+                              <span>2023 - 2027</span>
                               <Badge className="bg-green-500/20 text-green-400 border-green-500/30 text-xs">CGPA: 7.68</Badge>
                             </div>
                           </div>
