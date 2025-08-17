@@ -46,12 +46,12 @@ const Coding = () => {
   const [apiError, setApiError] = useState<string | null>(null);
   const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
 
-  // Fallback data (original hardcoded values)
+  // Fallback data (real statistics)
   const fallbackData = {
-    leetcode: { totalSolved: 228, problemsSolved: { easy: 150, medium: 65, hard: 13 } },
-    codeforces: { problemsSolved: 10, rating: 900, rank: "Newbie" },
-    codechef: { problemsSolved: 25, rating: 1270, stars: 2 },
-    gfg: { problemsSolved: 70, score: 500, rank: 1455 }
+    leetcode: { totalSolved: 277, problemsSolved: { easy: 180, medium: 85, hard: 12 } },
+    codeforces: { problemsSolved: 27, rating: 1030, rank: "Newbie" },
+    codechef: { problemsSolved: 25, rating: 1451, stars: 2 },
+    gfg: { problemsSolved: 130, score: 500, rank: 1058 }
   };
 
   // Fetch API data
