@@ -41,18 +41,15 @@ const Navigation = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Enhanced Logo */}
-          <Link to="/" className="flex items-center space-x-3 sm:space-x-4 group">
-            <div className="relative">
-              <Avatar className="h-9 w-9 ring-3 ring-primary/25 transition-all duration-300 group-hover:ring-primary/60 group-hover:scale-125 shadow-lg">
-                <AvatarImage src={personalInfo.profileImage} alt={personalInfo.name} />
-                <AvatarFallback className="bg-gradient-to-br from-primary to-primary-glow text-primary-foreground font-bold text-sm shadow-lg">
-                  <HiCode className="w-5 h-5" />
-                </AvatarFallback>
-              </Avatar>
-              <div className="absolute -top-1 -right-1 w-4 h-4 bg-green-500 rounded-full animate-pulse border-2 border-background shadow-lg shadow-green-500/30"></div>
-            </div>
-            <span className="text-lg sm:text-xl font-bold gradient-text group-hover:scale-110 transition-transform duration-300 drop-shadow-lg">{personalInfo.name.split(' ')[0]}.</span>
+          {/* Simple Logo */}
+          <Link to="/" className="flex items-center space-x-3 group">
+            <Avatar className="h-8 w-8">
+              <AvatarImage src={personalInfo.profileImage} alt={personalInfo.name} />
+              <AvatarFallback className="bg-primary text-primary-foreground font-bold text-sm">
+                <HiCode className="w-4 h-4" />
+              </AvatarFallback>
+            </Avatar>
+            <span className="text-lg font-semibold text-foreground">{personalInfo.name.split(' ')[0]}</span>
           </Link>
 
           {/* Minimal Clean Desktop Navigation */}
