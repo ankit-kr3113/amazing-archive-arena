@@ -19,12 +19,13 @@ export const personalInfo = {
   university: "NIT Patna",
   course: "Computer Science",
   bio: {
-    intro: "I'm a Computer Science student at NIT Patna with a passion for building full-stack applications that solve real-world problems. My journey in tech started with curiosity about how things work and evolved into a deep love for creating digital solutions.",
+    intro: "B.Tech CS student at NIT Patna passionate about building full stack applications with a focus on user-friendly interfaces. Skilled in MERN Stack.",
+    full: "Computer Science student at NIT Patna passionate about full stack development with a strong foundation in Data Structures & Algorithms. I approach technical challenges analytically and continually expand my skills in GenAI and modern web technologies. As a Robotics Club member, I've organized workshops and led teams building combat and soccer bots. Outside coding, I enjoy competitive programming and sports, having won Bronze in 50m Hurdles at NIT Patna Intramurals.",
     robotics: "As a Robotics Club member, I've organized workshops and led teams building combat and soccer bots. I believe in learning by doing and enjoy sharing knowledge with others through mentoring and technical discussions.",
     interests: "When I'm not coding, you can find me solving algorithmic challenges on competitive programming platforms, participating in hackathons, or running track. I won Bronze in 50m Hurdles at NIT Patna Intramurals!"
   },
-  profileImage: "https://images.pexels.com/photos/32326782/pexels-photo-32326782.jpeg",
-  resume: "/Yuvraj_Resume_v2_1 (1).pdf",
+  profileImage: "/public/yuvraj.png",
+  resume: "/public/Yuvraj_Resume_v2_1 (1).pdf",
   status: {
     availability: "Available",
     workMode: "Remote"
@@ -52,13 +53,17 @@ export const socialLinks = {
     url: "https://www.codechef.com/users/quick_unity_53",
     username: "quick_unity_53"
   },
+  codeforces: {
+    url: "https://codeforces.com/profile/yuvraj.mehta532",
+    username: "yuvraj.mehta532"
+  },
   instagram: {
     url: "https://www.instagram.com/yuvraj.mehta4261/",
     username: "yuvraj.mehta4261"
   },
   twitter: {
-    url: "https://twitter.com/",
-    username: ""
+    url: "https://x.com/yuvraj_mehta02",
+    username: "yuvraj_mehta02"
   },
   email: {
     url: "mailto:yuvraj.mehta532@gmail.com",
@@ -68,53 +73,59 @@ export const socialLinks = {
 
 export const achievements = {
   leetcode: {
-    rating: "1570+",
-    problemsSolved: "333+",
-    globalRanking: "Top 27.7%"
+    rating: "1649",
+    maxRating: "1649",
+    problemsSolved: "277",
+    globalRanking: "125365",
+    percentile: "Top 17.36%"
   },
   codechef: {
-    rating: "1270",
-    problemsSolved: "25+",
-    stars: "2★"
+    rating: "1451",
+    maxRating: "1456",
+    problemsSolved: "25",
+    stars: "2★",
+    division: "Div 3"
   },
   codeforces: {
-    rating: "900",
-    problemsSolved: "10+",
+    rating: "1030",
+    maxRating: "1085",
+    problemsSolved: "27",
     rank: "Newbie"
   },
   geeksforgeeks: {
-    problemsSolved: "70+",
-    rank: "1455"
+    problemsSolved: "130",
+    rank: "1058"
   },
   stats: {
     yearsExperience: "2+",
-    totalProjects: "15+",
-    commits: "500+"
+    totalProjects: "4",
+    commits: "500+",
+    totalProblemsSolved: "459"
   },
   awards: [
     {
-      title: "Best Delegate - Model United Nations",
+      title: "Winner - Model United Nations",
       category: "competition",
       year: "2023",
-      description: "Represented Poland at NIT Patna's MUN, earned Best Delegate award for exceptional debate skills."
+      description: "Represented the Republic of Poland at NIT Patna's Model United Nations. Earned the Best Delegate award for exceptional debate skills and impactful resolutions."
     },
     {
-      title: "Bronze Medal - 50m Hurdles",
-      category: "sports", 
-      year: "2023",
-      description: "Won Bronze in 50m Hurdles at NIT Patna Intramurals sports competition."
-    },
-    {
-      title: "LeetCode Top 27.7%",
+      title: "Technical Member",
       category: "technical",
-      year: "2024", 
-      description: "Achieved global ranking in top 27.7% with 1570+ rating and 333+ problems solved."
+      year: "2023 - Present",
+      description: "Active member of the Robotics Club, led team building combat and soccer bots, organized workshops."
     },
     {
-      title: "Tech Fest Participant",
-      category: "competition",
-      year: "2023-2024",
-      description: "Regular participant in technical competitions and robotics challenges at university level."
+      title: "Class Representative",
+      category: "leadership",
+      year: "2023 - 2024",
+      description: "Coordinated between faculty and students, organized department events for 3 semesters."
+    },
+    {
+      title: "Bronze Medal - NIT Patna Intramurals",
+      category: "sports",
+      year: "2023",
+      description: "Won Bronze in 50m Hurdles at the university sports event."
     }
   ]
 };
@@ -127,13 +138,13 @@ export const experiences = [
     period: "December 2023 - Present",
     type: "Technical",
     status: "Currently Active",
-    description: "Organized and facilitated 3+ workshops on designing and building robotic bots. Led a team of 4 to build a combat-ready battle bot, achieving 4th place among 15+ teams at NIT Patna's tech fest. Directed a team of 3 in designing and developing a soccer bot for the annual tech fest.",
+    description: "Organized and facilitated 3+ workshops on designing and building robotic bots. Led a team of 4 to build a combat-ready battle bot, achieving 4th place among 15+ teams at NIT Patna's tech fest. Directed a team of 3 in designing and developing a soccer bot for the annual tech fest, enhancing hands-on robotics and teamwork skills.",
     highlights: [
       "4th place in tech fest",
       "3+ workshops organized",
       "Team of 4-7 members"
     ],
-    skills: ["Arduino", "C++", "Mechanical Design", "Team Leadership"]
+    skills: ["Arduino", "Mechanical Design", "Team Leadership"]
   },
   {
     title: "Team Leader",
@@ -141,27 +152,13 @@ export const experiences = [
     location: "NIT Patna & Remote",
     period: "2023",
     type: "Leadership",
-    description: "Led teams in 3 major hackathons, including the prestigious Smart India Hackathon. Guided my team to qualify at the internal NIT Patna hackathon and advance to the national level. Oversaw all phases from ideation to development and presentation.",
+    description: "Led teams in 4 major hackathons, including the prestigious Smart India Hackathon. Guided my team to qualify at the internal NIT Patna hackathon and advance to the national level. Oversaw all phases from ideation to development and presentation, ensuring effective collaboration and timely delivery of innovative solutions.",
     highlights: [
       "National level qualification",
-      "3 major hackathons",
+      "4 major hackathons",
       "End-to-end project management"
     ],
     skills: ["Problem Solving", "Team Management", "Presentation", "Innovation"]
-  },
-  {
-    title: "Class Representative",
-    company: "Computer Science Department, NIT Patna",
-    location: "NIT Patna",
-    period: "2023 - 2024",
-    type: "Leadership",
-    description: "Coordinated between faculty and students, organized department events, and facilitated communication for academic activities. Represented student interests in department meetings and helped resolve academic concerns.",
-    highlights: [
-      "Student-faculty liaison",
-      "Department event coordination",
-      "Academic advocacy"
-    ],
-    skills: ["Communication", "Event Management", "Leadership", "Coordination"]
   }
 ];
 
@@ -211,91 +208,180 @@ export const skills = {
 };
 
 export const interests = [
+  { icon: FaPuzzlePiece, name: "Competitive Programming", description: "LeetCode, Codeforces & more" },
   { icon: FaRobot, name: "Robotics", description: "Building combat & soccer bots" },
   { icon: FaRunning, name: "Athletics", description: "Bronze in 50m Hurdles" },
-  { icon: FaPuzzlePiece, name: "Problem Solving", description: "Competitive programming" },
-  { icon: FaUsers, name: "Mentoring", description: "Leading workshops" }
+  { icon: FaUsers, name: "Technical Workshops", description: "Organizing & leading workshops" },
+  { icon: FaUsers, name: "Team Leadership", description: "Leading teams and projects" },
+  { icon: FaPuzzlePiece, name: "Problem Solving", description: "Analytical thinking and solutions" }
+];
+
+export const education = [
+  {
+    level: "Bachelor of Technology",
+    title: "B.Tech in Computer Science and Engineering",
+    institution: "National Institute of Technology, Patna",
+    location: "Patna, Bihar",
+    duration: "2023 - 2027",
+    status: "current",
+    cgpa: "7.68/10",
+    activities: [
+      "Class Representative for CSE Department",
+      "Member of Technical Club",
+      "Competitive Programming Participant"
+    ],
+    courses: [
+      "Data Structures & Algorithms",
+      "Database Management Systems",
+      "Operating Systems",
+      "Computer Networks",
+      "Artificial Intelligence"
+    ],
+    achievements: [
+      "Maintaining CGPA of 7.68/10",
+      "Class Representative for CSE Department",
+      "MUN Best Delegate Award"
+    ]
+  },
+  {
+    level: "Higher Secondary",
+    title: "Class XII (CBSE)",
+    institution: "Pragya Bharti Public School, Gaya",
+    location: "Gaya, Bihar",
+    duration: "2021 - 2022",
+    status: "completed",
+    percentage: "88.88%",
+    activities: [],
+    courses: [
+      "Physics",
+      "Chemistry",
+      "Mathematics",
+      "English",
+      "Physical Education"
+    ],
+    achievements: [
+      "Scored 88.88% in CBSE Class 12",
+      "School Merit List"
+    ]
+  },
+  {
+    level: "Secondary",
+    title: "Class X (CBSE)",
+    institution: "Pragya Bharti Public School, Gaya",
+    location: "Gaya, Bihar",
+    duration: "2019 - 2020",
+    status: "completed",
+    percentage: "91%",
+    activities: [
+      "Science Exhibitions",
+      "Sports Competitions",
+      "Debate Competitions"
+    ],
+    courses: [
+      "Science",
+      "Mathematics",
+      "Social Studies",
+      "English",
+      "Sanskrit",
+      "Information Technology"
+    ],
+    achievements: [
+      "Scored 91% in CBSE Class 10"
+    ]
+  }
+];
+
+export const certifications = [
+  {
+    title: "Web Development Bootcamp",
+    issuer: "Udemy",
+    year: "2023",
+    description: "Comprehensive full-stack web development course covering HTML, CSS, JavaScript, complete MERN stack, and deployment.",
+    featured: true,
+    category: "technical"
+  }
 ];
 
 export const projects = [
   {
     title: "BookHive",
     name: "BookHive",
-    description: "A collaborative book reading and review platform with real-time chat, personalized recommendations, and social features.",
-    image: "https://cdn.builder.io/api/v1/image/assets%2F911edf0abfc44540bba885225b62aa26%2F6aff8a4cc2a44603904ec06dfbd17734?format=webp&width=800",
+    description: "BookNest is a full-stack library management system with distinct user and admin roles. It features book and PYQ management, a borrowing system, OTP-verified authentication, and separate dashboards. Built with React, Node.js, Express.js, and MongoDB.",
+    image: "https://cdn.builder.io/api/v1/image/assets%2F911edf0abfc44540bba885225b62aa26%2F6aff8a4cc2a44603904ec06dfbd17734?format=webp&width=2880&height=1560",
     category: "Full Stack",
     featured: true,
-    tags: ["React", "Node.js", "Express", "MongoDB", "Socket.io", "Tailwind CSS"],
-    techStack: ["React", "Node.js", "Express", "MongoDB", "Socket.io", "Tailwind CSS"],
-    demo: "https://bookhive.live",
-    live: "https://bookhive.live",
-    github: "https://github.com/yuvraj-mehta/bookhive",
+    tags: ["React", "Redux Toolkit", "Node.js", "Express", "MongoDB", "JWT"],
+    techStack: ["React", "Redux Toolkit", "Node.js", "Express", "MongoDB", "JWT"],
+    demo: "https://bookhive-manager.vercel.app",
+    live: "https://bookhive-manager.vercel.app",
+    github: "https://github.com/yuvraj-mehta/Byteverse_NandiNinjas",
     status: "Live",
     features: [
-      "Real-time group chat for book clubs",
-      "Personalized book recommendations",
-      "User reviews and ratings",
-      "Social sharing and friend system"
+      "Full-stack library management system",
+      "User and admin role management",
+      "Book and PYQ management",
+      "OTP-verified authentication",
+      "Separate user and admin dashboards"
+    ]
+  },
+  {
+    title: "Portfolio Website",
+    name: "Portfolio Website",
+    description: "Personal developer portfolio showcasing projects and skills. Designed and built a responsive single-page portfolio with smooth animations and dynamic navigation. Integrated a contact form using EmailJS and added a downloadable resume feature.",
+    image: "https://cdn.builder.io/api/v1/image/assets%2F911edf0abfc44540bba885225b62aa26%2F564561b9219a409f8cd1139440589eac?format=webp&width=2880&height=1560",
+    category: "Frontend",
+    featured: true,
+    tags: ["React", "Tailwind CSS", "Framer Motion", "Vite"],
+    techStack: ["React", "Tailwind CSS", "Framer Motion", "Vite"],
+    demo: "https://yuvrajmehta.codes",
+    live: "https://yuvrajmehta.codes",
+    github: "https://github.com/yuvraj-mehta/My-Portfolio",
+    status: "Live",
+    features: [
+      "Responsive single-page portfolio",
+      "Smooth animations and dynamic navigation",
+      "Integrated contact form with EmailJS",
+      "Downloadable resume feature"
     ]
   },
   {
     title: "EcoGuardian",
     name: "EcoGuardian",
-    description: "A gamified platform to track, reduce, and compete on carbon footprint, with educational resources and community challenges.",
-    image: "https://cdn.builder.io/api/v1/image/assets%2F911edf0abfc44540bba885225b62aa26%2F2fbbcced95b94a128c0a7b5e14c085a0?format=webp&width=800",
+    description: "An online community platform empowering individuals to collaborate on environmental projects, report cleanliness issues, access educational resources, and drive positive change for a cleaner, greener future. 🌍",
+    image: "https://cdn.builder.io/api/v1/image/assets%2F911edf0abfc44540bba885225b62aa26%2F2fbbcced95b94a128c0a7b5e14c085a0?format=webp&width=2880&height=1560",
     category: "Full Stack",
     featured: true,
-    tags: ["Next.js", "TypeScript", "Firebase", "Framer Motion", "Tailwind CSS"],
-    techStack: ["Next.js", "TypeScript", "Firebase", "Framer Motion", "Tailwind CSS"],
-    demo: "https://ecoguardian.app",
-    live: "https://ecoguardian.app",
-    github: "https://github.com/yuvraj-mehta/ecoguardian",
+    tags: ["HTML", "CSS", "JavaScript", "Node.js", "Express", "MongoDB"],
+    techStack: ["HTML", "CSS", "JavaScript", "Node.js", "Express", "MongoDB"],
+    demo: "https://yuvraj-mehta.github.io/EcoGuardian_prototype/",
+    live: "https://yuvraj-mehta.github.io/EcoGuardian_prototype/",
+    github: "https://github.com/yuvraj-mehta/EcoGuardian_prototype",
     status: "Live",
     features: [
-      "Carbon footprint calculator",
-      "Gamified challenges and leaderboards",
-      "Educational content on sustainability",
-      "Progress tracking dashboard"
+      "Environmental community platform",
+      "Project collaboration features",
+      "Cleanliness issue reporting",
+      "Educational resources access"
     ]
   },
   {
     title: "Stickify",
     name: "Stickify",
-    description: "A full-stack sticker marketplace with custom design tools, order management, and secure payments.",
-    image: "https://cdn.builder.io/api/v1/image/assets%2F911edf0abfc44540bba885225b62aa26%2F66d04f4d2b8f4683a586836a1645fcd0?format=webp&width=800",
-    category: "Full Stack",
-    featured: true,
-    tags: ["React", "Redux", "Node.js", "Express", "MongoDB", "Stripe API", "Tailwind CSS"],
-    techStack: ["React", "Redux", "Node.js", "Express", "MongoDB", "Stripe API", "Tailwind CSS"],
-    demo: "https://stickify.shop",
-    live: "https://stickify.shop",
-    github: "https://github.com/yuvraj-mehta/stickify",
-    status: "Live",
-    features: [
-      "Custom sticker design editor",
-      "Order and inventory management",
-      "Secure Stripe payments",
-      "User reviews and wishlists"
-    ]
-  },
-  {
-    title: "Portfolio",
-    name: "Portfolio",
-    description: "Modern, animated portfolio to showcase full stack, DSA, and GenAI skills. Features project gallery, coding stats, and interactive UI.",
-    image: "https://cdn.builder.io/api/v1/image/assets%2F911edf0abfc44540bba885225b62aa26%2F564561b9219a409f8cd1139440589eac?format=webp&width=800",
+    description: "This is a simple notes application built with React and Vite. It allows users to create, update, delete, and manage notes with different colors. The application uses Appwrite as the backend service for managing notes.",
+    image: "https://cdn.builder.io/api/v1/image/assets%2F911edf0abfc44540bba885225b62aa26%2F66d04f4d2b8f4683a586836a1645fcd0?format=webp&width=2880&height=1560",
     category: "Frontend",
     featured: false,
-    tags: ["React", "TypeScript", "Vite", "Tailwind CSS", "Framer Motion", "Node.js", "Express"],
-    techStack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Framer Motion", "Node.js", "Express"],
-    demo: "https://yuvrajmehta.dev",
-    live: "https://yuvrajmehta.dev",
-    github: "https://github.com/yuvraj-mehta/portfolio",
+    tags: ["React", "Vite", "Tailwind CSS", "Appwrite"],
+    techStack: ["React", "Vite", "Tailwind CSS", "Appwrite"],
+    demo: "https://stickify-git-master-yuvraj-mehtas-projects.vercel.app/",
+    live: "https://stickify-git-master-yuvraj-mehtas-projects.vercel.app/",
+    github: "https://github.com/yuvraj-mehta/Stickify",
     status: "Live",
     features: [
-      "Animated hero and section transitions",
-      "Coding stats integration (LeetCode, Codeforces, etc.)",
-      "Responsive, accessible, and SEO-optimized",
-      "Dark/light mode with theme persistence"
+      "Simple notes application",
+      "Create, update, delete notes",
+      "Color-coded note organization",
+      "Appwrite backend integration"
     ]
   }
 ];
@@ -309,7 +395,7 @@ export const siteMetadata = {
 };
 
 export const quickLinks = [
-  { name: "Resume", href: "/Yuvraj_Resume_v2_1 (1).pdf", icon: "📄", external: true },
+  { name: "Resume", href: "/public/Yuvraj_Resume_v2_1 (1).pdf", icon: "📄", external: true },
   { name: "LeetCode", href: "https://leetcode.com/u/mythical-UV/", icon: "⚡", external: true },
   { name: "GeeksforGeeks", href: "https://www.geeksforgeeks.org/user/yuvrajmevbrx/", icon: "🟢", external: true },
   { name: "CodeChef", href: "https://www.codechef.com/users/quick_unity_53", icon: "👨‍🍳", external: true },

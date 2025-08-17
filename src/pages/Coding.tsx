@@ -46,12 +46,12 @@ const Coding = () => {
   const [apiError, setApiError] = useState<string | null>(null);
   const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
 
-  // Fallback data (original hardcoded values)
+  // Fallback data (real statistics)
   const fallbackData = {
-    leetcode: { totalSolved: 228, problemsSolved: { easy: 150, medium: 65, hard: 13 } },
-    codeforces: { problemsSolved: 10, rating: 900, rank: "Newbie" },
-    codechef: { problemsSolved: 25, rating: 1270, stars: 2 },
-    gfg: { problemsSolved: 70, score: 500, rank: 1455 }
+    leetcode: { totalSolved: 277, problemsSolved: { easy: 180, medium: 85, hard: 12 } },
+    codeforces: { problemsSolved: 27, rating: 1030, rank: "Newbie" },
+    codechef: { problemsSolved: 25, rating: 1451, stars: 2 },
+    gfg: { problemsSolved: 130, score: 500, rank: 1058 }
   };
 
   // Fetch API data
@@ -138,9 +138,9 @@ const Coding = () => {
   const codingStats = [
     {
       platform: "LeetCode",
-      solved: apiData?.leetcode?.problemsSolved?.total || 228,
-      rating: apiData?.leetcode?.profile?.rating ? Math.round(apiData.leetcode.profile.rating).toString() : "1570",
-      rank: apiData?.leetcode?.contests?.topPercentage ? `Top ${apiData.leetcode.contests.topPercentage}%` : "Top 27.7%",
+      solved: apiData?.leetcode?.problemsSolved?.total || 277,
+      rating: apiData?.leetcode?.profile?.rating ? Math.round(apiData.leetcode.profile.rating).toString() : "1649",
+      rank: apiData?.leetcode?.contests?.topPercentage ? `Top ${apiData.leetcode.contests.topPercentage}%` : "Top 17.36%",
       color: "text-orange-400",
       bgColor: "from-orange-500/20 to-yellow-500/20",
       borderColor: "border-orange-500/30",
@@ -153,8 +153,8 @@ const Coding = () => {
     },
     {
       platform: "GeeksforGeeks",
-      solved: apiData?.gfg?.problemsSolved?.total || 70,
-      rating: apiData?.gfg?.profile?.rank || "Rank #1455",
+      solved: apiData?.gfg?.problemsSolved?.total || 130,
+      rating: apiData?.gfg?.profile?.rank || "Rank #1058",
       streak: apiData?.gfg?.profile?.currentStreak ? `${apiData.gfg.profile.currentStreak}+ day streak` : "35+ day streak",
       color: "text-green-400",
       bgColor: "from-green-500/20 to-emerald-500/20",
@@ -169,7 +169,7 @@ const Coding = () => {
     {
       platform: "CodeChef",
       solved: apiData?.codechef?.problemsSolved?.total || 25,
-      rating: apiData?.codechef?.profile?.rating?.toString() || "1270",
+      rating: apiData?.codechef?.profile?.rating?.toString() || "1451",
       rank: apiData?.codechef?.achievements?.stars ? `${apiData.codechef.achievements.stars} Coder` : "2★ Coder (Division 3)",
       color: "text-amber-400",
       bgColor: "from-amber-500/20 to-orange-500/20",
@@ -183,8 +183,8 @@ const Coding = () => {
     },
     {
       platform: "Codeforces",
-      solved: apiData?.codeforces?.problemsSolved?.total || 10,
-      rating: apiData?.codeforces?.profile?.rating?.toString() || "900",
+      solved: apiData?.codeforces?.problemsSolved?.total || 27,
+      rating: apiData?.codeforces?.profile?.rating?.toString() || "1030",
       rank: apiData?.codeforces?.profile?.rank || "Newbie",
       color: "text-blue-400",
       bgColor: "from-blue-500/20 to-cyan-500/20",
@@ -205,7 +205,7 @@ const Coding = () => {
   const achievements = [
     {
       title: "LeetCode Consistency Champion",
-      description: `Maintained active problem-solving streak with ${apiData?.leetcode?.problemsSolved?.total || 277}+ problems solved, achieving top ${apiData?.leetcode?.contests?.topPercentage || "17.4"}% global ranking`,
+      description: `Maintained active problem-solving streak with ${apiData?.leetcode?.problemsSolved?.total || 277}+ problems solved, achieving top ${apiData?.leetcode?.contests?.topPercentage || "17.36"}% global ranking`,
       icon: FaTrophy,
       color: "text-yellow-400",
       bgColor: "from-yellow-500/20 to-orange-500/20",
@@ -331,7 +331,7 @@ const Coding = () => {
               <div className="flex items-center gap-2 px-3 py-2 bg-orange-500/5 rounded-lg border border-orange-500/20">
                 <FaStar className="w-4 h-4 text-orange-500" />
                 <span className="text-muted-foreground font-medium">
-                  LeetCode Top {apiData?.leetcode?.contests?.topPercentage || "27.7"}%
+                  LeetCode Top {apiData?.leetcode?.contests?.topPercentage || "17.36"}%
                 </span>
               </div>
             </div>

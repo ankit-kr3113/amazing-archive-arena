@@ -30,9 +30,9 @@ const About = () => {
   // Using centralized data from portfolioData.ts
   const achievementStats = [
     { value: achievements.leetcode.rating, label: "LeetCode Rating", color: "text-orange-500" },
-    { value: achievements.leetcode.problemsSolved, label: "Problems Solved", color: "text-green-500" },
+    { value: achievements.stats.totalProblemsSolved, label: "Problems Solved", color: "text-green-500" },
     { value: achievements.stats.totalProjects, label: "Projects Built", color: "text-blue-500" },
-    { value: achievements.leetcode.globalRanking, label: "Global Ranking", color: "text-purple-500" },
+    { value: achievements.leetcode.percentile, label: "LeetCode Percentile", color: "text-purple-500" },
   ];
 
   const handleContactClick = () => {
