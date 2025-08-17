@@ -149,6 +149,21 @@ export const experiences = [
     skills: ["Arduino", "Mechanical Design", "Team Leadership"]
   },
   {
+    title: "Class Representative",
+    company: "Computer Science Department, NIT Patna",
+    location: "NIT Patna",
+    period: "2023 - 2024",
+    type: "Leadership",
+    status: "Completed",
+    description: "Served as the official representative for the Computer Science Engineering department for 3 consecutive semesters. Coordinated communication between faculty and students, organized department events and academic activities. Facilitated student concerns and feedback to administration, contributing to improved academic environment and student satisfaction.",
+    highlights: [
+      "3 semesters of service",
+      "Faculty-student coordination",
+      "Department event organization"
+    ],
+    skills: ["Communication", "Leadership", "Event Management", "Problem Resolution"]
+  },
+  {
     title: "Team Leader",
     company: "Hackathons (including Smart India Hackathon)",
     location: "NIT Patna & Remote",
