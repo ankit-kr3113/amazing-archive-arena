@@ -216,6 +216,92 @@ export const interests = [
   { icon: FaPuzzlePiece, name: "Problem Solving", description: "Analytical thinking and solutions" }
 ];
 
+export const education = [
+  {
+    level: "Bachelor of Technology",
+    title: "B.Tech in Computer Science and Engineering",
+    institution: "National Institute of Technology, Patna",
+    location: "Patna, Bihar",
+    duration: "2023 - 2027",
+    status: "current",
+    cgpa: "7.68/10",
+    activities: [
+      "Class Representative for CSE Department",
+      "Member of Technical Club",
+      "Competitive Programming Participant"
+    ],
+    courses: [
+      "Data Structures & Algorithms",
+      "Database Management Systems",
+      "Operating Systems",
+      "Computer Networks",
+      "Artificial Intelligence"
+    ],
+    achievements: [
+      "Maintaining CGPA of 7.68/10",
+      "Class Representative for CSE Department",
+      "MUN Best Delegate Award"
+    ]
+  },
+  {
+    level: "Higher Secondary",
+    title: "Class XII (CBSE)",
+    institution: "Pragya Bharti Public School, Gaya",
+    location: "Gaya, Bihar",
+    duration: "2021 - 2022",
+    status: "completed",
+    percentage: "88.88%",
+    activities: [],
+    courses: [
+      "Physics",
+      "Chemistry",
+      "Mathematics",
+      "English",
+      "Physical Education"
+    ],
+    achievements: [
+      "Scored 88.88% in CBSE Class 12",
+      "School Merit List"
+    ]
+  },
+  {
+    level: "Secondary",
+    title: "Class X (CBSE)",
+    institution: "Pragya Bharti Public School, Gaya",
+    location: "Gaya, Bihar",
+    duration: "2019 - 2020",
+    status: "completed",
+    percentage: "91%",
+    activities: [
+      "Science Exhibitions",
+      "Sports Competitions",
+      "Debate Competitions"
+    ],
+    courses: [
+      "Science",
+      "Mathematics",
+      "Social Studies",
+      "English",
+      "Sanskrit",
+      "Information Technology"
+    ],
+    achievements: [
+      "Scored 91% in CBSE Class 10"
+    ]
+  }
+];
+
+export const certifications = [
+  {
+    title: "Web Development Bootcamp",
+    issuer: "Udemy",
+    year: "2023",
+    description: "Comprehensive full-stack web development course covering HTML, CSS, JavaScript, complete MERN stack, and deployment.",
+    featured: true,
+    category: "technical"
+  }
+];
+
 export const projects = [
   {
     title: "BookHive",
