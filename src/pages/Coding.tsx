@@ -218,8 +218,8 @@ const Coding = () => {
   // Calculate total dynamically
   const totalProblems = codingStats.reduce((sum, platform) => sum + platform.solved, 0);
 
-  // Enhanced achievements with real-time API data
-  const achievements = [
+  // Enhanced coding achievements with real-time API data
+  const codingAchievements = [
     {
       title: "LeetCode Consistency Champion",
       description: `Maintained active problem-solving streak with ${apiData?.leetcode?.problemsSolved?.total || fallbackData.leetcode.totalSolved}+ problems solved, achieving top ${apiData?.leetcode?.contests?.topPercentage || achievements.leetcode.percentile.replace('Top ', '').replace('%', '')}% global ranking`,
