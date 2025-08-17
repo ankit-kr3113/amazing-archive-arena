@@ -266,7 +266,7 @@ const Overview = () => {
       {/* SEO Meta Tags */}
       <title>{personalInfo.name} - {personalInfo.title} | Portfolio Overview</title>
       <meta name="description" content={`${personalInfo.title} & ${personalInfo.course} Student at ${personalInfo.university}. Specialized in React, Node.js, and modern web technologies. ${achievements.leetcode.problemsSolved} LeetCode problems solved.`} />
-      <meta name="keywords" content="Full Stack Developer, React, Node.js, TypeScript, NIT Patna, LeetCode, Portfolio" />
+      <meta name="keywords" content={`Full Stack Developer, React, Node.js, TypeScript, ${personalInfo.university}, LeetCode, Portfolio`} />
       <meta property="og:title" content={`${personalInfo.name} - ${personalInfo.title} Portfolio`} />
       <meta property="og:description" content="Full Stack Developer specializing in modern web technologies. Check out my projects and skills." />
       <meta property="og:type" content="website" />
