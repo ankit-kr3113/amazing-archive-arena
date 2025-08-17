@@ -17,6 +17,7 @@ import {
 } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
 import { githubApi, GitHubCommit, GitHubRepository } from '@/services/githubApi';
+import { socialLinks } from '@/data/portfolioData';
 
 interface GitHubActivityProps {
   className?: string;
@@ -337,13 +338,13 @@ const GitHubActivity = ({ className = '' }: GitHubActivityProps) => {
           <div className="p-4 border-t border-primary/10 bg-background/30">
             <div className="flex gap-2">
               <Button asChild variant="outline" size="sm" className="flex-1">
-                <a href="https://github.com/yuvraj-mehta" target="_blank" rel="noopener noreferrer">
+                <a href={socialLinks.github.url} target="_blank" rel="noopener noreferrer">
                   <FaGithub className="w-3 h-3 mr-2" />
                   View Profile
                 </a>
               </Button>
               <Button asChild size="sm" className="flex-1">
-                <a href="https://github.com/yuvraj-mehta?tab=repositories" target="_blank" rel="noopener noreferrer">
+                <a href={`${socialLinks.github.url}?tab=repositories`} target="_blank" rel="noopener noreferrer">
                   <TrendingUp className="w-3 h-3 mr-2" />
                   All Repositories
                 </a>

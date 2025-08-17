@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
 import { useState, useEffect } from "react";
 import { codingPlatformsApi, AllPlatformStats } from "@/services/codingPlatformsApi";
+import { achievements, socialLinks } from "@/data/portfolioData";
 
 // React Icons imports
 import {
@@ -46,12 +47,28 @@ const Coding = () => {
   const [apiError, setApiError] = useState<string | null>(null);
   const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
 
-  // Fallback data (real statistics)
+  // Fallback data from centralized achievements
   const fallbackData = {
-    leetcode: { totalSolved: 277, problemsSolved: { easy: 180, medium: 85, hard: 12 } },
-    codeforces: { problemsSolved: 27, rating: 1030, rank: "Newbie" },
-    codechef: { problemsSolved: 25, rating: 1451, stars: 2 },
-    gfg: { problemsSolved: 130, score: 500, rank: 1058 }
+    leetcode: {
+      totalSolved: parseInt(achievements.leetcode.problemsSolved),
+      problemsSolved: { easy: 180, medium: 85, hard: 12 },
+      rating: parseInt(achievements.leetcode.rating)
+    },
+    codeforces: {
+      problemsSolved: parseInt(achievements.codeforces.problemsSolved),
+      rating: parseInt(achievements.codeforces.rating),
+      rank: achievements.codeforces.rank
+    },
+    codechef: {
+      problemsSolved: parseInt(achievements.codechef.problemsSolved),
+      rating: parseInt(achievements.codechef.rating),
+      stars: 2
+    },
+    gfg: {
+      problemsSolved: parseInt(achievements.geeksforgeeks.problemsSolved),
+      score: 500,
+      rank: parseInt(achievements.geeksforgeeks.rank)
+    }
   };
 
   // Fetch API data
@@ -138,14 +155,14 @@ const Coding = () => {
   const codingStats = [
     {
       platform: "LeetCode",
-      solved: apiData?.leetcode?.problemsSolved?.total || 277,
-      rating: apiData?.leetcode?.profile?.rating ? Math.round(apiData.leetcode.profile.rating).toString() : "1649",
-      rank: apiData?.leetcode?.contests?.topPercentage ? `Top ${apiData.leetcode.contests.topPercentage}%` : "Top 17.36%",
+      solved: apiData?.leetcode?.problemsSolved?.total || fallbackData.leetcode.totalSolved,
+      rating: apiData?.leetcode?.profile?.rating ? Math.round(apiData.leetcode.profile.rating).toString() : fallbackData.leetcode.rating.toString(),
+      rank: apiData?.leetcode?.contests?.topPercentage ? `Top ${apiData.leetcode.contests.topPercentage}%` : achievements.leetcode.percentile,
       color: "text-orange-400",
       bgColor: "from-orange-500/20 to-yellow-500/20",
       borderColor: "border-orange-500/30",
       icon: SiLeetcode,
-      url: "https://leetcode.com/u/mythical-UV/",
+      url: socialLinks.leetcode.url,
       lastActive: "2024",
       joinedDate: "Jan 2023",
       difficulty: apiData?.leetcode?.problemsSolved || { easy: 150, medium: 65, hard: 13 },
@@ -160,7 +177,7 @@ const Coding = () => {
       bgColor: "from-green-500/20 to-emerald-500/20",
       borderColor: "border-green-500/30",
       icon: SiGeeksforgeeks,
-      url: "https://www.geeksforgeeks.org/user/yuvrajmevbrx/",
+      url: socialLinks.geeksforgeeks.url,
       lastActive: "2024",
       joinedDate: "Mar 2023",
       difficulty: apiData?.gfg?.problemsSolved || { easy: 45, medium: 20, hard: 5 },
@@ -175,7 +192,7 @@ const Coding = () => {
       bgColor: "from-amber-500/20 to-orange-500/20",
       borderColor: "border-amber-500/30",
       icon: SiCodechef,
-      url: "https://www.codechef.com/users/quick_unity_53",
+      url: socialLinks.codechef.url,
       lastActive: "2024",
       joinedDate: "Feb 2023",
       difficulty: apiData?.codechef?.problemsSolved || { easy: 18, medium: 6, hard: 1 },
@@ -190,7 +207,7 @@ const Coding = () => {
       bgColor: "from-blue-500/20 to-cyan-500/20",
       borderColor: "border-blue-500/30",
       icon: SiCodeforces,
-      url: "https://codeforces.com/profile/yuvraj_mythical",
+      url: socialLinks.codeforces.url,
       lastActive: "2024",
       joinedDate: "Apr 2023",
       difficulty: apiData?.codeforces?.problemsSolved || { easy: 8, medium: 2, hard: 0 },
@@ -201,16 +218,16 @@ const Coding = () => {
   // Calculate total dynamically
   const totalProblems = codingStats.reduce((sum, platform) => sum + platform.solved, 0);
 
-  // Enhanced achievements with real-time API data
-  const achievements = [
+  // Enhanced coding achievements with real-time API data
+  const codingAchievements = [
     {
       title: "LeetCode Consistency Champion",
-      description: `Maintained active problem-solving streak with ${apiData?.leetcode?.problemsSolved?.total || 277}+ problems solved, achieving top ${apiData?.leetcode?.contests?.topPercentage || "17.36"}% global ranking`,
+      description: `Maintained active problem-solving streak with ${apiData?.leetcode?.problemsSolved?.total || fallbackData.leetcode.totalSolved}+ problems solved, achieving top ${apiData?.leetcode?.contests?.topPercentage || achievements.leetcode.percentile.replace('Top ', '').replace('%', '')}% global ranking`,
       icon: FaTrophy,
       color: "text-yellow-400",
       bgColor: "from-yellow-500/20 to-orange-500/20",
       borderColor: "border-yellow-500/30",
-      metric: `${apiData?.leetcode?.problemsSolved?.total || 277} Problems`
+      metric: `${apiData?.leetcode?.problemsSolved?.total || fallbackData.leetcode.totalSolved} Problems`
     },
     {
       title: "Contest Performer",
@@ -223,12 +240,12 @@ const Coding = () => {
     },
     {
       title: "LeetCode Rating Champion",
-      description: `Achieved a competitive rating of ${Math.round(apiData?.leetcode?.profile?.rating || 1649)} on LeetCode with ${apiData?.leetcode?.achievements?.streaks?.totalActiveDays || 149} total active coding days, demonstrating consistent algorithmic excellence`,
+      description: `Achieved a competitive rating of ${Math.round(apiData?.leetcode?.profile?.rating || fallbackData.leetcode.rating)} on LeetCode with ${apiData?.leetcode?.achievements?.streaks?.totalActiveDays || 149} total active coding days, demonstrating consistent algorithmic excellence`,
       icon: FaFire,
       color: "text-green-400",
       bgColor: "from-green-500/20 to-emerald-500/20",
       borderColor: "border-green-500/30",
-      metric: `${Math.round(apiData?.leetcode?.profile?.rating || 1649)} Rating`
+      metric: `${Math.round(apiData?.leetcode?.profile?.rating || fallbackData.leetcode.rating)} Rating`
     },
     {
       title: "Multi-Platform Excellence",
@@ -331,7 +348,7 @@ const Coding = () => {
               <div className="flex items-center gap-2 px-3 py-2 bg-orange-500/5 rounded-lg border border-orange-500/20">
                 <FaStar className="w-4 h-4 text-orange-500" />
                 <span className="text-muted-foreground font-medium">
-                  LeetCode Top {apiData?.leetcode?.contests?.topPercentage || "17.36"}%
+                  LeetCode {apiData?.leetcode?.contests?.topPercentage ? `Top ${apiData.leetcode.contests.topPercentage}%` : achievements.leetcode.percentile}
                 </span>
               </div>
             </div>
@@ -446,7 +463,7 @@ const Coding = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {achievements.map((achievement, index) => {
+              {codingAchievements.map((achievement, index) => {
                 const IconComponent = achievement.icon;
                 return (
                   <Card
