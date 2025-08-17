@@ -73,17 +73,17 @@ const Navigation = () => {
             ))}
           </div>
 
-          {/* Enhanced Resume Button */}
-          <div className="hidden lg:flex items-center space-x-3">
+          {/* Simple Resume Button */}
+          <div className="hidden lg:flex items-center">
             <Button
               variant="outline"
               size="sm"
-              className="group bg-gradient-to-r from-primary/15 to-primary-glow/12 border-2 border-primary/40 hover:from-primary/25 hover:to-primary-glow/20 text-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 hover:shadow-xl shadow-lg backdrop-blur-sm"
+              className="text-sm"
               asChild
             >
               <a href={personalInfo.resume} target="_blank" rel="noopener noreferrer">
-                <HiDownload className="w-4 h-4 mr-2 group-hover:animate-bounce" />
-                <span className="font-semibold">Resume</span>
+                <HiDownload className="w-4 h-4 mr-2" />
+                Resume
               </a>
             </Button>
           </div>
