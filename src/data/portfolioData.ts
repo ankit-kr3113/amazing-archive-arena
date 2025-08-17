@@ -42,7 +42,7 @@ export const socialLinks = {
     username: "yuvraj-mehta-a0274528a"
   },
   leetcode: {
-    url: "https://leetcode.com/mythical-UV/",
+    url: "https://leetcode.com/u/mythical-UV/",
     username: "mythical-UV"
   },
   geeksforgeeks: {
@@ -66,8 +66,8 @@ export const socialLinks = {
     username: "yuvraj_mehta02"
   },
   email: {
-    url: "mailto:yuvrajmehta.dev@gmail.com",
-    address: "yuvrajmehta.dev@gmail.com"
+    url: "mailto:yuvraj.mehta532@gmail.com",
+    address: "yuvraj.mehta532@gmail.com"
   }
 };
 
