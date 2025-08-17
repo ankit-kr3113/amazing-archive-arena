@@ -463,7 +463,7 @@ const Coding = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {achievements.map((achievement, index) => {
+              {codingAchievements.map((achievement, index) => {
                 const IconComponent = achievement.icon;
                 return (
                   <Card
