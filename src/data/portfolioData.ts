@@ -77,7 +77,7 @@ export const achievements = {
     maxRating: "1649",
     problemsSolved: "277",
     globalRanking: "125365",
-    percentile: "Top 25%"
+    percentile: "Top 17.36%"
   },
   codechef: {
     rating: "1451",
@@ -329,7 +329,7 @@ export const quickLinks = [
   { name: "Resume", href: "/public/Yuvraj_Resume_v2_1 (1).pdf", icon: "📄", external: true },
   { name: "LeetCode", href: "https://leetcode.com/u/mythical-UV/", icon: "⚡", external: true },
   { name: "GeeksforGeeks", href: "https://www.geeksforgeeks.org/user/yuvrajmevbrx/", icon: "🟢", external: true },
-  { name: "CodeChef", href: "https://www.codechef.com/users/quick_unity_53", icon: "👨‍����", external: true },
+  { name: "CodeChef", href: "https://www.codechef.com/users/quick_unity_53", icon: "👨‍🍳", external: true },
   { name: "Projects", href: "/projects", icon: "🚀", external: false }
 ];
 
