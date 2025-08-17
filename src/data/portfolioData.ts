@@ -110,28 +110,22 @@ export const achievements = {
       description: "Represented the Republic of Poland at NIT Patna's Model United Nations. Earned the Best Delegate award for exceptional debate skills and impactful resolutions."
     },
     {
-      title: "Bronze Medal - 50m Hurdles",
+      title: "Technical Member",
+      category: "technical",
+      year: "2023 - Present",
+      description: "Active member of the Robotics Club, led team building combat and soccer bots, organized workshops."
+    },
+    {
+      title: "Class Representative",
+      category: "leadership",
+      year: "2023 - 2024",
+      description: "Coordinated between faculty and students, organized department events for 3 semesters."
+    },
+    {
+      title: "Bronze Medal - NIT Patna Intramurals",
       category: "sports",
       year: "2023",
-      description: "Won Bronze in 50m Hurdles at NIT Patna Intramurals sports competition."
-    },
-    {
-      title: "LeetCode Top 25%",
-      category: "technical",
-      year: "2024",
-      description: "Achieved global ranking with 1649 rating and 277+ problems solved on LeetCode."
-    },
-    {
-      title: "Smart India Hackathon Qualifier",
-      category: "competition",
-      year: "2023",
-      description: "Led team to qualify at internal NIT Patna hackathon and advance to national level in prestigious Smart India Hackathon."
-    },
-    {
-      title: "Robotics Club - Technical Member",
-      category: "technical",
-      year: "2023-Present",
-      description: "Active member organizing workshops and leading teams in building combat and soccer bots, achieving 4th place in tech fest."
+      description: "Won Bronze in 50m Hurdles at the university sports event."
     }
   ]
 };
@@ -165,20 +159,6 @@ export const experiences = [
       "End-to-end project management"
     ],
     skills: ["Problem Solving", "Team Management", "Presentation", "Innovation"]
-  },
-  {
-    title: "Class Representative",
-    company: "Computer Science Department, NIT Patna",
-    location: "NIT Patna",
-    period: "2023 - 2024",
-    type: "Leadership",
-    description: "Coordinated between faculty and students, organized department events for 3 semesters, and facilitated communication for academic activities. Represented student interests in department meetings and helped resolve academic concerns.",
-    highlights: [
-      "Student-faculty liaison for 3 semesters",
-      "Department event coordination",
-      "Academic advocacy"
-    ],
-    skills: ["Communication", "Event Management", "Leadership", "Coordination"]
   }
 ];
 
