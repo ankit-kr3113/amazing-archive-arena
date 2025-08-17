@@ -123,22 +123,24 @@ const Navigation = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                className={`relative flex items-center px-5 py-4 rounded-2xl text-base font-semibold transition-all duration-300 hover:scale-105 group ${
+                className={`relative flex items-center px-5 py-4 rounded-2xl text-base font-semibold transition-all duration-300 hover:scale-105 group overflow-hidden ${
                   isActive(item.href)
-                    ? "text-primary bg-primary/5 border-2 border-primary/20"
-                    : "text-muted-foreground hover:text-primary hover:bg-primary/5 border-2 border-transparent hover:border-primary/10"
+                    ? "text-white"
+                    : "text-muted-foreground hover:text-primary hover:bg-primary/5"
                 }`}
                 onClick={() => setIsOpen(false)}
                 style={{ animationDelay: `${index * 50}ms` }}
               >
-                <Icon className={`w-5 h-5 mr-4 transition-all duration-300 ${
-                  isActive(item.href) ? 'text-primary' : 'text-muted-foreground/60'
+                <Icon className={`w-5 h-5 mr-4 transition-all duration-300 z-10 ${
+                  isActive(item.href) ? 'text-white' : 'text-muted-foreground/60'
                 }`} />
-                {item.name}
-                {/* Left border indicator for mobile */}
-                <div className={`absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-primary to-primary-glow rounded-r-full transition-all duration-300 ${
-                  isActive(item.href) ? "opacity-100 scale-y-100" : "opacity-0 scale-y-0"
-                }`}></div>
+                <span className="z-10 relative">{item.name}</span>
+                {/* Animated pill background for mobile */}
+                {isActive(item.href) && (
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary-glow to-primary rounded-2xl shadow-lg animate-in slide-in-from-left-4 duration-500"></div>
+                )}
+                {/* Subtle hover effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-primary-glow/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </Link>
             );
           })}
