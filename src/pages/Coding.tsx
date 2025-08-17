@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
 import { useState, useEffect } from "react";
 import { codingPlatformsApi, AllPlatformStats } from "@/services/codingPlatformsApi";
+import { achievements, socialLinks } from "@/data/portfolioData";
 
 // React Icons imports
 import {
@@ -46,12 +47,28 @@ const Coding = () => {
   const [apiError, setApiError] = useState<string | null>(null);
   const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
 
-  // Fallback data (real statistics)
+  // Fallback data from centralized achievements
   const fallbackData = {
-    leetcode: { totalSolved: 277, problemsSolved: { easy: 180, medium: 85, hard: 12 } },
-    codeforces: { problemsSolved: 27, rating: 1030, rank: "Newbie" },
-    codechef: { problemsSolved: 25, rating: 1451, stars: 2 },
-    gfg: { problemsSolved: 130, score: 500, rank: 1058 }
+    leetcode: {
+      totalSolved: parseInt(achievements.leetcode.problemsSolved),
+      problemsSolved: { easy: 180, medium: 85, hard: 12 },
+      rating: parseInt(achievements.leetcode.rating)
+    },
+    codeforces: {
+      problemsSolved: parseInt(achievements.codeforces.problemsSolved),
+      rating: parseInt(achievements.codeforces.rating),
+      rank: achievements.codeforces.rank
+    },
+    codechef: {
+      problemsSolved: parseInt(achievements.codechef.problemsSolved),
+      rating: parseInt(achievements.codechef.rating),
+      stars: 2
+    },
+    gfg: {
+      problemsSolved: parseInt(achievements.geeksforgeeks.problemsSolved),
+      score: 500,
+      rank: parseInt(achievements.geeksforgeeks.rank)
+    }
   };
 
   // Fetch API data
