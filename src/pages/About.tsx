@@ -189,7 +189,7 @@ const About = () => {
                   <div className="pt-4 border-t">
                     <h4 className="font-semibold mb-3 text-sm">What Drives Me</h4>
                     <div className="grid grid-cols-2 gap-3 mb-6">
-                      {interests.map((interest, index) => (
+                      {pageInterests.map((interest, index) => (
                         <div key={index} className="flex items-start gap-2 p-2 rounded-lg hover:bg-primary/5 transition-colors">
                           <interest.icon className={`w-4 h-4 ${interest.color} mt-0.5`} />
                           <div>
