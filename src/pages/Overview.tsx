@@ -663,7 +663,7 @@ const Overview = () => {
                       <span className="font-medium">Recent Achievement</span>
                     </div>
                     <p className="text-xs text-foreground/80">
-                      Bronze medal in 50m Hurdles at NIT Patna Intramurals
+                      Bronze medal in 50m Hurdles at {personalInfo.university} Intramurals
                     </p>
                   </div>
                 </div>
