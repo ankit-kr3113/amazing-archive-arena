@@ -125,17 +125,16 @@ const Navigation = () => {
               </Link>
             );
           })}
-          <div className="px-5 pt-6 border-t-2 border-primary/20 mt-6">
+          <div className="px-4 pt-4 border-t border-border mt-4">
             <Button
               variant="outline"
               size="sm"
-              className="w-full group bg-gradient-to-r from-primary/15 to-primary-glow/12 border-2 border-primary/40 hover:from-primary/25 hover:to-primary-glow/20 hover:border-primary/60 hover:scale-105 transition-all duration-300 py-4 rounded-2xl shadow-lg backdrop-blur-sm"
+              className="w-full"
               asChild
             >
               <a href={personalInfo.resume} target="_blank" rel="noopener noreferrer">
-                <HiDownload className="w-5 h-5 mr-3 group-hover:animate-bounce" />
-                <span className="font-semibold">Download Resume</span>
-                <HiSparkles className="w-4 h-4 ml-3 opacity-60 group-hover:opacity-100 group-hover:animate-spin transition-all duration-300" />
+                <HiDownload className="w-4 h-4 mr-2" />
+                Download Resume
               </a>
             </Button>
           </div>
