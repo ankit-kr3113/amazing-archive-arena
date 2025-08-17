@@ -88,22 +88,15 @@ const Navigation = () => {
             </Button>
           </div>
 
-          {/* Enhanced Mobile menu button */}
+          {/* Simple Mobile menu button */}
           <div className="lg:hidden">
             <Button
               variant="ghost"
               size="sm"
               onClick={() => setIsOpen(!isOpen)}
-              className="relative w-12 h-12 p-2 hover:bg-primary/15 hover:scale-110 transition-all duration-300 rounded-xl backdrop-blur-sm"
+              className="p-2"
             >
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className={`transition-all duration-300 ${isOpen ? 'rotate-180 opacity-0 scale-0' : 'rotate-0 opacity-100 scale-100'}`}>
-                  <HiMenuAlt3 className="h-5 w-5" />
-                </div>
-                <div className={`absolute transition-all duration-300 ${isOpen ? 'rotate-0 opacity-100 scale-100' : 'rotate-180 opacity-0 scale-0'}`}>
-                  <HiX className="h-5 w-5" />
-                </div>
-              </div>
+              {isOpen ? <HiX className="h-5 w-5" /> : <HiMenuAlt3 className="h-5 w-5" />}
             </Button>
           </div>
         </div>
