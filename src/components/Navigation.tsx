@@ -129,10 +129,10 @@ const Navigation = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                className={`flex items-center px-5 py-4 rounded-2xl text-base font-semibold transition-all duration-300 hover:scale-105 ${
+                className={`relative flex items-center px-5 py-4 rounded-2xl text-base font-semibold transition-all duration-300 hover:scale-105 group ${
                   isActive(item.href)
-                    ? "text-primary bg-gradient-to-r from-primary/15 to-primary-glow/12 border-2 border-primary/25 shadow-xl shadow-primary/10"
-                    : "text-muted-foreground hover:text-primary hover:bg-gradient-to-r hover:from-primary/8 hover:to-primary-glow/6 border-2 border-transparent hover:border-primary/20"
+                    ? "text-primary bg-primary/5 border-2 border-primary/20"
+                    : "text-muted-foreground hover:text-primary hover:bg-primary/5 border-2 border-transparent hover:border-primary/10"
                 }`}
                 onClick={() => setIsOpen(false)}
                 style={{ animationDelay: `${index * 50}ms` }}
