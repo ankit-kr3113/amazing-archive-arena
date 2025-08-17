@@ -55,28 +55,22 @@ const Navigation = () => {
             <span className="text-lg sm:text-xl font-bold gradient-text group-hover:scale-110 transition-transform duration-300 drop-shadow-lg">{personalInfo.name.split(' ')[0]}.</span>
           </Link>
 
-          {/* Enhanced Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-4">
+          {/* Enhanced Desktop Navigation - Sliding Pill Design */}
+          <div className="hidden lg:flex items-center bg-muted/30 rounded-full p-1 backdrop-blur-sm border border-border/50">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
-                className={`relative px-4 py-2.5 text-sm font-semibold transition-all duration-300 hover:scale-105 group ${
+                className={`relative px-4 py-2.5 text-sm font-semibold transition-all duration-300 rounded-full z-10 ${
                   isActive(item.href)
-                    ? "text-primary"
-                    : "text-muted-foreground hover:text-foreground"
+                    ? "text-primary-foreground"
+                    : "text-muted-foreground hover:text-foreground hover:bg-white/5"
                 }`}
               >
                 {item.name}
-                {/* Modern underline indicator */}
-                <div className={`absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary to-primary-glow rounded-full transition-all duration-300 ${
-                  isActive(item.href)
-                    ? "opacity-100 scale-x-100"
-                    : "opacity-0 scale-x-0 group-hover:opacity-50 group-hover:scale-x-100"
-                }`}></div>
-                {/* Subtle glow effect for active tab */}
+                {/* Sliding pill background */}
                 {isActive(item.href) && (
-                  <div className="absolute inset-0 bg-primary/5 rounded-lg border border-primary/20 backdrop-blur-sm"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary-glow to-primary rounded-full shadow-lg shadow-primary/25 -z-10 animate-in slide-in-from-left-2 duration-300"></div>
                 )}
               </Link>
             ))}
