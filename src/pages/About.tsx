@@ -15,38 +15,29 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
 import { useNavigate } from "react-router-dom";
-import { personalInfo, socialLinks, achievements, interests } from "@/data/portfolioData";
+import { personalInfo, socialLinks, achievements, interests, aboutPageData } from "@/data/portfolioData";
 
 const About = () => {
   const navigate = useNavigate();
 
-  const interests = [
+  // Use centralized interests data with actual icon components
+  const pageInterests = [
     { icon: FaRobot, name: "Robotics", description: "Building combat & soccer bots", color: "text-blue-500" },
     { icon: FaRunning, name: "Athletics", description: "Bronze in 50m Hurdles", color: "text-green-500" },
     { icon: FaPuzzlePiece, name: "Problem Solving", description: "Competitive programming", color: "text-purple-500" },
     { icon: FaBullseye, name: "Mentoring", description: "Leading workshops", color: "text-red-500" },
   ];
 
-  // Using centralized data from portfolioData.ts
-  const achievementStats = [
-    { value: achievements.leetcode.rating, label: "LeetCode Rating", color: "text-orange-500" },
-    { value: achievements.stats.totalProblemsSolved, label: "Problems Solved", color: "text-green-500" },
-    { value: achievements.stats.totalProjects, label: "Projects Built", color: "text-blue-500" },
-    { value: achievements.leetcode.percentile, label: "LeetCode Percentile", color: "text-purple-500" },
-  ];
+  // Using centralized achievement stats
+  const achievementStats = aboutPageData.achievementStats;
 
   const handleContactClick = () => {
     navigate('/contact');
   };
 
   const handleResumeDownload = () => {
-    // Create a link element and trigger download
-    const link = document.createElement('a');
-    link.href = personalInfo.resume;
-    link.download = 'Yuvraj_Mehta_Resume.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    // Open resume in new tab
+    window.open(personalInfo.resume, '_blank');
   };
 
   return (
