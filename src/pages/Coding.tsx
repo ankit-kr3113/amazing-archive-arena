@@ -162,7 +162,7 @@ const Coding = () => {
       bgColor: "from-orange-500/20 to-yellow-500/20",
       borderColor: "border-orange-500/30",
       icon: SiLeetcode,
-      url: "https://leetcode.com/u/mythical-UV/",
+      url: socialLinks.leetcode.url,
       lastActive: "2024",
       joinedDate: "Jan 2023",
       difficulty: apiData?.leetcode?.problemsSolved || { easy: 150, medium: 65, hard: 13 },
@@ -177,7 +177,7 @@ const Coding = () => {
       bgColor: "from-green-500/20 to-emerald-500/20",
       borderColor: "border-green-500/30",
       icon: SiGeeksforgeeks,
-      url: "https://www.geeksforgeeks.org/user/yuvrajmevbrx/",
+      url: socialLinks.geeksforgeeks.url,
       lastActive: "2024",
       joinedDate: "Mar 2023",
       difficulty: apiData?.gfg?.problemsSolved || { easy: 45, medium: 20, hard: 5 },
@@ -192,7 +192,7 @@ const Coding = () => {
       bgColor: "from-amber-500/20 to-orange-500/20",
       borderColor: "border-amber-500/30",
       icon: SiCodechef,
-      url: "https://www.codechef.com/users/quick_unity_53",
+      url: socialLinks.codechef.url,
       lastActive: "2024",
       joinedDate: "Feb 2023",
       difficulty: apiData?.codechef?.problemsSolved || { easy: 18, medium: 6, hard: 1 },
@@ -207,7 +207,7 @@ const Coding = () => {
       bgColor: "from-blue-500/20 to-cyan-500/20",
       borderColor: "border-blue-500/30",
       icon: SiCodeforces,
-      url: "https://codeforces.com/profile/yuvraj_mythical",
+      url: socialLinks.codeforces.url,
       lastActive: "2024",
       joinedDate: "Apr 2023",
       difficulty: apiData?.codeforces?.problemsSolved || { easy: 8, medium: 2, hard: 0 },
@@ -222,12 +222,12 @@ const Coding = () => {
   const achievements = [
     {
       title: "LeetCode Consistency Champion",
-      description: `Maintained active problem-solving streak with ${apiData?.leetcode?.problemsSolved?.total || 277}+ problems solved, achieving top ${apiData?.leetcode?.contests?.topPercentage || "17.36"}% global ranking`,
+      description: `Maintained active problem-solving streak with ${apiData?.leetcode?.problemsSolved?.total || fallbackData.leetcode.totalSolved}+ problems solved, achieving top ${apiData?.leetcode?.contests?.topPercentage || achievements.leetcode.percentile.replace('Top ', '').replace('%', '')}% global ranking`,
       icon: FaTrophy,
       color: "text-yellow-400",
       bgColor: "from-yellow-500/20 to-orange-500/20",
       borderColor: "border-yellow-500/30",
-      metric: `${apiData?.leetcode?.problemsSolved?.total || 277} Problems`
+      metric: `${apiData?.leetcode?.problemsSolved?.total || fallbackData.leetcode.totalSolved} Problems`
     },
     {
       title: "Contest Performer",
@@ -240,12 +240,12 @@ const Coding = () => {
     },
     {
       title: "LeetCode Rating Champion",
-      description: `Achieved a competitive rating of ${Math.round(apiData?.leetcode?.profile?.rating || 1649)} on LeetCode with ${apiData?.leetcode?.achievements?.streaks?.totalActiveDays || 149} total active coding days, demonstrating consistent algorithmic excellence`,
+      description: `Achieved a competitive rating of ${Math.round(apiData?.leetcode?.profile?.rating || fallbackData.leetcode.rating)} on LeetCode with ${apiData?.leetcode?.achievements?.streaks?.totalActiveDays || 149} total active coding days, demonstrating consistent algorithmic excellence`,
       icon: FaFire,
       color: "text-green-400",
       bgColor: "from-green-500/20 to-emerald-500/20",
       borderColor: "border-green-500/30",
-      metric: `${Math.round(apiData?.leetcode?.profile?.rating || 1649)} Rating`
+      metric: `${Math.round(apiData?.leetcode?.profile?.rating || fallbackData.leetcode.rating)} Rating`
     },
     {
       title: "Multi-Platform Excellence",
