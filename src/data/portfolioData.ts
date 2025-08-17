@@ -227,10 +227,10 @@ export const skills = {
 };
 
 export const interests = [
+  { icon: FaPuzzlePiece, name: "Competitive Programming", description: "LeetCode, Codeforces & more" },
   { icon: FaRobot, name: "Robotics", description: "Building combat & soccer bots" },
   { icon: FaRunning, name: "Athletics", description: "Bronze in 50m Hurdles" },
-  { icon: FaPuzzlePiece, name: "Problem Solving", description: "Competitive programming" },
-  { icon: FaUsers, name: "Mentoring", description: "Leading workshops" }
+  { icon: FaUsers, name: "Technical Workshops", description: "Organizing & leading workshops" }
 ];
 
 export const projects = [
