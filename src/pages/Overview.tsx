@@ -885,7 +885,7 @@ const Overview = () => {
 
                     <div className="space-y-4 mb-6">
                       <p className="text-sm text-foreground/80 leading-relaxed">
-                        {personalInfo.bio.intro.split('.')[0]}. Passionate about creating digital solutions that make a difference.
+                        {personalInfo.bio.intro}
                       </p>
                     </div>
 
@@ -896,7 +896,7 @@ const Overview = () => {
                       </div>
                       <div className="flex items-center gap-2 text-xs text-foreground/70">
                         <Calendar className="w-3 h-3 text-emerald-400" />
-                        <span>Graduating 2025 • Final Year</span>
+                        <span>Graduating 2025 • Final Year • CGPA: 7.68/10</span>
                       </div>
                       <div className="flex items-center gap-2 text-xs text-foreground/70">
                         <CircleDot className="w-3 h-3 text-green-400" />
@@ -945,7 +945,7 @@ const Overview = () => {
                             <div className="text-sm text-primary font-semibold mb-1">{personalInfo.university}</div>
                             <div className="flex items-center gap-3 text-xs text-foreground/60">
                               <span>2021 - 2025</span>
-                              <Badge className="bg-green-500/20 text-green-400 border-green-500/30 text-xs">Final Year</Badge>
+                              <Badge className="bg-green-500/20 text-green-400 border-green-500/30 text-xs">CGPA: 7.68</Badge>
                             </div>
                           </div>
                         </div>
@@ -959,7 +959,7 @@ const Overview = () => {
                           </div>
                           <div className="flex-1">
                             <div className="font-semibold text-sm text-foreground">Class 12th • Science Stream</div>
-                            <div className="text-xs text-foreground/60">2021 • Foundation in Science & Mathematics</div>
+                            <div className="text-xs text-foreground/60">2022 • 88.88% • Pragya Bharti Public School</div>
                           </div>
                         </div>
                       </div>
