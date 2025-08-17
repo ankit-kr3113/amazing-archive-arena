@@ -99,7 +99,8 @@ export const achievements = {
   stats: {
     yearsExperience: "2+",
     totalProjects: "4",
-    commits: "500+"
+    commits: "500+",
+    totalProblemsSolved: "459"
   },
   awards: [
     {
