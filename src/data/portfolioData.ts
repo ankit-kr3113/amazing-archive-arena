@@ -41,7 +41,7 @@ export const socialLinks = {
     username: "yuvraj-mehta-a0274528a"
   },
   leetcode: {
-    url: "https://leetcode.com/u/mythical-UV/",
+    url: "https://leetcode.com/mythical-UV/",
     username: "mythical-UV"
   },
   geeksforgeeks: {
@@ -52,17 +52,21 @@ export const socialLinks = {
     url: "https://www.codechef.com/users/quick_unity_53",
     username: "quick_unity_53"
   },
+  codeforces: {
+    url: "https://codeforces.com/profile/yuvraj.mehta532",
+    username: "yuvraj.mehta532"
+  },
   instagram: {
     url: "https://www.instagram.com/yuvraj.mehta4261/",
     username: "yuvraj.mehta4261"
   },
   twitter: {
-    url: "https://twitter.com/",
-    username: ""
+    url: "https://x.com/yuvraj_mehta02",
+    username: "yuvraj_mehta02"
   },
   email: {
-    url: "mailto:yuvraj.mehta532@gmail.com",
-    address: "yuvraj.mehta532@gmail.com"
+    url: "mailto:yuvrajmehta.dev@gmail.com",
+    address: "yuvrajmehta.dev@gmail.com"
   }
 };
 
