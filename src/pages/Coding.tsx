@@ -157,7 +157,7 @@ const Coding = () => {
       platform: "LeetCode",
       solved: apiData?.leetcode?.problemsSolved?.total || fallbackData.leetcode.totalSolved,
       rating: apiData?.leetcode?.profile?.rating ? Math.round(apiData.leetcode.profile.rating).toString() : fallbackData.leetcode.rating.toString(),
-      rank: apiData?.leetcode?.contests?.topPercentage ? `Top ${apiData.leetcode.contests.topPercentage}%` : "Top 17.36%",
+      rank: apiData?.leetcode?.contests?.topPercentage ? `Top ${apiData.leetcode.contests.topPercentage}%` : achievements.leetcode.percentile,
       color: "text-orange-400",
       bgColor: "from-orange-500/20 to-yellow-500/20",
       borderColor: "border-orange-500/30",
@@ -348,7 +348,7 @@ const Coding = () => {
               <div className="flex items-center gap-2 px-3 py-2 bg-orange-500/5 rounded-lg border border-orange-500/20">
                 <FaStar className="w-4 h-4 text-orange-500" />
                 <span className="text-muted-foreground font-medium">
-                  LeetCode Top {apiData?.leetcode?.contests?.topPercentage || "17.36"}%
+                  LeetCode {apiData?.leetcode?.contests?.topPercentage ? `Top ${apiData.leetcode.contests.topPercentage}%` : achievements.leetcode.percentile}
                 </span>
               </div>
             </div>
