@@ -61,15 +61,22 @@ const Navigation = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                className={`relative px-3 py-2 text-sm font-semibold transition-all duration-300 rounded-xl hover:bg-primary/10 hover:scale-105 ${
+                className={`relative px-4 py-2.5 text-sm font-semibold transition-all duration-300 hover:scale-105 group ${
                   isActive(item.href)
-                    ? "text-primary bg-primary/15 shadow-lg shadow-primary/10"
+                    ? "text-primary"
                     : "text-muted-foreground hover:text-foreground"
                 }`}
               >
                 {item.name}
+                {/* Modern underline indicator */}
+                <div className={`absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary to-primary-glow rounded-full transition-all duration-300 ${
+                  isActive(item.href)
+                    ? "opacity-100 scale-x-100"
+                    : "opacity-0 scale-x-0 group-hover:opacity-50 group-hover:scale-x-100"
+                }`}></div>
+                {/* Subtle glow effect for active tab */}
                 {isActive(item.href) && (
-                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-primary rounded-full animate-pulse shadow-lg shadow-primary/50"></div>
+                  <div className="absolute inset-0 bg-primary/5 rounded-lg border border-primary/20 backdrop-blur-sm"></div>
                 )}
               </Link>
             ))}
