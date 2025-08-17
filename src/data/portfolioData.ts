@@ -103,28 +103,34 @@ export const achievements = {
   },
   awards: [
     {
-      title: "Best Delegate - Model United Nations",
+      title: "Winner - Model United Nations",
       category: "competition",
       year: "2023",
-      description: "Represented Poland at NIT Patna's MUN, earned Best Delegate award for exceptional debate skills."
+      description: "Represented the Republic of Poland at NIT Patna's Model United Nations. Earned the Best Delegate award for exceptional debate skills and impactful resolutions."
     },
     {
       title: "Bronze Medal - 50m Hurdles",
-      category: "sports", 
+      category: "sports",
       year: "2023",
       description: "Won Bronze in 50m Hurdles at NIT Patna Intramurals sports competition."
     },
     {
-      title: "LeetCode Top 27.7%",
+      title: "LeetCode Top 25%",
       category: "technical",
-      year: "2024", 
-      description: "Achieved global ranking in top 27.7% with 1570+ rating and 333+ problems solved."
+      year: "2024",
+      description: "Achieved global ranking with 1649 rating and 277+ problems solved on LeetCode."
     },
     {
-      title: "Tech Fest Participant",
+      title: "Smart India Hackathon Qualifier",
       category: "competition",
-      year: "2023-2024",
-      description: "Regular participant in technical competitions and robotics challenges at university level."
+      year: "2023",
+      description: "Led team to qualify at internal NIT Patna hackathon and advance to national level in prestigious Smart India Hackathon."
+    },
+    {
+      title: "Robotics Club - Technical Member",
+      category: "technical",
+      year: "2023-Present",
+      description: "Active member organizing workshops and leading teams in building combat and soccer bots, achieving 4th place in tech fest."
     }
   ]
 };
