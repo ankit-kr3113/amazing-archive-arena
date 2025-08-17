@@ -102,8 +102,8 @@ const Navigation = () => {
         </div>
       </div>
 
-      {/* Enhanced Mobile Navigation */}
-      <div className={`lg:hidden transition-all duration-500 overflow-hidden ${
+      {/* Mobile Navigation */}
+      <div className={`lg:hidden transition-all duration-300 overflow-hidden ${
         isOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
       }`}>
         <div className="px-6 pt-4 pb-6 space-y-1 bg-card border-t border-border">
